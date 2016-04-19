@@ -1,0 +1,165 @@
+@charset "utf-8";
+/* CSS Document */
+/*html {font-size: 100%;10 ÷ 16 × 100% = 62.5%}*/
+body,div,a,button,input,h1,p{margin:0; padding:0;}
+table{ border-collapse:collapse;border-spacing:0; }
+body{font: 100%/1.5 microsoft yahei,tahoma;color: #808080;background: #F4F5F7;}
+a{text-decoration:none;color: #08c}
+input{border:none;background: #fff;color: #999;vertical-align:middle;outline:0;}
+
+.clearfix{*zoom:1}
+.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
+.clearfix:after{clear:both}
+
+/*===============================多余内容隐藏==================================*/
+.username,.label,h1,.user-number,.form-line-bottom p{
+	white-space:nowrap;overflow:hidden;text-overflow:ellipsis; -o-text-overflow:ellipsis;
+}
+
+/*===============================让边框和内边距算在宽度内=======================================*/
+.username,.input,.label,.title-cnt,.input-group-cnt{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+
+
+/*======================================================*/
+.wrapper{
+	padding:.6rem 1rem
+}
+
+h1{
+	background-color: #222;
+	padding: 0.3rem 1.2rem;
+	font-size: 1rem;font-weight: bold;color: #fff;	
+}
+
+.form-line,.form-line-bottom{
+	padding: 0.3rem 0;
+}
+
+.form-line-bottom p{
+	color: #999;font-size: 1rem;
+}
+
+.form-line-bottom span{
+	color: #000;
+}
+
+.password-tips{
+	padding-top: 0.55rem;
+	font-size: 1em;color: #666;
+}
+
+.password-tips-error{
+	color: #D93600;
+}
+
+
+/*======================输入框控件==============================*/
+.input-group{
+	position: relative;
+	border: 1px solid #ccc;
+	/*border-radius: 0.063rem;*/
+}
+
+.username{
+	height: 2.5rem;width: 100%;padding-left: 5.3rem;line-height: 2.5rem;
+	font-size:1.5rem;font-weight: bold;color: #333;background: #fff;
+}
+
+.input{
+	width: 100%;height: 1.3rem;line-height:1.3rem;
+	font-size: 1rem;color: #333;background-color: #fff;
+}
+
+.input-group-cnt{
+	width: 100%;height: 2.5rem;
+	background: #fff;padding: .6rem 4.4rem .6rem 5.3rem;
+}
+
+.label{
+	position: absolute;left: 0;top: 0;
+	width: 4.5rem;height: 2.5rem;
+	background-color: #E0E0E0;line-height: 2.5rem;
+	text-align: center;color: #646464;font-size: 0.875rem;
+}
+
+/*==============注册成功页面的信息================*/
+
+.user-info{
+	margin-top: 1em;
+	font-size: 1rem;color: #666;
+}
+
+.user-number{
+	font-size: 2rem;color: #1387E6;font-weight: bold;
+}
+
+.user-tips-info{
+	color: #238C00;font-size: 1.5rem;font-weight: bold;
+}
+
+.user-tips-info-war{
+	color: #666;font-weight: normal;font-size: 1em
+}
+
+.user-tips-info-war span{
+	color: #FF7F00;font-weight: bold;
+}
+
+/*=========================================*/
+
+
+.show-password{
+	position: absolute;right: 0.5rem;top: 0;
+	height: 2.5rem;line-height: 2.5rem;
+	color: #999;font-size: 1rem;
+}
+
+.show-password:hover{
+	color: #666;
+}
+/*==============================================================*/
+
+/*===========================按钮========================*/
+
+.button{
+	display: block;
+	height: 2.3rem;line-height: 2.3rem;
+	border-radius: 0.2rem;font-size: 1rem;text-align: center;letter-spacing:.5em;
+}
+
+.button-blue {
+	border: 1px solid #004488;color: #fff;
+    background: #006AD3;
+    border: 1px solid #1E7DB9;
+}
+
+.button-diable {
+	cursor: not-allowed;
+	background: #eee;
+	border: 1px solid #ccc;
+	color: #999;
+}
+
+
+.hr{
+
+  height: 0;
+  overflow: hidden;
+  margin: 1rem 0;
+  border-top:1px solid #D5D5D5;border-bottom:1px solid #fff;
+}
+
+
+
+
+/* 当浏览器的可视区域小于320px */
+
+@media screen and (max-width:320px){
+
+	html{font-size: 75%;}
+
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="../../release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../src/js/highcharts.src.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+		;
+		(function($) {
+			$.fn.delayhover = function(item, fnOver, fnOut) {
+
+				var time = 200;
+				var delaytime = "";
+				var hasfn = "";
+
+				return this.delegate(item, 'mouseenter', function(e) {
+					var that = this;
+					hasfn = false;
+					delayitem = setTimeout(function() {
+						fnOver.call(that, e);
+						hasfn = true;
+					}, time);
+				}
+				// fnOver
+				// delayitem = setTimeout(fnOver,time)
+
+				).delegate(item, 'mouseleave',
+				function(e) {
+					var that = this;
+					clearTimeout(delayitem);
+					if (hasfn) {
+						fnOut.call(that, e)
+					}
+				}
+				)
+			}
+		})(jQuery);
+		(function($) {
+			$.fn.myhover = function(item, fnOver, fnOut) {
+			// console.log($(this))
+			return $(this).delegate(item, 'mouseenter', fnOver).delegate(item, 'mouseleave', fnOut || fnOver)
+		}
+	})(jQuery);
+
+	(function($) {
+		$.fn.scrollfix = function() {
+			var offset = $(this).offset();
+			var that = $(this);
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > offset.top) {
+					that.addClass('scroll-fixed');
+				} else {
+					that.removeClass('scroll-fixed')
+				}
+			})
+		}
+	})(jQuery);
+
+
+	function fu_date_change(str){
+		var start,pointStart,pointInterval,_x_formatter,_tooltip_msg;
+		start = new Date();
+		switch(str){
+		case "today":
+			pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate(),0,59);
+			pointInterval = 1 * 3600 * 1000;
+			_x_formatter = "%H:%M";
+			_tooltip_msg = function(x,y){
+				var _prev_date = x - 59*60*1000;
+				var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+		    		Highcharts.dateFormat('-%H:%M', x);
+				return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+			}
+			break;
+		case "yestoday":
+			start.setDate(start.getDate()-1);
+			pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate(),0,59);
+			pointInterval = 1 * 3600 * 1000;
+			_x_formatter = "%H:%M";
+			_tooltip_msg = function(x,y){
+				var _prev_date = x - 59*60*1000;
+				var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+		    		Highcharts.dateFormat('-%H:%M', x);
+				return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+			}
+			break;
+		case "last7":
+			start.setDate(start.getDate()-7);
+			pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+			pointInterval = 24 * 3600 * 1000;
+			_x_formatter = "%m-%e";
+			_tooltip_msg = function(x,y){
+				var _prev_date = x - 24*60*60*1000;
+				var _msg = Highcharts.dateFormat('%Y-%m-%e', x);
+				return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+			}
+			break;
+		case "last30":
+			start.setDate(start.getDate()-30);
+			pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+			pointInterval = 24 * 3600 * 1000;
+			_x_formatter = "%m-%e";
+			_tooltip_msg = function(x,y){
+				var _prev_date = x - 24*60*60*1000;
+				var _msg = Highcharts.dateFormat('%Y-%m-%e', x);
+				return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+			}
+			break;
+		default:
+			pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate(),0,59);
+			pointInterval = 1 * 3600 * 1000;
+			_x_formatter = "%H:%M";
+			_tooltip_msg = function(x,y){
+				var _prev_date = x - 24*60*60*1000;
+				var _msg = Highcharts.dateFormat('%Y-%m-%e~', _prev_date) +
+		    		Highcharts.dateFormat('%Y-%m-%e', x);
+				return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+			}
+			break;
+		}
+
+		
+		highchart_org_detail(str,start,pointStart,pointInterval,_x_formatter,_tooltip_msg);
+	}
+
+	function creat_charts_data(n){
+		var data = [];
+		n = !n ? 10 : n;
+		for(var i=0;i<n;i++){
+			var _obj = {y: 1 + Math.round(Math.random() * 5)};
+			data.push(_obj);
+		}
+		return data;
+	}
+	
+	function highchart_org_detail(str,start,pointStart,pointInterval,_x_formatter,_tooltip_msg){
+		$.post("../../test/fuserManagement/data/pql_analy_data.js","",function(data){
+			data = eval(data)(str);
+			
+			 $('#container_detail').highcharts({
+			        chart: {
+			        },
+			        // 主标题
+			        title: {
+						text : "查询"
+					},
+					// 副标题
+					subtitle: {
+						//text : "查询公司详细",
+						//x : 20
+					},
+					// x轴选项
+			        xAxis: {
+							type: 'datetime',
+			            	labels: {
+	                			formatter: function() {
+	                    			return Highcharts.dateFormat(_x_formatter, this.value);                  
+	                			}        
+	            			}
+			        },
+			    	 // y轴选项
+			        yAxis: {
+		                title: {
+		                    text: '查询次数 '
+		                }
+		            },
+		            // 数据列选项
+			        series: [
+				        {
+			            data: [0,1,5,12,34,45,67,85,46,123,145,124,90,55,66,77,88,66,55,44],
+					    name : "查询次数" ,
+					    //dashStyle: 'dash',
+					    pointStart: pointStart,
+			            pointInterval: pointInterval     // 1小时      
+			        	},{
+				            data: [1,3,5,7,15,35,57,75,66,83,95,104,100,80,57,78,70,55,44,33],
+						    name : "用户（帐号）" ,
+						    //dashStyle: 'dash',
+						    pointStart: pointStart,
+				            pointInterval: pointInterval     // 1小时      
+			        	},{
+				        		data: [0,0,1,6,9,11,14,23,35,46,57,68,79,81,93,104,95,86,77,68],
+							    name : "新用户（帐号）" ,
+							    //dashStyle: 'dash',
+							    pointStart: pointStart,
+					            pointInterval: pointInterval     // 1小时      
+				        }
+			        ],
+			        // 图表对话框
+			        legend: {
+		            	//align: 'center',
+		                //verticalAlign: 'top',
+		                //floating:true,
+		                //x: 0,
+		                //y: 100,
+			        	//layout: 'vertical',
+		                //align: 'right',
+		                //verticalAlign: 'middle',
+		                borderWidth: 0
+				    },
+				    // 数据点提示框
+				    tooltip: {
+				    	formatter: function() {
+				    	//var _prev_date = this.x - 59*60*1000;
+				    	//var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+				    	//	Highcharts.dateFormat('-%H:%M', this.x);
+		               	// 	return _msg +  '<br/><b>访问次数：'+ this.y +'</b>';
+		               		return _tooltip_msg(this.x,this.y);
+		            	},
+		            	// 穿越线  point之间
+				    	crosshairs: true
+				    	//,
+				    	// 是否共享同一个tip框 shared:默认为false
+	                	//shared: true
+					},
+					plotOptions: {
+			            //series: {
+			                //cursor: 'pointer',
+			                //point: {
+			                //    events: {
+			                //        click: function() {
+			                            //alert ('Category: '+ this.category +', value: '+ this.y);
+			                        	//location.href = this.options.url;
+			                        	//console.log(this.options);
+			                        	//console.log(this.series);
+			                        	//location.href = this.options.url;
+			                //        }
+			                //    }
+			                //}
+							//,dashStyle: 'longdash'
+			            //}
+			        },
+			        // 版权信息
+		            credits: {
+			            enable: false,
+			            text: ""
+			        }
+			    });
+		},"text");
+	}
+	
+	$(function() {
+		fu_date_change("today");
+		//var ss = [1,3,3,3,3,3,4,5,5,5,43134,123,11]
+		//console.log(Math.max.apply({},ss));
+		//console.log(Math.min.apply({},ss));
+	})
+
+
+
+
+
+
+
+</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap-nobd">
+
+		
+		<div class="left-side">
+			<ul class="left-side-menu mt50">
+				<li><a href="javascript:" class="left-side-menu-a"><i class="fs14">&#x35ab;</i> 网站概况<s class="icon-b-r-arrow right mt4"></s></a></li>
+				<li><a href="javascript:" class="left-side-menu-a active">统计维度<s class="icon-b-r-arrow right mt4"></s></a></li>
+				<li><a href="javascript:" class="left-side-menu-a">网站概况<s class="icon-b-r-arrow right mt4"></s></a></li>
+				<li class="left-side-menu-categories">大分类：</li>
+				<li><a href="javascript:" class="left-side-menu-a">网站概况<s class="icon-b-r-arrow right mt4"></s></a></li>
+				<li><a href="javascript:" class="left-side-menu-a">网站概况<s class="icon-b-r-arrow right mt4"></s></a></li>
+				<li><a href="javascript:" class="left-side-menu-a">网站概况<s class="icon-b-r-arrow right mt4"></s></a></li>
+				<li class="left-side-menu-categories">大分类：</li>
+				<li><a href="javascript:" class="left-side-menu-a">网站概况<s class="icon-b-r-arrow right mt4"></s></a></li>
+				<li><a href="javascript:" class="left-side-menu-a">网站概况<s class="icon-b-r-arrow right mt4"></s></a></li>
+				<li><a href="javascript:" class="left-side-menu-a">网站概况<s class="icon-b-r-arrow right mt4"></s></a></li>
+			</ul>
+		</div>
+		<div class="right-side analytics-con">
+			<div class="grid">
+				<button class="nui-btn nui-btn-28">对比维度<s class="icon-down-arrow"></s></button>
+			</div>
+
+			<ul class="analytics-overview-panel">
+				<li>查询次数
+					<p>6888</p>
+				</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+
+			<div class="chart-cnt">
+				
+			</div>
+
+			<div class="analytices-data-con">
+				<table>
+				<thead>
+					<tr>
+						<th>查询次数</th>
+						<th>用户（账号）</th>
+						<th>IP</th>
+						<th>企业</th>
+						<th>新用户（账号）</th>
+						<th>登录次数</th>
+					</tr>
+				</thead>
+					<tbody>
+						<tr>
+							<td>11</td>
+							<td>22</td>
+							<td>33</td>
+							<td>44</td>
+							<td>55</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		<div id="container_detail"></div>
+		<div class="grid-box">
+			<a href="javascript:fu_date_change('dischargeport')">按目的港</a>
+			<a href="javascript:fu_date_change('route')">按航线</a>
+		</div>
+		<div id="container_dis_route"></div>
+		</div>
+
+		
+	</div>
+	<!--#include file="footer.html"-->
+</body>
+</html>

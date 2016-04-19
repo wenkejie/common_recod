@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>导入界面</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<link rel="stylesheet" href="../../release/freight/css/zTreeStyle/zTreeStyle.css" />
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../release/freight/js/jquery.ztree.all-3.5.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="headNav.js"></script>
+
+	<script>
+
+	<script>
+
+
+		$(function() {
+
+		})
+
+	</script>
+
+		<script type="text/javascript">
+	<!--
+
+
+	var setting = {
+		view: {
+			selectedMulti: false,
+			showIcon:false,
+			fontCss: setFontCss
+		},
+		edit: {
+			enable: true,
+			editNameSelectAll: true,
+			showRemoveBtn: false,
+			showRenameBtn: false
+		},
+		data: {
+			keep: {
+				parent:true,
+				leaf:false
+			},
+			simpleData: {
+				enable: true
+			}
+		},
+		callback: {
+			beforeRemove: beforeRemove,
+			beforeRename: beforeRename,
+			onClick: onClick
+			//onRemove: onRemove
+		}
+	};
+
+	var zNodes =[
+	 			{ id:1, pId:0, name:"奥林网络科技", open:true},
+	 			{ id:11, pId:1, name:"总经办",open:true},
+	 			{ id:12, pId:11, name:"综合部"},
+	 			{ id:13, pId:11, name:"销售部"},
+	 			{ id:2, pId:11, name:"技术部", open:true},
+	 			{ id:21, pId:2, name:"平台组"},
+	 			{ id:22, pId:2, name:"订舱组"},
+	 			{ id:23, pId:2, name:"运价组"},
+	 			{ id:3, pId:11, name:"客服部", open:true},
+	 			{ id:31, pId:3, name:"售前"},
+	 			{ id:32, pId:3, name:"售中"},
+	 			{ id:33, pId:3, name:"售后"}
+	 		];
+	var log, className = "dark";
+	function beforeRemove(treeId, treeNode) {
+		className = (className === "dark" ? "":"dark");
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+		zTree.selectNode(treeNode);
+		if(treeNode.level > 0){
+			return confirm("确认删除部门--" + treeNode.name + " 吗？");
+		}else{
+			alert("根节点不能为删除.");
+			return false;
+		}
+	}
+	function beforeRename(treeId, treeNode, newName) {
+		if (newName.length == 0) {
+			alert("节点名称不能为空.");
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			setTimeout(function(){zTree.editName(treeNode)}, 10);
+			return false;
+		}
+		changeIName(newName);
+		return true;
+	}
+
+	var newCount = 1;
+	function add(e) {
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+		isParent = e.data.isParent,
+		nodes = zTree.getSelectedNodes(),
+		treeNode = nodes[0];
+		if (treeNode) {
+			treeNode = zTree.addNodes(treeNode, {id:(100 + newCount), pId:treeNode.id, isParent:isParent, name:"new node" + (newCount++)});
+		} else {
+			treeNode = zTree.addNodes(null, {id:(100 + newCount), pId:0, isParent:isParent, name:"new node" + (newCount++)});
+		}
+		if (treeNode) {
+			zTree.editName(treeNode[0]);
+			changeIName(treeNode[0].name)
+		} else {
+			alert("叶子节点被锁定，无法增加子节点");
+		}
+	};
+	function edit() {
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+		nodes = zTree.getSelectedNodes(),
+		treeNode = nodes[0];
+		if (nodes.length == 0) {
+			alert("请先选择一个节点");
+			return;
+		}
+		zTree.editName(treeNode);
+	};
+	function remove(e) {
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+		nodes = zTree.getSelectedNodes(),
+		treeNode = nodes[0];
+		var pNode = treeNode.getParentNode();
+		if (nodes.length == 0) {
+			alert("请先选择一个节点");
+			return;
+		}
+		zTree.removeNode(treeNode, true);
+		zTree.selectNode(pNode);
+		changeIName(pNode.name);
+	};
+	function onClick(event, treeId, treeNode, clickFlag) {
+		changeIName(treeNode.name);
+	}	
+	
+	function changeIName(name){
+		$("#main_title_user").text(name);
+	}
+
+	function setFontCss(treeId, treeNode) {
+
+	return  treeNode.isParent ? {'font-weight':'bold'} :{};
+	};
+	
+	$(document).ready(function(){
+		$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		var zTree_Menu = $.fn.zTree.getZTreeObj("treeDemo");
+		var curMenu = zTree_Menu.getNodes()[0];
+		zTree_Menu.selectNode(curMenu);
+		changeIName(curMenu.name);
+		$("#addLeaf").bind("click", {isParent:false}, add);
+		$("#edit").bind("click", edit);
+		$("#remove").bind("click", remove);
+	});
+	//-->
+	</script>
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap staff-con">
+
+		
+		<div class="left-side">
+				<h2 class="left-side-title"><i>&#13714;</i> 部门管理</h2>
+				<div class="nui-group-btn ml15 mb15">
+					<button id="addLeaf" class="nui-btn nui-btn-28" onclick="return false;"><i class="fs14">&#13577</i> 新增</button>
+					<button class="nui-btn nui-btn-28" id="edit" onclick="return false;"><i class="fs14">&#13364;</i> 修改</button>
+					<button id="remove" class="nui-btn nui-btn-28" onclick="return false;"><i class="fs14">&#13540;</i> 删除</button>
+					</div>
+					<div class="zTreeDemoBackground ml10">
+						<ul id="treeDemo" class="ztree"></ul>
+					</div>
+			</div>
+		<div class="right-side ">
+
+			<div class="main-title">
+			<h1>批量导入员工</h1>
+				<div class="main-title-des"><i>&#13637</i> 到华南分公司-销售部</div>
+			</div>
+			<div class="grid">
+				<button class="nui-btn nui-btn-28 mt10" onclick="history.go(-1)"><i>&#13367</i> 返回</button>
+			</div>
+			<div class="grid-box">
+				<strong class="fs14">请选择要导入的文件：</strong>
+			</div>
+
+			<p class="grid ml10 mt20 mb20"><input type="file" /></p>
+			<p class="grid ml10"><button class="nui-btn nui-btn-28"><i>&#13397;</i> 上传</button></p>
+
+
+			<div class="nui-file-upload w75">
+				<a class="nui-btn nui-btn-28" href="javascript:"><i>&#13397;</i>上传</a>
+				<input type="file" class="nui-file-upload-input">
+			</div>
+			<div class="file-upload-detail">
+				<a class="file-name">一口吃成胖子.doc</a><a class="nui-btn nui-btn-primary" href="javascript:"><i>&#x34e3;</i></a><a class="nui-btn" href="javascript:"><i>&#x34e4;</i></a>
+			</div>
+			<div class="grid-box">
+				<strong class="fs14">导入说明</strong>
+			</div>
+		
+			<div class="nui-article-con">
+					
+				<ol>
+					<li >请使用Excel等软件创建一个CSV文件，格式如下(<a href="javascript:">点击下载模板</a>)：
+					<!-- <img src="../../release/freight/images/user/table-picture.png" alt="" class="w100p mt10 mb10" /> -->
+					<div class="result-area">
+						<table class="excel-table">
+							<thead>
+								<th width="2%" class=""></th>
+								<th width="8%" class="">姓名</th>
+								<th width="5%" class="">性别</th>
+								<th width="15%" class="">手机</th>
+								<th width="" class="">邮箱</th>
+								<th width="10%" class="">部门</th>
+								<th width="10%" class="">QQ</th>
+								<th width="" class="">MSN</th>
+								<th width="10%" class="">公司电话</th>
+								<th width="10%" class="">传真</th>
+							</thead>
+							<tbody>
+								<tr><th class="">1</th><td>张三</td><td>男</td><td>1356987634223</td><td>dawdw@163.com</td><td>销售部</td><td>312312313</td><td>kldka@hotmail.com</td><td>0580-31231</td><td>0580-31231</td></tr>
+								<tr><th class="">2</th><td>李四</td><td>男</td><td>1356987634223</td><td>dawdw@163.com</td><td>销售部</td><td>312312313</td><td>kldka@hotmail.com</td><td>0580-31231</td><td>0580-31231</td></tr>
+								<tr><th class="">3</th><td>王五</td><td>男</td><td>1356987634223</td><td>dawdw@163.com</td><td>销售部</td><td>312312313</td><td>kldka@hotmail.com</td><td>0580-31231</td><td>0580-31231</td></tr>
+								
+							</tbody>
+						</table>
+					</div>
+					</li>
+					<li>各列内容：邮箱帐号(必填)、邮箱密码(必填)、编号、名字、联系电话、部门(部门层级用斜杠分隔)、性别、职务、手机、生日</li>
+					<li>密码格式要求：
+						<ul>
+							<li>须同时包含字母，数字；</li>
+							<li>不得包含连续 3 个以上相同的字符；</li>
+							<li>密码长度为 6-32 个字符；</li>
+							<li>不得包含帐户名与空格。</li>
+							<li>不得为常见密码。</li>
+						</ul>
+					</li>
+					<li>请使用GB系列编码保存文件，如使用文本编辑器编辑，特殊符号字段需加上英文双引号。</li>
+					
+				</ol>
+			</div>
+
+		</div>
+	</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

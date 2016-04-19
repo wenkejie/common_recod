@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>logo</title>
+	<link rel="stylesheet" type="text/css" href="imgareaselect-default.css" />
+	<link rel="stylesheet" href="http://fcommon.600jit.com/fcommon/release/freight/css/common-v1.2.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
+	<!-- 截图插件引用 -->
+	<script type="text/javascript" src="jquery.imgareaselect.pack.js"></script>
+	<!-- ===== -->
+	<!-- 插件配置 ，仅供参考，这里的图片路径让我固定了请加个路径动态获取，弹窗的宽度是500-->
+	<script type="text/javascript">
+		function preview(img, selection)
+		{
+			var scaleX = 125 / selection.width;
+			var scaleY = 70 / selection.height;
+		   $('#photo + div > img').css({
+		   	width: Math.round(scaleX * 320) + 'px',
+		   	height: Math.round(scaleY * 220) + 'px',
+		   	marginLeft: '-' + Math.round(scaleX * selection.x1) + 'px',
+		   	marginTop: '-' + Math.round(scaleY * selection.y1) + 'px'
+		   });
+		}
+
+		var autoScaling = function(){
+			var pscale = $('div.photo-box').width() / $('div.photo-box').height();
+			// console.log(pscale);
+			var imgscale = $('#j-picture').width() / $('#j-picture').height();
+			// console.log(imgscale);
+			if (imgscale > pscale ) {
+				$('#j-picture').css('width', '100%');
+				var mt = ($('div.photo-box').height() - $('#j-picture').height())/2;
+				$('#photo').css('margin-top', mt);
+
+			}else{
+				$('#j-picture').css('height', '100%');
+				var ml = ($('div.photo-box').width() - $('#j-picture').width())/2;
+				$('#photo').css('margin-left', ml);
+			};
+
+		}
+
+		 $(document).ready(function () {
+		 	var preview = $('<div class=\'preview\'><img src=\'logo-max.jpg\'/></div>');
+		 	
+		 	// preview.insertAfter($('div.photo-box'));
+		 	preview.insertAfter($('#photo'));
+
+		 });
+		 $(window).load(function () {
+		 	autoScaling();
+		 	$('#photo').imgAreaSelect({  aspectRatio: '25:14', handles: true , onSelectChange: preview });
+		 });
+	</script>
+	<!-- ======== -->
+</head>
+<body>
+	<div class="fui-dialog w500">
+		<div class="fui-dialog-title">
+			<h4 class="tal">logo-pic</h4>
+			<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a>
+			<a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a>
+		</div>
+		<div class="fui-dialog-cnt">
+			<div class="picture-editor-box">
+				<h3 class="editor-box-title">您可以对图片进行裁切，并预览最终生成的LOGO效果</h3>
+				<div class="editor-box-cnt">
+					<div class="picture-content clearfix">
+						<div class="photo-box">
+							<div id="photo">
+								<img id="j-picture" src="logo-max.jpg" alt="" />
+							</div>
+							
+						</div>
+						<div class="picture-content-btn">
+							<a class="nui-file-upload nui-btn nui-btn-primary" href="javascript:">
+								<i>&#x34ee;</i> 请选择图片
+								<input type="file" name="" id="" class="nui-file-upload-input">
+							</a>
+						</div>
+					</div>
+					
+				</div>
+			</div>			
+		</div>
+		<div class="fui-dialog-btm-bar pss">
+			<a class="fui-btn-dialog-primary"><span>确定</span></a> 
+			<a class="fui-btn-dialog"><span>取消</span></a>
+		</div>
+	</div>
+</body>
+</html>

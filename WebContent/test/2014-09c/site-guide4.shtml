@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>运价维护</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+
+</head>
+<body>
+
+<div class="fui-dialog"  style="height:420px;width:740px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">账户设置引导</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<div class="fui-dialog-cnt">
+		<div class="nui-gride-box">
+			<div class="nui-gride-head">
+				<div class="nui-navi-container">
+					<ol class="nui-step">
+						<li class="nui-step-start nui-step-active">
+							<div class="nui-step-line">-</div>    
+							<div class="nui-step-icon">        
+								<div class="step-icon-cell">
+									<i class="icon-shadow">&#xe601;</i>
+									<i class="icon-bg">&#xe601;</i>
+									<i class="nui-step-number">1</i>
+								</div>
+								<span class="nui-step-text">添加账户</span>
+							</div>
+						</li>		
+
+						<li class="nui-step-active">
+							<div class="nui-step-line">-</div>    
+							<div class="nui-step-icon">        
+								<div class="step-icon-cell">
+									<i class="icon-shadow">&#xe601;</i>
+									<i class="icon-bg">&#xe601;</i>
+									<i class="nui-step-number">2</i>
+								</div>
+								<span class="nui-step-text">设置资料转换</span>
+							</div>
+						</li>		
+
+						<li class="nui-step-active  nui-step-current">
+							<div class="nui-step-line">-</div>    
+							<div class="nui-step-icon">        
+								<div class="step-icon-cell">
+									<i class="icon-shadow">&#xe601;</i>
+									<i class="icon-bg">&#xe601;</i>
+									<i class="nui-step-number">3</i>
+								</div>
+								<span class="nui-step-text">设置运价规则</span>
+							</div>
+						</li>			
+						<li class="nui-step-end">
+							<div class="nui-step-line">-</div>    
+							<div class="nui-step-icon">        
+								<div class="step-icon-cell">
+									<i class="icon-shadow">&#xe601;</i>
+									<i class="icon-bg">&#xe601;</i>
+									<i class="nui-step-number fonticon">&#x34e3;</i>
+								</div>
+								<span class="nui-step-text">成功</span>
+							</div>
+						</li>	
+					</ol>
+				</div>
+				<div class="hr"></div>
+			</div>
+			<div class="nui-gride-body">
+				<div class="gride-endinfo-box">
+					<div class="endinfo-box-left fonticon">&#xe600;</div>
+					<div class="endinfo-box-right">
+						<strong>恭喜您：</strong>
+						<h3>账户已经成功设置完成！</h3>
+						<p>系统将在运价有变更的情况下，<a href="javascript:">自动帮你导入</a>到运价维护系统中。</p>
+					</div>	
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>下一步</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+</body>
+</html>

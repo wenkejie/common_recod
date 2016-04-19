@@ -1,0 +1,202 @@
+<!--#include file="header.html"-->
+
+
+<div class="auto-wrap">
+	<div class="grid mb10">
+		<div class="left">
+			<h1 class="detail-title">叶少</h1> <a href="javascript:">销售部</a><br/><small class="detail-info">浙江省 | 浙江慈溪 | 0574-87998787 | 网址未填写</small>
+		</div>
+		<div class="right">
+			<button class="nui-btn pd0-5"><i class="">&#x356f;</i> 个人设置</button>
+		</div>
+	</div>
+	<div class="nui-tab-menu mb20">
+		<ul>
+			<li class="nui-tab-menu-cell"><a href="javascript:" class="nui-tab-menu-link">客户动态</a></li>
+			<li class="nui-tab-menu-cell nui-tab-menu-active"><a href="javascript:" class="nui-tab-menu-link">详细信息</a></li>
+			<li class="nui-tab-menu-cell"><a href="javascript:" class="nui-tab-menu-link">关注</a></li>
+			<li class="nui-tab-menu-cell"><a href="javascript:" class="nui-tab-menu-link">我的知识库</a></li>
+
+		</ul>
+	</div>
+	<div class="left-column bdn">
+		<div class="self-info clearfix">
+			<a class="user-info" href="javascript:"></a>
+			<!-- <img src="../../src/images/crm/user-info.png" alt="" class="user-info"> -->
+			
+			<ul class="self-info-option clearfix">
+				<li class="self-info-option-li"><i class="num-count">5</i><a class="" href="javascript:">粉丝</a></li>
+				<li class="self-info-option-li"><i class="num-count">5</i><a href="javascript:">关注</a></li>
+				<li class="self-info-option-li"><i class="num-count">73</i><a href="javascript:">动态</a></li>
+			</ul>
+		</div>
+		<dl class="self-info-list">
+			<dt>联系方式</dt>
+			<dd>工作电话</dd>
+			<dd>手机号码</dd>
+			<dd>邮箱地址</dd>
+			<dd></dd>
+		</dl>
+		<dl class="self-info-list mt20">
+			<dt>自我介绍</dt>		
+		</dl>
+		<dl class="self-info-list mt20">
+			<dt>业务专长</dt>	
+		</dl>	
+	</div>
+	<div class="right-column bdn clearfix">
+		<div class="left">
+			
+			
+			<div class="main-content">
+				<!-- 右侧主要内容开始 -->
+				<div class="main-right-column ">
+					
+					<div class="widget mt20">
+						<div class="widget-title-cnt">
+							<h2 class="widget-title">我的直属上级</h2>
+						</div>
+						<div class="widget-cnt">
+							<ul class="widget-list">
+								<li class="widget-list-cell">如何给客户报价</li>
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="widget mt20">
+						<div class="widget-title-cnt">
+							<h2 class="widget-title">我的下属</h2>
+						</div>
+						<div class="widget-cnt">
+							<div class="img-box  clearfix">
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 左侧主要内容开始 右侧主要内容结束 -->
+				<div class="main-left-column">
+					<div class="left">
+						<div class="widget">
+							<div class="widget-cnt">
+								<div class="">
+									<ul class="nui-sub-nav  clearfix mb10">
+										<li class="nui-sub-nav-li "><span class="fonticon fs12" href="javascript:">&#x3506; 发布动态</span></li>
+									</ul>
+									<div class="nui-pub-info psr w100p clearfix">
+										<div class="nav-cell-arrow-info">
+											◆
+											<em>◆</em>
+										</div>
+										<i class="pub-info-tips right fonticon">&#x3574;</i>
+										<textarea class="nui-textarea-crm">去CIA拜访，确认业务推进</textarea>
+										<div class="nui-pub-info-footer clearfix">
+											<ul class="nui-pub-info-option">
+												<li class="pub-info-option-li"><a class="" href="javascript:"><i>&#x34ee;</i> 图片</a></li>
+												<li class="pub-info-option-li"><a class="" href="javascript:"><i>&#x34ee;</i> 文档</a></li>
+												<li class="pub-info-option-li"><a class="" href="javascript:"><i>&#x343b;</i> 话题</a></li>
+											</ul>
+											<div class="nui-pub-info-control clearfix">
+												<ul class="pub-info-control-sel">
+													<li class="pub-info-control-sel-cell active"><a href="javascript:">公开 <i class="fonticon">&#x3438;</i></a></li>
+													<li class="pub-info-control-sel-cell none"><a href="javascript:">公开</a></li>
+													<li class="pub-info-control-sel-cell none"><a href="javascript:">公开</a></li>
+													<li class="pub-info-control-sel-cell none"><a href="javascript:">公开</a></li>
+												</ul>
+												<a class="pub-info-control-btn" href="javascript:">发布</a>
+											</div>
+										</div>
+									</div>
+									<div class=""></div>
+								</div>
+							</div>
+						</div>
+						<div class="data-list-top">
+							<div class="clearfix">
+								<a class="data-list-top-link data-list-top-link-active" href="javascript:">全部动态</a>
+								<span>.</span>
+								<a class="data-list-top-link" href="javascript:">同事动态</a>
+							</div>
+						</div>
+						<div class="data-list-cell">
+							<img src="../../src/images/crm/tx1.jpg" class="user-img ">
+							<div class="data-list-cell-cnt">
+								<a href="javascript:">叶少</a>：<span>长荣11月22日大火围困的卡我的卡瓦达我看到到家啦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦<span>
+								
+							</div>
+							<div class="data-list-cell-footer clearfix">
+								<div class="data-list-cell-footer-option left">
+									<a href="javasript:"><i class="fonticon">&#x34d3;</i> 11小时前</a>
+									<a href="javasript:"><i class="fonticon">&#x351d;</i> 陈某某</a>
+								</div>
+								<a class="right" href="javascript:">评论</a>
+							</div>
+						</div>
+						<div class="data-list-cell">
+							<img src="../../src/images/crm/tx1.jpg" class="user-img ">
+							<div class="data-list-cell-cnt">
+								<a href="javascript:">叶少</a>：<span>长荣11月22日大火围困的卡我的卡瓦达我看到到家啦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦<span>
+								
+							</div>
+							<div class="data-list-cell-footer clearfix">
+								<div class="data-list-cell-footer-option left">
+									<a href="javasript:"><i class="fonticon">&#x34d3;</i> 11小时前</a>
+									<a href="javasript:"><i class="fonticon">&#x351d;</i> 陈某某</a>
+								</div>
+								<a class="right" href="javascript:">评论</a>
+							</div>
+						</div>
+						<div class="data-list-cell">
+							<img src="../../src/images/crm/tx1.jpg" class="user-img ">
+							<div class="data-list-cell-cnt">
+								<a href="javascript:">叶少</a>：<span>长荣11月22日大火围困的卡我的卡瓦达我看到到家啦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦<span>
+								
+							</div>
+							<div class="data-list-cell-footer clearfix">
+								<div class="data-list-cell-footer-option left">
+									<a href="javasript:"><i class="fonticon">&#x34d3;</i> 11小时前</a>
+									<a href="javasript:"><i class="fonticon">&#x351d;</i> 陈某某</a>
+								</div>
+								<a class="right" href="javascript:">评论</a>
+							</div>
+						</div>
+						<div class="data-list-cell">
+							<img src="../../src/images/crm/tx1.jpg" class="user-img ">
+							<div class="data-list-cell-cnt">
+								<a href="javascript:">叶少</a>：<span>长荣11月22日大火围困的卡我的卡瓦达我看到到家啦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦<span>
+								
+							</div>
+							<div class="data-list-cell-footer clearfix">
+								<div class="data-list-cell-footer-option left">
+									<a href="javasript:"><i class="fonticon">&#x34d3;</i> 11小时前</a>
+									<a href="javasript:"><i class="fonticon">&#x351d;</i> 陈某某</a>
+								</div>
+								<a class="right" href="javascript:">评论</a>
+							</div>
+						</div>
+						<div class="data-list-page"><span class="pageinfo">1-20条，共64条 </span><a href="javascript:nextPage();">下一页</a>
+							<a href="javascript:">尾页</a>
+						</div>
+					</div>
+				</div>
+					<!-- 左侧主要内容结束 -->
+			</div>
+
+		</div>
+	</div>
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

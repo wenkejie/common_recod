@@ -1,0 +1,53 @@
+<script>
+(function($){
+	$("#fsearch").fsearch({
+		items : [
+			{text:'姓名',name:'userName'},
+			{text:'生日',name:'birthday'},
+			{text:'性别',name:'sex'},
+			{text:'内容太长了，选中后只能截断',title:'内容太长了，选中后只能截断',name:'tolong'}
+		]
+	});
+
+	$("#fsearchplus").fsearch({
+ 		items : [
+					{text:'姓名',name:'userName'},
+					{text:'生日',name:'birthday',binding : function(input){
+							input.datepicker( );
+						}},
+					{text:'性别',name:'sex',binding : function(input){
+							input.fselect({
+								width: input.width(),
+								items:[{text:"-请选择-",value:''},{text:"女",value:0},{text:"男",value:1}]});
+							}},
+					{text:'内容太长了，选中后只能截断',title:'被你发现了，原来鼠标停留一会儿就会有提示。',name:'tolong'}
+				]
+			});
+})(jQuery);
+
+</script>
+
+max:<input value='4' onchange='$("#fsearch").fsearch("option","max",this.value)'/><br/>
+ 
+width : <input value='200' onchange='$("#fsearch").fsearch("option","width",this.value)'/><br/> 
+
+<table>
+	<tr>
+		<td>
+			我是最简单的高级查询，值都是输入框  <br/>
+			<div id='fsearch'></div>
+		</td>
+		<td>&nbsp;&nbsp;&nbsp;</td>
+		<td>
+			我比前面的厉害多了<br/>
+			<div id='fsearchplus'></div>
+		</td>
+	</tr>
+</table>
+
+
+
+ 
+
+
+ 

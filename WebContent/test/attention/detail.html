@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>弹出框</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js"></script>
+	<link href="http://cpcommon.600jit.com/fcommon/release/freight/css/common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+		$(function () {
+			// alert(fwindow.widget().fwindow("option","width"))
+			// alert(fwindow.widget().fwindow("option","height"))
+			var ie6 = ie7 =false;
+			if (document.all) {/* ie */
+				ie6 = /MSIE 6./i.test(navigator.userAgent);
+				ie7 = /MSIE 7./i.test(navigator.userAgent);
+			}
+			var ie67 = ie6 || ie7 ;
+
+			var $datecon = $('#js-dateCon');
+			var $del = $('#js-del');
+			var conheight = $datecon.find('table').height();
+			var scrollheight = $datecon.height();
+			var h = $datecon.height();
+
+			$datecon.delegate('.more', 'click', function() {
+				var $cell = $(this).parent().parent().find('.fui-date-list-cell');
+				var classname = 'fui-date-list-cell-hover';
+				// console.log($cell)
+				if($cell.hasClass(classname)){
+					$cell.removeClass(classname);
+					$(this).children().removeClass('icon-s-arrow-top');
+					$datecon.removeClass('zoom1');//ie8 不会重绘bug
+				}else{
+					$cell.addClass(classname)
+					$(this).children().addClass('icon-s-arrow-top')
+					$datecon.addClass('zoom1');//ie8 不会重绘bug
+				}
+				//修正ie6 ie7下滚动条覆盖内容的问题
+				if( !ie67 ){
+					h < $datecon.find('table').height() ? $('#js-pd').css('margin-right', '-17px') : $('#js-pd').attr("style","");
+				}
+				
+			})
+			.delegate('li', 'mouseenter', function() {
+					
+					$(this).addClass('hover')
+				})
+			.delegate('li', 'mouseleave', function() {
+					$(this).removeClass('hover')
+			})
+			.delegate('.close', 'click', function() {
+				// $(this).addClass('none')
+				// $('#js-date').remove();
+				$(this).parent().parent().hide(300,function(){
+					var $tr = $(this).parents('tr');
+					$(this).siblings().length < 4  && $tr.find('.more').hide();
+					$(this).siblings().length < 1  && $tr.remove();
+
+					
+						// console.log($(this).siblings().length);
+					$(this).remove();
+					// $(this).remove();
+				});
+				return false;
+			})
+		})
+	</script>
+</head>
+<body>
+<div class="fui-dialog-cnt">
+
+	<table class="fui-date-list-table">
+		<thead>
+			<tr class="fui-date-list-head">
+				<th width="90">航线</th>
+				<th >目的港</th>
+			</tr>
+		</thead>
+	</table>
+
+	<div class="fui-date-list" id="js-dateCon">
+		<div id="js-pd">
+		<table class="fui-date-list-table">
+		<tbody>
+			<tr>
+				<td width="90" class="fwb vat"><div class="toe oneline w100p">中美dddddddddddddddd线</div></td>
+				<td><ul class="fui-date-list-cell">
+					<li><div class="cell"><a href="javascript:">ABU AL </a><a href="javascript" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					
+				</ul></td>
+				<td width="50" class="vat"><a href="javascript:" class="more"><s class="icon-s-arrow-bottom mr0"></s>更多</a>&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="90" class="fwb vat"><div class="toe oneline w100p">中美dddddddddddddddd线</div></td>
+				<td><ul class="fui-date-list-cell">
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					
+				</ul></td>
+				<td width="50" class="vat"><a href="javascript:" class="more"><s class="icon-s-arrow-bottom mr0"></s>更多</a>&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="90" class="fwb vat"><div class="toe oneline w100p">中美dddddddddddddddd线</div></td>
+				<td><ul class="fui-date-list-cell">
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					
+				</ul></td>
+				<td width="50" class="vat"><a href="javascript:" class="more"><s class="icon-s-arrow-bottom mr0"></s>更多</a>&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="90" class="fwb vat"><div class="toe oneline w100p">中美dddddddddddddddd线</div></td>
+				<td><ul class="fui-date-list-cell">
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					
+				</ul></td>
+				<td width="50" class="vat"><a href="javascript:" class="more"><s class="icon-s-arrow-bottom mr0"></s>更多</a>&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="90" class="fwb vat"><div class="toe oneline w100p">中美dddddddddddddddd线</div></td>
+				<td><ul class="fui-date-list-cell">
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					
+				</ul></td>
+				<td width="50" class="vat"><a href="javascript:" class="more"><s class="icon-s-arrow-bottom mr0"></s>更多</a>&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="90" class="fwb vat"><div class="toe oneline w100p">中美dddddddddddddddd线</div></td>
+				<td><ul class="fui-date-list-cell">
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					<li><div class="cell"><a href="javascript:">ABU AL BUKddddddddddddddHOOSH</a><a href="#" class="close">×</a></div></li>
+					
+				</ul></td>
+				<td width="50" class="vat"><a href="javascript:" class="more"><s class="icon-s-arrow-bottom mr0"></s>更多</a>&nbsp;</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	</div>
+</div>
+	
+<!-- <ul class="pagination-big mt15">
+	<li><a href="javascript:" class="disable">上一页</a></li>
+	<li><a href="javascript:" class="active">1</a></li>
+	<li><a href="javascript:">2</a></li>
+	<li><a href="javascript:">3</a></li>
+	<li>...</li>
+	<li><a href="javascript:">12</a></li>
+	<li><a href="javascript:">13</a></li>
+	<li><a href="javascript:">13</a></li>
+	<li>...</li>
+	<li><a href="javascript:">下一页</a></li>
+	<li><a href="javascript:">最后</a></li>
+	<li><label for="gotoPage" class="ml10 mr5">去第</label><div class="fui-form-cell mr0"><input class="fui-input" id="gotoPage" /></div><span class="ml5">页</span></li>
+</ul> -->
+<ul class="pagination-big mt15">
+	<!-- <li><a href="javascript:" class="disable">上一页</a></li> -->
+	<li><a href="javascript:" class="active">1</a></li>
+	<li><a href="javascript:">2</a></li>
+	<li><a href="javascript:">3</a></li>
+	<li><a href="javascript:">4</a></li>
+	<li><a href="javascript:">5</a></li>
+	<li><a href="javascript:">6</a></li>
+	<li><a href="javascript:">下一页</a></li>
+	<!-- <li><label for="gotoPage" class="ml10 mr5">去第</label><div class="fui-form-cell mr0"><input class="fui-input" id="gotoPage" /></div><span class="ml5">页</span></li> -->
+</ul>
+</div>
+
+
+</body>
+</html>

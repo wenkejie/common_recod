@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>员工管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common.css"/>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<link rel="stylesheet" href="../../release/freight/css/zTreeStyle/zTreeStyle.css" />
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../release/freight/js/jquery.ztree.all-3.5.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="headNav.js"></script>
+	<!-- 用于底部公共框ie6定位的js -->
+	<script type="text/javascript" src="nui-msg-content.js"></script>
+
+	<script>
+
+	(function($) {
+		$.fn.scrollfix = function() {
+			var offset = $(this).offset();
+			var that = $(this);
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > offset.top) {
+					that.addClass('scroll-fixed');
+				} else {
+					that.removeClass('scroll-fixed')
+				}
+			})
+		}
+	})(jQuery);
+
+		$(function() {
+
+
+			$('div.rule-select').delegate('a', 'click', function() {
+				if ($(this).is(".rule-select-selected")) {
+					$(this).removeClass('rule-select-selected');
+				} else {
+					$(this).addClass('rule-select-selected');
+				}
+
+			});
+
+
+
+			$('div.result-fn-area').delegate('button.nui-btn', 'click', function(){
+				// console.log($(this).is('a.nui-btn-disable'));
+				// $('div.nui-drop-list').addClass('none');
+				if (!$(this).is('button.nui-btn-disable')) {
+					// console.log($(this).parent().children('div.nui-drop-list'));
+					$(this).parent().children('div.nui-drop-list').removeClass('none');
+					return false;
+				}
+			})//选择操作，by;Evan
+
+
+			$('table.result-table').delayhover(
+				"ul.slide-down-menu",
+				function() {
+					$(this).addClass('slide-down-menu-hover').find('li').addClass('block').end().find('s').addClass('hide');
+				}, function() {
+					$(this).removeClass('slide-down-menu-hover').find('li').removeClass('block').end().find('s').removeClass('hide');
+
+				}
+			)
+
+			// 表头按钮的下拉操作
+			$('div.result-fn-area-port').delegate('button.nui-btn', 'click', function(){
+				// console.log($(this).is('a.nui-btn-disable'));
+				$('div.nui-drop-list').addClass('none');
+				if (!$(this).is('a.nui-btn-disable')) {
+					$(this).parent().children('div.nui-drop-list').removeClass('none');
+					return false;
+				}
+
+			});
+
+
+			$("div.nui-drop-list").delegate("#j-thisPage", "click", function(){
+				// $(this).parent().parent().parent().prev().children('em').text($(this).text());
+				$(this).parent().parent().parent().prev().children('s.icon-fir').removeClass('icon-thr').addClass('icon-sec');
+			})
+
+			$("div.nui-drop-list").delegate("#j-All", "click", function(){
+				// $(this).parent().parent().parent().prev().children('em').text($(this).text());
+				$(this).parent().parent().parent().prev().children('s.icon-fir').removeClass('icon-sec').addClass('icon-thr');
+			})
+
+
+			$("div.nui-drop-list-replace").delegate("li", "click", function(){
+				console.log("ccc");
+				$(this).parent().parent().prev().children('em').text($(this).text());
+
+			})
+
+
+			$('#jselAll').click(function() {
+				// console.log($('input.item').checked);
+				var $checkbox = $('input.item');
+
+				if (this.checked) {
+					$checkbox.prop({
+						"checked":true
+					});
+					
+					$('table.result-table').children('tbody').prepend('<tr><td class="selectwhole" colspan="5"><span>已勾选本页 25 个选项</span>，<a id="jWhole" href="javascript:">勾选表格中全部955个选项</a></td></tr>');
+					// $(this).parent().parent().parent().append('<tr><th colspan="7">dawdawd</th></tr>');
+				}else{
+					// console.log("ccc");
+					removeChecked();
+					$checkbox.prop({
+						"checked":false
+					});
+				}
+			});//表头全选框，by：Evan
+			// 移除选择条
+			
+			function removeChecked(){
+				$('td.selectwhole').parent().remove();
+					
+			}
+				
+			$(document).click(function() {
+				// console.log("ccc");
+				$('div.nui-drop-list').addClass('none');
+				// $('div.form-list-thr').find('ul.input-form-list').hide();	
+			});//点其他位置时让tips消失
+
+
+$('table.result-table').delegate('li.set-power', 'click', function() {
+
+							var that = $(this);
+							var htmlWin;
+							htmlWin = fwindow.create({
+								title: "权限配置",
+								width:700,
+								content: '<div class="pd20 tal"><div class="pl10 mb40"> <i class="icon-title">&#13398</i> <strong class="mr20">常用权限组</strong> <a href="javascript:" class="mr10 nui-btn">查询全部运价</a> <a href="javascript:" class="mr10 nui-btn">查询全部运价</a> <a href="javascript:" class="mr10 nui-btn">查询全部运价</a> </div> <!-- <div class="rule-select"> <a href="javascript:" class="rule-select-cell">查询全部运价</a> <a href="javascript:" class="rule-select-cell" title="Ningboffffffffffffffff">海运整箱查询</a> <a href="javascript:" class="rule-select-cell rule-select-cell-dashed"> + 增加</a> </div> --> <div class="step-grid"> <div class="title"> <h2>选择产品</h2> <span>选择后，此产品对应的许可数会被占用。</span> </div> <div class="step-con"> <div class="rule-select"> <div class="rule-select-port clearfix"><a href="javascript:" class="rule-select-cell-single">运价通</a><div class="fui-tips fui-tips-com dpib pd5 none"><em></em><span class="rule-select-port-span">内部维护帐号可用许可<i>555</i>个</span></div></div> <div class="rule-select-port clearfix"><a href="javascript:" class="rule-select-cell-single" title="">CRM</a><div class="fui-tips fui-tips-com dpib pd5 none"><em></em><span class="rule-select-port-span">内部维护帐号可用许可<i>555</i>个</span></div></div> </div> </div> <div class="step-num">1</div> </div> <div class="step-grid"> <div class="title"> <h2>选择功能模块</h2> <span>可根据实际需求分配特定的功能模块</span> </div> <div class="step-con step-con-two  step-con-hide"> <div class="rule-select"> <a href="javascript:" class="rule-select-cell rule-select-cell-mchoice">海运整箱</a> <a href="javascript:" class="rule-select-cell rule-select-cell-mchoice" title="Ningboffffffffffffffff">海运拼箱</a> <a href="javascript:" class="rule-select-cell rule-select-cell-mchoice">运价关注</a> <a href="javascript:" class="rule-select-cell rule-select-cell-mchoice rule-select-cell-disable">手机短信提醒</a> </div> </div> <div class="step-num">2</div> </div> <div class="step-grid"> <div class="title"> <h2>维护功能模块权限</h2> <span>可对已经选择的功能模块对权限进行细节调整</span> </div> <div class="step-con step-con-thr step-con-hide"> <table class="params-list table-fir none"> <thead> <tr> <th colspan="4"><span class="title">海运整箱-运价查询</span> </th> </tr> </thead> <tbody> <tr> <td width="15"><input type="checkbox" name="items" id="" /></td> <td class="params-list-title">航线控制</td> <td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td> <td class="action"></td> </tr> <tr> <td><input type="checkbox" name="items" id="" /></td> <td class="params-list-title">运价等级控制</td> <td class="params-list-des">设置后，客户根据所指定的运价等级显示相应价格</td> <td class="action"></td> </tr> </tbody> </table> <table class="params-list table-sec none"> <thead> <tr> <th colspan="4"><span class="title">海运整箱-运价查询</span></th> </tr> </thead> <tbody> <tr> <td width="15"><input type="checkbox" name="items" id="" /></td> <td class="params-list-title">航线控制</td> <td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td> <td class="action"></td> </tr> </tbody> </table> <table class="params-list table-thr none"> <thead> <tr> <th colspan="4"><span class="title">海运整箱-运价查询</span> <a id="" class="selectall" href="javascript:">全选</a> / <a id="" class="reverse" href="javascript:">反选</a></th> </tr> </thead> <tbody> <tr> <td width="15"><input type="checkbox" name="items" id="" /></td> <td class="params-list-title">航线控制</td> <td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td> <td class="action"></td> </tr> </tbody> </table> <table class="params-list table-fou none"> <thead> <tr> <th colspan="4"><span class="title">海运整箱-运价查询</span></th> </tr> </thead> <tbody> <tr> <td width="15"><input type="checkbox" name="items" id="" /></td> <td class="params-list-title">航线控制</td> <td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td> <td class="action"></td> </tr> </tbody> </table> </div> <div class="step-num">3</div> </div> <div class="step-grid"> <div class="title"> <h2>设定查询规则</h2> <span>可通过规则配置对数据进行分类控制</span> </div> <div class="step-con step-con-fou step-con-hide"> <table class="params-list"> <tbody> <tr> <td class="params-list-title">航线控制</td> <td >未启用</td> <td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td> <td class="action"><button class="nui-btn nui-btn-20 nui-btn-primary">设置</button></td> </tr> <tr> <td class="params-list-title">运价等级控制</td> <td>未启用</td> <td class="params-list-des">设置后，客户根据所指定的运价等级显示相应价格</td> <td class="action"><button class="nui-btn nui-btn-20 nui-btn-primary">设置</button></td> </tr> <tr> <td class="params-list-title">运价等级控制</td> <td><span class="text-success">已设置</span></td> <td class="params-list-des">VIP一级运价查询（运价规则名称）</td> <td class="action"><button class="nui-btn nui-btn-20 nui-btn-primary">修改</button></td> </tr> </tbody> </table> </div> <div class="step-num">4</div> </div> <div class="step-grid step-grid-last"> <div class="step-con pd0"> <button class="nui-btn nui-btn-primary nui-btn-36 nui-btn-disable" id="j-powerSave">保存设置</button> <button class="nui-btn nui-btn-36 " id="j-windowClose">取消设置</button> </div> <div class="step-num step-num-last"><i class="">&#x34e3;</i></div> </div></div>',
+								draggable: false
+
+							})
+							
+
+							$('#j-powerSave').click(function() {
+								htmlWin.fwindow("close");
+								showRetrunMessage("权限配置成功");
+								return true;
+							});
+							$(htmlWin).find("#j-windowClose").click(function() {
+								htmlWin.fwindow("close");
+								return true;
+							});
+						
+				$('div.rule-select').delegate('a.rule-select-cell-mchoice', 'click', function() {
+
+				var i = $(this).index();
+
+				if (!$(this).is('a.rule-select-cell-disable')) {
+					// $('div.step-num-sec').addClass('step-num-on');
+					if (!$(this).is('a.rule-select-selected')) {
+						$(this).addClass('rule-select-selected');
+						$('table.params-list:eq('+i+')').removeClass('none');
+					}else{
+						$(this).removeClass('rule-select-selected');
+						$('table.params-list:eq('+i+')').addClass('none');
+					};
+					$('div.step-num:eq(1)').addClass('step-num-on');
+
+					$('div.step-con-thr').removeClass('step-con-hide');
+			
+
+				};
+				// console.log($(this).index());
+
+				
+
+
+			});
+
+			$('div.rule-select').delegate('a.rule-select-cell-single', 'click', function() {
+				
+				// $('div.step-num-fir').addClass('step-num-on');
+			
+				// $('a.rule-select-cell-single').removeClass('rule-select-selected');
+				if (!$(this).is('a.rule-select-selected')) {
+						$(this).addClass('rule-select-selected');
+						$('div.step-num:eq(0)').addClass('step-num-on');
+						// $('div.fui-tips').addClass('none');
+						$(this).next().removeClass('none');
+						$('div.step-con-two').removeClass('step-con-hide');
+					}else{
+						$(this).removeClass('rule-select-selected');
+						$(this).next().addClass('none');
+						
+					};
+				
+				
+			});
+
+
+			$('li.left-side-menu-tag').delegate('a', 'click', function() {
+				$('a.left-side-menu-tag-a').removeClass('tag-active');
+				$(this).addClass('tag-active');
+			});
+
+    
+			$('table.params-list').delegate('a.selectall', 'click', function() {
+				$('#j-powerSave').removeClass('nui-btn-disable');
+				$('div.step-con-fou').removeClass('step-con-hide');
+
+				// $('div.step-num-thr').addClass('step-num-on');
+				$('div.step-num:eq(2)').addClass('step-num-on');
+
+				$(this).parents("table.params-list").find("input[name='items']").each(function(){
+
+			        this.checked = true;
+			    });
+			});//全选
+
+			$("input[name='items']").click(function() {
+				$('div.step-con-fou').removeClass('step-con-hide');
+				// $('div.step-num-thr').addClass('step-num-on');
+				$('div.step-num:eq(2)').addClass('step-num-on');
+				$('#j-powerSave').removeClass('nui-btn-disable');
+			})//为了实现步骤计数，by：Evan
+
+			$('td.action').delegate('button', 'click', function() {
+				// $('div.step-num-fou').addClass('step-num-on');
+				$('div.step-num:eq(3)').addClass('step-num-on');
+			});
+
+			 
+			 
+
+			$('table.params-list').delegate('a.reverse', 'click', function() {
+				$('div.step-con-fou').removeClass('step-con-hide');
+				$('#j-powerSave').removeClass('nui-btn-disable');
+				$(this).parents("table.params-list").find("input[name='items']").each(function(){
+
+			           if (this.checked) {
+			               this.checked = false;
+			           }
+			           else {
+			               this.checked = true;
+			           }
+			  		})
+			})//全选
+				});
+
+
+
+
+		})
+
+		
+
+
+
+
+
+	</script>
+	<script type="text/javascript">
+	<!--
+
+
+	var setting = {
+		view: {
+			selectedMulti: false,
+			showIcon:false,
+			fontCss: setFontCss
+		},
+		edit: {
+			enable: true,
+			editNameSelectAll: true,
+			showRemoveBtn: false,
+			showRenameBtn: false
+		},
+		data: {
+			keep: {
+				parent:true,
+				leaf:false
+			},
+			simpleData: {
+				enable: true
+			}
+		},
+		callback: {
+			beforeRemove: beforeRemove,
+			beforeRename: beforeRename,
+			onClick: onClick
+			//onRemove: onRemove
+		}
+	};
+
+	var zNodes =[
+	 			{ id:1, pId:0, name:"奥林网络科技", open:true},
+	 			{ id:11, pId:1, name:"总经办",open:true},
+	 			{ id:12, pId:11, name:"综合部"},
+	 			{ id:13, pId:11, name:"销售部"},
+	 			{ id:2, pId:11, name:"技术部", open:true},
+	 			{ id:21, pId:2, name:"平台组"},
+	 			{ id:22, pId:2, name:"订舱组"},
+	 			{ id:23, pId:2, name:"运价组"},
+	 			{ id:3, pId:11, name:"客服部", open:true},
+	 			{ id:31, pId:3, name:"售前"},
+	 			{ id:32, pId:3, name:"售中"},
+	 			{ id:33, pId:3, name:"售后"}
+	 		];
+	var log, className = "dark";
+	function beforeRemove(treeId, treeNode) {
+		className = (className === "dark" ? "":"dark");
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+		zTree.selectNode(treeNode);
+		if(treeNode.level > 0){
+			return confirm("确认删除部门--" + treeNode.name + " 吗？");
+		}else{
+			alert("根节点不能为删除.");
+			return false;
+		}
+	}
+	function beforeRename(treeId, treeNode, newName) {
+		if (newName.length == 0) {
+			alert("节点名称不能为空.");
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			setTimeout(function(){zTree.editName(treeNode)}, 10);
+			return false;
+		}
+		changeIName(newName);
+		return true;
+	}
+
+	var newCount = 1;
+	function add(e) {
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+		isParent = e.data.isParent,
+		nodes = zTree.getSelectedNodes(),
+		treeNode = nodes[0];
+		if (treeNode) {
+			treeNode = zTree.addNodes(treeNode, {id:(100 + newCount), pId:treeNode.id, isParent:isParent, name:"new node" + (newCount++)});
+		} else {
+			treeNode = zTree.addNodes(null, {id:(100 + newCount), pId:0, isParent:isParent, name:"new node" + (newCount++)});
+		}
+		if (treeNode) {
+			zTree.editName(treeNode[0]);
+			changeIName(treeNode[0].name)
+		} else {
+			alert("叶子节点被锁定，无法增加子节点");
+		}
+	};
+	function edit() {
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+		nodes = zTree.getSelectedNodes(),
+		treeNode = nodes[0];
+		if (nodes.length == 0) {
+			alert("请先选择一个节点");
+			return;
+		}
+		zTree.editName(treeNode);
+	};
+	function remove(e) {
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+		nodes = zTree.getSelectedNodes(),
+		treeNode = nodes[0];
+		var pNode = treeNode.getParentNode();
+		if (nodes.length == 0) {
+			alert("请先选择一个节点");
+			return;
+		}
+		zTree.removeNode(treeNode, true);
+		zTree.selectNode(pNode);
+		changeIName(pNode.name);
+	};
+	function onClick(event, treeId, treeNode, clickFlag) {
+		changeIName(treeNode.name);
+	}	
+	
+	function changeIName(name){
+		$("#main_title_user").text(name);
+	}
+
+	function setFontCss(treeId, treeNode) {
+
+	return  treeNode.isParent ? {'font-weight':'bold'} :{};
+	};
+	
+	$(document).ready(function(){
+		$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		var zTree_Menu = $.fn.zTree.getZTreeObj("treeDemo");
+		var curMenu = zTree_Menu.getNodes()[0];
+		zTree_Menu.selectNode(curMenu);
+		changeIName(curMenu.name);
+		$("#addLeaf").bind("click", {isParent:false}, add);
+		$("#edit").bind("click", edit);
+		$("#remove").bind("click", remove);
+	});
+	//-->
+	</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap staff-con">
+
+		
+			<div class="left-side">
+				<h2 class="left-side-title"><i>&#13714;</i> 部门管理</h2>
+				<div class="nui-group-btn ml15 mb15">
+					<button id="addLeaf" class="nui-btn nui-btn-28" onclick="return false;"><i class="fs14">&#13577</i> 新增</button>
+					<button class="nui-btn nui-btn-28" id="edit" onclick="return false;"><i class="fs14">&#13364;</i> 修改</button>
+					<button id="remove" class="nui-btn nui-btn-28" onclick="return false;"><i class="fs14">&#13540;</i> 删除</button>
+					</div>
+					<div class="zTreeDemoBackground ml10">
+						<ul id="treeDemo" class="ztree"></ul>
+					</div>
+			</div>
+			<div class="right-side ">
+				<div class="main-title">
+					<h1 class="" id="main_title_user">华东分公司 - 销售部</h1>
+					<!--<div class="main-title-des"><i>&#13683</i> 成员120个，部门3个</div>-->
+				</div>
+				
+				
+				<div class="search-area-grid">
+				<div class="grid">
+					<label for="username"  class="nui-label w50">姓名：</label>
+					<div class="nui-form-cell w80  mr5">
+						<input type="text" id="username" class="nui-input" />
+					</div>
+					<label for="companyname"  class="nui-label w50">手机：</label>
+					<div class="nui-form-cell w100  mr5">
+					<input type="text" id="companyname"  class="nui-input"/>
+					</div>
+					<label for="email" class="nui-label w50">邮箱：</label>
+					<div class="nui-form-cell w120  mr5">
+					<input type="text" id="email"  class="nui-input"/>
+					</div>
+					<span id="j-toggle">
+						<button class="nui-btn " onclick="searchData()">搜 索</button>
+					</span>
+				</div>
+		
+
+			</div>
+				
+				<!--  <div class="grid">
+					<div class="right">
+						<div class="nui-form-cell nui-select w200">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" class="nui-input" placeholder="搜索成员、部门、分公司"  />
+									<i class="nui-form-cell-icon fs12">&#13661</i>
+								</div>
+							</div>
+					</div>
+				</div>-->
+
+			<div class="result-area">
+	
+			<div class="result-fn-area">
+
+				<button class="nui-btn "><i class="fs12">&#13734</i> 新增</button>
+				<button class="nui-btn">删除</button>
+				<button class="nui-btn">设置所在部门</button>
+				<div class="result-fn-area-port">
+					<button class="nui-btn"><em>批量操作</em> <i class="icon-down-arrow">&#x3438;</i></button>
+					<div class="nui-drop-list none">
+						<ul class="nui-drop-list-choose oneline">
+							<li><a href="javascript:">设置权限</a></li>
+							<li><a href="javascript:">启用控制</a></li>
+							<li><a href="javascript:">取消控制</a></li>
+						</ul>
+					</div>
+				</div>
+				<a href="importStaff.shtml" class="nui-btn"><i>&#13716</i> 导入成员</a>
+	
+
+
+
+<!-- 				<a href="javascript:" class="nui-btn"><input type="checkbox" name="items" id="" />全选</a>
+				<a href="javascript:" class="nui-btn">批量操作</a>
+				<a href="javascript:" class="nui-btn nui-btn-disable">批量操作</a>
+				<a href="javascript:" class="nui-btn">批量操作</a> -->
+			</div>
+			<table class="result-table">
+				<thead>
+					<tr>
+						<th class="checkbox"><input id="jselAll" type="checkbox" name="" id="" title="选中/取消选中" /></th>
+						<th class="name">姓名 | 用户名</th>
+						<th>手机 | 邮箱</th>
+						<th class="company">企业名称</th>
+						<th class="action">操作</th>
+					</tr>
+				</thead>
+			
+				<tbody>
+				<tr><td class="checkbox"><input type="checkbox" class="item" value="13" id="checkbox" name="checkbox"></td><td>alningbo<p class="sub-info"><span class="sub-info-tag">用户名：</span>alningbo</p></td><td>111<p class="sub-info"><a href="mailto:464753600@qq.com">464753600@qq.com</a></p></td>
+					<td>啊啦宁波测试外部查询公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="../../test/fuserManagement/staffDetails.shtml">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td>
+					</tr>
+					<tr><td class="checkbox"><input type="checkbox" class="item"  value="17" id="checkbox" name="checkbox"></td><td>charlesZhang<p class="sub-info"><span class="sub-info-tag">用户名：</span>charles</p></td><td>13336665553<p class="sub-info"><a href="mailto:charles@li-ling.com">charles@li-ling.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr class="split"><td class="checkbox"><input type="checkbox"  class="item"  value="18" id="checkbox" name="checkbox"></td><td>李玲玲<p class="sub-info"><span class="sub-info-tag">用户名：</span>553670</p></td><td><p class="sub-info"><a href="mailto:cus@li-ling.com">cus@li-ling.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr><td class="checkbox"><input type="checkbox"  class="item"  value="19" id="checkbox" name="checkbox"></td><td>陈明<p class="sub-info"><span class="sub-info-tag">用户名：</span>553671</p></td><td><p class="sub-info"><a href="mailto:op@li-ling.com">op@li-ling.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr class="split"><td class="checkbox"><input class="item"  type="checkbox" value="20" id="checkbox" name="checkbox"></td><td>姚健<p class="sub-info"><span class="sub-info-tag">用户名：</span>559459</p></td><td>15158322619<p class="sub-info"><a href="mailto:402706147@qq.com">402706147@qq.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr><td class="checkbox"><input type="checkbox" class="item"  value="21" id="checkbox" name="checkbox"></td><td>叶凌云<p class="sub-info"><span class="sub-info-tag">用户名：</span>553668</p></td><td>13884460048<p class="sub-info"><a href="mailto:cus@li-ling.com">cus@li-ling.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr class="split"><td class="checkbox"><input type="checkbox" class="item"  value="22" id="checkbox" name="checkbox"></td><td>蔡双霞<p class="sub-info"><span class="sub-info-tag">用户名：</span>552664</p></td><td>15606608516<p class="sub-info"><a href="mailto:237862023@qq.com">237862023@qq.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr><td class="checkbox"><input type="checkbox" class="item"  value="23" id="checkbox" name="checkbox"></td><td>唐毅丰<p class="sub-info"><span class="sub-info-tag">用户名：</span>552669</p></td><td>13989305322<p class="sub-info"><a href="mailto:814348369@qq.com">814348369@qq.com</a></p></td><td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li"></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr></tbody>
+			</table>
+			<div class="result-footer">
+				<div class="page"><input type="hidden" value="1" name="pageNo" id="pageNo"><span class="pageInfo">1-30条，共1615条</span> <a href="javascript:nextPage();">下一页</a> <a href="javascript:buildData(54);">尾页</a></div>
+		  </div>
+		</div>	
+
+		
+	</div>
+	</div>
+<!--#include file="footer.html"-->
+<div class="nui-msg">
+	<div class="nui-msg-head">
+		<h3 class="msg-head-info">更新公告</h3>
+		<a class="msg-close" href="javascript:">×</a>
+	</div>
+	<div class="nui-msg-body">
+		<h3 class="msg-body-title orange">6月30日 22:00 更新公告</h3>
+		<div class="msg-body-summary">
+			本次更新共计2小时，预计24点更新完毕，网站可以正常使用。
+		</div>
+	</div>	
+</div>
+</body>
+</html>

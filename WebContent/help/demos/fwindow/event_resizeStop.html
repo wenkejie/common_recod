@@ -1,0 +1,31 @@
+<script>
+(function($){
+	$.extend({
+		openWin : function(){
+			fwindow.create({
+				title : "我的窗口内容无法自适应",
+				url : "demos/fwindow/subwin.html",
+				resizeable : true,
+				maxable : true  
+			});
+		},
+		openFitWin :function(){
+			fwindow.create({
+				title : "我可以，哈哈",
+				url : "demos/fwindow/subwin.html",
+				resizeable : true,
+				maxable : true ,
+				resizeStop : function(event,ui){
+					ui.self.$.myResize(ui);
+				} 
+			});
+		}
+	});
+})(jQuery);
+</script>
+当打开窗口的内容不能自适应大小时，需要用js控制。
+
+<button onclick='$.openWin()'>我的窗口内容无法自适应</button>
+
+<button onclick='$.openFitWin()'>我可以，哈哈</button>
+

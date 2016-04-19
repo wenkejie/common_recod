@@ -1,0 +1,34 @@
+<script>
+(function($){
+ 	var arr = [];
+	for(var i=0;i<10;i++){
+		arr[i] = {text:"显示   " + i,value:i,other:"其他的值 "+i};
+	}
+
+	
+ 	$("#fSelectTest").fselect({
+ 		items : arr   
+ 	 }) ;
+
+	$.extend({
+			myClear : function(){
+				$("#fSelectTest").fselect("clear");
+			},
+			myAdd : function(){
+				$(arr).each(function(i,item){
+					$("#fSelectTest").fselect("add",item);
+				});
+			}
+		});
+})(jQuery);
+
+</script>
+
+ 
+ <input id='fSelectTest'/>
+ 
+ <button onclick='$.myClear()'>我变</button>
+ <button onclick='$.myAdd()'>我再变</button>
+
+
+ 

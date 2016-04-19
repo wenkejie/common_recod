@@ -1,0 +1,77 @@
+//=======================================================
+// ================== 01j项目聊天角落新增 =================
+// =======================================================
+
+.talking-corner{
+	position: relative;
+	text-align: right;
+}
+
+.talking-corner-btn{
+	display: inline-block;
+	width: 69px;height: 17px;
+	background-image: url(../../../release/freight/images/unicom-freight/talk-icon.png);
+	background-position: -17px -35px;
+}
+
+.talking-corner-group{
+	position: absolute;left: 0;top: 16px;z-index: 99;
+	// width: 110px;
+	width: 130px;
+	max-height: 140px;overflow-y: auto;overflow-x: hidden;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 3px 8px rgba(0,0,0,.25);
+	text-align: left;
+}
+
+.talking-corner-cell{
+	height: 28px;line-height: 28px;
+	padding-left: 28px;
+
+	span{
+		&:extend(.toe all);
+		display: block;
+		width: 100%;
+	}
+	em{
+		margin-left: 5px;
+		color: #666;
+	}
+	&:hover{
+		background-color: #efefef;
+		cursor: pointer;
+		span{
+			color: #1c8ddc;
+		}
+	}
+}
+
+.talking-name{
+	// background-color: #fff;
+}
+
+.talking-icon{
+	float: left;*display: inline;
+	width: 17px;height: 16px;
+	margin-left: -23px;margin-top: 6px;
+	// background-color: #efefef;
+	background-image: url(../../../release/freight/images/unicom-freight/talk-icon.png);
+	background-position: -38px -9px;
+	text-align: center;color: #9f9f9f;font-size: 18px;
+	&.online{
+		// color: #1c8ddc;
+		background-position: -17px -9px;
+	}
+}
+
+
+.talking-corner-header{
+	position: absolute;right: 120px;top: 30px;z-index: 1;
+}
+
+.talking-corner-btn2{
+	background-position: -17px -130px;
+}
+
+

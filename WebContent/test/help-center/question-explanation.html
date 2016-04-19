@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>常见问题展开页</title>
+	<!-- <link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" /> -->
+	<link rel="stylesheet" type="text/css" href="../../release/freight/css/help-center/hcommon.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/help-center/help-center.js"></script>
+	<script>
+		$(function() {
+			var $tabMenu = $('li.help-tab-menu-cell');
+			var $tabCnt = $('div.help-tab-cnt');
+			$tabMenu.click(function() {
+				var index = $(this).index();
+				$tabMenu.removeClass("help-tab-menu-active");
+				$(this).addClass('help-tab-menu-active');
+				$tabCnt.hide().eq(index).show();
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrap-head">
+			<div class="wrap-head-area">
+				
+				<div class="head-left">
+					<div class="logo"></div>
+					<h1 class="title"><span>运价通帮助中心</span></h1>
+				</div>
+			</div>
+			<div class="wrap-head-nav">
+				<ul class="left clearfix">
+					<li class="nav-cell"><a class="nav-cell-a nav-cell-a-active" href="index.html">首页</a></li>
+					<li class="nav-cell"><a class="nav-cell-a" href="question-index.html">常见问题</a></li>
+				</ul>
+				<a class="wrap-head-nav-goto" href="javascript:">新手引导教学 >></a>
+			</div>
+			<div class="search-area clearfix">	
+				<div class="search-cell">
+					<input type="text" class="search-cell-input" id="" placeholder="请输入问题关键字；如：运价导入" />
+				</div>
+				<a class="search-btn" href="javascript:">搜索</a>
+			</div>
+		</div>
+		<div class="wrap-content">
+			<div class="left-column">
+				<div class="sidebar-weight">
+					<dl class="sidebar-weight-box">
+						<dt class="sidebar-weight-title">
+							常见问题分类
+						</dt>
+						<dd class="sidebar-weight-cell">
+							<a class="slide-down  slide-down-open" href="javascript:">
+								<i>&#x35a7;</i> <span>新用户注册</span>
+							</a>
+							<ol class="slide-down-menu">
+								<li><a class="slide-down-menu-a slide-down-menu-a-active" href="javascript:"><i>&#x344c;</i>介绍</a></li>
+								<li><a class="slide-down-menu-a" href="javascript:"><i>&#x344c;</i>网站注册</a></li>
+							</ol>
+						</dd>
+						<dd class="sidebar-weight-cell">
+							<a class="slide-down" href="javascript:">
+								<i>&#x35a6;</i> <span>交易须知</span>
+							</a>
+							<ol class="slide-down-menu">
+								<li><a href="javascript:"></a></li>
+							</ol>
+						</dd>
+						<dd class="sidebar-weight-cell-last">
+							<a class="slide-down" href="javascript:">
+								<i>&#x35a6;</i> <span>交易须知</span>
+							</a>
+							<ol class="slide-down-menu">
+								<li><a href="javascript:"></a></li>
+							</ol>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="right-column">
+				<div class="right-column-cnt">
+					<div class="content-grid-nboder">
+						<div class="grid-nboder-top">
+							<ul class="grid-nboder-top-nav clearfix">
+								<li class="top-nav-cell"><a href="javascript:" class="top-nav-cell-link">首页</a> <em> > </em></li>
+								<li class="top-nav-cell"><a href="javascript:" class="top-nav-cell-link">掌柜故事</a> <em> > </em></li>
+								<li class="top-nav-cell"><a href="javascript:" class="top-nav-cell-link">新闻中心</a></li>
+							</ul>
+						</div>
+						<div class="article-cnt">
+							<p class="" align="center"><strong>订舱通——国际物流同行委托交易的桥梁</strong></p>
+							<p align="left"><br />
+							<span class="">基于云计算和客户端技术实现国际物流企业之间订舱交易的客户端软件，是国际物流企业之间异构系统在线订舱委托和数据传输的通道。订舱通可以实现即时的在线订舱委托，鼠标一点就可以到达目标接受方，提单确认和费用确认等环节全都在订舱通中完成，不必再为了传统电话加传真模式的低效率、高出错率而苦恼。</span>
+							</p>
+						</div>
+						<div class="form-box">
+							<div class="hr"></div>
+							<div class="form-box-info"><i>&#xf018e;</i><span>以上内容是否有解决你的问题 ?</span></div>
+							<div class="btn-group clearfix">
+								<a class="form-box-btn" href="javascript:"><i></i>是，已经解决</a>
+								<a class="form-box-btn-no form-box-btn-active" href="javascript:"><i></i>否，尚未解决</a>
+							</div>
+							<div class="feedback-box none">
+								<div class="feedback-box-cnt">
+									<div class="m-success"><i>&#x3587;</i> 您的反馈信息已成功提交，谢谢您的反馈。</div>
+									<a class="feedback-box-btn" href="javascript:">提交</a>
+								</div>
+								<a class="feedback-box-close" href="javascript:">× 关闭</a>
+							</div>
+							<div class="feedback-box">
+								<div class="feedback-box-cnt">
+									<div class="radio-group">
+										<label class="radio-group-cell" for="r1">
+											<input type="radio" name="radio" value="" id="r1">
+											太简单，用不上
+										</label>
+										<label class="radio-group-cell" for="r2">
+											<input type="radio" name="radio" value="" id="r2">
+											字太多，不想看
+										</label>
+										<label class="radio-group-cell" for="r3"> 
+											<input type="radio" name="radio" value="" id="r3">
+											太复杂，看不懂
+										</label>
+										<label class="radio-group-cell" for="r4">
+											<input type="radio" name="radio" value="" id="r4">
+											太复杂，看不懂
+										</label>
+									</div>
+									<div class="m-success"><i>&#x3587;</i> 您的反馈信息已成功提交，谢谢您的反馈。</div>
+									<div class="hui-form-cell">
+
+										<textarea placeholder="  亲爱的用户：非常抱歉，我们的帮助内容没有解决您的问题，您可以写出您对这个帮助内容的疑问，我们会不断优化，为您更好的服务。
+                                                                        运价通帮助中心运营团队" class="hui-textarea"></textarea>
+									</div>
+									<a class="feedback-box-btn" href="javascript:">提交</a>
+								</div>
+								<a class="feedback-box-close" href="javascript:">× 关闭</a>
+							</div>
+						</div>
+						<div class="bottom-search-line clearfix">
+							<div class="search-cell">
+								<input type="text" placeholder="请输入问题关键字；如：运价导入" id="" class="search-cell-input">
+							</div>
+							<a href="javascript:" class="search-btn">搜索</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-footer">
+			
+			<div class="copyright">
+				 <a href="http://www.500jit.com" target="_blank" class="mr10"><img width="68" height="19" src="http://cpcommon.600jit.com/fcommon/public/images/login_logo.gif"></a>版权所有 &copy; 2013 奥林科技(宁波)有限公司    Powered by <a href="http://www.500jit.com" target="_blank">OlymTech(NingBo), Ltd.</a>  <span style="cursor:pointer;" onclick="alert('系统参数:Orange-PC');">&nbsp;</span>  
+			</div>
+		</div>
+	</div>
+</body>
+</html>

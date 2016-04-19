@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>员工管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common.css"/>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<link rel="stylesheet" href="../../release/freight/css/zTreeStyle/zTreeStyle.css" />
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../release/freight/js/jquery.ztree.all-3.5.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="headNav.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var hg = $('div.right-side-cnt').height();
+			var hg2 =$('a.right-side-submenu-hide').height();
+			var top = hg/2 - hg2/2;
+			console.log(hg2);
+			$('div.right-side-submenu').height(hg);
+			$('a.right-side-submenu-hide').css({
+				top:top,
+			});	
+		})
+	</script>
+	<script type="text/javascript">
+	<!--
+
+
+	var setting = {
+		view: {
+			selectedMulti: false,
+			showIcon:false,
+			fontCss: setFontCss
+		},
+		edit: {
+			enable: true,
+			editNameSelectAll: true,
+			showRemoveBtn: false,
+			showRenameBtn: false
+		},
+		data: {
+			keep: {
+				parent:true,
+				leaf:false
+			},
+			simpleData: {
+				enable: true
+			}
+		},
+		callback: {
+			beforeRemove: beforeRemove,
+			beforeRename: beforeRename,
+			onClick: onClick
+			//onRemove: onRemove
+		}
+	};
+
+	var zNodes =[
+	 			{ id:1, pId:0, name:"奥林网络科技", open:true},
+	 			{ id:11, pId:1, name:"总经办",open:true},
+	 			{ id:12, pId:11, name:"综合部"},
+	 			{ id:13, pId:11, name:"销售部"},
+	 			{ id:2, pId:11, name:"技术部", open:true},
+	 			{ id:21, pId:2, name:"平台组"},
+	 			{ id:22, pId:2, name:"订舱组"},
+	 			{ id:23, pId:2, name:"运价组"},
+	 			{ id:3, pId:11, name:"客服部", open:true},
+	 			{ id:31, pId:3, name:"售前"},
+	 			{ id:32, pId:3, name:"售中"},
+	 			{ id:33, pId:3, name:"售后"}
+	 		];
+	var log, className = "dark";
+	function beforeRemove(treeId, treeNode) {
+		className = (className === "dark" ? "":"dark");
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+		zTree.selectNode(treeNode);
+		if(treeNode.level > 0){
+			return confirm("确认删除部门--" + treeNode.name + " 吗？");
+		}else{
+			alert("根节点不能为删除.");
+			return false;
+		}
+	}
+	function beforeRename(treeId, treeNode, newName) {
+		if (newName.length == 0) {
+			alert("节点名称不能为空.");
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			setTimeout(function(){zTree.editName(treeNode)}, 10);
+			return false;
+		}
+		changeIName(newName);
+		return true;
+	}
+
+	var newCount = 1;
+	function add(e) {
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+		isParent = e.data.isParent,
+		nodes = zTree.getSelectedNodes(),
+		treeNode = nodes[0];
+		if (treeNode) {
+			treeNode = zTree.addNodes(treeNode, {id:(100 + newCount), pId:treeNode.id, isParent:isParent, name:"new node" + (newCount++)});
+		} else {
+			treeNode = zTree.addNodes(null, {id:(100 + newCount), pId:0, isParent:isParent, name:"new node" + (newCount++)});
+		}
+		if (treeNode) {
+			zTree.editName(treeNode[0]);
+			changeIName(treeNode[0].name)
+		} else {
+			alert("叶子节点被锁定，无法增加子节点");
+		}
+	};
+	function edit() {
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+		nodes = zTree.getSelectedNodes(),
+		treeNode = nodes[0];
+		if (nodes.length == 0) {
+			alert("请先选择一个节点");
+			return;
+		}
+		zTree.editName(treeNode);
+	};
+	function remove(e) {
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+		nodes = zTree.getSelectedNodes(),
+		treeNode = nodes[0];
+		var pNode = treeNode.getParentNode();
+		if (nodes.length == 0) {
+			alert("请先选择一个节点");
+			return;
+		}
+		zTree.removeNode(treeNode, true);
+		zTree.selectNode(pNode);
+		changeIName(pNode.name);
+	};
+	function onClick(event, treeId, treeNode, clickFlag) {
+		changeIName(treeNode.name);
+	}	
+	
+	function changeIName(name){
+		$("#main_title_user").text(name);
+	}
+
+	function setFontCss(treeId, treeNode) {
+
+	return  treeNode.isParent ? {'font-weight':'bold'} :{};
+	};
+	
+	$(document).ready(function(){
+		$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		var zTree_Menu = $.fn.zTree.getZTreeObj("treeDemo");
+		var curMenu = zTree_Menu.getNodes()[0];
+		zTree_Menu.selectNode(curMenu);
+		changeIName(curMenu.name);
+		$("#addLeaf").bind("click", {isParent:false}, add);
+		$("#edit").bind("click", edit);
+		$("#remove").bind("click", remove);
+	});
+	//-->
+	</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap-nobd">
+		<div class="left-side">
+				<div class="left-slide-top-line"></div>
+				<ul class="left-side-menu mt50"><li><a class="left-side-menu-a active" href="/cpmembership/org.ctrl">公司信息<i class="right">㖞</i></a></li><li><a class="left-side-menu-a" href="/cpmembership/org.ctrl?$action=baseParamsSetView">基础设置<i class="right">㖞</i></a></li><li><a class="left-side-menu-a" href="/priceservice/orgParam.ctrl?$action=maintainSetView">维护设置<i class="right">㖞</i></a></li><li><a class="left-side-menu-a" href="/cpmembership/org.ctrl?$action=registerSetView">客户注册<i class="right">㖞</i></a></li><li><a class="left-side-menu-a" href="/priceservice/orgParam.ctrl?$action=customerQueryView">客户查询<i class="right">㖞</i></a></li><li><a class="left-side-menu-a" href="/priceservice/orgParam.ctrl?$action=rulePriceSetView">多级运价<i class="right">㖞</i></a></li><li><a class="left-side-menu-a" href="/cpmembership/org.ctrl?$action=experimentalSetView">邀请体验<i class="right">㖞</i></a></li></ul>
+				<div class="left-slide-bottom-line"></div>
+
+
+		</div>
+		<div class="right-side right-side-diffent">
+			<div class="right-side-submenu">
+				<h2 class="left-side-title"><i>&#13714;</i> 部门管理</h2>
+				<div class="nui-group-btn ml15 mb15">
+					<button id="addLeaf" class="nui-btn nui-btn-28 pd5-10" title="添加管理员" onclick="return false;"><i class="fs14">&#x351d;</i></button>
+					<button class="nui-btn nui-btn-28 pd5-10" id="edit" title="编辑" onclick="return false;"><i class="fs14">&#13364;</i></button>
+					<button id="remove" class="nui-btn nui-btn-28 pd5-10"  title="添加" onclick="return false;"><i class="fs14">&#x35a6;</i></button>
+					<button id="remove" class="nui-btn nui-btn-28 pd5-10"  title="删除" onclick="return false;"><i class="fs14">&#13540;</i></button>
+				</div>
+				<div class="zTreeDemoBackground ml10">
+					<ul id="treeDemo" class="ztree"></ul>
+				</div>
+				
+
+			</div>
+			<div class="right-side-cnt psr">
+				<div class="main-title">
+					<h1 class="" id="main_title_user">华东分公司 - 销售部</h1>
+					<!--<div class="main-title-des"><i>&#13683</i> 成员120个，部门3个</div>-->
+				</div>
+				
+				
+				<div class="search-area-grid">
+					<div class="grid">
+						<label for="username"  class="nui-label w50">姓名：</label>
+						<div class="nui-form-cell w50  mr5">
+							<input type="text" id="username" class="nui-input" />
+						</div>
+						<label for="companyname"  class="nui-label w50">手机：</label>
+						<div class="nui-form-cell w80  mr5">
+							<input type="text" id="companyname"  class="nui-input"/>
+						</div>
+						<label for="email" class="nui-label w50">邮箱：</label>
+						<div class="nui-form-cell w100  mr5">
+							<input type="text" id="email"  class="nui-input"/>
+						</div>
+						<span id="j-toggle">
+							<button class="nui-btn " onclick="searchData()">搜 索</button>
+						</span>
+					</div>
+
+
+				</div>
+
+				<div class="result-area">
+
+					<div class="result-fn-area">
+
+						<button class="nui-btn "><i class="fs12">&#13734</i> 新增</button>
+						<button class="nui-btn">删除</button>
+						<button class="nui-btn">设置所在部门</button>
+						<div class="result-fn-area-port">
+							<button class="nui-btn"><em>批量操作</em> <i class="icon-down-arrow">&#x3438;</i></button>
+							<div class="nui-drop-list none">
+								<ul class="nui-drop-list-choose oneline">
+									<li><a href="javascript:">设置权限</a></li>
+									<li><a href="javascript:">启用控制</a></li>
+									<li><a href="javascript:">取消控制</a></li>
+								</ul>
+							</div>
+						</div>
+						<a href="importStaff.shtml" class="nui-btn"><i>&#13716</i> 导入成员</a>
+
+					</div>
+					<table class="result-table">
+					<thead>
+						<tr>
+							<th class="checkbox"><input id="jselAll" type="checkbox" name="" id="" title="选中/取消选中" /></th>
+							<th class="name">姓名 | 用户名</th>
+							<th>手机 | 邮箱</th>
+							<th class="company">企业名称</th>
+							<th class="action">操作</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr><td class="checkbox"><input type="checkbox" class="item" value="13" id="checkbox" name="checkbox"></td><td>alningbo<p class="sub-info"><span class="sub-info-tag">用户名：</span>alningbo</p></td><td>111<p class="sub-info"><a href="mailto:464753600@qq.com">464753600@qq.com</a></p></td>
+							<td>啊啦宁波测试外部查询公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="../../test/fuserManagement/staffDetails.shtml">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td>
+						</tr>
+						<tr><td class="checkbox"><input type="checkbox" class="item"  value="17" id="checkbox" name="checkbox"></td><td>charlesZhang<p class="sub-info"><span class="sub-info-tag">用户名：</span>charles</p></td><td>13336665553<p class="sub-info"><a href="mailto:charles@li-ling.com">charles@li-ling.com</a></p></td>
+							<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr class="split"><td class="checkbox"><input type="checkbox"  class="item"  value="18" id="checkbox" name="checkbox"></td><td>李玲玲<p class="sub-info"><span class="sub-info-tag">用户名：</span>553670</p></td><td><p class="sub-info"><a href="mailto:cus@li-ling.com">cus@li-ling.com</a></p></td>
+							<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr><td class="checkbox"><input type="checkbox"  class="item"  value="19" id="checkbox" name="checkbox"></td><td>陈明<p class="sub-info"><span class="sub-info-tag">用户名：</span>553671</p></td><td><p class="sub-info"><a href="mailto:op@li-ling.com">op@li-ling.com</a></p></td>
+							<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr class="split"><td class="checkbox"><input class="item"  type="checkbox" value="20" id="checkbox" name="checkbox"></td><td>姚健<p class="sub-info"><span class="sub-info-tag">用户名：</span>559459</p></td><td>15158322619<p class="sub-info"><a href="mailto:402706147@qq.com">402706147@qq.com</a></p></td>
+							<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr><td class="checkbox"><input type="checkbox" class="item"  value="21" id="checkbox" name="checkbox"></td><td>叶凌云<p class="sub-info"><span class="sub-info-tag">用户名：</span>553668</p></td><td>13884460048<p class="sub-info"><a href="mailto:cus@li-ling.com">cus@li-ling.com</a></p></td>
+							<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr class="split"><td class="checkbox"><input type="checkbox" class="item"  value="22" id="checkbox" name="checkbox"></td><td>蔡双霞<p class="sub-info"><span class="sub-info-tag">用户名：</span>552664</p></td><td>15606608516<p class="sub-info"><a href="mailto:237862023@qq.com">237862023@qq.com</a></p></td>
+							<td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li set-power"><a href="javascript:">设置权限</a></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr><tr><td class="checkbox"><input type="checkbox" class="item"  value="23" id="checkbox" name="checkbox"></td><td>唐毅丰<p class="sub-info"><span class="sub-info-tag">用户名：</span>552669</p></td><td>13989305322<p class="sub-info"><a href="mailto:814348369@qq.com">814348369@qq.com</a></p></td><td>宁波中量立领国际物流有限公司</td><td><div class="action-cnt"><ul class="slide-down-menu"><li><a class="first" href="javascript:">详情 <i class="icon-down-arrow">&#x3438;</i></a></li><li class="slide-down-menu-li"></li><li class="slide-down-menu-li"><a class="last" href="javascript:">删除</a></li></ul></div></td></tr></tbody>
+						</table>
+						<div class="result-footer">
+							<div class="page"><input type="hidden" value="1" name="pageNo" id="pageNo"><span class="pageInfo">1-30条，共1615条</span> <a href="javascript:nextPage();">下一页</a> <a href="javascript:buildData(54);">尾页</a></div>
+						</div>
+					</div>	
+				<a class="fonticon right-side-submenu-hide" href="javascript:">&#x359f;</a>
+			</div>
+				
+		</div>
+	</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

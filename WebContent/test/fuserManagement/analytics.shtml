@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="../../release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../src/js/highcharts.src.js"></script>
+	<script type="text/javascript" src="../../src/js/frame_common.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+		$(function() {
+			// 统计概况
+			//analytics_data();
+			fu_trends_change(null,'today');
+			// 新老访客分布
+			analytics_new_old();
+		});
+
+		// 展示类型（今日、明日）
+		function analytics_change(str,obj){
+			var $self = $(obj);
+			$self.parent().find("a").removeClass("nui-select-tag-active");
+			$self.addClass("nui-select-tag-active");
+			$("#activity_top10,#dis_top10,#org_top10").fadeOut().fadeIn();
+			analytics_new_old();
+		}
+
+		// 新老访客分布
+		function analytics_new_old(){
+			$.post("../../test/fuserManagement/data/analytics_new_old_data.js","",function(data){
+				data = eval(data);
+
+				$('#container_new_old').highcharts({
+		            chart: {
+		            },
+		            // 主标题
+			        title: {
+						//text : "新老访客分布"
+			        	text : ""
+					},
+					// 副标题
+					subtitle: {
+						//text : "航线"
+					},
+		            tooltip: {
+						pointFormat: '百分比: <b>{point.percentage:.1f}%</b>'
+						//pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		                //formatter: function() {
+		                //this.percentage this.y
+		            	//	return '<b>' + this.point.name + '</b>: ' + this.y + ' 次';  
+		                    //return '<b>'+ this.series.name +'</b><br/>'+
+		                    //    this.x +': '+ this.y+"次";
+		                //}
+		            },
+		            plotOptions: {
+		                pie: {
+		                   // allowPointSelect: true,
+		                    //cursor: 'pointer',
+		                    dataLabels: {
+		                        //enabled: true,
+		                    	color: '#000000',
+		                    	connectorColor: '#000000',
+		                        format: '<b>{point.name}</b>: {y} 次'
+		                    }
+		                }
+		            },
+		            series: [{ 
+			            //type: 'bar'
+			            //type: 'column',   
+		            	type: 'pie',
+		            	data: data,
+		                name : ""
+		            }],
+		         	// 版权信息
+		            credits: {
+			            enable: false
+			            ,text:""
+			        }
+		        });
+			},"text");
+		}
+
+		// 流量趋势
+		function fu_trends_change(obj,str){
+			if(obj){
+				var $that = $(obj);
+				$that.parent().find("a").removeClass("nui-select-tag-active");
+				$that.addClass("nui-select-tag-active");
+			}
+			
+			var start,pointStart,pointInterval,_x_formatter,_tooltip_msg;
+			//start = new Date();
+			switch(str){
+			case "today":
+				//pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate(),0,59);
+				//pointInterval = 1 * 3600 * 1000;
+				_x_formatter = "%H:%M";
+				_tooltip_msg = function(x,y){
+					var _prev_date = x - 59*60*1000;
+					var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+			    		Highcharts.dateFormat('-%H:%M', x);
+					return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+				}
+				break;
+			case "yestoday":
+				//start.setDate(start.getDate()-1);
+				//pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate(),0,59);
+				//pointInterval = 1 * 3600 * 1000;
+				_x_formatter = "%H:%M";
+				_tooltip_msg = function(x,y){
+					var _prev_date = x - 59*60*1000;
+					var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+			    		Highcharts.dateFormat('-%H:%M', x);
+					return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+				}
+				break;
+			case "last7":
+				//start.setDate(start.getDate()-7);
+				//pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+				//pointInterval = 24 * 3600 * 1000;
+				_x_formatter = "%m-%e";
+				_tooltip_msg = function(x,y){
+					var _prev_date = x - 24*60*60*1000;
+					var _msg = Highcharts.dateFormat('%Y-%m-%e', x);
+					return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+				}
+				break;
+			case "last30":
+				//start.setDate(start.getDate()-29);
+				//pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+				//pointInterval = 24 * 3600 * 1000;
+				_x_formatter = "%m-%e";
+				_tooltip_msg = function(x,y){
+					var _prev_date = x - 24*60*60*1000;
+					var _msg = Highcharts.dateFormat('%Y-%m-%e', x);
+					return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+				}
+				break;
+			default:
+				//pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate(),0,59);
+				//pointInterval = 1 * 3600 * 1000;
+				_x_formatter = "%H:%M";
+				_tooltip_msg = function(x,y){
+					var _prev_date = x - 1*60*60*1000;
+					var _msg = Highcharts.dateFormat('%H:%M', _prev_date) +
+			    		Highcharts.dateFormat('~%H:%M', x);
+					return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+				}
+				break;
+			}
+
+			trends_analytics(str,start,pointStart,pointInterval,_x_formatter,_tooltip_msg);
+		}
+
+		function trends_analytics(str,start,pointStart,pointInterval,_x_formatter,_tooltip_msg){
+			$.post("../../test/fuserManagement/data/analytics_trend_data.js","",function(data){
+				data = eval(data)(str);
+				 $('#container_analytics').highcharts({
+				        chart: {
+				        },
+				        // 主标题
+				        title: {
+							text : ""
+						},
+						// 副标题
+						subtitle: {
+							//text : "查询公司详细",
+							//x : 20
+						},
+						// x轴选项
+				        xAxis: {
+								type: 'datetime',
+				            	labels: {
+		                			formatter: function() {
+		                    			return Highcharts.dateFormat(_x_formatter, this.value);                  
+		                			}        
+		            			}
+				        },
+				    	 // y轴选项
+				        yAxis: {
+			                title: {
+			                    text: ''
+			                }
+			            },
+			            // 数据列选项
+				        series: data,
+				        // 图表对话框
+				        legend: {
+			            	//align: 'center',
+			                //verticalAlign: 'top',
+			                //floating:true,
+			                //x: 0,
+			                //y: 100,
+				        	//layout: 'vertical',
+			                //align: 'right',
+			                //verticalAlign: 'middle',
+			                borderWidth: 0
+					    },
+					    // 数据点提示框
+					    tooltip: {
+					    	formatter: function() {
+					    	//var _prev_date = this.x - 59*60*1000;
+					    	//var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+					    	//	Highcharts.dateFormat('-%H:%M', this.x);
+			               	// 	return _msg +  '<br/><b>访问次数：'+ this.y +'</b>';
+			               		return _tooltip_msg(this.x,this.y);
+			            	}
+						},
+						plotOptions: {
+				            //series: {
+				                //cursor: 'pointer',
+				                //point: {
+				                //    events: {
+				                //        click: function() {
+				                            //alert ('Category: '+ this.category +', value: '+ this.y);
+				                        	//location.href = this.options.url;
+				                        	//console.log(this.options);
+				                        	//console.log(this.series);
+				                        	//location.href = this.options.url;
+				                //        }
+				                //    }
+				                //}
+								//,dashStyle: 'longdash'
+				            //}
+				        },
+				        // 版权信息
+			            credits: {
+				            enable: false,
+				            text: ""
+				        }
+				    });
+			},"text");
+		}
+
+
+
+	</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap-nobd">
+
+		
+			<div class="left-side"><div class="left-slide-top-line"></div>
+				<ul class="left-side-menu mt50">
+					<li><a href="analytics.shtml" class="left-side-menu-a active"><i class="fs14">&#x35ab;</i> 统计概况<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">流量分析：</li>
+					<li><a href="analytics-trend.shtml" class="left-side-menu-a">趋势分析<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-online.shtml" class="left-side-menu-a">当前在线<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-detail.shtml" class="left-side-menu-a">访问明细<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">访问分析：</li>
+					<li><a href="analytics-activity.shtml" class="left-side-menu-a">活跃度<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-pql.shtml" class="left-side-menu-a">查询分析<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">会员分析：</li>
+					<li><a href="analytics-activity-new.shtml" class="left-side-menu-a">活跃度分析<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-loss-rate.shtml" class="left-side-menu-a">流失率<i class="right ">&#13726</i></a></li>
+				</ul>
+				<div class="left-slide-bottom-line"></div>
+			</div>
+			<div class="right-side">
+			<div class="main-title">
+				<h1>统计概况</h1>
+				<div class="main-title-des">服务开通日期：2013-09-13</div>
+			</div>
+
+			<table class="table-small-line tar mb30">
+				<thead>
+					<tr>
+						<th width="80" ></th>
+						<th class="tar">查询次数</th>
+						<th class="tar">用户(账号)</th>
+						<th class="tar">IP</th>
+						<th class="tar">企业</th>
+						<th class="tar">新用户(账号)</th>
+						<th class="tar">登录次数</th>
+					</tr>
+				</thead>
+			
+			<tbody>
+				<tr class="fwb">
+					<td>今日</td>
+					<td>235</td>
+					<td>102</td>
+					<td>86</td>
+					<td>68</td>
+					<td>97</td>
+					<td>145</td>
+				</tr>
+				<tr>
+					<td>昨日</td>
+					<td>532</td>
+					<td>213</td>
+					<td>110</td>
+					<td>88</td>
+					<td>98</td>
+					<td>166</td>
+				</tr>
+				<tr>
+					<td>近30天平均</td>
+					<td>456</td>
+					<td>256</td>
+					<td>115</td>
+					<td>88</td>
+					<td>100</td>
+					<td>145</td>
+				</tr>
+				<tr>
+					<td>历史最高</td>
+					<td>678</td>
+					<td>279</td>
+					<td>115</td>
+					<td>99</td>
+					<td>156</td>
+					<td>166</td>
+				</tr>
+				<tr>
+					<td>历史累计</td>
+					<td>13680</td>
+					<td>7680</td>
+					<td>3450</td>
+					<td>2640</td>
+					<td>3000</td>
+					<td>4350</td>
+				</tr>
+			</tbody>
+			</table>
+			
+			<div class="grid-box"><h2 class="dpib mr20">流量趋势</h2>
+
+			<a href="javascript:" onclick="fu_trends_change(this,'today')" class="nui-select-tag nui-select-tag-active">今日</a>
+			<a href="javascript:" onclick="fu_trends_change(this,'yestoday')" class="nui-select-tag">昨日</a>
+			<a href="javascript:" onclick="fu_trends_change(this,'last7')" class="nui-select-tag">最近7天</a>
+			<a href="javascript:" onclick="fu_trends_change(this,'last30')" class="nui-select-tag">最近30天</a>
+			</div>
+
+
+			<div class="chart-cnt">
+				<div id="container_analytics"></div>
+			</div>
+			
+			
+			<div class="grid-box mb0"><h2 class="dpib mr20">展示类型</h2>
+
+			<a href="javascript:" onclick="analytics_change('today',this)" class="nui-select-tag nui-select-tag-active">今日</a>
+			<a href="javascript:" onclick="analytics_change('yestoday',this)"  class="nui-select-tag">昨日</a>
+			</div>
+		<!-- 	<div class="grid">
+				<button class="nui-btn nui-btn-28">高级筛选</button>
+				<button class="nui-btn nui-btn-28">对比维度 <i class="icon-down-arrow">&#13783</i></button>
+				<div class="nui-group-btn right"><button class="nui-btn nui-btn-28">年</button><button class="nui-btn nui-btn-28">月</button><button class="nui-btn nui-btn-28">日</button></div>
+			</div> -->
+			<div class="chart-cnt">
+				
+			</div>
+
+			<div class="chart-cnt-left">
+				<div class="title">
+					<h2>新老访客分布(按独立访客) </h2><a href="analytics-trend.shtml" class="more"><i>&#13614</i> 查看全部</a>
+				</div>
+				
+				<div id="container_new_old" style="height:265px"></div> 
+				
+			</div>
+			<div class="chart-cnt-right">
+			<div class="title">
+				<h2>客户用户活跃度TOP10</h2><a href="analytics-activity.shtml" class="more"><i>&#13614</i> 查看全部</a>
+				</div>
+				<table id="activity_top10" class="tar">
+					<thead>
+						<tr>
+							<th width="60" class="tal">用户姓名</th>
+							<th width="150" class="tal">企业名称</th>
+							<th>查询次数</th>
+							<th width="50">占比</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="tal">小王</td>
+							<td class="tal">上海腾钻精密仪器有限公司</td>
+							<td>897</td>
+							<td>24.81%</td>
+						</tr>
+						<tr>
+							<td class="tal">小陈</td>
+							<td class="tal">上海腾钻精密仪器有限公司</td>
+							<td>812</td>
+							<td>20.82%</td>
+						</tr>
+						<tr>
+							<td class="tal">过路人</td>
+							<td class="tal">无锡市星龙达科技有限公司</td>
+							<td>767</td>
+							<td>19.27%</td>
+						</tr>
+						<tr>
+							<td class="tal">销售小王</td>
+							<td class="tal">无锡市华美蜡制品有限公司</td>
+							<td>666</td>
+							<td>16.66%</td>
+						</tr>
+						<tr>
+							<td class="tal">商务小陈</td>
+							<td class="tal">北京晋阳铁艺卷帘门厂</td>
+							<td>600</td>
+							<td>15.00%</td>
+						</tr>
+						<tr>
+							<td class="tal">客服小丽</td>
+							<td class="tal">江阴天江药业有限公司</td>
+							<td>580</td>
+							<td>14.50%</td>
+						</tr>
+						<tr>
+							<td class="tal">商务小陈</td>
+							<td class="tal">开源国际物流有限公司</td>
+							<td>400</td>
+							<td>10.00%</td>
+						</tr>
+						<tr>
+							<td class="tal">客服小李</td>
+							<td class="tal">大掌柜国际物流有限公司</td>
+							<td>324</td>
+							<td>8.14%</td>
+						</tr>
+						<tr>
+							<td class="tal">销售小陈</td>
+							<td class="tal">内蒙古富特橡塑机械有限公司青岛分公司</td>
+							<td>128</td>
+							<td>3.28%</td>
+						</tr>
+						<tr>
+							<td class="tal">掌柜小侯</td>
+							<td class="tal">大掌柜国际物流有限公司</td>
+							<td>64</td>
+							<td>1.64%</td>
+						</tr>
+					</tbody>
+				</table>
+			
+			</div>
+
+			<div class="chart-cnt-left">
+				<div class="title">
+					<h2>企业活跃度TOP10（按查询次数）</h2><a href="analytics-activity.shtml" class="more"><i>&#13614</i> 查看全部</a>
+				</div>
+				<table id="org_top10" class="tar">
+					<thead>
+						<tr>
+							<th width="150" class="tal">企业名称</th>
+							<th>查询次数</th>
+							<th width="50">占比</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="tal">上海腾钻精密仪器有限公司</td>
+							<td>2676</td>
+							<td>22.76%</td>
+						</tr>
+						<tr>
+							<td class="tal">无锡市星龙达科技有限公司</td>
+							<td>2187</td>
+							<td>21.82%</td>
+						</tr>
+						<tr>
+							<td class="tal">江苏杰诚环保科技有限公司</td>
+							<td>2011</td>
+							<td>20.81%</td>
+						</tr>
+						<tr>
+							<td class="tal">江苏苏凤通风机有限公司</td>
+							<td>1892</td>
+							<td>18.72%</td>
+						</tr>
+						<tr>
+							<td class="tal">无锡市华美蜡制品有限公司</td>
+							<td>1602</td>
+							<td>16.52%</td>
+						</tr>
+						<tr>
+							<td class="tal">北京晋阳铁艺卷帘门厂</td>
+							<td>1035</td>
+							<td>10.65%</td>
+						</tr>
+						<tr>
+							<td class="tal">内蒙古富特橡塑机械有限公司青岛分公司</td>
+							<td>897</td>
+							<td>8.87%</td>
+						</tr>
+						<tr>
+							<td class="tal">常熟市诚达港务机械设备厂</td>
+							<td>712</td>
+							<td>7.12%</td>
+						</tr>
+						<tr>
+							<td class="tal">江阴天江药业有限公司</td>
+							<td>657</td>
+							<td>6.35%</td>
+						</tr>
+						<tr>
+							<td class="tal">无锡江丰资源再生有限公司</td>
+							<td>420</td>
+							<td>4.20%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="chart-cnt-right">
+				<div class="title">
+					<h2>目的港查询数TOP10（按查询次数） </h2><a href="analytics-pql.shtml" class="more"><i>&#13614</i> 查看全部</a>
+				</div>
+				<table id="dis_top10" class=" tar ">
+					<thead>
+						<tr>
+							
+							<th width="220" class="tal">目的港</th>
+							<th>查询次数</th>
+							<th width="50">占比</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="tal">ABERDEEN</td>
+							<td>2676</td>
+							<td>26.76%</td>
+						</tr>
+						<tr>
+							<td class="tal">DENMARK</td>
+							<td>2017</td>
+							<td>20.17%</td>
+						</tr>
+						<tr>
+							<td class="tal">UNITED KINGDOM</td>
+							<td>1390</td>
+							<td>13.90%</td>
+						</tr>
+						<tr>
+							<td class="tal">IVORY COAST</td>
+							<td>903</td>
+							<td>9.03%</td>
+						</tr>
+						<tr>
+							<td class="tal">EMIRATES</td>
+							<td>867</td>
+							<td>8.67%</td>
+						</tr>
+						<tr>
+							<td class="tal">EMIRATES</td>
+							<td>678</td>
+							<td>6.78%</td>
+						</tr>
+						<tr>
+							<td class="tal">MEXICO</td>
+							<td>509</td>
+							<td>5.09%</td>
+						</tr>
+						<tr>
+							<td class="tal">ITALY</td>
+							<td>490</td>
+							<td>4.90%</td>
+						</tr>
+						<tr>
+							<td class="tal">FRANCE</td>
+							<td>321</td>
+							<td>3.21%</td>
+						</tr>
+						<tr>
+							<td class="tal">INDONESIA</td>
+							<td>209</td>
+							<td>2.09%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			</div>
+	
+		
+	</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

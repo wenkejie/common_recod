@@ -1,0 +1,54 @@
+body {
+	 
+}
+
+table.main {
+	width: 100%;
+}
+
+td.head-bar {
+	line-height: 30px;
+}
+
+td.head-bar label {
+	padding: 2px 10px;
+	cursor: pointer;
+}
+
+td.head-bar label.active {
+	background-color: yellow;
+}
+
+td.menu-bar {
+	width: 160px;
+	padding: 0 10px;
+}
+
+td.menu-bar li {
+	padding: 5px;
+	cursor: pointer;
+}
+
+td.menu-bar li.active {
+	background-color: yellow;
+}
+
+td.demo-frame {
+	border: 1px solid #888;
+	height: 350px;
+	padding: 5px;
+}
+
+td.demo-list {
+	width: 200px;
+	padding: 5px;
+}
+
+td.demo-list li {
+	padding: 2px 10px;
+	cursor: pointer;
+}
+
+td.demo-list li.active {
+	background-color: yellow;
+}

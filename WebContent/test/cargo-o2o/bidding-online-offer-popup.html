@@ -1,0 +1,755 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>在线投标报价弹框</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../src/js/2015-06f/jsurcharge.js"></script>
+</head>
+<body>
+
+<div class="fui-dialog ofh" style="width:980px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">修改</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt fui-dialog-surcharge">
+		<div class="nui-tab">
+			<div class="nui-tab-cnt nui-tab-cnt-surcharge">
+				<div class="surcharge-site-area"> 
+					<div class="surcharge-site-head">
+						<a href="javascript:" class="nui-btn mr10"><i class="fs12">&#x35a6;</i> 新增附加费</a> 
+					</div>
+					<div class="surcharge-table-header">
+						<table class="nui-table nui-table-nbd">
+							<thead>
+								<th class="table-first" width="60"><span>费用代码</span></th>
+								<th width="90">费用中文</th>
+								<th width="65">付费方式</th>
+								<th width="65">计费单位</th>
+								<th width="420">金额</th>
+								<th width="65">币别</th>
+								<th>操作</th>
+							</thead>
+						</table>
+					</div>
+					<div class="surcharge-table-body">
+						<table class="nui-table nui-table-nbd">
+							<tbody>
+								<tr>
+									<td class="table-first" width="60">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="AFR">
+											</div>
+										</div>
+									</td>
+									<td width="90">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="日本舱单预申报费">
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w55 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">预付</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">预付</li>
+														<li class="nui-select-list-li">预付</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">箱</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">箱</li>
+														<li class="nui-select-list-li">箱型</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="420">
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">20GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">45HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">USD</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">RMB</li>
+														<li class="nui-select-list-li">USD</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><a href="javascript:">删除</a></td>
+								</tr>
+								<tr>
+									<td class="table-first" width="60">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="AFR">
+											</div>
+										</div>
+									</td>
+									<td width="90">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="日本舱单预申报费">
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w55 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">预付</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">预付</li>
+														<li class="nui-select-list-li">预付</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">箱</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">箱</li>
+														<li class="nui-select-list-li">箱型</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="420">
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">20GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">45HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">USD</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">RMB</li>
+														<li class="nui-select-list-li">USD</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><a href="javascript:">删除</a></td>
+								</tr>
+								<tr>
+									<td class="table-first" width="60">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="AFR">
+											</div>
+										</div>
+									</td>
+									<td width="90">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="日本舱单预申报费">
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w55 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">预付</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">预付</li>
+														<li class="nui-select-list-li">预付</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">箱</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">箱</li>
+														<li class="nui-select-list-li">箱型</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="nui-form-cell nui-form-cell-adaptive w95">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="400">
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">USD</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">RMB</li>
+														<li class="nui-select-list-li">USD</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><a href="javascript:">删除</a></td>
+								</tr>
+								<tr>
+									<td class="table-first" width="60">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="AFR">
+											</div>
+										</div>
+									</td>
+									<td width="90">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="日本舱单预申报费">
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w55 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">预付</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">预付</li>
+														<li class="nui-select-list-li">预付</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">箱</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">箱</li>
+														<li class="nui-select-list-li">箱型</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="420">
+										<div class="nui-form-cell nui-form-cell-adaptive w95">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="500">
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">USD</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">RMB</li>
+														<li class="nui-select-list-li">USD</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><a href="javascript:">删除</a></td>
+								</tr>
+								<tr>
+									<td class="table-first" width="60">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="AFR">
+											</div>
+										</div>
+									</td>
+									<td width="90">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="日本舱单预申报费">
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w55 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">预付</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">预付</li>
+														<li class="nui-select-list-li">预付</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">箱</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">箱</li>
+														<li class="nui-select-list-li">箱型</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="420">
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">20GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">45HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">USD</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">RMB</li>
+														<li class="nui-select-list-li">USD</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><a href="javascript:">删除</a></td>
+								</tr><tr>
+									<td class="table-first" width="60">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="AFR">
+											</div>
+										</div>
+									</td>
+									<td width="90">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="日本舱单预申报费">
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w55 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">预付</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">预付</li>
+														<li class="nui-select-list-li">预付</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">箱</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">箱</li>
+														<li class="nui-select-list-li">箱型</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="420">
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">20GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">45HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">USD</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">RMB</li>
+														<li class="nui-select-list-li">USD</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><a href="javascript:">删除</a></td>
+								</tr>
+								<tr>
+									<td class="table-first" width="60">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="AFR">
+											</div>
+										</div>
+									</td>
+									<td width="90">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="日本舱单预申报费">
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w55 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">预付</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">预付</li>
+														<li class="nui-select-list-li">预付</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">箱</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">箱</li>
+														<li class="nui-select-list-li">箱型</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="420">
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">20GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">45HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">USD</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">RMB</li>
+														<li class="nui-select-list-li">USD</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><a href="javascript:">删除</a></td>
+								</tr>
+								<tr>
+									<td class="table-first" width="60">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="AFR">
+											</div>
+										</div>
+									</td>
+									<td width="90">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="日本舱单预申报费">
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w55 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">预付</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">预付</li>
+														<li class="nui-select-list-li">预付</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">箱</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">箱</li>
+														<li class="nui-select-list-li">箱型</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="420">
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">20GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">45HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">USD</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">RMB</li>
+														<li class="nui-select-list-li">USD</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><a href="javascript:">删除</a></td>
+								</tr>
+								<tr>
+									<td class="table-first" width="60">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="AFR">
+											</div>
+										</div>
+									</td>
+									<td width="90">
+										<div class="nui-form-cell nui-form-cell-adaptive">
+											<div class="nui-form-cell-cnt">
+												<input type="text" class="nui-input" value="日本舱单预申报费">
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w55 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">预付</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">预付</li>
+														<li class="nui-select-list-li">预付</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">箱</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">箱</li>
+														<li class="nui-select-list-li">箱型</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td width="420">
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">20GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40GP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">40HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+										<div class="nui-form-cell nui-form-surcharge">
+											<div class="nui-form-cell-cnt">
+												<span class="nui-form-addon">45HP</span>
+												<input class="nui-input" type="text" />
+											</div>
+										</div>
+									</td>
+									<td width="65">
+										<div class="nui-form-cell w50 nui-select">
+											<div class="nui-form-cell-cnt">
+												<div class="nui-input">USD</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+												<div class="nui-drop-down">
+													<ul class="nui-select-list">
+														<li class="nui-select-list-li active">RMB</li>
+														<li class="nui-select-list-li">USD</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><a href="javascript:">删除</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="surcharge-table-footer">
+						<a href="javascript:" class="nui-btn nui-btn-big nui-btn-primary">保存</a>
+						<a href="javascript:" class="nui-btn nui-btn-big">取消</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

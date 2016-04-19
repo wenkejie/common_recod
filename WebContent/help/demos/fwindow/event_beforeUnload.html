@@ -1,0 +1,41 @@
+<script>
+(function($){
+	$.extend({
+		openWin : function(){
+			fwindow.create({
+				title : "打开容易关闭难",
+				url : "demos/fwindow/subwin.html",
+				beforeUnload:function(event,ui){
+					var questions = [
+					                 {q:"什么越洗越脏，不洗有人吃，洗了没人吃？",a:"水"},
+					                 //{q:"什么东西肥得快，瘦得更快？ ",a:"气球"},
+					                 {q:"懂技术的请看源码，否则就别想关了！",a:"lnahnvnllasdkjb"}
+						];
+
+					var close = true;
+					$(questions).each(function(i,item){
+						var answer = prompt(item.q,'');
+						if(answer==item.a || answer=='1'){
+							
+						} else {
+							close = false;/*跳出循环*/
+							return false;
+						}
+					});
+					if(close){
+						alert("你过关了！");
+					}else{
+						alert("不对！再想想");
+					}
+					
+					return close;
+				}
+			});
+		} 
+	});
+})(jQuery);
+</script>
+
+打开容易关闭难
+<button onclick='$.openWin()'>打开</button>
+

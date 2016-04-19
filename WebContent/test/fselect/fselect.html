@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>高级查询</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+	
+	<script>
+	
+		 $(function(){
+			 var arr = [];
+				for(var i=0;i<10;i++){
+					arr[i] = {text:"显示   " + i,value:i,other:"其他的值 "+i};
+				}
+			 
+			$("#select").fselect({ 
+				width:150,
+			  	//itemWidth: 50,
+			  //	readonly : true,
+			  	//size :6,
+				items : arr,
+				select: function(event,ui){
+					//console.log(ui);
+				},
+				change : function (event,ui){
+					//console.log(ui);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+
+<div style='margin:50px 0 0 100px;'>
+
+ 
+	<select onchange='console.log("change:" + this.value);'>
+		<option value='a'>a</option>
+		<option value='b'>b</option>
+		<option value='c'>c</option>
+		<option value='d'>d</option>
+		<option value='e'>e</option>
+		<option value='f'>f</option>
+	</select>
+	<button onclick='alert( $(this).prev().val())'>select value</button>
+	
+	<br></br>
+	<input id='select' name='select'/>
+	
+	<button onclick='$("#select").fselect("remove",0);'>删除</button>
+	<button onclick='$("#select").fselect("clear");'>全删除</button>
+	<button onclick='$("#select").fselect("add",{text:"a",value:"a"});'>添加</button>
+
+	
+	
+ 
+	 
+	 
+</div>
+	 
+
+	 
+</body>
+</html>

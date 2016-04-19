@@ -1,0 +1,2124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/common.css">
+  <link type="text/css" href="priceMaintain.css" rel="stylesheet">
+  <link rel="stylesheet" href="welcome_data/ui.css" type="text/css">
+  <link rel="stylesheet" href="welcome_data/jquery-ui-1.css" type="text/css" title="ui-theme">
+</head>
+<body>
+  <div class="pageWrap">
+    <form id="FORM_VRWS_CONTENTS" name="FORM_VRWS_CONTENTS" action="" method="post">
+      <div id="conditionId">
+        <div class="lineArea" style="color: black;">
+          <span class="title">请输入：</span>
+          起运港
+          <div class="selectCover">
+            <div class="selectInput">
+              <input style="color: rgb(153, 151, 151);" autocomplete="off" tabindex="1" id="qy_loadport_temp" name="qy_loadport_temp" value="--请输入起运港搜索--" placeholder="--请输入起运港搜索--" onblur="blur_query_temp(this)" onfocus="showSelectLoadPort(this)"></div>
+            <button id="loadport" name="起运港" tabindex="2" class="iconSearch" type="button" onclick="fu_writeConditionField(false,this);"></button>
+          </div>
+          <!-- 下拉选择结束 -->
+          <!-- 下拉选开始择 -->
+          中转港
+          <div class="selectCover">
+            <div class="selectInput">
+              <input style="color: rgb(153, 151, 151);" autocomplete="off" tabindex="3" id="qy_transferport_temp" name="qy_transferport_temp" value="--请输入中转港搜索--" placeholder="--请输入中转港搜索--" onblur="blur_query_temp(this)" onfocus="showSelectTransferport(this)"></div>
+            <button id="transferport" name="中转港" tabindex="4" class="iconSearch" type="button" onclick="fu_writeConditionField(false,this);"></button>
+          </div>
+          <!-- 下拉选择结束 -->
+          <!-- 下拉选开始择 -->
+          航线
+          <div class="selectCover">
+            <div class="selectInput">
+              <input style="color: rgb(153, 151, 151);" autocomplete="off" tabindex="5" id="qy_searoute_temp" name="qy_searoute_temp" value="--请输入航线搜索--" placeholder="--请输入航线搜索--" onblur="blur_query_temp(this)" onfocus="showSelectRoute(this)"></div>
+            <button id="searoute" name="航线" tabindex="6" class="iconSearch" type="button" onclick="fu_writeConditionField(false,this);"></button>
+          </div>
+          <!-- 下拉选择结束 --> </div>
+        <div class="lineArea">
+          <div id="div_advancedSearch" name="div_advancedSearch" class="slidedownCon searchSelect fn-clear" style="z-index:500">
+
+            <ul class="selectedCon"></ul>
+            <div class="selectInputCon" style="position:relative">
+              <span id="span_advancedSearch" name="span_advancedSearch">
+                <a id="div_advancedConditionsBY" class="select" href="javascript:fu_popAdvancedSearch_show()">
+                  其他条件
+                  <s></s>
+                </a>
+                <div class="slideDownCon w80" id="popAdvancedSearch" style="padding:6px 5px 3px 6px;display:none;position:absolute;z-index:520;left:0;top:22px;">
+                  <ul>
+                    <li>
+                      <a href="javascript:setAdvancedSelect('dischargeport');">
+                        <s class="iconGayDot"></s>
+                        目的港
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:setAdvancedSelect('transferport');">
+                        <s class="iconGayDot"></s>
+                        中转港
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:setAdvancedSelect('loadport');">
+                        <s class="iconGayDot"></s>
+                        起运港
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:setAdvancedSelect('searoute');">
+                        <s class="iconGayDot"></s>
+                        航线
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:setAdvancedSelect('country');">
+                        <s class="iconGayDot"></s>
+                        国家
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:setAdvancedSelect('trends');">
+                        <s class="iconGayDot"></s>
+                        涨跌信息
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:setAdvancedSelect('ispublish');">
+                        <s class="iconGayDot"></s>
+                        发布
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:setAdvancedSelect('iscommend');">
+                        <s class="iconGayDot"></s>
+                        推荐
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:setAdvancedSelect('validdate');">
+                        <s class="iconGayDot"></s>
+                        有效日期
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </span>
+              <input value="请输入条件搜索" autocomplete="off" tabindex="8" class="inputNew" id="advancedConditionsValue" name="advancedConditionsValue" style="width: 150px; color: rgb(153, 151, 151);" placeholder="请输入条件搜索" onblur="emptyInputShow(this)" type="text">
+              <button type="button" onclick="fu_writeConditionField(true);"></button>
+              <a id="button_save" href="javascript:fu_add_temp();">保存为模板</a>
+            </div>
+            <div>
+              <textarea style="display:none;" id="advancedConditionsTextarea" name="advancedConditionsTextarea" rows="2" cols="50"></textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div id="j-tableMenu" class="tableMenu fn-clear dibWrap">
+        <span class="table-title left">整箱</span>
+        <div class="right">
+          数据筛选：
+          <a id="j-stateBtn" class="btn" href="javascript:">
+            <span> <em>全部</em>
+
+              <s class="iconWhiteArrow"></s>
+            </span>
+          </a>
+        </div>
+        <div class="left">
+          <div class="multi-btn">
+            <span class="multi-btn-span ">
+              <a class="multi-btn-a" href="javascript:generate_tempTemplate();">
+                <s class="iconEdit"></s>
+                编辑
+              </a>
+              <div class="multi-btn-line"></div>
+              <a class="multi-btn-a" href="javascript:priceCopy();">
+                <s class="iconCopy"></s>
+                复制
+              </a>
+              <div class="multi-btn-line"></div>
+              <a class="multi-btn-a multi-btn-primary" href="javascript:openPriceDetailWin('/priceservice/seaMainPrice.ctrl?$action=fcl_detail&amp;casenumber=');">
+                <s class="iconAdd2"></s>
+                新增
+              </a>
+              <div class="multi-btn-line "></div>
+              <a class="multi-btn-a" href="javascript:javascript:priceDelete();">
+                <s class="iconDel2"></s>
+                删除
+              </a>
+              <div class="multi-btn-line"></div>
+              <a id="j-template" class="multi-btn-a" href="javascript:">
+                <s class="iconSearch"></s>
+                模板
+              </a>
+              <div class="multi-btn-line"></div>
+              <a class="multi-btn-a multi-btn-primary multi-btn-primary-next" href="javascript:fu_PopupPage_upload('/priceservice/priceInitBasicInfo.ctrl?$action=init_uploadprice&amp;priceType=fcl');">
+                <s class="iconImport"></s>
+                导入
+              </a>
+              <div class="multi-btn-line"></div>
+          
+              <a class="multi-btn-a multi-btn-primary multi-btn-primary-next" href="javascript:javascript:fu_publishprice();">
+                <s class="iconPub"></s>
+                发布运价
+              </a>
+          
+            </span>
+          </div>
+          <a id="j-test" class="btn" href="javascript:">
+            <span> <em>批量维护</em>
+              <s></s>
+            </span>
+          </a>
+          <a class="btn" href="javascript:fu_CustomColumnHeader()">
+            <span>
+              <em>自定义列头</em>
+            </span>
+          </a>
+        </div>
+
+      </div>
+      <div id="fixbox" class="fixbox dataTable" style="height: 239px;">
+        <table cellspacing="0" cellpadding="0" class="fixtable" id="fclmaintain_home1">
+          <thead>
+            <tr>
+              <th nowrap="" rowspan="2" class="ws-label-seq lockcolumn">序号</th>
+              <th nowrap="" rowspan="2" class="ws-checkbox-label-portlet lockcolumn">
+                <input type="checkbox" class="ws-row-portlet-sel-checkbox" name="SHEET_ROW_SELECT_ALL" value="" onclick="selectAllCheckBox(this);keychanges();" title="全选/反选当前页"></th>
+              <th nowrap="" rowspan="2" class="ws-label-seq lockcolumn">明细</th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>起运港</span>
+                <a href="javascript:fu_directpage(1,'false','','loadport');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>目的港</span>
+                <a href="javascript:fu_directpage(1,'false','','dischargeport');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>国家</span>
+                <a href="javascript:fu_directpage(1,'false','','country');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>中转港</span>
+                <a href="javascript:fu_directpage(1,'false','','transferport');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>船公司</span>
+                <a href="javascript:fu_directpage(1,'false','','carrier');"></a>
+              </th>
+
+              <th nowrap="" class="headTopClass" colspan="2">有效期</th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>发布</span>
+                <a href="javascript:fu_directpage(1,'false','','ispublish');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>航线</span>
+                <a href="javascript:fu_directpage(1,'false','','searoute');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>发布时间</span>
+                <a href="javascript:fu_directpage(1,'false','','publishdate');"></a>
+              </th>
+
+              <th nowrap="" class="headTopClass" colspan="3">标准箱型基价</th>
+
+              <th nowrap="" class="headTopClass" colspan="3">标准箱型中转价</th>
+
+              <th nowrap="" class="headTopClass" colspan="3">标准箱型底价</th>
+
+              <th nowrap="" class="headTopClass" colspan="3">标准箱型报价</th>
+
+              <th nowrap="" class="headTopClass" colspan="3">标准箱型网上报价</th>
+
+              <th nowrap="" class="headTopClass" colspan="5">特殊箱型基价</th>
+
+              <th nowrap="" class="headTopClass" colspan="5">特殊箱型中转价</th>
+
+              <th nowrap="" class="headTopClass" colspan="5">特殊箱型底价</th>
+
+              <th nowrap="" class="headTopClass" colspan="5">特殊箱型报价</th>
+
+              <th nowrap="" class="headTopClass" colspan="5">特殊箱型网上报价</th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>港区</span>
+                <a href="javascript:fu_directpage(1,'false','','massaddress');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>订舱代理</span>
+                <a href="javascript:fu_directpage(1,'false','','quoteorg');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>船期</span>
+                <a href="javascript:fu_directpage(1,'false','','cycle');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>航程(天)</span>
+                <a href="javascript:fu_directpage(1,'false','','sailtime');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>推荐</span>
+                <a href="javascript:fu_directpage(1,'false','','iscommend');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>符号</span>
+                <a href="javascript:fu_directpage(1,'false','','signflag');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>限重</span>
+                <a href="javascript:fu_directpage(1,'false','','volumerange');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>佣金</span>
+                <a href="javascript:fu_directpage(1,'false','','rakeoff');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>THC</span>
+                <a href="javascript:fu_directpage(1,'false','','thc');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>DOC</span>
+                <a href="javascript:fu_directpage(1,'false','','documentfee');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>订舱费</span>
+                <a href="javascript:fu_directpage(1,'false','','bookingfee');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>电放费</span>
+                <a href="javascript:fu_directpage(1,'false','','dffee');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>提箱费</span>
+                <a href="javascript:fu_directpage(1,'false','','txfee');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>箱单费</span>
+                <a href="javascript:fu_directpage(1,'false','','xdfee');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>EDI费</span>
+                <a href="javascript:fu_directpage(1,'false','','edifee');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>其它RMB费用</span>
+                <a href="javascript:fu_directpage(1,'false','','otherrmbfee');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>附加费</span>
+                <a href="javascript:fu_directpage(1,'false','','plusfeedesc');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>联系方式</span>
+                <a href="javascript:fu_directpage(1,'false','','linkinfo');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>备注</span>
+                <a href="javascript:fu_directpage(1,'false','','remark');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>出单方式</span>
+                <a href="javascript:fu_directpage(1,'false','','sendtype');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>停航</span>
+                <a href="javascript:fu_directpage(1,'false','','suspend_shipping_service');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>开航日</span>
+                <a href="javascript:fu_directpage(1,'false','','sailing_date');"></a>
+              </th>
+
+              <th rowspan="2" class="headNoClass sort">
+                <span>预计上涨</span>
+                <a href="javascript:fu_directpage(1,'false','','expected_rise');"></a>
+              </th>
+
+            </tr>
+            <tr>
+
+              <th nowrap="" class="headBottomClass sort">
+                开始
+                <a href="javascript:fu_directpage(1,'false','','begindate');"></a>
+              </th>
+
+              <th nowrap="" class="headBottomClass sort">
+                结束
+                <a href="javascript:fu_directpage(1,'false','','validdate');"></a>
+              </th>
+
+              <th nowrap="" class="headBottomClass sort">
+                20'GP
+                <a href="javascript:fu_directpage(1,'false','','basicportprice1');"></a>
+              </th>
+
+              <th nowrap="" class="headBottomClass sort">
+                40'GP
+                <a href="javascript:fu_directpage(1,'false','','basicportprice2');"></a>
+              </th>
+
+              <th nowrap="" class="headBottomClass sort">
+                40'HQ
+                <a href="javascript:fu_directpage(1,'false','','basicportprice3');"></a>
+              </th>
+
+              <th nowrap="" class="headBottomClass sort">
+                20'GP
+                <a href="javascript:fu_directpage(1,'false','','transferportprice1');"></a>
+              </th>
+
+              <th nowrap="" class="headBottomClass sort">
+                40'GP
+                <a href="javascript:fu_directpage(1,'false','','transferportprice2');"></a>
+              </th>
+
+              <th nowrap="" class="headBottomClass sort">
+                40'HQ
+                <a href="javascript:fu_directpage(1,'false','','transferportprice3');"></a>
+              </th>
+
+              <th nowrap="" class="headBottomClass sort">
+                20'GP
+                <a href="javascript:fu_directpage(1,'false','','baseprice1');"></a>
+              </th>
+
+              <th nowrap="" class="headBottomClass sort">
+                40'GP
+                <a href="javascript:fu_directpage(1,'false','','baseprice2');"></a>
+              </th>
+
+              <th nowrap="" class="headBottomClass sort">
+                40'HQ
+                <a href="javascript:fu_directpage(1,'false','','baseprice3');"></a>
+              </th>
+
+              <th nowrap="" class="headBottomClass sort">
+                20'GP
+                <a href="javascript:fu_directpage(1,'false','','sellprice1');"></a>
+              </th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr onclick="selectCurrentCheckBox(this,event)" ws-attribute="ws-sheetpage-row" class="ws-row-portlet0">
+              <td nowrap="" style="text-align:center" class="lockcolumn ws-data-seq">13</td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn">
+                <input type="checkbox" class="ws-row-portlet-sel-checkbox" value="casenumber=53$" onclick="checkedkeys_change(this);"></td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn openPriceDetailClass">
+                <a href="javascript:openPriceDetailWin('/priceservice/seaMainPrice.ctrl?$action=fcl_detail&amp;casenumber=53')" style="padding:0 3px;">明细</a>
+              </td>
+              <td nowrap="" class="ws-row-value editloadport noinputClass">
+                <span>&nbsp;SDF&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdischargeport noinputClass">
+                <span>&nbsp;ADD&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcountry noinputClass">
+                <span>&nbsp;d&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferport noinputClass">
+                <span>&nbsp;EE1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcarrier noinputClass">
+                <span>&nbsp;daima15&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbegindate noinputClass">
+                <span>&nbsp;2014-03-03&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvaliddate noinputClass">
+                <span>&nbsp;2014-03-08&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editispublish noinputClass">
+                <span>
+                  &nbsp;
+                  <span style="color:red;">
+                    未发布
+                    <span>&nbsp;</span>
+                  </span>
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsearoute noinputClass">
+                <span>&nbsp;整箱航线222&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editpublishdate noinputClass">
+                <span>&nbsp;2014-03-03 16:27:13&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice1 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice2 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice3 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice1 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice2 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice3 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice1 noinputClass">
+                <span>&nbsp;8989&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice2 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice3 noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice1 noinputClass">
+                <span>&nbsp;8991&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice2 noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice3 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice1 noinputClass">
+                <span>&nbsp;8991&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice2 noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice3 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice4 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice5 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice6 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice7 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice4 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice5 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice6 noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice7 noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice4 noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice5 noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice6 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice7 noinputClass">
+                <span>&nbsp;6&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice4 noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice5 noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice6 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice7 noinputClass">
+                <span>&nbsp;6&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editmassaddress noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editquoteorg noinputClass">
+                <span>&nbsp;yihia35&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcycle noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailtime noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editiscommend noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsignflag noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvolumerange noinputClass">
+                <span>&nbsp;32&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editrakeoff noinputClass">
+                <span>&nbsp;7&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editthc noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdocumentfee noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbookingfee noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdffee noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittxfee noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editxdfee noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editedifee noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editotherrmbfee noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" title="BAF:1 AGS:1 CAF:1 CAS:1 BCS:1 CISF:1 EBS:1 CIC:1 PSS:1 IFS:1 ECR:1 WRS:1 SPS:1 ISPS:1 YAS:1 SUZ:1 其它:1" class="ws-row-value editplusfeedesc noinputClass">
+                <span>&nbsp;BAF:1 AGS:1...&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editlinkinfo noinputClass">
+                <span>&nbsp;      呆呆&nbsp;</span>
+              </td>
+              <td nowrap="" title="fsadfdsf
+fsafsdf" class="ws-row-value editremark noinputClass">
+                <span>
+                  &nbsp;fsadfdsf
+f...&nbsp;
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsendtype noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsuspend_shipping_service noinputClass">
+                <span>&nbsp;√&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailing_date noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editexpected_rise noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+
+              <td style="display:none;" class="editHide">
+                <input type="text" value="{'operationname':'modify','casenumber':'53'}" size="18"></td>
+            </tr>
+
+            <tr onclick="selectCurrentCheckBox(this,event)" ws-attribute="ws-sheetpage-row" class="ws-row-portlet0 odd">
+              <td nowrap="" style="text-align:center" class="lockcolumn ws-data-seq">14</td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn">
+                <input type="checkbox" class="ws-row-portlet-sel-checkbox" value="casenumber=56$" onclick="checkedkeys_change(this);"></td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn openPriceDetailClass">
+                <a href="javascript:openPriceDetailWin('/priceservice/seaMainPrice.ctrl?$action=fcl_detail&amp;casenumber=56')" style="padding:0 3px;">明细</a>
+              </td>
+              <td nowrap="" class="ws-row-value editloadport noinputClass">
+                <span>&nbsp;JJJJJJJ&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdischargeport noinputClass">
+                <span>&nbsp;EE10&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcountry noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferport noinputClass">
+                <span>&nbsp;ZHENG&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcarrier noinputClass">
+                <span>&nbsp;34&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbegindate noinputClass">
+                <span>&nbsp;2014-03-03&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvaliddate noinputClass">
+                <span>&nbsp;2014-03-08&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editispublish noinputClass">
+                <span>
+                  &nbsp;
+                  <span style="color:red;">
+                    未发布
+                    <span>&nbsp;</span>
+                  </span>
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsearoute noinputClass">
+                <span>&nbsp;整箱航线222&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editpublishdate noinputClass">
+                <span>&nbsp;2014-03-03 16:27:13&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice1 noinputClass">
+                <span>&nbsp;-1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice2 noinputClass">
+                <span>&nbsp;-1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice3 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice1 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice2 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice3 noinputClass">
+                <span>&nbsp;-1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice1 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice2 noinputClass">
+                <span>&nbsp;23&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice3 noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice1 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice2 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice3 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice1 noinputClass">
+                <span>&nbsp;533&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice2 noinputClass">
+                <span>&nbsp;533&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice3 noinputClass">
+                <span>&nbsp;5333&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice4 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice5 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice6 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice7 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice4 noinputClass">
+                <span>&nbsp;-1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice5 noinputClass">
+                <span>&nbsp;0&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice6 noinputClass">
+                <span>&nbsp;0&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice7 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice4 noinputClass">
+                <span>&nbsp;0&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice5 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice6 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editmassaddress noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editquoteorg noinputClass">
+                <span>&nbsp;33&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcycle noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailtime noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editiscommend noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsignflag noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvolumerange noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editrakeoff noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editthc noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdocumentfee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbookingfee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdffee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittxfee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editxdfee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editedifee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editotherrmbfee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" title="BAF:8 AGS:8 CAF:8 CAS:8 BCS:8 CISF:8 EBS:8 CIC:88 PSS:8 IFS:8 ECR:8 WRS:8 SPS:88 ISPS:8 YAS:8 SUZ:8 其它:8" class="ws-row-value editplusfeedesc noinputClass">
+                <span>&nbsp;BAF:8 AGS:8...&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editlinkinfo noinputClass">
+                <span>&nbsp;      呆呆&nbsp;</span>
+              </td>
+              <td nowrap="" title="fsadfdsf
+fsafsdf" class="ws-row-value editremark noinputClass">
+                <span>
+                  &nbsp;fsadfdsf
+f...&nbsp;
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsendtype noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsuspend_shipping_service noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailing_date noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editexpected_rise noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+
+              <td style="display:none;" class="editHide">
+                <input type="text" value="{'operationname':'modify','casenumber':'56'}" size="18"></td>
+            </tr>
+
+            <tr onclick="selectCurrentCheckBox(this,event)" ws-attribute="ws-sheetpage-row" class="ws-row-portlet0">
+              <td nowrap="" style="text-align:center" class="lockcolumn ws-data-seq">15</td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn">
+                <input type="checkbox" class="ws-row-portlet-sel-checkbox" value="casenumber=59$" onclick="checkedkeys_change(this);"></td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn openPriceDetailClass">
+                <a href="javascript:openPriceDetailWin('/priceservice/seaMainPrice.ctrl?$action=fcl_detail&amp;casenumber=59')" style="padding:0 3px;">明细</a>
+              </td>
+              <td nowrap="" class="ws-row-value editloadport noinputClass">
+                <span>&nbsp;ZHENG3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdischargeport noinputClass">
+                <span>&nbsp;EE103&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcountry noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferport noinputClass">
+                <span>&nbsp;ZHENG&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcarrier noinputClass">
+                <span>&nbsp;34&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbegindate noinputClass">
+                <span>&nbsp;2014-03-03&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvaliddate noinputClass">
+                <span>&nbsp;2014-03-08&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editispublish noinputClass">
+                <span>
+                  &nbsp;
+                  <span style="color:red;">
+                    未发布
+                    <span>&nbsp;</span>
+                  </span>
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsearoute noinputClass">
+                <span>&nbsp;整箱航线222&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editpublishdate noinputClass">
+                <span>&nbsp;2014-03-03 16:27:13&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice1 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice2 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice3 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice1 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice2 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice3 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice1 noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice2 noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice3 noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice1 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice2 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice3 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice1 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice2 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice3 noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editmassaddress noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editquoteorg noinputClass">
+                <span>&nbsp;33&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcycle noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailtime noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editiscommend noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsignflag noinputClass">
+                <span>&nbsp;s&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvolumerange noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editrakeoff noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editthc noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdocumentfee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbookingfee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdffee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittxfee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editxdfee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editedifee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editotherrmbfee noinputClass">
+                <span>&nbsp;8&nbsp;</span>
+              </td>
+              <td nowrap="" title="BAF:8 AGS:8 CAF:8 CAS:8 BCS:8 CISF:8 EBS:8 CIC:88 PSS:8 IFS:8 ECR:8 WRS:8 SPS:88 ISPS:8 YAS:8 SUZ:8 其它:8" class="ws-row-value editplusfeedesc noinputClass">
+                <span>&nbsp;BAF:8 AGS:8...&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editlinkinfo noinputClass">
+                <span>&nbsp;      呆呆&nbsp;</span>
+              </td>
+              <td nowrap="" title="465456
+的
+如果
+fsafsdf" class="ws-row-value editremark noinputClass">
+                <span>
+                  &nbsp;465456
+的
+...&nbsp;
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsendtype noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsuspend_shipping_service noinputClass">
+                <span>&nbsp;√&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailing_date noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editexpected_rise noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+
+              <td style="display:none;" class="editHide">
+                <input type="text" value="{'operationname':'modify','casenumber':'59'}" size="18"></td>
+            </tr>
+
+            <tr onclick="selectCurrentCheckBox(this,event)" ws-attribute="ws-sheetpage-row" class="ws-row-portlet0 odd">
+              <td nowrap="" style="text-align:center" class="lockcolumn ws-data-seq">16</td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn">
+                <input type="checkbox" class="ws-row-portlet-sel-checkbox" value="casenumber=68$" onclick="checkedkeys_change(this);"></td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn openPriceDetailClass">
+                <a href="javascript:openPriceDetailWin('/priceservice/seaMainPrice.ctrl?$action=fcl_detail&amp;casenumber=68')" style="padding:0 3px;">明细</a>
+              </td>
+              <td nowrap="" class="ws-row-value editloadport noinputClass">
+                <span>&nbsp;ZHENG2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdischargeport noinputClass">
+                <span>&nbsp;DASFAS&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcountry noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferport noinputClass">
+                <span>&nbsp;ZHENG&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcarrier noinputClass">
+                <span>&nbsp;www&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbegindate noinputClass">
+                <span>&nbsp;2014-03-03&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvaliddate noinputClass">
+                <span>&nbsp;2014-03-08&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editispublish noinputClass">
+                <span>
+                  &nbsp;
+                  <span style="color:red;">
+                    未发布
+                    <span>&nbsp;</span>
+                  </span>
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsearoute noinputClass">
+                <span>&nbsp;整宁波&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editpublishdate noinputClass">
+                <span>&nbsp;2014-03-03 16:27:13&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice1 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice2 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice3 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice1 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice2 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice3 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice1 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice2 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice3 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice1 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice2 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice3 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice1 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice2 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice3 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editmassaddress noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editquoteorg noinputClass">
+                <span>&nbsp;33&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcycle noinputClass">
+                <span>&nbsp;5&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailtime noinputClass">
+                <span>&nbsp;4&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editiscommend noinputClass">
+                <span>&nbsp;√&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsignflag noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvolumerange noinputClass">
+                <span>&nbsp;限重S&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editrakeoff noinputClass">
+                <span>&nbsp;佣金S&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editthc noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdocumentfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbookingfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdffee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittxfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editxdfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editedifee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editotherrmbfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" title="BAF:5 AGS:5 CAF:5 CAS:5 BCS:5 CISF:5 EBS:5 CIC:5 PSS:5 IFS:5 ECR:5 WRS:5 SPS:5 ISPS:5 YAS:5 SUZ:5 其它:5" class="ws-row-value editplusfeedesc noinputClass">
+                <span>&nbsp;BAF:5 AGS:5...&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editlinkinfo noinputClass">
+                <span>&nbsp;      呆呆&nbsp;</span>
+              </td>
+              <td nowrap="" title="xxxxxxxx
+的
+fsafsdf" class="ws-row-value editremark noinputClass">
+                <span>
+                  &nbsp;xxxxxxxx
+的...&nbsp;
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsendtype noinputClass">
+                <span>&nbsp;佣金S&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsuspend_shipping_service noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailing_date noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editexpected_rise noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+
+              <td style="display:none;" class="editHide">
+                <input type="text" value="{'operationname':'modify','casenumber':'68'}" size="18"></td>
+            </tr>
+
+            <tr onclick="selectCurrentCheckBox(this,event)" ws-attribute="ws-sheetpage-row" class="ws-row-portlet0">
+              <td nowrap="" style="text-align:center" class="lockcolumn ws-data-seq">17</td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn">
+                <input type="checkbox" class="ws-row-portlet-sel-checkbox" value="casenumber=71$" onclick="checkedkeys_change(this);"></td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn openPriceDetailClass">
+                <a href="javascript:openPriceDetailWin('/priceservice/seaMainPrice.ctrl?$action=fcl_detail&amp;casenumber=71')" style="padding:0 3px;">明细</a>
+              </td>
+              <td nowrap="" class="ws-row-value editloadport noinputClass">
+                <span>&nbsp;ZHENG3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdischargeport noinputClass">
+                <span>&nbsp;DASFAS&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcountry noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferport noinputClass">
+                <span>&nbsp;ZHEN NINGBO&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcarrier noinputClass">
+                <span>&nbsp;www&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbegindate noinputClass">
+                <span>&nbsp;2014-03-03&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvaliddate noinputClass">
+                <span>&nbsp;2014-03-08&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editispublish noinputClass">
+                <span>
+                  &nbsp;
+                  <span style="color:red;">
+                    未发布
+                    <span>&nbsp;</span>
+                  </span>
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsearoute noinputClass">
+                <span>&nbsp;整宁波&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editpublishdate noinputClass">
+                <span>&nbsp;2014-03-03 16:27:13&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice1 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice2 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice3 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice1 noinputClass">
+                <span>&nbsp;0&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice2 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice3 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice1 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice2 noinputClass">
+                <span>&nbsp;89&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice3 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice1 noinputClass">
+                <span>&nbsp;44&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice2 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice3 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice1 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice2 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice3 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice4 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice5 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice6 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice7 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice4 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice5 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice6 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice7 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice4 noinputClass">
+                <span>&nbsp;99&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice5 noinputClass">
+                <span>&nbsp;0&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice6 noinputClass">
+                <span>&nbsp;99&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice7 noinputClass">
+                <span>&nbsp;77&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editmassaddress noinputClass">
+                <span>&nbsp;123&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editquoteorg noinputClass">
+                <span>&nbsp;dahang&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcycle noinputClass">
+                <span>&nbsp;555&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailtime noinputClass">
+                <span>&nbsp;555&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editiscommend noinputClass">
+                <span>&nbsp;√&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsignflag noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvolumerange noinputClass">
+                <span>&nbsp;sd&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editrakeoff noinputClass">
+                <span>&nbsp;1231&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editthc noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdocumentfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbookingfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdffee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittxfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editxdfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editedifee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editotherrmbfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" title="BAF:1 AGS:1 CAF:1 CAS:1 BCS:1 CISF:1 EBS:1 CIC:1 PSS:1 IFS:1 ECR:1 WRS:1 SPS:1 ISPS:1 YAS:1 SUZ:1 其它:1" class="ws-row-value editplusfeedesc noinputClass">
+                <span>&nbsp;BAF:1 AGS:1...&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editlinkinfo noinputClass">
+                <span>&nbsp;      呆呆&nbsp;</span>
+              </td>
+              <td nowrap="" title="轻轻轻轻轻轻轻轻轻轻
+的
+fsafsdf" class="ws-row-value editremark noinputClass">
+                <span>
+                  &nbsp;轻轻轻轻轻轻轻轻轻轻
+...&nbsp;
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsendtype noinputClass">
+                <span>&nbsp;1231$gsdf&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsuspend_shipping_service noinputClass">
+                <span>&nbsp;√&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailing_date noinputClass">
+                <span>&nbsp;555&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editexpected_rise noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+
+              <td style="display:none;" class="editHide">
+                <input type="text" value="{'operationname':'modify','casenumber':'71'}" size="18"></td>
+            </tr>
+
+            <tr onclick="selectCurrentCheckBox(this,event)" ws-attribute="ws-sheetpage-row" class="ws-row-portlet0 odd">
+              <td nowrap="" style="text-align:center" class="lockcolumn ws-data-seq">18</td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn">
+                <input type="checkbox" class="ws-row-portlet-sel-checkbox" value="casenumber=89$" onclick="checkedkeys_change(this);"></td>
+              <td nowrap="" class="ws-checkbox-data-portlet lockcolumn openPriceDetailClass">
+                <a href="javascript:openPriceDetailWin('/priceservice/seaMainPrice.ctrl?$action=fcl_detail&amp;casenumber=89')" style="padding:0 3px;">明细</a>
+              </td>
+              <td nowrap="" class="ws-row-value editloadport noinputClass">
+                <span>&nbsp;ZHENG&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdischargeport noinputClass">
+                <span>&nbsp;SEAPORT01&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcountry noinputClass">
+                <span>&nbsp;祖国&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferport noinputClass">
+                <span>&nbsp;ZHEN NINGBO&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcarrier noinputClass">
+                <span>&nbsp;www&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbegindate noinputClass">
+                <span>&nbsp;2014-03-03&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvaliddate noinputClass">
+                <span>&nbsp;2014-03-08&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editispublish noinputClass">
+                <span>
+                  &nbsp;
+                  <span style="color:red;">
+                    未发布
+                    <span>&nbsp;</span>
+                  </span>
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsearoute noinputClass">
+                <span>&nbsp;整宁波&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editpublishdate noinputClass">
+                <span>&nbsp;2014-03-03 16:27:13&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice1 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice2 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice3 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice1 noinputClass">
+                <span>&nbsp;0&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice2 noinputClass">
+                <span>&nbsp;1&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice3 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice1 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice2 noinputClass">
+                <span>&nbsp;89&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice3 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice1 noinputClass">
+                <span>&nbsp;44&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice2 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice3 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice1 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice2 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice3 noinputClass">
+                <span>&nbsp;2&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice4 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice5 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice6 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice7 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbasicportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittransferportprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice4 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice5 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice6 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice7 noinputClass">
+                <span>&nbsp;88&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbaseprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice4 noinputClass">
+                <span>&nbsp;99&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice5 noinputClass">
+                <span>&nbsp;0&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice6 noinputClass">
+                <span>&nbsp;99&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice7 noinputClass">
+                <span>&nbsp;55&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice4 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice5 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice6 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice7 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editinternetsellprice8 noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editmassaddress noinputClass">
+                <span>&nbsp;123&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editquoteorg noinputClass">
+                <span>&nbsp;dahang&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editcycle noinputClass">
+                <span>&nbsp;555&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailtime noinputClass">
+                <span>&nbsp;555&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editiscommend noinputClass">
+                <span>&nbsp;√&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsignflag noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editvolumerange noinputClass">
+                <span>&nbsp;sd&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editrakeoff noinputClass">
+                <span>&nbsp;1231&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editthc noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdocumentfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editbookingfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editdffee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value edittxfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editxdfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editedifee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editotherrmbfee noinputClass">
+                <span>&nbsp;3&nbsp;</span>
+              </td>
+              <td nowrap="" title="BAF:1 AGS:1 CAF:1 CAS:1 BCS:1 CISF:1 EBS:1 CIC:1 PSS:1 IFS:1 ECR:1 WRS:1 SPS:1 ISPS:1 YAS:1 SUZ:1 其它:1" class="ws-row-value editplusfeedesc noinputClass">
+                <span>&nbsp;BAF:1 AGS:1...&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editlinkinfo noinputClass">
+                <span>&nbsp;      呆呆&nbsp;</span>
+              </td>
+              <td nowrap="" title="轻轻轻轻轻轻轻轻轻轻
+的
+fsafsdf" class="ws-row-value editremark noinputClass">
+                <span>
+                  &nbsp;轻轻轻轻轻轻轻轻轻轻
+...&nbsp;
+                </span>
+              </td>
+              <td nowrap="" class="ws-row-value editsendtype noinputClass">
+                <span>&nbsp;1231$gsdf&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsuspend_shipping_service noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editsailing_date noinputClass">
+                <span>&nbsp;555&nbsp;</span>
+              </td>
+              <td nowrap="" class="ws-row-value editexpected_rise noinputClass">
+                <span>&nbsp;&nbsp;</span>
+              </td>
+
+              <td style="display:none;" class="editHide">
+                <input type="text" value="{'operationname':'modify','casenumber':'89'}" size="18"></td>
+            </tr>
+
+
+
+          
+
+
+          </tbody>
+        </table>
+
+      </div>
+      <div class="tableMenu fn-clear" style="border:1px solid #86A9C6;border-top:none">
+        <div class="page">
+
+          <span class="view-page">
+            共175条
+            <a noshow="true" class="firstNone">第一页</a>
+            <a noshow="true" class="prevNone">上一页</a>
+
+            <input id="pageCount" value="4" type="hidden">
+            跳到
+            <input id="currentpage" name="currentpage" class="view-page-input" value="1" onblur="checkAndGotoPage(this)" type="text">
+            页/4页
+            <a noshow="true" class="next" href="javascript:fu_nextpage(2);" title="下一页">下一页</a>
+            <a noshow="true" class="last" href="javascript:fu_nextpage(4);" title="最后一页">尾页</a>
+
+          </span>
+
+        </div>
+      </div>
+      <!-- 下拉框等js控制区域 -->
+      <div style="display: none;" class="slideDownCon w80" id="for-j-stateBtn">
+        <ul>
+          <li>
+            <a href="javascript:fu_commonQuery(-1)">
+              <s class="iconGayDot"></s>
+              全部
+            </a>
+          </li>
+          <li>
+            <a href="javascript:fu_commonQuery(100);">
+              <s class="iconGayDot"></s>
+              今日发布
+            </a>
+          </li>
+          <li>
+            <a href="javascript:fu_commonQuery(10)">
+              <s class="iconGayDot"></s>
+              有效
+            </a>
+          </li>
+          <li>
+            <a href="javascript:fu_commonQuery(11)">
+              <s class="iconGayDot"></s>
+              失效
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div style="display: none;" class="slideDownCon w120" id="for-j-test">
+        <ul>
+          <li>
+            <a href="javascript:modifyPop_price('baseprice');">
+              <s class="iconGayDot"></s>
+              底价
+            </a>
+          </li>
+          <li>
+            <a href="javascript:modifyPop_price('otherprice');">
+              <s class="iconGayDot"></s>
+              报价
+            </a>
+          </li>
+          <li>
+            <a href="javascript:modifyPop_price('validdate');">
+              <s class="iconGayDot"></s>
+              有效日期
+            </a>
+          </li>
+          <li>
+            <a href="javascript:modifyPop_price('cycle');">
+              <s class="iconGayDot"></s>
+              船公司/航程/船期
+            </a>
+          </li>
+
+          <li>
+            <a href="javascript:fu_publishprice();">
+              <s class="iconGayDot"></s>
+              批量发布
+            </a>
+          </li>
+
+          <li>
+            <a href="javascript:modifyPop_price('iscommend');">
+              <s class="iconGayDot"></s>
+              推荐
+            </a>
+          </li>
+          <li>
+            <a href="javascript:modifyPop_price('plusfee');">
+              <s class="iconGayDot"></s>
+              附加费
+            </a>
+          </li>
+          <li>
+            <a href="javascript:modifyPop_price('linkinfo');">
+              <s class="iconGayDot"></s>
+              联系方式
+            </a>
+          </li>
+          <li>
+            <a href="javascript:modifyPop_price('remark');">
+              <s class="iconGayDot"></s>
+              备注
+            </a>
+          </li>
+          <li>
+            <a href="javascript:modifyPop_price('adjunct');">
+              <s class="iconGayDot"></s>
+              附件上传
+            </a>
+          </li>
+          <li>
+            <a href="javascript:modifyPop_price('other');">
+              <s class="iconGayDot"></s>
+              更多项目
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 下拉选开始择 -->
+      <div style="display: none;" class="templateSel slideDownCon w160" id="for-j-template">
+        <div class="paddingCon">
+          <dl style="padding: 0px 0px;">
+            <dt>
+              上次维护的模板
+              <a style="padding-left:40px;" href="javascript:fu_popNoTemplate_close();">关闭</a>
+            </dt>
+            <dd>
+              <ul class="latest-temp">无记录</ul>
+            </dd>
+          </dl>
+          <dl>
+            <dt style="border:none;padding:0">其他模板</dt>
+            <dd>
+              <div class="searchTemp">
+                <input value="--搜索模板名称--" style="color: rgb(153, 151, 151);" tabindex="55" id="queryTemplate1" name="queryTemplate1" placeholder="--搜索模板名称--" onkeyup="AsyGetTemplateName(this,event);" type="text"></div>
+              <ul id="downTemplateDiv" class="other-temp"></ul>
+            </dd>
+          </dl>
+
+        </div>
+      </div>
+      <!--  下拉结束 -->
+      <div style="display:none;">
+        <input id="pagetype" value="edit" type="hidden">
+        <input id="hidden_deleteCasenumber" value="" type="hidden">
+        <input id="hidden_p_pagetype" value="import_lcl_query" type="hidden">
+        <input id="hidden_currentDate" value="2014-03-17" type="hidden">
+        <input id="hidden_priceType" value="import_lcl" type="hidden">
+        <input id="sortBy" name="sortBy" value="null" type="hidden">
+        <input id="sortColumn" name="sortColumn" value="null" type="hidden">
+        <input id="hidden_last_templateName" value="" type="hidden">
+        <input id="connonQueryValue" name="connonQueryValue" value="-1" type="hidden">
+        <textarea style="display:none;" id="checkedkeys" name="checkedkeys" rows="2" cols="50"></textarea>
+        <select id="advancedConditionsBY" name="advancedConditionsBY" style="width:75px;padding-left:5px;">
+          <option selected="selected" value="-1">条件按</option>
+          <option value="loadport">起运港</option>
+          <option value="transferport">中转港</option>
+          <option value="dischargeport">目的港</option>
+          <option value="searoute">航线</option>
+          <option value="country">国家</option>
+          <option value="trends">涨跌信息</option>
+          <option value="ispublish">发布</option>
+          <option value="iscommend">推荐</option>
+          <option value="validdate">有效日期</option>
+        </select>
+      </div>
+      <div id="popSelectonfirm" style="font-size:13px;padding:6px 5px 3px 6px;display:none;position:absolute;z-index:220;background-color: #f9f9f9;border: 3px solid #D0D0D0;">
+        <table>
+          <tbody>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>
+                <span style="color:red;">重要提示</span>
+              </td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td id="prompt_common">
+                <span>您未选择记录,系统默认将更新查询结果中的</span>
+                <span style="color:red;">所有记录</span>
+                <span>,继续操作请点击确认,如需重新选择,请点击退出！</span>
+              </td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td style="text-align:center;">
+                <span>
+                  <input id="popSelectonfirminput" value="确定" style="width:90px;" class="buttonSys" type="button">
+
+                  <input value="退出" style="width:90px;" class="buttonSys" onclick="fupopSelectonfirm_close()" type="button"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="display: none;">
+          <tbody>
+            <tr>
+              <td>
+                <input id="popSelectonfirm_modeifyName"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+  <script type="text/javascript" src="welcome_data/bodyInterface.js"></script>
+  <script type="text/javascript" src="3_files/jquery-ui-1.js"></script>
+  <script type="text/javascript" src="welcome_data/fcommon-1.js"></script>
+  <script language="javascript" type="text/javascript" src="welcome_data/f_fix_win_common.js"></script>
+  <script type="text/javascript" src="welcome_data/fescape.js"></script>
+  <script type="text/javascript" src="welcome_data/RichSelect.js"></script>
+  <script type="text/javascript" src="3_files/ajaxlogout.js"></script>
+  <script type="text/javascript" src="welcome_data/importlcl_maintain.js"></script>
+
+</body>
+</html>

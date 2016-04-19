@@ -1,0 +1,376 @@
+// ====================ebooking新增样式，by:Evan=================
+
+.eui-order-header{
+	position: relative;*zoom:1;
+	padding: 10px 0 10px 5px;
+	font-size: 0;
+	span{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		font-size: 16px;color: #738F9D;
+	}
+	i{
+		padding: 0 8px;
+		font-size: 14px;
+		vertical-align: middle;
+	}
+	.trun-link{
+		position: absolute;right: 0;top: 10px;
+		font-size: 12px;
+	}
+}
+
+
+// 去掉可能为第一版的样式
+// .eui-order-header-left,.eui-order-header-right{
+// 	float: left;*display: inline;*zoom:1;
+// 	width: 50%;padding: 15px 0;
+// 	font-size: 14px;
+// 	.label{
+// 		color: #666;
+// 		text-align: left;font-weight: bold;
+// 	}
+// 	.info{
+// 		color: #2F5879;
+// 		text-align: left;font-weight: bold;
+// 	}
+// }
+
+// .eui-order-header-left{
+// 	.eui-order-header-content{
+// 		border-right: 1px dashed #ddd;
+// 	}
+// }
+
+// .eui-order-header-right{
+// 	.eui-order-header-content{
+// 		padding-left: 15px;
+// 		border-left: 1px dashed #fff;
+// 	}
+// }
+
+.eui-order-annex{
+	// padding-top: 15px;
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	p{
+		padding-top: 3px;
+		color: #999;
+	}
+}
+
+.eui-order-annex-line{
+	padding-bottom: 10px;
+}
+
+.eui-input-tips{
+	margin-left: 5px;
+	color: #999;
+}
+
+
+.eui-annex-info{
+	display: inline-block;*display: inline;*zoom:1;
+	padding-left: 5px;
+	vertical-align: middle;
+	span,a{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+	}
+	span{
+		width: 90px;
+	}
+	a{
+		margin-left: 8px;
+		color: #0066CC;
+	}
+}
+
+
+.eui-grid{
+	width: 100%;
+	ul{
+		&:extend(.clearfix all);
+		padding: 0 5px;
+	}
+}
+
+.eui-grid-cell{
+	float: left;*display: inline;
+	width: 12%;
+	text-align: center;
+}
+
+.eui-order-input{
+	height: 24px;
+	border: 1px solid @formbdColor;border-right: none;
+	// .border-radius(2px);
+	.box-shadow(inset 0 1px 2px #ddd);
+	&:hover{
+		border-color: darken(@formbdColor,20%);
+	}
+	.transition(all .3s ease 0s);
+	.content{
+		&:extend(.clearfix all);
+		height: 24px;
+		padding:0 5px;*padding-right: 1px;
+		input{
+			width: 100%;
+			height: 16px;line-height: 16px;
+		}
+	}
+
+}
+
+.eui-order-input-num{
+	position: relative;border-right: 1px solid @formbdColor;
+	padding: 0 20px;
+	input{
+		width: 100%;
+		height: 16px;line-height: 16px;
+		text-align: center;
+	}
+}
+
+
+.eui-order-addon{
+	position: absolute;top: 0;z-index: 11;
+	width: 20px;height: 24px; line-height: 24px;
+	background: #eee;color: #666;
+	font-size: 14px;font-weight: bold;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+.eui-order-addon-disable{
+	background: #f5f5f5;
+	cursor: not-allowed;
+	color: #999;
+	&:hover{
+		background: #f5f5f5;
+		color: #999;
+	}
+}
+
+.eui-order-subtract{
+	left: 0;
+	border-right: 1px solid @formbdColor;
+}
+
+.eui-order-add{
+	right: 0;
+	border-left: 1px solid @formbdColor;
+}
+
+
+.eui-order-textarea-area{
+	position: relative;*zoom: 1;
+	padding-left: 80px;*width: 569px;
+}
+
+
+.eui-order-textarea{
+	border: 1px solid @formbdColor;
+	// .border-radius(2px);
+	.box-shadow(inset 0 1px 2px #ddd);
+	&:hover{
+		border-color: darken(@formbdColor,20%);
+	}
+	.transition(all .3s ease 0s);
+	.content{
+		&:extend(.clearfix all);
+		padding:0 5px;*padding-right: 1px;*margin-right: 5px;
+		textarea{
+			width: 100%;height: 60px;
+		}
+	}
+}
+
+.eui-order-textarea-label{
+	position: absolute;
+	left: 0;top: 0;
+	width: 75px;padding-right: 5px;
+	text-align: right;
+}
+
+.eui-order-input-first{
+	// .border-radius(2px);
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+.eui-order-input-last{
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+.eui-order-input-last{
+	border-right: 1px solid @formbdColor;
+}
+
+
+.eui-order-table{
+	table-layout: fixed;
+	width: 100%;*width: 646px;
+	background: #fff;
+	th{
+		border-top: 3px solid #f2f2f2;border-bottom: 3px solid #f2f2f2;background: #F5F5F5;
+		padding: 10px 0;
+		text-align: center;
+		background:#F5F5F5;
+		// .linear(#fff,#EDEDED);
+	}
+	.th-first{
+		border-left: 3px solid #f2f2f2;
+	}
+	.th-last{
+		border-right: 3px solid #f2f2f2;
+	}
+	td{
+		padding:10px 5px 0 5px;
+		text-align: center;
+	}
+}
+
+.eui-order-blank{}
+
+.eui-order-item{
+	height: 50px;
+	border-right: 1px solid #ddd;border-left: 1px solid #fff;
+	 overflow:hidden;margin:0;padding:10px 0;
+	
+	zoom:1;/* IE6,IE7 */
+	p{
+		color: #2F5879;font-size: 14px;font-weight: bold;
+	}
+	span{
+		color: #cc0000;font-size: 22px;
+	}
+}
+
+.eui-order-item-first{
+	border-left: none;
+}
+
+.eui-order-item-last{
+	border-right: none;
+}
+
+
+.eui-orader-tips{
+	.clearfix;
+}
+
+.eui-orader-tips-error{
+	padding-left: 100px;;margin-top: 5px;
+	color: #cc0000;
+	i{
+		margin-left: -20px;margin-top: 2px;
+		color: #cc0000;
+	}
+	i,span{
+		float: left;*display: inline;*zoom:1;
+	}
+	span{
+		width: 100%;
+	}
+}
+
+
+// 上传按钮
+.eui-file-upload{
+	position: relative;
+	display: inline-block;*display: inline;*zoom: 1;
+	width: 82px;height: 26px;
+	vertical-align: middle;
+	overflow: hidden;font-size: 12px;
+	.nui-btn{
+		position: absolute;left: 0;top: 0;z-index: 100;
+		width: 50px;font-size: 12px;
+		text-align: center;
+	}
+}
+
+.eui-file-input{
+	position: absolute;right: 0;top: 0;z-index: 105;
+	width: 100px;height:26px;background: #ccc;
+	.opacity(0);
+	text-align: left;cursor: pointer;
+	font-size: 100px;
+}
+
+
+//========= end ==============
+
+
+// 07A体验提升新增样式
+// 表单
+.eui-order-form{
+	padding-bottom: 5px;
+}
+
+
+.eui-form-line{
+	&:extend(.clearfix all);
+	padding: 5px 0;
+	border-bottom: 1px dashed #ddd;
+}
+
+.eui-form-line-bdn{
+	border-bottom: none;
+}
+
+.eui-form-line-fixed{
+	position: relative;
+	padding:7px 0 7px 75px;min-height: 18px;_height:18px;
+	.nui-label{
+		position: absolute;left: 0;top: 4px;
+	}
+}
+
+.eui-form-left,.eui-form-right{
+	float: left;*display: inline;
+	width: 50%;*width: 324px;
+}
+// .eui-form-right{
+// 	*margin-right: -3px;
+// }
+
+.eui-form-tag{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+}
+
+.eui-tag-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	// float: left;*display: inline;
+	width: 30px;height: 16px;line-height: 16px;margin-right: 5px;
+	vertical-align: middle;border: 1px solid #fff;
+	text-align: center;_overflow: hidden;
+	&:hover{
+		*zoom:1;
+		border-color: #AAD8F0;border-radius: 2px;
+		text-decoration: none;color: #AAD8F0;
+	}
+}
+
+// 表单三分结构
+.eui-form-cell{
+	float: left;*display: inline;
+	width: 33.3%;
+}
+
+.eui-tag-cell-current{
+	background: #AAD8F0;
+	border-color: #AAD8F0;border-radius: 2px;
+	color: #fff;
+	&:hover{
+		color: #fff;
+	}
+}
+
+.eui-form-content{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	color: #999;
+}

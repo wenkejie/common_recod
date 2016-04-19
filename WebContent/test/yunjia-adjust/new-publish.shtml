@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>运价维护</title>
+	<link rel="stylesheet" href="../../release/freight/css/common.css" /><
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function () {
+
+		$('div.rule-config-box').hover(function() {
+			$(this).addClass('active');
+		}, function() {
+			$(this).removeClass('active');
+		});
+		$('div.rule-config-box').click(function() {
+			$('input.item').prop("checked",false);
+			$(this).find('input.item').prop("checked",true);
+		});
+
+		$('div.rule-config-box-last').click(function() {
+			$(this).addClass('rule-config-box-stack').prev().addClass('rule-config-box-stack');
+			$(this).children('div.rule-config-cnt').removeClass('none')
+			$(this).find('div.power-set-fn').removeClass('none');
+			
+		});
+
+		// $('a.j-open').delegate('div.rule-config-box-last', 'click', function() {
+		// 	console.log(111);
+		// 	$('div.rule-config-box').removeClass('rule-config-box-stack');
+		// 	$('div.rule-config-cnt').addClass('none');
+		// });
+		$('a.j-open').click(function() {
+			$('div.rule-config-box').removeClass('rule-config-box-stack');
+			$('div.rule-config-cnt').addClass('none');
+			$(this).parent().addClass('none');
+			return false;
+		});
+	})
+	// 以上js仅作效果的参考，by:Evan.
+	</script>
+</head>
+<body>
+
+<div class="fui-dialog">
+	<div class="fui-dialog-title">
+		<h4 class="tal">运价发布模式设置</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:400px;width:550px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt" style="height:200px;width:650px;">
+		   <div class="rule-config-area clearfix pl20 pr20">
+					<div class="rule-config-box">
+						<div class="rule-config-title">
+							<div class="rule-config-left">
+								<label for="" class="nui-radio fwb mr10">
+								<input class="item" type="radio" name="control">直接发布</label>
+								<span class="info">对外发布后，客户可直接查询到最新运价</span>
+							</div>
+						</div>
+					</div>
+					<div class="rule-config-box">
+						<div class="rule-config-title">
+							<div class="rule-config-left">
+								<label for="" class="nui-radio fwb mr10"><input class="item" type="radio" name="control">销售发布</label>
+								<span class="info">对内发布后，使用运价查询界面的发布运价功能，才会更新客户运价</span>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+</body>
+</html>

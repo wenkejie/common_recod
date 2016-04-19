@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>订单列表</title>
+	<link rel="stylesheet" href="../../release/freight/css/ebooking.css" />
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		$(function() {
+			var $tabMenu = $('li.eui-tab-menu-cell');
+			var $tabCnt = $('div.eui-tab-cnt');
+			var showBtn =$('.j-show-more');
+
+			var showMore = function () {
+				$('.eui-more-business-content').removeClass('none');
+			};
+
+			$tabMenu.click(function() {
+				var index = $(this).index();
+				$tabMenu.removeClass("eui-tab-menu-active");
+				$(this).addClass('eui-tab-menu-active');
+				$tabCnt.hide().eq(index).show();
+			});
+
+			showBtn.click(function() {
+				showMore();
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="eui-header">
+		<div class="eui-header-content">
+			<h1 class="eui-logo mt5">
+			    <a href="javascript:"></a>
+			    咖狗网-中国领先的国际物流电子商务平台
+			</h1>
+			<div class="eui-header-info">
+				订单详情
+			</div>
+			<ul class="eui-process">
+				<li class="eui-process-cell eui-process-current">
+					订舱
+				</li>
+				<li class="eui-process-cell">
+					舱位确定
+				</li>
+				<li class="eui-process-cell">
+					上船离港
+				</li>
+				<li class="eui-process-cell eui-process-cell-last">
+					到港
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="eui-body">
+	<div class="eui-blank-line"></div>
+		<div class="eui-body-content">
+			<div class="eui-panel eui-panel-detail mt20">
+				<div class="eui-panel-hd">
+					<div class="eui-panel-left">
+						<span class="port-name">NINGBO</span>
+						<i class="arrow-right">&#x3545;</i>
+						<span class="port-name">WASHINTON</span>
+						<div class="eui-order-mark ml10">整箱</div>
+					</div>
+					<div class="eui-panel-right">
+						<label class="time-label">订单时间：</label>
+						<span class="tiem-info">2015-01-12 20:12:30</span>
+					</div>
+				</div>
+
+				<div class="eui-panel-bd">
+					<table class="eui-panel-tabel eui-panel-tabel-detail">
+						<tbody>
+							<tr>
+								<td width="325" class="td-first">
+									<div class="td-grid">
+										<p><label>订单状态：</label><span class="order-modify order-modify-waring">待接受</span></p>
+										<p class="mt5">
+											<label>物流订单号：</label><span>120120120120120</span>
+										</p>
+										<p class="mt5">
+											<label>提单号：</label>
+										</p>
+									</div>
+
+								</td>
+								<td>
+									<div class="td-grid">
+										<p><label>船公司：</label><span>APL</span></p>
+										<p class="mt5">
+											<label>船期：</label><span>2015-04-11 周一 / 2015-05-11 周一</span>
+										</p>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="eui-tab">
+				<div class="eui-tab-menu mt20">
+					<ul>
+						<li class="eui-tab-menu-cell eui-tab-menu-active">
+							<a class="eui-tab-menu-link" href="javascript:">订单详情</a>
+						</li>
+						<li class="eui-tab-menu-cell">
+							<a class="eui-tab-menu-link" href="javascript:">作业信息</a>
+						</li>
+					</ul>
+				</div>
+				<div class="eui-tab-cnt">
+					<div class="eui-detail-content">
+						<table class="eui-detail-table" cellspacing="4">
+							<tbody>
+								<tr>
+									<th>运价</th>
+									<td>
+										<div class="td-grid">
+											<p>轻货</p>
+											<p class="price">(210)</p>
+										</div>
+									</td>
+									<td>
+										<div class="td-grid">
+											<p>重货</p>
+											<p class="price">(210)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>体积</th>
+									<td colspan="2">
+										<div class="td-grid">
+											<p class="number">80<span>CBM</span></p>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="eui-detail-form">
+							<p>
+								<label>附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件：</label>
+								<a href="javascript:">运价导入空运数据.xsl</a>
+							</p>
+							<p class="mt5">
+								<label>订舱备注：</label>
+								<span>分开装箱</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="eui-tab-cnt none">
+					<div class="eui-business-state">
+						<div class="eui-business-state-column eui-business-state-column-complete">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column eui-business-state-column-complete eui-business-state-column-no-bd">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>订舱确认</h3>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>2015-12-20 14:30</p>
+								</div>
+							</div>
+							<div class="eui-booking-area mt10">
+								<table class="eui-booking-table">
+									<tbody>
+										<tr class="line-n">
+											<td width="95"><div class="td-grid td-grid-first">船名</div></td>
+											<td width="95"><div class="td-grid">航次</div></td>
+											<td width="110"><div class="td-grid">提单号</div></td>
+											<td width="95"><div class="td-grid">预计开航日</div></td>
+											<td width="95"><div class="td-grid">预计截关日</div></td>
+											<td width="95"><div class="td-grid">预计到港日</div></td>
+										</tr>
+										<tr>
+											<td><div class="td-grid">ATL-12</div></td>
+											<td><div class="td-grid">DFDHHLKK1201</div></td>
+											<td><div class="td-grid">DFDHHLKK1201</div></td>
+											<td><div class="td-grid">2015-10-12</div></td>
+											<td><div class="td-grid">2015-10-12</div></td>
+											<td><div class="td-grid">2015-10-12</div></td>
+										</tr>
+										<tr class="line-n">
+											<td><div class="td-grid td-grid-first">报关行代码</div></td>
+											<td><div class="td-grid">报关行名称</div></td>
+											<td colspan="4"></td>
+										</tr>
+										<tr>
+											<td><div class="td-grid">DFDHHLKK1201</div></td>
+											<td><div class="td-grid">DFDHHLKK1201</div></td>
+											<td colspan="4"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="eui-more-business">
+								<div class="eui-more-business-header">
+									<a href="javascript:" class="j-show-more">查看更多作业信息<i>&#xe609;</i></a>
+								</div>
+								<div class="eui-more-business-content none">
+									<div class="eui-business-state-column eui-business-state-column-complete">
+										<span class="eui-business-state-icon"></span>
+										<div class="eui-business-state-column-title">
+											<h3>海关预配舱单已发送</h3>
+										</div>
+										<div class="eui-order-form eui-order-form-des">
+											<div class="eui-order-form-line">
+												<p>海关无纸化报文已发送状态信息 | 海关无纸化报文已发送时间</p>
+											</div>
+										</div>
+									</div>
+									<div class="eui-business-state-column eui-business-state-column-complete">
+										<span class="eui-business-state-icon"></span>
+										<div class="eui-business-state-column-title">
+											<h3>EIR发放通知书可取</h3>
+										</div>
+										<div class="eui-order-form eui-order-form-des">
+											<div class="eui-order-form-line">
+												<p>EIR发放通知书状态信息 | EIR发放通知书时间</p>
+											</div>
+										</div>
+									</div>
+									<div class="eui-business-state-column eui-business-state-column-complete eui-business-state-column-no-bd">
+										<span class="eui-business-state-icon"></span>
+										<div class="eui-business-state-column-title">
+											<h3>海关预配舱单已发送</h3>
+										</div>
+										<div class="eui-order-form eui-order-form-des">
+											<div class="eui-order-form-line">
+												<p>EIR可取状态信息</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

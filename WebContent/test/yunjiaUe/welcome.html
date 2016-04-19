@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>无标题文档</title>
+<link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/solution.css">
+<link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/common.css">
+
+</head>
+
+<body onload="fu_onload()">
+  <div id="wrap" class="fn-clear">
+  
+  <div id="index-search">
+    <div class="index-search-left"></div>
+    <div class="index-search-right"></div>
+    <div class="white-grid">
+      <div class="white-grid-left"></div>
+      <div class="white-grid-right"></div>
+      <div class="index-search-select" id="j-hs-select">
+      
+      	
+        		<em id="hs-val">出口拼箱</em><s class="select-arrow"></s></div>
+        
+        <div style="display: none;" class="slideDownCon">
+          <ul>
+       	
+        		<li searchtype="lcl"><a href="javascript:"><s class="iconGayDot"></s>出口拼箱</a></li>
+        
+        		<li searchtype="import_lcl"><a href="javascript:"><s class="iconGayDot"></s>进口拼箱</a></li>
+        
+        		<li searchtype="fcl"><a href="javascript:"><s class="iconGayDot"></s>出口整箱</a></li>
+        
+        		<li searchtype="air"><a href="javascript:"><s class="iconGayDot"></s>空运出口</a></li>
+        
+          </ul>
+        </div>
+      <input id="search_type" name="search_type" value="lcl" type="hidden">
+      <input id="air_loadPort" name="air_loadPort" value="35" type="hidden">
+      <input id="fclexport_loadPort" name="fclexport_loadPort" value="" type="hidden">
+      <input id="lclexport_loadPort" name="lclexport_loadPort" value="MEIGUO" type="hidden">
+      <input id="lclimport_dischargeport" name="lclimport_dischargeport" value="AOMEN" type="hidden">
+      <p class="index-search-label">起运港:</p>
+      <input name="default_port" id="default_port" value="MEIGUO" class="input-qiyungang" onfocus="showSelectDefaultPort(this)" type="text">
+    </div>
+    <p class="index-search-label">输入条件</p>
+      <div class="white-grid">
+      <div class="white-grid-left"></div>
+      <div class="white-grid-right"></div>
+     <input name="search_value" id="search_value" value="目的港，中转港，国家或双击鼠标" class="input-condition" type="text">
+     
+         <div style="" class="selectInputDown">
+            <div class="paddingCon"></div>
+          </div>
+      
+     </div><a href="javascript:" class="index-search-button" onclick="goSearch();return false;">搜索</a>
+
+  </div>
+      
+      <div class="containerBox">
+        <h2 class="title">
+          <div class="titleTab"><span><s class="iconBasicInfo"></s>我的导航</span></div>
+          <div class="fn-area">
+            <a href="javascript:" id="j-set-dhome"><s class="iconHome"></s>默认页设置</a>
+            <a href="javascript:" id="j-list-add"><s class="iconAddList"></s>增加</a>
+            <a href="javascript:" id="j-list-config"><s class="iconConfig"></s>设置</a>
+          </div>
+        </h2>
+        <div class="cnt" id="j-editcon"> 
+        
+        
+       	<dl class="custom-nav custom-nav-first" id="price_search"><dt>运价查询</dt>
+       	
+        	<dd><a href="javascript:fu_directpage('/priceservice/priceMaintain.ctrl?$action=fcl_sale')"><s class="icon1-1"></s><em>海运整箱</em></a><a href="javascript:" onclick="fu_delNav ('price_fcl_search',this)" class="icon iconDelete"></a></dd>
+       	
+        	<dd><a href="javascript:fu_directpage('/priceservice/seaMainPrice.ctrl?$action=seaRoutelistPriceQuery&amp;priceType=fcl')"><s class="icon1-1"></s><em>整箱航线列表</em></a><a href="javascript:" onclick="fu_delNav('price_fcl_route_search','add-item-a')" class="icon iconDelete"></a></dd>
+       	
+       	<dd><a href="javascript:fu_directpage('/priceservice/priceMaintain.ctrl?$action=lcl_sale')"><s class="icon1-2"></s><em>出口拼箱</em></a><a href="javascript:" onclick="fu_delNav('price_lcl_search','add-item-a')" class="icon iconDelete"></a></dd>
+        	
+       	<dd><a href="javascript:fu_directpage('/priceservice/seaMainPrice.ctrl?$action=seaExportlclRoutelistQuery')"><s class="icon1-2"></s><em>出口拼箱航线列表</em></a><a href="javascript:" onclick="fu_delNav('price_lcl_route_search','add-item-a')" class="icon iconDelete"></a></dd>
+        	
+        	<dd><a href="javascript:fu_directpage('/priceservice/seaImportLclMain.ctrl?$action=import_lcl_sale')"><s class="icon1-2"></s><em>进口拼箱</em></a><a href="javascript:" onclick="fu_delNav('price_import_lcl_search','add-item-a')" class="icon iconDelete"></a></dd>
+        	
+        	<dd><a href="javascript:fu_directpage('/priceservice/seaImportLclMain.ctrl?$action=seaRoutelistPriceQuery')"><s class="icon1-2"></s><em>进口拼箱航线列表</em></a><a href="javascript:" onclick="fu_delNav('price_import_lcl_route_search','add-item-a')" class="icon iconDelete"></a></dd>
+        	
+        	<dd><a href="javascript:fu_directpage('/priceservice/priceMaintain.ctrl?$action=air_sale')"><s class="icon1-3"></s><em>空运查询</em></a><a href="javascript:" onclick="fu_delNav('price_air_search','add-item-a')" class="icon iconDelete"></a></dd>
+        	
+        	<dd id="add-item-a" class="add-item none"><a href="javascript:" class="add-item-a"><s class="iconAdd"></s></a></dd>
+        	<dd class="delete-list"><a href="javascript:fu_delNav('price_search');" class="delete-btn"><s class="iconDelete"></s>删除分类</a></dd>
+      </dl>
+      
+      	
+       <dl class="custom-nav" id="price_edit"><dt>运价维护</dt>
+       
+        <dd><a href="javascript:fu_directpage('/priceservice/priceMaintain.ctrl?$action=fcl_query')"><s class="icon2-1"></s><em>海运整箱</em></a><a href="javascript:fu_delNav('price_fcl_edit','add-item-b');" class="icon iconDelete"></a></dd>
+        
+        <dd><a href="javascript:fu_directpage('/priceservice/priceMaintain.ctrl?$action=lcl_query')"><s class="icon2-2"></s><em>海运出口拼箱</em></a><a href="javascript:fu_delNav('price_lcl_edit','add-item-b');" class="icon iconDelete"></a></dd>
+        
+        <dd><a href="javascript:fu_directpage('/priceservice/seaImportLclMain.ctrl?$action=import_lcl_query')"><s class="icon2-2"></s><em>海运进口拼箱</em></a><a href="javascript:fu_delNav('price_import_lcl_edit','add-item-b');" class="icon iconDelete"></a></dd>
+        
+        <dd id="add-item-b" class="add-item none"><a href="javascript:;" class="add-item-a"><s class="iconAdd"></s></a></dd>
+        <dd class="delete-list"><a href="javascript:fu_delNav('price_edit');" class="delete-btn"><s class="iconDelete"></s>删除分类</a></dd>
+      </dl>
+       
+    		 
+       <dl class="custom-nav" id="base_info"><dt>基础资料</dt>
+       	
+        	<dd><a href="javascript:openWinWithMax('/priceservice/baseSeaportLclImport.ctrl','%E6%B5%B7%E8%BF%90%E8%BF%9B%E5%8F%A3%E6%8B%BC%E7%AE%B1%E6%B8%AF%E5%8F%A3%E4%BF%A1%E6%81%AF',{width:980,height:550});"><s class="icon7-1"></s><em>海运进口拼箱港口</em></a><a href="javascript:fu_delNav('base_import_lcl_ports','add-item-g');" class="icon iconDelete"></a></dd>
+        
+        	<dd><a href="javascript:openWinWithMax('/priceservice/baseAirport.ctrl?$baseAirportQuery','%E7%A9%BA%E8%BF%90%E6%B8%AF%E5%8F%A3%E4%BF%A1%E6%81%AF',{width:980,height:550});"><s class="icon7-2"></s><em>空运港口</em></a><a href="javascript:fu_delNav('base_air_ports','add-item-g');" class="icon iconDelete"></a></dd>
+        
+        <dd id="add-item-g" class="add-item none"><a href="javascript:;" class="add-item-a"><s class="iconAdd"></s></a></dd>
+        <dd class="delete-list"><a href="javascript:fu_delNav('base_info');" class="delete-btn"><s class="iconDelete"></s>删除分类</a></dd>
+      </dl>
+       
+      
+      	<dl class="custom-nav" id="member_management"><dt>客户管理</dt>
+      	 <!--
+      	
+        <dd><a href="javascript:top.openPageEntityWin('/priceservice/memOrg.ctrl?$action=queryNewReg','会员注册审批',{width:914,height:450});"><s class="icon8-3"></s><em>会员注册审批</em></a><a href="javascript:fu_delNav('member_reg_manager','add-item-i');" class="icon iconDelete"></a></dd>
+        
+        <dd id="member_regularization_manager"><a href="javascript:top.openPageEntityWin('/priceservice/memberManage.ctrl?$action=getApplyRegularizationPage','体验会员转正审批',{width:930,height:460});" class="has-added" ><s class="icon8-3"></s><em>体验会员转正审批</em></a><a href="javascript:fu_delNav('member_regularization_manager','add-item-i');" class="icon iconDelete"></a></dd>
+         -->
+        
+	        
+	        <dd><a href="javascript:top.$('#menu%20.wrap%20a.contactManagerment')[0].click()"><s class="icon8-6"></s><em>账号管理</em></a><a href="javascript:fu_delNav('member_manager','add-item-i');" class="icon iconDelete"></a></dd>
+	        
+        
+        
+        	
+       	
+        <!-- 
+        
+        <dd><a href="javascript:top.openPageEntityWin('/priceservice/memOrg.ctrl?$action=memberUserPwdQuery','会员帐号管理',{width:940,height:425});"><s class="icon8-7"></s><em>会员帐号管理</em></a><a href="javascript:fu_delNav('member_password','add-item-i');" class="icon iconDelete"></a></dd>
+      	
+        <dd><a href="javascript:top.openWin('/priceservice/memberManage.ctrl?$action=getMemParamSetting','会员管理参数设置',{width:580,height:318});"><s class="icon8-9"></s><em>会员管理参数设置</em></a><a href="javascript:fu_delNav('member_setting','add-item-i');" class="icon iconDelete"></a></dd>
+      	  -->
+      	<dd id="add-item-i" class="add-item none"><a href="javascript:;" class="add-item-a"><s class="iconAdd"></s></a></dd>
+        <dd class="delete-list"><a href="javascript:fu_delNav('member_management');" class="delete-btn"><s class="iconDelete"></s>删除分类</a></dd>
+       </dl>
+       
+      	
+      
+      	
+       <dl class="custom-nav" id="price_notice"><dt>运价公告</dt>
+       	
+        <dd><a href="javascript:" onclick="openNotice(this,'/priceservice/priceNoticeType1.ctrl?$noticeType1Query&amp;type=1',{width:980,height:520});return false;"><s class="icon6-1"></s><em>我的公告</em></a><a href="javascript:fu_delNav('price_notice_type1','add-item-f');" class="icon iconDelete"></a></dd>
+        
+        <dd><a href="javascript:" onclick="openNotice(this,'/priceservice/priceNoticeType1.ctrl?$noticeType1Query&amp;type=2',{width:980,height:520});return false;"><s class="icon6-2"></s><em>你的公告</em></a><a href="javascript:fu_delNav('price_notice_type2','add-item-f');" class="icon iconDelete"></a></dd>
+        
+        <dd><a href="javascript:" onclick="openNotice(this,'/priceservice/priceNoticeType1.ctrl?$noticeType1Query&amp;type=3',{width:980,height:520});return false;"><s class="icon6-3"></s><em>他的公告</em></a><a href="javascript:fu_delNav('price_notice_type3','add-item-f');" class="icon iconDelete"></a></dd>
+        
+        <dd><a href="javascript:top.openWin('/priceservice/organizationManage.ctrl?$action=noticeSetView','%E5%85%AC%E5%91%8A%E7%B1%BB%E5%9E%8B%E5%90%8D%E7%A7%B0%E7%BB%B4%E6%8A%A4',{width:420,height:170});"><s class="icon6-4"></s><em>公告配置</em></a><a href="javascript:fu_delNav('price_notice_edit_type','add-item-f');" class="icon iconDelete"></a></dd>
+        
+        <dd id="add-item-f" class="add-item none"><a href="javascript:;" class="add-item-a"><s class="iconAdd"></s></a></dd>
+        <dd class="delete-list"><a href="javascript:fu_delNav('price_notice');" class="delete-btn"><s class="iconDelete"></s>删除分类</a></dd>
+      </dl>
+      
+      
+      
+      
+       </div>
+       
+      </div>
+      
+
+    
+      <div class="containerBox grid2 left">
+        <h2 class="title">
+          <div class="titleTab"><span><s class="iconMessage"></s>公告</span></div> <div class="fn-area"><a href="javascript:void(0);" onclick="openWinWithMax('/priceservice/priceNoticeType1.ctrl?$noticeType1Query&amp;type='+1,' ',{width:950,height:550})"><s class="iconNewWindow"></s>更多</a></div>
+        
+        </h2>
+        
+        <div class="cnt">
+        <div class="topNews">
+        <ul class="news">
+        
+		<li><a href="javascript:openWindow('/priceservice/priceNoticeType1.ctrl?$action=priceNoticeType1Details&amp;op_type=list_onedetail&amp;notice_id=146&amp;type=1','%C2%A0',{width:980,height:500});" title="我的标题更长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长"><s class="iconMun1"></s>我的标题更长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长</a></li>
+        
+		<li><a href="javascript:openWindow('/priceservice/priceNoticeType1.ctrl?$action=priceNoticeType1Details&amp;op_type=list_onedetail&amp;notice_id=145&amp;type=1','%C2%A0',{width:980,height:500});" title="标题很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很"><s class="iconMun2"></s>标题很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很</a></li>
+        
+		<li><a href="javascript:openWindow('/priceservice/priceNoticeType1.ctrl?$action=priceNoticeType1Details&amp;op_type=list_onedetail&amp;notice_id=56&amp;type=1','%C2%A0',{width:980,height:500});" title="的撒"><s class="iconMun3"></s>的撒</a></li>
+        
+        </ul>
+        </div>
+        <ul class="news colum2" id="js-scrollNews">
+        
+        <li><a href="javascript:openWindow('/priceservice/priceNoticeType1.ctrl?$action=priceNoticeType1Details&amp;op_type=list_onedetail&amp;notice_id=55&amp;type=1','%C2%A0',{width:980,height:500});" title="大萨芬大风"><s class="list-dot"></s>大萨芬大风</a></li>
+        
+        <li><a href="javascript:openWindow('/priceservice/priceNoticeType1.ctrl?$action=priceNoticeType1Details&amp;op_type=list_onedetail&amp;notice_id=91&amp;type=1','%C2%A0',{width:980,height:500});" title="我热情"><s class="list-dot"></s>我热情</a></li>
+        
+        <li><a href="javascript:openWindow('/priceservice/priceNoticeType1.ctrl?$action=priceNoticeType1Details&amp;op_type=list_onedetail&amp;notice_id=90&amp;type=1','%C2%A0',{width:980,height:500});" title="打发"><s class="list-dot"></s>打发</a></li>
+        
+        <li><a href="javascript:openWindow('/priceservice/priceNoticeType1.ctrl?$action=priceNoticeType1Details&amp;op_type=list_onedetail&amp;notice_id=80&amp;type=1','%C2%A0',{width:980,height:500});" title="qwdqwd"><s class="list-dot"></s>qwdqwd</a></li>
+        
+        <li><a href="javascript:openWindow('/priceservice/priceNoticeType1.ctrl?$action=priceNoticeType1Details&amp;op_type=list_onedetail&amp;notice_id=79&amp;type=1','%C2%A0',{width:980,height:500});" title="600jit.com"><s class="list-dot"></s>600jit.com</a></li>
+        
+        <li><a href="javascript:openWindow('/priceservice/priceNoticeType1.ctrl?$action=priceNoticeType1Details&amp;op_type=list_onedetail&amp;notice_id=78&amp;type=1','%C2%A0',{width:980,height:500});" title="保存成功！"><s class="list-dot"></s>保存成功！</a></li>
+        
+        <li><a href="javascript:openWindow('/priceservice/priceNoticeType1.ctrl?$action=priceNoticeType1Details&amp;op_type=list_onedetail&amp;notice_id=77&amp;type=1','%C2%A0',{width:980,height:500});" title="布到网上营业厅"><s class="list-dot"></s>布到网上营业厅</a></li>
+        
+        <li><a href="javascript:openWindow('/priceservice/priceNoticeType1.ctrl?$action=priceNoticeType1Details&amp;op_type=list_onedetail&amp;notice_id=76&amp;type=1','%C2%A0',{width:980,height:500});" title="布到网上营业厅"><s class="list-dot"></s>布到网上营业厅</a></li>
+        
+        </ul>
+        </div>
+        
+        
+      </div>
+      
+       
+      <div class="containerBox grid2 right" id="js-recommend">
+        <h2 class="title">
+          <div class="titleTab"><span><s class="iconRecommend"></s>推荐港口</span></div>
+          <div class="direction"><a href="javascript:showRecomand(-1)" class="prev">prev</a><a href="javascript:showRecomand(1)" class="next">next</a></div>
+           <div class="fn-area"><a href="javascript:" id="j-openPortList"><s class="iconMenu"></s>更多</a></div>
+           <input id="pageNo" value="1" type="hidden">
+           <input id="pageCount" value="2" type="hidden">
+           <input id="isChange" value="false" type="hidden">
+        </h2>
+        <div class="cnt">
+        <ul style="display: block;" class="news" id="ul-recommend-1"><li><a href="javascript:fu_loadPrice('FCL','47');"><s class="list-dot"></s>[FCL]SDF[sdf] -!@#$%"^&amp;'*(&lt;&gt;?[!@#$"%^'&amp;*('&lt;&gt;?]</a></li><li><a href="javascript:fu_loadPrice('FCL','174');"><s class="list-dot"></s>[FCL]ZHENG2[] -ZHEN NINGBO[整 宁波]</a></li><li><a href="javascript:fu_loadPrice('FCL','165178');"><s class="list-dot"></s>[FCL]BMWQ[BMWQ] -BMWQ[BMWQ]</a></li><li><a href="javascript:fu_loadPrice('FCL','165183');"><s class="list-dot"></s>[FCL]BMWQ[BMWQ] -BMWQ[BMWQ]</a></li><li><a href="javascript:fu_loadPrice('FCL','165188');"><s class="list-dot"></s>[FCL]SDF[sdf] -BAHRAIN[巴林]</a></li><li><a href="javascript:fu_loadPrice('AIR','95');"><s class="list-dot"></s>[AIR]SS[ss] -22[22]</a></li><li><a href="javascript:fu_loadPrice('AIR','97');"><s class="list-dot"></s>[AIR]11[] -1[31]</a></li><li><a href="javascript:fu_loadPrice('AIR','107');"><s class="list-dot"></s>[AIR]ENGLA3[] -1[31]</a></li></ul><ul style="display: none;" class="news" id="ul-recommend-2"><li><a href="javascript:fu_loadPrice('AIR','110');"><s class="list-dot"></s>[AIR]NINGBO[] -HANGZHOU[]</a></li><li><a href="javascript:fu_loadPrice('AIR','154');"><s class="list-dot"></s>[AIR]4[4] -AAAAA[]</a></li><li><a href="javascript:fu_loadPrice('AIR','156');"><s class="list-dot"></s>[AIR]ENGLA[英个蓝11] -ENGLA[英个蓝11]</a></li><li><a href="javascript:fu_loadPrice('AIR','159');"><s class="list-dot"></s>[AIR]1[31] -1[31]</a></li><li><a href="javascript:fu_loadPrice('IMPORT_LCL','778');"><s class="list-dot"></s>[IMP-LCL]BEIJING07[北京07] -BEIJING07[北京07]</a></li></ul></div>
+        
+      </div>
+      
+    </div>
+<div style="height: 691px; opacity: 0.6;" id="mask"></div>
+<div style="top: -412px; opacity: 0;" class="home-dialog">
+<div class="title">
+  <h2>选择需要添加的链接</h2>
+  <s id="j-cusclose" class="icon close">close</s>
+</div>
+<div id="all-custom-list">
+      <div class="cnt" id="j-addlist">
+      
+       <dl class="custom-nav custom-nav-first" id="price_search"><dt>运价查询</dt>
+       
+        <dd id="price_fcl_search"><a href="javascript:" class="has-added"><s class="icon1-1"></s>海运整箱</a></dd>
+        
+        <dd id="price_fcl_route_search"><a href="javascript:" class="has-added"><s class="icon1-1"></s>海运整箱航线列表</a></dd>
+        
+        <dd id="price_lcl_search"><a href="javascript:" class="has-added"><s class="icon1-2"></s>出口拼箱</a></dd>
+         
+        <dd id="price_lcl_route_search"><a href="javascript:" class="has-added"><s class="icon1-2"></s>出口拼箱航线列表</a></dd>
+        
+        <dd id="price_import_lcl_search"><a href="javascript:" class="has-added"><s class="icon1-2"></s>进口拼箱</a></dd>
+       
+        <dd id="price_import_lcl_route_search"><a href="javascript:" class="has-added"><s class="icon1-2"></s>进口拼箱航线列表</a></dd>
+        
+        <dd id="price_air_search"><a href="javascript:" class="has-added"><s class="icon1-3"></s>空运查询</a></dd>
+        
+      </dl>
+      
+       <dl class="custom-nav" id="price_edit"><dt>运价维护</dt>
+        
+        <dd id="price_fcl_edit"><a href="javascript:" class="has-added"><s class="icon2-1"></s>海运整箱</a></dd>
+        
+        <dd id="price_lcl_edit"><a href="javascript:" class="has-added"><s class="icon2-2"></s>海运出口拼箱</a></dd>
+        
+        <dd id="price_import_lcl_edit"><a href="javascript:" class="has-added"><s class="icon2-2"></s>海运进口拼箱</a></dd>
+	   
+      </dl>
+       
+       <dl class="custom-nav" id="base_info"><dt>基础资料</dt>
+        
+        	<dd id="base_fcl_ports"><a href="javascript:"><s class="icon7-1"></s>海运整箱港口</a></dd>
+        
+        	<dd id="base_lcl_ports"><a href="javascript:"><s class="icon7-1"></s>海运出口拼箱港口</a></dd>
+        
+        	<dd id="base_import_lcl_ports"><a href="javascript:" class="has-added"><s class="icon7-1"></s>海运进口拼箱港口</a></dd>
+        
+			<dd id="base_air_ports"><a href="javascript:" class="has-added"><s class="icon7-2"></s>空运港口</a></dd>
+        
+        	<dd id="base_fcl_searoutes"><a href="javascript:"><s class="icon7-4"></s>海运整箱航线</a></dd>
+        
+        	<dd id="base_lcl_searoutes"><a href="javascript:"><s class="icon7-4"></s>海运出口拼箱航线</a></dd>
+        
+        	<dd id="base_import_lcl_searoutes"><a href="javascript:"><s class="icon7-4"></s>海运进口拼箱航线</a></dd>
+       	
+        	<dd id="base_air_searoutes"><a href="javascript:"><s class="icon7-5"></s>空运航线</a></dd>
+        
+        	<dd id="base_flightinfos"><a href="javascript:"><s class="icon7-3"></s>航班信息</a></dd>
+        
+        	<dd id="base_airportareas"><a href="javascript:"><s class="icon7-6"></s>航空港口分区 </a></dd>
+        
+        	<dd id="base_carrier"><a href="javascript:"><s class="icon7-7"></s>船公司信息</a></dd>
+        
+        	<dd id="base_airways"><a href="javascript:"><s class="icon7-8"></s>航空公司信息</a></dd>
+        
+        	<dd id="base_agent"><a href="javascript:"><s class="icon7-9"></s>订舱代理信息</a></dd>
+      
+      </dl>
+      
+      <dl class="custom-nav" id="member_management"><dt>客户管理</dt>
+       <!--	<dd id="member_invite"><a href="javascript: "><s class="icon-invite"></s>邀请开通</a></dd>
+        <dd id="member_reg_manager"><a href="javascript:" class="has-added" ><s class="icon8-3"></s>注册会员审批</a></dd>
+        <dd id="member_regularization_manager"><a href="javascript:" class="has-added" ><s class="icon8-3"></s>体验会员转正审批</a></dd>
+         -->
+        <dd id="member_manager"><a href="javascript:" class="has-added"><s class="icon8-6"></s>账号管理 </a></dd>
+        <dd id="member_invite"><a href="javascript:"><s class="icon-invite"></s>邀请体验管理</a></dd>
+         <!--
+        <dd id="member_password"><a href="javascript:" class="has-added" ><s class="icon8-7"></s>会员帐号管理</a></dd>
+        <dd id="member_setting"><a href="javascript:" class="has-added" ><s class="icon8-9"></s>会员管理参数设置</a></dd>
+         -->
+      </dl> 
+       
+      <dl class="custom-nav" id="publish_log"><dt>发布记录</dt>
+      	
+        <dd id="publish_fcl_log"><a href="javascript:"><s class="icon3-1"></s>海运整箱</a></dd>
+        	
+        <dd id="publish_lcl_log"><a href="javascript:"><s class="icon3-2"></s>海运出口拼箱</a></dd>
+       	
+        <dd id="publish_import_lcl_log"><a href="javascript:"><s class="icon3-2"></s>海运进口拼箱</a></dd>
+     	
+      </dl>
+       
+      <dl class="custom-nav" id="edit_log"><dt>维护日志</dt>
+      
+        <dd id="edit_fcl_log"><a href="javascript:"><s class="icon4-1"></s>海运整箱</a></dd>
+       
+        <dd id="edit_lcl_log"><a href="javascript:"><s class="icon4-2"></s>海运出口拼箱</a></dd>
+        
+        <dd id="edit_import_lcl_log"><a href="javascript:"><s class="icon4-2"></s>海运进口拼箱</a></dd>
+        
+       
+      </dl>
+      
+       <dl class="custom-nav" id="price_notice"><dt>运价公告</dt>
+        <dd id="price_notice_type1 "><a href="javascript:" class="has-added"><s class="icon6-1"></s>我的公告</a></dd>
+        <dd id="price_notice_type2"><a href="javascript:" class="has-added"><s class="icon6-2"></s>你的公告</a></dd>
+        <dd id="price_notice_type3"><a href="javascript:" class="has-added"><s class="icon6-3"></s>他的公告</a></dd>
+        
+        <dd id="price_notice_edit_type"><a href="javascript:" class="has-added"><s class="icon6-4"></s>公告配置</a></dd>
+        
+      </dl>
+      
+      <dl class="custom-nav" id="user_management"><dt>员工管理</dt>
+       
+        <dd id="user_manager"><a href="javascript:"><s class="icon8-2"></s>员工管理</a></dd>
+       
+      </dl>
+      
+      
+       <!-- 
+	      <dl class="custom-nav" id="notice_management"><dt>关注功能设置</dt>
+	        <dd id="vipnotice_manager"><a href="javascript:"><s class="icon-follow-config"></s>会员关注功能设置</a></dd>
+	      </dl>
+       -->
+      
+      
+	      <dl class="custom-nav" id="system_setting"><dt>系统设置</dt>
+	       
+	        <dd id="sys_params"><a href="javascript:"><s class="icon8-8"></s>系统设置</a></dd>
+	      
+	      </dl>
+       
+      
+      <div id="add-info"></div>
+      <div id="added-info"></div>
+</div></div>
+<div class="indexMenu" id="j-4menu">
+    
+      <div class="containerBox">
+        <h2 class="title">
+          <div class="titleTab"><span><s class="iconFCL"></s>整箱</span></div>
+        </h2>
+        <div class="cnt">
+        <ul class="menuFour">
+        <li id="fcl_edit"><a href="javascript:" class="btn"><span></span>运价维护</a>    <div class="setDefaultBtn">设为首页</div></li>
+        <li id="fcl_upload"><a href="javascript:" class="btn"><span class="iconImporExcel"></span>运价导入</a><div class="setDefaultBtn">设为首页</div></li>
+        <li id="fcl_search"><a href="javascript:" class="btn"><span class="iconPriceSearch"></span>运价查询 </a><div class="setDefaultBtn">设为首页</div></li>
+        <li id="fcl_route"><a href="javascript:" class="btn"> <span class="iconSetHome"></span>航线列表</a><div class="setDefaultBtn">设为首页</div></li>
+        </ul>
+        </div>
+       
+      </div>
+      
+       
+      <div class="containerBox">
+        <h2 class="title">
+          <div class="titleTab"><span><s class="iconLCL"></s>进口拼箱</span></div>
+        </h2>
+        <div class="cnt">
+        <ul class="menuFour">
+        <li id="import_lcl_edit"><a href="javascript:" class="btn"><span></span>运价维护</a><div class="setDefaultBtn">设为首页</div></li>
+        <li id="import_lcl_upload"><a href="javascript:" class="btn"><span class="iconImporExcel"></span>运价导入</a><div class="setDefaultBtn">设为首页</div></li>
+        <li id="import_lcl_search"><a href="javascript:" class="btn"><span class="iconPriceSearch"></span>运价查询 </a><div class="setDefaultBtn">设为首页</div></li>
+    	   <li id="import_lcl_route"><a href="javascript:" class="btn"> <span class="iconSetHome"></span>航线列表</a><div class="setDefaultBtn">设为首页</div></li>
+        </ul>
+        </div>
+         
+      </div>
+      
+       
+      <div class="containerBox">
+        <h2 class="title">
+          <div class="titleTab"><span><s class="iconLCL"></s>出口拼箱</span></div>
+        </h2>
+        <div class="cnt">
+        <ul class="menuFour">
+        <li id="lcl_edit"><a href="javascript:" class="btn"><span></span>运价维护</a><div class="setDefaultBtn">设为首页</div></li>
+        <li id="lcl_upload"><a href="javascript:" class="btn"><span class="iconImporExcel"></span>运价导入</a><div class="setDefaultBtn">设为首页</div></li>
+        <li id="lcl_search"><a href="javascript:" class="btn"><span class="iconPriceSearch"></span>运价查询 </a><div class="setDefaultBtn">设为首页</div></li>
+    	   <li id="lcl_route"><a href="javascript:" class="btn"> <span class="iconSetHome"></span>航线列表</a><div class="setDefaultBtn">设为首页</div></li>
+        </ul>
+        </div>
+         
+      </div>
+      
+ 
+      <div class="containerBox">
+        <h2 class="title">
+          <div class="titleTab"><span><s class="iconAirport"></s>空运</span></div>
+        </h2>
+        <div class="cnt">
+        <ul class="menuFour">
+       <li id="air_edit" class="disabled" title="您没有权限"><a href="javascript:" class="btn"><span></span>运价维护</a><div class="setDefaultBtn">设为首页</div></li>
+        <li id="air_upload" class="disabled" title="您没有权限"><a href="javascript:" class="btn"><span class="iconImporExcel"></span>运价导入</a><div class="setDefaultBtn">设为首页</div></li>
+        <li id="air_search"><a href="javascript:" class="btn"><span class="iconPriceSearch"></span>运价查询 </a><div class="setDefaultBtn">设为首页</div></li>
+    	   <li id="air_route" class="disabled" title="未开发,敬请期待"><a href="javascript:" class="btn"> <span class="iconSetHome"></span>航线列表</a><div class="setDefaultBtn">设为首页</div></li>
+        </ul>
+        </div>
+         
+      </div>
+      
+            <div class="fn-clearB"></div>
+    </div>
+</div>
+<div style="display: none;" class="slideDownCon" id="portList">
+<ul>
+	
+        <li searchtype="lcl"><a href="javascript:"><s class="iconGayDot"></s>出口拼箱</a></li>
+    
+        <li searchtype="import_lcl"><a href="javascript:"><s class="iconGayDot"></s>进口拼箱</a></li>
+    
+        <li searchtype="fcl"><a href="javascript:"><s class="iconGayDot"></s>出口整箱</a></li>
+    
+        <li searchtype="air"><a href="javascript:"><s class="iconGayDot"></s>空运出口</a></li>
+    
+</ul>
+        </div>
+
+</body></html>

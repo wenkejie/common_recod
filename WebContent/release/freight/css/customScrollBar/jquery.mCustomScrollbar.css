@@ -1,0 +1,107 @@
+/* basic scrollbar styling */
+/* vertical scrollbar */
+.mCSB_container{
+	width:auto;
+	/*margin-right:10px;*/
+	overflow:hidden;
+}
+.mCSB_container.mCS_no_scrollbar{
+	margin-right:0;
+}
+.mCS_disabled>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar,
+.mCS_destroyed>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar{
+	margin-right:30px;
+}
+.mCustomScrollBox>.mCSB_scrollTools{
+	width:16px;
+	height:100%;
+	top:0;
+	right:0;
+}
+.mCSB_scrollTools .mCSB_draggerContainer{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0; 
+	height:auto;
+}
+.mCSB_scrollTools a+.mCSB_draggerContainer{
+	margin:20px 0;
+}
+.mCSB_scrollTools .mCSB_draggerRail{
+	display: none;
+	width:2px;
+	height:100%;
+	margin:0 auto;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+.mCSB_scrollTools .mCSB_dragger{
+	cursor:pointer;
+	width:100%;
+	height:30px;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	width:7px;
+	height:100%;
+	margin:0 auto;
+	text-align:center;
+	background:#E6E9EA;
+}
+.mCSB_scrollTools .mCSB_buttonUp,
+.mCSB_scrollTools .mCSB_buttonDown{
+	display:block;
+	position:relative;
+	height:20px;
+	overflow:hidden;
+	margin:0 auto;
+	cursor:pointer;
+}
+.mCSB_scrollTools .mCSB_buttonDown{
+	top:100%;
+	margin-top:-40px;
+}
+
+.mCS_disabled>.mCSB_horizontal>.mCSB_container.mCS_no_scrollbar,
+.mCS_destroyed>.mCSB_horizontal>.mCSB_container.mCS_no_scrollbar{
+	margin-right:0;
+	margin-bottom:30px;
+}
+
+
+
+.mCustomScrollBox{
+	-ms-touch-action:none; /*MSPointer events - direct all pointer events to js*/
+	padding-right: 20px;
+}
+
+
+
+/*scrollbar themes*/
+
+
+/*dark-thick*/
+
+.mCSB_dragger_bar_top,.mCSB_dragger_bar_bottom{
+	position: absolute;top: 0;left: 0;
+	width: 7px;height: 5px;
+	background: url(../images/main_bg.png) no-repeat -68px -69px;overflow: hidden;
+}
+.mCSB_dragger_bar_bottom{
+	top: auto;bottom:0;
+	background-position: -68px -79px
+}
+
+ .mCSB_dragger:hover .mCSB_dragger_bar{
+	background: #C9CFD1;
+}
+ .mCSB_dragger:hover .mCSB_dragger_bar_top{
+ 	background-position: -80px -69px
+ }
+ .mCSB_dragger:hover .mCSB_dragger_bar_bottom{
+ 	background-position: -80px -79px
+ }
+
+

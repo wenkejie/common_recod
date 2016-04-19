@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>运价通 帮助环境</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" type="text/css" href="./webuploader/webuploader.css">
+	<link rel="stylesheet" type="text/css" href="../../release/freight/css/common-v1.2.css"/>
+	
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<style type="text/css">
+		.ttt1,.ttt1 .webuploader-container{
+			position: relative;
+			float: left;
+			width: 114px;height: 88px;
+		}
+		.ttt1 .webuploader-container{
+			position: absolute;left: 0;bottom: -1px;
+			width: 114px;height: 24px;line-height: 24px;
+		}
+		
+		.ttt1 .webuploader-pick{
+			position: absolute;left: 0;bottom: 0;
+			width: 114px;height: 24px;line-height: 24px;
+			border: none;background-color: #eee;
+			padding:0;
+		}
+		.ttt1-bg{
+			overflow: hidden;
+			height: 88px;border: 1px solid #ddd;
+			text-align: center;
+		}
+		.ttt1-bg img{
+			max-width: 100%;
+			max-height: 100%;
+			/* width: 114px;height: 88px; */
+		}
+		.ttt1-bg .file-item{
+			height: 88px;
+		}
+	</style>
+</head>
+<body class='pt20 tal pl20'>
+	<div class="user-upload" >
+		<div class="user-upload-line">
+			<label class="nui-label w100">营业执照号码：</label>
+			<div class="nui-form-cell w150">
+				<input class="nui-input" type="text" />	
+			</div>
+		</div>
+		<h3 class="oly-upload-tt pl15">
+			营业执照副本彩色件
+		</h3>
+		<div class="ttt1">
+			<div class="filePicker" id="">上传</div>
+			<div  class="ttt1-bg fileList" title="预览" id="" ms-if="thumbImage">
+		</div>
+	</div>
+	<div class="oly-upload-tmp pic-review">
+		<img src="business-tmp.jpg" alt="" />	
+		<div class="view-box">
+			<div class="view-box-bg"></div>
+			<span class="view-box-word"> <i>&#xe60b;</i>
+				<br>样例</span>
+		</div>
+	</div>
+
+	</div>
+	<div class="user-upload" >
+		<div class="user-upload-line">
+			<label class="nui-label w100">营业执照号码：</label>
+			<div class="nui-form-cell w150">
+				<input class="nui-input" type="text" />	
+			</div>
+		</div>
+		<div class="test1">
+			<h3 class="oly-upload-tt pl15">
+				营业执照副本彩色件 <div class="filePicker j-reupload hide">上传</div>
+			</h3>
+			<div class="ttt1">
+				<div class="filePicker j-upload">
+					<img src="./upload.gif" alt="" />
+				</div>
+				<div  class="ttt1-bg fileList" title="预览" ></div>
+		</div>
+	</div>
+	<div class="oly-upload-tmp pic-review">
+		<img src="business-tmp.jpg" alt="" />	
+		<div class="view-box">
+			<div class="view-box-bg"></div>
+			<span class="view-box-word"> <i>&#xe60b;</i>
+				<br>样例</span>
+		</div>
+	</div>
+	
+	</div>
+	<script type="text/javascript" src="./webuploader/webuploader.nolog.js"></script>
+	<script type="text/javascript" src="./upload.js"></script>	
+</body>
+</html>

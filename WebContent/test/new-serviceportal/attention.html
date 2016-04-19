@@ -1,0 +1,839 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<title>demo</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+    <meta http-equiv="ClearType" content="true">
+	<!-- 样式引入 -->
+	<link rel="stylesheet" href="../../release/jqueryplugin/spinner/jquery.spinner.css" /><!-- 加减控件样式 -->
+	<link rel="stylesheet" href="../../release/freight/css/new-serviceportal/style.css" />
+	<!-- 样式 end -->
+</head>
+<body>
+	<div class="ui-top">
+		<div class="ui-top-content">
+			<div class="ui-top-user">
+				<a class="ui-top-username" href="javascript:">王尼玛 <i>&#xe602;</i></a>
+				<div class="ui-top-slidedown">
+					<div class="top-slidedown-bar">
+						<a href="javascript:">账户管理</a>
+						<span>|</span>
+						<a href="javascript:">退出</a>
+					</div>
+					<div class="top-slidedown-cnt">
+						<a class="top-slidedown-link" href="javascript:">
+							<i>&#xe621;</i>
+							<span>关注管理</span>
+						</a>
+						<a class="top-slidedown-link" href="javascript:">
+							<i>&#xe623;</i>
+							<span>推送设置</span>
+						</a>
+						<a class="top-slidedown-link" href="javascript:">
+							<i>&#xe622;</i>
+							<span>密码修改</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<ul class="ui-topbar">
+				<li class="ui-topbar-cell">
+					<a class="ui-topbar-link" href="javascript:">我的订单</a>
+				</li>
+				<li class="ui-topbar-cell">
+					<a class="ui-topbar-link" href="javascript:">帮助中心</a>
+				</li>
+				<li class="ui-topbar-cell">
+					<a class="ui-topbar-link" href="javascript:">联系我们</a>
+				</li>
+				<li class="ui-topbar-cell ui-topbar-cell-last">
+					<a class="ui-topbar-link" href="javascript:">英文</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="gui-header">
+		<div class="gui-header-content">
+			<h1 class="gui-logo">
+				<a href="javascript:">
+					<img src="../../release/freight/images/new-serviceportal/logo.png" alt="">
+				</a>
+				运价通
+
+			</h1>
+			<div class="gui-header-info">
+				关注管理
+			</div>
+			<div class="gui-search gui-search-attention">
+				<div class="gui-search-content">
+					<div class="gui-search-select">
+						<div class="gui-search-select-current">
+							<a class="gui-search-select-items" href="javascript:">海运出口整箱</a>
+							<i class="gui-search-select-icon">&#xe600;</i>
+						</div>
+						<ul class="gui-search-select-dropdown none">
+							<li class="gui-search-select-cell">
+								<a class="gui-search-select-items" href="javascript:">海运出口整箱</a>
+							</li>
+							<li class="gui-search-select-cell">
+								<a class="gui-search-select-items" href="javascript:">海运出口拼箱</a>
+							</li>
+							<li class="gui-search-select-cell gui-search-select-last">
+								<a class="gui-search-select-items" href="javascript:">空运</a>
+							</li>
+						</ul>
+					</div>
+					<div class="gui-search-input">
+						<div class="gui-search-input-cell">
+							<input ms-widget="textbox" class="search-input search-input-pol" type="textbox" ms-duplex="p" data-textbox-suggest="test1" placeholder="起运港"/>
+							<div class="gui-dropdown gui-dropdown-pol none">
+								<div class="gui-dropdown-header"></div>
+								<div class="gui-dropdown-content">
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell gui-dropdown-last">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+								</div>
+							</div>			
+						</div>
+						<div class="gui-search-input-cell">
+							<input ms-widget="textbox" class="search-input search-input-pod" type="textbox" ms-duplex="p" data-textbox-suggest="test1" placeholder="起运港"/>
+							<div class="gui-dropdown gui-dropdown-pod none">
+								<div class="gui-dropdown-header"></div>
+								<div class="gui-dropdown-content">
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell gui-dropdown-last">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+								</div>
+							</div>			
+						</div>
+					</div>
+					<a class="gui-search-btn" href="javascript:">搜索</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gui-body">
+		<div class="gui-body-content">
+			<div class="gui-tab gui-tab-attention">
+				<div class="gui-tab-header">
+					<ul class="tab-menu">
+						<li class="tab-menu-cell j-tab-select psr">
+							<a class="tab-menu-link" href="javascript:">我的关注：<span>海运出口整箱</span><i>&#xe602;</i></a>
+							<div class="tab-menu-drop none">
+								<a class="menu-drop-cell" href="javascript:">海运出口整箱</a>
+								<a class="menu-drop-cell" href="javascript:">海运出口拼箱</a>
+							</div>
+						</li>
+						<li class="tab-menu-cell tab-menu-active">
+							<a class="tab-menu-link" href="javascript:">我的订阅</a>
+						</li>
+					</ul>
+				</div>
+				<div class="gui-tab-cnt ">
+					<div class="gui-table-area mt0">
+						<table class="gui-table gui-table-condensed">
+							<thead>
+								<tr class="gui-table-header">
+									<th width="190">
+										起运港
+									</th>
+									<th width="40">
+										<a class="sequence-btn" href="javascript:"><span>20GP</span><span class="sequence-icon"><i class="up-icon">&#xe601;</i><i class="down-icon">&#xe602;</i></span></a>
+									</th>
+									<th width="40">
+										<a class="sequence-btn" href="javascript:"><span>40GP</span><span class="sequence-icon"><i class="up-icon">&#xe601;</i><i class="down-icon">&#xe602;</i></span></a>
+									</th>
+									<th width="40">
+										<a class="sequence-btn" href="javascript:"><span>40HQ</span><span class="sequence-icon"><i class="up-icon">&#xe601;</i><i class="down-icon">&#xe602;</i></span></a>
+									</th>
+									<th width="40">
+										<a class="sequence-btn" href="javascript:"><span>45HQ</span><span class="sequence-icon"><i class="up-icon">&#xe601;</i><i class="down-icon">&#xe602;</i></span></a>
+									</th>
+									<th width="75">
+										船公司 | 航程
+									</th>
+									<th width="100">
+										船期
+									</th>
+									<th width="89">
+										进港港区
+									</th>
+									<th width="60">
+										操作
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="gui-sep-row">
+									<td colspan="9"></td>
+								</tr>
+								<tr class="gui-table-content">
+									<td rowspan="2"  class="td-first">
+										<div class="gui-recommend-icon"></div>
+										<p><span class="port-name"><strong>SYDNEY</strong> 悉尼</span> <i></i></p>
+										<p><span class="port-name"><strong>BUENOSAIRES</strong> 布宜诺斯艾利斯</span></p>
+									</td>
+									<td class="td-mete"><span class="nor-icon"><i>&#xe60c;</i></span><strong class="mete">125000</strong><p class="old-mete">300</p></td>
+									<td class="td-mete"><span class="nor-icon">&nbsp;</span><strong class="mete">125000</strong></td>
+									<td class="td-mete"><span class="nor-icon">&nbsp;</span><strong class="mete">125000</strong></td>
+									<td class="td-mete"><span class="nor-icon">&nbsp;</span><strong class="mete">125000</strong></td>
+									<td rowspan="2" >
+										MSKK-KK<br>
+										20天
+									</td>
+									<td rowspan="2" >
+										<div class="data-one">
+											<p><span class="data">周一</span><label>截关</label>，<span class="data">周三</span><label>离港</label></p>
+										</div>
+										<div class="data-one">
+											<p><span class="data">周一</span><label>截关</label>，<span class="data">周三</span><label>离港</label></p>
+										</div>
+									</td>
+									<td rowspan="2" >
+										<p><label>起：</label>2015-05-20</p>
+										<p><label>止：</label>2015-05-20</p>
+									</td>
+									<td rowspan="2" >
+										<p><a class="gui-btn gui-btn-order" href="javascript:">订舱</a></p>
+										<a class="del-control" href="javascript:">展开详情</a>
+									</td>
+								</tr>
+								<tr class="gui-table-content-more">
+									<td>
+										<p><span>20GP</span><span class="nor-icon"><i>&#xe60c;</i></span><strong class="mete">125000</strong></p>
+									</td>
+									<td>
+										<p><span>20GP</span><span class="nor-icon">&nbsp;</span><strong class="mete">125000</strong></p>
+									</td>
+									<td>
+										<p><span>20GP</span><span class="nor-icon">&nbsp;</span><strong class="mete">125000</strong></p>
+									</td>
+									<td>
+										<p><span>20GP</span><span class="nor-icon">&nbsp;</span><strong class="mete">125000</strong></p>
+									</td>
+								</tr>
+								<tr class="table-content-extend">
+									<td class="td-first">
+										<p class="gui-transit-info">
+											<label>中转港</label>
+											<span>HONGKONG</span>
+										</p>
+									</td>
+									<td colspan="3">
+										<label>有效期：</label>
+										<span>2015-01-03 ~ 2013-02-03</span>
+									</td>
+									<td colspan="2" class="toe">
+										<label>备注：</label>
+										1.此港以做特殊小方优惠处理；2.大碗大碗的年卡温暖的
+									</td>
+									<td colspan="2">
+										<label>预计上涨/下跌：</label><i class="trend-icon">&#xe61a;</i><span class="money">$10</span>
+									</td>
+									<td><a class="attention-control" href="javascript:">取消关注</a></td>
+								</tr>
+							</tbody>
+							<tbody>
+								<tr class="gui-sep-row">
+									<td colspan="9"></td>
+								</tr>
+								<tr class="gui-table-content">
+									<td class="td-first">
+										<div class="gui-recommend-icon"></div>
+										<p><span class="port-name"><strong>SYDNEY</strong> 悉尼</span> <i></i></p>
+										<p><span class="port-name"><strong>BUENOSAIRES</strong> 布宜诺斯艾利斯</span></p>
+									</td>
+									<td><strong class="">125000</strong></td>
+									<td><strong class="">125000</strong></td>
+									<td><strong class="">125000</strong></td>
+									<td><strong class="">125000</strong></td>
+									<td>
+										MSKK-KK<br>
+										20天
+									</td>
+									<td>
+										<div class="change-info">
+											<div class="data-one">
+												<p><span class="data">周一</span><label>截关</label>，<span class="data">周三</span><label>离港</label></p>
+											</div>
+											<div class="gui-tips gui-tips-change">
+												<div class="gui-tips-arrow">
+													◆ <em>◆</em>
+												</div>
+												<div class="gui-tips-cnt">
+													<div class="gui-tips-form">
+														<h3 class="title">变化前</h3>
+														<div class="content">
+															<span class="data">周一</span><label>截关</label>，<span class="data">周三</span><label>离港</label>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>
+										<p><label>起：</label>2015-05-20</p>
+										<p><label>止：</label>2015-05-20</p>
+									</td>
+									<td rowspan="2" >
+										<p><a class="gui-btn gui-btn-order" href="javascript:">订舱</a></p>
+										<a class="del-control" href="javascript:">展开详情</a>
+									</td>
+								</tr>
+								<tr class="table-content-extend">
+									<td class="td-first">
+										<p class="gui-transit-info">
+											<label>中转港</label>
+											<span>HONGKONG</span>
+										</p>
+									</td>
+									<td colspan="4">
+										<label>有效期：</label>
+										<span>2015-01-03 ~ 2013-02-03</span>
+									</td>
+									<td colspan="2" class="toe">
+										<label>备注：</label>
+										1.此港以做特殊小方优惠处理；2.大碗大碗的年卡温暖的
+									</td>
+									<td colspan="2">
+										<label>预计上涨/下跌：</label><i class="trend-icon">&#xe61e;</i><span class="money">$10</span>
+									</td>
+								</tr>
+								<tr class="gui-table-detail">
+									<td colspan="9" class="psr">
+										<a href="javascript:" class="gui-detail-surcharge-close"><i>&#xe605;</i></a>
+										<div class="gui-detail-grid detail-grid-top">
+											<div class="gui-detail-line gui-detail-group gui-detail-group-thr">
+												<div class="gui-detail-cell">
+													<label>目的港国家：</label>
+													新加坡
+												</div>
+												<div class="gui-detail-cell">
+													<label>航线：</label>
+													墨西哥航线
+												</div>
+												<div class="gui-detail-cell">
+													<label>航线代码：</label>
+													F001
+												</div>
+											</div>
+											<div class="gui-detail-line detail-line-remark">
+												<label>备注：</label>
+												1.此港以做特殊小方优惠处理；2.大碗大碗的年卡温暖的1.此港以做特殊小方优惠处理；2.大碗大碗的年卡温暖的1.此港以做特殊小方优惠处理；2.大碗大碗的年卡温暖的
+											</div>
+										</div>
+										<div class="gui-detail-area">
+											<div class="gui-detail-surcharge">
+												<div class="gui-surcharge-form">
+													<dl class="gui-surcharge-calculate">
+														<dt>箱型</dt><dd>箱量</dd>
+														<dt>20GP</dt><dd><input type="text" class="spinner"/></dd>
+														<dt>40GP</dt><dd><input type="text" class="spinner"/></dd>
+														<dt>40HP</dt><dd><input type="text" class="spinner"/></dd>
+														<dt>45HP</dt><dd><input type="text" class="spinner"/></dd>
+														<dt></dt><dd><a href="javascript:" class="gui-btn gui-btn-calculate">算一算</a></dd>
+													</dl>
+													<div class="calculate-explain">
+														<div class="calculate-explain-cnt">
+															<div class="explain-line">
+																<label>限重：</label>
+																<span>20GP < 1.5T</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="gui-surcharge-area">
+													<table class="gui-surcharge-table surcharge-table-condensed">
+														<thead>
+															<th class="first-row" width="100">费用名称</th>
+															<th class="tar">20GP</th>
+															<th class="tar">40GP</th>
+															<th class="tar">40HQ</th>
+															<th class="tar">45HQ</th>
+															<th width="50">单</th>
+															<th width="25">币别</th>
+															<th width="60">合计金额</th>
+														</thead>
+														<tbody>
+															<tr>
+																<td class="first-row" >海运费</td>
+																<td class="tar">(1020.20)×<span class="amount">02</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td>(1020.20)</td>
+																<td>USD</td>
+																<td>100020.20</td>
+															</tr>
+															<tr>
+																<td class="first-row" >驳船费</td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td>-</td>
+																<td>USD</td>
+																<td></td>
+															</tr>
+															<tr class="gui-surcharge-table-title">
+																<td class="first-row"  colspan="8">起运港附加费</td>
+															</tr>
+															<tr>
+																<td class="first-row" >THC(码头操作费)</td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td>-</td>
+																<td>USD</td>
+																<td>2123</td>
+															</tr>
+															<tr>
+																<td class="first-row" >ISPS(安保费)</td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td>-</td>
+																<td>USD</td>
+																<td>2123</td>
+															</tr>
+															<tr>
+																<td class="first-row" >WARS(战争附加费)</td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td class="tar">(1020.20)×<span class="amount">0</span></td>
+																<td>-</td>
+																<td>USD</td>
+																<td>2123</td>
+															</tr>
+															<tr>
+																<td class="first-row" >IAC(联运管理费)</td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td>-</td>
+																<td>USD</td>
+																<td>2123</td>
+															</tr>
+															<tr>
+																<td class="first-row" >IPF(集装箱检查费)</td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td>-</td>
+																<td>USD</td>
+																<td>2123</td>
+															</tr>
+															<tr class="gui-surcharge-table-title">
+																<td class="first-row"  colspan="8">目的港附加费</td>
+															</tr>
+															<tr>
+																<td class="first-row" >IAC(联运管理费)</td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td>-</td>
+																<td>USD</td>
+																<td>1121</td>
+															</tr>
+															<tr>
+																<td class="first-row" >IPF(集装箱检查费)</td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td class="tar">1020.20×<span class="amount">0</span></td>
+																<td>-</td>
+																<td>USD</td>
+																<td>1121</td>
+															</tr>
+														</tbody>
+													</table>
+													<div class="gui-surcharge-footer">
+														<div>
+															<div class="gui-surcharge-total">
+																<label class="gui-surcharge-methods">
+																	起运港费用：
+																</label>
+																<div class="gui-surcharge-num">
+																	<p><label>CNY</label>6020.00</p>
+																	<p><label>USD</label>6020.00</p>
+																</div>
+															</div>
+															<div class="gui-surcharge-total">
+																<label class="gui-surcharge-methods">
+																	目的港费用：
+																</label>
+																<div class="gui-surcharge-num">
+																	<p><label>CNY</label>6020.00</p>
+																	<p><label>USD</label>6020.00</p>
+																</div>
+															</div>
+															<div class="gui-surcharge-total">
+																<div>
+																	<label class="gui-surcharge-methods">
+																		费用合计：
+																	</label>
+																	<div class="gui-surcharge-num">
+																		
+																		<p><label>USD</label>6020.00</p>
+																	</div>
+																</div>
+																<div class="exchange-rate-info">
+																	<p>美元：英镑 = <span>9.6685</span></p>
+																	<p>美元：人民币 = <span>6.2085</span></p>
+																	<p>(汇率仅供参考)</p>
+																</div>
+															</div>
+														</div>
+														<div class="gui-surcharge-bottom">
+															<div class="contact-info">
+																<label>联系方式：</label>
+																<div class="contact-info-cnt">
+																	张叉叉,1923123123121；email,312312@qq.com;张叉叉,1923123123121；email,312312@qq.com
+																</div>
+															</div>
+															<a class="gui-btn gui-btn-big gui-btn-order" href="javascript:">订舱</a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="gui-detail-grid gui-surcharge-extend">
+												<div class="gui-detail-line">
+													<label>附加费说明：</label>
+													翻舱费30%可预付翻舱费30%可预付翻舱费30%可预付翻舱费30%可预付翻舱费30%可预付翻舱费翻舱费30%可预付翻舱费30%可预付翻舱费30%可预付翻舱费30%可预付翻舱费。
+												</div>
+											</div>
+											<div class="gui-detail-grid">
+												<div class="gui-detail-line">
+													<label for="">开航日：</label>
+												</div>
+												<div class="gui-detail-line">
+													<label for="">订舱代理：</label>
+												</div>
+												<div class="gui-detail-line">
+													<label for="">附件：</label>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="gui-tab-cnt none">
+					<div class="gui-panel-twin">
+						<div class="gui-panel mr10">
+							<div class="gui-panel-header">
+								<div class="panel-header-left"><strong class="gui-panel-title">海运出口<span class="text-fcl ml5">整箱</span></strong></div>
+								<div class="panel-header-right">
+								    <a class="gui-btn gui-btn-primary" href="javascript:">查看运价</a>
+									<a class="gui-btn-link" href="javascript:">取消订阅</a>
+								</div>
+							</div>
+							<div class="gui-panel-body">
+								<div class="gui-form">
+									<div class="gui-form-line">
+										<label class="gui-label">起运港：</label>
+										<span class="port-name"><strong>SYDNEY</strong> 悉尼</span>
+									</div>
+									<div class="gui-form-line">
+										<label class="gui-label">目的港：</label>
+										<span class="port-name"><strong>BUENOSAIRES</strong> 布宜诺斯艾利斯</span>
+									</div>
+									<div class="gui-form-line">
+										<label class="gui-label">船公司：</label>
+										<a class="" href="javascript:">MSKK-KK,MSKK-KK</a>
+									</div>
+									<div class="gui-form-line">
+										<label class="gui-label">是否中转：</label>
+										<span>是</span>
+									</div>
+									<div class="gui-form-line">
+										<label class="gui-label">截关日：</label>
+										<span>周一，周二，周三</span>
+									</div>
+									<div class="gui-form-line">
+										<label class="gui-label">离港日：</label>
+										<span>周一，周二，周三</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="gui-panel">
+							<div class="gui-panel-header">
+								<div class="panel-header-left"><strong class="gui-panel-title">海运出口<span class="text-lcl ml5">拼箱</span></strong></div>
+								<div class="panel-header-right">
+								    <a class="gui-btn gui-btn-primary" href="javascript:">查看运价</a>
+									<a class="gui-btn-link" href="javascript:">取消订阅</a>
+								</div>
+							</div>
+							<div class="gui-panel-body">
+								<div class="gui-form">
+									<div class="gui-form-line">
+										<label class="gui-label">起运港：</label>
+										<span class="port-name"><strong>SYDNEY</strong> 悉尼</span>
+									</div>
+									<div class="gui-form-line">
+										<label class="gui-label">目的港：</label>
+										<span class="port-name"><strong>BUENOSAIRES</strong> 布宜诺斯艾利斯</span>
+									</div>
+									<div class="gui-form-line">
+										<label class="gui-label">船公司：</label>
+										<a class="" href="javascript:">MSKK-KK,MSKK-KK</a>
+									</div>
+									<div class="gui-form-line">
+										<label class="gui-label">是否中转：</label>
+										<span>是</span>
+									</div>
+									<div class="gui-form-line">
+										<label class="gui-label">截关日：</label>
+										<span>周一，周二，周三</span>
+									</div>
+									<div class="gui-form-line">
+										<label class="gui-label">离港日：</label>
+										<span>周一，周二，周三</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gui-toolbar">
+		<a href="javascript:" class="gui-toolbar-cell gui-toolbar-first">
+			<i>&#xe61f;</i>
+			<span>客服</span>
+		</a>
+		<a href="javascript:" class="gui-toolbar-cell j-return-top">
+			<i>&#xe60a;</i>
+			<span>置顶</span>
+		</a>
+	</div>
+	<div class="gui-dialog none">
+		<div class="gui-dialog-header">
+			<h3 class="gui-dialog-title">消息推送方式</h3>
+			<a class="gui-dialog-close" href="javascript:">X</a>
+		</div>
+		<div class="gui-dialog-content">
+			<div class="gui-form">
+				<div class="gui-form-line">
+					<label for="email" class="gui-checkbox mr10 vat"><input type="checkbox" name="" id="email">邮件</label>
+					<div class="gui-form-info w310 toe">
+						<span>将向邮件 <strong>"1109847031@qq.com"</strong> 发送消息提醒发送消息提醒发送消息提醒发送消息提醒</span>
+						<div class="mt10">
+							<label>发送频率:</label>
+							<div class="gui-input gui-input-drop gui-input-group-last w160 dpib">
+								<div class="gui-input-content">
+									<input class="gui-input-text j-slide-down" type="text" value="实时">							
+									<span class="gui-input-addon"> <i>&#xe610;</i>
+									</span>
+								</div>
+								<ul class="gui-dropdown gui-dropdown-selct none">
+									<li class="gui-dropdown-cell">
+										<div class="gui-dropdown-item">
+											<a class="gui-dropdown-link" href="javascript:">每天</a>
+										</div>
+									</li>
+									<li class="gui-dropdown-cell">
+										<div class="gui-dropdown-item">
+											<a class="gui-dropdown-link" href="javascript:">每周</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<a class="operat-link vat" href="javascript:">修改邮箱</a>
+				</div>
+				<div class="gui-form-line">
+					<label for="wechat" class="gui-checkbox mr10"><input type="checkbox" name="" id="wechat">微信</label>
+					<div class="gui-form-info w310 toe">
+						将向微信号 <strong>"王尼玛"</strong> 发送消息提醒
+					</div>
+				</div>
+				<div class="gui-form-line">
+					<label for="sms" class="gui-checkbox mr10"><input type="checkbox" name="" id="sms">短信</label>
+					<div class="gui-form-info w310 toe">
+						将向手机号 <strong>"13923123312412"</strong> 发送消息提醒
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="gui-dialog-footer tar">
+			<a class="gui-btn gui-btn-primary" href="javascript:">确定</a>
+			<a class="gui-btn" href="javascript:">取消</a>
+		</div>
+	</div>
+	<div class="gui-dialog">
+		<div class="gui-dialog-header">
+			<h3 class="gui-dialog-title">消息推送方式</h3>
+			<a class="gui-dialog-close" href="javascript:">X</a>
+		</div>
+		<div class="gui-dialog-content">
+			<div class="gui-form">
+				<div class="gui-form-line">
+					<label for="email" class="gui-checkbox mr10 vat"><input type="checkbox" name="" id="email">邮件</label>
+					<div class="gui-form-info w310">
+						<span>将向邮件 <strong>"1109847031@qq.com"</strong> 发送消息提醒发送消息提醒发送消息提醒发送消息提醒</span>
+						<div class="mt10">
+							<label>发送频率:</label>
+							<div class="gui-input gui-input-drop gui-input-group-last w160 dpib">
+								<div class="gui-input-content">
+									<input class="gui-input-text j-slide-down" type="text" value="实时">							
+									<span class="gui-input-addon"> <i>&#xe610;</i>
+									</span>
+								</div>
+								<ul class="gui-dropdown gui-dropdown-selct none">
+									<li class="gui-dropdown-cell">
+										<div class="gui-dropdown-item">
+											<a class="gui-dropdown-link" href="javascript:">每天</a>
+										</div>
+									</li>
+									<li class="gui-dropdown-cell">
+										<div class="gui-dropdown-item">
+											<a class="gui-dropdown-link" href="javascript:">每周</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<a class="operat-link vat" href="javascript:">修改邮箱</a>
+				</div>
+				<div class="gui-form-line">
+					<label for="wechat" class="gui-checkbox vat mr10"><input type="checkbox" name="" id="wechat">微信</label>
+					<div class="gui-form-info w310">
+						<img class="dpib" src="../../release/freight/images/new-serviceportal/wechat-link.png" />
+						<span class="img-info dpib">请先扫描二维码，关注并绑定此<br/>运价通账号</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="gui-dialog-footer tar">
+			<a class="gui-btn gui-btn-primary" href="javascript:">确定</a>
+			<a class="gui-btn" href="javascript:">取消</a>
+		</div>
+	</div>
+	<!-- 插件及js应用 -->
+	<!-- Jquery引入 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryplugin/spinner/jquery.spinner.js"></script><!-- 控件 -->
+	<script type="text/javascript" src="../../release/freight/js/new-serviceportal/new.js"></script>
+	<!-- js end -->
+	<script type="text/javascript">
+		$('.spinner').spinner({value:0,max : 5});
+	</script>
+</body>
+</html>

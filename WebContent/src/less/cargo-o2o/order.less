@@ -1,0 +1,686 @@
+//订单样式
+.order-sign-line{
+	margin-left: 70px;
+}
+.order-label{
+	margin-left: -70px;
+}
+.order-search-area {
+	position: relative;
+	.search-area-wrap{
+		padding: 10px 0;
+		background: #f4f8f9;
+		border-top: 1px dashed #d3d8e0;
+	}
+	.search-area-adv{
+		display: none;
+	}
+	.search-input-cell{
+		width: 310px;
+		margin: 0 10px 0 20px;
+	}
+	.search-more{
+		position: absolute;
+		left: 50%;
+		bottom: -10px;
+		margin-left: -45px;
+		display: block;
+		width: 90px;
+		height: 28px;
+		line-height: 28px;
+		background: #f4f8f9;
+		border-bottom: 1px solid #d5dfee;
+		border-radius: 3px;
+		text-align: center;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+.order-table{
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	table-layout: fixed;
+	thead{
+		background-color: #f7f7f7;
+	}
+	th{
+		padding: 12px 10px;
+	}
+	td{
+		padding: 8px 10px;
+		border-right: 1px dashed #e9e9e9;
+	}
+	p{
+		.toe;
+	}
+	.table-blank{
+		padding: 5px 0;
+	}
+	.order-header-line{
+		border-right: none;
+	}
+	.norecord-line{
+		padding: 50px 0;
+		border-right: none;
+		text-align: center;
+		i{
+			vertical-align: middle;
+			font-size: 12px;
+		}
+	}
+	.order-operation-cell{
+		text-align: center;
+		border-right: none;
+	}
+	.del-icon{
+		float: right;*display: inline;
+		height: 30px;
+		line-height: 30px;
+		cursor: pointer;
+	}
+	.order-port{
+		font-weight: bold;
+		color: #333;
+	}
+}
+// 订单首行
+.order-header-line{
+	background: #f9f9f9;
+	p{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		padding: 0 5px;
+	}
+	.phone-icon{
+		margin: 0 5px 0 0;
+		vertical-align: middle;
+	}
+}
+.order-number{
+	width: 190px;
+	span{
+		vertical-align: middle;
+	}
+}
+.order-time{
+	width: 200px;
+}
+.buyer-info{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	padding: 0 5px;
+	p{
+		width: 190px;
+	}
+}
+// 联系方式
+.contact-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	position: relative;
+	&:hover{
+		.contact-cell-item{
+			background-color: #fff;
+			border: 1px solid #dadada;
+			border-bottom: 1px solid #fff;
+		}
+		.contact-cell-info{
+			display: block;
+		}
+	}
+}
+.contact-cell-item{
+	position: relative;
+	cursor: pointer;
+	padding: 5px 10px;
+	border: 1px solid #f9f9f9;
+	z-index: 10;
+}
+.contact-cell-info{
+	display: none;
+	position: absolute;
+	// top: 30px;
+	top: 29px;
+	left: 0;
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #dadada;
+	width: 120px;
+	p{
+		padding: 0;
+		display: block;
+		width: 100%;
+	}
+}
+// =====================
+
+// 图标
+.order-icon{
+	display: inline-block;*display: inline;*zoom:1;
+	// vertical-align: middle;
+	background: url(../../../release/freight/images/cargo-o2o/order_icon.png);
+	width: 16px;
+	height: 16px;
+}
+.order-icon-fcl{//整
+	background-position: 0 0;
+}
+.order-icon-lcl{//拼
+	background-position: -25px 0;
+}
+.order-icon-air{//空
+	background-position: -50px 0;
+}
+.order-icon-haul{//拖
+	background-position: -75px 0;
+}
+.order-icon-offer{//报
+	background-position: -100px 0;
+}
+.order-icon-pack{//装
+	background-position: -125px 0;
+}
+.service-icon{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	background: url(../../../release/freight/images/cargo-o2o/order_service.png);
+	width: 69px;
+	height: 16px;
+}
+.service-icon-online{
+	background-position: 0 0;
+}
+.service-icon-offline{
+	background-position: -100px 0;
+}
+.service-icon-cargo{
+	background-position: 0 -60px;
+	width: 42px;
+	height: 19px;
+}
+// ======订单详情页=======
+.order-info-grid{
+	padding: 25px 20px;
+	background-color: #f6fbfb;
+	border:1px solid #e6e6e6;
+	font-size: 0;
+	.info-left-grid{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		width: 560px;
+		font-size: 12px;
+		border-right: 1px dashed #c4d4d6;
+	}
+	.info-right-grid{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		padding-left: 75px;
+		width: 302px;
+		font-size: 14px;
+		h3{
+			padding-bottom: 15px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+	}
+}
+
+// 两等分
+.order-grid-halve{
+	float: left;
+	width: 50%;
+}
+// 三等分
+.order-grid-trisection{
+	float: left;
+	width: 33.3%;
+}
+
+
+.order-grid-line{
+	padding: 4px 0;
+	font-size: 0;
+	.grid-line-cell{
+		.toe;
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		font-size: 12px;
+		margin-right: 20px;
+	}
+	p{
+		font-size: 12px;
+		word-wrap: break-word;
+	}
+}
+.order-detail-line{
+	padding: 5px 10px 5px 90px;
+	min-height: 18px;
+	word-wrap:break-word;
+	label{
+		float: left;
+    	width: 90px;
+    	margin-left: -90px;
+    	text-align: right;
+	}
+}
+.order-detail-container{
+	padding: 10px 30px;
+	background: #fff;
+	border: 1px solid #e6e6e6;
+}
+.order-detail-wrap{
+	position: relative;
+	padding: 20px 20px 20px 100px;
+	color: #666;
+	border-bottom: 1px solid #e6e6e6;
+	overflow: hidden;
+	.detail-grid-label{
+		position: absolute;
+		left: 0;
+		top: 22px;
+		font-size: 14px;
+		color: #333;
+	}
+}
+.order-detail-wrap-esp{
+	border-bottom: none;
+}
+.order-detail-hd{
+	padding-bottom: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+// 费用清单
+.expense-table{
+	border:none;
+	thead{
+		background: #f6f6f6;
+	}
+}
+
+// 费用确认表
+.expense-table-confirm{
+	border-top: 2px solid #ececec;border-bottom: 2px solid #ececec;
+	border-left: none;border-right: none;
+	thead{
+		background: #f4f4f4;
+		color: #333;
+	}
+	background-color: #f9f9f9;
+	.unimportant-line{
+		color: #999;
+	}
+	.add-line{
+		border-bottom: none;
+	}
+	a{
+		text-decoration: none;
+	}
+}
+
+.expense-total-line{
+	padding-top: 15px;
+	text-align: right;
+	color: #333;
+	font-size: 14px;
+	clear: both;//费用维护页需清除浮动
+}
+
+// 弹窗内的费用纪录
+.total-line-opwin{
+	padding-top: 24px;
+	font-size: 14px;
+	.expense-total-cell{
+		font-size: 20px;
+	}
+}
+
+.expense-total-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	padding: 0 5px;
+	font-weight: bold;
+	color: #666;
+	span{
+		color:#FF7F00;
+	}
+}
+// 费用确认单弹框
+.expense-detal-line{
+	float: right;
+	display: inline-block;*display: inline;*zoom:1;
+	padding: 20px 0 10px 45px;
+	border-bottom: 1px solid #cdcdcd;
+
+}
+.expense-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	padding: 0 5px;
+	font-weight: bold;
+	color: #666;
+	span{
+		color:#333;
+	}
+}
+.total-line-last{
+	font-size: 14px;
+	padding-bottom: 20px; 
+	.expense-total-cell{
+		font-size: 20px;
+	}
+}
+// 上传文件
+.grid-line-cell-file{
+	margin-bottom: 10px;
+	padding: 5px 10px;
+	background: #f6f6f6;
+	p{	
+		.toe;
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		width: 170px;
+		font-size: 14px;
+	}
+	.file-icon{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		margin-right: 8px;
+		background: url(../../../release/freight/images/cargo-o2o/order_detail.png) 0 -100px;
+		width: 21px;
+		height: 20px;
+	}
+	.file-link{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		text-align: right;
+		width: 50px;	
+		font-size: 12px;
+	}
+	a{
+		text-decoration: none;
+	}
+	i{
+		margin-left: 8px;
+		font-size: 12px;
+		color: #c9c9c9;
+		cursor: pointer;
+	}
+}
+.file-uploading{//上传中
+	position: relative;
+	background: #e5f2fc;
+	.process-bar{
+		position: absolute;
+	    bottom: 0;
+	    left: 0;
+		height: 2px;
+	    width: 270px;
+	    background: #D7D5CF;
+	    font-size: 0;
+	    span{
+	    	float: left;display: inline;
+	    	background: #0083e5;
+   			height: 2px;
+   			width: 30%;
+	    }
+	}
+}
+
+
+
+// 弹窗中的订单表
+.order-detail-opwin{
+	background: none;
+	border: none;
+	font-size: 12px;
+	.order-detail-wrap{
+		padding: 10px 5px;
+	}
+	.order-detail-line{
+		padding: 3px 0 3px 90px;
+	}
+
+}
+.order-grid-trisection-6em{
+	.order-detail-line{
+		padding-left: 6em;
+	}
+	label{
+		width: 6em;
+		margin-left: -6em;
+	}
+}
+.order-grid-trisection-5em{
+	.order-detail-line{
+		padding-left: 5em;
+	}
+	label{
+		width: 5em;
+		margin-left: -5em;
+	}
+}
+.order-grid-trisection-4em{
+	.order-detail-line{
+		padding-left: 4em;
+	}
+	label{
+		width: 4em;
+		margin-left: -4em;
+	}
+}
+
+// === 新增订单页 ====
+.order-column{
+	padding: 10px 20px 20px 20px;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+.order-column-title{
+	margin-bottom: 15px;
+	padding: 10px 0;
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom: 1px solid #f1f1f1; 
+	.title-info{
+		color: #999;
+		font-size: 14px;
+		font-weight: normal;
+	}
+	.title-link-wrap{
+		display: inline;
+		float: right;
+		margin-top: 6px;
+		// padding-right: 56px;
+		font-size: 14px;
+		font-weight: normal;
+		label{
+	    	padding-right: 10px;
+	    	vertical-align: middle;
+	    }
+	    .title-link{
+	    	vertical-align: middle;  
+	    	i{
+	    		vertical-align: middle;
+	    		margin-right: 5px;
+	    		font-size: 14px;
+	    		color: #3366cc;
+	    	}
+	    	span{
+	    		vertical-align: middle;
+	    	}
+		}
+	}
+}
+
+.order-column-title-esp{
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+.order-column-line{
+	margin-bottom: 15px;
+	padding-top: 15px;
+	border-bottom: 1px solid #f1f1f1;
+	.del-btn{
+		float: right;
+		margin-top: -15px;
+		width: 30px;
+		padding: 0 3px;
+	}
+}
+.order-column-line-esp{
+	margin-bottom: 0;
+	border-bottom: none;
+}
+.order-form-group{
+	display: inline-block;*display: inline;*zoom:1;
+    margin: 0 10px 15px 0;
+}
+.order-form-group-esp{
+	margin-bottom: 0;
+}
+// 发货人信息
+.address-list {
+    display: inline;
+    float: left;
+    width: 445px;
+    padding-right: 45px;
+}
+.address-list-btn{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+.space-info{
+	width: 448px;
+    display: inline;
+    float: right;
+}
+.label-above{
+	display: block;
+	text-align: left;
+}
+.goods-wrap{
+	float: left;
+	width: 450px;
+}
+// 箱型箱量
+.spinner-form-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+}
+// 拖车门点装箱
+.truck-adr{
+	background: #F5F5F6;
+    width: 900px;
+    margin-bottom: 1px;
+    margin: 0 0 1px 38px;
+    overflow:hidden;
+}
+.truck-adr-tt {
+    display: inline;
+    float: left;
+    width: 46px;
+    padding: 20px 20px;
+} 
+.truck-adr-item {
+    display: inline;
+    float: left;
+    background: #f9f9f9;
+    width: 784px;
+    padding: 20px 0 10px 30px;
+}
+.truck-adr-foot{
+	background: #f9f9f9;
+    width: 785px;
+    margin: 0 0 0 38px;
+    padding: 10px 0 0 115px;
+}
+// 上传文件
+.upload-info {
+	overflow: hidden;
+	.item-btn {
+	    width: 410px;
+	    height: 38px;
+	    border: 1px dashed #b0b0b0;
+	    background: #fdfdfd;
+	    padding: 30px;
+	    display: inline;
+	    float: left;
+	    .item-tip {
+		    float: right;
+		    display: inline;
+		    width: 245px;
+		    margin-top: -40px;
+		    color: #999999;
+		    line-height: 18px;
+		    font-size: 12px;
+		}
+	}
+	 .webuploader-pick {//按钮
+	    background: #0083e5;
+	    font-size: 16px;
+	    color: #fff;
+	    padding: 10px 35px;
+	    border: 1px solid #0083e5;
+	}	
+	.upload-info-list {
+	    display: inline;
+	    float: left;
+	    width: 446px;
+	    padding-left: 20px;
+	}
+	.msg-tip{
+		.tip-success{
+			color: #666;
+			i{	
+				vertical-align: middle;
+				margin-right: 5px;
+				color: #43ca7c;
+			}
+			span{
+				vertical-align: middle;
+			}
+		}
+		.tip-error{
+			color: #f54343;
+			i{
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			span{
+				vertical-align: middle;
+			}
+		}
+	}
+}
+//单位居右
+.order-unit-right{
+	.nui-form-cell-cnt{
+		padding-left: 5px;
+    	padding-right: 41px;
+	}
+	.nui-form-addon{
+		left: auto;
+		right: 0;
+		width: 35px;
+		border-right: none;
+		border-left: 1px solid #b3c4d5;
+	}
+}
+	
+// 舱位保证
+.split-icon{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	width: 5px;height: 30px;margin-left: 20px;
+	background: url(../../../release/freight/images/cargo-o2o/order_detail.png);
+	background-position: -110px -100px;
+}
+.insure-icon{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	width: 21px;height: 24px;margin-right: 5px;
+	background: url(../../../release/freight/images/cargo-o2o/order_detail.png);
+	background-position: -59px -100px;
+}

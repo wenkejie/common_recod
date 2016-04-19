@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>validate test</title>
+<link href="http://cpcommon.600jit.com/fcommon/release/jqueryui/jquery-ui-1.10.2.freight.css" type='text/css' rel='stylesheet' />
+<link href="http://cpcommon.600jit.com/fcommon/src/css/common.css" type='text/css' rel='stylesheet' />
+<script src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="http://cpcommon.600jit.com/fcommon/release/jqueryui/jquery-ui-1.10.2.freight.min.js" type="text/javascript" ></script>
+
+<script src="http://cpcommon.600jit.com/fcommon/src/js/fselect.js" type="text/javascript" ></script>
+<script src="http://cpcommon.600jit.com/fcommon/src/js/fvalidate.js" type="text/javascript" ></script>
+
+<!-- <script src="http://cpcommon.600jit.com/fcommon/release/freight/js/fcommon-1.0.min.js" type="text/javascript" ></script> -->
+
+<script type="text/javascript">
+$(function(){
+	$("#aaaaaa").fselect({items:[{text:"abc",value:"abc1"},{text:"asdf",value:"asdf1"}],change : function(event, ui) {
+		//$(this).val(ui.name);
+		//console.log($("#aaaaaa").val());
+		$(this).validate();
+	}});
+	
+	
+	
+});
+
+function testValidate(){
+	var flag = $("#cnt,#testinput1").validate();
+	// var flag = $("#f").validate();
+	//alert(flag);
+}
+</script>
+
+</head>
+<body>
+<br/>
+<br/>
+<button onclick="testValidate()">执行验证</button>
+
+<form action="" name="f" id="f">
+
+
+	<div id="cnt" class="fui-scroll fui-dialog-cnt " style="height: 220px; ">
+	<div class="fui-form-grid">
+		<label for="testinput1" class="fui-label">一个输入框元素</label><div class="fui-form-cell w150"><input id="testinput1" name="testinput1" value="" validate="*s" /></div>
+	</div>
+	<div class="fui-grid-left">
+		<h2 class="fui-title">公司信息</h2>
+		<div class="fui-form-grid">
+			<label for="1" class="fui-label">开户数</label><span class="text-warning vam">1</span>
+		</div>
+		<div class="fui-form-grid">
+			<label for="org_name" class="fui-label">公司名称</label><div class="fui-form-cell w200"><input type="text" id="org_name" name="org_name" class="fui-input" value="23asdfasdffafasdfasdfa42" validate="*s-10"/></div>
+		</div>
+		<div class="fui-form-grid">
+			<label for="aaaaaa" class="fui-label">省份</label>
+			<input type="text" id="aaaaaa" name="aaaaaa" value="" validate="*" />
+			<label for="4" class="fui-label w35">城市</label>
+			<div class="fui-form-cell fui-select w65 mr0">
+				<div class="fui-select-cnt">
+					<div class="fui-select-input"></div>
+					<s class="fui-form-icon icon-select-arrow"></s>
+				</div>
+			</div>
+		</div>
+		<div class="fui-form-grid">
+			<label for="address" class="fui-label">地址</label><div class="fui-form-cell w200"><input type="text" id="address" name="address" class="fui-input" value="" validate="*s-60"/></div>
+		</div>
+		<div class="fui-form-grid">
+			<label for="postcode" class="fui-label">邮编</label><div class="fui-form-cell w200"><input type="text" id="postcode" name="postcode" class="fui-input" value="" validate="s-60"/></div>
+		</div>
+		<div class="fui-form-grid">
+			<label for="org_desc" class="fui-label vat pd0">公司描述</label><textarea class="fui-textarea w200 w60" style="height:80px;" id="org_desc" name="org_desc" validate="*s-60"></textarea>
+		</div>
+		<div class="fui-form-grid">
+			<label for="postcode1" class="fui-label">邮编</label><div class="fui-form-cell w200"><input type="text" id="postcode1" name="postcode1" class="fui-input" value="" validate="*s-60"/></div>
+		</div>
+	</div>
+	<div class="fui-grid-right" style="padding-left: 400px;width: 245px;">
+		<div class="pl30">
+			<h2 class="fui-title">联系人信息</h2>
+				<div class="fui-form-grid">
+					<label for="1" class="fui-label">登录名</label><span class="text-warning vam"></span>
+				</div>
+				<div class="fui-form-grid">
+					<label for="1" class="fui-label">联系人</label><div class="fui-form-cell "><input type="text" id="linkman" name="linkman" class="fui-input" value=""/></div>
+				</div>
+				<div class="fui-form-grid">
+					<label for="tel" class="fui-label">电话电话电话电话电话电话电话</label><div class="fui-form-cell   "><input type="text" id="tel" name="tel" class="fui-input" value="55555555555555555555555555555555555555555555555555555555555555555555555555" validate="*s-10"/></div><span class="required">*</span>
+				</div>
+				<div class="fui-form-grid">
+					<label for="1" class="fui-label">手机</label><div class="fui-form-cell "><input type="text" id="mobile" name="mobile" class="fui-input" value=""/></div>
+				</div>
+				<div class="fui-form-grid">
+					<label for="1" class="fui-label">传真</label><div class="fui-form-cell "><input type="text" id="fax" name="fax" class="fui-input" value=""/></div>
+				</div>
+				<div class="fui-form-grid">
+					<label for="1" class="fui-label">邮箱</label><div class="fui-form-cell "><input type="text" id="email" name="email" class="fui-input" value=""/></div>
+				</div>
+		</div>
+	</div>
+	 
+	</div>
+	
+</form>
+</body>
+</html>

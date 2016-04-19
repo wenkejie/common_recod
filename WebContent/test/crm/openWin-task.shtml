@@ -1,0 +1,87 @@
+<!--#include file="header.html"-->
+
+<!--弹窗内容 -->
+
+
+		<div class="grid tal mg20">
+			<div class="form-line">
+				<label class="nui-label w80">任务名称：</label>
+			
+				<div class="nui-form-cell w200">
+					<div class="nui-form-cell-cnt">
+						<input id="datepicker_input" placeholder="请简单描述一下任务内容" class="nui-input" type="text">
+
+					</div>
+				</div>
+				<i class="text-red">*</i>
+			
+				
+			
+			</div>
+			<div class="form-line">
+				<label class="nui-label w80">截止时间：</label>
+				
+				<div class="nui-form-cell w100 mr5">
+					<div class="nui-form-cell-cnt">
+						<input class="nui-input no-chinese" type="text">
+						<i class="nui-form-cell-icon">&#x343a;</i>
+					</div>
+				</div>
+				<div class="nui-form-cell w80">
+					<div class="nui-form-cell-cnt">
+						<input class="nui-input no-chinese" type="text">
+						<i class="nui-form-cell-icon">&#x3443;</i>
+					</div>
+				</div>
+				<i class="text-red">*</i>
+				
+			</div>
+			<div class="form-line">
+				<label class="nui-label w80">提醒：</label>
+				<div class="nui-form-cell w200">
+					<div class="nui-form-cell-cnt">
+						<input class="nui-input no-chinese" type="text" placeholder="提前10分钟">
+						<i class="nui-form-cell-icon">&#x35a1;</i>
+					</div>
+				</div>
+				<i id="jTaskInfo" class="dpib psr cur-p">
+					&#x3574;
+					<div class="nui-tips nui-tips-task none w200">
+						设置提醒后将会通过手机短信或邮件方式发送提醒信息
+						<div class="nav-cell-arrow">
+							◆
+							<em>◆</em>
+						</div>
+					</div>
+				</i>
+				
+			</div>
+			<div class="form-line">
+				<label class="nui-label w80">负责人：</label>
+				<div class="nui-form-cell w200">
+					<div class="nui-form-cell-cnt">
+						<input class="nui-input no-chinese" type="text">
+						
+					</div>
+				</div>
+			</div>
+			<div class="form-line">
+				<label class="nui-label w80">业务：</label>
+				<select class="nui-native-select w90 mr6" name="datetime_type">
+					<option selected="" value="reg_datetime">客户</option>
+					<option value="audit_datetime">销售机会</option>
+					<option value="audit_datetime">联系人</option>
+				</select>
+				<div class="nui-form-cell w100">
+					<div class="nui-form-cell-cnt">
+						<input class="nui-input no-chinese" type="text">
+					</div>
+				</div>
+			</div>
+			<div class="form-line mt20">
+				<label class="nui-label w80">附件：</label>
+				<a class="nui-btn" href="javascript:"><i>&#x358c;</i> 上传附件</a>
+			</div>
+		</div>
+</body>
+</html>

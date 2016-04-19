@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>在线投标列表</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+	<link rel="stylesheet" type="text/css" href="./webuploader/webuploader.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="top-bar">
+		<div class="tb-cnt">
+			<ul class="tb-menu">
+				<li class="tb-menu-cell first">风清扬，<a href="javascript:">退出</a></li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell j-tbnav-sld">
+					<a class="tb-menu-link" href="javascript:"><span>账户管理</span><i class="ml5">&#xe643;</i></a>
+					<div class="tb-menu-sld">
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+					</div>
+				</li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell"><a class="tb-menu-link" href="javascript:"><i class="mr5">&#xf018f;</i><span>咨询</span></a></li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell">
+					<a class="tb-menu-link" href="javascript:"><i class="mr5">&#xf0190;</i><span>消息</span></a>
+					<span id="site-msg-count" class="newinfo-icon">12</span>
+				</li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell j-tbnav-sld">
+					<a class="tb-menu-link" href="javascript:"><span>帮助中心</span><i class="ml5">&#xe643;</i></a>
+					<div class="tb-menu-sld">
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="header">
+		<div class="hd-cnt">
+			<h1 class="hd-logo">
+				<a class="hd-logo-img" href="javascript:"></a>
+				<div class="hd-logo-extend"></div>
+			</h1>
+			<ul class="mnav">
+				<li class="mnav-cell current">
+					<a class="mnav-link" href="javascript:">首页</a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+				</li>
+				<li class="mnav-cell ">
+					<a class="mnav-link" href="javascript:">掌柜互联<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-mid">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item last">
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">运价通<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-mid">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">生意通<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-mid">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">营销通<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-o">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">平台设置<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-o">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="main-cnt main-cnt-old">
+		<div class="sidebar none">
+			<div class="sd-nav">
+				<div class="sd-nav-cell">
+					<div class="sd-nav-tt first">
+						<i class="nav-tt-icon">&#xe634;</i>
+						<span class="nav-tt-info" href="">掌柜互联</span>
+						<i class="sd-nav-point">&#xe632;</i>
+					</div>
+				</div>
+				<div class="sd-nav-cell">
+					<div class="sd-nav-tt first">
+						<i class="nav-tt-icon">&#xe634;</i>
+						<span class="nav-tt-info" href="">运价管理</span>
+						<i class="sd-nav-point">&#xe632;</i>
+					</div>
+				</div>
+				<div class="sd-nav-cell sd-nav-more">
+					<div class="sd-nav-tt j-sld-more">
+						<i class="nav-tt-icon">&#xe634;</i>
+						<span class="nav-tt-info" href="">运价管理</span>
+						<i class="sd-nav-point">&#xe643;</i>
+					</div>
+					<div class="sd-nav-extend">
+						<div class="snav-extend-cnt">
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+							<div class="more-link none">
+								<a class="sd-nav-link" href="javascript:">运价维护</a>
+								<a class="sd-nav-link" href="javascript:">运价维护</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sd-nav-cell sd-nav-more">
+					<div class="sd-nav-tt">
+						<i class="nav-tt-icon">&#xe634;</i>
+						<span class="nav-tt-info" href="">运价管理</span>
+					</div>
+					<div class="sd-nav-extend">
+						<div class="snav-extend-cnt">
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+						</div>
+					</div>
+				</div>
+				<div class="sd-nav-cell sd-nav-more">
+					<div class="sd-nav-tt">
+						<i class="nav-tt-icon">&#xe634;</i>
+						<span class="nav-tt-info" href="">运价管理</span>
+					</div>
+					<div class="sd-nav-extend">
+						<div class="snav-extend-cnt bdn">
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+							<a class="sd-nav-link" href="javascript:">运价维护</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rside-cnt">
+			<div class="plate">
+				<div class="plate-hd">
+					在线投标
+				</div>
+				<div class="plate-cnt">
+					<div class="plate-grid pl0">
+						<div class="nui-form-cell w150 mr10">
+							<input class="nui-input" type="text" />
+						</div>
+						<a class="nui-btn nui-btn-primary" href="javascript:">搜索</a>
+					</div>
+					<div class="nui-table-area table-area-manager">
+						<div class="table-manager-cnt">
+							<table class="nui-table bidding-list-table">
+								<thead>
+									<tr>
+										<th width="210">招标企业</th>
+										<th width="200">项目名称<span class="v-line">|</span>项目编号</th>
+										<th>货量</th>
+										<th>截止时间</th>
+										<th>已投标</th>
+										<th width="110">状态</th>
+										<th width="90">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<p>宁波雅戈尔集团有限公司宁波雅戈尔集团有限公司</p>
+										</td>
+										<td>
+											<p>长沙远大空调运输有限公司长沙远大空调运输有限公司</p>
+											<p class="more-info">201601080008201601080008201601080008201601080008</p>
+										</td>
+										<td>
+											<p class="fc3">30Tue</p>
+										</td>
+										<td>
+											<p>02-09</p>
+										</td>
+										<td>3</td>
+										<td>
+											<p>招标中</p>
+										</td>
+										<td>
+											<a href="javascript:">详情</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>宁波雅戈尔集团有限公司</p>
+										</td>
+										<td>
+											<p>长沙远大空调运输有限公司</p>
+											<p class="more-info">201601080008</p>
+										</td>
+										<td>
+											<p class="fc3">30Tue</p>
+										</td>
+										<td>
+											<p>02-09</p>
+										</td>
+										<td>3</td>
+										<td>
+											<p>招标中</p>
+										</td>
+										<td>
+											<a href="javascript:">详情</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p>宁波雅戈尔集团有限公司<p>
+										</td>
+										<td>
+											<p>长沙远大空调运输有限公司</p>
+											<p class="more-info">201601080008</p>
+										</td>
+										<td>
+											<p class="fc3">30Tue</p>
+										</td>
+										<td>
+											<p>02-09</p>
+										</td>
+										<td>3</td>
+										<td>
+											<p>招标中</p>
+										</td>
+										<td>
+											<a href="javascript:">详情</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="nui-table-footer mt10">
+							<div class="page">
+								<span class="pageinfo">
+									<input type="hidden" id="pageNo" name="pageNo" value="1" autocomplete="off">						
+									<input type="hidden" id="pageCount" name="pageCount" value="5" autocomplete="off">						
+									<input type="hidden" id="count" name="count" value="84" autocomplete="off">						
+									1-20条，共 <em class="pageinfo">84</em>
+									条
+								</span>
+								<a href="javascript:" id="next_page">下一页</a>
+								<a href="javascript:" id="last_page">尾页</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="ft-cnt">
+			<ul class="fdlk">
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">奥林科技</a>
+				</li>
+				<li class="fdlk-line"></li>
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">大掌柜</a>
+				</li>
+				<li class="fdlk-line"></li>
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">咖狗网</a>
+				</li>
+				<li class="fdlk-line"></li>
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">云融通</a>
+				</li>
+			</ul>
+			<div class="cprt">
+				版权所有 © 2014 奥林科技(宁波)有限公司
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../release/freight/js/cargo-o2o/index.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/cargo-o2o/manage.js"></script>
+	<script type="text/javascript" src="./webuploader/webuploader.nolog.js"></script>
+	<script type="text/javascript" src="./upload.js"></script>	
+</body>
+</html>

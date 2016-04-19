@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>会员管理首页</title>
+<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+<!-- 自己的样式要加在引入样式的后面 -->
+<script type="text/javascript" src="../../release/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+<script type="text/javascript" src="../../release/freight/js/fcommon-2.0.min.js"></script>
+<script type="text/javascript" src="../../release/jqueryplugin/highcharts.js"></script>
+<script type="text/javascript" src="headNav.js"></script>
+<script>
+	// 20种颜色
+	Highcharts.setOptions({
+		colors: ["#2f7ed8", "#0d233a", "#8bbc21", "#910000", "#1aadce", "#492970", "#f28f43", "#77a1e5", "#c42525", "#a6c96a", '#9CABCC', '#EF9D13', '#EA538A', '#F9CD74', '#DCA68A', '#E21864', '#93CE7E', '#CC99CC', '#9AD1D4', '#1CB3BE']
+	});
+	// 用户活跃度TOP10指标
+	function activity_user_chart(obj){
+		if(obj){
+			var $that = $(obj);
+			$that.parent().find('button').removeClass("nui-btn-active");
+			$that.addClass("nui-btn-active");
+		}
+		
+		$.post("../../test/fuserManagement/data/analytics_loss_data.js","",function(data){
+			data = eval(data);
+
+			$('#container_new_old').highcharts({
+	            chart: {
+	            },
+	            // 主标题
+		        title: {
+					//text : "新老访客分布"
+		        	text : ""
+				},
+				// 副标题
+				subtitle: {
+					//text : "航线"
+				},
+	            tooltip: {
+					pointFormat: '百分比: <b>{point.percentage:.1f}%</b>'
+					//pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	                //formatter: function() {
+	                //this.percentage this.y
+	            	//	return '<b>' + this.point.name + '</b>: ' + this.y + ' 次';  
+	                    //return '<b>'+ this.series.name +'</b><br/>'+
+	                    //    this.x +': '+ this.y+"次";
+	                //}
+	            },
+	            plotOptions: {
+	                pie: {
+	                   // allowPointSelect: true,
+	                    //cursor: 'pointer',
+	                    dataLabels: {
+	                        //enabled: true,
+	                    	color: '#000000',
+	                    	connectorColor: '#000000',
+	                        format: '{point.name}:<br/> {y} 人'
+	                    },
+	                    startAngle: 90+54
+	                }
+	            },
+	            series: [{ 
+		            type: 'pie',
+		            //type: 'column',   
+	            	//type: 'line',
+	            	data: [{name:"登录人数",y:140,color:'#a6c96a',dataLabels:false},
+	            	       {name:"流失人数",y:60,color:'#2f7ed8',
+		            			events:{click:function(){
+		            				alertmin();
+		            			}}
+	            		   }
+	            		],
+	                name : ""
+	            }],
+	         	// 版权信息
+	            credits: {
+		            enable: false
+		            ,text:""
+		        }
+	        });
+		},"text");
+	}
+	
+	function pieTT(obj){
+		if(obj){
+			var $that = $(obj);
+			$that.parent().find('button').removeClass("nui-btn-active");
+			$that.addClass("nui-btn-active");
+		}
+		
+		$.post("../../test/fuserManagement/data/analytics_loss_data.js","",function(data){
+			data = eval(data);
+
+			$('#container_new_old2').highcharts({
+	            chart: {
+	            },
+	            // 主标题
+		        title: {
+					//text : "新老访客分布"
+		        	text : ""
+				},
+				// 副标题
+				subtitle: {
+					//text : "航线"
+				},
+	            tooltip: {
+					pointFormat: '百分比: <b>{point.percentage:.1f}%</b>'
+					//pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	                //formatter: function() {
+	                //this.percentage this.y
+	            	//	return '<b>' + this.point.name + '</b>: ' + this.y + ' 次';  
+	                    //return '<b>'+ this.series.name +'</b><br/>'+
+	                    //    this.x +': '+ this.y+"次";
+	                //}
+	            },
+	            plotOptions: {
+	                pie: {
+	                   // allowPointSelect: true,
+	                    //cursor: 'pointer',
+	                    dataLabels: {
+	                        //enabled: true,
+	                    	color: '#000000',
+	                    	connectorColor: '#000000',
+	                        format: '{point.name}:<br/> {y} 人'
+	                    }
+	            		,startAngle: 90+54
+	                }
+	            },
+	            series: [{ 
+		            type: 'pie',
+		            //type: 'column',   
+	            	//type: 'line',
+	            	data: [{name:"登录人数",y:140,color:'#a6c96a',dataLabels:false},
+	            	       {name:"流失人数",y:60,color:'#2f7ed8'}
+	            		],
+	                name : ""
+	            }],
+	         	// 版权信息
+	            credits: {
+		            enable: false
+		            ,text:""
+		        }
+	        });
+		},"text");
+	}
+	
+	function fu_acticity_change(obj,str){
+		if(obj){
+			var $that = $(obj);
+			$that.parent().find("a").removeClass("nui-select-tag-active");
+			$that.addClass("nui-select-tag-active");
+		}
+		creatAnayticsTag(str);
+	}
+
+	
+	// 生成页面首部 查询统计信息table
+	function creatAnayticsTag(str){
+		$.post("../../test/fuserManagement/data/analytics_overview_data.js","",function(data){
+			data = eval(data)(str);
+			var $anayticsTag = $("ul.analytics-overview-panel");
+			$anayticsTag.find("li").each(function(i){
+				var $that = $(this);
+				$that.find("span").text(data[i]);
+			});
+		},"text");
+	}
+
+	
+	function alertmin(){
+		$('#container_new_old2,#container_analytics').removeClass('none');
+		$('#container_new_old').addClass('none');
+		pieTT();
+		columnTT();
+	}
+	
+	
+	function columnTT(){
+		
+		$('#container_analytics').highcharts({
+		
+		chart: {
+            type: 'column'
+        },
+        title: {
+            text: '' //'Stacked column chart'
+        },
+        xAxis: {
+            categories: ['08月', '09月', '10月'],
+            labels: {
+            	style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                },
+                formatter : function(){
+                	var rt = '<b>' + this.value + '</b>';
+                    return rt
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '用户流失数'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            }
+        },
+        legend: {
+            align: 'right',
+            x: -70,
+            verticalAlign: 'top',
+            y: 10,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColorSolid) || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            enabled:false,
+            shadow: false
+        },
+        tooltip: {
+            formatter: function() {
+            	// '<b>'+ this.x +'</b><br/>'
+                return '<b>用户流失数</b><br/>'+
+                    this.series.name +': '+ this.y;
+            }
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                }
+            }
+        },
+        series: [{
+            name: '流失人数',
+            data: [{y:15,color:'#2f7ed8'}, {y:20,color:'#2f7ed8'}, {y:25,color:'#2f7ed8'},]
+        }],
+     	// 版权信息
+		credits: {
+			enable: false,
+			text: ""
+		}
+    });
+	}
+	
+		$(function() {
+			activity_user_chart();
+			fu_acticity_change(null,'today');
+			
+			//高级搜索，日期类型
+			$("#datetime_type").nselect({
+				width:120,
+				size:6,
+				items : [{"text":"2014年5月","value":"5"},{"text":"2014年6月","value":"6"}]
+			});
+			
+			//高级搜索，日期类型
+			$("#datetime_type2").nselect({
+				width:120,
+				size:1,
+				readonly:true,
+				items : [{"text":"2014年10月","value":"10"}]
+			});
+		});
+	</script>
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+
+	<div class="wrap two-column-wrap-nobd">
+		<div class="left-side">
+			<div class="left-slide-top-line"></div>
+			<!--#include file="leftside.html"-->
+			<div class="left-slide-bottom-line"></div>
+		</div>
+		<div class="right-side pt0">
+
+			<div class="main-title">
+				<h1>流失率分析</h1>
+			</div>
+			<div class="analytics-grid mt15">
+				<div class="analytics-title"><h2>流失率 </h2>
+					<div class="analytics-title-fn pt7 j-analytics-title-fn">
+						<label for="datetime_type" class="nui-label">对比区间：</label>
+						<input name="datetime_type" id="datetime_type" value="5"/>
+							
+						<label for="datetime_type2" class="nui-label w20">至</label>
+						<input name="datetime_type2" disabled="disabled" id="datetime_type2" value="10"/>
+						<a class="nui-btn nui-btn-primary" href="javascript:">查询</a>
+					</div>
+				</div>
+				<div class="analytics-cnt" style="height: 280px">
+					<div id="container_new_old" class="big-chart"></div>
+					<div id="container_new_old2" class="big-chart left none w50p" ></div>
+					<div id="container_analytics" class="big-chart right none w50p"></div>
+				</div>
+			</div>
+
+			<div class="adv-table mt20">
+				<ul class="adv-table-tab">
+					<li> 查看：</li>
+					<li><a class="adv-table-tab-link adv-table-tab-link-active" href="javascript:">流失用户列表</a></li>
+				</ul>
+				<div class="adv-table-fn-area ">
+					<div class="right">
+						<form id='j-member-export' action="" method="post" class="none"></form>
+						<a class="nui-btn " id="j-member-export-a" href="javascript:"><i class="fs12">&#x3455;</i> 导出</a>
+					</div>
+				</div>
+			<table class="analytics-table">
+				<thead>
+					<tr>
+						<th class='w60'>用户名</th>
+						<th class='w100'>所属企业</th>
+						<th class='w80'>上次登录时间</th>
+						<th class='w120'>历史查询内容</th>
+						<th class='w120'>服务人员及部门</th>
+					</tr>
+				</thead>
+				<tbody id="j-result-table">
+					<tr>
+						<td>李光耀</td>
+						<td>大掌柜</td>
+						<td>2014-12-30</td>
+						<td>NiNGBO,SHENZHEN</td>
+						<td>罗建（上海一部）</td>
+					</tr>
+					<tr>
+						<td>李光耀</td>
+						<td>大掌柜</td>
+						<td>2014-12-30</td>
+						<td>NiNGBO,SHENZHEN</td>
+						<td>罗建（上海一部）</td>
+					</tr>
+					<tr>
+						<td>李光耀</td>
+						<td>大掌柜</td>
+						<td>2014-12-30</td>
+						<td>NiNGBO,SHENZHEN</td>
+						<td>罗建（上海一部）</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="adv-table-footer">
+				<div class="page"><input type="hidden" id="curPageNumber" name="curPageNumber" value="1"><input type="hidden" id="pageCount" name="pageCount" value="1"><span>上一页</span>&nbsp;<a class="active" href="javascript:">1</a>&nbsp;<span>下一页</span></div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!--#include file="footer.html"-->
+</body>
+</html>

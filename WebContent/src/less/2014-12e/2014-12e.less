@@ -1,0 +1,166 @@
+// ====================11e标签结构添加，by:Evan=================
+
+.nui-sign-area{
+	border-bottom: 1px dashed #d3d8e0;
+}
+
+.nui-sign-title{
+	margin-left: 10px;padding-bottom: 10px;
+	font-weight: bold;
+}
+
+.nui-sign-line{
+	// &:extend(.clearfix all);
+	padding: 5px 0;
+	.nui-label{
+		*display: inline;*zoom:1;
+		vertical-align: top;
+	}
+}
+
+.nui-sign-content{
+	&:extend(.clearfix all);
+	display: inline-block;*display: inline;*zoom:1;
+	*margin-right: -3px;
+	vertical-align: top;
+}
+
+.nui-sign-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	height: 22px;line-height: 22px;padding: 0 10px;margin-bottom: 5px;margin-right: 5px;
+	border-radius: 2px;color: #666;
+
+	&.active{
+		background: #428fce;
+		color: #fff;
+		text-decoration: none;
+	}
+
+}
+
+
+
+
+.nui-manage-table{
+	table-layout: fixed;
+	width: 100%;
+	th,td{
+		padding:10px 5px;
+		border-bottom: 1px solid #eee;
+	}
+	.manage-table-last{
+		border-bottom-width: 0;
+	}
+	.edit,.delete{
+		.inline-block;
+		vertical-align: middle;
+	}
+	.delete-disable{
+		cursor: not-allowed;
+		color: #ccc;
+	}
+}
+
+
+
+// 标签结构
+.nui-tally{
+
+}
+
+// .nui-tally-cell{
+// 	float: left;*display: inline;
+// 	height: 22px;line-height: 22px;margin-right: 5px;margin-bottom: 5px;padding: 0 8px;
+// 	background: #e9e9e9;border-radius: 3px;
+// 	color: #666;
+// }
+
+.nui-tags-new{
+	.nui-tags-cell{
+		position: relative;*zoom:1;*float: none;
+	}
+
+	.nui-tags-del {
+		display: none;position: absolute;z-index: 1000;right: -23px;top: 0;
+		width: 25px;height: 22px
+	}
+}
+
+// 便签结构新增
+.cui-tags-add{
+	float: left;*display: inline;
+	height: 22px;margin-right: 5px;margin-bottom: 5px;
+	line-height: 22px;	
+}
+
+.add-input-group{
+	.inline-block;
+	vertical-align: middle;
+}
+
+.nui-sign-title{
+	span{
+		.inline-block;
+		vertical-align: middle;
+	}
+	.tips{
+		color: #aaa;
+	}
+}
+
+
+
+// 表单结构添加
+
+.manage-table-info{
+	.inline-block;
+	.toe;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+
+
+
+// 顶部提示
+.nui-message{
+	padding: 6px 10px 5px;
+	// padding-top: 7px;padding-bottom: 5px; 
+	background: #e5f5ff;border: 1px solid #c9d5e2;
+	&.error{
+	
+	}
+	&.warning{
+		
+	}
+}
+
+.nui-message-content{
+	position: relative;
+	padding-left: 16px;
+}
+
+.nui-message-icon{
+	position: absolute;left: 0;top: 1px;
+	height: 16px;height: 16px;line-height: 16px;
+	color: #006DD9;font-size: 14px;text-align: center;
+}
+
+.nui-message-text{
+	display: inline-block;*display: inline;*zoom:1;
+	padding-left: 5px;
+	vertical-align: top;
+}
+
+
+// 12e树结构下拉样式调整
+.nui-drop-down-tree{
+	table{
+		table-layout: auto;
+		overflow: auto;
+		td,th{
+			border-bottom: none;
+			padding: 0;
+		}
+	}
+}

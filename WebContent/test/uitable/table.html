@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>table控件</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+	
+	<script>
+	
+		 $(function(){
+			 var w = 0;
+			 var $tableHead = $("table.ui-table-head");
+			 var $th = $tableHead.find("th");
+			 var $drag = $('div.ui-table-col-drag-cell');
+				for(var i=0;i<$th.length;i++){
+					w += $th[i].offsetWidth ;
+					// console.log(w+"|"+$th[i].offsetWidth)
+					$drag[i].style.left = w+"px";
+				}
+				// $('div.ui-table-head-cnt').delegate('th', 'mouseenter', function() {
+				// 	$(this).addClass('hover')
+				// }).delegate('th', 'mouseleave', function() {
+				// 	$(this).removeClass('hover')
+				// });
+				$('div.ui-table-body-cnt').scroll(function(){
+					$('table.ui-table-col-fixed')[0].style.left = $(this).scrollLeft() +"px";
+					// alert(1)
+				});
+
+		});
+	</script>
+</head>
+<body class="pd30">
+<div class="ui-table ui-table-col-drag-able">
+	<div class="ui-table-sidebar">
+		<div class="ui-table-fnbar tac fwb">1111</div>
+	</div>
+	<div class="ui-table-handler"></div>
+	<div class="ui-table-main">
+		<div class="ui-table-fnbar dib-wrap">
+			<a href="javascript:;" class="fui-btn fui-btn-primary mt2 mr5 ml5">askdf</a>
+			<a href="javascript:;" class="fui-btn mt2 mr5">askdf</a>
+			<a href="javascript:;" class="fui-btn mt2">askdf</a>
+		</div>
+		<div class="ui-table-main-cnt">
+			<div class="ui-table-head-cnt">
+				<table class="ui-table-head">
+					<thead>
+						<tr>
+							<th width="80"><s class="icon-info"></s>111</th>
+							<th width="60">111</th>
+							<th width="60">222</th>
+							<th width="60">222</th>
+							<th width="60">333</th>
+							<th width="60" class="ui-table-sort"><s class="icon-sort"></s>333</th>
+							<th width="60" class="ui-table-sort"><s class="icon-sort-down"></s>333</th>
+							<th width="60" class="ui-table-sort"><s class="icon-sort-up"></s>333</th>
+							<th width="60">333</th>
+							<th width="60">333</th>
+						</tr>
+					</thead>
+				</table>
+				<table class=" ui-table-row-fixed">
+					<thead>
+						<tr>
+							<th width="80">111</th>
+							<th width="60">111</th>
+							<th width="60">111</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="ui-table-body-cnt scroll" style="height:250px">
+				<table class="ui-table-body">
+					<thead>
+						<tr>
+							<th width="80"></th>
+							<th width="60"></th>
+							<th width="60"></th>
+							<th width="60"></th>
+							<th width="60"></th>
+							<th width="60"></th>
+							<th width="60"></th>
+							<th width="60"></th>
+							<th width="60"></th>
+							<th width="60"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr class="tr-odd-bgcolor">
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr>
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr class="tr-odd-bgcolor">
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr>
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr class="tr-odd-bgcolor">
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr>
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr class="tr-odd-bgcolor">
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr>
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr class="tr-odd-bgcolor">
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr class="tr-odd-bgcolor">
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr class="tr-odd-bgcolor">
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr class="tr-odd-bgcolor">
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr class="tr-odd-bgcolor">
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+						<tr class="tr-odd-bgcolor">
+							<td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td><td>sdfgsdfg</td>
+						</tr>
+					</tbody>
+				</table>
+		
+						<table class="ui-table-col-fixed" style="width:auto">
+							<thead>
+								<tr><th width="80"></th><th width="60"></th><th width="60"></th></tr>
+							</thead>
+								<tr><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr class="tr-odd-bgcolor"><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr class="tr-odd-bgcolor"><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr class="tr-odd-bgcolor"><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr class="tr-odd-bgcolor"><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr class="tr-odd-bgcolor"><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr class="tr-odd-bgcolor"><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr class="tr-odd-bgcolor"><td>11111</td><td>11111</td><td>11111</td></tr>
+								<tr><td>11111</td><td>11111</td><td>11111</td></tr>
+						</table>
+			</div>
+
+			<div class="ui-table-col-drag">
+				<div class="ui-table-col-drag-cell"></div>
+				<div class="ui-table-col-drag-cell"></div>
+				<div class="ui-table-col-drag-cell"></div>
+				<div class="ui-table-col-drag-cell"></div>
+				<div class="ui-table-col-drag-cell"></div>
+				<div class="ui-table-col-drag-cell"></div>
+				<div class="ui-table-col-drag-cell"></div>
+				<div class="ui-table-col-drag-cell"></div>
+				<div class="ui-table-col-drag-cell"></div>
+				<div class="ui-table-col-drag-cell"></div>
+			</div>
+		</div>
+		<div class="ui-table-foot-cnt">
+			<div class="ui-table-foot-fnbar">
+				共 12页/500条数据
+
+			</div>
+			<div id="pagination" class="pagination">
+			<a href="javascript:;" class="fui-btn mr10">自定义列头</a>
+			<div class="showMun">每页显示<select onchange="switchPageSize(this)" name="pagesize" id="pagesize">
+				<option>15</option>
+				<option selected="selected">30</option>
+				<option>50</option>
+			</select>条</div>
+			<ul>
+				<li><a href="javascript:" class="icon icon-first" title="最前">first</a></li><li><a href="javascript:" class="icon icon-prev" title="上一页">prev</a></li><li ><div class="fui-form-cell"><input class="fui-input" /></div>/25</li><li><a href="javascript:" class="icon icon-next" title="下一页">next</a></li><li><a href="javascript:" class="icon icon-last icon-last-disable" title="最后">last</a></li>
+			</ul>
+		</div>
+		</div>
+	</div>
+</div>
+	 
+	 
+</body>
+</html>

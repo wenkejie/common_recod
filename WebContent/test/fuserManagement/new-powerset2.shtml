@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>详情界面</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	
+	<script type="text/javascript" src="headNav.js"></script>
+	
+	<script type="text/javascript">
+		$(function () {
+
+			var $height = $('div.multiple-select-content').height();
+			console.log($height);
+			$('ul.multiple-select-cnt').height($height - 44);
+		})
+
+	</script>
+
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+<!--弹窗的内容复制 -->
+<div class="fui-dialog" style="width:800px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">详情</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<div class="fui-dialog-cnt clearfix">
+
+			<div class="title">
+				<h2>选择服务/</h2>
+				<span>选择需要给客户开通的运价查询服务</span>
+			</div>
+
+			<div class="step-con">
+				<div class="power-set-box">
+					<div class="power-set-title">
+						<div class="power-set-left">
+						<strong>服务 /</strong><span class="info">可根据实际需求分配特定的服务</span>
+						</div>
+						<div class="power-set-right none">
+							<div class="power-set-info">
+								<span class="info">不被应用</span>
+							</div>
+							<div class="power-set-fn">
+								<a href="javascript:">设置</a>
+							</div>
+						</div>
+						<div class="power-set-right-close">
+							<a href="javascript:" class="fonticon close">&#x3586;</a>
+						</div>
+					</div>
+					<div class="power-set-cnt">
+						<div class="nui-tab"> 
+							<div class="nui-tab-menu pl15"> 
+								<ul class="clearfix dpib vam"> 
+									<li class="nui-tab-menu-cell nui-tab-menu-active"><a class="nui-tab-menu-link" href="javascript:">新增</a></li> 
+									<li class="nui-tab-menu-cell"><a class="nui-tab-menu-link" href="javascript:">修改</a></li>
+									<li class="nui-tab-menu-fn left"><span class="nui-form-des"><i class="mr5 fs14">&#x3573;</i>新增权限，不替换现有权限</span></li> 
+								</ul>
+							</div> 
+							<div class="nui-tab-cnt">
+								<div class="power-set-con">
+									<table class="params-list">
+										<thead>
+											<tr>
+												<th colspan="4"><span class="title">运价通</span>
+													<a href="javascript:" class="selectall">全选</a> / 
+													<a href="javascript:" class="reverse">反选</a>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>	
+												<td><label class="nui-checkbox" for="1"><input type="checkbox" checked="checked" value="1" id="1"> 海运出口整箱</label></td>
+
+												<td><label class="nui-checkbox" for="2"><input type="checkbox" checked="checked" value="2" id="2"> 海运出口拼箱</label></td>
+
+												<td><label class="nui-checkbox" for="3"><input type="checkbox" checked="checked" value="3" id="3"> 海运进口拼箱</label></td>
+
+												<td><label class="nui-checkbox" for="4"><input type="checkbox" checked="checked" value="4" id="4"> 空运</label></td>
+											</tr><tr>	
+											<td><label class="nui-checkbox" for="6"><input type="checkbox" checked="checked" value="6" id="6"> 运价通导入</label></td>
+
+											<td><label class="nui-checkbox" for="7"><input type="checkbox" checked="checked" value="7" id="7"> 基础服务</label></td>
+
+											<td><label class="nui-checkbox" for="8"><input type="checkbox" checked="checked" value="8" id="8"> 运价导出</label></td>
+
+											<td><label class="nui-checkbox" for="9"><input type="checkbox" value="9" id="9"> 多级运价</label></td>
+										</tr><tr>	
+										<td><label class="nui-checkbox" for="12"><input type="checkbox" value="12" id="12"> 运价工具</label></td>
+										<td></td><td></td><td></td>
+									</tr></tbody>
+									</table>
+									<table class="params-list">
+										<thead>
+											<tr>
+												<th colspan="4"><span class="title">生意通</span>
+													<a href="javascript:" class="selectall">全选</a> / 
+													<a href="javascript:" class="reverse">反选</a>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>	
+												<td><label class="nui-checkbox" for="5"><input type="checkbox" value="5" id="5"> 行为分析</label></td>
+
+												<td><label class="nui-checkbox" for="10"><input type="checkbox" value="10" id="10"> 客户管理</label></td>
+
+												<td><label class="nui-checkbox" for="11"><input type="checkbox" value="11" id="11"> 我的办公桌</label></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+									<table class="params-list">
+										<thead>
+											<tr>
+												<th colspan="4"><span class="title">角色权限分配</span>
+													<a href="javascript:" class="selectall">全选</a> / 
+													<a href="javascript:" class="reverse">反选</a>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>	
+												<td colspan="4" class="td-aliquots">
+													<div class="nui-multiple-select nui-multiple-select-bdn clearfix">
+														<div class="multiple-select-content">
+															<div class="multiple-select-left">
+																<div class="multiple-select-title">
+																	<div class=""></div><p class="">可分配角色组</p>
+																	<div class="to-bottom">
+																		◆ 
+																		<em>◆</em>
+																	</div>
+																</div>
+																<ul class="multiple-select-cnt">
+																	<li class=""><a href="javascript:" class="multiple-select-cnt-cell">达我打我打我的</a></li>
+																	<li class=""><a href="javascript:" class="multiple-select-cnt-cell">大碗大大武大伟</a></li>
+																	<li class=""><a href="javascript:" class="multiple-select-cnt-cell">达瓦达瓦达瓦达瓦的</a></li>
+																</ul>
+															</div>
+															
+														</div>
+														<div class="multiple-select-middle">
+															<div class="middle-icon">
+																<i class="dpb">㕅</i>
+																<i class="dpb">㕃</i>
+															</div>
+														</div>
+														<div class="multiple-select-content">
+															<div class="multiple-select-right">
+																<div class="multiple-select-title">
+																	<div class=""></div><p class="">可分配角色组</p>
+																	<div class="to-bottom">
+																		◆ 
+																		<em>◆</em>
+																	</div>
+																</div>
+																<ul class="multiple-select-cnt">
+																	<li class=""><a href="javascript:" class="multiple-select-cnt-cell">大王大娃娃达瓦达瓦达瓦达瓦的</a></li>
+																	<li class=""><a href="javascript:" class="multiple-select-cnt-cell">达瓦达瓦达瓦达瓦的</a></li>
+																	<li class=""><a href="javascript:" class="multiple-select-cnt-cell">大碗大碗大大</a></li>
+																</ul>
+															</div>
+														</div>
+													</div>				
+												</td>
+											</tr>
+											<tr>
+												<td colspan="4" class="">
+													<a href="javascript:" style="_width:635px;" id="j-set-detail-pur" class="">点击对已分配角色组进行详细设置</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table class="params-list">
+										
+											<div class="clearfix">
+												<div class="rolegroup-list-grid left">
+													<div class="rolegroup-list-title">
+														<h2 class="dpib mr10">可分配角色组</h2>
+													</div>
+													<div class="rolegroup-list-box">
+														<ul class="rolegroup-list">
+										
+															<li class="rolegroup-list-cell">
+																<span>客户管理</span>
+																<a href="javascript:" group_id="25" purview_code="f_cus_analytics_query,f_cus_company_modify,f_cus_contact_manage,f_cus_user_info_modify" class="rolegroup-list-cell-a fonticon">㖦</a>
+															</li>
+										
+															<li class="rolegroup-list-cell">
+																<span>管理员</span>
+																<a href="javascript:" group_id="24" class="rolegroup-list-cell-a fonticon">㖦</a>
+															</li>
+										
+															<li class="rolegroup-list-cell">
+																<span>运价查询</span>
+																<a href="javascript:" group_id="22" class="rolegroup-list-cell-a fonticon">㖦</a>
+															</li>
+										
+															<li class="rolegroup-list-cell">
+																<span>运价维护</span>
+																<a href="javascript:" group_id="23" class="rolegroup-list-cell-a fonticon">㖦</a>
+															</li>
+										
+														</ul>
+													</div>
+												</div>
+												<div class="rolegroup-icon">
+													<i class="dpb">㕅</i>
+													<i class="dpb">㕃</i>
+												</div>
+												<div class="rolegroup-list-grid left">
+													<div class="rolegroup-list-title">
+														<h2 class="dpib mr10">已分配角色组</h2><span class="text-error"></span>
+													</div>
+													<div class="rolegroup-list-box">
+														<ul class="rolegroup-list">
+										
+														</ul>
+													</div>
+												</div>
+											</div>
+											<a href="javascript:" style="_width:635px;" id="j-set-detail-pur" class="dpb tar cb">点击对已分配角色组进行详细设置</a>
+										
+									</table>
+
+								</div>
+							</div> 
+						</div>
+					</div>
+				</div>
+				<div class="power-set-box">
+					<div class="power-set-title">
+						<div class="power-set-left">
+							<strong>角色分配权限设置 /</strong><span class="info">通过角色调整方式来快速分配权限</span>
+						</div>
+						<div class="power-set-right">
+							<div class="power-set-info">
+								<span class="info">不被应用</span>
+							</div>
+							<div class="power-set-fn">
+								<a href="javascript:">设置</a>
+							</div>
+						</div>
+					</div>
+					<div class="power-set-cnt none">
+						<div class="nui-tab"> 
+							<div class="nui-tab-menu pl15"> 
+								<ul class="clearfix dpib vam"> 
+									<li class="nui-tab-menu-cell nui-tab-menu-active"><a class="nui-tab-menu-link" href="javascript:">新增</a></li> 
+									<li class="nui-tab-menu-cell"><a class="nui-tab-menu-link" href="javascript:">修改</a></li>
+									<li class="nui-tab-menu-fn left"><span class="nui-form-des"><i class="mr5 fs14">&#x3573;</i>新增权限，不替换现有权限</span></li>  
+								</ul>
+							</div> 
+							<div class="nui-tab-cnt">
+								<div class="power-set-con pl20">
+									<div class="rule-select">
+
+										<a class="rule-select-cell rule-select-cell-mchoice rule-select-selected" href="javascript:" id="tr_fcl_price_query">海运整箱</a>
+
+
+										<a class="rule-select-cell rule-select-cell-mchoice rule-select-selected" href="javascript:" id="tr_lcl_price_query">海运拼箱出口</a>
+
+
+										<a class="rule-select-cell rule-select-cell-mchoice rule-select-selected" href="javascript:" id="tr_import_lcl_price_query">海运拼箱进口</a>
+
+
+										<a class="rule-select-cell rule-select-cell-mchoice rule-select-selected" href="javascript:" id="tr_air_price_query">空运</a>
+
+									</div>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="power-set-box">
+					<div class="power-set-title">
+						<div class="power-set-left">
+							<strong>数据查询权限设置 /</strong><span class="info">可通过规则配置对数据进行分类控制</span>
+						</div>
+						<div class="power-set-right">
+							<div class="power-set-info">
+								<span class="info">不被应用</span>
+							</div>
+							<div class="power-set-fn">
+								<a href="javascript:">设置</a>
+							</div>
+						</div>
+					</div>
+					<div class="power-set-cnt none">
+						<div class="nui-tab"> 
+							<div class="nui-tab-menu pl15"> 
+								<ul class="clearfix dpib vam"> 
+									<li class="nui-tab-menu-cell nui-tab-menu-active"><a class="nui-tab-menu-link" href="javascript:">新增</a></li> 
+									<li class="nui-tab-menu-cell"><a class="nui-tab-menu-link" href="javascript:">修改</a></li>
+									<li class="nui-tab-menu-fn left"><span class="nui-form-des"><i class="mr5 fs14">&#x3573;</i>新增权限，不替换现有权限</span></li>  
+								</ul>
+							</div> 
+							<div class="nui-tab-cnt">
+								<div class="power-set-con pl20">
+									<table class="params-list">
+
+										<tbody>
+											<tr>
+												<td class="params-list-title">航线控制</td>
+												<td>已设置</td>
+												<td class="params-list-des">根据设定，使客户只能查询指定的航线的运价</td>
+												<td class="action"><a class="nui-btn nui-btn-20 nui-btn-primary" href="javascript:" id="a_route">修改</a></td>
+											</tr>
+											<tr>
+												<td class="params-list-title">目的港类型控制</td>
+												<td>未启用</td>
+												<td class="params-list-des">启用此功能，则客户只能查询到目的港为标记成基本港的运价</td>
+												<td class="action"><a class="nui-btn nui-btn-20 nui-btn-primary" href="javascript:" id="a_query_destination_type">设置</a></td>
+											</tr>
+
+											<tr>
+												<td class="params-list-title">运价规则</td>
+												<td id="rule-price-status">
+
+													<span>未设置</span>
+
+												</td>
+												<td id="rulepricename" class="params-list-des">
+
+												</td>
+												<td class="action">
+													<a iseditpurview="false" rule_id="-1" class="nui-btn nui-btn-20 nui-btn-primary rulePriceSet">
+														设置
+													</a>
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div> 
+					</div>
+				</div>
+			</div>
+		
+	</div>
+	<div class="fui-dialog-btm-bar pss"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>

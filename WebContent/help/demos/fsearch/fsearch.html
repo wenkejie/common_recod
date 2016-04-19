@@ -1,0 +1,39 @@
+<script>
+$(function(){
+	$("td.demo-list").menuFunBind("li", $("td.demo-frame"),function(data){
+		 $("td.demo-description").html($("<pre></pre>").text(data));
+	});
+	$("td.demo-list").find("li:first").click();
+
+	$("#toggleSource").click(function(){
+		var sourceTr = $(this).closest("tr").next(); 
+		if(sourceTr.is(".none")){
+			sourceTr.removeClass("none");
+		}else{
+			sourceTr.addClass("none");
+		}
+	});
+});
+</script>
+<table class='main'>
+	<tr>
+		<td class='demo-frame' valign='top'></td>
+		<td class='demo-list' valign='top'>
+		<ul>
+			<li url="demos/fsearch/option.html">各种参数</li>
+			<li url="demos/fsearch/method_add.html">我默认就是2行</li>
+			<li url="demos/fsearch/method_select.html">我有默认值</li>
+			<li url="demos/fsearch/event_changeItem.html">我知道你选了什么条件</li>
+		</ul>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2>
+			<a id='toggleSource' href='javascript:'>源码</a>		
+		</td>
+	</tr>
+	<tr class='none'>
+		<td class='demo-description' colspan=2>
+		</td>
+	</tr>
+</table>

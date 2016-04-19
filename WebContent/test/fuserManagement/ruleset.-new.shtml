@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>会员管理首页</title>
+		<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	
+	<link rel="stylesheet" href="../../release/freight/css/common.css"/>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<!-- <link rel="stylesheet" href="../../src/css/richSelect.css" />richselect样式 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script src="fui-common.js" type="text/javascript"></script><!-- 用于详情弹窗调用那个添加员工的控件，by：Evan -->
+	<script type="text/javascript" src="data/company.js"></script>
+	<script type="text/javascript" src="data/user.js"></script>
+	<script type="text/javascript" src="data/group.js"></script>
+	<script type="text/javascript" src="../../src/js/nrichselect.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+
+	(function($) {
+		$.fn.scrollfix = function() {
+			var offset = $(this).offset();
+			var that = $(this);
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > offset.top) {
+					that.addClass('scroll-fixed');
+				} else {
+					that.removeClass('scroll-fixed')
+				}
+			})
+		}
+	})(jQuery);
+
+		$(function() {
+
+			$("div.step-con-thr").delegate('a.nui-btn', 'click', function() {
+
+				$('div.step-num:eq(2)').addClass('step-num-on');//步骤计数
+				// $("div.step-con:eq(3)").removeClass('step-con-hide');//显示下一步内容
+				
+				var that = $(this);
+				var htmlWin;
+				htmlWin = fwindow.create({
+					title: "权限配置",
+					width:705,
+					content: '<div class="pd20 tal clearfix"><div class="list-box"> <h2 class="list-box-title">航线列表</h2><div class="list-box-head"> <div class="nui-form-cell nui-select w280"> <div class="nui-form-cell-cnt"> <input class="nui-input" type="text" placeholder="搜索成员、部门、分公司"> <i class="nui-form-cell-icon fs12">&#x355d;</i> </div> </div> <div class="list-box-select"> <a href="javascript:" class="selectall">全选</a>/<a href="javascript:" class="reverse">反选</a> <a href="javascript:" class=" dpib right mr8 nui-btn-add">批量添加 》</a> </div> </div> <ul class="list-box-ul-left"> <li class="list-box-li"> <label class="nui-checkbox" for="1"> <input id="1" type="checkbox" name="items"> 整箱1 </label><a href="javascript:" class="fonticon right vam add fs12">&#x35a6</a> </li> <li class="list-box-li"> <label class="nui-checkbox" for="2"> <input id="1" type="checkbox" name="items"> 整箱2 </label><a href="javascript:" class="fonticon right vam add fs12">&#x35a6</a> </li> <li class="list-box-li"> <label class="nui-checkbox" for="3"> <input id="3" type="checkbox" name="items"> 整箱3 </label> <a href="javascript:" class="fonticon right vam add fs12">&#x35a6</a></li> <li class="list-box-li-last"> <label class="nui-checkbox" for="4"> <input id="4" type="checkbox" name="items"> 整箱4 </label> <a href="javascript:" class="fonticon right vam add fs12">&#x35a6</a></li> <li class="list-box-li"> <label class="nui-checkbox" for="5"> <input id="5" type="checkbox" name="items"> 整箱5 </label><a href="javascript:" class="fonticon right vam add fs12">&#x35a6</a> </li> <li class="list-box-li"> <label class="nui-checkbox" for="6"> <input id="6" type="checkbox" name="items"> 整箱6 </label><a href="javascript:" class="fonticon right vam add fs12">&#x35a6</a> </li> <li class="list-box-li-last"> <label class="nui-checkbox" for="7"> <input id="7" type="checkbox" name="items"> 整箱7 </label><a href="javascript:" class="fonticon right vam add fs12">&#x35a6</a> </li> <li class="list-box-li"> <label class="nui-checkbox" for="8"> <input id="8" type="checkbox" name="items"> 整箱8 </label><a href="javascript:" class="fonticon right vam add fs12">&#x35a6</a> </li> <li class="list-box-li"> <label class="nui-checkbox" for="9"> <input id="9" type="checkbox" name="items"> 整箱9 </label><a href="javascript:" class="fonticon right vam add fs12">&#x35a6</a> </li> <li class="list-box-li-last"> <label class="nui-checkbox" for="10"> <input id="10" type="checkbox" name="items"> 整箱0 </label><a href="javascript:" class="fonticon right vam add fs12">&#x35a6</a> </li> </ul> </div> <i class="list-box-toright fonticon">&#x3443;</i><div class="list-box vat"> <h2 class="list-box-title">已选航线</h2><ul class="list-box-ul-right"> <li class="list-box-li"><span>xxxx</span><a href="javascript:" class=" delete fonticon right vam">&#x3586</a></li> <li class="list-box-li"><span>xxxx</span><a href="javascript:" class="delete fonticon right vam">&#x3586</a></li> <li class="list-box-li"><span>xxxx</span><a href="javascript:" class="delete fonticon right vam">&#x3586</a></li> <li class="list-box-li-last"><span>xxxx</span><a href="javascript:" class="delete fonticon right vam">&#x3586</a></li> </ul> </div></div> <div class="fui-dialog-btm-bar pss cb mt10"><a class="fui-btn-dialog-primary" href="javascript:" id="j-thr-BtnActive"><span>通过</span></a> <a class="fui-btn-dialog" href="javascript:" id="j-windowClose"><span>取消</span></a> </div>', draggable: false })
+
+						$('#j-thr-BtnActive').click(function() {
+							htmlWin.fwindow("close");
+							// showRetrunMessage("权限配置成功");
+							return true;
+						});
+						$(htmlWin).find("#j-windowClose").click(function() {
+							htmlWin.fwindow("close");
+							return true;
+						});
+
+						$('div.list-box').delegate('a.selectall', 'click', function() {
+
+							$(this).parents("div.list-box").find("input[name='items']").each(function(){
+
+								this.checked = true;
+							});
+						});
+
+
+
+						$('div.list-box').delegate('a.reverse', 'click', function() {
+							$(this).parents("div.list-box").find("input[name='items']").each(function(){
+
+								if (this.checked) {
+									this.checked = false;
+								}
+								else {
+									this.checked = true;
+								}
+							})
+						})
+
+
+
+						$('ul.list-box-ul-right').delegate('a.delete', 'click', function() {
+							var $txt = $(this).parent().children('span').text();
+							$(this).parent().remove();
+							$('ul.list-box-ul-left').prepend("<li class='list-box-li'> <label class='nui-checkbox' for='fcl'> <input id='fcl' type='checkbox' name='items'>"+$txt+"</label><a class='fonticon right vam fs12 add' href='javascript:'>&#x35a6;</a></li>")
+
+
+						})
+
+
+						$('ul.list-box-ul-left').delegate('a.add', 'click', function() {
+							var $txt = $(this).parent().children('label').text();
+							$(this).parent().remove();
+							$("ul.list-box-ul-right").append("<li class='list-box-li'><span>"+$txt+"</span><a href='javascript:' class='delete fonticon right vam'>&#x34e4</a></li>")
+
+
+						})
+
+
+
+
+					})	
+
+
+
+
+			$('div.nui-group-btn').click(function() {
+				var that = $(this);
+				var $drapDown = $(this).find('div.nui-drop-down');
+				$drapDown.show();
+
+				$(this).delegate('li', 'click', function() {
+					// console.log($(this).text());
+					var i = $(this).index();//用于计数显示，by：Evan
+					// that.hide();
+					$drapDown.hide();
+					$('div.step-num:eq(1)').addClass('step-num-on');//步骤计数
+					$('div.step-num:eq(2)').addClass('step-num-on');//步骤计数
+					$('div.step-num:eq(3)').addClass('step-num-on');//步骤计数
+					$("div.step-con:eq(2)").removeClass('step-con-hide');//显示下一步内容
+					$("div.step-con:eq(3)").removeClass('step-con-hide');//显示下一步内容
+					$('button.nui-btn').removeClass('nui-btn-disable');
+					$('#j-stepTitle').text("选择航线");
+					// $('#j-hx').removeClass('none');
+					$('div.rule-select').children('a.rule-select-cell-single').addClass('none');
+					 $('div.rule-select-two').children('a.rule-select-cell-mchoice:eq('+i+')').removeClass('none');
+					// $('div.step-con').children('table.params-list:eq('+i+')').removeClass('none');
+					// $('div.step-con').children('div.rule-select:eq('+i+')').removeClass('none');
+					// $("div.step-con-thr").find('table.params-list').addClass('none');
+					$("div.step-con-thr").find('table.params-list:eq('+i+')').removeClass('none');
+					
+						// var $checkbox = $("div.step-con-thr").find('table.params-list:eq('+i+')').find($("input[type='checkbox']");
+
+						// $checkbox.prop({
+						// 	"checked":true
+						// });
+
+					return false
+				});
+			});
+
+			$('div.nui-group-btn').delegate('li', 'click', function() {
+				
+				var that = $(this);
+				var htmlWin;
+				htmlWin = fwindow.create({
+					title: "权限配置",
+					width:705,
+					content: '<div class="pd20 tal clearfix"><div class="list-box"> <h2 class="list-box-title">航线列表</h2><div class="list-box-head"> <div class="nui-form-cell w280"> <div class="nui-form-cell-cnt"> <input class="nui-input" type="text" placeholder="搜索成员、部门、分公司"> <i class="nui-form-cell-icon fs12">&#x355d;</i> </div> </div><div class="list-box-select"> <a href="javascript:" class="selectall">全选</a>/<a href="javascript:" class="reverse">反选</a> <a herf="javascript:" class="dpib right mr8 nui-btn-add">批量添加 》</a> </div> </div> <ul class="list-box-ul-left"> <li class="list-box-li"> <label class="nui-checkbox" for="101"> <input id="101" type="checkbox" name="items"> 南美线 </label><a href="javascript:" class="fonticon right vam fs12 add">&#x35a6</a> </li> <li class="list-box-li"> <label class="nui-checkbox" for="102"> <input id="102" type="checkbox" name="items"> 南美线 </label><a href="javascript:" class="fonticon right vam fs12 add">&#x35a6</a> </li> <li class="list-box-li"> <label class="nui-checkbox" for="103"> <input id="103" type="checkbox" name="items"> 南美线 </label><a href="javascript:" class="fonticon right vam fs12 add">&#x35a6</a> </li> <li class="list-box-li-last"> <label class="nui-checkbox" for="104"> <input id="104" type="checkbox" name="items"> 南美线 </label> <a href="javascript:" class="fonticon right vam fs12 add">&#x35a6</a></li> <li class="list-box-li"> <label class="nui-checkbox" for="105"> <input id="105" type="checkbox" name="items"> 整箱5 </label> <a href="javascript:" class="fonticon right vam fs12 add">&#x35a6</a></li> <li class="list-box-li"> <label class="nui-checkbox" for="106"> <input id="106" type="checkbox" name="items"> 整箱6 </label> <a href="javascript:" class="fonticon right vam fs12 add">&#x35a6</a></li> <li class="list-box-li-last"> <label class="nui-checkbox" for="107"> <input id="107" type="checkbox" name="items"> 南美线 </label> <a href="javascript:" class="fonticon right vam fs12 add">&#x35a6</a></li> <li class="list-box-li"> <label class="nui-checkbox" for="108"> <input id="108" type="checkbox" name="items"> 南美线 </label><a href="javascript:" class="fonticon right vam fs12 add">&#x35a6</a> </li> <li class="list-box-li"> <label class="nui-checkbox" for="109"> <input id="109" type="checkbox" name="items"> 南美线 </label><a href="javascript:" class="fonticon right vam fs12 add">&#x35a6</a></li> <li class="list-box-li-last"> <label class="nui-checkbox" for="110"> <input id="110" type="checkbox" name="items"> 整箱0 </label><a href="javascript:" class="fonticon right vam fs12 add">&#x35a6</a></li> </ul> </div> <i class="list-box-toright fonticon">&#x3443;</i><div class="list-box vat"><h2 class="list-box-title">已选航线</h2><ul class="list-box-ul-right"> <li class="list-box-li"><span>xxxx</span><a href="javascript:" class=" delete fonticon right vam">&#x3586</a></li> <li class="list-box-li"><span>xxxx</span><a href="javascript:" class="delete fonticon right vam">&#x3586</a></li> <li class="list-box-li"><span>xxxx</span><a href="javascript:" class="delete fonticon right vam">&#x3586</a></li> <li class="list-box-li-last"><span>xxxx</span><a href="javascript:" class="delete fonticon right vam">&#x3586</a></li> </ul> </div> </div><div class="fui-dialog-btm-bar pss cb mt10"><a class="fui-btn-dialog-primary" href="javascript:" id="j-BtnActive"><span>通过</span></a> <a class="fui-btn-dialog" href="javascript:" id="j-windowClose"><span>取消</span></a> </div>', draggable: false })
+						
+
+						$('#j-BtnActive').click(function() {
+
+							var $checkbox = $("input[type='checkbox']");
+							// console.log($checkbox);
+							htmlWin.fwindow("close");
+							// showRetrunMessage("权限配置成功");
+							$checkbox.prop({
+								"checked":true
+							});
+
+							return true;
+						});
+						$(htmlWin).find("#j-windowClose").click(function() {
+							htmlWin.fwindow("close");
+							return true;
+						});
+
+
+						$('div.list-box').delegate('a.selectall', 'click', function() {
+
+							$(this).parents("div.list-box").find("input[name='items']").each(function(){
+
+								this.checked = true;
+							});
+						});
+
+
+
+						$('div.list-box').delegate('a.reverse', 'click', function() {
+							$(this).parents("div.list-box").find("input[name='items']").each(function(){
+
+								if (this.checked) {
+									this.checked = false;
+								}
+								else {
+									this.checked = true;
+								}
+							})
+						})
+
+
+
+						$('ul.list-box-ul-right').delegate('a.delete', 'click', function() {
+							var $txt = $(this).parent().children('span').text();
+							$(this).parent().remove();
+							$('ul.list-box-ul-left').prepend("<li class='list-box-li'> <label class='nui-checkbox' for='fcl'> <input id='fcl' type='checkbox' name='items'>"+$txt+"</label><a class='fonticon right vam fs12 add' href='javascript:'>&#x35a6;</a></li>")
+
+
+						})
+
+
+						$('ul.list-box-ul-left').delegate('a.add', 'click', function() {
+							var $txt = $(this).parent().children('label').text();
+							$(this).parent().remove();
+							$("ul.list-box-ul-right").append("<li class='list-box-li'><span>"+$txt+"</span><a href='javascript:' class='delete fonticon right vam'>&#x3586</a></li>")
+
+
+						})
+
+
+
+						$("a.nui-btn-add").click(function() {
+
+
+							$("div.list-box").find("input[name='items']").each(function(){
+
+
+								if (this.checked) {
+									var $txt = $(this).parent().text();
+
+									$("ul.list-box-ul-right").append("<li class='list-box-li'><span>"+$txt+"</span><a href='javascript:' class='delete fonticon right vam'>&#x3586</a></li>")
+
+									$(this).parent().parent().remove();
+
+
+								}
+
+							})
+						});
+
+
+			})
+
+
+			$('div.rule-select-one').delegate('a.rule-select-cell-mchoice', 'click', function() {
+
+				var $i = $(this).index();
+				
+				$('div.step-num:eq(0)').addClass('step-num-on');//步骤计数
+				$("div.step-con:eq(1)").removeClass('step-con-hide');//显示下一步内容
+				if (!$(this).is('a.rule-select-selected')) {
+
+					$(this).addClass('rule-select-selected');
+
+					$("div.step-con-fou").children('div.step-con-box:eq('+$i+')').removeClass('none');
+					// $('table.params-list:eq('+i+')').removeClass('none');
+				}else{
+					$(this).removeClass('rule-select-selected');
+					$("div.step-con-fou").children('div.step-con-box:eq('+$i+')').addClass('none');
+				}
+				;
+
+								
+			});
+
+
+			$('div.rule-select-two').delegate('a.rule-select-cell-mchoice', 'click', function() {
+					var i = $(this).index();//用于计数显示，by：Evan
+					$("div.step-con-thr").find('table.params-list:eq('+i+')').addClass('none');
+
+					$(this).addClass('none');
+
+								
+			});
+				
+
+			$('body').delegate('div.nui-select', 'click', function() {
+					var that = $(this);
+					var $drapDown = $(this).find('div.nui-drop-down');
+						$drapDown.show();
+						$(this).delegate('li', 'click', function() {
+							var val = $(this).text();
+							
+							$drapDown.hide();
+							that.find('input').val(val);
+							$('div.nui-select').index(that) || $('#j-outeName').text(val+"航线");
+
+							$('div.step-num:eq(3)').addClass('step-num-on');//步骤计数
+
+						
+							return false
+						});
+				});
+
+
+			$('div.form-line').delegate('input','click', function(event) {
+				$('div.step-num:eq(2)').addClass('step-num-on');//步骤计数
+				// $("div.step-con:eq(3)").removeClass('step-con-hide');//显示下一步内容
+				// $("div.step-con-fou").removeClass('step-con-hide');//显示下一步内容
+
+			});
+			$('input.no-chinese').keyup(function() {
+				var val = $(this).parents(".form-line").find('input:eq(1)').val();
+				var types = {
+					"加上": "+",
+					"减少": "-",
+					"乘以": "*",
+					"除以": "/"
+				}
+					// console.log(val)
+					var type = types[val]
+					// console.log(type)
+					// if()
+					if (!isNaN($(this).val())) { //判断是否数字
+						var num = eval(100 + type + $(this).val());
+					}
+
+
+
+					if (!$(this).val()=="") {
+						$(this).parents(".nui-form-cell").next().html( '<i class="ml10">&#13683</i> 例：100元设置后为'+num+'元');
+					}else{
+						$(this).parents(".nui-form-cell").next().empty();
+					}
+
+					// console.log($(this).val())
+					if($(this).val()){
+						$('button.nui-btn').removeClass('nui-btn-disable');
+					}else{
+						$('button.nui-btn:not(:first)').addClass('nui-btn-disable');
+					}
+
+
+				});
+			
+
+			$('div.step-con-fou').delegate('a.nui-btn','click', function() {
+				$('div.step-num:eq(3)').addClass('step-num-on');//步骤计数
+				$("#jBtnActive").removeClass('nui-btn-disable');
+
+
+			})
+
+
+			$('table.params-list').delegate('input','click', function(event) {
+				$('div.step-num:eq(2)').addClass('step-num-on');//步骤计数
+				// $("div.step-con:eq(3)").removeClass('step-con-hide');//显示下一步内容
+			
+			});
+
+			$('#j-continue').click(function() {
+				var $stepCon = $('div.step-con:not(:first,:last)');
+				// console.log($stepCon)
+				
+				$stepCon.slideUp()
+			});
+
+		})
+
+	
+
+	</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+	<div class="wrap two-column-wrap leftRightw250">
+
+			
+			<div class="left-side ">
+				<ul class="left-side-menu none">
+				<li class="left-side-menu-categories">系统配置：</li>
+					<li><a href="javascript:" class="left-side-menu-a">全部会员9折<i class="right ">&#x359e;</i></a></li>
+					<li><a href="javascript:" class="left-side-menu-add"><i>&#x35a6;</i> 添加规则</a></li>
+					
+					
+				</ul>
+
+
+				<ul class="left-side-menu">
+				<li class="left-side-menu-com">
+					<div class="nui-form-cell">
+						<div class="nui-form-cell-cnt w180">
+							<input class="nui-input" type="text" placeholder="搜索成员、部门、分公司">
+							<i class="nui-form-cell-icon fs12">&#x355d;</i>
+						</div>
+					</div>
+				</li>
+				<li class="left-side-menu-categories">用户配置：</li>
+				<li><a href="javascript:" class="left-side-menu-a">美线优惠<span class="right"><i class="dpib fs14">&#x3586;</i><i class="dpib ml5">&#x359e;</i></span></a></li>
+					<li><a href="javascript:" class="left-side-menu-a">美线优惠<i class="right ">&#x359e;</i></a></li>
+					<li><a href="javascript:" class="left-side-menu-a ">东亚线便宜5元<i class="right ">&#x359e;</i></a></li>
+					<li><a href="javascript:" class="left-side-menu-add"><i>&#x35a6;</i> 添加规则</a></li>
+				<li class="left-side-menu-foot clearfix">
+					<div class="page left-side-page">
+						<a href="javascript:nextPage();">上一页</a>
+						<select id="" class="nui-native-select h20 vam pd0 mr0" name="" style="">
+							<option value="">1</option>
+							<option value="">2</option>
+							<option value="">3</option>
+							<option value="">4</option>
+							<option value="">5</option>
+							<option value="">6</option>
+							<option value="">7</option>
+						</select>
+						<span class="pageInfo">共16条</span>
+						<a href="javascript:">下一页</a>
+					</div>
+				</li>		
+					
+				</ul>
+				<ul class="left-side-menu none">
+				<li class="left-side-menu-categories">促销配置：</li>
+					<li><a href="javascript:" class="left-side-menu-a">51促销<i class="right ">&#x359e;</i></a></li>
+					<li><a href="javascript:" class="left-side-menu-a ">十一促销<i class="right ">&#x359e;</i></a></li>
+					<li><a href="javascript:" class="left-side-menu-add"><i>&#x35a6;</i> 添加规则</a></li>
+				
+					
+				</ul>
+				
+			</div>
+			<div class="right-side ">
+				<div class="main-title">
+					<div class="main-title-head"><h1>规则设置</h1> 
+						<!-- <div class="main-title-des"><i>&#13683;</i> 用于新开户用户赋权</div> -->
+					</div>
+				</div>
+		
+
+
+
+<!-- 新的多级运价拷贝下面代码  开始-->
+
+				<div class=" mb20"> 
+					<div class="nui-form-cell w200">
+						<div class="nui-form-cell-cnt">
+							<input class="nui-input" type="text" placeholder="请输入规则名称">
+							
+						</div>
+					</div>
+					<span class="nui-form-des"><i class="fs14">&#x3435;</i> 请选择需要控制的规则类别</span>
+				</div>
+		
+				<div class="nui-shadow-box mb15 none">
+					<div class="right fcc">
+					<a level="1" class=" level-detail" href="javascript:" id="level1detail">详情</a> | <a href="javascript:" id="level1standard" style="color: rgb(153, 153, 153);">基准价</a> <i class="fs14 cur-d">&#x3574;</i></span> | 
+						<a level="1" class=" fc9 level-delete" href="javascript:" id="level1delete">删除</a>
+					</div><h2 class="fwb fs14 fc0 pb5">已设定的组合</h2>
+					<p><span class="nui-text-label mr5">组合一</span><strong>服务为：</strong><span id="level1modulespan">海运拼箱</span> <strong  class="ml20">条件为：</strong><span class="mr20" id="level1categoryspan">海运拼箱-航线、海运拼箱-目的港</span>  <span class="dpib oneline"></p>
+				</div>
+
+				<div class="nui-shadow-box mb15 ">
+					
+					<div class="right fcc">
+					<a level="1" class=" level-detail" href="javascript:" id="level1detail">详情</a> | <a href="javascript:" id="level1standard" style="color: rgb(153, 153, 153);">基准价</a> <i class="fs14 cur-d">&#x3574;</i></span> | 
+						<a level="1" class=" fc9 level-delete" href="javascript:" id="level1delete">删除</a>
+					</div>
+					<h2 class="fwb fs14 fc0 pb5">已设定的组合</h2>
+					<p class="rule-error-tips"><i>&#x3573;</i> 规则冲突：AAA</p>
+				</div>
+
+				<div class="nui-shadow-box mb15 ">
+					<div class="right fcc">
+					<a level="1" class=" level-detail" href="javascript:" id="level1detail">详情</a> | <a href="javascript:" id="level1standard" style="color: rgb(153, 153, 153);">基准价</a> <i class="fs14 cur-d">&#x3574;</i></span> | 
+						<a level="1" class=" fc9 level-delete" href="javascript:" id="level1delete">删除</a>
+					</div><h2 class="fwb fs14 fc0 pb5">已设定的组合</h2>
+					<p><span class="nui-text-label mr5">组合二</span><strong>服务为：</strong><span id="level1modulespan">海运拼箱</span> <strong  class="ml20">条件为：</strong><span class="mr20" id="level1categoryspan">海运拼箱-航线、海运拼箱-目的港</span>  <span class="dpib oneline"></p>
+				</div>
+
+				<div class="nui-shadow-box mb15 ">
+					<div class="right fcc">
+					<a level="1" class=" level-detail" href="javascript:" id="level1detail">详情</a> | <a href="javascript:" id="level1standard" style="color: rgb(153, 153, 153);">基准价</a> <i class="fs14 cur-d">&#x3574;</i></span> | 
+						<a level="1" class=" fc9 level-delete" href="javascript:" id="level1delete">删除</a>
+					</div><h2 class="fwb fs14 fc0 pb5">已设定的组合</h2>
+					<p><span class="nui-text-label mr5">组合三</span><strong>服务为：</strong><span id="level1modulespan">海运拼箱</span> <strong  class="ml20">条件为：</strong><span class="mr20" id="level1categoryspan">海运拼箱-航线、海运拼箱-目的港</span>  <span class="dpib oneline"></p>
+				</div>
+
+			
+				<div class="nui-hr mt30 mb20"></div>
+
+				<a href="javascript:" id="jBtnActive" class="nui-btn nui-btn-primary nui-btn-36">+ 添加</a>
+				<a href="javascript:" id="" class="nui-btn nui-btn-primary nui-btn-36 nui-btn-disable">保存设置</a>
+
+<!-- 新的多级运价  结束-->
+
+
+
+
+<div class="fui-dialog" >
+	<div class="fui-dialog-title">
+		<h4 class="tal">详情</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<div class="fui-dialog-cnt">
+		<div class="form-line">
+			<label class="nui-radio" for="1"><input type="radio" id="1" name="11">低价、成本价、推荐报价模式</label>
+		</div>
+		<div class="form-line">
+			<label class="nui-radio" for="2"><input type="radio" id="2" name="11">基价、中转价、成本价、推荐报价模式</label>
+		</div>
+	</div> 
+	<div class="fui-dialog-btm-bar pss"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+
+
+
+			</div>
+	</div>
+<!--#include file="footer.html"-->
+
+</body>
+</html>

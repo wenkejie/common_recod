@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+	<link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/base.css">
+	<link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/solution.css">
+	<link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/layout.css">
+	<link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/yunjiaue.css">
+
+	<title></title>
+  <style type="text/css">
+    .shadow-mask-cnt{
+        margin-top: -100px;
+    }
+  </style>
+</head>
+<body>
+<div id="homeTopInfo">
+  <div class="container clearfix">
+    <div class="companyName">
+	    <a href="http://www.kaiyuancn.com/" target="_blank">大掌柜全球运价系统</a>
+    </div>
+    
+    <div class="topNav" id="js-topNav">
+      <ul>
+      
+      <li id="myConcern"><s class="iconFavorite" id="js-fav"></s><a href="javascript:fu_moreConcern();">我的关注</a>
+      <a href="#" class="collect-mun" title="涨价航线">3</a><ol class="subMenu fui-list"><li><a href="#" onclick="goToSearchUnreadCon('no','AARHUS','lcl');return false;"><span>[LCL]</span>AARHUS [奥尔胡斯]</a></li><li><a href="#" onclick="goToSearchUnreadCon('no','BANGKOK','lcl');return false;"><span>[LCL]</span>BANGKOK [曼谷]</a></li><li><a href="#" onclick="goToSearchUnreadCon('no','BELAWAN','lcl');return false;"><span>[LCL]</span>BELAWAN [勿拉湾]</a></li><li class="last show-all" id="js-showAll"><strong>显示全部</strong><a class="last-cell-one" href="javascript:void(0);" onclick="goToSearchUnreadCon('yes','','lcl');return false;">出口拼箱</a></li></ol></li>
+      
+        <li><a href="#">账号设置</a><s class="iconArrowBottom"></s>
+          <ol class="subMenu">
+          
+          
+        	<li><a href="javascript:void(0);" onclick="openWindow('/serviceportal/userManage.ctrl?$action=userMsgParam','关注设置',{width:380,height:200})"><s class="iconDot"></s>关注设置</a></li>
+     	 
+            <li><a href="javascript:void(0);" onclick="fu_openUserInfo();return false;"><s class="iconDot"></s>个人信息</a></li>
+            <li><a href="javascript:void(0);" onclick="openWindow('/serviceportal/userManage.ctrl?$action=modifyUserPassword&amp;actionType=show&amp;user_id=1879','修改密码',{width:350,height:250})"><s class="iconDot"></s>修改密码</a></li>
+            <li><a href="http://yunjia.kaiyuancn.com/serviceportal/logout"><s class="iconExit"></s>退出登录</a></li>
+         </ol>
+        </li>
+         
+         <li><a href="" class="highlight">美线内陆运价</a></li>
+         
+        <li><a href="#" onclick="showNewbieContent()" class="highlight">使用帮助</a></li>
+        <li><a href="#" onclick="showLinkInfoContent()">联系我们</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="homeWrapper">
+  <div class="" style="position: relative;z-index:980;background:#fff;padding:10px;">
+  	<div class="header clearfix">
+  	  <div class="logo"><a href="" target="_blank"></a></div>
+  	  <a class="powered" href="http://www.500jit.com/" target="_blank"></a>
+  	  <div class="searchContainer" style="">
+  	    <div class="searchType clearfix">
+  	      <ul>
+  	      
+  	      		<li class="active" searchtype="lcl" onclick="changeTab(this)">海运出口拼箱</li>
+  	      
+  	      		<li searchtype="import_lcl" onclick="changeTab(this)">海运进口拼箱</li>
+  	      
+  	      </ul>
+  	    </div>
+  	   
+  	       	 <!-- 搜索框 -->
+  	       	<form id="searchBox" action="" onsubmit="return false;" style="z-index:980;">
+  	       	  <input id="page_type" name="page_type" value="home" type="hidden">
+  	       	  <input id="search_item_value" name="search_item_value" value="dischargeport" type="hidden">
+  	       		<input id="search_type" name="search_type" value="lcl" type="hidden">
+  	       		<input id="showAdvancedSearch" name="showAdvancedSearch" value="no" type="hidden">
+  	       		<input id="fclexport_loadPort" name="fclexport_loadPort" value="" type="hidden">
+  	       		<input id="air_loadPort" name="air_loadPort" value="" type="hidden">
+  	       		<input id="lclexport_loadPort" name="lclexport_loadPort" value="" type="hidden">
+  	       		<input id="lclimport_dischargeport" name="lclimport_dischargeport" value="" type="hidden">
+  	       	  <div id="defalut_port_input" class="input">
+  	       	    <label for="default_port">起运港:</label>
+  	       	    <input id="default_port" name="default_port" onfocus="showSelectDefaultPort(this)" autocomplete="off" type="text">
+  	       	    <div class="gridLeft"></div>
+  	       	    <div class="gridRight"></div>
+  	       	  </div>
+  	       	  <div id="seachChange">
+  	       	 <div id="js-searchCon">
+  	       	  <div id="normalSearch">
+  	       	  <label for="searchvalue">输入条件</label>
+  	       	  <div class="input">
+  	       	    <input id="search_value" name="search_value" value="目的港，中转港，国家或双击鼠标" size="63" autocomplete="off" type="text">
+  	       	    <!-- 下拉 -->
+  	       	    <div style="" class="selectInputDown">
+  	       	      <div class="paddingCon"></div>
+  	       	    </div>
+  	       	    <!-- 下拉结束 -->
+  	       	    <div class="gridLeft"></div>
+  	       	    <div class="gridRight"></div>
+  	       	  </div>
+  	       	  <button onclick="goSearch()">搜索</button>
+  	       	</div>
+  	       	<div id="advSearch">
+  	       	<!-- 高级搜素 -->
+  	       		<div class="addSearch" id="js-addSearch">
+  	       			<div class="searchOption" id="js-searchOption">
+  	       			<span class="arrow"></span>
+  	       				<div id="js-option">增加搜索条件</div>
+  	       				<ul class="option">
+  	       				</ul>
+  	       			</div><!--  onfocus="showRichSelect(this)" -->
+  	       		<input id="addSearchValue" name="addSearchValue" type="text">
+  	       		<button class="addSearchBtn" onclick="addSearchBtnFun()"></button>
+  	       		</div>
+  	       		<!-- 高级搜素结束 -->
+  	       	
+  	       	</div>
+  	       	  </div>
+  	       	  </div>
+  	       	  <a class="advSearch" href="#" id="js-advSearchBtn-home" onclick="$('#showAdvancedSearch').val('yes');quickSearchGoPage('dischargeport','');">高级搜索</a>
+  	       	  <a class="history" href="#" onclick="searchHistoryButtonFun()">历史运价</a>
+  	       	  <div class="gridLeft"></div>
+  	       	  <div class="gridRight"></div>
+  	       	</form>
+  	       	<!-- 搜索框结束 -->
+  	       	<div class="routeShow">
+  	       		<div class="routeCon routeMoreLine" id="js-routeShow">
+  	       			<span class="title">航线：</span>
+  	       			<a href="#" class="btn">更多</a>
+  	       			<div class="routeCover" id="routeCover">
+  	       				<ul class="clearfix fn-nowrap">
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E4%B8%AD%E5%9B%BD");'>
+  	       							<s class="iconDot"></s>
+  	       							中国
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E5%8C%97%E7%BE%8E");'>
+  	       							<s class="iconDot"></s>
+  	       							北美
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E4%B8%AD%E7%BE%8E");'>
+  	       							<s class="iconDot"></s>
+  	       							中美
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E5%8D%97%E7%BE%8E");'>
+  	       							<s class="iconDot"></s>
+  	       							南美
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E4%B8%9C%E5%8D%97%E4%BA%9A");'>
+  	       							<s class="iconDot"></s>
+  	       							东南亚
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E6%B8%AF%E6%BE%B3%E5%8F%B0");'>
+  	       							<s class="iconDot"></s>
+  	       							港澳台
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E6%97%A5%E9%9F%A9");'>
+  	       							<s class="iconDot"></s>
+  	       							日韩
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E4%B8%AD%E4%B8%9C");'>
+  	       							<s class="iconDot"></s>
+  	       							中东
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E5%8D%B0%E5%B7%B4");'>
+  	       							<s class="iconDot"></s>
+  	       							印巴
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E6%BE%B3%E6%96%B0");'>
+  	       							<s class="iconDot"></s>
+  	       							澳新
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E6%AC%A7%E5%9F%BA");'>
+  	       							<s class="iconDot"></s>
+  	       							欧基
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E5%9C%B0%E4%B8%AD%E6%B5%B7%E4%B8%9C");'>
+  	       							<s class="iconDot"></s>
+  	       							地中海东
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E5%9C%B0%E4%B8%AD%E6%B5%B7%E8%A5%BF");'>
+  	       							<s class="iconDot"></s>
+  	       							地中海西
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E4%B8%9C%E6%AC%A7");'>
+  	       							<s class="iconDot"></s>
+  	       							东欧
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E5%8C%97%E6%AC%A7");'>
+  	       							<s class="iconDot"></s>
+  	       							北欧
+  	       						</a>
+  	       					</li>
+  	       					<li>
+  	       						<a href='javascript:quickSearchGoPage("searoute","%E9%9D%9E%E6%B4%B2");'>
+  	       							<s class="iconDot"></s>
+  	       							非洲
+  	       						</a>
+  	       					</li>
+  	       				</ul>
+  	       			</div>
+  	       		</div>
+  	       	</div>
+  	       </div>
+  	</div>
+  </div>
+  <!-- 内容部分 -->
+  <div id="wrap" class="clearfix">
+    <!-- 内容左侧开始 -->
+    <div class="leftSide clearfix">
+      <!-- 代码 开始 -->
+      <div class="imgShow" style=""></div>
+    <div class="clearfix">
+      <div class="commonCon recommendCon">
+        <div class="title">
+        <!-- 新闻公告 -->
+          <h2><s class="iconNews"></s>新闻公告</h2>
+          <a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=1&amp;notice_id=','%E6%96%B0%E9%97%BB%E5%85%AC%E5%91%8A',{width:980,height:520});" "="">更多</a></div>
+        <ul class="commonList commonPadding newsList">
+        
+          <li><s class="iconRank1"></s><a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=1&amp;notice_id=9','%E6%96%B0%E9%97%BB%E5%85%AC%E5%91%8A',{width:980,height:520});">2014/03/18-2014/03/24运价更新，欢迎查阅</a><span>[2014-03-13]</span></li>
+        
+          <li><s class="iconRank2"></s><a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=1&amp;notice_id=193','%E6%96%B0%E9%97%BB%E5%85%AC%E5%91%8A',{width:980,height:520});">大掌柜出口拼箱小立方特惠信息</a><span>[2014-03-06]</span></li>
+        
+          <li><s class="iconRank3"></s><a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=1&amp;notice_id=13','%E6%96%B0%E9%97%BB%E5%85%AC%E5%91%8A',{width:980,height:520});">特殊货物请另行确认运价</a><span>[2013-01-07]</span></li>
+        
+          <li class=""><s class="iconRank4"></s><a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=1&amp;notice_id=191','%E6%96%B0%E9%97%BB%E5%85%AC%E5%91%8A',{width:980,height:520});">关于日本航线Japan 24 Hour Rule（AFR)申报规则通知</a><span>[2014-02-14]</span></li>
+        
+          <li><s class="iconRank5"></s><a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=1&amp;notice_id=183','%E6%96%B0%E9%97%BB%E5%85%AC%E5%91%8A',{width:980,height:520});">紧急通知：加拿大航线运价上涨</a><span>[2014-01-09]</span></li>
+        
+        </ul>
+      </div>
+            <div class="commonCon myAttCon">
+        <div class="title">
+         <!-- 自定义公告 -->
+          <h2><s class="iconNews"></s>船期表.运价预计上涨通知</h2>
+          <a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=2&amp;notice_id=','%E8%88%B9%E6%9C%9F%E8%A1%A8.%E8%BF%90%E4%BB%B7%E9%A2%84%E8%AE%A1%E4%B8%8A%E6%B6%A8%E9%80%9A%E7%9F%A5',{width:980,height:520});" "="">更多</a></div>
+        <ul class="commonList commonPadding newsList">
+        
+          <li class=""><s class="iconRank1"></s><a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=2&amp;notice_id=69','%E8%88%B9%E6%9C%9F%E8%A1%A8.%E8%BF%90%E4%BB%B7%E9%A2%84%E8%AE%A1%E4%B8%8A%E6%B6%A8%E9%80%9A%E7%9F%A5',{width:980,height:520});">涨幅确定通知</a><span>[2014-03-17]</span></li>
+        
+          <li class=""><s class="iconRank2"></s><a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=2&amp;notice_id=12','%E8%88%B9%E6%9C%9F%E8%A1%A8.%E8%BF%90%E4%BB%B7%E9%A2%84%E8%AE%A1%E4%B8%8A%E6%B6%A8%E9%80%9A%E7%9F%A5',{width:980,height:520});">运价预计上涨通知</a><span>[2014-03-13]</span></li>
+        
+          <li class=""><s class="iconRank3"></s><a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=2&amp;notice_id=194','%E8%88%B9%E6%9C%9F%E8%A1%A8.%E8%BF%90%E4%BB%B7%E9%A2%84%E8%AE%A1%E4%B8%8A%E6%B6%A8%E9%80%9A%E7%9F%A5',{width:980,height:520});">2014年3月各口岸进口船期表已更新，点击下载</a><span>[2014-03-10]</span></li>
+        
+          <li class=""><s class="iconRank4"></s><a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=2&amp;notice_id=192','%E8%88%B9%E6%9C%9F%E8%A1%A8.%E8%BF%90%E4%BB%B7%E9%A2%84%E8%AE%A1%E4%B8%8A%E6%B6%A8%E9%80%9A%E7%9F%A5',{width:980,height:520});">2014年3月各口岸出口船期表已更新，点击下载</a><span>[2014-02-27]</span></li>
+        
+          <li class=""><s class="iconRank5"></s><a href="javascript:openWindow('/serviceportal/priceTwo.ctrl?$action=redirectToNoticeListOneDetail&amp;op_type=list_onedetail&amp;type=2&amp;notice_id=190','%E8%88%B9%E6%9C%9F%E8%A1%A8.%E8%BF%90%E4%BB%B7%E9%A2%84%E8%AE%A1%E4%B8%8A%E6%B6%A8%E9%80%9A%E7%9F%A5',{width:980,height:520});">2014年2月各口岸出口船期表已更新，点击下载</a><span>[2014-01-28]</span></li>
+        
+        </ul>
+      </div>
+      </div>
+      <div class="commonCon clearfix fn-clearB">
+        <div class="title">
+          <h2><s class="iconRecommend"></s>推荐运价</h2>
+          <a href="#" onclick="recommendMoreGoSearchPage();">更多</a></div>
+        <ul class="commonList commonPadding listLeft">
+        
+          <li>[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="QINGDAO" dischargeport="ACAJUTLA(SV)">QINGDAO<span>[青岛]</span> - ACAJUTLA(SV)<span>[阿卡胡特拉]</span></a></li>
+        
+          <li>[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="SHANGHAI" dischargeport="CASABLANCA">SHANGHAI<span>[上海]</span> - CASABLANCA<span>[卡萨布兰卡]</span></a></li>
+        
+          <li>[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="SHANGHAI" dischargeport="CHICAGO,IL">SHANGHAI<span>[上海]</span> - CHICAGO,IL<span>[芝加哥]</span></a></li>
+        
+          <li>[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="SHENZHEN" dischargeport="CHICAGO,IL">SHENZHEN<span>[深圳]</span> - CHICAGO,IL<span>[芝加哥]</span></a></li>
+        
+          <li>[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="QINGDAO" dischargeport="COLON">QINGDAO<span>[青岛]</span> - COLON<span>[科隆]</span></a></li>
+        
+          <li>[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="QINGDAO" dischargeport="FELIXSTOWE">QINGDAO<span>[青岛]</span> - FELIXSTOWE<span>[费利克斯托]</span></a></li>
+        
+        </ul>
+        <div class="VerticalLine"></div>
+        <ul class="commonList commonPadding listRight">
+        
+           <li class="">[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="GUANGZHOU(HP)" dischargeport="HAMBURG">GUANGZHOU(HP)<span>[黄埔港]</span> - HAMBURG<span>[汉堡]</span></a></li>
+        
+           <li class="">[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="QINGDAO" dischargeport="LOS ANGELES,CA">QINGDAO<span>[青岛]</span> - LOS ANGELES,CA<span>[洛杉矶]</span></a></li>
+        
+           <li class="">[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="QINGDAO" dischargeport="MANZANILLO(MX)">QINGDAO<span>[青岛]</span> - MANZANILLO(MX)<span>[曼萨尼约]</span></a></li>
+        
+           <li class="">[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="QINGDAO" dischargeport="MARACAIBO(VE)">QINGDAO<span>[青岛]</span> - MARACAIBO(VE)<span>[马拉开波]</span></a></li>
+        
+           <li class="">[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="SHENZHEN" dischargeport="MIAMI,FL">SHENZHEN<span>[深圳]</span> - MIAMI,FL<span>[迈阿密]</span></a></li>
+        
+           <li>[LCL] <a href="#" class="toe w300" onclick="recommendGoSearchPage(this,'iscommend');" search_type="lcl" loadport="SHENZHEN" dischargeport="OAKLAND,CA">SHENZHEN<span>[深圳]</span> - OAKLAND,CA<span>[奥克兰]</span></a></li>
+        
+        </ul>
+      </div>
+    </div>
+    <!-- 内容左侧结束 右侧开始 -->
+    <div class="rightSide clearfix">
+    <div class="accountCon">
+    <div class="account">
+    <s class="iconAccount"></s><span>系统管理员</span>您好！<a href="http://yunjia.kaiyuancn.com/serviceportal/logout">退出</a></div>
+    
+    <!-- 欢迎词  -->
+    <div class="con">超重超长超高货物请另行确认价格，危险品/半危品/液体不接。详见新闻公告
+    </div>
+    </div>
+    <div class="commonCon customerService" id="js-customerService">
+        <div class="title">
+          <h2>联系客服</h2>
+          <a style="display: none;" href="javascript:" id="js-showContact2">更多</a>
+          </div>
+          <div class="con">
+          
+          	<dl>
+	          <dt class=""><s class="iconCustomerService"></s>胡槐慧<span>(销售)</span></dt>
+	          <dd>电话：0574-87868515</dd>
+	          <dd>传真：0574-87190424</dd>
+	          <dd>EMAIL：<a href="mailto:locust@kaiyuancn.com" title="locust@kaiyuancn.com">locust@kaiyuancn.com</a></dd>
+	          <dd>MSN：</dd>
+	          <dd>QQ：</dd>
+	        </dl>
+          
+          	<dl>
+	          <dt class=""><s class="iconCustomerService"></s>罗新宇<span>(客服)</span></dt>
+	          <dd>电话：</dd>
+	          <dd>传真：</dd>
+	          <dd>EMAIL：<a href="mailto:lily-luo@kaiyuancn.com" title="lily-luo@kaiyuancn.com">lily-luo@kaiyuancn.com</a></dd>
+	          <dd>MSN：</dd>
+	          <dd>QQ：</dd>
+	        </dl>
+          
+          	<dl>
+	          <dt class=""><s class="iconCustomerService"></s>杨文波<span>(客服)</span></dt>
+	          <dd>电话：0532-89095835</dd>
+	          <dd>传真：0532-89095805</dd>
+	          <dd>EMAIL：<a href="mailto:harold@kaiyuancn.com" title="harold@kaiyuancn.com">harold@kaiyuancn.com</a></dd>
+	          <dd>MSN：</dd>
+	          <dd>QQ：</dd>
+	        </dl>
+          
+          	<dl>
+	          <dt class=""><s class="iconCustomerService"></s>贺科平<span>(客服)</span></dt>
+	          <dd>电话：87868512</dd>
+	          <dd>传真：</dd>
+	          <dd>EMAIL：<a href="mailto:ellen@kaiyuancn.com" title="ellen@kaiyuancn.com">ellen@kaiyuancn.com</a></dd>
+	          <dd>MSN：</dd>
+	          <dd>QQ：</dd>
+	        </dl>
+          
+          	<dl>
+	          <dt class=""><s class="iconCustomerService"></s>胡雯<span>(客服)</span></dt>
+	          <dd>电话：021-63096711</dd>
+	          <dd>传真：021-63568302</dd>
+	          <dd>EMAIL：<a href="mailto:anny@kaiyuancn.com" title="anny@kaiyuancn.com">anny@kaiyuancn.com</a></dd>
+	          <dd>MSN：</dd>
+	          <dd>QQ：</dd>
+	        </dl>
+          
+        </div><a style="display: none;" class="btnBtmMore" id="js-showContact"><s class="iconMoreArrow"></s></a>
+        </div>
+    <div class="commonCon historyCon" id="js-history">
+      <div class="title">
+          <h2><s class="iconMyAtt"></s>我的关注</h2>
+          <a href="#" onclick="concernedMoreGoSearchPage();">更多</a></div>
+        <ul class="commonList commonPadding">
+         
+       		<li class="">[LCL] <a href="#" onclick="recommendGoSearchPage(this,'concerned');" search_type="lcl" dischargeport="AARHUS">AARHUS<span>[奥尔胡斯]</span></a></li>
+      	
+       		<li class="">[LCL] <a href="#" onclick="recommendGoSearchPage(this,'concerned');" search_type="lcl" dischargeport="BANGKOK">BANGKOK<span>[曼谷]</span></a></li>
+      	
+       		<li>[LCL] <a href="#" onclick="recommendGoSearchPage(this,'concerned');" search_type="lcl" dischargeport="BELAWAN">BELAWAN<span>[勿拉湾]</span></a></li>
+      	
+        </ul>
+      </div>
+    </div>
+    <!-- 内容右侧结束 -->
+  </div>
+
+ 
+  <!-- 内容部分结束 底部开始 -->
+  <div id="homeFooter">版权所有 © 2013 <a href="http://www.500jit.com/">OlymTech(NingBo), Ltd.</a> <span style="cursor:pointer;" onclick="alert('系统参数:as1');">&nbsp;</span></div>
+  <!-- 底部结束 -->
+</div>
+<iframe style="display: none" src="7_files/autoFresh.htm"></iframe>
+
+<div class="shadow-mask">
+		
+	</div>
+	<div class="shadow-mask-cnt">
+			<div class="shadow-open-win">
+				<div class="open-win-top clearfix">
+					<div class="top-logo"></div>
+					<div class="top-text">
+						<div class="top-text-cnt">
+						<p>在该页面您的客户输入查询条件后，点击”<span>搜索</span>“就可以查询他所需查看的运价信息，点击下一步，我们看一下查询结果</p>
+
+					</div>
+				</div>
+				<div class="open-win-bottom">
+					<a class="mask-btn-2" href="step-six.html"></a><a class="mask-btn" href="step-eight.html"></a>
+				</div>
+			</div>
+			<div class="shadow-goto-3"></div>
+			<!-- <div class="shadow-btn-light"></div> -->
+		</div>
+	</div>
+</body><a style="opacity: 1 ! important; left: 892.5px ! important; top: 133px ! important;" class="exjxrrptwuotaxcxnrpj" href="http://yunjia.kaiyuancn.com/serviceportal/application/common/jsp/pricemanager2/images/focusFlash_fp.swf" title="点击这里用 Adblock Plus 屏蔽该对象">屏蔽…</a></html>

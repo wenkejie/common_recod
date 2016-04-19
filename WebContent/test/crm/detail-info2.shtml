@@ -1,0 +1,228 @@
+<!--#include file="header.html"-->
+
+<!-- 主内容开始 -->
+<div class="auto-wrap">
+	<div class="grid">
+		<div class="left">
+			<h1 class="detail-title"><i class="">&#x343d;</i> 奥林网络科技有限公司</h1> <small class="detail-info">浙江省 | 浙江慈溪 | 0574-87998787 | 网址未填写</small>
+		</div>
+		<div class="right">
+			<button class="nui-btn"><i>&#x3576;</i> 加关注</button>
+		</div>
+	</div>
+	<div class="nui-tab-menu mt20">
+		<ul>
+			<li class="nui-tab-menu-cell"><a href="javascript:" class="nui-tab-menu-link">客户动态</a></li>
+			<li class="nui-tab-menu-cell nui-tab-menu-active"><a href="javascript:" class="nui-tab-menu-link">详细信息</a></li>
+			<li class="nui-tab-menu-cell"><a href="javascript:" class="nui-tab-menu-link">联系人(0)</a></li>
+			<li class="nui-tab-menu-cell"><a href="javascript:" class="nui-tab-menu-link">销售机会(0)</a></li>
+			<li class="nui-tab-menu-fn"><a href="javascript:">销售机会(0)</a></li>
+		</ul>
+	</div>
+
+	<!-- 右侧栏目开始 -->
+	<div class="main-right-column">
+		<div class="grid mt20">
+			<div class="nui-group-btn">
+				<button class="nui-btn pr5"><i class="fs14">&#x35a6;</i> 添加<i class="ml15">&#x3438;</i></button>
+			</div>
+			<button class="nui-btn pr5"><i>&#x356f;</i> 操作<i class="ml15">&#x3438;</i></button>
+		</div>
+
+		<div class="widget">
+			<div class="widget-title-cnt">
+				<h2 class="widget-title">代办任务</h2><a href="javascript:" class="right none">全部</a>
+			</div>
+			<div class="widget-cnt">
+				<ul class="widget-list">
+					<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link text-error">如何给客户报价</a></li>
+					<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li>
+					<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">出售技巧</a></li>
+					<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">出口拼箱小立方特惠</a></li>
+				</ul>
+
+				<button class="nui-btn mt10 mb20 pl10"><i class="fs14">&#x3545;</i> 给自己安排任务</button>
+				<button class="nui-btn mt10 mb20 pl10"><i class="fs14">&#x3545;</i> 给他人分配任务</button>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="main-left-column">
+		<div class="result-area">
+			<table class="result-table">
+				
+				<tbody>
+					
+					<tr>
+						<td colspan="12">
+							<div class="nui-title mb10">基本信息</div>
+							<div class="info-list clearfix">
+								<ul class="left">
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<a href="javascript:" class="info-list-li-span dpib w200">王中王</a>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+								</ul>
+								<ul class="left">
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="12">
+							<div class="nui-title mb10">联系信息</div>
+							<div class="info-list clearfix">
+								<ul class="left">
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+								</ul>
+								<ul class="left">
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="12">
+							<div class="nui-title mb10">详细信息</div>
+							<div class="info-list clearfix">
+								<ul class="left">
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+								</ul>
+								<ul class="left">
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+									<li class="info-list-li  clearfix">
+										<label class="nui-label-normal w100">客户所有人：</label>
+										<span class="info-list-li-span dpib w200">王中王</span>
+										<!-- <div class="nui-form-cell w150"><input class="nui-input" /></div> -->
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="12">
+							<div class="nui-title mb10">备注信息</div>
+							<div class="info-list clearfix">
+								<ul>
+									<li>公司客服</li>
+									<li>备注说明</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

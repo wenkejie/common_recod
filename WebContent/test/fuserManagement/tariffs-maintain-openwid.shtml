@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>运价维护</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+
+</head>
+<body>
+
+<div class="fui-dialog">
+	<div class="fui-dialog-title">
+		<h4 class="tal">运价维护</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt" style="height:200px;width:350px;">
+		<div class="mt20">
+			<label class="nui-label">拥有人：</label>
+			<div class="nui-form-cell w185 nui-select">
+				<div class="nui-form-cell-cnt">
+					<input class="nui-input"><i class="nui-form-cell-icon">&#x3438;</i>
+					<div class="nui-drop-down" style="height: 115px;">
+						<ul class="nui-select-list">
+							<li class="nui-select-list-li">北京</li>
+							<li class="nui-select-list-li">黑龙江</li>
+							<li class="nui-select-list-li">江苏</li>
+							<li class="nui-select-list-li">浙江</li>
+							<li class="nui-select-list-li">安徽</li>
+							<li class="nui-select-list-li">福建</li>
+							<li class="nui-select-list-li">江西</li>
+							<li class="nui-select-list-li">山东</li>
+							<li class="nui-select-list-li">河南</li>
+							<li class="nui-select-list-li">湖北</li>
+							<li class="nui-select-list-li">湖南</li>
+							<li class="nui-select-list-li">上海</li>
+							<li class="nui-select-list-li">广东</li>
+							<li class="nui-select-list-li">广西</li>
+							<li class="nui-select-list-li">海南</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+</body>
+</html>

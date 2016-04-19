@@ -1,0 +1,41 @@
+  //
+  // 输入框
+  // --------------------------------------------------
+  // 常量
+  @inputColor:             #666;   
+  @icon-width:             2.813rem;
+
+  .wui-input{
+    position: relative;display: table;
+    height: @normal-height;width: 100%;
+    border: 1px solid #ccc;border-radius: 2px;box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.075);background: #fff;
+    + .wui-input{
+      margin-top: 0.625rem;
+    }
+    > input{
+      display: table-cell;vertical-align: middle;
+      width: 100%;height: 100%;padding: 0 0.625rem;padding-right: 0;
+      border: none;background: transparent;
+      color: @inputColor;font-size: 0.875rem;
+    }
+    >.wui-input-info{
+      display: table-cell;vertical-align: middle;
+      width: 4rem;padding: 0 0.375rem;background-color: #f5f5f5;border-right: 1px solid #e5e5e5;
+      font-size: 0.875rem;font-weight: 400;line-height: 1;color: #555;text-align: center;
+    }
+    &.inline{
+      display: inline-block;
+      width: auto;
+    }
+
+  }
+
+.wui-input-icon{
+  display: table-cell;vertical-align: middle;
+  line-height: @normal-height;width: 2.5rem;
+  text-align: center; color: #c9c9d0; 
+}
+
+
+
+

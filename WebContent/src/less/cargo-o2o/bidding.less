@@ -1,0 +1,348 @@
+// =====================================
+// ========== 招投标页面样式 ============
+// =====================================
+
+// 投标详情页
+.bidding-prompt-wrap{
+	padding-left: 0;
+}
+// 已中标状态
+.bidding-prompt-success{
+	.bidding-prompt-cell{
+		background: #2db200;
+		font-size: 16px;
+		i{
+			font-size: 16px;
+		}
+	}
+	.bidding-prompt-cell-left{
+		background: #aaa;
+		font-size: 14px;
+	}
+	.bidding-prompt-icon{
+		background-position: -110px 0; 
+	}
+	.bidding-num{
+		vertical-align: middle;
+		padding-left: 8px;
+		font-size: 14px;
+	}
+}
+// 未中标状态
+.bidding-prompt-fail{
+	.bidding-prompt-cell{
+		background: #666;
+		font-size: 16px;
+		i{
+			font-size: 16px;
+		}
+	}
+	.bidding-prompt-cell-left{
+		background: #aaa;
+		font-size: 14px;
+	}
+	.bidding-prompt-icon{
+		background-position: -140px 0;
+	}
+}
+// 评标中、投标
+.bidding-prompt-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	padding: 0 15px 0 10px;
+	height: 30px;
+	background: #bbb;
+	color: #fff;
+	font-size: 14px;
+	p{
+		line-height: 30px;
+	}
+	i{
+		vertical-align: middle;
+		padding-right: 5px;
+		color: #fff;
+		font-size: 14px;
+	}
+}
+.bidding-prompt-cell-left{
+	position: relative;
+	background: #ff6900;
+	em{	
+		vertical-align: baseline;
+		font-size: 16px;
+		font-weight: bold;
+	}
+}
+.bidding-prompt-icon{
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 8px;
+	height: 30px;
+	background: -80px 0 url(../../../release/freight/images/cargo-o2o/bidding.png) no-repeat;
+}
+.text-success-bidding{
+	color: #2db200;
+}
+// =================================
+.bindding-box{
+	background: #fff;
+	border: 1px solid #e6e6e6;
+}
+.bindding-box-column{
+	position: relative;
+	padding: 15px 20px;
+	// overflow: hidden;
+	// .clearfix;
+}
+.bindding-box-bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 32px;
+	height: 32px;
+	padding-left: 7px;
+	color: #fff;
+	background: 0 0 url(../../../release/freight/images/cargo-o2o/bidding.png) no-repeat;
+}
+.bidding-table-area{
+	// overflow: hidden;
+	.clearfix;
+}
+.bidding-table-left{
+	float: left;
+	// margin-right: -1px;
+	// width: 608px;
+	width: 62%;
+	.bidding-table tbody tr{
+		border-right: 1px solid #eee;
+	}
+}
+.bidding-table-right{
+	float: left;
+	// width: 370px;
+	width: 38%;
+	.bidding-table tbody tr{
+		border-left: 1px solid #eee;
+	}
+}
+// 投标详情表格
+.bidding-table{
+	table-layout: fixed;
+	border:none;
+	thead{
+		background: #f9f9f9;
+		tr{
+			border-top: 1px solid #eee;
+		}
+	}
+	th,td{
+		padding: 10px 20px;
+	}
+	th{
+		border-bottom: none;
+	}
+	td{
+		vertical-align: top;
+		color: #333;
+	}
+	tr{
+		border-bottom: 1px solid #eee;
+	}
+	.bidding-table-line{
+		border-bottom: none;
+	}
+	.care-th{
+		color: #333;
+	}
+	.surcharge-cell{//附加费
+		// border-bottom: none;
+		.nui-btn{
+			padding: 4px 15px;
+		}
+		i{
+			color: #b3c6d6;
+		}
+		.surcharge-text{
+			padding: 5px;
+			border: 1px solid #bfbfbf;
+			cursor: pointer;
+		}
+	}
+}
+//固定底部操作条
+.plate-location-cnt{
+	position: relative;
+	padding-bottom: 80px;
+}
+.bottom-operation-box{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 10px 20px;
+	width: 940px;
+	text-align: right;
+	background: #eee;
+	font-family:  tahoma;
+	opacity: 0.9;
+	filter:alpha(opacity=90);
+	border-top: 2px solid #ddd;
+	z-index: 999;
+}
+.bottom-operation-box-fixed{
+	position: fixed;
+	left: auto;
+}
+//投标列表表格
+.bidding-list-table{
+	table-layout: fixed;
+	border:none;
+	border-top: 1px solid #d9d9d9;
+	thead{
+		background: #f7f7f7;
+	}
+	th,td{
+		padding: 8px;
+	}
+	tr{
+		color: #666;
+	}
+	td{
+		vertical-align: top;
+	}
+	.more-info{
+		.toe;
+	}
+	.text-success{
+		color: #57c133;
+	}
+	.v-line{
+		color: #ddd;
+		padding: 0 3px;
+	}
+}
+// 招标详情页
+.plate-hd-link{
+	float: right;
+	padding-top: 5px;
+	font-weight: normal;
+	color: #999;
+	font-size: 14px;
+}
+.tips-sign{
+	margin: 0 5px;
+	padding:2px 3px;
+	color: #fff;
+	border-radius: 3px;
+}
+.tips-sign-success{
+	background: #08b9a2;
+}
+.tips-sign-fail{
+	background: #c7c7c7;
+}
+.surcharge-wrap{//招标附加费
+	position: relative;
+	.surcharge-link{
+		display: block;
+		color: #333;
+	}
+	.surcharge-dropdown{
+		display: none;
+		position: absolute;
+		left: -10px;
+		top: -10px;
+		padding: 10px 25px 10px 10px;
+		background: #fff;
+		border: 1px solid #d3d3d3;
+		box-shadow: 0 0 3px #d3d3d3;
+		cursor: pointer;
+		z-index: 10;
+		p{
+			word-break:break-all;
+		}
+		i{
+			position: absolute;
+			right: 5px;
+			top: 10px;
+			color: #666;
+		}
+	}
+	.down-arrow{
+		color: #666;
+		vertical-align: middle;
+		padding-left: 5px;
+	}
+}
+// 招标弹框
+.tender-cnt-area{
+	padding: 20px;
+	height: 620px;
+	overflow-x: hidden;
+}
+.tender-table-area{
+	.bidding-table-left{
+		// width: 325px;
+		width: 49%;//左右边框重叠问题
+	}
+	.bidding-table-right{
+		// width: 333px;
+		width: 51%;
+	}
+}
+.tender-table{
+	th,td{
+		padding: 10px;
+	}
+	.first-cell{
+		padding-left: 20px;
+	}
+	
+}
+.popup-remark{
+	margin: 20px 0 50px;
+	color: #333;
+	span{
+		color: #666; 
+	}
+}
+
+
+
+// 表格中新增的价格详情结构
+.price-extend{
+	display: inline-block;*display: inline;*zoom:1;
+	// position: relative;
+	.nui-tips{
+		// width: 100px;
+	}
+	
+}
+
+.price-extend-icon{
+	margin-left: 5px;
+	color: #666;
+	cursor: pointer;
+	&:hover{
+		color: #333;
+	}
+}
+
+.price-extend-cnt{
+
+}
+
+.halve-status-info{
+	display: inline-block;*display: inline;*zoom:1;
+	margin-left: 10px;
+	min-width: 90px;
+	text-align: right;
+	em{
+		margin-right: 5px;
+		color: #999;
+	}
+	.tips-sign{
+		margin: 0;
+	}
+}

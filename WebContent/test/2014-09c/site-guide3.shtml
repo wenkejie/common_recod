@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>运价维护</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+
+</head>
+<body>
+
+<div class="fui-dialog"  style="width:1030px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">账户设置引导</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt mb30">
+		<div class="nui-gride-box ">
+			<div class="nui-gride-head">
+				<div class="nui-navi-container">
+					<ol class="nui-step">
+						<li class="nui-step-start nui-step-active">
+							<div class="nui-step-line">-</div>    
+							<div class="nui-step-icon">        
+								<div class="step-icon-cell">
+									<i class="icon-shadow">&#xe601;</i>
+									<i class="icon-bg">&#xe601;</i>
+									<i class="nui-step-number">1</i>
+								</div>
+								<span class="nui-step-text">添加账户</span>
+							</div>
+						</li>		
+
+						<li class="nui-step-active">
+							<div class="nui-step-line">-</div>    
+							<div class="nui-step-icon">        
+								<div class="step-icon-cell">
+									<i class="icon-shadow">&#xe601;</i>
+									<i class="icon-bg">&#xe601;</i>
+									<i class="nui-step-number">2</i>
+								</div>
+								<span class="nui-step-text">设置资料转换</span>
+							</div>
+						</li>		
+
+						<li class="nui-step-current">
+							<div class="nui-step-line">-</div>    
+							<div class="nui-step-icon">        
+								<div class="step-icon-cell">
+									<i class="icon-shadow">&#xe601;</i>
+									<i class="icon-bg">&#xe601;</i>
+									<i class="nui-step-number">3</i>
+								</div>
+								<span class="nui-step-text">设置运价规则</span>
+							</div>
+						</li>			
+						<li class="nui-step-end">
+							<div class="nui-step-line">-</div>    
+							<div class="nui-step-icon">        
+								<div class="step-icon-cell">
+									<i class="icon-shadow">&#xe601;</i>
+									<i class="icon-bg">&#xe601;</i>
+									<i class="nui-step-number fonticon">&#x34e3;</i>
+								</div>
+								<span class="nui-step-text">成功</span>
+							</div>
+						</li>	
+					</ol>
+				</div>
+				<div class="hr"></div>
+			</div>
+			<div class="nui-gride-body">
+				<div id="rule-content"><!-- requeireJS加载从这个层开始 -->
+					<div class="wrap two-column-wrap leftRightw250">
+						<!--左侧规则列表 -->
+						<div id="rule_left-side" class="left-side">
+							<input type="hidden" id="select_rule_id" value="">
+							<input type="hidden" id="isRuleChanged" value="false">
+							<input type="hidden" id="isImportRule" value="true">
+							<div class="psr">
+								<div class="disable-all none" id="disable-all"></div>
+								<ul class="left-side-menu">
+									<li class="left-side-menu-com">
+										<div class="nui-form-cell w180">
+											<div class="nui-form-cell-cnt"><input id="search_rule_name" name="search_rule_name" class="nui-input" value="" type="text"><i id="search_rule_list" class="nui-form-cell-icon fs12" style="cursor:pointer;">㕝</i>
+											</div>
+										</div>
+									</li>
+									<li class="left-side-menu-categories">可分配规则：</li>
+									<li class="ruleSelectList" rule_id="46" style="cursor:pointer;"><a href="javascript:" class="left-side-menu-a clearfix" rule_id="46" rule_name="2(整箱)_1"><p class="left-side-menu-tag-p left" title="2(整箱)_1">2(整箱)_1</p><p class="right"><span class="left-side-menu-tag-span" title="ww">ww</span><i class="ml5">㖞</i></p></a>
+									</li>
+									<li class="ruleSelectList" rule_id="143" style="cursor:pointer;">
+										<a href="javascript:" class="left-side-menu-a clearfix" rule_id="143" rule_name="xxx"><p class="left-side-menu-tag-p left" title="xxx">xxx</p><p class="right"><span class="left-side-menu-tag-span" title="ww">ww</span><i class="ml5">㖞</i></p></a>
+									</li>
+									<li class="ruleSelectList" rule_id="144" style="cursor:pointer;">
+										<a href="javascript:" class="left-side-menu-a clearfix" rule_id="144" rule_name="dawdwadawd">
+											<p class="left-side-menu-tag-p left" title="dawdwadawd">dawdwadawd</p>
+											<p class="right">
+												<span class="left-side-menu-tag-span" title="ww">ww</span><i class="ml5">㖞</i>
+											</p>
+										</a>
+									</li>
+									<li class="ruleSelectList" rule_id="146" style="cursor:pointer;">
+										<a href="javascript:" class="left-side-menu-a clearfix" rule_id="146" rule_name="大碗大碗大碗大碗大碗大碗的">
+											<p class="left-side-menu-tag-p left" title="大碗大碗大碗大碗大碗大碗的">大碗大碗大碗大碗大碗大碗的</p>
+											<p class="right"><span class="left-side-menu-tag-span" title="ww">ww</span><i class="ml5">㖞</i>
+											</p>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--左侧规则列表END -->		
+
+						<!--右侧规则列表 -->			
+						<div class="right-side">
+							<div class="main-title">
+								<div class="main-title-head">
+									<h1>导入规则</h1> 
+								</div>
+							</div>
+							<div class="pl10 mb30 rule-name-div"> 
+								<div class="nui-form-cell nui-check w200">
+									<div class="nui-form-cell-cnt">
+										<input id="importRuleName" name="importRuleName" readonly="readonly" type="text" export_org_id="" value="" class="nui-input">
+										<i class="nui-form-cell-icon">㐸</i>
+										<div class="nui-drop-down" id="bindOrgList" style="display: none;">
+											<ul class="nui-select-list"></ul>
+										</div>
+									</div>
+								</div>
+					<span class="nui-form-des">系统导入专用</span>
+				</div>
+				<div id="contactRuleDiv">
+					<div class="nui-shadow-box mb15" rule_id="78" rule_name="认同和认同与任何太阳花"><div class="right fcc"><a rule_id="78" class="rule-detail" href="javascript:">详情</a> |<a rule_id="78" class=" fc9 rule-delete" href="javascript:">删除</a></div><h2 class="fwb fs14 pb5 toe">认同和认同与任何太阳花</h2><p><span class=" mr5"></span><strong>服务为：<>&nbsp;&nbsp;<span>海运整箱</span><strong class="ml20">条件为：<>&nbsp;&nbsp;<span>海运整箱-订舱代理</span></p></div>
+				</div>
+				<div class="nui-hr mt30 mb20"></div>
+
+				<a href="javascript:" id="jBtnActive" class="nui-btn nui-btn-primary nui-btn-36 mr5">+ 添加规则组合</a>
+				<a href="javascript:" id="j-save" class="nui-btn nui-btn-primary nui-btn-36 nui-btn-disable">保存设置</a>
+			</div>
+			<!--右侧规则列表END -->			
+			
+		</div>
+
+
+
+		<div id="ruleDetailContainer" class="none">
+			<div id="ruleDetail" class="fui-dialog-cnt j-ruleWin" style="height:430px">
+				<div style="margin-left: 40px;margin-bottom: 10px;">
+					<label>规则名称：</label>
+					<div class="nui-form-cell w180 nui-form-cell-focus">
+						<div class="">
+							<input id="rule_name" name="rule_name" class="nui-input" value="" type="text">
+						</div>
+					</div>
+				</div>
+
+				<div class="step-grid">
+					<!-- 第一步 -->
+					<div class="step-num step-num-on j-step-one">1</div>
+					<div class="title">
+						<h2>选择服务类</h2>
+						<span>请选择需要控制的服务类型</span>
+					</div>
+					<div class="step-con">
+						<div class="rule-select rule-select-one">
+							
+						</div>
+					</div>
+				</div>
+				<!-- 第二步 -->			
+				<div class="step-grid j-step-two">
+					<div class="step-num step-two">2</div>
+					<div class="title">
+						<h2>选择类别</h2>
+						<span>选择需要设定的规则类别字段</span>
+					</div>
+					<div class="step-con step-con-two ">
+						<div class="rule-select rule-select-two">
+							<div class="nui-group-btn mt2" style="width:600px">
+								<a href="javascript:" id="addCategoryBtn" class="nui-btn nui-btn-primary oneline " style=""><span class="fms fwb fs14">＋</span> 增加</a>
+								<div class="nui-drop-down nui-drop-down-0 ofv j-top-div" style="width:70px;min-width:70px">
+									<ul class="nui-select-list">
+										
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- 第三步 -->	
+				<div class="step-grid j-step-three">
+					<div class="step-num step-thr">3</div>
+					<div class="title">
+						<h2>类别数据信息</h2>
+						<span>以选择的类别对应的详细信息</span>
+					</div>
+					<div class="step-con step-con-thr">
+
+					</div>
+				</div>
+				<!-- 第四步 -->		
+				<div class="step-grid j-step-four">
+					<div class="step-num step-fou">4</div>
+					<div class="title">
+						<h2>设置价格信息</h2>
+						<span>设定后外部查询价格按设置的规则显示</span>
+					</div>
+					<div class="step-con step-con-fou">
+						对不起，您无权查看别人的多级运价价格
+					</div>
+					<input type="hidden" id="select-ruleId" value="">
+					<input type="hidden" id="user_id" value="">
+					<input type="hidden" id="org_id" value="">
+					<input type="hidden" id="currentContactName" value="">
+				</div>
+				
+			</div>
+			<div class="fui-dialog-btm-bar">
+				<a href="javascript:" id="j-ruleDetailSave" class="fui-btn-dialog-primary"><span>确定</span></a>
+				<a href="javascript:" id="j-ruleDetailCancel" class="fui-btn-dialog"><span>取消</span></a>
+			</div>
+		</div>
+
+
+
+		<!-- 类别数据编辑窗口 -->
+		<div id="categoryEditDiv" class="none">
+			<div class="fui-dialog-cnt clearfix ofv" style="padding-top:50px;">
+		</div>
+		<div class="fui-dialog-btm-bar cb mt10">
+			<a id="j-BtnActive" href="javascript:" class="fui-btn-dialog-primary"><span>通过</span></a> 
+			<a id="j-windowClose" href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+		</div>
+		<div class="none">
+			<input type="hidden" id="priceType" value="">
+			<input type="hidden" id="categoryCode" value="">
+			<input type="hidden" id="select_level" value="">
+			<input type="hidden" id="searouteIdStr" value=""><!-- 只在编辑目的港时有用 -->
+		</div>
+	</div>
+
+
+
+
+
+
+</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>下一步</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+</body>
+</html>

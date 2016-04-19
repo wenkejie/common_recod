@@ -1,0 +1,4 @@
+width: 190px;background: #ccc;overflow:auto;;min-height:600px;_height:600px;position: absolute;top: 0 right:auto; left:0; bottom:0;//left
+
+
+.content{position: absolute;top: 0;right:auto; left:190px; bottom:0;width: : 500px;_height:100% }

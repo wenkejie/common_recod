@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>弹出窗口</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+	
+</head>
+<body>
+	<div class="fui-dialog-cnt">
+		<div class="fui-box fui-box-yellow pd6 pl10 mb8">
+			<p class="dpi vam">
+				<label class="fui-label tal" style="width:20%">短信充值余额：</label>
+				<label class="fui-label tal" style="width:15%">
+					<span class="text-warning fwb mg0-5">145.7</span>
+				</label>
+				<label class="fui-label tal" style="width:15%">可使用短信条数：</label>
+				<label class="fui-label tal" style="width:15%">
+					<span class="text-warning fwb mg0-5">1457</span>
+				</label>
+				<label class="fui-label tal" style="width:20%"> 短信本月使用条数：</label>
+					<span class="text-warning fwb mg0-5">23</span>
+			</p>
+			<p class="dpi vam">
+				<label class="fui-label tal" style="width:20%">客户已设置运价关注总数：</label>
+				<label class="fui-label tal" style="width:15%">
+					<span class="text-warning fwb mg0-5">7</span>
+				</label>
+				<label class="fui-label tal" style="width:15%">已设置运价关注上限：</label>
+				<label class="fui-label tal" style="width:15%">
+					<span class="text-warning fwb mg0-5">200</span>
+				</label>
+				<label class="fui-label tal" style="width:20%">  已设置短信发送条数上限：</label>
+					<span class="text-warning fwb mg0-5">100</span>
+			</p>
+		</div>
+		<div id="searchBox" class="fui-box">
+			<label class="fui-label w50" for="org_name">客户名称</label>
+			<div class="fui-form-cell w150">
+				<input id="org_name" class="fui-input" type="text" value="" name="org_name"/>
+			</div>
+			<label class="fui-label w60" for="level">客户等级</label>
+			<div class="fui-form-cell fui-select fui-readonly mr20" style="width: 80px;">
+				<div class="fui-select-cnt">
+					<div class="fui-select-input"></div>
+					<s class="fui-form-icon icon-select-arrow"></s>
+				</div>
+			</div>
+			<div id="advSearch" class="fui-adv-search-con" style="width: 200px;">
+				<div class="fui-condition-input clearfix">
+					<div class="condition">
+						<span class="condition-selected">选择条件</span>
+					</div>
+					<input class="adv-search-input" type="text"/>
+					<a class="adv-search-del" href="javascript:" title="删除条件"></a>
+					<a class="adv-search-add" href="javascript:"></a>			
+				</div>
+			</div>
+			<a id="query_btn" class="fui-btn ml6" onclick="fu_query(true);return false;" href="javascript:void(0);">搜索</a>
+			<a class="fui-btn ml6" href="javascript:fu_reset();">重置</a>	
+		</div>
+		<div class="fui-table mt8">
+			<div class="fui-table-fnbar">
+				关注功能会员公司设置列表：
+				<div class="fui-multi-btn mgl5">
+				<a class="fui-btn batch fui-btn-tablebar-disable" href="javascript:void(0);"> <span class="dpib">邮件功能</span> <i class="fui-arrow"></i></a>
+				<a class="fui-btn batch fui-btn-tablebar-disable" href="javascript:void(0);"> <span class="dpib">短信功能</span> <i class="fui-arrow"></i></a>
+				</div>
+				<div class="fui-multi-btn mgl5">
+					<a class="btn-cell fui-btn-tablebar-disable" onclick="batchSetLimit(this);return false;" href="javascript:void(0);">批量设置上限</a>
+				</div>
+				<a class="fui-btn-tablebar ml5" onclick="batchSetLimit(this);return false;" href="javascript:void(0);">会员等级设置</a>
+			</div>
+			<div class="table-drag-controls" style="width: 917px; height: 156px;">
+				<div class="table-thead">
+					<div class="table-thead-scroll" style="width: 900px;">
+						<table class="ui-table-gray layout-fixed" style="width: 1176px;">
+							<thead>
+								<tr>
+									<th width="40" index="0" style="width: 40px;"><div class="thText"><div class="resizeBtn"></div>序号</div></th>
+									<th width="30" index="1" style="width: 30px;"><div class="thText"><div class="resizeBtn"></div><input type="checkbox" onclick="javascript:selectAllCheckBox(this);" style="margin-top:4px;" title="可全选/反选当前页"></div></th>
+									<th width="70" index="2" style="width: 70px;"><div class="thText"><div class="resizeBtn"></div><div class="thText">公司名称</div></div></th>
+									<th width="145" index="3" style="width: 252px;"><div class="thText"><div class="resizeBtn"></div><div class="thText">本月短信可使用</div></div></th>
+									<th width="110" index="4" style="width: 110px;"><div class="thText"><div class="resizeBtn"></div><div class="thText">本月短信使用量</div></div></th>
+									<th width="110" index="5" style="width: 110px;"><div class="thText"><div class="resizeBtn"></div><div class="thText">关注上限</div></div></th>
+									<th width="70" index="6" style="width: 70px;"><div class="thText"><div class="resizeBtn"></div><div class="thText">联系人</div></div></th>
+									<th width="60" index="7" style="width: 60px;"><div class="thText"><div class="resizeBtn"></div><div class="thText">手机</div></div></th>
+									<th width="80" index="8" style="width: 80px;"><div class="thText"><div class="resizeBtn"></div><div class="thText">电话</div></div></th>
+									<th width="110" index="9" style="width: 110px;"><div class="thText"><div class="resizeBtn"></div><div class="thText">邮箱</div></div></th>
+									<th width="130" index="10" style="width: 130px;"><div class="thText"><div class="resizeBtn"></div><div class="thText">省份</div></div></th>
+									<th width="50" index="11" style="width: 50px;"><div class="thText"><div class="resizeBtn"></div><div class="thText">城市</div></div></th>
+									<th width="50" index="12" style="width: 50px;"><div class="thText"><div class="resizeBtn"></div>序号</div></th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+				<div class="tableScroll" style="height: 113px;">
+					<table id="js-result-data-table" class="ui-table-gray layout-fixed" style="width: 769px;">
+						<thead>
+							<tr>
+								<th class="hideTh" style="width: 48px;"></th>
+								<th class="hideTh" style="width: 30px;"></th>
+								<th class="hideTh" style="width: 113px;"></th>
+								<th class="hideTh" style="width: 252px;"></th>
+								<th class="hideTh" style="width: 110px;"></th>
+								<th class="hideTh" style="width: 110px;"></th>
+								<th class="hideTh" style="width: 119px;"></th>
+								<th class="hideTh" style="width: 92px;"></th>
+								<th class="hideTh" style="width: 89px;"></th>
+								<th class="hideTh" style="width: 116px;"></th>
+								<th class="hideTh" style="width: 103px;"></th>
+								<th class="hideTh" style="width: 50px;"></th>
+								<th class="hideTh" style="width: 52px;"></th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr class="oddBg">
+									<td>1</td>
+									<td>
+									<input class="select-checkbox" type="checkbox" onclick="checkSelected(this);" value="10012">
+									</td>
+									<td>
+									<a class="icon icon-sms" onclick="modifyEmailAndSmsParam('is_sms','false', '10012');return false;" title="关闭短信服务" href="javascript:"></a>
+									<a class="icon icon-email" onclick="modifyEmailAndSmsParam('is_email','false', '10012');return false;;" title="关闭邮件服务" href="javascript:"></a>
+									</td>
+									<td>
+									<a onclick="openDetails('10012');return false;" href="javascript:">袁峰货主公司一</a>
+									</td>
+									<td>100</td>
+									<td>21</td>
+									<td>101</td>
+									<td>张三</td>
+									<td>111</td>
+									<td>000</td>
+									<td>
+									<a href="mailto:1284745300@qq.com">1284745300@qq.com</a>
+									</td>
+									<td>浙江</td>
+									<td>宁波</td>
+								</tr>
+								<tr class=""></tr>
+								<tr class="oddBg">
+									<td>1</td>
+									<td>
+									<input class="select-checkbox" type="checkbox" onclick="checkSelected(this);" value="10012">
+									</td>
+									<td>
+									<a class="icon icon-sms" onclick="modifyEmailAndSmsParam('is_sms','false', '10012');return false;" title="关闭短信服务" href="javascript:"></a>
+									<a class="icon icon-email" onclick="modifyEmailAndSmsParam('is_email','false', '10012');return false;;" title="关闭邮件服务" href="javascript:"></a>
+									</td>
+									<td>
+									<a onclick="openDetails('10012');return false;" href="javascript:">袁峰货主公司一</a>
+									</td>
+									<td>100</td>
+									<td>21</td>
+									<td>101</td>
+									<td>张三</td>
+									<td>111</td>
+									<td>000</td>
+									<td>
+									<a href="mailto:1284745300@qq.com">1284745300@qq.com</a>
+									</td>
+									<td>浙江</td>
+									<td>宁波</td>
+								<tr class=""></tr>
+								<tr class="oddBg">
+									<td>1</td>
+									<td>
+									<input class="select-checkbox" type="checkbox" onclick="checkSelected(this);" value="10012">
+									</td>
+									<td>
+									<a class="icon icon-sms" onclick="modifyEmailAndSmsParam('is_sms','false', '10012');return false;" title="关闭短信服务" href="javascript:"></a>
+									<a class="icon icon-email" onclick="modifyEmailAndSmsParam('is_email','false', '10012');return false;;" title="关闭邮件服务" href="javascript:"></a>
+									</td>
+									<td>
+									<a onclick="openDetails('10012');return false;" href="javascript:">袁峰货主公司一</a>
+									</td>
+									<td>100</td>
+									<td>21</td>
+									<td>101</td>
+									<td>张三</td>
+									<td>111</td>
+									<td>000</td>
+									<td>
+									<a href="mailto:1284745300@qq.com">1284745300@qq.com</a>
+									</td>
+									<td>浙江</td>
+									<td>宁波</td>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+								<tr class="oddBg"></tr>
+								<tr class=""></tr>
+						</tbody>
+					</table>
+				</div>
+				<div style="height: 17px; overflow-y: hidden; overflow-x: scroll; width: 917px;">
+				    <div style="height: 10px; width: 1068px;"></div>
+				</div>
+			</div>
+			<div class="ui-table-foot-single-fnbar">
+			
+			
+				<span class="fwb text-stress">数据统计信息:</span>
+				<label>
+				已筛选客户数
+				<span class="text-warning fwb ml5 mr15">11357</span>
+				</label>
+				<label>
+				用户数
+				<span class="text-warning fwb ml5 mr15">11359</span>
+				</label>
+				<label>
+				已设置运价关注上限
+				<span class="text-warning fwb ml5 mr15">200</span>
+				</label>
+				<label>
+				已设置短信发送条数上限
+				<span class="text-warning fwb ml5 mr15">100</span>
+				</label>
+				<label>
+				短信本月使用条数
+				<span class="text-warning fwb ml5 mr15">23</span>
+				</label>
+			<div class="table-foot">
+			<div class="conPd">
+			<div class="fnArea">共11357条</div>
+			<div id="pagination" class="pagination">
+				<ul>
+					<li>
+					<a class="icon icon-first icon-first-disable " title="最前" href="javascript:void(0);">first</a>
+					</li>
+					<li>
+					<a class="icon icon-prev icon-prev-disable " title="上一页" href="javascript:void(0);">prev</a>
+					</li>
+					<li>
+					<div class="fui-form-cell">
+					<input id="pageCount" type="hidden" value="114">
+					<input id="curPageNumber" class="fui-input" onblur="fu_query();return false;" value="1" name="curPageNumber">
+					</div>
+					/114
+					</li>
+					<li>
+					<a class="icon icon-next " title="下一页" onclick="fu_goNextPage();return false;" href="javascript:void(0);">next</a>
+					</li>
+					<li>
+					<a class="icon icon-last " title="最后" onclick="fu_goPage(114);return false;" href="javascript:void(0);">last</a>
+					</li>
+				</ul>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

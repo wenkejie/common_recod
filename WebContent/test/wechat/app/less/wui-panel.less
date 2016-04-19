@@ -1,0 +1,172 @@
+//
+// 常用面板
+// --------------------------------------------------
+// 常量
+// @normal-height:      2.188rem;
+@line-height:        @normal-height - 0.125rem;
+@h3-fsize:           1.125rem;//h3的字体大小 ~18px;
+@fsize:              0.875rem;//~14px
+@fcolor:             #333;
+@normal-pd: 		 0.625rem;//一般间距~10px			
+@min-pd:             0.188rem;//小间距~3px
+
+.wui-panel{	
+  width: 100%;padding-left: @normal-pd;padding-right: @normal-pd;
+ 
+}
+
+.wui-panel-tag{
+	&:extend(.clearfix all);
+	margin-top: @normal-pd;
+	> dt{
+		padding: @min-pd;
+		> h3{
+			font-size: @h3-fsize;font-weight: bold;
+		}
+	}
+	
+	> .first-tag,.tag-cell{
+		width: 100%;padding: @min-pd;
+		> a{
+			display: block;
+			padding-left: @normal-pd;padding-right: @normal-pd;
+			border: 1px solid #e5e5e5;border-radius: 2px;height: 2.5rem;line-height:2.5rem;
+			text-align: center;font-size: @fsize;color: @fcolor;
+			background: #fff;
+			.toe;
+		}
+		&.active{
+			a{
+				border-color:#73B9FF;background: #EEF8FF;
+				color: #0089e1;
+			}
+		}
+	}
+	> .tag-cell{
+		float: left;
+		width: 50%;
+		> a{
+			text-align: left;
+		}
+	}
+}
+
+
+
+// 记录列表
+
+.wui-data-case{
+	margin-top: 1rem;
+	> dt{
+		&:extend(.clearfix all);
+		padding: 0.625rem 0;
+		border-bottom: 1px solid #e1e1e1;
+		font-weight: bold;
+		> .return{
+			float: right;
+			color: #0089e3;font-size: @fsize;
+		}
+		>h3{
+			font-weight: bold;
+		}
+	}
+	> dd{
+		padding: 0.625rem 0;
+		border-bottom: 1px solid #e1e1e1;
+		>.icon-arrow-right{
+			color: #ccc;font-size: 0.75rem;vertical-align: middle;
+		}
+		&:last-child{
+			padding-top: 0.625rem;
+			border-bottom-width: 0;
+		}
+		> button{
+			width: 35%;height: 2.5rem;line-height: 2.5rem - 0.125rem;margin: 0 auto;padding-left: 0.75rem;padding-right: 0.75rem;
+			font-size: 0.75rem;
+		}
+	}
+
+}
+
+.wui-data-common{
+	> .title{
+		&:extend(.clearfix all);
+		padding: 0.625rem 0;
+		font-weight: bold;color: #666;
+		> .return{
+			float: right;
+			color: #0089e3;font-size: @fsize;
+		}
+		>h3{
+			font-weight: bold;
+		}
+	}
+	
+}
+
+// 快捷搜索的浮动结构
+.wui-data-content-fixed{
+	&:extend(.clearfix all);
+	>.data-fixed-grid{
+		float: left;
+		width: 33.3%;padding-right: 0.313rem;margin-bottom: 0.313rem;
+		> .data-fixed-cell{	
+			border: 1px solid #ddd;background: #fff;
+			padding: 0.5rem;font-size: 0.875rem;
+			>p{
+				.toe;
+			}
+			>span{
+				display: block;
+				.toe;
+				color: #aaa;
+			}
+		}
+		&:nth-child(3n){
+			padding-right: 0;
+		}
+	}
+}
+
+
+
+// 反馈信息
+.wui-feedback{
+	padding-top: 0.625rem;
+	>.wui-feedback-content{
+		>.feedback-icon-tips{
+			height: 5.313rem;line-height: 5.313rem;
+			text-align: center;
+			>i{
+				font-size: 2rem;color:#aaa;
+			}
+		}
+
+
+
+		>.wui-feedback-info{
+			padding: 0.625rem 0;
+			font-size: 1rem;color: #333;font-weight: bold;text-align: center;
+		}
+	}
+	> button{
+		margin-top: 0.938rem;
+	}
+}
+
+.wui-feedback-txt{
+	>.wui-feedback-content{
+		> p{
+			padding: 0.625rem 0;
+			font-size: 0.875rem;font-weight: bold;
+		}	
+	}
+	&.error-feedback{
+		margin-top: 3.75rem ;padding: 0 1.25rem;
+		>.wui-feedback-content{
+			padding: 0.625rem;margin-bottom: 1.875rem;
+			background: #f5ece6;border: 1px solid #c7ba96;
+			color: #7b491b;
+		}
+	}
+}

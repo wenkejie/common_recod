@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+
+	<!-- <link rel="stylesheet" href="../../release/freight/css/common.css"/> -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<!-- <link rel="stylesheet" href="../../src/css/richSelect.css" />richselect样式 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+		<div class="fui-dialog" style="width:800px;">
+			<div class="fui-dialog-title">
+				<h4 class="tal">详情</h4>
+				<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+				</div>
+			<div class="fui-dialog-cnt">
+				<div id="j-searchArea" class="search-area mt5">
+
+					<div class="search-area-grid">
+						<div class="search-area-line clearfix">
+							<div class="left">
+								<label class="nui-label" for="username">起止时间：</label>
+								<div class="nui-form-cell">
+									<input type="text" onfocus="$(this).datepicker();" class="nui-input w80" id="typeoftime-fir">
+								</div>
+								<span> - </span>
+								<div class="nui-form-cell ml1">
+									<input type="text" onfocus="$(this).datepicker();" class="nui-input w80" id="typeoftime-sec">
+								</div>
+								<div class="dpib vam ml30">
+									<a class="nui-select-tag j-nui-select-tag" href="javascript:">本月</a>
+									<a class="nui-select-tag j-nui-select-tag" href="javascript:">上个月</a>
+									<a class="nui-select-tag j-nui-select-tag" href="javascript:">前3个月</a>
+									<a class="nui-select-tag j-nui-select-tag" href="javascript:">半年</a>
+									<a class="nui-select-tag j-nui-select-tag" href="javascript:">今年</a>
+								</div>
+							</div>
+							<div class="right">
+							<a class="nui-btn"><i>&#x3455;</i> 导出</a>
+							</div>
+						</div>	
+
+					</div>
+
+				</div>
+				<div class="result-area">
+					<div class="result-table-area">
+						<table class="result-table result-table-sms">
+							<thead>
+								<tr>
+									<th class="w80">时间</th>
+									<th class="w80">发送人</th>
+									<th class="w80">接收人</th>
+									<th class="w100">手机号</th>
+									<th class="w100">类型</th>
+									<th class="w100">状态</th>
+									<th class="w50">金额</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>2014-07-31</td>
+									<td>充值短信</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>
+										0.30
+									</td>
+								</tr>
+								<tr>
+									<td>2014-07-31</td>
+									<td>充值短信</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>
+										0.30
+									</td>
+								</tr>
+								<tr>
+									<td>2014-07-31</td>
+									<td>充值短信</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>
+										0.30
+									</td>
+								</tr>
+								<tr>
+									<td>2014-07-31</td>
+									<td>充值短信</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>
+										0.30
+									</td>
+								</tr>
+								<tr>
+									<td>2014-07-31</td>
+									<td>充值短信</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>
+										0.30
+									</td>
+								</tr>
+								<tr>
+									<td>2014-07-31</td>
+									<td>充值短信</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>
+										0.30
+									</td>
+								</tr>
+								<tr>
+									<td>2014-07-31</td>
+									<td>充值短信</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>+10000</td>
+									<td>
+										0.30
+									</td>
+								</tr>
+							</tbody>
+
+						</table>
+				<!-- <div class="result-table-area-info">
+					<span>已勾选本页 25 个选项</span>，<a href="javascript:" id="jWhole">勾选表格中全部955个选项</a>
+				</div> -->
+			</div>
+			<div class="result-footer">
+				<div class="left-area">
+					<label class="fwb">小计：</label>
+					<span class="text-warning fwb vam">23000.00</span>
+				</div>
+				<div class="page"><input type="hidden" value="1" name="pageNo" id="pageNo"><span class="pageInfo">1-30条，共278条 </span><a href="javascript:nextPage();">下一页</a> <a href="javascript:buildData(10);">尾页</a></div>
+			</div>
+				</div>
+			</div> 
+			<div class="fui-dialog-btm-bar pss"> 
+				<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+			</div> 
+		</div>
+		
+		
+	
+
+	<!--#include file="footer.html"-->
+
+</body>
+</html>

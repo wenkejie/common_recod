@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>jQuery UI Sortable - Connect lists</title>
+<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <style>
+  	table.fff{ margin:50px;}
+  	table.fff td,th{width:60px;}
+  	 .active{background-color:#08ABC7}
+  	 .redactive{background-color:#E61761}
+  </style>
+  <script>
+  $(function() {
+    $("#sortable2").sortable({
+   
+    });
+    
+    
+   $("#sortable1").delegate( "th", "click", function() {
+	   var that = $(this);
+	   var id = that.attr("id");
+	if(!that.hasClass("redactive")){
+		if(that.hasClass("active")){
+			that.removeClass("active");
+			$("#sortable2 #"+id).remove();
+		}else{
+			$("#sortable2").append(that.clone().addClass("edit").dblclick(tdclick));
+			that.addClass("active");
+		}
+		}
+	//   that.toggleClass( "active" );
+    });
+    
+  });
+  
+  
+  $(document).ready(function(){ 
+	  
+	 // $("#sortable2").delegate( "th", "dblclick", tdclick);
+	    //找到所有td节点  
+	    
+	    var tds = $(".edit");  
+	    //给所有td节点添加点击事件  
+	    tds.dblclick(tdclick);  
+	});  
+	//td被点击的事件  
+	function tdclick(){  
+	    //0 保存当前td节点  
+	    var td = $(this);  
+	    //1 取出当前td的文本内容保存起来  
+	    var text = td.text();  
+	    //2 清空td里面的内容  
+	    td.html("");//也可以用td.empty();  
+	    //3 建立文本框，也就是input的节点  
+	    var input = $("<input>");  
+	    //4 设置文本框值，即保存的文本内容  
+	    input.attr("value",text);  
+	    //4.5让文本框可以响应键盘按下并弹起的事件  
+	    input.keyup(function(event){  
+	        //0 获取当前用户按下的键值  
+	        //截取不同浏览器获取事件对象的差异  
+	        var myEvent = event || window.event;  
+	        var kcode = myEvent.keyCode;  
+	        //1 判断是否是回车按下  
+	        if(kcode == 13){  
+	            var inputnode = $(this);  
+	            //2 获取当前文本框的内容  
+	            var inputtext = inputnode.val();  
+	            //3 清空td里面的内容  
+	            var tdNode = inputnode.parent();  
+	            //4 保存文本框的内容填充到td中  
+	            if($.trim(inputtext)== "") inputtext=text;
+	            tdNode.html(inputtext);  
+	            //5 让td重新拥有点击事件  
+	            tdNode.dblclick(tdclick);  
+	        }  
+	    }); 
+	    input.blur(function(){
+	    	  var inputnode = $(this);  
+	            //2 获取当前文本框的内容  
+	            var inputtext = inputnode.val();  
+	            //3 清空td里面的内容  
+	            var tdNode = inputnode.parent();  
+	            //4 保存文本框的内容填充到td中  
+	             if($.trim(inputtext)== "") inputtext=text;
+	            tdNode.html(inputtext);  
+	            //5 让td重新拥有点击事件  
+	            tdNode.dblclick(tdclick);  
+	    });
+	    //5 将文本内容加入td  
+	    td.append(input);//也可input.appendto(td)  
+	    //5.5让文本框文字被高亮选中  
+	    //需要将jquery的对象转换成dom对象  
+	    var inputdom = input.get(0);  
+	    inputdom.select();  
+	    //6 需要清除td上的点击事件  
+	    td.unbind("dblclick");  
+	}  
+  
+  </script>
+</head>
+<body>
+<div>
+ 	<table border="1" class="fff">
+ 		<thead>
+			<tr class="connectedSortable" id="sortable1">
+				<th id="1" class="redactive">起运港</th>
+				<th id ="2" class="redactive">目的港</th>
+				<th id="5"  class="redactive"><table border="1"><tr align="center"><td colspan="3">海运费(USD)</td></tr><tr><td colspan="1">20GP</td><td colspan="1">40GP</td><td colspan="1">40HQ</td></tr></table></th>
+				<th id="6"  class="redactive">有效期</th>
+				<th id="3" >航线</th>
+				<th id="4" class="active">中转港</th>
+				<th id="7"  class="active">发布时间</th>
+				<th id="8">船期</th>
+				<th id="9">航程(天)</th>
+			</tr>
+		</thead>
+	</table>
+	
+	<table border="1" class="fff">
+ 		<thead>
+			<tr id="sortable2" class="connectedSortable">
+				<th id="1" class="edit">起运港</th>
+				<th id="2" class="edit">目的港</th>
+				<th id="4" class="edit">中转港</th>
+				<th id="5"><table border="1"><tr align="center"><td colspan="3" class="edit">海运费(USD)</td></tr><tr><td colspan="1" class="edit">20GP</td><td colspan="1" class="edit">40GP</td><td colspan="1" class="edit">40HQ</td></tr></table></th>
+				<th id="6" class="edit">有效期</th>
+				<th id="7" class="edit">发布时间</th>
+			</tr>
+		</thead>
+	</table>
+</div>
+  
+</body>
+</html>

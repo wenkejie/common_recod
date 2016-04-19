@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>SELECT</title>
+  <!-- <link href="Styles/sel.css" rel="stylesheet" type="text/css" />  -->
+  <!-- // <script type="text/javascript" src="Scripts/jquery-1.4.1.min.js"></script> -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+            //绑定下拉列表
+            var testDatalist;
+            testDatalist = funCreatData();
+            setSelData(testDatalist);
+            //文本框提示文字设置
+            $("#txtSel").focus(function () {
+                //下拉列表展开
+                $("#divTitle").slideDown();
+            }).blur(function () {
+                //下拉列表关闭
+                setTimeout(setDivSldeUp, 200);
+            })
+            //下拉列表关闭
+            function setDivSldeUp() {
+                //下拉列表关闭
+                $("#divTitle").slideUp();
+            }
+            //鼠标点击
+            $("#objUl li").click(function () {
+                //当前第几个被选中
+                var selIndex;
+                selIndex = $(this).index();
+                //得到被选中的imageID
+                var objIcon;
+                //
+                var objliList;
+                objliList = $("li :image");
+                var i = 0;
+                for (i = 0; i < objliList.length; i++) {
+                    objIcon = "select-icon" + i.toString();
+                    if (i == selIndex) {
+                        //设置图片
+
+                        // setImgClass(objIcon, "visible");
+                        $(this).children(objIcon).removeClass('hidden');
+                        // objIcon.addClass('visible');
+                    } else {
+                        //消除图片
+                        // setImgClass(objIcon, "hidden");
+                        // objIcon.html(' ');
+                    }
+                }
+                //设置选中的值。
+                $("#txtSel").val(this.innerText);
+            })
+            //鼠标浮上设置
+            $("#objUl li").mouseover(function (e) {
+                //鼠标滑过变色
+                // this.className = "gainsboro";
+                $(this).addClass('active');
+            })
+            //鼠标移开设置
+            $("#objUl li").mouseout(function (e) {
+                //鼠标滑过变色
+                // this.className = "white";
+                $(this).removeClass('active');
+            })
+            /*键盘按钮实现*/
+            $(document).keydown(function (event) {
+                //"↑"按键处理
+                if (event.keyCode == 38) {
+                    //选中处理
+                    funKeyClick(1);
+                    return false;
+                }
+                //"↓"按键处理
+                if (event.keyCode == 40) {
+                    //选中处理
+                    funKeyClick(2);
+                    return false;
+                }
+                //"ESC"按键处理
+                if (event.keyCode == 27) {
+                    //下拉列表关闭
+                    //下拉列表关闭
+                    setTimeout(setDivSldeUp, 200);
+                    $("#txtSel").blur();
+                    return false;
+                }
+                //"Enter"按键处理
+                if (event.keyCode == 13) {
+                    funEnterKey();
+                    return false;
+                } else {
+                    //下拉列表关闭
+                    $("#divTitle").slideUp();
+                    $("#txtSel").blur();
+                }
+            })
+        })
+        //设置class
+        function setImgClass(strId, strClassName) {
+            $(strId).removeClass();
+            $(strId).attr("class", strClassName);
+        }
+        //1：上键 2：下键
+        function funKeyClick(flag) {
+            var tempflag;
+            tempflag = false;
+            var objliList;
+            objliList = $("#objUl li");
+            //flag
+            var objChgFlg = false;
+            //count
+            var i = 0;
+            for (i = 0; i < objliList.length; i++) {
+                //当前光标所在下拉列表位置              
+                if (objliList[i].className == "gainsboro") {
+                    //
+                    tempflag = true;
+                    //第一条
+                    if (flag == 1 && i == 0) {
+                        objliList[i].className = "gainsboro";
+                        break;
+                    }
+                    //最后一条
+                    if (flag == 2 && i == (objliList.length - 1)) {
+                        objliList[i].className = "gainsboro";
+                        break;
+                    }
+                    //即不是每一条也不是最后一条的时候
+                    objliList[i].className = "white";
+                    if (flag == 1) {
+                        objliList[i - 1].className = "gainsboro"
+                        break;
+                    } else {
+                        objliList[i + 1].className = "gainsboro"
+                        break;
+                    }
+                }
+            }
+            //
+            if (flag == 2 && tempflag == false) {
+                objliList[0].className = "gainsboro";
+            }
+        }
+        //回车键
+        function funEnterKey() {
+            var objFlag = false;
+            var objliList;
+            objliList = $("#objUl li");
+            //count
+            var i = 0;
+            for (i = 0; i < objliList.length; i++) {
+                if (objliList[i].className == "gainsboro") {
+                    objFlag = true;
+                    break;
+                }
+            }
+            if (objFlag == false) {
+                //下拉列表关闭
+                $("#divTitle").slideUp();
+                $("#txtSel").blur();
+                return;
+            }
+            //
+            for (i = 0; i < objliList.length; i++) {
+                var objIcon = "";
+                objIcon = "select-icon" + i.toString()
+                //当前光标所在下拉列表位置
+                if (objliList[i].className == "gainsboro") {
+                    // setImgClass(objIcon, "visible");
+                    $(this).children(objIcon).removeClass('hidden');
+                    // objIcon.addClass('1111');
+                    //设置选中的值。
+                    $("#txtSel").val(objliList[i].innerText);
+                } else {
+                    setImgClass(objIcon, "hidden");
+                    // objIcon.html(' ');
+                }                
+                objliList[i].className = "white";
+            }
+            //下拉列表关闭
+            $("#divTitle").slideUp();
+            $("#txtSel").blur();
+        }
+        /*下拉列表实现*/
+        function setSelData(objDataList) {
+            var objDiv = "";
+            var objOutHtml = "";
+            objOutHtml = objOutHtml + "<ul id='objUl' class='selList cui-select-list'>";
+            for (i = 0; i < objDataList.length; i++) {
+                objOutHtml = objOutHtml + "<li id = 'li' class='select-list-cell' " + i.toString() + " ><i class='select-icon hide'></i><span class='span'>" +
+                 objDataList[i].toString() + "<span> </li> ";
+            }
+            objOutHtml = objOutHtml + "</ul><div class='cui-select-footer'> <a href='javascript:' class='cui-btn cui-btn-primary'>确定</a> <a href='javascript:' class='cui-btn cui-btn-default'>取消</a> </div>";
+            objDiv = $("#divTitle");
+            objDiv.html(objOutHtml);
+        }
+        /*****************TEXT DATA**********************/
+        function funCreatData() {
+            var mycars = new Array()
+            for (var i = 0; i < 10; i++) {
+                mycars.push("test" + i.toString());
+            }
+            return mycars;
+        }
+        /*****************TEXT DATA**********************/
+  </script>
+ </head>
+ <body>
+    <form id="form1" runat="server">
+		<div class="cui-select-area">
+			<div class="cui-select">
+				<div class="cui-select-cell">
+                    <input id="txtSel" type="text" readonly="readonly" class="selTxt" value="选择" />
+                </div>
+                <a href="javascript:" class="cui-select-icon">
+                    <i>&#xe60c;</i>
+                </a>
+			</div>
+			<div id="divTitle" class="divHid cui-select-content" style="display:block;">
+                
+			</div>
+		</div>
+    </form>
+ </body>
+</html>

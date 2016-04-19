@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>基础资料校验</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		$(function() {
+			var $tabMenu = $('li.nui-tab-menu-cell');
+			var $tabCnt = $('div.nui-tab-cnt');
+			$tabMenu.click(function() {
+				var index = $(this).index();
+				$tabMenu.removeClass("nui-tab-menu-active");
+				$(this).addClass('nui-tab-menu-active');
+				$tabCnt.hide().eq(index).show();
+			});
+		})
+	</script>
+</head>
+<body>
+
+<div class="fui-dialog" style="width:950px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">基础资料校验</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt">
+		<p class="result-tip"><i>&#x3573;</i> 以下<span>10</span>个港口，无法帮你完成基础资料校验，请手动补全信息。</p>
+		<div class="result-area result-area-material">
+			<table class="result-table result-table-material">
+				<thead>
+					<tr>
+						<th class="bd-lr tac" width="115" rowspan="2"><b>导入港口</b></th>
+						<th colspan="6" class="tac"><b>即将存入港口信息</b></th>
+						<th class="bd-lr tac" width="40" rowspan="2"><b>操作</b></th>
+						<th class="bd-lr tac" width="50" rowspan="2" class="tac"><b>使用导入港口</b></th>
+					</tr>
+					<tr class="extend">
+						<th>英文名称</th>
+						<th>中文名称</th>
+						<th>代码</th>
+						<th>国家英文</th>
+						<th>国家中文</th>
+						<th>航线</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="bd-lr">NINGBO</td>
+						<td class="english-name">CNNGB</td>
+						<td>宁波</td>
+						<td>SVSSO</td>
+						<td>china</td>
+						<td>中国</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" />
+								</div>
+							</div>
+						</td>
+						<td class="bd-lr tac more-position">
+							
+								<a href="javascript:">更多</a>
+
+								<div class="tabel-search-area none">
+									<div class="tb-search-slide">
+									
+										<div class="nui-form-cell nui-form-cell-adaptive search-slide-cell">
+											<div class="nui-form-cell-cnt form-cell-cnt">
+												<i class="search-icon">&#xe60b;</i>
+												<input type="text" class="nui-input search-slide-input" />		
+											</div>
+										</div>
+									
+										<div class="search-slide-tab-container">
+											<table class="search-slide-tab">
+												<thead>
+													<th>英文名称</th>
+													<th>中文名称</th>
+													<th>代码</th>
+													<th>国家英文</th>
+													<th>国家中文</th>
+												</thead>
+												<tbody>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+
+						
+						</td>
+						<td class="bd-lr tac">
+							<input type="checkbox" class="j-checkbox" />
+						</td>
+					</tr>
+					<tr>
+						<td class="bd-lr">NINGBO</td>
+						<td class="english-name">CNNGB</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value="宁波" />
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value="SVSSO" />
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value="china" />
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value="中国" />
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value="欧洲"/>
+								</div>
+							</div>
+						</td>
+						<td class="bd-lr tac more-position">
+							<a href="javascript:">更多</a>
+							<div class="tabel-search-area none">
+									<div class="tb-search-slide">
+										<div class="nui-form-cell nui-form-cell-adaptive search-slide-cell">
+											<div class="nui-form-cell-cnt form-cell-cnt">
+												<span></span>
+												<input type="text" class="nui-input search-slide-input" />		
+											</div>
+										</div>
+									
+										<div class="search-slide-tab-container">
+											<table class="search-slide-tab">
+												<thead>
+													<th>英文名称</th>
+													<th>中文名称</th>
+													<th>代码</th>
+													<th>国家英文</th>
+													<th>国家中文</th>
+												</thead>
+												<tbody>
+													<tr class="nomatch-wrap">
+														<td colspan="5">—— 无匹配 ——</td>
+													</tr>	
+												</tbody>
+											</table>
+										</div>
+									</div>
+									
+								</div>
+
+						</td>
+						<td class="bd-lr tac">
+							<input type="checkbox" class="j-checkbox" />
+						</td>
+					</tr>
+					<tr>
+						<td class="bd-lr">NINGBO</td>
+						<td class="english-name">CNNGB</td>
+						<td colspan="4">
+							<div class="nui-form-cell-esp nui-form-cell-adaptive">
+								<!-- <div class="nui-form-cell-cnt"> -->
+								<p class="nui-form-cell-bar">此港口有多个匹配项，请<a href="javascript:" class="j-more-link">点击更多</a>进行选择</p>
+								<!-- </div> -->
+							</div>
+						</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value="欧洲"/>
+								</div>
+							</div>
+						</td>
+						<td class="bd-lr tac more-position">
+							<a href="javascript:">更多</a>
+							<div class="tabel-search-area none">
+									<div class="tb-search-slide">
+										<div class="nui-form-cell nui-form-cell-adaptive search-slide-cell">
+											<div class="nui-form-cell-cnt form-cell-cnt">
+												<span></span>
+												<input type="text" class="nui-input search-slide-input" />	
+											</div>
+										</div>
+							
+										<div class="search-slide-tab-container">										<table class="search-slide-tab">
+												<thead>
+													<th>英文名称</th>
+													<th>中文名称</th>
+													<th>代码</th>
+													<th>国家英文</th>
+													<th>国家中文</th>
+												</thead>
+												<tbody>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								
+								</div>
+						</td>
+						<td class="bd-lr tac">
+							<input type="checkbox" disabled="disabled" class="j-checkbox"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="bd-lr">NINGBO</td>
+						<td class="english-name">CNNGB</td>
+						<td colspan="4">
+							<div class="nui-form-cell-esp nui-form-cell-adaptive">
+								<!-- <div class="nui-form-cell-cnt"> -->
+								<p class="nui-form-cell-bar nui-form-cell-bar-error">此港口有多个匹配项，请<a href="javascript:" class="j-more-link">点击更多</a>进行选择</p>
+								<!-- </div> -->
+							</div>
+						</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value=""/>
+								</div>
+							</div>
+						</td>
+						<td class="bd-lr tac more-position">
+							<a href="javascript:">更多</a>
+							<div class="tabel-search-area none">
+								<div class="tb-search-slide">
+									<div class="nui-form-cell nui-form-cell-adaptive search-slide-cell">
+										<div class="nui-form-cell-cnt form-cell-cnt">
+											<span></span>
+											<input type="text" class="nui-input search-slide-input" />		
+										</div>
+									</div>
+								
+										<div class="search-slide-tab-container">
+											<table class="search-slide-tab">
+												<thead>
+													<th>英文名称</th>
+													<th>中文名称</th>
+													<th>代码</th>
+													<th>国家英文</th>
+													<th>国家中文</th>
+												</thead>
+												<tbody>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+						</td>
+						<td class="bd-lr tac">
+							<input type="checkbox" disabled="disabled" class="j-checkbox"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="bd-lr">NINGBO</td>
+						<td class="english-name">CNNGB</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value="" />
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value="" />
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value="" />
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value="" />
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="nui-form-cell nui-form-cell-adaptive">
+								<div class="nui-form-cell-cnt">
+									<input type="text" class="nui-input" value=""/>
+								</div>
+							</div>
+						</td>
+						<td class="bd-lr tac more-position">
+							<a href="javascript:">更多</a>
+							<div class="tabel-search-area none">
+								<div class="tb-search-slide">
+									<div class="nui-form-cell nui-form-cell-adaptive search-slide-cell">
+										<div class="nui-form-cell-cnt form-cell-cnt">
+											<span></span>
+											<input type="text" class="nui-input search-slide-input" />		
+										</div>
+									</div>
+							
+									
+										<div class="search-slide-tab-container">
+											<table class="search-slide-tab">
+												<thead>
+													<th>英文名称</th>
+													<th>中文名称</th>
+													<th>代码</th>
+													<th>国家英文</th>
+													<th>国家中文</th>
+												</thead>
+												<tbody>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+													<tr>
+														<td>HAMBUR</td>
+														<td>汉堡</td>
+														<td>SVSSO</td>
+														<td>GERMANY</td>
+														<td>德国</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+						</td>
+						<td class="bd-lr tac">
+							<input type="checkbox" checked="checked" disabled="disabled" class="j-checkbox"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="result-footer result-footer-up bdn">
+				<div class="page">
+					<span class="pageinfo">
+						1-30条，共 <em class="pageinfo">383</em>
+						条
+					</span>
+					<a href="javascript:">下一页</a>
+					<a href="javascript:">尾页</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar pss"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+</body>
+<script>
+$(function(){
+	// 点击“更多”
+	$(".more-position a").click(function(){
+		var slide = $(this).parent().children('div.tabel-search-area');
+		var slide_other = $(this).parent().parent().siblings('tr').children('.more-position').children('div.tabel-search-area')
+		if(slide.hasClass('none')){	
+			slide.removeClass('none');
+			slide_other.addClass('none');
+			$(this).parent().addClass('zindex-up');
+			$(this).parent().parent().siblings('tr').children('.more-position').removeClass('zindex-up');
+		}else{
+			slide.addClass('none');
+			$(this).parent().removeClass('zindex-up');
+		}
+	})
+	// 点击“点击更多”
+	$('.j-more-link').click(function(){
+		var slide = $(this).parent().parent().parent().siblings('.more-position').children('div.tabel-search-area');
+		var zindex=$(this).parent().parent().parent().siblings('.more-position');
+		var slide_other = $(this).parent().parent().parent().parent().siblings('tr').children('.more-position').children('div.tabel-search-area');
+		if(slide.hasClass('none')){	
+			slide.removeClass('none');
+			slide_other.addClass('none');
+			zindex.addClass('zindex-up');
+			slide_other.removeClass('zindex-up');
+		}else{
+			slide.addClass('none');
+			zindex.removeClass('zindex-up');
+		}
+	})
+	var val_old = $('.j-checkbox').parent().siblings('.english-name').html();
+	$('.j-checkbox').click(function(){
+		// console.log($(this).prop("checked"));
+		
+		var val_new = $(this).parent().siblings('.bd-lr').html();
+		// console.log(val_old);
+		// console.log(val_new);
+		var check = $(this).prop("checked");
+		if(check == true){
+			$(this).parent().siblings('.english-name').html(val_new);
+		}
+		else{
+			$(this).parent().siblings('.english-name').html(val_old);
+		}
+	})
+})
+</script>
+</html>

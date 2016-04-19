@@ -1,0 +1,156 @@
+// ============================================
+// ============== 标签切换结构 =================
+// ============================================
+
+
+
+.gui-tab{
+	background: #fff;
+}
+
+.gui-tab-header{
+	&:extend(.clearfix all);
+	// height: 52px;
+	border-bottom: 1px solid @bd-color2;
+}
+
+.tab-title{
+	float: left;*display: inline;
+	width: 125px;height: 50px;line-height: 50px;
+	text-align: center;font-size: 16px;
+	color: @title-color;font-weight: bold;
+}
+
+.tab-title-icon{
+	margin-right: 10px;
+	color: #238ccd;font-size: 18px;
+}
+
+.tab-menu{
+	&:extend(.clearfix all);
+	float: left;*display: inline;
+}
+
+.tab-menu-cell{
+	float: left;*display: inline;
+	line-height: 50px;
+	// .border-top-radius(2px);
+	// .transition(all .4s ease 0s);
+	text-align: center;font-size: 14px;color: #333;
+}
+
+.tab-menu-link{
+	float: left;
+	width: 50px;height: 50px;
+	text-align: center;
+	color: @title-color;
+	&:hover{
+		// color: @title-color;
+		color: @normal-color;
+	}
+}
+
+.tab-menu-active{
+	margin-top: -1px;
+	border-top:2px solid @normal-color;
+	.tab-menu-link{
+		margin-bottom: -1px;
+		line-height: 48px;
+		background: #fff;color: @normal-color;
+		border-left: 1px solid #eee;border-right: 1px solid #eee;border-bottom: 1px solid #fff;
+		// font-weight: bold;
+	}
+}
+
+
+
+.gui-tab-slide{
+
+	.gui-tab-header{
+		border-bottom: none;border-top: 2px solid @normal-color;
+	}
+	.gui-tab-cnt{
+		min-height: 85px;
+	}
+}
+
+// 百分比等分宽度的tab结构
+.tab-menu-w100p{
+	// width: 100%;
+	display: block;float: none;
+	.tab-menu-cell{
+		width: 33.3%;
+		background: #f1f1f1;
+		font-size: 12px;
+	}
+	.tab-menu-link{
+		display: block;
+		width: 100%;height: 34px;line-height: 34px;
+	}
+	.tab-menu-active{
+		margin-top: 0;
+		border-top: none;
+		a{
+			border: none;
+			font-weight: bold;
+		}
+	}
+}
+
+.gui-tab-cnt{
+	padding: 15px;
+	background: #fff;
+}
+
+
+.gui-tab-pager{
+	float: right;*display: inline;
+	padding-top: 15px;padding-right: 15px;
+	span{
+		margin: 0 5px;
+	}
+}
+
+.tab-pager-cell{
+	color: #ccc;
+	&:hover{
+		color: #6c6c6c;
+	}
+}
+
+
+
+// 关注管理的tab结构
+.gui-tab-attention{
+	.gui-tab-header{
+		border: 1px solid @bd-color2;
+	}
+	.tab-menu-link{
+		width: auto;
+		padding: 0 20px;height: auto;
+		font-size: 12px;
+	}
+	.gui-tab-cnt{
+		padding: 15px 0;
+		background-color: @bg-color;
+	}
+}
+
+.tab-menu-drop{
+	position: absolute;
+	left: -1px;top: 49px;z-index: 300;
+	width: 100%;
+	border: 1px solid @bd-color2;
+	background-color: #fff;
+	.menu-drop-cell{
+		display: block;
+		padding: 0 20px;height: 40px;line-height: 40px;
+		text-align: left;font-size: 12px;
+		color: @default-fs-color;
+		&:hover{
+			background-color: #f2f2f2;
+			color: @normal-color;
+		}
+	}
+}
+

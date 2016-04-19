@@ -1,0 +1,79 @@
+//
+// 侧边弹出框
+// --------------------------------------------------
+
+.side-dialog{
+  position: fixed;z-index: 900;
+  top: 101px;right: 0;bottom: 0;
+  width: 820px;padding-top: 63px;
+  border-left: 1px solid #DFDFDF;
+  background-color: #F9F9F9;
+  box-shadow: -2px 0 3px rgba(0, 0, 0, 0.05);
+  text-align: left;
+
+  *{
+    box-sizing: border-box;
+  }
+}
+
+.side-dialog-show{
+  animation-name: fadeInRight;
+  // right: 0;
+}
+
+.side-dialog-header{
+  position: absolute;left: 0;top: 0;right: 0;bottom: 0;
+  padding:0 15px;height: 63px;
+  border-bottom: 1px solid #DEDEDE;
+  background-color: #F2F2F2;
+  text-align: left;
+  
+}
+
+.dialog-header-content{
+  height: 63px;line-height: 63px;
+  color: #333;font-size: 16px;
+  span{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+}
+
+
+
+
+.side-dialog-closed{
+  position: absolute;right: 20px;top: 50%;
+  margin-top: -10px;
+  i{
+    font-size: 20px;color: #999;  
+  }
+  &:hover{
+    text-decoration: none;
+    i{
+      color: #666;
+    }
+  }
+}
+
+.side-dialog-body{
+  height: 100%;
+  border-top: 1px solid #fff;
+}
+
+
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}

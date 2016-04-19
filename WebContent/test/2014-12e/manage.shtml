@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function() {
+			// 客服人员删除
+			// var $tagsdel = $('li.nui-tags-del');
+			var $add = $('a.j-add-tags');
+			var $tagsdel = $('<div class=\"nui-tags-del\"> <a class=\"close\" href=\"javascript:\">×</a> </div>');
+			var $inputTxt = $('.add-input-group').children('.nui-input').text();
+			var $newTagCell = $('<li class=\"nui-tags-cell\">+$inputTxt+$tagsdel+</li>');
+
+			// =================
+			var $tdInput = $('div.nui-form-cell');
+			var $tdInfo = $('.manage-table-info');
+
+			// =================	
+
+			// var $delbtn = $('.nui-tags-del');
+			// var $tagsbox = $('table.nui-manage-table'),
+			var $tagsbox = $('.nui-tags-new');
+				$tagCell = $tagsbox.find('li.nui-tags-cell');
+				$tagCell.append($tagsdel);
+
+			$tagsbox.delegate('.nui-tags-cell', 'mouseenter', function() {
+				$(this).children($('.nui-tags-del')).show();
+			 	$(this).addClass('hover').addClass('zindex-up');
+			}).delegate('.nui-tags-cell', 'mouseleave', function() {
+				$(this).children($('.nui-tags-del')).hide();
+			 	$(this).removeClass('hover').removeClass('zindex-up');
+			}).delegate('.nui-tags-del', 'click', function() {
+				$(this).parent().remove();
+			})
+			// .delegate('a.j-cancel', 'click', function() {
+			// 	// alert($(this).parent());
+			// 	$(this).parent().addClass('none');
+			// 	// $('.add-input-group').addClass('none');
+			// 	$(this).parent().parent().children($add).removeClass('none');
+			// }).delegate('a.j-new-tags', 'click', function() {
+			// 	$(this).parent().prepend($newTagCell);
+			// 	$(this).parent().addClass('none');
+			// 	$(this).parent().parent().children($add).removeClass('none');
+			// });
+
+			// $('.edit').click(function() {
+			// 	$tdInput.val($tdInfo.text());
+			// 	console.log($(this).parent().children($('div.nui-form-cell'));
+			// 	// $(this).parent().children($('div.nui-form-cell'));
+			// 	// $(this).parent().children($tdInfo).addClass('none');
+			// })
+			
+
+
+			$add.click(function() {
+				$(this).addClass('none');
+				$(this).parent().children('.add-input-group').removeClass('none');
+			});
+
+			// $('.nui-tab-menu').delegate('a.delete-disable', 'click', function() {
+			$('a.delete-disable').mouseenter(function() {
+				var offset = $(this).offset();
+				// console.log(offset);
+				$('div.nui-tips').css({
+					'left': offset.left,
+					'top': offset.top+21
+				});
+				$('div.nui-tips').removeClass('none');
+				return false;
+			}).mouseleave(function() {
+				$('div.nui-tips').addClass('none');
+			});;
+
+		})
+	</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+<div class="wrap two-column-wrap-nobd">
+	<div class="left-side">
+			<div class="left-slide-top-line"></div>
+			<ul class="left-side-menu mt50">
+				<li class="left-side-menu-categories">公共设置</li>
+				<li><a href="javascript:" class="left-side-menu-a"><i class="right">&#13726;</i>公司信息</a></li>
+				<li><a href="javascript:" class="left-side-menu-a" id="employee"><i class="right">&#13726;</i>部门/员工管理</a></li>
+				<li><a href="javascript:" class="left-side-menu-a"><i class="right">&#13726;</i>角色管理</a></li>
+				<li class="left-side-menu-categories">运价通</li>
+				<li><a href="javascript:" class="left-side-menu-a"><i class="right ">&#13726;</i>基础设置</a></li>
+				<li><a href="javascript:" class="left-side-menu-a"><i class="right ">&#13726;</i>客户注册</a></li>
+				<li><a href="javascript:" class="left-side-menu-a"><i class="right ">&#13726;</i>客户查询</a></li>
+				<!-- 判断该用户是否有多级运价权限 modify by 曹金彦,2014-3-29 -->
+
+				<li><a href="javascript:" class="left-side-menu-a"><i class="right ">&#13726;</i>多级运价</a></li>
+
+				<li><a href="javascript:" class="left-side-menu-a"><i class="right ">&#13726;</i>邀请体验</a></li>
+				<li><a href="javascript:" class="left-side-menu-a"><i class="right ">&#13726;</i>维护设置</a></li>
+				<li><a href="javascript:" class="left-side-menu-a active"><i class="right ">&#13726;</i>客户管理</a></li>
+			</ul>
+			<div class="left-slide-bottom-line"></div>
+	</div>
+	<div class="right-side">
+		<div class="main-title-has-bd">
+			<h1>客户管理</h1>
+		</div>
+		<div class="nui-tab">
+				<div class="nui-tab-menu mt20">
+					<ul>
+						<li class="nui-tab-menu-cell ml5 nui-tab-menu-active"><a class="nui-tab-menu-link" href="javascript:">企业标签</a></li>
+					</ul>
+				</div>
+				<div class="nui-tab-cnt">
+					<div class="nui-message">
+						<p class="nui-message-content">
+							<i class="nui-message-icon">&#x3573;</i>
+							<span class="nui-message-text">标签类别最多添加5类，每个标签类别中的标签最多添加10个</span>
+						</p>
+					</div>
+					<div class="nui-manage-area">
+						<table class="nui-manage-table">
+							<thead>
+								<tr>
+									<th class="fwb" width="200">标签类别</th>
+									<th class="fwb" width="500">标签名称</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<span class="manage-table-info">默认</span>
+									</td>
+									<td>
+										<ul class="nui-tags nui-tags-new">
+											<!-- <li class="nui-tags-del">
+												<a class="close" href="javascript:">×</a>
+											</li> -->
+											<li class="nui-tags-cell">
+												hhhh
+												<div class="nui-tags-del">
+													<a class="close" href="javascript:">×</a>
+												</div>
+											</li>
+											<li class="nui-tags-cell">hhhh</li>
+											<li class="nui-tags-cell">hhhh</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="cui-tags-add">
+												<div class="add-input-group none">
+													<div class="nui-form-cell w70">
+														<input type="text" class="nui-input" value="">
+													</div>
+													<a class="nui-btn nui-btn-primary j-new-tags" href="javascript:">确认</a>
+													<a class="nui-btn j-cancel" href="javascript:">取消</a>
+												</div>
+												<a href="javascript:" class="j-add-tags">添加</a>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="nui-form-cell w80 none">
+											<input type="text" class="nui-input " value="运价查询">
+										</div>
+										<span class="manage-table-info">运价查询</span>
+										<a href="javascript:" class="edit j-edit">编辑</a>
+										<a href="javascript:" class="delete j-delete">删除</a>
+									</td>
+									<td>
+										<ul class="nui-tags nui-tags-new">
+											<!-- <li class="nui-tags-del">
+												<a class="close" href="javascript:">×</a>
+											</li> -->
+											<li class="nui-tags-cell">
+												hhhh
+												<div class="nui-tags-del">
+													<a class="close" href="javascript:">×</a>
+												</div>
+											</li>
+											<li class="nui-tags-cell">hhhh</li>
+											<li class="nui-tags-cell">hhhh</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="cui-tags-add">
+												<div class="add-input-group none">
+													<div class="nui-form-cell w70">
+														<input type="text" class="nui-input" value="">
+													</div>
+													<a class="nui-btn nui-btn-primary j-new-tags" href="javascript:">确认</a>
+													<a class="nui-btn j-cancel" href="javascript:">取消</a>
+												</div>
+												<a href="javascript:" class="j-add-tags">添加</a>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="nui-form-cell none w80">
+											<input type="text" class="nui-input " value="运价查询">
+										</div>
+										<span class="manage-table-info">运价查询</span>
+										<a href="javascript:" class="edit j-edit">编辑</a>
+										<a href="javascript:" class="delete j-delete delete-disable">删除</a>
+									</td>
+									<td>
+										<ul class="nui-tags nui-tags-new">
+											<!-- <li class="nui-tags-del">
+												<a class="close" href="javascript:">×</a>
+											</li> -->
+											<li class="nui-tags-cell">
+												hhhh
+												<div class="nui-tags-del">
+													<a class="close" href="javascript:">×</a>
+												</div>
+											</li>
+											<li class="nui-tags-cell">hhhh</li>
+											<li class="nui-tags-cell">hhhh</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="nui-tags-cell">不要动我权限</li>
+											<li class="cui-tags-add">
+												<div class="add-input-group none">
+													<div class="nui-form-cell w70">
+														<input type="text" class="nui-input" value="">
+													</div>
+													<a class="nui-btn nui-btn-primary j-new-tags" href="javascript:">确认</a>
+													<a class="nui-btn j-cancel" href="javascript:">取消</a>
+												</div>
+												<a href="javascript:" class="j-add-tags">添加</a>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" class="manage-table-last">
+										<div class="nui-form-cell w180">
+											<input type="text" class="nui-input" id="remark">
+										</div>
+										<a class="nui-btn nui-btn-green" href="javascript:">添加</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+		</div>
+	</div>
+	
+</div>
+<!--#include file="footer.html"-->
+<div class="nui-tips">
+	<div class="nui-tips-arrow top top-left">
+		◆ 
+		<em>◆</em>
+	</div>
+	<p>
+		<i>&#x3573;</i>
+		该标签类别下有标签，无法删除！
+	</p>
+</div>
+</body>
+</html>

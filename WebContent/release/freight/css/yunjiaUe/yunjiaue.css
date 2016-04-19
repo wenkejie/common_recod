@@ -1,0 +1,169 @@
+@charset "utf-8";
+/*蒙板*/
+
+h2{margin: 0;padding: 0;}
+html,body{height: 100%;}
+.shadow-mask{
+  position: fixed;left: 0;top: 0;_position: absolute;z-index: 900;
+  background: #000;width: 100%;height: 100%;_height:1200px;opacity: 0.35;filter:alpha(opacity=35); 
+}
+img{border: none;}
+
+.shadow-mask-cnt{
+  position: absolute;left: 50%;top: 0;z-index: 980;
+  width: 980px;height: 600px;margin: 0 0 0 -490px
+}
+
+.shadow-open-win{
+  width: 500px;
+  position: absolute;left: 50%;top:50%;z-index: 1000;margin-left: -250px;
+  /*background: url(shadow-openwin.png) no-repeat;width: 486px;height: 188px;*/
+  background: #fff;border-radius: 3px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.2)
+}
+
+.open-win-top{
+	position: relative;_zoom:1;
+}
+.top-logo{
+	position: absolute;left: 0;top: 19px;
+	background: url(../../images/yunjiaUe/logo.png) no-repeat;width: 76px;height: 73px;
+}
+.top-text{
+	/*width: 100%;*/
+	margin-left: 85px;
+}
+
+.top-text-cnt{
+	padding: 30px 33px 30px 0;
+	text-align: left;
+}
+
+.top-text h2{
+  	font-size: 16px;
+}
+
+.top-text h1{
+    padding-bottom: 10px;
+    font-size: 20px;font-weight: 700;
+}
+
+.top-text p{
+	font-size: 14px;margin-bottom: 15px;
+}
+.top-text em{
+	color: #888888;
+}
+/*
+.shadow-open-win p{
+  margin: 27px 33px 53px 87px;width: 365px;height: 53px;
+  font-size: 14px;text-align: left;
+}*/
+
+.open-win-bottom{
+	height: 77px;background: #F9F9F9;border-top: 1px solid #EEEEEE;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.return{
+	float: left;
+    margin-left: 15px;
+    margin-top: 28px;
+}
+
+.mask-btn,.mask-btn-2,.tiyan-btn,.mask-btn-3,.shadow-goto,.shadow-btn-light,.shadow-btn-light-2,.shadow-btn-light-3,.shadow-btn-light-4,.shadow-btn-light-5,.shadow-btn-light-6,.shadow-goto-2{
+	background: url(../../images/yunjiaUe/item-ue.png);
+}
+
+.mask-btn,.mask-btn-2,.mask-btn-3,.tiyan-btn{
+  float: left;display: inline;
+  width: 100px;height: 35px;margin-top: 21px;background-position: -188px -37px;
+}
+.mask-btn{
+	margin-left: 15px;
+}
+.mask-btn-2{
+	margin-left: 80px;
+	background-position: -746px -37px;
+}
+.mask-btn-3{
+  margin-left: 80px;
+  background-position: -684px -199px;
+}
+.tiyan-btn{
+  background-position: -684px -246px;margin-left: 15px;
+}
+.shadow-goto,.shadow-goto-2,.shadow-goto-3{
+ position: absolute;z-index: 980;background: url(../../images/yunjiaUe/item-ue.png);
+  width: 107px;height: 115px;background-position: -193px -117px;
+}
+.shadow-goto{
+	left: 125px;top: 280px;
+}
+.shadow-goto-2{
+right: 100px;top: 446px;
+background-position: -388px -120px;
+}
+.shadow-goto-3{
+ left: 525px;top: 0;
+ background-position: -79px -281px;
+}
+
+
+.shadow-btn-light,.shadow-btn-light-2,.shadow-btn-light-3,.shadow-btn-light-4,.shadow-btn-light-5,.shadow-btn-light-6{
+  position: absolute;left: 70px;top: 183px;z-index: 980;*left:60px;
+  width: 111px;height: 73px;background-position: -24px -19px;
+}
+
+.shadow-btn-light-2{
+    left: -150px;
+    top: 181px;
+	background-position: -555px -21px;
+}
+.shadow-btn-light-3{
+	left: 260px;*left: 240px;
+    top: 180px;
+	background-position: -361px -17px;width: 137px;height: 76px;
+}
+.shadow-btn-light-4{
+	left: -114px;*left:-105px;
+    top: 265px;*top:290px;
+  	background-position: -36px -108px;
+}
+.shadow-btn-light-5{
+  	background-position: -664px -101px;
+    top: 211px;left: 60px;*left: 65px;
+}
+
+.shadow-btn-light-6{
+    background-position: -677px -285px;
+   left: 460px;top: -226px;
+}
+
+.to-place-light{
+   background: #fff;position: fixed;right: 24px;top: 384px;
+   width: 50px;height: 50px;
+   z-index: 1300;
+}
+.to-place{
+  
+}
+.top-menu-cell-light{
+  position: absolute;z-index: 980;top: -250px;left: 360px;
+  background: url(../../images/yunjiaUe/item-ue.png);
+  width: 130px;height: 136px;background-position: -353px -288px;
+}
+
+#header{z-index: 980;}
+
+.main-nav-drop-down{text-align: left;box-shadow: 2px 2px 2px rgba(0,0,0,.2)}
+.main-nav-drop-down-link{cursor: text;}
+.main-nav-drop-down-link:hover{background: #fff;color: #666}
+.main-nav-drop-down-link-active:hover{color: #fff;background:#FF7F00;}
+.guide-link{vertical-align: top;*vertical-align: middle;color: #06c;}
+.guide-link:hover{text-decoration: underline;}
+/*common*/
+.text-orange{
+  color: #FF7F00
+}

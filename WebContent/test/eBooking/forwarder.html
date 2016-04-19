@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>设置自动提交条件</title>
+	
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script src="../../release/freight/js/ebooking/j-placeHolder.js"></script>
+	<style type="text/css">
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { margin:0; padding:0;  }
+
+		body,button,input,select,textarea{ font:12px/1.5 tahoma,arial,"Hiragino Sans GB","Microsoft Yahei",'宋体' }
+		input,select,textarea{ font-size:100%; vertical-align:middle; }
+		input,button,select,textarea{outline:none}
+		th{ text-align:inherit; }
+		table{ border-collapse:collapse;border-spacing:0; }
+		.clearfix {
+		  *zoom: 1;
+		}
+
+		.clearfix:before{
+			display: table;
+		    content: "";
+		    line-height: 0;
+		}
+
+		.clearfix:after{
+			display: table;
+		    content: "";
+		    line-height: 0;
+			clear: both;
+		}
+
+		.port-box-cell{
+		 	float:left;position: relative;display: inline!important;_width:80px;
+		 	margin-right: 5px;margin-bottom: 5px;border-radius: 3px;background-color: #f5f5f5;padding-left:5px;
+		 	border: 1px solid #ccc;
+		}
+
+		.port-box-cnt{
+			height: 22px;margin-right: 25px;
+			white-space:nowrap;overflow:hidden;text-overflow:ellipsis; -o-text-overflow:ellipsis;
+			line-height: 20px;color: #666666;
+		}
+
+		.port-box-del{
+			position: absolute;right: 0;top: 0;
+			width: 15px;height: 22px;margin-left: 5px;padding: 0 3px;
+			line-height: 20px;text-align: center;color: #999;
+			text-decoration: none;
+		}
+
+		.port-box-del:hover{
+			color: #000;background: #ddd;
+			text-decoration: none;
+		}
+		
+		.fui-table{
+			table-layout: fixed;
+			width: 100%;
+			border: 1px solid #ccc;
+		}
+
+		.fui-table th{
+			padding:10px 5px;
+			background: #eee;border: 1px solid #ccc;
+			text-align: center;
+		}
+		.fui-table td{
+			padding:10px 5px;
+			border: 1px solid #ccc;
+			text-align: center;
+		}
+
+		.fui-table .td-condition{
+			padding-bottom: 5px;
+		}
+
+		.fui-table select{
+			height: 24px;width: 78px;
+			_margin-right: 5px;
+			vertical-align: middle;
+		}
+
+		.fui-table .odd-line{
+			background: #f8f8f8;
+		}
+
+		.fui-select-add{
+			display: inline-block;*display: inline;*zoom:1;
+			height: 22px;line-height: 22px;padding: 0 5px;
+			background: #eee;border: 1px solid #ccc;vertical-align: middle;
+			text-decoration: none;color: #666;
+		}
+	</style>
+</head>
+<body>
+	<div class="fui-table-area">
+		<table class="fui-table">
+			<thead>
+				<th width="30">序号</th>
+				<th width="150">作业名称</th>
+				<th width="150">添加发送条件</th>
+				<th>发送条件（下面的已选择的字段必须全部填写才能触发自动发送）</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>舱位确认</td>
+					<td>
+						<select>
+							<option value ="请选择">请选择</option>
+							<option value ="预配船期">预配船期</option>
+							<option value="进港港区">进港港区</option>
+						</select>
+						<a class="fui-select-add" href="javascript:">添加</a>
+					</td>
+					<td class="td-condition">
+						<div class="port-box-cell">
+							<div class="port-box-cnt">船名</div>
+							<a href="javascript:" class="port-box-del">×</a>
+						</div>
+						<div class="port-box-cell">
+							<div class="port-box-cnt">航次</div>
+							<a href="javascript:" class="port-box-del">×</a>
+						</div>
+						<div class="port-box-cell">
+							<div class="port-box-cnt">主单号</div>
+							<a href="javascript:" class="port-box-del">×</a>
+						</div>
+					</td>
+				</tr>
+				<tr class="odd-line">
+					<td>2</td>
+					<td>进仓通知（ps.拼）</td>
+					<td>
+						<select>
+							<option selected="" value="请选择">请选择</option>
+							<option value="报关单号">报关单号</option>
+							<option value="报关行">报关行</option>
+							<option value="船名">船名</option>
+							<option value="航次">航次</option>
+							<option value="主单号">主单号</option>
+							<option value="预配船期">预配船期</option>
+						</select>
+						<a class="fui-select-add" href="javascript:">添加</a>
+					</td>
+					<td class="td-condition">
+						<div class="port-box-cell">
+							<div class="port-box-cnt">仓库名称</div>
+							<a href="javascript:" class="port-box-del">×</a>
+						</div>
+						<div class="port-box-cell">
+							<div class="port-box-cnt">进仓编号</div>
+							<a href="javascript:" class="port-box-del">×</a>
+						</div>
+						<div class="port-box-cell">
+							<div class="port-box-cnt">进仓时间</div>
+							<a href="javascript:" class="port-box-del">×</a>
+						</div>
+
+					</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>货已装箱</td>
+					<td>
+						<select>
+							<option value ="请选择">请选择</option>
+						</select>
+						<a class="fui-select-add" href="javascript:">添加</a>
+					</td>
+					<td class="td-condition">
+						<div class="port-box-cell">
+							<div class="port-box-cnt">装箱日期</div>
+							<a href="javascript:" class="port-box-del">×</a>
+						</div>
+						<div class="port-box-cell">
+							<div class="port-box-cnt">集装箱信息（箱号|封号|件毛体)</div>
+							<a href="javascript:" class="port-box-del">×</a>
+						</div>
+					</td>
+				</tr>
+				<tr class="odd-line">
+					<td>4</td>
+					<td>海关舱单已签发</td>
+					<td>
+						
+					</td>
+					<td class="td-condition"></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>报关完毕</td>
+					<td>
+						<select>
+							<option value ="请选择">请选择</option>
+							<option value ="预配船期">预配船期</option>
+							<option value="进港港区">进港港区</option>
+						</select>
+						<a class="fui-select-add" href="javascript:">添加</a>
+					</td>
+					<td class="td-condition"></td>
+				</tr>
+				<tr class="odd-line">
+					<td>6</td>
+					<td>船已离港</td>
+					<td>
+
+					</td>
+					<td class="td-condition"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

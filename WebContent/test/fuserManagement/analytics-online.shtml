@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="../../release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../src/js/highcharts.src.js"></script>
+	<script type="text/javascript" src="../../src/js/frame_common.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+	//function creat_charts_data(n){
+	//	var data = [];
+	//	n = !n ? 10 : n;
+	//	for(var i=0;i<n;i++){
+	//		var _obj = {y: 1 + Math.round(Math.random() * 5)};
+	//		data.push(_obj);
+	//	}
+	//	return data;
+	//}
+	
+
+	$(function() {
+		
+		// 新老访客分布
+		$.post("../../test/fuserManagement/data/analytics_new_old_data.js","",function(data){
+			data = eval(data);
+
+			$('#container_new_old').highcharts({
+	            chart: {
+	            },
+	            // 主标题
+		        title: {
+					//text : "新老访客分布"
+		        	text : ""
+				},
+				// 副标题
+				subtitle: {
+					//text : "航线"
+				},
+	            tooltip: {
+					pointFormat: '百分比: <b>{point.percentage:.1f}%</b>'
+					//pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	                //formatter: function() {
+	                //this.percentage this.y
+	            	//	return '<b>' + this.point.name + '</b>: ' + this.y + ' 次';  
+	                    //return '<b>'+ this.series.name +'</b><br/>'+
+	                    //    this.x +': '+ this.y+"次";
+	                //}
+	            },
+	            plotOptions: {
+	                pie: {
+	                   // allowPointSelect: true,
+	                    //cursor: 'pointer',
+	                    dataLabels: {
+	                        enabled: false
+	                    	//color: '#000000',
+	                    	//connectorColor: '#000000',
+	                        //format: '<b>{point.name}</b>: {y} 次'
+	                    }
+	                }
+	            },
+	            series: [{ 
+		            //type: 'bar'
+		            //type: 'column',   
+	            	type: 'pie',
+	            	data: data,
+	                name : ""
+	            }],
+	         	// 版权信息
+	            credits: {
+		            enable: false
+		            ,text:""
+		        }
+	        });
+		},"text");
+
+		// 统计概况
+		$.post("../../test/fuserManagement/data/analy_online.js","",function(data){
+			data = eval(data)();
+			//var start,pointStart,pointInterval,_x_formatter,_tooltip_msg;
+			//start = new Date();
+			//var	pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate(),0,59);
+			//var	pointInterval = 1 * 3600 * 1000;
+			var	_x_formatter = "%H:%M";
+			var	_tooltip_msg = function(x,y){
+					var _prev_date = x - 1*60*1000;
+					var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+			    		Highcharts.dateFormat('-%H:%M', x);
+					return  '<b>' +_msg + '</b><br/>在线人数：'+ y +''
+				};
+				
+			 $('#container_analytics').highcharts({
+			        chart: {
+			        },
+			        // 主标题
+			        title: {
+						text : ""
+					},
+					// 副标题
+					subtitle: {
+						//text : "查询公司详细",
+						//x : 20
+					},
+					// x轴选项
+			        xAxis: {
+							type: 'datetime',
+			            	labels: {
+	                			formatter: function() {
+	                    			return Highcharts.dateFormat(_x_formatter, this.value);                  
+	                			}        
+	            			}
+			        },
+			    	 // y轴选项
+			        yAxis: {
+		                title: {
+		                    text: ''
+		                }
+		            },
+		            // 数据列选项
+			        series: data,
+			        // 图表对话框
+			        legend: {
+		            	//align: 'center',
+		                //verticalAlign: 'top',
+		                //floating:true,
+		                //x: 0,
+		                //y: 100,
+			        	//layout: 'vertical',
+		                //align: 'right',
+		                //verticalAlign: 'middle',
+		                borderWidth: 0
+				    },
+				    // 数据点提示框
+				    tooltip: {
+				    	formatter: function() {
+				    	//var _prev_date = this.x - 59*60*1000;
+				    	//var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+				    	//	Highcharts.dateFormat('-%H:%M', this.x);
+		               	// 	return _msg +  '<br/><b>访问次数：'+ this.y +'</b>';
+		               		return _tooltip_msg(this.x,this.y);
+		            	},
+		            	// 穿越线  point之间
+				    	crosshairs: true
+				    	//,
+				    	// 是否共享同一个tip框 shared:默认为false
+	                	//shared: true
+					},
+					plotOptions: {
+			            //series: {
+			                //cursor: 'pointer',
+			                //point: {
+			                //    events: {
+			                //        click: function() {
+			                            //alert ('Category: '+ this.category +', value: '+ this.y);
+			                        	//location.href = this.options.url;
+			                        	//console.log(this.options);
+			                        	//console.log(this.series);
+			                        	//location.href = this.options.url;
+			                //        }
+			                //    }
+			                //}
+							//,dashStyle: 'longdash'
+			            //}
+			        },
+			        // 版权信息
+		            credits: {
+			            enable: false,
+			            text: ""
+			        }
+			    });
+		},"text");
+	})
+</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap-nobd">
+
+		
+		<div class="left-side"><div class="left-slide-top-line"></div>
+				<ul class="left-side-menu mt50">
+					<li><a href="analytics.shtml" class="left-side-menu-a"><i class="fs14">&#x35ab;</i> 统计概况<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">流量分析：</li>
+					<li><a href="analytics-trend.shtml" class="left-side-menu-a">趋势分析<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-online.shtml" class="left-side-menu-a active">当前在线<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-detail.shtml" class="left-side-menu-a">访问明细<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">访问分析：</li>
+					<li><a href="analytics-activity.shtml" class="left-side-menu-a">活跃度<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-pql.shtml" class="left-side-menu-a">查询分析<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">会员分析：</li>
+					<li><a href="analytics-activity-new.shtml" class="left-side-menu-a">活跃度分析<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-loss-rate.shtml" class="left-side-menu-a">流失率<i class="right ">&#13726</i></a></li>
+				</ul>
+				<div class="left-slide-bottom-line"></div>
+			</div>
+		<div class="right-side analytics-con">
+			<div class="main-title">
+				<h1>当前在线<small>（2013-11-28  13：11至13:25）</small></h1>
+				
+			</div>
+
+			<div class="analytics-realtime-panel">
+				<dl class="intime-list">
+					<dt>最近15分钟</dt>
+					<dd>查询次数：<span>588</span></dd>
+					<dd class="second">新用户：<span>1386</span></dd>
+					<dd class="third">老用户：<span>376</span></dd>
+				</dl>
+				<div class="chart-cnt" id="container_new_old">
+					
+				</div>
+				<div class="chart-data">
+					<p class="text-info mb10">新用户：78.7%（1386）</p>
+					<p class="text-stress">老用户：21.3%（376）</p>
+				</div>
+
+				<div class="now-time-info">
+					<p>最近1分钟（2013-11-28 13:25）</p>
+					<p>您网站上有<span>179</span>独立访客</p>
+					<p class="info">今日最高：688（发送时间 13：20）</p>
+				</div>
+			</div>
+
+		<div class="grid-box"><h2 class="dpib mr20">最近15分钟趋势图</h2>
+		</div>
+		<div id="container_analytics"></div>
+		
+		<div class="adv-table">
+			<ul class="adv-table-tab">
+				<li> 查看：</li>
+				<li><a href="javascript:" class="active">当前访问</a></li>
+				<!-- <li><a href="javascript:">按用户显示</a></li> -->
+			</ul>
+			<div class="adv-table-fn-area">
+				<span class="nui-radio mt3"><input type="radio" name="" id="1" checked="checked" /><label for="1" >按用户显示</label></span>
+				
+				<div class="right">
+					<div class="nui-form-cell w150">
+							<input type="text"  class="nui-input" />
+					</div>
+					<button class="nui-btn">搜索</button><button class="nui-btn nui-btn-link">高级筛选 <span class="fms">︾</span></button>
+				</div>
+			</div>
+				<table>
+				<thead>
+					<tr>
+						<th>最近浏览时间</th>
+						<th>用户名称</th>
+						<th>查询港口</th>
+						<th>IP</th>
+						<th>地区</th>
+						<th>企业名</th>
+					</tr>
+				</thead>
+					<tbody>
+						<tr>
+							<td>13:24:22</td>
+							<td>李光耀</td>
+							<td>NINGBO-DENMARK</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜</td>
+						</tr>
+						<tr>
+							<td>13:24:11</td>
+							<td>李光耀</td>
+							<td>BEIJING-ABERDEEN</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜</td>
+						</tr>
+						<tr>
+							<td>13:23:58</td>
+							<td>销售小王</td>
+							<td>SHANGHAI-DENMARK</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>奥林网络科技有限公司</td>
+						</tr>
+						<tr>
+							<td>13:23:45</td>
+							<td>商务小陈</td>
+							<td>SHENZHEN-EMIRATES</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>奥林网络科技有限公司</td>
+						</tr>
+						
+						<tr>
+							<td>13:23:44</td>
+							<td>客服小丽</td>
+							<td>HENZHEN-MEXICO</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜国际物流公司</td>
+						</tr>
+						<tr>
+							<td>13:23:44</td>
+							<td>客服小李</td>
+							<td>HENZHEN-ITALY</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜国际物流公司</td>
+						</tr>
+						<tr>
+							<td>13:23:32</td>
+							<td>销售小陈</td>
+							<td>NINGBO-ITALY</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>奥林网络科技有限公司</td>
+						</tr>
+						<tr>
+							<td>13:23:01</td>
+							<td>掌柜小侯</td>
+							<td>SHANGHAI-FRANCE</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>奥林网络科技有限公司</td>
+						</tr>
+						<tr>
+							<td>13:22:58</td>
+							<td>掌柜小侯</td>
+							<td>NINGBO-COAST</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜</td>
+						</tr>
+						<tr>
+							<td>13:22:55</td>
+							<td>销售小陈</td>
+							<td>SHENGZHENG-COAST</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜国际物流公司</td>
+						</tr>
+						<tr>
+							<td>13:22:52</td>
+							<td>小王</td>
+							<td>NINGBO-COAST</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜</td>
+						</tr>
+						<tr>
+							<td>13:22:45</td>
+							<td>李光耀</td>
+							<td>SHANGHAI-COAST</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜国际物流公司</td>
+						</tr>
+						<tr>
+							<td>13:22:30</td>
+							<td>过路人</td>
+							<td>BEIJING-EMIRATES</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜</td>
+						</tr>
+						<tr>
+							<td>13:22:12</td>
+							<td>销售小王</td>
+							<td>QINGDAO-EMIRATES</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜国际物流公司</td>
+						</tr>
+						<tr>
+							<td>13:22:00</td>
+							<td>商务小陈</td>
+							<td>QINGDAO-EMIRATES</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜国际物流公司</td>
+						</tr>
+						<tr>
+							<td>13:21:55</td>
+							<td>客服小丽</td>
+							<td>SHANGHAI-EMIRATES</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜</td>
+						</tr>
+						<tr>
+							<td>13:21:51</td>
+							<td>商务小陈</td>
+							<td>QINGDAO-EMIRATES</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜国际物流公司</td>
+						</tr>
+						<tr>
+							<td>13:21:45</td>
+							<td>销售小陈</td>
+							<td>BEIJING-EMIRATES</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜</td>
+						</tr>
+						<tr>
+							<td>13:21:39</td>
+							<td>销售小陈</td>
+							<td>BEIJING-SALVADOR</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜国际物流公司</td>
+						</tr>
+						<tr>
+							<td>13:21:35</td>
+							<td>小王</td>
+							<td>BEIJING-SALVADOR</td>
+							<td>192.168.1.1</td>
+							<td>浙江宁波</td>
+							<td>大掌柜</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="adv-table-footer">
+					<label for="">每页显示：</label><select name="" id="">
+						<option value="">20</option>
+						<option value="">50</option>
+						<option value="">100</option>
+					</select>
+
+					<div class="page">
+						<span>上一页</span>
+						<a href="javascript:" class="active">1</a>
+						<a href="javascript:">2</a>
+						<a href="javascript:">3</a>
+						<a href="javascript:">4</a>
+						<a href="javascript:">5</a>
+						<span>…</span>
+						<a href="javascript:">25</a>
+						<a href="javascript:">下一页</a>
+						
+
+						到第 <input type="text" class="w30 h20" /> 页 <button class="nui-btn nui-btn-20">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+	</div>
+	<!--#include file="footer.html"-->
+</body>
+</html>

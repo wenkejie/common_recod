@@ -1,0 +1,1590 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>新客户管理</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+	<!-- 自己的样式要加在引入样式的后面 -->
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	<div class="wrap main-wrap">
+		<div class="search-area" id="j-searchArea">
+
+			<div class="title-info">
+				<div class="right mt5"> <i>&#13680</i>
+					<a href="#">已删除账号</a>
+				</div>
+				<h2>账号统计信息</h2> <strong >客户账号：</strong>
+				已购买
+				<span class="text-warning fwb">2510</span>
+				个 | 剩余
+				<span  class="text-warning fwb">500</span>
+				个
+		</div>
+		<div class="search-area-grid">
+			<div class="search-area-line">
+				<label for="username"  class="nui-label">姓名：</label>
+				<div class="nui-form-cell w100  mr20">
+					<input type="text" id="username" class="nui-input" />
+				</div>
+				<label for="companyname"  class="nui-label">公司名称：</label>
+				<div class="nui-form-cell w200  mr20">
+					<input type="text" id="companyname"  class="nui-input" onclick="changeCompany(this)"/>
+				</div>
+				<label for="mobile" class="nui-label">用户名：</label>
+				<div class="nui-form-cell w100  mr10">
+					<input type="text" id="mobile"  class="nui-input"/>
+				</div>
+				<span id="j-toggle">
+					<a class="nui-btn nui-btn-primary " onclick="searchData()">搜 索</a>
+					<a class="nui-btn" id="j-advSearchBtn">高 级 搜 索</a>
+				</span>
+			</div>
+			<div class="search-area-line search-adv-area" >
+				<div class="form-line">
+					<div class="form-line-left w500 dpib">
+						<label for="typeoftime" class="nui-label">日期类型：</label>
+						<select name="" id="" class="nui-native-select w100">
+							<option value="">注册日期</option>
+							<option value="">审批日期</option>
+						</select>
+						<div class="nui-form-cell">
+							<input type="text" id="typeoftime-fir" class="nui-input w80" onfocus="$(this).datepicker();" />
+						</div>
+						<!-- 调用了日期控件 -->
+						<span>-</span>
+						<div class="nui-form-cell ml1">
+							<input type="text" id="typeoftime-sec" class="nui-input w80" onfocus="$(this).datepicker();"/>
+						</div>
+
+					</div>
+					<div class="form-line-right dpib">
+						<label for="typeoftime" class="nui-label">关键词：</label>
+						<select name="" id="" class="nui-native-select w100">
+							<option value="">请选择</option>
+							<option value="">用户电话</option>
+							<option value="">用户传真</option>
+							<option value="">用户邮箱</option>
+							<option value="">企业备注名</option>
+							<option value="">省份</option>
+							<option value="">城市</option>
+						</select>
+						<div class="nui-form-cell w185">
+							<input type="text" id="typeoftime" class="nui-input"/>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="form-line">
+					<div class="form-line-left w500 dpib">
+						<label for="typeoftime" class="nui-label">服务选择：</label>
+						<label for="fcl" class="nui-checkbox">
+							<input type="checkbox" name="" id="fcl" />
+							整箱
+						</label>
+						<label for="lcl"  class="nui-checkbox">
+							<input type="checkbox" name="" id="lcl" />
+							拼箱
+						</label>
+						<label for="air"  class="nui-checkbox">
+							<input type="checkbox" name="" id="air" />
+							空运
+						</label>
+
+					</div>
+					<div class="form-line-right dpib">
+						<label for="typeoftime" class="nui-label mr20">登录控制：</label>
+						<label for="" class="nui-radio">
+							<input type="radio" name="control" checked="checked"/>
+							全部
+						</label>
+						<label for="" class="nui-radio">
+							<input type="radio" name="control"/>
+							启用
+						</label>
+						<label for="" class="nui-radio">
+							<input type="radio" name="control"/>
+							未启用
+						</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="search-area-btn-area">
+			<a class="nui-btn nui-btn-primary w80" id="j-searchBtn">搜 索</a>
+			<a class="nui-btn " id="j-backBtn">
+				返回普通搜索 <i class="fs14">&#x3437;</i>
+			</a>
+		</div>
+
+	</div>
+	<div class="search-area-blank none">
+		<div class="search-area-blank-download">
+			<a href="javascript:" class="blank-download-fir">
+				<s class="icon icon-download"></s>
+				<span>下载查询结果：EXCEL</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="result-area">
+	<div class="result-filter">
+		<a href="javascript:" class="result-filter-btn active">按用户显示</a>
+		<a href="list_company.shtml" class="result-filter-btn">按公司显示</a>
+		<a href="list_group.shtml" class="result-filter-btn">按群显示</a>
+
+	</div>
+	<div class="result-fn-area">
+		<div class="left">
+			<div class="result-fn-area-port mr5">
+				<a class="nui-btn pr5"> <em>批量审批</em>
+					<i class="icon-down-arrow">&#x3438;</i>
+				</a>
+				<div class="nui-drop-list none ">
+					<ul class="nui-drop-list-choose oneline">
+						<li>
+							<a href="javascript:">批量审批</a>
+						</li>
+						<li>
+							<a href="javascript:">批量拒绝</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="result-fn-area-port">
+				<a class="nui-btn pr5"> <em>批量操作</em>
+					<i class="icon-down-arrow">&#x3438;</i>
+				</a>
+				<div class="nui-drop-list none">
+					<ul class="nui-drop-list-choose oneline">
+						<li>
+							<a href="javascript:">访问权限设置</a>
+						</li>
+						<li>
+							<a href="javascript:">多级运价设置</a>
+						</li>
+						<li>
+							<a href="javascript:">删除用户账号</a>
+						</li>
+						<li>
+							<a href="javascript:">启用登录控制</a>
+						</li>
+						<li>
+							<a href="javascript:">取消登录控制</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="result-fn-area-port right">
+			<a class="nui-btn mr0 pr5">
+				<em>所有账号</em>
+				<i class="icon-down-arrow">&#x3438;</i>
+			</a>
+			<div class="nui-drop-list nui-drop-list-replace none">
+				<ul class="nui-drop-list-choose oneline">
+					<li>
+						<a href="javascript:" status="" onclick="changeStatus(this)">所有账号</a>
+					</li>
+					<li>
+						<a href="javascript:" status="0" onclick="changeStatus(this)">待审批账号</a>
+					</li>
+					<li>
+						<a href="javascript:" status="1" onclick="changeStatus(this)">正式账号</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="result-fn-area-port right">
+			<label class="result-fn-area-port-label mr10">状态筛选：</label>
+		</div>
+	</div>
+	<div class="result-table-area">
+		<table class="result-table">
+			<thead>
+				<tr>
+					<th class="checkbox">
+						<input id="jselAll" type="checkbox" name="" id="" title="选中/取消选中" />
+					</th>
+					<th class="name"><a class="sequence-btn" href="javascript:"><span>姓名 | 用户名</span><span class="sequence-icon"><i class="up-icon">&#xe61c;</i><i class="down-icon">&#xe61d;</i></span></a></th>
+					<th>手机 | 邮箱</th>
+					<th class="company">
+						企业名称
+						<a href="javascript:" id="j-iconChange" class="icon icon-com"></a>
+						| 群
+						<a href="javascript:" class="icon icon-com"></a>
+					</th>
+					<th>地区 | 推荐人</th>
+					<th>状态 | 上次登录时间</th>
+					<th class="action">操作</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						<i class="text-warning fs14">&#xe623;</i>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售1部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-warning">待审批</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a href="javascript:openWin();"  class="active accepted">
+										通过审批
+										<s class="icon-arrow-white"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();">拒绝</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a class="j-slideControl" href="javascript:openWin();">详情</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="split">
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p  class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售2部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-success">审批通过</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a  class="j-slideControl" href="javascript:" class=" first">
+										详情
+										<s class="icon-arrow-blue"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售1部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-warning">待审批</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a href="javascript:openWin();"  class="active accepted">
+										通过审批
+										<s class="icon-arrow-white"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();">拒绝</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a class="j-slideControl" href="javascript:openWin();">详情</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="split">
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p  class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售2部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-success">审批通过</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a href="javascript:" class=" first">
+										详情
+										<s class="icon-arrow-blue"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售1部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-warning">待审批</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a href="javascript:openWin();"  class="active accepted">
+										通过审批
+										<s class="icon-arrow-white"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();">拒绝</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a class="j-slideControl" href="javascript:openWin();">详情</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="split">
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p  class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售2部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-success">审批通过</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a href="javascript:" class=" first">
+										详情
+										<s class="icon-arrow-blue"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售1部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-warning">待审批</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a href="javascript:openWin();"  class="active accepted">
+										通过审批
+										<s class="icon-arrow-white"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();">拒绝</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a class="j-slideControl" href="javascript:openWin();">详情</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="split">
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p  class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售2部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-success">审批通过</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a href="javascript:" class=" first">
+										详情
+										<s class="icon-arrow-blue"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售1部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-warning">待审批</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a href="javascript:openWin();"  class="active accepted">
+										通过审批
+										<s class="icon-arrow-white"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();">拒绝</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a class="j-slideControl" href="javascript:openWin();">详情</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="split">
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p  class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售2部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-success">审批通过</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a href="javascript:" class=" first">
+										详情
+										<s class="icon-arrow-blue"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售1部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-warning">待审批</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a href="javascript:openWin();"  class="active accepted">
+										通过审批
+										<s class="icon-arrow-white"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();">拒绝</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a class="j-slideControl" href="javascript:openWin();">详情</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:openWin();" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="split">
+					<td class="checkbox">
+						<input type="checkbox" name="" id="" />
+					</td>
+					<td>
+						李光耀
+						<p class="sub-info">
+							<span class="sub-info-tag">用户名：</span>
+							20036dddddddddddddddddddddddd55
+						</p>
+					</td>
+					<td>
+						13958201888
+						<p  class="sub-info">
+							<a href="mailto:sldfj@lsd.com">askdfj@kaiyuancn.com</a>
+						</p>
+					</td>
+					<td>
+						宁波开源国际物流有限公司
+						<a href="javascript:" class="icon icon-detail-arrow"></a>
+						<p class="sub-info">开源销售2部群</p>
+					</td>
+					<td>
+						雅戈尔卡发2部
+						<p class="sub-info">
+							<span class="sub-info-tag">创建人：</span>
+							李光耀
+						</p>
+					</td>
+					<td>
+						<p class="text-success">审批通过</p>
+						<p class="sub-info">2013-12-12</p>
+					</td>
+					<td>
+						<div class="action-cnt">
+							<ul class="slide-down-menu">
+								<li>
+									<a href="javascript:" class=" first">
+										详情
+										<s class="icon-arrow-blue"></s>
+									</a>
+								</li>
+								<li class="slide-down-menu-li">
+									<a href="javascript:" class="delete">删除</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="result-footer">
+		<div class="left-area">
+			<span class="fwb">图释：</span>
+			<i class="fonticon icon-dowm-tips">&#13362</i>
+			公司详情
+		</div>
+		<div class="page">
+			<input type="hidden" id="pageNo" name="pageNo" value="1" />
+			<span class="pageinfo">1-20条，共64条</span>
+			<a href="javascript:nextPage();">下一页</a>
+			<a href="javascript:">尾页</a>
+		</div>
+	</div>
+</div>
+</div>
+<!--#include file="footer.html"-->
+
+	<div class="nui-tips none">
+		<div class="nui-tips-arrow top top-middle">
+			◆ <em>◆</em>
+		</div>
+		<table class="tips-table w250 h150">
+
+			<tr class="">
+				<td class="tips-table-left">备注名：</td>
+				<td class="tips-table-right">无</td>
+
+			</tr>
+			<tr class="">
+				<td class="tips-table-left">省  份：</td>
+				<td class="tips-table-right">浙江省</td>
+
+			</tr>
+			<tr class="">
+				<td class="tips-table-left">城  市：</td>
+				<td class="tips-table-right">宁波市</td>
+
+			</tr>
+			<tr class="">
+				<td class="tips-table-left">地  区：</td>
+				<td class="tips-table-right">浙江省倒萨发送到</td>
+
+			</tr>
+			<tr class="">
+				<td class="tips-table-left">备  注：</td>
+				<td class="tips-table-right">暂无</td>
+
+			</tr>
+			<tr class="">
+				<td class="tips-table-left">公司描述：</td>
+				<td class="tips-table-right">500</td>
+
+			</tr>
+			<tr class="">
+				<td class="tips-table-left">400</td>
+				<td class="tips-table-right">500</td>
+
+			</tr>
+		</table>
+	</div>
+	<div class="side-dialog none">
+		<div class="side-dialog-header">
+			<div class="dialog-header-content">
+				<span><i class="text-warning fs18">&#xe623;</i></span>
+				<span>某某某同学</span>
+				<div class="attention-area">
+					<a class="attention-icon iconfont" href="javascript:">&#xe60c;</a>
+					<div class="nui-tips attention-tips none">
+						<div class="nui-tips-arrow">
+							◆ 
+							<em>◆</em>
+						</div>
+						添加关注，为您推送微信动态
+					</div>
+				</div>
+				<!-- 待开通状态 -->
+				<!-- <span class="user-status user-status-wait"><i>&#x3573;</i>待开通</span> -->
+			</div>
+			<a href="javascript:" class="side-dialog-closed">
+				<i>&#xe60d;</i>
+			</a>
+		</div>
+		<div class="side-dialog-body">
+			<div class="nui-details-box">
+				<div class="details-box-left">
+					<ul class="nui-line-tab nui-line-tab-small nui-line-tab-mb">
+						<li class="nui-line-tab-item">
+							<a href="#" class="nui-line-tab-link ">用户动态</a>
+						</li>
+						<li class="nui-line-tab-item">
+							<a href="#" class="nui-line-tab-link">分析图表</a>
+						</li>
+						<li class="nui-line-tab-item">
+							<a href="#" class="nui-line-tab-link">用户资料</a>
+						</li>
+						<li class="nui-line-tab-item">
+							<a href="#" class="nui-line-tab-link active">客户动态</a>
+						</li>
+					</ul>
+					<div class="nui-tab-content none">
+						<div class="nui-record-area none">
+							<div class="nui-record-grid">
+								<div class="nui-record-title">
+									<span class="record-title-content"> <em></em>
+										今天
+									</span>
+									<span class="record-title-extend">07-23</span>
+								</div>
+								<div class="nui-record-item">
+									<div class="record-item-msg"> <i class="record-icon">&#xe60b;</i>
+										<span class="record-timeinfo">14:20</span>
+									</div>
+									<div class="record-item-content">
+										<span class="record-state">
+											查询了海运
+											<span class="state-fcl">整箱</span>
+											：
+										</span>
+										<span class="record-info">
+											NINGBO（宁波) <i>&#xe610;</i>
+											BUENOS AIRES（布宜诺斯艾利斯）
+										</span>
+									</div>
+								</div>
+								<div class="nui-record-item">
+									<div class="record-item-msg">
+										<i class="record-icon">&#xe60b;</i>
+										<span class="record-timeinfo">14:20</span>
+									</div>
+									<div class="record-item-content">
+										<span class="record-state">
+											查询了海运
+											<span class="state-lcl">拼箱</span>
+											：
+										</span>
+										<span class="record-info">
+											NINGBO
+											<i>&#xe610;</i>
+											WASHINTON
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="nui-record-grid">
+								<div class="nui-record-title">
+									<span class="record-title-content"> <em></em>
+										昨天
+									</span>
+									<span class="record-title-extend">07-23</span>
+								</div>
+								<div class="nui-record-item">
+									<div class="record-item-msg">
+										<i class="record-icon">&#xe60b;</i>
+										<span class="record-timeinfo">14:20</span>
+									</div>
+									<div class="record-item-content">
+										<span class="record-state">
+											查询了海运
+											<span class="state-fcl">整箱</span>
+											：
+										</span>
+										<span class="record-info">
+											NINGBO（宁波)
+											<i>&#xe610;</i>
+											BUENOS AIRES（布宜诺斯艾利斯）
+										</span>
+									</div>
+								</div>
+								<div class="nui-record-item">
+									<div class="record-item-msg">
+										<i class="record-icon">&#xe60b;</i>
+										<span class="record-timeinfo">14:20</span>
+									</div>
+									<div class="record-item-content">
+										<span class="record-state">
+											查询了海运
+											<span class="state-lcl">拼箱</span>
+											：
+										</span>
+										<span class="record-info">
+											NINGBO
+											<i>&#xe610;</i>
+											WASHINTON
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="nui-record-grid">
+								<div class="nui-record-title">
+									<span class="record-title-content">
+										<em></em>
+										昨天
+									</span>
+								</div>
+								<div class="nui-record-item nui-record-item-last">
+									<div class="record-item-msg">
+										<i class="record-icon">&#xe60b;</i>
+										<span class="record-timeinfo">14:20</span>
+									</div>
+									<div class="record-item-content">
+										<span class="record-state">
+											查询了海运
+											<span class="state-lcl">拼箱</span>
+											：
+										</span>
+										<span class="record-info">
+											NINGBO
+											<i>&#xe610;</i>
+											WASHINTON
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="nui-record-area">
+							<div class="nui-record-noinfo">
+								<div class="noinfo-pic">
+									<img src="../../release/freight/images/2015-07b/no-dynamic.png" alt="" />
+								</div>
+								<p>小主已经个把月没有来了，要不打个电话慰问</p>
+								<p><label>小主电话：</label><span>13566358297</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="nui-tab-content none">
+						<div class="analysis-area">
+							<div class="analysis-grid">
+								
+							</div>
+						</div>
+					</div>
+					<div class="nui-tab-content none">
+						<div class="user-form">
+							<div class="user-form-grid">
+								<div class="user-form-header">
+									<span>| 个人资料</span>
+									<a class="j-addMore" href="javascript:">填写更多资料</a>
+								</div>
+								<div class="user-form-line mt30">
+									<label class="nui-label w90"><span class="text-error ml3">*</span>姓名：</label>
+									<div class="user-info-content">
+										<span class="user-info-cell">某某某同学</span>
+										<a class="user-info-edit j-edit none" href="javascript:">
+											<i>&#xe614;</i>
+											编辑
+										</a>
+									</div>
+								</div>
+								<div class="user-form-line">
+									<label class="nui-label w90"><span class="text-error ml3">*</span>手机：</label>
+									<div class="user-info-content">
+										<span class="user-info-cell">15868854324</span>
+										<a class="user-info-edit none" href="javascript:">
+											<i>&#xe614;</i>
+											编辑
+										</a>
+									</div>
+								</div>
+								<div class="user-form-line">
+									<label class="nui-label w90">电话：</label>
+									<div class="user-info-content">
+										<span class="user-info-cell">0574-88888888</span>
+										<a class="user-info-edit none" href="javascript:">
+											<i>&#xe614;</i>
+											编辑
+										</a>
+									</div>
+								</div>
+								<div class="form-more-info none">
+									<div class="user-form-line">
+										<label class="nui-label w90">传真：</label>
+										<div class="user-info-content">
+											<span class="user-info-cell">0574-88888888</span>
+											<a class="user-info-edit none" href="javascript:">
+												<i>&#xe614;</i>
+												编辑
+											</a>
+										</div>
+									</div>
+									<div class="user-form-line">
+										<label class="nui-label w90">邮箱：</label>
+										<div class="user-info-content">
+											<span class="user-info-cell">a33487@163.com</span>
+											<a class="user-info-edit none" href="javascript:">
+												<i>&#xe614;</i>
+												编辑
+											</a>
+										</div>
+									</div>
+									<div class="user-form-line">
+										<label class="nui-label w90">职务：</label>
+										<div class="user-info-content">
+											<a class="user-info-add" href="javascript:">点击填写</a>
+										</div>
+									</div>
+									<div class="user-form-line">
+										<label class="nui-label w90">国家地区：</label>
+										<div class="user-info-content">
+											<a class="user-info-add" href="javascript:">点击填写</a>
+										</div>
+									</div>
+									<div class="user-form-line">
+										<label class="nui-label w90">客户类型：</label>
+										<div class="user-info-content">
+											<a class="user-info-add" href="javascript:">点击填写</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="user-form-grid">
+								<div class="user-form-header">
+									<span>| 企业信息</span>
+									<a class="j-addMore" href="javascript:">填写更多资料</a>
+								</div>
+								<div class="user-form-line mt30">
+									<label class="nui-label w90"><span class="text-error ml3">*</span>公司名称：</label>
+									<div class="user-info-content">
+										<span class="user-info-cell">叉叉叉贸易有限公司</span>
+										<a class="user-info-edit none" href="javascript:">
+											<i>&#xe614;</i>
+											编辑
+										</a>
+									</div>
+								</div>
+								<div class="user-form-line">
+									<label class="nui-label w90">所在地区：</label>
+									<div class="nui-form-cell w80 nui-select">
+										<div class="nui-form-cell-cnt">
+											<input class="nui-input first" placeholder="省份">					
+											<i class="nui-form-cell-icon fs12">㗗</i>
+											<div class="nui-drop-down">
+												<ul class="nui-select-list">
+													<li class="nui-select-list-li">北京</li>
+													<li class="nui-select-list-li">黑龙江</li>
+													<li class="nui-select-list-li active">江苏</li>
+													<li class="nui-select-list-li">浙江</li>
+													<li class="nui-select-list-li">安徽</li>
+													<li class="nui-select-list-li">福建</li>
+													<li class="nui-select-list-li">江西</li>
+													<li class="nui-select-list-li">山东</li>
+													<li class="nui-select-list-li">河南</li>
+													<li class="nui-select-list-li">湖北</li>
+													<li class="nui-select-list-li">湖南</li>
+													<li class="nui-select-list-li">上海</li>
+													<li class="nui-select-list-li">广东</li>
+													<li class="nui-select-list-li">广西</li>
+													<li class="nui-select-list-li">海南</li>
+													<li class="nui-select-list-li">四川</li>
+													<li class="nui-select-list-li">贵州</li>
+													<li class="nui-select-list-li">云南</li>
+													<li class="nui-select-list-li">西藏</li>
+													<li class="nui-select-list-li">陕西</li>
+													<li class="nui-select-list-li">甘肃</li>
+													<li class="nui-select-list-li">宁夏</li>
+													<li class="nui-select-list-li">天津</li>
+													<li class="nui-select-list-li">青海</li>
+													<li class="nui-select-list-li">新疆</li>
+													<li class="nui-select-list-li">香港</li>
+													<li class="nui-select-list-li">澳门</li>
+													<li class="nui-select-list-li">台湾</li>
+													<li class="nui-select-list-li">其他</li>
+													<li class="nui-select-list-li">重庆</li>
+													<li class="nui-select-list-li">河北</li>
+													<li class="nui-select-list-li">山西</li>
+													<li class="nui-select-list-li">内蒙古</li>
+													<li class="nui-select-list-li">辽宁</li>
+													<li class="nui-select-list-li">吉林</li>
+												</ul>
+											</div>
+											<input id="province_id" name="province_id" class="nui-input" value="" type="text" autocomplete="off" style="display: none;"></div>
+									</div>
+									<div class="nui-form-cell w80 nui-select ml10">
+										<div class="nui-form-cell-cnt">
+											<input class="nui-input first" placeholder="城市">					
+											<i class="nui-form-cell-icon fs12">㗗</i>
+											<div class="nui-drop-down">
+												<ul class="nui-select-list">
+													<li class="nui-select-list-li">北京</li>
+													<li class="nui-select-list-li">黑龙江</li>
+													<li class="nui-select-list-li active">江苏</li>
+													<li class="nui-select-list-li">浙江</li>
+													<li class="nui-select-list-li">安徽</li>
+													<li class="nui-select-list-li">福建</li>
+													<li class="nui-select-list-li">江西</li>
+													<li class="nui-select-list-li">山东</li>
+													<li class="nui-select-list-li">河南</li>
+													<li class="nui-select-list-li">湖北</li>
+													<li class="nui-select-list-li">湖南</li>
+													<li class="nui-select-list-li">上海</li>
+													<li class="nui-select-list-li">广东</li>
+													<li class="nui-select-list-li">广西</li>
+													<li class="nui-select-list-li">海南</li>
+													<li class="nui-select-list-li">四川</li>
+													<li class="nui-select-list-li">贵州</li>
+													<li class="nui-select-list-li">云南</li>
+													<li class="nui-select-list-li">西藏</li>
+													<li class="nui-select-list-li">陕西</li>
+													<li class="nui-select-list-li">甘肃</li>
+													<li class="nui-select-list-li">宁夏</li>
+													<li class="nui-select-list-li">天津</li>
+													<li class="nui-select-list-li">青海</li>
+													<li class="nui-select-list-li">新疆</li>
+													<li class="nui-select-list-li">香港</li>
+													<li class="nui-select-list-li">澳门</li>
+													<li class="nui-select-list-li">台湾</li>
+													<li class="nui-select-list-li">其他</li>
+													<li class="nui-select-list-li">重庆</li>
+													<li class="nui-select-list-li">河北</li>
+													<li class="nui-select-list-li">山西</li>
+													<li class="nui-select-list-li">内蒙古</li>
+													<li class="nui-select-list-li">辽宁</li>
+													<li class="nui-select-list-li">吉林</li>
+												</ul>
+											</div>
+											<input id="province_id" name="province_id" class="nui-input" value="" type="text" autocomplete="off" style="display: none;"></div>
+									</div>
+								</div>
+								<div class="user-form-line">
+									<label class="nui-label w90">详细地址：</label>
+									<div class="user-info-content text-area">
+										<!-- <a class="user-info-add" href="javascript:">点击填写</a> -->
+										<span class="user-info-cell">还有 你看你就业协议上是有一栏主管部门意见，这一栏要企业所属的人事局盖章，如果没有他们的 印章，这个协议书无效！ （国有企业则不需要）</span>
+										<a class="user-info-edit none" href="javascript:">
+											<i>&#xe614;</i>
+											编辑
+										</a>
+									</div>
+								</div>
+								<div class="user-form-line">
+									<label class="nui-label w90">邮编：</label>
+									<div class="user-info-content">
+										<a class="user-info-add" href="javascript:">点击填写</a>
+									</div>
+								</div>
+								<div class="user-form-line">
+									<label class="nui-label w90 vat">公司描述：</label>
+									<div class="user-info-content text-area">
+										<a class="user-info-add" href="javascript:">点击填写</a>
+									</div>
+									
+								</div>
+								<div class="user-form-line">
+									<label class="nui-label w90">企业标签：</label>
+									<div class="user-info-content">
+										<ul class="nui-tags nui-tags-new">
+											<li class="nui-tags-cell">
+												同行
+												<div class="nui-tags-del">
+													<a class="close" href="javascript:">×</a>
+												</div>
+											</li>
+											<li class="nui-tags-cell">
+												VIP金
+												<div class="nui-tags-del">
+													<a class="close" href="javascript:">×</a>
+												</div>
+											</li>
+											<li class="nui-tags-cell">
+												合作客户
+												<div class="nui-tags-del">
+													<a class="close" href="javascript:">×</a>
+												</div>
+											</li>
+										</ul>
+										<div class="hrd mt5"></div>
+										<div class="nui-sign mt5">
+											<div class="nui-sign-line">
+												<label for="p_tag" class="nui-label">客户类型：</label>
+												<div class="nui-sign-content w500">
+													<a href="javascript:" class="nui-sign-cell active">合作客户</a>
+													<a href="javascript:" class="nui-sign-cell">系统客户</a>
+
+												</div>
+											</div>
+											<div class="nui-sign-line">
+												<label for="p_tag" class="nui-label">客户性质：</label>
+												<div class="nui-sign-content w500">
+													<a href="javascript:" class="nui-sign-cell">直客</a>
+													<a href="javascript:" class="nui-sign-cell active">同行</a>
+													<a href="javascript:" class="nui-sign-cell">海外代理</a>
+													<a href="javascript:" class="nui-sign-cell">其它类型</a>
+												</div>
+											</div>
+											<div class="nui-sign-line">
+												<label for="p_tag" class="nui-label">客户等级：</label>
+												<div class="nui-sign-content w500">
+													<a href="javascript:" class="nui-sign-cell active">VIP金</a>
+													<a href="javascript:" class="nui-sign-cell">VIP银</a>
+													<a href="javascript:" class="nui-sign-cell">VIP铜</a>
+													<a href="javascript:" class="nui-sign-cell">VIP铁</a>
+												</div>
+											</div>
+										</div>
+										<div class="hrd mt5"></div>
+										<div class="mt10">
+											<a class="nui-btn nui-btn-primary" href="javascript:">确定</a>
+											<a class="nui-btn" href="javascript:">取消</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="nui-tab-content">
+						<div class="nui-talkbox mb20">
+							<div class="send-cnt h80">
+								<textarea class="send-text"></textarea>
+							</div>
+							<div class="insert-line">
+								<div class="sead-btn">
+									<button class="nui-btn nui-btn-primary nui-btn-mini">发布</button>
+								</div>
+								<div class="result-fn-area-port right mr10">
+									<button class="nui-btn"> <em>纪录</em> <i class="icon-down-arrow">&#xe609;</i>
+									</button>
+									<div class="nui-drop-list">
+										<ul class="nui-drop-list-choose oneline">
+											<li>
+												<a href="javascript:">电话</a>
+											</li>
+											<li>
+												<a href="javascript:">拜访签到</a>
+											</li>
+											<li>
+												<a href="javascript:">的多嫩的大的</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="nui-record-area">
+							<div class="nui-record-grid">
+								<div class="nui-record-title">
+									<span class="record-title-content"> <em></em>
+										今天
+									</span>
+									<span class="record-title-extend">07-23</span>
+								</div>
+								<div class="nui-record-item">
+									<div class="record-item-msg"> <i class="record-icon">&#xe60b;</i>
+										<span class="record-timeinfo">14:20</span>
+									</div>
+									<div class="record-item-content">
+										<span class="record-state">
+											查询了海运
+											<span class="state-fcl">整箱</span>
+											：
+										</span>
+										<span class="record-info">
+											NINGBO（宁波) <i>&#xe610;</i>
+											BUENOS AIRES（布宜诺斯艾利斯）
+										</span>
+									</div>
+								</div>
+								<div class="nui-record-item">
+									<div class="record-item-msg">
+										<i class="record-icon">&#xe60b;</i>
+										<span class="record-timeinfo">14:20</span>
+									</div>
+									<div class="record-item-content">
+										<span class="record-state">
+											查询了海运
+											<span class="state-lcl">拼箱</span>
+											：
+										</span>
+										<span class="record-info">
+											NINGBO
+											<i>&#xe610;</i>
+											WASHINTON
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="nui-record-grid">
+								<div class="nui-record-title">
+									<span class="record-title-content"> <em></em>
+										昨天
+									</span>
+									<span class="record-title-extend">07-23</span>
+								</div>
+								<div class="nui-record-item">
+									<div class="record-item-msg">
+										<i class="record-icon">&#xe60b;</i>
+										<span class="record-timeinfo">14:20</span>
+									</div>
+									<div class="record-item-content">
+										<span class="record-state">
+											查询了海运
+											<span class="state-fcl">整箱</span>
+											：
+										</span>
+										<span class="record-info">
+											NINGBO（宁波)
+											<i>&#xe610;</i>
+											BUENOS AIRES（布宜诺斯艾利斯）
+										</span>
+									</div>
+								</div>
+								<div class="nui-record-item">
+									<div class="record-item-msg">
+										<i class="record-icon">&#xe60b;</i>
+										<span class="record-timeinfo">14:20</span>
+									</div>
+									<div class="record-item-content">
+										<span class="record-state">
+											查询了海运
+											<span class="state-lcl">拼箱</span>
+											：
+										</span>
+										<span class="record-info">
+											NINGBO
+											<i>&#xe610;</i>
+											WASHINTON
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="nui-record-grid">
+								<div class="nui-record-title">
+									<span class="record-title-content">
+										<em></em>
+										昨天
+									</span>
+								</div>
+								<div class="nui-record-item nui-record-item-last">
+									<div class="record-item-msg">
+										<i class="record-icon">&#xe60b;</i>
+										<span class="record-timeinfo">14:20</span>
+									</div>
+									<div class="record-item-content">
+										<span class="record-state">
+											查询了海运
+											<span class="state-lcl">拼箱</span>
+											：
+										</span>
+										<span class="record-info">
+											NINGBO
+											<i>&#xe610;</i>
+											WASHINTON
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="details-box-right">
+					<a href="javascript:" class="box-right-operate">
+						<i>&#xe611;</i>
+					</a>
+					<div class="details-box-operate">
+						<h3>操作</h3>
+						<a href="javascript:" class="nui-btn nui-btn-new"><i>&#xe617;</i>复制开通通知</a>
+						<a href="javascript:" class="nui-btn nui-btn-new"><i>&#xe615;</i>发送开通邮件</a>
+						<a href="javascript:" class="nui-btn nui-btn-new"><i>&#xe61a;</i>发送开通短信</a>
+						<a href="javascript:" class="nui-btn nui-btn-new"><i>&#xe618;</i>通过审批</a>
+						<a href="javascript:" class="nui-btn nui-btn-new"><i>&#xe619;</i>拒绝申请</a>
+						<a href="javascript:" class="nui-btn nui-btn-new"><i>&#xe60f;</i>权限设置</a>
+						<a href="javascript:" class="nui-btn nui-btn-new"><i>&#xe60e;</i>删除</a>
+					</div>
+					<div class="nui-team-group">
+						<div class="team-group-header">
+							<div class="team-group-manage" href="javascript:">
+								<a class="j-manage" href="javascript:">管理</a>
+								<ul class="team-manage-content none">
+									<li class="team-manage-cell">
+										<a class="team-manage-cell-del" href="javascript:">删除</a>
+										<span>诗琪</span>
+									</li>
+									<li class="team-manage-cell">
+										<a class="team-manage-cell-del" href="javascript:">删除</a>
+										<span>王大锤</span>
+									</li>
+									<li class="team-manage-cell">
+										<a class="team-manage-cell-del" href="javascript:">删除</a>
+										<span>司徒正妹</span>
+									</li>
+								</ul>
+							</div>
+							<h3>销售团队成员</h3>
+						</div>
+						<ul class="team-group-cnt">
+							<li class="team-group-cell">诗琪</li>
+							<li class="team-group-cell">王大锤</li>
+							<li class="team-group-cell">司徒正妹</li>
+							<li class="team-group-cell team-group-add j-serve-add">
+								<a href="javascript:">+</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="nui-dialog-area none">
+		<div class="nui-dialog nui-dialog-serve">
+			<div class="nui-stdmod-header">
+				添加服务人员
+				<a class="nui-dialog-close iconfont j-dialog-close" href="javascript:">
+					&#xe60d;
+				</a>
+			</div>
+			<div class="nui-stdmod-body">
+				<div class="nui-stdmod-line">
+					<label class="nui-stdmod-label w95">选择成员：</label>
+					<div class="nui-form-cell w150 nui-form-cell-stdmod">
+						<div class="nui-form-cell-cnt">
+							<input class="nui-input" type="text" />
+							<a class="iconfont addon" href="javascript:">
+								&#xe613;
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="nui-stdmod-footer">
+				<a href="javascript:" class="nui-btn j-dialog-close">取消</a>
+				<a href="javascript:" class="nui-btn nui-btn-primary">确认</a>
+			</div>
+		</div>
+		<div class="nui-dialog-shadow"></div>
+	</div>
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script src="new-manger.js" type="text/javascript"></script>
+</body>
+</html>

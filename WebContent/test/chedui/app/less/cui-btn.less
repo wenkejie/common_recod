@@ -1,0 +1,77 @@
+//
+// 按钮
+// --------------------------------------------------
+// 常量
+
+@btn-big-height:                       36px;
+@btn-big-line-height:                  36px; 
+
+@btn-large-height:                     48px;
+@btn-large-line-height:                48px;   
+
+
+.cui-btn{
+  .inline-block;
+  height: @btn-height;line-height: @btn-line-height;padding: @btn-padding;
+  border-radius: @btn-radius;background: @btn-default-bg;vertical-align: middle;
+  color: @btn-default-color;font-weight: bold;
+  &:hover{
+	background: darken(@btn-default-bg, 10%)
+  }
+}
+
+// 带边框按钮
+.cui-btn-default{
+	border: 1px solid @btn-default-border;
+	color: @btn-default-color;font-weight: normal;
+}
+
+
+
+.cui-btn-primary{
+	background: @btn-primary-bg;
+	color: @btn-primary-color;
+	&:hover{
+		background: lighten(@btn-primary-bg, 10%);
+	}
+}
+
+
+
+// 虚线边框按钮
+.cui-btn-dashed{
+	border: 1px dashed #ccc;
+}
+
+// 特定用于导航部分的按钮
+.cui-btn-header{
+	height: 40px;line-height: 40px;
+	background: #1BDECB;
+	font-size: 16px;color: #fff;
+	&:hover{
+		background: lighten(#1BDECB, 10%)
+	}
+}
+
+.cui-btn-link{
+	.inline-block;
+	vertical-align: middle;
+	color: #666;
+}
+
+
+// ==========================================================================
+.cui-btn-big{
+	height: @btn-big-height;line-height: @btn-big-line-height;
+	font-size: 16px;
+}
+
+.cui-btn-large{
+	padding: @btn-large-padding;
+	height: @btn-large-height;line-height: @btn-large-line-height;
+	font-size: 18px;
+}
+
+.cui-btn-small{}
+
+

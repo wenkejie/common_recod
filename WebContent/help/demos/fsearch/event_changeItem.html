@@ -1,0 +1,31 @@
+<script>
+(function($){
+	$("#fsearch").fsearch({
+		items : [
+			{text:'姓名',name:'userName'},
+			{text:'生日',name:'birthday'},
+			{text:'性别',name:'sex'},
+			{text:'内容太长了，选中后只能截断',title:'内容太长了，选中后只能截断',name:'tolong'}
+		],
+		changeItem : function(event ,ui ){
+			$("#msg").html(ui.itemName);
+		}
+	});
+
+ 
+})(jQuery);
+
+</script>
+
+
+
+<div id='fsearch'></div>
+
+<div style='margin-top:100px;'>你选择了：</div>
+<div id="msg"></div>
+
+
+
+
+
+

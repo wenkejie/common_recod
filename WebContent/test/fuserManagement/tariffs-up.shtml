@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	
+	<!-- <link rel="stylesheet" href="../../release/freight/css/common.css"/> -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<!-- <link rel="stylesheet" href="../../src/css/richSelect.css" />richselect样式 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script src="fui-common.js" type="text/javascript"></script><!-- 用于详情弹窗调用那个添加员工的控件，by：Evan -->
+	<script type="text/javascript" src="../../src/js/nrichselect.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+
+
+		$(function() {
+
+
+					//////////////
+					//高级搜索 //
+					//////////////
+					function advSearchSlide() {
+						var offset = null;
+						var that = $('#j-searchArea');
+						$('#j-advSearchBtn').click(function() {
+							var thisline = $(this).parent().parent();
+
+							that.addClass('search-area-slidedown');
+							offset = offset || $('#j-searchBtn').offset();
+
+							var btnoffset = $('#j-toggle').offset();
+
+							$('#j-toggle').addClass('none').clone().removeClass('none').appendTo($(this).parent().parent()).css({left:btnoffset.left,top:btnoffset.top}).addClass('psa').animate({
+								opacity: 0,
+								left: offset.left,
+								top: offset.top
+							}, 500, function() {
+								$(this).remove();
+							})
+						});
+
+						$('#j-backBtn').click(function() {
+							that.removeClass('search-area-slidedown');
+							$('#j-toggle').removeClass('none')
+						});
+
+						$('div.search-area-line').delegate('a.form-line-right-tag', 'click', function(
+							) {
+							$(this).parent().find('a.form-line-right-tag').removeClass('form-line-right-tag-click');
+
+							$(this).addClass('form-line-right-tag-click');
+						})
+						$('div.search-area-line').myhover(
+							'a.form-line-right-tag',
+							function() {
+
+								$(this).parent().find('a.form-line-right-tag').removeClass('form-line-right-tag-hover');
+
+								$(this).addClass('form-line-right-tag-hover');
+
+							},function () {
+
+								$(this).removeClass('form-line-right-tag-hover');
+							});
+						
+
+					}
+
+					advSearchSlide()
+
+
+				// 列表操作部分下拉按钮
+				$('table.result-table').delayhover(
+					"ul.slide-down-menu",
+					function() {
+						$(this).addClass('slide-down-menu-hover').find('li').addClass('block').end().find('s').addClass('hide');
+					}, function() {
+						$(this).removeClass('slide-down-menu-hover').find('li').removeClass('block').end().find('s').removeClass('hide');
+
+					}
+					)
+
+
+				
+
+
+				// 列表头部过滤按钮
+				$('div.result-filter').delegate('a', 'click', function() {
+					$(this).addClass('active').siblings().removeClass('active')
+				});
+
+
+			// 表头按钮的下拉操作
+			$('div.result-fn-area-port').delegate('button.nui-btn', 'click', function(){
+				// console.log($(this).is('a.nui-btn-disable'));
+				$('div.nui-drop-list').addClass('none');
+				if (!$(this).is('button.nui-btn-disable')) {
+					$(this).parent().children('div.nui-drop-list').removeClass('none');
+					return false;
+				}
+
+				// $(this).parent().children('div.nui-drop-list').removeClass('none');
+				// return false;
+
+			});
+
+
+
+			$("div.nui-drop-list").delegate("#j-thisPage", "click", function(){
+					// $(this).parent().parent().parent().prev().children('em').text($(this).text());
+					$(this).parent().parent().parent().prev().children('s.icon-fir').removeClass('icon-thr').addClass('icon-sec');
+				})
+
+			$("div.nui-drop-list").delegate("#j-All", "click", function(){
+					// $(this).parent().parent().parent().prev().children('em').text($(this).text());
+					$(this).parent().parent().parent().prev().children('s.icon-fir').removeClass('icon-sec').addClass('icon-thr');
+				})
+
+
+			// $("div.nui-drop-list-replace").delegate("li", "click", function(){
+			// 	$(this).parent().parent().prev().children('em').text($(this).text());
+			// })
+
+
+				//列表排序箭头
+				$('th.company').delegate('a.icon', 'click', function(){
+
+					$(this).removeClass('icon-com');
+					$(this).addClass('icon-top');
+					return false;
+				});
+				$('th.company').delegate('a.icon-top', 'click', function(){
+
+					$(this).removeClass('icon-top');
+					$(this).addClass('icon-down');
+					return false;
+				});
+				$('th.company').delegate('a.icon-down', 'click', function(){
+
+					$(this).removeClass('icon-down');
+					$(this).addClass('icon-top');
+
+					return false;
+				});
+
+
+				$('table.result-table').delegate('a.icon-dowm-tips', 'click', function() {
+
+					var offset = $(this).offset();
+				// console.log(offset);
+				$('div.nui-tips').css({
+					'left': offset.left-129,
+					'top': offset.top+21
+				});
+				$('div.nui-tips').removeClass('none');
+				return false;
+			});
+
+
+
+				$('#jAddcon').click(function() {
+					var that = $(this);
+					var htmlWin;
+					htmlWin = fwindow.create({
+						title: "权限配置",
+						width:705,
+						content: '<div class="fui-dialog-cnt mg0-15"> <div class="form-title">已添加报价的公司</div> <div class="form-line form-line-openwin"> <div class="left">宁波开源有限公司</div> <a class="right" href="javascript:">删除</a> </div> <div class="form-line form-line-openwin"> <div class="left">宁波开源有限公司</div> <a class="right" href="javascript:">删除</a> </div> <div class="form-line form-line-openwin"> <div class="left">宁波开源有限公司</div> <a class="right" href="javascript:">删除</a> </div> <div class="form-line form-line-openwin"> <div class="left">宁波开源有限公司</div> <a class="right" href="javascript:">删除</a> </div> <div class="form-line form-line-openwin"> <div class="left">宁波开源有限公司</div> <a class="right" href="javascript:">删除</a> </div> <div class="form-line form-line-openwin"> <div class="left">宁波开源有限公司</div> <a class="right" href="javascript:">删除</a> </div> <div class="form-line form-line-openwin"> <label class="nui-label">企业名称：</label> <div class="nui-form-cell mr10"> <input class="nui-input" /> </div> <div class="nui-form-cell w100 mr10"> <input class="nui-input" placeholder="用户名" /> </div> <div class="nui-form-cell w100 mr10"> <input class="nui-input" placeholder="密码"/> </div> <button class="nui-btn nui-btn-primary">确定</button> <button class="nui-btn">取消</button> </div> <div class="form-line form-line-openwin"> <label class="nui-label">企业名称：</label> <div class="nui-form-cell mr10"> <input class="nui-input" /> </div> </div> <div class="form-line form-line-openwin mt20 bdn"> <button class="nui-btn nui-btn-orange ml10 ">+ 添加</button> </div> </div>', draggable: false})
+});
+
+
+
+						$('#jDataCheck').click(function() {
+							var that = $(this);
+							var htmlWin;
+							htmlWin = fwindow.create({
+								title: "权限配置",
+								width:705,
+								content: '<div class="fui-dialog-title"></div> <div class="fui-dialog-cnt"> <div class="result-area-up-tips mg15-0"> <i>&#x3573;</i> <span>航线新增连同港口都会新增到此航线下，转换后，原对应的港口也会转换成此航线</span> </div> <div class="result-area result-area-up"> <div class="result-fn-area result-fn-area-up btn"> <div class="result-fn-area-port vam"> <h2 class="dpib fwb vam fs14">港口校验</h2> <span class="dpib vam ml5">共校验2000个港口，其中20个港口无匹配资料，请确认</span> </div> <div class="result-fn-area-port vam right mr10"> <div class="nui-form-cell"> <div class="nui-form-cell-cnt w180"> <input class="nui-input" type="text" placeholder=""> <i class="nui-form-cell-icon fs12">&#x355d;</i> </div> </div> </div> </div> <div class="result-area-cnt psr"> <table class="result-table result-table-up"> <tbody> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] <div class="nui-form-cell"> <input class="nui-input" /> </div> <button class="nui-btn nui-btn-primary mr5">确认</button><a href="javascript:">取消</a> </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京]  <i class="pd0-15">&#x3545;</i>  TOKOY[南京] <a class="ml25" href="javascript:">编辑</a> <a href="javascript:">取消</a> </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] </td> </tr> </tbody> </table> <div id="disable-all" class="disable-all none"></div> </div> <div class="result-footer result-footer-up"> <div class="right"> <button class="nui-btn nui-btn-primary">下一步</button> <button class="nui-btn">取消</button> </div> </div> </div> <div class="result-area result-area-up mt20 none"> <div class="result-fn-area result-fn-area-up btn"> <div class="result-fn-area-port vam"> <h2 class="dpib fwb vam fs14">港口校验</h2> <span class="dpib vam ml5">共校验2000个港口，其中20个港口无匹配资料，请确认</span> </div> <div class="result-fn-area-port right mr10 vam"> <div class="nui-form-cell"> <div class="nui-form-cell-cnt w180"> <input class="nui-input" type="text" placeholder=""> <i class="nui-form-cell-icon fs12">&#x355d;</i> </div> </div> </div> </div> <div class="result-area-cnt psr"> <table class="result-table result-table-up"> <tbody> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] <div class="nui-form-cell"> <input class="nui-input" /> </div> <button class="nui-btn nui-btn-primary mr5">确认</button><a href="javascript:">取消</a> </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京]  <i class="pd0-15">&#x3545;</i>  TOKOY[南京] <a class="ml25" href="javascript:">编辑</a> <a href="javascript:">取消</a> </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] </td> </tr> </tbody> </table> <div id="disable-all " class="disable-all none"></div> </div> <div class="result-footer result-footer-up"> <div class="right"> <button class="nui-btn nui-btn-primary">下一步</button> <button class="nui-btn">取消</button> </div> </div> </div> <div class="result-area result-area-up mt20 none"> <div class="result-fn-area result-fn-area-up btn"> <div class="result-fn-area-port vam"> <h2 class="dpib fwb vam fs14">港口校验</h2> <span class="dpib vam ml5">共校验2000个港口，其中20个港口无匹配资料，请确认</span> </div> <div class="result-fn-area-port right mr10 vam"> <div class="nui-form-cell"> <div class="nui-form-cell-cnt w180"> <input class="nui-input" type="text" placeholder=""> <i class="nui-form-cell-icon fs12">&#x355d;</i> </div> </div> </div> </div> <div class="result-area-cnt psr"> <table class="result-table result-table-up"> <tbody> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] <div class="nui-form-cell"> <input class="nui-input" /> </div> <button class="nui-btn nui-btn-primary mr5">确认</button><a href="javascript:">取消</a> </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京]  <i class="pd0-15">&#x3545;</i>  TOKOY[南京] <a class="ml25" href="javascript:">编辑</a> <a href="javascript:">取消</a> </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] </td> </tr> <tr> <td> TOKOY[东京]<a class="ml25" href="javascript:">编辑</a> </td> <td> TOKOY[东京] </td> </tr> </tbody> </table> <div id="disable-all none" class="disable-all none"></div> </div> <div class="result-footer result-footer-up"> <div class="right"> <button class="nui-btn nui-btn-primary">下一步</button> <button class="nui-btn">取消</button> </div> </div> </div> <div class="form-line mt20"> <button class="nui-btn nui-btn-orange ml80">确定</button> </div> </div> <div class="fui-dialog-btm-bar pss"> <button class="fui-btn-dialog-primary"> <span>确认新增</span> </button> <button class="fui-btn-dialog"> <span>取消</span> </button> </div>', draggable: false}) }); $(document).click(function() {// console.log("ccc"); $('div.nui-tips').addClass('none');
+				$('div.nui-drop-list').addClass('none');
+				// $('div.form-list-thr').find('ul.input-form-list').hide();	
+			});//点其他位置时让tips消失
+
+				$(window).scroll( function() { 
+				// console.log($(window).scrollTop());
+				if ($(window).scrollTop()==0) {
+					$('a.to-top').addClass('none');	
+				}else{
+					$('a.to-top').removeClass('none');	
+				};
+				// $('a.to-top').removeClass('none');
+			});
+
+				$('a.to-top').click(function() {
+
+					$(window).scrollTop(0);
+				// $(window).animate($(window).scrollTop(0), "slow");
+				// if (document.documentElement.scrollTop = 0) {
+					// $('a.to-top').removeClass('to-top-black');
+				// };
+				
+			});
+
+
+			// 全选/取消全选
+
+
+
+			$('#jselAll').click(function() {
+				// console.log($('input.item').checked);
+				var $checkbox = $('input.item');
+
+				if (this.checked ) {
+					$checkbox.prop({
+						"checked":true
+					});
+					
+					$('table.result-table').children('tbody').prepend('<tr><td class="selectwhole" colspan="7"><span>已勾选本页 25 个选项</span>，<a id="jWhole" href="javascript:">勾选表格中全部955个选项</a></td></tr>');
+					// $(this).parent().parent().parent().append('<tr><th colspan="7">dawdawd</th></tr>');
+				}else{
+					removeChecked();
+					$checkbox.prop({
+						"checked":false
+					});
+				}
+			});
+
+			// 移除选择条
+			
+			function removeChecked(){
+				$('td.selectwhole').parent().remove();
+
+			}
+
+			$('table.result-table').delegate('input.item', 'click', function() {
+				if (!$(this).prop("checked")) {
+					removeChecked();
+				};
+			}).delegate('#jWhole', 'click', function() {
+
+				if ($(this).text() == "取消勾选") {
+					$(this).html("勾选表格中全部 <strong>25</strong> 个选项").parent().find('span').text("已勾选本页 25 个选项");
+				} else {
+					$(this).text("取消勾选").parent().find('span').text("已勾选 995 个选项");
+				}
+			});
+
+
+			
+		});
+
+
+
+
+		//下一页
+		function nextPage(){
+			var pageNo = $("#pageNo");
+			var nextPageNo = parseInt(pageNo.val())+1;
+			pageNo.val(nextPageNo);
+			buildData(nextPageNo);
+		}
+		//上一页
+		function prePage(){
+			var pageNo = $("#pageNo");
+			var prePageNo = parseInt(pageNo.val())-1;
+			pageNo.val(prePageNo);
+			buildData(prePageNo);
+		}
+		//全选
+		function checkboxSelectAll(){
+			
+		}
+		
+		
+
+		//公司名称下拉框
+		function changeCompany(obj){
+			var a = new RichSelect(obj,"",function(){ return {custName:obj.value};},
+				[obj.id],["企业名称"]);
+		};
+	</script>
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	<div class="wrap main-wrap">
+		<div class="search-area" id="j-searchArea">
+
+			<div class="title-info"><h2>账号统计信息</h2>
+				<strong >客户账号：</strong>已购买 <span class="text-warning fwb">2510</span> 个 | 剩余 <span  class="text-warning fwb">500</span> 个 
+				<!-- <strong >体验账号：</strong>已购买 <span class="text-warning fwb">2510</span> 个 | 剩余 <span  class="text-warning fwb">500</span> 个 --> <div class="right mt5"><i>&#13680</i> <a href="#">已删除账号</a></div></div>
+				<div class="search-area-grid">
+					<div class="search-area-line">
+						<div class="grid-box bdn">
+						<h2 class="dpib mr20">展示类型</h2>
+
+							<a href="javascript:" onclick="fu_trends_change(this,'today')" class="nui-select-tag nui-select-tag-active">今日</a>
+							<a href="javascript:" onclick="fu_trends_change(this,'yestoday')" class="nui-select-tag">昨日</a>
+							<a href="javascript:" onclick="fu_trends_change(this,'last7')" class="nui-select-tag">最近7天</a>
+							<a href="javascript:" onclick="fu_trends_change(this,'last30')" class="nui-select-tag">最近30天</a>
+							<div class="nui-form-cell w200">
+								<div class="nui-form-cell-cnt">
+									<input id="datepicker_input" type="text"  class="nui-input" />
+									<i class="nui-form-cell-icon ">&#13370;</i>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="search-area-line search-adv-area" >
+						<div class="form-line">
+							<div class="form-line-left w500 dpib">
+								<label for="typeoftime" class="nui-label">日期类型：</label><select name="" id="" class="nui-native-select w100"> 
+								<option value="">注册日期</option>
+								<option value="">审批日期</option>
+							</select>
+							<div class="nui-form-cell">
+								<input type="text" id="typeoftime-fir" class="nui-input w80" onfocus="$(this).datepicker();" />
+							</div><!-- 调用了日期控件 -->
+							<span> - </span>
+							<div class="nui-form-cell ml1">
+								<input type="text" id="typeoftime-sec" class="nui-input w80" onfocus="$(this).datepicker();"/>
+							</div>
+							
+						</div>
+						<div class="form-line-right dpib">
+							<label for="typeoftime" class="nui-label">关键词：</label><select name="" id="" class="nui-native-select w100"> 
+							<option value="">请选择</option>
+							<option value="">用户电话</option>
+							<option value="">用户传真</option>
+							<option value="">用户邮箱</option>
+							<option value="">企业备注名</option>
+							<option value="">省份</option>
+							<option value="">城市</option>
+						</select>
+						<div class="nui-form-cell w185">
+							<input type="text" id="typeoftime" class="nui-input"/>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="form-line">
+					<div class="form-line-left w500 dpib">
+						<label for="typeoftime" class="nui-label">服务选择：</label>
+						<label for="fcl" class="nui-checkbox"><input type="checkbox" name="" id="fcl" />整箱</label>
+						<label for="lcl"  class="nui-checkbox"><input type="checkbox" name="" id="lcl" />拼箱</label>
+						<label for="air"  class="nui-checkbox"><input type="checkbox" name="" id="air" />空运</label>
+
+					</div>
+					<div class="form-line-right dpib">
+						<label for="typeoftime" class="nui-label mr20">登录控制：</label>
+						<label for="" class="nui-radio"><input type="radio" name="control" checked="checked"/>全部</label>
+						<label for="" class="nui-radio"><input type="radio" name="control"/>启用</label>
+						<label for="" class="nui-radio"><input type="radio" name="control"/>未启用</label>
+
+							<!-- <a href="javascript:" class="form-line-right-tag  form-line-right-tag-click  mr20" id="j-searchRightTag">全部</a>
+							<a href="javascript:"  class="form-line-right-tag mr20" id="j-searchRightTag">关闭</a>
+							<a href="javascript:"  class="form-line-right-tag mr20" id="j-searchRightTag">未控制</a> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="search-area-btn-area">
+					<button class="nui-btn nui-btn-primary w80" id="j-searchBtn">搜 索</button>
+					<button class="nui-btn " id="j-backBtn">返回普通搜索 <i class="fs14">&#x3437;</i></button>
+				</div>
+
+			</div>
+			<div class="search-area-blank none">
+				<div class="search-area-blank-download">
+					<a href="javascript:" class="blank-download-fir">
+						<s class="icon icon-download"></s><span>下载查询结果：EXCEL</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="result-area">
+			<div class="result-filter">
+				<a href="javascript:" class="result-filter-btn active">海运整箱</a>
+				<a href="list_company.shtml" class="result-filter-btn">海运拼箱</a>
+				<!-- <a href="list_group.shtml" class="result-filter-btn">按群显示</a> -->
+
+			</div>
+			<div class="result-fn-area">
+				
+				<div class="result-fn-area-port">
+					<button class="nui-btn pr5"><em>外部导入</em> <i class="icon-down-arrow">&#x3438;</i></button>	
+					<div class="nui-drop-list none ">
+						<ul class="nui-drop-list-choose pd0-5 oneline">
+							<li class="list-choose-title">
+								<span>全部导入</span>
+							</li>
+							<li>
+								<a href="javascript:" status="0" onclick="changeStatus(this)">
+									<label class="nui-checkbox" for="fcl">
+										<input id="fcl" type="checkbox" name="">
+										奥林国际物流
+									</label>
+								</a>	
+							</li>
+							<li>
+								<a href="javascript:" status="0" onclick="changeStatus(this)">
+									<label class="nui-checkbox" for="fcl">
+										<input id="fcl" type="checkbox" name="">
+										奥林国际物流
+									</label>
+								</a>	
+							</li>
+							<li>
+								<a href="javascript:" status="0" onclick="changeStatus(this)">
+									<label class="nui-checkbox" for="fcl">
+										<input id="fcl" type="checkbox" name="">
+										奥林国际物流
+									</label>
+								</a>	
+							</li>
+							<li class="list-choose-btn">
+								<button class="nui-btn nui-btn-primary ">
+									确认
+								</button>
+								<button id="jAddcon" class="nui-btn ml5">
+									添加或管理帐号
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="result-fn-area-port">
+					<button class="nui-btn pr5"><em>数据校验</em> <i class="icon-down-arrow">&#x3438;</i></button>
+					<div class="nui-drop-list none">
+						<ul class="nui-drop-list-choose oneline">
+							<li><a id="jDataCheck" href="javascript:">技术资料校验</a></li>
+							<li><a href="javascript:">资料转换设置</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="result-fn-area-port">
+					<button class="nui-btn"><em>抛弃</em></button>	
+					
+				</div>
+				<div class="result-fn-area-port">
+					<button class="nui-btn"><em>导入系统</em></button>	
+					
+				</div>
+				<div class="result-fn-area-port ml10 right">
+					<button class="nui-btn mr0 pr5"><em>全部公司</em> <i class="icon-down-arrow">&#x3438;</i></button>
+					<div class="nui-drop-list nui-drop-list-replace none">
+						<ul class="nui-drop-list-choose pd0-5 oneline">
+							<li>
+								<a href="javascript:" status="0" onclick="changeStatus(this)">
+									<label class="nui-checkbox" for="fcl">
+										<input id="fcl" type="checkbox" name="">
+										奥林国际物流
+									</label>
+								</a>	
+							</li>
+							<li>
+								<a href="javascript:" status="0" onclick="changeStatus(this)">
+									<label class="nui-checkbox" for="fcl">
+										<input id="fcl" type="checkbox" name="">
+										奥林国际物流
+									</label>
+								</a>	
+							</li>
+							<li>
+								<a href="javascript:" status="0" onclick="changeStatus(this)">
+									<label class="nui-checkbox" for="fcl">
+										<input id="fcl" type="checkbox" name="">
+										奥林国际物流
+									</label>
+								</a>	
+							</li>
+							<li class="list-choose-btn">
+								<button class="nui-btn nui-btn-primary ml25">
+									确认
+								</button>
+							</li>
+						</ul>
+					</div>		
+
+					
+				</div>
+				<div class="result-fn-area-port right">
+					<button class="nui-btn mr0 pr5"><em>全部数据</em> <i class="icon-down-arrow">&#x3438;</i></button>
+					<div class="nui-drop-list nui-drop-list-replace none">
+						<ul class="nui-drop-list-choose oneline">
+							<li><a href="javascript:" status="" onclick="changeStatus(this)">所有账号</a></li>
+							<li><a href="javascript:" status="0" onclick="changeStatus(this)">待审批账号</a></li>
+							<li><a href="javascript:" status="1" onclick="changeStatus(this)">正式账号</a></li>
+						</ul>
+					</div>		
+
+					
+				</div>
+				<div class="result-fn-area-port right ml10">	<label class="result-fn-area-port-label">数据显示：</label></div>
+				<div class="result-fn-area-port right">
+					<button class="nui-btn mr0 pr5"><em>按目的港</em> <i class="icon-down-arrow">&#x3438;</i></button>
+					<div class="nui-drop-list nui-drop-list-replace none">
+						<ul class="nui-drop-list-choose oneline">
+							<li><a href="javascript:" status="" onclick="changeStatus(this)">所有账号</a></li>
+							<li><a href="javascript:" status="0" onclick="changeStatus(this)">待审批账号</a></li>
+							<li><a href="javascript:" status="1" onclick="changeStatus(this)">正式账号</a></li>
+						</ul>
+					</div>		
+
+					
+				</div>
+				<div class="result-fn-area-port right">	<label class="result-fn-area-port-label">排序：</label></div>
+				
+				
+			</div>
+			<table class="result-table">
+				<thead>
+					<tr>
+						<th class="checkbox"><input id="jselAll" type="checkbox" name="" id="" title="选中/取消选中" /></th>
+						<th class="name">姓名 | 用户名</th>
+						<th>手机 | 邮箱</th>
+						<th class="company">企业名称 <a href="javascript:" id="j-iconChange" class="icon icon-com"></a>| 群 <a href="javascript:" class="icon icon-com"></a></th>
+						<th>地区 | 推荐人</th>
+						<th>状态 | 上次登录时间</th>
+						<th class="action">操作</th>
+					</tr>
+				</thead>
+
+				<tbody>	
+					<tr class="split">
+						<td colspan="7" class="data-empty">
+							
+								<i class="">&#xf014e;</i>
+								<span class="">暂无数据，请先导入外部数据</span>
+							
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+			<div class="result-footer">
+				<div class="left-area"><span class="fwb">图释：</span><i class="fonticon icon-dowm-tips">&#13362 </i>公司详情</div>
+				<div class="page"><input type="hidden" id="pageNo" name="pageNo" value="1" /><span class="pageinfo">1-20条，共64条 </span><a href="javascript:nextPage();">下一页</a>
+					<a href="javascript:">尾页</a></div>
+				</div>
+			</div>
+				</div>
+				<!--#include file="footer.html"-->
+
+
+				<div class="nui-tips none">
+					<div class="nui-tips-arrow top top-middle">
+						◆ 
+						<em>◆</em>
+					</div>
+					<table class="tips-table w250 h150">
+
+						<tr class="">
+							<td class="tips-table-left">备注名：</td>
+							<td class="tips-table-right">无</td>
+
+						</tr>
+						<tr class="">
+							<td class="tips-table-left">省  份：</td>
+							<td class="tips-table-right">浙江省</td>
+
+						</tr>
+						<tr class="">
+							<td class="tips-table-left">城  市：</td>
+							<td class="tips-table-right">宁波市</td>
+
+						</tr>
+						<tr class="">
+							<td class="tips-table-left">地  区：</td>
+							<td class="tips-table-right">浙江省倒萨发送到</td>
+
+						</tr>
+						<tr class="">
+							<td class="tips-table-left">备  注：</td>
+							<td class="tips-table-right">暂无</td>
+
+						</tr>
+						<tr class="">
+							<td class="tips-table-left">公司描述：</td>
+							<td class="tips-table-right">500</td>
+
+						</tr>
+						<tr class="">
+							<td class="tips-table-left">400</td>
+							<td class="tips-table-right">500</td>
+
+						</tr>
+					</table>
+
+				</div>
+				
+
+
+
+
+
+				
+				
+</body>
+</html>

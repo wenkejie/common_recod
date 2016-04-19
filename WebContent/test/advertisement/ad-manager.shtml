@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="headNav.js"></script>
+
+</head>
+<body>
+	<!--#include file="header.html"-->
+	<div class="wrap main-wrap">
+		<div class="search-area" id="j-searchArea">
+
+			<div class="title-info">
+				<h2>广告管理</h2>
+			</div>
+			<div class="search-area-grid">
+				<div class="search-area-line">
+					<label  class="nui-label">广告标题：</label>
+					<div class="nui-form-cell w150  mr20">
+						<input type="text" class="nui-input" />
+					</div>
+					<label class="nui-label">投放企业：</label>
+					<div class="nui-form-cell w150  mr20">
+						<input type="text"  class="nui-input"/>
+					</div>
+					<label  class="nui-label">投放位置：</label>
+					<div class="nui-form-cell w150  mr10">
+						<input type="text"  class="nui-input"/>
+					</div>
+					<span>
+						<a class="nui-btn nui-btn-primary">搜 索</a>
+					</span>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="result-area">
+			<div class="result-fn-area">
+				<div class="left">
+					<div class="result-fn-area-port mr5">
+						<a class="nui-btn"><em>新增</em></a>	
+					</div>
+					<div class="result-fn-area-port mr5">
+						<a class="nui-btn"><em>批量审批</em></a>	
+					</div>
+					<div class="result-fn-area-port mr5">
+						<a class="nui-btn"><em>批量撤销</em></a>	
+					</div>
+				</div>
+				
+				<div class="result-fn-area-port right">
+					<a class="nui-btn mr0 pr5"><em>全部</em> <i class="icon-down-arrow">&#x3438;</i></a>
+					<div class="nui-drop-list nui-drop-list-replace none">
+						<ul class="nui-drop-list-choose oneline">
+							<li><a href="javascript:">所有账号</a></li>
+							<li><a href="javascript:">待审批账号</a></li>
+							<li><a href="javascript:">正式账号</a></li>
+						</ul>
+					</div>		
+				</div>
+				<div class="result-fn-area-port right">	<label class="result-fn-area-port-label mr10">投放范围：</label></div>
+				<div class="result-fn-area-port right mr10">
+					<a class="nui-btn mr0 pr5"><em>全部</em> <i class="icon-down-arrow">&#x3438;</i></a>
+					<div class="nui-drop-list nui-drop-list-replace none">
+						<ul class="nui-drop-list-choose oneline">
+							<li><a href="javascript:">所有账号</a></li>
+							<li><a href="javascript:">待审批账号</a></li>
+							<li><a href="javascript:">正式账号</a></li>
+						</ul>
+					</div>		
+				</div>
+				<div class="result-fn-area-port right">	<label class="result-fn-area-port-label mr10">产品筛选：</label></div>
+				<div class="result-fn-area-port right mr10">
+					<a class="nui-btn mr0 pr5"><em>全部</em> <i class="icon-down-arrow">&#x3438;</i></a>
+					<div class="nui-drop-list nui-drop-list-replace none">
+						<ul class="nui-drop-list-choose oneline">
+							<li><a href="javascript:">所有账号</a></li>
+							<li><a href="javascript:">待审批账号</a></li>
+							<li><a href="javascript:">正式账号</a></li>
+						</ul>
+					</div>		
+				</div>
+				<div class="result-fn-area-port right">	<label class="result-fn-area-port-label mr10">状态筛选：</label></div>
+			</div>
+			<div class="result-table-area">
+				<table class="result-table">
+					<thead>
+						<tr>
+							<th class="checkbox"><input type="checkbox" name="" id="" title="选中/取消选中" /></th>
+							<th class="name">广告标题 | 类型</th>
+							<th width="180">投放产品 | 位置</th>
+							<th class="">投放范围</th>
+							<th>投放人 | 企业</th>
+							<th width="130">有效日期</th>
+							<th width="80">状态</th>
+							<th class="action">操作</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+							<td>海光公司广告<p class="sub-info">静态图片</p></td>
+							<td>运价通<p class="sub-info">网上营业厅 首页中部广告条</p></td>
+							<td>单公司<p class="sub-info">海光物流集团</p>
+							</td>
+							<td>xxx<p class="sub-info">海光物流集团</td>
+							<td>
+								<p>开始：<span>201-08-09</span></p>
+								<p>结束：<span>201-09-09</span></p>
+							</td>
+							<td><p class="text-warning">发布中</p></td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li><a href="javascript:" class=" first">详情<s class="icon-arrow-blue"></s></a></li>
+										<li class="slide-down-menu-li"><a href="javascript:" class="delete">删除</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+							<td>海光公司广告<p class="sub-info">静态图片</p></td>
+							<td>运价通<p class="sub-info">网上营业厅 首页中部广告条</p></td>
+							<td>单公司<p class="sub-info">海光物流集团</p>
+							</td>
+							<td>xxx<p class="sub-info">海光物流集团</td>
+							<td>
+								<p>开始：<span>201-08-09</span></p>
+								<p>结束：<span>201-09-09</span></p>
+							</td>
+							<td><p class="text-warning">发布中</p></td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li><a href="javascript:" class=" first">详情<s class="icon-arrow-blue"></s></a></li>
+										<li class="slide-down-menu-li"><a href="javascript:" class="delete">删除</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+							<td>海光公司广告<p class="sub-info">静态图片</p></td>
+							<td>运价通<p class="sub-info">网上营业厅 首页中部广告条</p></td>
+							<td>单公司<p class="sub-info">海光物流集团</p>
+							</td>
+							<td>xxx<p class="sub-info">海光物流集团</td>
+							<td>
+								<p>开始：<span>201-08-09</span></p>
+								<p>结束：<span>201-09-09</span></p>
+							</td>
+							<td><p class="text-warning">发布中</p></td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li><a href="javascript:" class=" first">详情<s class="icon-arrow-blue"></s></a></li>
+										<li class="slide-down-menu-li"><a href="javascript:" class="delete">删除</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+							<td>海光公司广告<p class="sub-info">静态图片</p></td>
+							<td>运价通<p class="sub-info">网上营业厅 首页中部广告条</p></td>
+							<td>单公司<p class="sub-info">海光物流集团</p>
+							</td>
+							<td>xxx<p class="sub-info">海光物流集团</td>
+							<td>
+								<p>开始：<span>201-08-09</span></p>
+								<p>结束：<span>201-09-09</span></p>
+							</td>
+							<td><p class="text-warning">发布中</p></td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li><a href="javascript:" class=" first">详情<s class="icon-arrow-blue"></s></a></li>
+										<li class="slide-down-menu-li"><a href="javascript:" class="delete">删除</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+							<td>海光公司广告<p class="sub-info">静态图片</p></td>
+							<td>运价通<p class="sub-info">网上营业厅 首页中部广告条</p></td>
+							<td>单公司<p class="sub-info">海光物流集团</p>
+							</td>
+							<td>xxx<p class="sub-info">海光物流集团</td>
+							<td>
+								<p>开始：<span>201-08-09</span></p>
+								<p>结束：<span>201-09-09</span></p>
+							</td>
+							<td><p class="text-warning">发布中</p></td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li><a href="javascript:" class=" first">详情<s class="icon-arrow-blue"></s></a></li>
+										<li class="slide-down-menu-li"><a href="javascript:" class="delete">删除</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="result-footer">
+				<div class="page"><input type="hidden" id="pageNo" name="pageNo" value="1" /><span class="pageinfo">1-20条，共64条 </span><a href="javascript:">下一页</a>
+					<a href="javascript:">尾页</a></div>
+				</div>
+			</div>
+	</div>
+				<!--#include file="footer.html"-->			
+</body>
+</html>

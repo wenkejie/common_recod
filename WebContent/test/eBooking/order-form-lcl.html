@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>订单提交</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="fui-dialog" style="width:700px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">海运拼箱出口订舱</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt">
+		<!-- <div class="eui-order-header clearfix">
+			<div class="eui-order-header-left">
+				<div class="eui-order-header-content">
+					<label class="label">
+						起运港
+					</label>
+					<p class="info">NINGBO</p>
+				</div>
+			</div>
+			<div class="eui-order-header-right">
+				<div class="eui-order-header-content">
+					<label class="label">
+						起运港
+					</label>
+					<p class="info">NINGBO</p>
+				</div>
+			</div>
+			<a class="trun-link" href="javascript:">查看运价详情</a>
+		</div> -->
+		<div class="eui-order-header">
+			<span>NINGBO</span>
+			<i>&#x3545;</i>
+			<span>NINGBO</span>
+			<a class="trun-link" href="javascript:">查看运价详情</a>
+		</div>
+		<div class="eui-order-form">
+			<div class="eui-form-line">
+				<div class="eui-form-left">
+					<label class="nui-label w60">船公司：</label>
+					<span class="nui-form-des">COSCO</span>
+				</div>
+				<div class="eui-form-right">
+					<label class="nui-label w70">航程：</label>
+					<span class="nui-form-des">45-50</span>
+				</div>
+			</div>
+			<div class="eui-form-line">
+				<div class="eui-form-left">
+					<label class="nui-label w60">港区：</label>
+					<span class="nui-form-des">五期</span>
+				</div>
+				<div class="eui-form-right">
+					<label class="nui-label w70">中转/直达：</label>
+					<span class="nui-form-des">宁波</span>
+				</div>
+			</div>
+			<div class="eui-form-line">
+				<div class="eui-form-left">
+					<label class="nui-label w60">船期：</label>
+					<div class="eui-form-tag">
+						<a class="eui-tag-cell" href="javascript:">1/3</a><a class="eui-tag-cell eui-tag-cell-current" href="javascript:">2/3</a><a class="eui-tag-cell" href="javascript:">3/3</a>
+					</div>
+				</div>
+				<div class="eui-form-right">
+					<label class="nui-label w70">联系方式：</label>
+					<span class="nui-form-des">139233113123（张聪）</span>
+				</div>
+			</div>
+			<div class="eui-form-line eui-form-line-fixed">
+				<label class="nui-label w60">附加费：</label>
+				<div class="eui-form-content">USD xxx ;dadwawdaw;dawdwa</div>
+			</div>
+			<div class="eui-form-line eui-form-line-fixed eui-form-line-bdn">
+				<label class="nui-label w60">备注：</label>
+				<div class="eui-form-content">20G'P限重：21T以上+USD100</div>
+			</div>
+		</div>
+		<table class="eui-order-table">
+			<thead>
+				<th class="th-first">
+					<div class="eui-order-item eui-order-item-first">
+						<p>体积范围：</p>
+						<p>
+							<span>1-100<span class="fs12">cbm</span></span>
+						</p>
+					</div>
+				</th>
+				<th>
+					<div class="eui-order-item">
+						<p>轻货：</p>
+						<p>
+							<span>[203]</span>
+						</p>
+					</div>
+				</th>
+				<th class="th-last">
+					<div class="eui-order-item eui-order-item-last">
+						<p>重货:</p>
+						<p>
+							<span>[850]</span>
+						</p>
+					</div>
+				</th>
+			</thead>
+		</table>
+		<div class="form-line clearfix mt10">
+			<div class="eui-form-cell">
+				<label class="nui-label w75">
+					<span class="nui-form-required">*</span>体积：
+				</label><div class="nui-form-cell w130">
+					<input type="text" id="typeoftime" class="nui-input">
+				</div>
+				<p class="eui-orader-tips  eui-orader-tips-error j-volume"><i>&#x3573;</i><span>请输入订舱体积</span></p>
+			</div>
+			<div class="eui-form-cell">
+				<label class="nui-label w65">
+					<span class="nui-form-required">*</span>重量：
+				</label><div class="nui-form-cell w130">
+					<input type="text" id="typeoftime" class="nui-input">
+				</div>
+				<p class="eui-orader-tips pl90 eui-orader-tips-error j-volume"><i>&#x3573;</i><span>请输入订舱重量</span></p>
+			</div>
+			<div class="eui-form-cell">
+				<label class="nui-label w50">
+					件数：
+				</label><div class="nui-form-cell w130">
+					<input type="text" id="typeoftime" class="nui-input">
+				</div>
+				<p class="eui-orader-tips pl75 eui-orader-tips-error j-volume"><i>&#x3573;</i><span>请输入订舱件数</span></p>
+			</div>
+			<!-- <span class="eui-input-tips">体积需小于运价的体积范围要求</span> -->
+		</div>
+		<div class="form-line">
+			<label class="nui-label vat w75">
+				<span class="nui-form-required">*</span>上传附件：
+			</label><div class="eui-order-annex">
+				<div href="javascript:" class="nui-file-upload nui-btn w50">
+					上传附件
+					<input type="file" class="nui-file-upload-input">
+				</div>
+				<div class="eui-annex-info none">
+					<span>运价通导入.xls</span><a href="javascript:">删除</a>
+				</div>
+				<!-- <p>上传附件需小于1M, 附件格式可以为 xlsx，xls，doc，docx，pdf , xml  txt</p> -->
+			</div>
+		</div>
+		<div class="eui-order-textarea-area mt5">
+			<label class="eui-order-textarea-label">订舱说明：</label>
+			<div class="eui-order-textarea">
+				<div class="content">
+					<textarea class="nui-textarea h80"></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="fui-dialog-btm-bar pss"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>提交订单</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+</body>
+</html>

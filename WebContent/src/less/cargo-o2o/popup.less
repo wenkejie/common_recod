@@ -1,0 +1,301 @@
+// ========================
+.nui-table-popup{
+	table-layout: fixed;
+	border-color: #d9d9d9;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	thead{
+		background-color: #f7f7f7;
+	}
+	tr{
+		border:none;
+	}
+	td{
+		// &:extend(.toe all);
+		vertical-align: top;
+		padding: 12px 9px;
+		word-wrap: break-word;
+		border-bottom: 1px solid #d9d9d9;
+	}
+	em{
+		font-size: 20px;
+	}
+	.separator{
+		padding: 0 5px;
+	}
+	.dest-info{
+		position: relative;
+		padding: 10px 30px;
+		background-color: #f7f7f7;
+		*z-index: -1;
+		.arrow1{
+			position: absolute;
+			top: -16px;
+			right:266px;
+			color: #d9d9d9;
+			font-family: "宋体";
+		}
+		.arrow2{
+			position: absolute;
+			top: -15px;
+			right: 266px;
+			color: #f7f7f7;
+			font-family: "宋体";
+		}
+		div{
+			display: inline-block;*display: inline;*zoom:1;
+			vertical-align: top;
+			color: #999;
+		}
+		.dest-info-column{
+			width: 90%;
+			color: #666;
+		}
+	}
+	.more-info{
+		&:extend(.toe all);
+		width: 100%;
+	}
+	.table-nodata{
+		background: #fff;
+		line-height: 100px;border-bottom: none;
+	}
+}
+.table-area{
+	height: 330px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.operation-cell{
+	a{
+		color: #808080;
+	}	
+}
+// *号
+.asterisk{
+	margin-left: -9px;
+	color: #B94A48;
+}
+.result-fn-area .add-icon{
+	display: inline-block;*display: inline;*zoom: 1;
+    padding-right: 3px;
+    vertical-align: middle;
+    line-height: 16px;
+    height: 20px;
+    font-size: 12px;
+}
+.result-fn-area-esp{
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #d9d9d9;
+}
+// 编辑框
+.form-line-edit{
+	position: relative;
+	padding-left: 100px;
+	*zoom: 1;
+}
+.form-line-edit-long{//底价维护框
+	position: relative;
+	padding-left: 160px;
+}
+.edit-label{
+	position: absolute;
+	top: 4px;
+	left: 0;
+	width: 90px;
+	color: #333;
+}
+
+.show-destinfo{
+	display: block;
+	text-decoration: none;
+	&:hover{
+		text-decoration: none;
+	}
+}
+// 目的港
+.dest-cell{
+	position: relative;
+	.arrow1{
+		position: absolute;
+		left: 31px;
+		bottom: -15px;
+		color: #d9d9d9;
+		font-family: "宋体";
+	}
+	.arrow2{
+		position: absolute;
+		left: 31px;
+		bottom: -16px;
+		color: #f7f7f7;
+		font-family: "宋体";
+	}
+}
+// 总舱位
+.seat-cell{
+	// position: relative;
+	.pencil-icon{
+		cursor: pointer;
+		font-size: 12px;
+		padding-left: 5px
+	}
+}
+.seat-num{
+	.toe;
+	display: inline-block;*display: inline;*zoom: 1;
+	vertical-align: middle;
+	max-width: 40px;
+	color: #fd900a;
+}
+.seat-edit-btn{
+	border-color: #09a2fd;color: #09a2fd;
+	&:hover{
+		background: #1c8ddc; 
+		color: #fff;
+	}
+}
+// 分配客服
+.drop-down-width{
+	width: 100%;
+	.nui-select-list-li{
+		.toe
+	}
+}
+
+// 加价设置
+.add-set-cell{
+	position: relative;
+}
+.add-set{
+	display: block;
+	padding: 0 5px;
+	height: 28px;
+	line-height: 28px;
+	text-decoration: none;
+	&:hover{
+		text-decoration: none;
+	}
+}
+.add-set-active{
+	border: 1px solid #c1c1c1;
+	border-bottom: none;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	&:hover{
+		background: #47a6ff;
+		color: #fff;
+	}
+}
+.add-set-list{
+	position: absolute;
+	top: 41px;
+	left: 9px;
+	width: 88px;
+	background: #fff;
+	border: 1px solid #c1c1c1;
+	border-top: none;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	z-index: 10;
+	a{
+		display: block;
+		padding:5px;
+		&:hover{
+			background: #47a6ff;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}
+// ========== 附加费说明 ===========
+// 单元格带边框
+.border-table{
+	table-layout: fixed;
+	font-size: 14px;
+	border-color: #d9d9d9;
+	border-right: none;
+	border-bottom: none;
+	thead{
+		background-color: #f7f7f7;
+	}
+	tr{
+		border:none;
+	}
+	th,td{
+		word-wrap: break-word;
+		border-right: 1px solid #d9d9d9;
+		border-bottom: 1px solid #d9d9d9;
+	}
+}
+.surcharge-table{
+	th,td{
+		padding: 12px 18px;
+	}
+	.checkbox-cell{
+		vertical-align: middle;
+		text-align: center;
+	}
+	.edit-link{
+	
+	}
+}
+.top-btn-wrap{
+	padding: 5px 10px 5px 0;
+}
+// 附加费说明编辑框
+.surcharge-edit-textarea{
+	height: 210px;
+}
+// ========= 新增报价 ==========
+.quote-table{
+	th,td{
+		text-align: center;
+		vertical-align: center;
+	}
+	th{
+		font-weight: bold;
+	}
+	.thead-extend td{
+		font-weight: bold;
+	}
+}
+.select-list-li-link{
+	display: block;
+	margin: 0 10px;
+	padding: 3px 0;
+	text-align: center;
+	color: #4388c7;
+	border-top: 1px dashed #c1cad2;
+	.add-icon{
+	    padding-right: 3px;
+	    vertical-align: middle;
+	    display: inline-block;*display: inline;*zoom: 1;
+	    line-height: 16px;
+	    height: 20px;
+	    font-size: 12px;
+	}
+}
+.form-cell-center{
+	display: block;
+	margin: 25px auto 0;
+	*margin-top: 40px;
+	width: 330px;
+	*zoom: 1;
+}
+// 编辑底价
+.form-des-valign{
+	.inline-block;
+	height: 24px;
+	line-height: 24px;
+}
+//新增仓位滚动
+.port-add-box-scroll{
+	overflow-y: auto;
+}
+// 表格底部翻页框
+
+ .table-popup-area {
+   height: 330px;
+   overflow-y: auto;
+}

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1,	target-densitydpi=device-dpi"/> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>掌上运价</title>
+	<link rel="stylesheet" href="../../release/freight/css/phone-common.css">
+</head>
+<body>
+
+	
+<!-- 	<div class="search-box" onclick="showNav(this,event);">海运出口整箱
+				<ul class="sub-nav" id="js-subNav">
+					<li>海运出口整箱</li>
+					<li>海运出口拼箱</li>
+					<li>海运进口整箱</li>
+					<li>海运进口整箱</li>
+					<li>空运</li>
+					
+				</ul>
+			</div> -->
+
+<ul class="tab" id="j-tab">
+			<li class="active" onclick="tabchange(this)">整箱</li>
+			<li  onclick="tabchange(this)">拼箱</li>
+			<li  onclick="tabchange(this)">空运</li>
+			<!-- <li  onclick="tabchange(this)">拼箱进口</li> -->
+			<li class="btn-back" onclick="history.go(-1);">返回</li>
+		</ul>
+			<!-- <a href="index.html" class="btn-back"></a> -->
+
+		<section >
+		
+			<form action="" >
+				<div class="login-panel" id="js-box">
+					<div class="form-line">
+						<label for="">起运港</label>
+						<select name="" id="" >
+							<option value="">海运出口整箱</option>
+							<option value="">海运出口整箱</option>
+							<option value="">海运出口整箱</option>
+							<option value="">海运出口整箱</option>
+							<option value="">海运出口整箱</option>
+						</select>
+					</div>
+					<!-- <div class="line" id="goto1"></div> -->
+					<div class="form-line">
+						<label for="">起运港</label>
+						<input type="text" onclick ="onInput(this)" onkeyup="isNone(this)" />
+						<span class="btn-close-input" onclick="clearVal(this)">×</span>
+					</div>
+					<!-- <div class="line" id="goto2"></div> -->
+					<div class="form-line">
+						<label for="">航空公司</label>
+						<input type="text" onclick ="onInput(this)" />
+						<span class="btn-close-input" onclick="clearVal(this)">×</span>
+					</div>
+
+				</div>
+				<span class="back-form" onclick="closeSlideDown()">取消</span>
+
+			<ul class="slide-down" id="js-result">
+				<li>akladfla adlkjf asdlfsaj dsdfj</li>
+				<li>akladfla adlkjf asdlfsaj dsdfj</li>
+				<li>akladfla adlkjf asdlfsaj dsdfj</li>
+				<li>akladfla adlkjf asdlfsaj dsdfj</li>
+				<li>akladfla adlkjf asdlfsaj dsdfj</li>
+				<li>akladfla adlkjf asdlfsaj dsdfj</li>
+				<li>akladfla adlkjf asdlfsaj dsdfj</li>
+				<li>akladfla adlkjf asdlfsaj dsdfj</li>
+				<li class="fn-bar clearfix"><a href="javascript:" class="slide-down-close" onclick="closeSlideDown('js-gk')">关闭</a></li>
+			</ul>
+		
+			<button class="submit">搜 索</button>
+	</form>
+	</section>
+<footer>
+<hr/>
+<div class="footer-bar">
+	 dfjsdjfsj  <a href="javascript:">退出</a>
+</div>
+<hr/>
+<p class="mt05">开源国际物流有限公司</p>
+<p >联系人：李登辉 - 电话：0574-88582888</p>
+<p >邮箱：<a href="mailto:sadfj@jlfs.com">dsfj@fsldf.com</a></p>
+	大掌柜 &middot; 运价通
+</footer>
+</body>
+</html>
+<script type="text/javascript">
+		
+			function getId(name){
+				return document.getElementById(name);
+			}
+
+			function getTag(name){
+				return document.getElementsByTagName(name)
+			}
+
+			function hideItem (items) {
+				for (var i = 0; i < items.length; i++) {
+					items[i].style.display= "none"
+				};
+			}
+
+			function showItem (items) {
+				for (var i = 0; i < items.length; i++) {
+					items[i].style.display= "block"
+				};
+			}
+
+		
+			function tabchange(item) {
+				// var tab = getId("j-tab").getElementsByTagName("li")
+				var li = getId("j-tab").getElementsByTagName("li"); 
+				for (var i = 0; i < (li.length -1) ; i++) {
+						li[i].className = "";
+				};
+				item.className = "active";
+			}
+			
+
+			function isNone (item) {
+				var parent = item.parentNode;
+				var btn = parent.getElementsByTagName("span");
+				// console.log(1)
+				item.value ?  btn[0].style.display = "block" : btn[0].style.display = "none" 
+			}
+
+			function clearVal(item){
+				var parent = item.parentNode;
+				var input = parent.getElementsByTagName("input");
+				item.style.display = "none";
+				input[0].value = "";
+				input[0].focus();
+			}
+		// 	function showNav(item,event){
+		// 	var child = item.childNodes;
+			
+		// 	for (var i = 0; i < child.length; i++) {
+		// 		if (child[i].nodeName == 'UL') {
+		// 			var subMenu = child[i];
+		// 		}
+		// 	};
+		// 	subMenu.style.display = "block";
+		// 	subMenu.style.left = item.offsetLeft+"px";
+		// 	// console.log(event)
+		// 	event.stopPropagation();
+		// 	var dClick = function  () {
+		// 		subMenu.style.display = "none";
+		// 		document.removeEventListener("click",dClick,true);
+		// 	}
+		// 	document.addEventListener('click', dClick,true);
+		// }
+	
+		var hideItems = [getId("j-tab"),getTag("footer")[0],getTag("button")[0]];
+		var searchCell = getId("js-box").childNodes;
+
+			for (var i = 0; i < searchCell.length; i++) {
+						if (searchCell[i].nodeName == 'DIV') {
+							 hideItems.push(searchCell[i]);
+						}
+					};
+
+		function onInput (item) {
+			hideItem(hideItems);
+			getId("js-result").style.display="block"
+			item.parentNode.style.display="block"
+			getTag("form")[0].style.marginTop = 0;
+			getTag("section")[0].className = "input-focus";
+			item.parentNode.id = "focused";
+			item.parentNode.getElementsByTagName("input")[0].focus();
+			// item.parentNode.getElementsByTagName("input")[0].style.display="none";
+			document.body.scrollTop = 0;
+		}
+		
+		function closeSlideDown () {
+			var focused = getId("focused");
+			showItem(hideItems);
+			getId("js-result").style.display="none";
+			getTag("form")[0].style.marginTop = "1em";
+			getTag("section")[0].className = "";
+			focused.getElementsByTagName("input")[0].value = "";
+			focused.getElementsByTagName("span")[0].style.display = "none";
+			focused.id = "";
+		}
+
+
+
+
+
+			
+// alert(document.body.scrollTop+document.documentElement.clientHeight+" | "+pageH )
+// alert("widtH:"+window.screen.width+" height:"+window.screen.height )
+// alert(window.devicePixelRatio);	
+	</script>

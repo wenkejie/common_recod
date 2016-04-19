@@ -1,0 +1,196 @@
+// ====================运价互联，by:Evan=================
+// =====================================================
+
+
+
+.adv-tab-cnt-unicom{
+	height: 440px;
+}
+
+
+.unicom-search-supervise{
+	margin: 0;padding: 10px 20px;
+	width: auto;
+	background-color: #eee;border: 1px solid #dcdcdc;
+}
+
+// 查询表
+.search-list-supervise{
+	border: 1px solid #d9d9d9;
+}
+
+.filter-drop-area{
+	position: relative;
+}
+
+.filter-drop{
+	display: block;
+	// height: 24px;line-height: 24px;
+	border: 1px solid transparent;
+    color: #333;
+    i{
+    	color: #333;	
+    }
+    &:hover{
+    	text-decoration: none;
+    	color: #333;
+    }
+}
+
+.filter-drop-hover{
+	border: 1px solid #bababa;
+	width: 80px;
+	padding: 5px 10px;margin:-5px -10px;
+	background-color: #fff;
+}
+
+
+.nui-drop-list-filter{
+	top: 30px;left: -10px;
+}
+
+// 新增的规则全删出
+.allrule-del{
+	float: right;
+	color: #aaa;font-weight: normal;font-size: 12px;
+	&:hover{
+		text-decoration: none;
+		color: #666;
+	}
+}
+
+
+
+
+// 绑定历史部分的新增结构
+.tab-dropdown{
+	position: relative;
+	float: right;*display: inline;
+	width: 85px;
+	height: 30px;line-height: 30px;
+}
+
+.tab-dropdown-link{
+	display: block;
+	*height: 30px;
+	color: #fff;
+	i{
+		color: #fff;
+	}
+	&:hover{
+		text-decoration: none;
+		color: #fff;
+	}
+	&.active{
+		position: relative;z-index: 101;
+		text-decoration: none;
+		background-color: #efefef;
+		color: #666;
+		i{
+			color: #666;
+		}
+	}
+}
+
+.history-list{
+	position: absolute;right: 0;top: 29px;z-index: 99;
+	width: 220px;padding: 5px 10px;max-height: 240px;overflow-y: auto;overflow-x: hidden;
+	background-color: #fff;border: 1px solid #cbcbcb;
+	text-align: left;
+}
+
+.history-list-cell{
+	position: relative;
+	height: 30px;line-height: 30px;
+	&:hover{
+		background-color: #efefef;	
+		cursor: pointer;
+		.history-return-btn{
+			display: block;
+		}
+	}
+	span{
+		&:extend(.toe all);
+		display: block;
+		width: 100%;
+	}
+}
+
+.history-return-btn{
+	position: absolute;right: 0;top: 2px;z-index: 1;
+	display: none;
+	padding: 3px;
+	line-height: 20px;height: 20px;
+	background-color: #2f9ef3;
+	font-size: 14px;
+	text-align: center;
+	i{
+		color: #fff;
+	}
+	&:hover{
+		text-decoration: none;
+		color: #fff;	
+	}
+}
+
+
+
+
+
+// nui-table调整，应对站内信
+// 
+.nui-table{
+	.info-unread{
+		color: #666;font-weight: bold;
+		.site-msg-read{
+			color: #666;
+		}
+	}
+	
+	.info-read{
+		color: #bbb;
+		.site-msg-read{
+			color: #bbb;
+		}
+	}
+}
+
+
+
+// 互联账号设置结构调整
+
+.waterfall-opition{
+	font-size: 0;
+}
+
+.waterfall-opition-two{
+	.waterfall-opition-cell{
+		width: 50%;
+	}	
+}
+.waterfall-opition-cell{
+	position: relative;
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	width: 33.3%;
+	font-size: 12px;
+}
+
+.waterfall-opition-cell{
+	.waterfall-item-btn{
+		border-left: 1px solid #ddd;
+	}
+	&.first{
+		*margin-right: -1px;
+		.waterfall-item-btn{
+			border-left: none;
+		}
+	}
+}
+
+
+// 申请消息反馈
+.apply-feadback-info{
+	padding: 5px 10px;
+}
+

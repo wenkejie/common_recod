@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>新增舱位</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+
+</head>
+<body>
+
+<div class="fui-dialog"  style="height:630px;width:645px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">新增舱位</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt">
+		<div class="form-line form-line-edit">
+			<label class="nui-label edit-label"><span class="text-red">*</span>船公司：</label>
+			<div class="nui-form-cell w120">
+				<input class="nui-input" type="text" placeholder="">
+			</div>
+		</div>
+		<div class="form-line form-line-edit">
+			<label class="nui-label edit-label"><span class="text-red">*</span>航线：</label>
+			<div class="nui-form-cell w120">
+				<input class="nui-input" type="text" placeholder="">
+			</div>
+		</div>
+		<div class="form-line form-line-edit">
+			<label class="nui-label edit-label">航线代码：</label>
+			<div class="nui-form-cell w120">
+				<input class="nui-input" type="text" placeholder="">
+			</div>
+		</div>
+		<div class="form-line form-line-edit">
+			<label class="nui-label edit-label">起运港：</label>
+			<div class="port-add-box" style="width: 490px;">
+				<a class="nui-btn nui-btn-primary left mr5 j-loadport-add " href="javascript:">添加</a>
+				<div class="j-selected">
+					<div class="port-box-cell">
+						<input type="hidden" name="selected_id" value="<%=rvo.getLoadport_id() %>			
+						"/>
+						<div class="port-box-cnt">NINGBO</div>
+						<a href="javascript:" class="port-box-del j-port-del">×</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-line form-line-edit">
+			<label class="nui-label edit-label">目的港：</label>
+			<!-- 这部份组件可以用目的港计算器的那个 -->
+			<div class="port-add-box port-add-box-scroll" style="height: 195px;width: 490px;">
+				<a class="nui-btn nui-btn-primary left mr5 j-loadport-add" href="javascript:">添加</a>
+				<div class="j-selected">
+					<div class="port-box-cell">
+						<input type="hidden" name="selected_id" value="<%=rvo.getLoadport_id() %>			
+						"/>
+						<div class="port-box-cnt">NINGBO</div>
+						<a href="javascript:" class="port-box-del j-port-del">×</a>
+					</div>
+					<div class="port-box-cell">
+						<input type="hidden" name="selected_id" value="<%=rvo.getLoadport_id() %>			
+						"/>
+						<div class="port-box-cnt">NINGBO</div>
+						<a href="javascript:" class="port-box-del j-port-del">×</a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="form-line form-line-edit">
+			<label class="nui-label edit-label"><span class="text-red">*</span>总舱位：</label>
+			<div class="nui-form-cell w120">
+				<input class="nui-input" type="text" placeholder="">
+			</div>
+		</div>
+		<div class="form-line form-line-edit">
+			<label class="nui-label edit-label">分配客服：</label>
+			<div class="nui-form-cell nui-select w75"> 
+				<div class="nui-form-cell-cnt"> 
+					<input type="text" class="nui-input" value="未分配" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+					<div class="nui-drop-down drop-down-width"> 
+						<ul class="nui-select-list">
+							 <li class="nui-select-list-li">客服A</li> 
+							 <li class="nui-select-list-li">客服B</li> 
+							 <li class="nui-select-list-li">客服CCCCCCCCCCCCCCCCCCCCCCC</li>   
+						</ul> 
+					</div> 
+				</div> 
+			</div>
+		</div>
+		<div class="form-line form-line-edit">
+			<label class="nui-label edit-label">加价设置：</label>
+			<div class="nui-form-cell nui-select w75"> 
+				<div class="nui-form-cell-cnt"> 
+					<input type="text" class="nui-input" value="20GP" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+					<div class="nui-drop-down drop-down-width"> 
+						<ul class="nui-select-list">
+							 <li class="nui-select-list-li">20GP</li> 
+							 <li class="nui-select-list-li">40GP</li>  
+						</ul> 
+					</div> 
+				</div> 
+			</div>
+			<div class="nui-form-cell nui-select w65"> 
+				<div class="nui-form-cell-cnt"> 
+					<input type="text" class="nui-input" value="加上" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+					<div class="nui-drop-down drop-down-width"> 
+						<ul class="nui-select-list">
+							 <li class="nui-select-list-li">加上</li> 
+							 <li class="nui-select-list-li">减去</li> 
+							 <li class="nui-select-list-li">乘以</li> 
+							 <li class="nui-select-list-li">除以</li>  
+						</ul> 
+					</div> 
+				</div> 
+			</div>
+			<div class="nui-form-cell w100"> 
+		  		<div class="nui-form-cell-cnt"> 
+		  			<input type="text" class="nui-input no-chinese"><i class="nui-form-cell-icon fs12">$</i>
+		  		</div>
+		  	</div>
+		</div>
+		<div class="form-line form-line-edit">
+			<label class="nui-label edit-label"></label>
+			<div class="nui-form-cell nui-select w75"> 
+				<div class="nui-form-cell-cnt"> 
+					<input type="text" class="nui-input" value="20GP" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+					<div class="nui-drop-down drop-down-width"> 
+						<ul class="nui-select-list">
+							 <li class="nui-select-list-li">20GP</li> 
+							 <li class="nui-select-list-li">40GP</li>  
+						</ul> 
+					</div> 
+				</div> 
+			</div>
+			<div class="nui-form-cell nui-select w65"> 
+				<div class="nui-form-cell-cnt"> 
+					<input type="text" class="nui-input" value="加上" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+					<div class="nui-drop-down drop-down-width"> 
+						<ul class="nui-select-list">
+							 <li class="nui-select-list-li">加上</li> 
+							 <li class="nui-select-list-li">减去</li> 
+							 <li class="nui-select-list-li">乘以</li> 
+							 <li class="nui-select-list-li">除以</li>  
+						</ul> 
+					</div> 
+				</div> 
+			</div>
+			<div class="nui-form-cell w100"> 
+		  		<div class="nui-form-cell-cnt"> 
+		  			<input type="text" class="nui-input no-chinese"><i class="nui-form-cell-icon fs12">$</i>
+		  		</div>
+		  	</div>
+		</div>
+		
+		
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../release/freight/js/cargo-o2o/rule.js"></script>
+<!-- <script type="text/javascript" src="../../src/js/jquery.multiselect.js"></script> -->
+<!-- <script type="text/javascript" src="../../release/freight/js/cargo-o2o/rule.js"></script> -->
+
+</body>
+</html>

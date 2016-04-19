@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>运价筛选设置</title>
+	<link rel="stylesheet" href="../../release/freight/css/common.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+</head>
+<body>
+
+<div class="fui-dialog"  style="height:620px;width:1150px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">运价筛选设置</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt">
+		<div class="fui-adv-tab mt10">
+			<div class="fui-adv-tab-head clearfix">
+				<div class="right">
+					<label class="fui-label w-a">船公司控制</label>
+					<a class="fui-btn-switch" href="javascript:"></a>
+				</div>
+				<h2>选择你想要的起运港，目的港运价</h2>
+			</div>
+			<ul class="fui-adv-tab-list">
+				<li>
+					<a href="javascript:" class="fui-adv-tab-list-cell ">
+						起运港设置
+						<div class="fui-tips-arrow fui-tips-arrow-right">
+							◆ 
+							<em>◆</em>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:" class="fui-adv-tab-list-cell active">
+						目的港设置
+						<div class="fui-tips-arrow fui-tips-arrow-right">
+							◆ 
+							<em>◆</em>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<div class="fui-adv-tab-cnt none">
+				<label>
+					<input type="checkbox" class="checkbox ml10" id="fclExportRoute" name="fclExportRoute" value="27040">是</label>
+
+				<label>
+					<input type="checkbox" class="checkbox ml10" id="fclExportRoute" name="fclExportRoute" value="27526">地中海1</label>
+
+				<label>
+					<input type="checkbox" class="checkbox ml10" id="fclExportRoute" name="fclExportRoute" value="27529">3</label>
+
+				<label>
+					<input type="checkbox" class="checkbox ml10" id="fclExportRoute" name="fclExportRoute" value="28877">QWE</label>
+
+				<label>
+					<input type="checkbox" class="checkbox ml10" id="fclExportRoute" name="fclExportRoute" value="28879">航线看看</label>
+
+			</div>
+			<div class="fui-adv-tab-cnt adv-tab-cnt-unicom ">
+				<div class="rule-container-left">
+					<div class="nui-form-cell nui-select w140 mr10">
+						<div class="nui-form-cell-cnt">
+							<input class="nui-input" type="text" placeholder="选择航线"> <i class="nui-form-cell-icon fs12">&#xe609;</i>
+						</div>
+					</div>
+					<div class="nui-form-cell nui-select w140 mr10">
+						<div class="nui-form-cell-cnt">
+							<input class="nui-input" type="text" placeholder="选择航线"> <i class="nui-form-cell-icon fs12">&#xe609;</i>
+						</div>
+					</div>
+					<div class="nui-form-cell nui-select w140">
+						<div class="nui-form-cell-cnt">
+							<input class="nui-input" type="text" placeholder="选择航线">				
+							<i class="nui-form-cell-icon fs12">&#xe609;</i>
+						</div>
+					</div>
+					<div class="unicom-rule-hd">
+						<div class="hd-left">
+							<label>航线：</label>
+							<span class="fwb">欧洲</span>
+							；
+							<label>船公司：</label>
+							<span class="fwb">欧洲</span>
+							；
+							<label>目的港：</label>
+							<span class="fwb">圣保罗</span>
+						</div>
+						<div class="hd-right">
+							<a class="nui-btn nui-btn-mini" href="javascript:">全选</a>
+							<a class="nui-btn nui-btn-mini" href="javascript:">反选</a>
+							<a class="nui-btn nui-btn-mini" href="javascript:">清除</a>
+						</div>
+					</div>
+					<div class="unicom-rule-list">
+						<div class="unicom-rule-items">
+							<div class="rule-items-title">
+								<label for="shipc" class="nui-checkbox">
+									<input type="checkbox" name="" id="shipc">				
+									船公司：
+									<span class="fwb">APL</span>
+								</label>
+							</div>
+							<div class="rule-items-cnt">
+								<label for="s1" class="nui-checkbox">
+									<input type="checkbox" name="" id="s1">PARIS</label>
+								<label for="s2" class="nui-checkbox">
+									<input type="checkbox" name="" id="s2">PARIS</label>
+								<label for="s3" class="nui-checkbox">
+									<input type="checkbox" name="" id="s3">PARIS</label>
+								<label for="s4" class="nui-checkbox">
+									<input type="checkbox" name="" id="s4">PARIS</label>
+								<label for="s5" class="nui-checkbox">
+									<input type="checkbox" name="" id="s5">PARIS</label>
+								<label for="s6" class="nui-checkbox">
+									<input type="checkbox" name="" id="s6">PARISPARIS</label>
+								<label for="s7" class="nui-checkbox">
+									<input type="checkbox" name="" id="s7">PARIS</label>
+								<label for="s8" class="nui-checkbox">
+									<input type="checkbox" name="" id="s8">PARIS</label>
+								<label for="s9" class="nui-checkbox">
+									<input type="checkbox" name="" id="s9">PARIS</label>
+								<label for="s10" class="nui-checkbox">
+									<input type="checkbox" name="" id="s10">PARISPARIS</label>
+								<label for="s11" class="nui-checkbox">
+									<input type="checkbox" name="" id="s11">PARIS</label>
+								<label for="s12" class="nui-checkbox">
+									<input type="checkbox" name="" id="s12">PARIS</label>
+								<label for="s13" class="nui-checkbox">
+									<input type="checkbox" name="" id="s13">PARIS</label>
+								<label for="s14" class="nui-checkbox">
+									<input type="checkbox" name="" id="s14">PARISPARIS</label>
+								<label for="s15" class="nui-checkbox">
+									<input type="checkbox" name="" id="s15">PARIS</label>
+								<label for="s16" class="nui-checkbox">
+									<input type="checkbox" name="" id="s16">PARIS</label>
+							</div>
+						</div>
+						<div class="unicom-rule-items">
+							<div class="rule-items-title">
+								<label for="shipc" class="nui-checkbox">
+									<input type="checkbox" name="" id="shipc">				
+									船公司：
+									<span class="fwb">APL</span>
+								</label>
+							</div>
+							<div class="rule-items-cnt">
+								<label for="s16" class="nui-checkbox">
+									<input type="checkbox" name="" id="s16">PARIS</label>
+								<label for="s17" class="nui-checkbox">
+									<input type="checkbox" name="" id="s17">PARIS</label>
+								<label for="s18" class="nui-checkbox">
+									<input type="checkbox" name="" id="s18">PARIS</label>
+								<label for="s19" class="nui-checkbox">
+									<input type="checkbox" name="" id="s19">PARIS</label>
+								<label for="s20" class="nui-checkbox">
+									<input type="checkbox" name="" id="s20">PARIS</label>
+								<label for="s21" class="nui-checkbox">
+									<input type="checkbox" name="" id="s21">PARISPARIS</label>
+								<label for="s22" class="nui-checkbox">
+									<input type="checkbox" name="" id="s22">PARIS</label>
+								<label for="s23" class="nui-checkbox">
+									<input type="checkbox" name="" id="s23">PARIS</label>
+							</div>
+						</div>
+						<div class="unicom-rule-items">
+							<div class="rule-items-title">
+								<label for="shipc" class="nui-checkbox">
+									<input type="checkbox" name="" id="shipc">				
+									船公司：
+									<span class="fwb">APL</span>
+								</label>
+							</div>
+							<div class="rule-items-cnt">
+								<label for="s24" class="nui-checkbox">
+									<input type="checkbox" name="" id="s24">PARIS</label>
+								<label for="s25" class="nui-checkbox">
+									<input type="checkbox" name="" id="s25">PARIS</label>
+								<label for="s26" class="nui-checkbox">
+									<input type="checkbox" name="" id="s26">PARIS</label>
+								<label for="s27" class="nui-checkbox">
+									<input type="checkbox" name="" id="s27">PARIS</label>
+								<label for="s28" class="nui-checkbox">
+									<input type="checkbox" name="" id="s28">PARIS</label>
+								<label for="s29" class="nui-checkbox">
+									<input type="checkbox" name="" id="s29">PARISPARIS</label>
+								<label for="s30" class="nui-checkbox">
+									<input type="checkbox" name="" id="s30">PARIS</label>
+								<label for="s31" class="nui-checkbox">
+									<input type="checkbox" name="" id="s31">PARIS</label>
+							</div>
+						</div>
+						<div class="unicom-rule-items">
+							<div class="rule-items-title">
+								<label for="shipc" class="nui-checkbox">
+									<input type="checkbox" name="" id="shipc">				
+									船公司：
+									<span>APL</span>
+								</label>
+							</div>
+							<div class="rule-items-cnt">
+								<label for="s32" class="nui-checkbox">
+									<input type="checkbox" name="" id="s32">PARIS</label>
+								<label for="s33" class="nui-checkbox">
+									<input type="checkbox" name="" id="s33">PARIS</label>
+								<label for="s34" class="nui-checkbox">
+									<input type="checkbox" name="" id="s34">PARIS</label>
+								<label for="s35" class="nui-checkbox">
+									<input type="checkbox" name="" id="s35">PARIS</label>
+								<label for="s36" class="nui-checkbox">
+									<input type="checkbox" name="" id="s36">PARIS</label>
+								<label for="s37" class="nui-checkbox">
+									<input type="checkbox" name="" id="s37">PARISPARIS</label>
+								<label for="s38" class="nui-checkbox">
+									<input type="checkbox" name="" id="s38">PARIS</label>
+								<label for="s39" class="nui-checkbox">
+									<input type="checkbox" name="" id="s39">PARIS</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="rule-container-mid">
+					<div class="shadow">
+						<a class="nui-btn nui-btn-primary" href="javascript:">
+							<i>&#x3545;</i>
+						</a>
+					</div>
+				</div>
+				<div class="rule-container-right">
+					<div class="nui-form-cell w200">
+						<div class="nui-form-cell-cnt">
+							<input class="nui-input" type="text" placeholder="查找船公司或目的港">				
+							<i class="nui-form-cell-icon fs12">&#x355d;</i>
+						</div>
+					</div>
+					<h2 class="fwb mt20"><a class="ruleall-del" href="javascript:">全部删除</a>已选目的港</h2>
+					<div class="unicom-rule-list rule-list-info">
+						<div class="unicom-rule-items">
+							<div class="unicom-rule-title">
+								<label>船公司：</label>
+								<span class="fwb">APL</span>
+								<a class="unicom-rule-del" href="javascript:"><i>&#x3586;</i></a>
+							</div>
+							<div class="rule-items-cnt">
+								<div class="unicom-tags-cell">
+									<div class="unicom-tags-info">DUIBAD</div>
+									<div class="unicom-tags-del">
+										<a class="close" href="javascript:">×</a>
+									</div>
+								</div>
+								<div class="unicom-tags-cell">
+									<div class="unicom-tags-info">DUIBAD</div>
+									<div class="unicom-tags-del">
+										<a class="close" href="javascript:">×</a>
+									</div>
+								</div>
+								<div class="unicom-tags-cell">
+									<div class="unicom-tags-info">DUIBAD</div>
+									<div class="unicom-tags-del">
+										<a class="close" href="javascript:">×</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="unicom-rule-items">
+							<div class="unicom-rule-title">
+								<label>船公司：</label>
+								<span class="fwb">APL</span>
+							</div>
+							<div class="rule-items-cnt">
+								<div class="unicom-tags-cell">
+									<div class="unicom-tags-info">DUIBAD</div>
+									<div class="unicom-tags-del">
+										<a class="close" href="javascript:">×</a>
+									</div>
+								</div>
+								<div class="unicom-tags-cell">
+									<div class="unicom-tags-info">DUIBAD</div>
+									<div class="unicom-tags-del">
+										<a class="close" href="javascript:">×</a>
+									</div>
+								</div>
+								<div class="unicom-tags-cell">
+									<div class="unicom-tags-info">DUIBAD</div>
+									<div class="unicom-tags-del">
+										<a class="close" href="javascript:">×</a>
+									</div>
+								</div>
+								<div class="unicom-tags-cell">
+									<div class="unicom-tags-info">DUIBAD</div>
+									<div class="unicom-tags-del">
+										<a class="close" href="javascript:">×</a>
+									</div>
+								</div>
+								<div class="unicom-tags-cell">
+									<div class="unicom-tags-info">DUIBAD</div>
+									<div class="unicom-tags-del">
+										<a class="close" href="javascript:">×</a>
+									</div>
+								</div>
+								<div class="unicom-tags-cell">
+									<div class="unicom-tags-info">DUIBAD</div>
+									<div class="unicom-tags-del">
+										<a class="close" href="javascript:">×</a>
+									</div>
+								</div>
+								<div class="unicom-tags-cell">
+									<div class="unicom-tags-info">DUIBAD</div>
+									<div class="unicom-tags-del">
+										<a class="close" href="javascript:">×</a>
+									</div>
+								</div>
+								<div class="unicom-tags-cell">
+									<div class="unicom-tags-info">DUIBAD</div>
+									<div class="unicom-tags-del">
+										<a class="close" href="javascript:">×</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>保存</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../release/freight/js/unicom-freight/rule.js"></script>
+<script type="text/javascript" src="../../release/freight/js/unicom-freight/rule.js"></script>
+</body>
+</html>

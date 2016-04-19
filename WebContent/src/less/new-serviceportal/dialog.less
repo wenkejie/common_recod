@@ -1,0 +1,47 @@
+// ============================================
+// ================= 弹窗结构 =================
+// ============================================
+
+.gui-dialog{
+	position: fixed;_position: absolute;left: 50%;top: 300px;z-index: 999;
+	margin-left: -245px;width: 490px;
+	background-color: #fff;
+	box-shadow: 3px 3px 4px #ddd;
+}
+
+.gui-dialog-header{
+	height: 42px;line-height: 42px;
+	padding: 0 15px;
+	border-top-right-radius: 5px;border-top-left-radius: 5px;
+	background-color: #0083e5;
+}
+
+
+.gui-dialog-title{
+	font-size: 14px;
+	color: #fff;
+}
+
+.gui-dialog-close{
+	position: absolute;right: 10px;top: 13px;z-index: 1;
+	width: 16px;height: 16px;line-height: 16px;
+	font-size: 16px;
+	text-align: center;color: #f2f2f2;
+	&:hover{
+		color: #fff;
+	}
+}
+
+.gui-dialog-content{
+	padding: 10px;
+	border-left: 1px solid #b4b4b4;border-right: 1px solid #b4b4b4;
+	.gui-form{
+		padding: 10px;
+	}
+}
+
+.gui-dialog-footer{
+	padding: 10px;
+	border: 1px solid #b4b4b4;
+	border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;
+}

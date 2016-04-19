@@ -1,0 +1,201 @@
+<!--#include file="header.html"-->
+<div class="auto-wrap">
+<div class="left-column">
+
+<div class="self-info clearfix">
+	<img src="../../src/images/crm/noImg.jpg" alt="" class="user-img">
+	李光耀<br/>
+<a href="javascript:">个人设置</a>
+</div>
+
+	<ul class="left-menu">
+		<li><a href="javascript:" class="left-menu-link left-menu-link-active"><i>&#x343c;</i> 我的首页</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3497;</i> 我的私信</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3442;</i> 提到我的</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3515;</i> 同事动态</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3569;</i> 通知公告</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3575;</i> 我的收藏</a></li>
+	</ul>
+	<div class="widget ml10">
+		<div class="widget-title-cnt">
+			<h2 class="widget-title">热门话题</h2>
+		</div>
+		<div class="widget-cnt">
+			<ul class="widget-list">
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">如何给客户报价</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">出售技巧</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">出口拼箱小立方特惠</a></li>
+				
+				<li class="widget-list-cell"><i>&#x355d;</i> <a href="javascript:" class="widget-list-link widget-list-link-strong">查看全部热门话题</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="right-column clearfix">
+	
+		<div class="left">
+			<!--#include file="mainNavIn.html"-->
+				
+			<div class="main-content">
+			<!-- 右侧主要内容开始 -->
+			<div class="main-right-column ">
+					<div class="widget">
+						<div class="widget-title-cnt">
+							<h2 class="widget-title">我相关的任务</h2><i class="fs14">&#x3438;</i><a href="javascript:" class="right none">全部</a>
+						</div>
+						<div class="widget-cnt">
+							<ul class="widget-list">
+								<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link text-error">如何给客户报价</a></li>
+								<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li>
+								<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">出售技巧</a></li>
+								<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">出口拼箱小立方特惠</a></li>
+								
+								<li class="widget-list-cell"><i>&#x355d;</i> <a href="javascript:" class="widget-list-link widget-list-link-strong">查看全部热门话题</a></li>
+							</ul>
+			
+							<button class="nui-btn mt10 mb20"><i class="fs14">&#x3545;</i> 给自己安排任务</button>
+							<button class="nui-btn mt10 mb20">给他人分配任务</button>
+						</div>
+					</div>
+					<div class="widget">
+						<div class="widget-title-cnt">
+							<h2 class="widget-title">我的销售机会</h2><a href="javascript:" class="right none">全部</a>
+						</div>
+						<div class="widget-cnt">
+							<ul class="widget-list">
+								<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">如何给客户报价</a></li>
+								<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li>
+								
+							</ul>
+						</div>
+					</div>
+					<div class="widget mt20">
+						<div class="widget-title-cnt">
+							<h2 class="widget-title">我的关注</h2>
+						</div>
+						<div class="widget-cnt">
+						<div class="img-box clearfix">
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+							</div>
+							<ul class="widget-list mt10">
+								<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li>
+								<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li>
+								<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li>
+								
+							</ul>
+						</div>
+					</div>
+					
+					<div class="widget mt20">
+						<div class="widget-title-cnt">
+							<h2 class="widget-title">我的下属</h2>
+						</div>
+						<div class="widget-cnt">
+							<div class="img-box clearfix">
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+								<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- 左侧主要内容开始 右侧主要内容结束 -->
+				<div class="main-left-column">
+					<div class="data-list-top">
+						<div class="nui-form-cell nui-search-with-select">
+							<div class="nui-select">
+								<div class="nui-select-value">
+									按类别查找
+								</div><i>&#x3438;</i>
+								<div class="nui-drop-down ">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">工作分享</li>
+										<li class="nui-select-list-li">行业资讯</li>
+										<li class="nui-select-list-li">知识百科</li>
+									</ul>
+								</div>
+							</div>
+							<div class="nui-form-cell-cnt left">
+								<input type="text" class="nui-input no-chinese">
+								<i class="nui-form-cell-icon fs12 cur-p">&#x355d;</i>
+							</div>
+						</div>
+						<div class="right">
+							<button class="nui-btn nui-btn-primary"><i class="fcf">&#x3455;</i> 贡献知识</button>
+						</div>
+					</div>
+					<div class="data-list-cell">
+						<h3 class="left"><a href="javascript:" class="data-list-title">翼支付开测HTML5应用 潮流新技术带来更强用户体验</a></h3>
+						<span class="data-list-info">来自：李刚 2013-12-18 22:20</span>
+						<p class="cb">作为互联网行业的最新Web标准，HTML5技术具有跨平台、易开发、免安装、免更新等优势，此次中国电信翼支付内测的3G流量卡、手机充值两项应用，用户在使用过程中无需像以前那样先下载再安装应用，省下了下载安装的麻烦，应用一步到位……</p>
+					</div>
+					<div class="data-list-cell">
+						<h3 class="left"><a href="javascript:" class="data-list-title">翼支付开测HTML5应用 潮流新技术带来更强用户体验</a></h3>
+						<span class="data-list-info">来自：李刚 2013-12-18 22:20</span>
+						<p class="cb">作为互联网行业的最新Web标准，HTML5技术具有跨平台、易开发、免安装、免更新等优势，此次中国电信翼支付内测的3G流量卡、手机充值两项应用，用户在使用过程中无需像以前那样先下载再安装应用，省下了下载安装的麻烦，应用一步到位……</p>
+					</div>
+					<div class="data-list-cell">
+						<h3 class="left"><a href="javascript:" class="data-list-title">翼支付开测HTML5应用 潮流新技术带来更强用户体验</a></h3>
+						<span class="data-list-info">来自：李刚 2013-12-18 22:20</span>
+						<p class="cb">作为互联网行业的最新Web标准，HTML5技术具有跨平台、易开发、免安装、免更新等优势，此次中国电信翼支付内测的3G流量卡、手机充值两项应用，用户在使用过程中无需像以前那样先下载再安装应用，省下了下载安装的麻烦，应用一步到位……</p>
+					</div>
+					<div class="data-list-cell">
+						<h3 class="left"><a href="javascript:" class="data-list-title">翼支付开测HTML5应用 潮流新技术带来更强用户体验</a></h3>
+						<span class="data-list-info">来自：李刚 2013-12-18 22:20</span>
+						<p class="cb">作为互联网行业的最新Web标准，HTML5技术具有跨平台、易开发、免安装、免更新等优势，此次中国电信翼支付内测的3G流量卡、手机充值两项应用，用户在使用过程中无需像以前那样先下载再安装应用，省下了下载安装的麻烦，应用一步到位……</p>
+					</div>
+				
+					<div class="data-list-page"><span class="pageinfo">1-20条，共64条 </span><a href="javascript:nextPage();">下一页</a>
+					<a href="javascript:">尾页</a></div>
+				</div>
+				<!-- 左侧主要内容结束 -->
+			
+			
+			</div>
+		</div>
+</div>
+</div>
+
+
+<div class="nui-tips tal w300" style="right:40px;top:540px">
+	<div class="nui-tips-arrow bottom" style="left:40px">◆<em>◆</em></div>
+	<img src="../../src/images/crm/tx1.jpg" alt="" class="w100 left mr15">
+	<h4 class="fs16 fwb">王小建</h4>
+	<p>全公司 经理</p>
+	<p class="fc9">邮箱：aldsj@lf.com</p>
+	<p class="fc9">手机：13958201888</p>
+	<p class="fc9">电话：0574-88454545</p>
+</div>
+<div class="nui-tips nui-tips-has-title tal" style="right:350px;top:160px">
+	<div class="nui-tips-arrow right">◆<em>◆</em></div>
+	<div class="nui-tips-title">如何给客户报价</div>
+	
+	<p class="grid fc9"><span class="dpib w60">负责人</span> <img src="../../src/images/crm/noImg.jpg" alt="" class="w40"></p>
+	<p class="grid fc9"><span class="dpib w60">截止：</span><span class="fc6">2013-12-19 22：22</span></p>
+	<p class="grid fc9"><span class="dpib w60">提醒：</span><span class="fc6">提前5分钟</span></p>
+	<p class="grid fc9"><span class="dpib w60">业务：</span><i>&#x343d;</i> <span class="fc6">奥林国际物流有限公司</span></p>
+</div>
+
+<div class="nui-tips tal" style="right:750px;top:160px">
+	<div class="nui-tips-arrow right">◆<em>◆</em></div>
+	如何给客户报价
+	
+	
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

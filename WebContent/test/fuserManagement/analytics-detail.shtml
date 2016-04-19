@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="../../release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../src/js/frame_common.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+	
+	// 7天
+	var _today = new Date();
+	var _arr = [];
+	for(var i=0;i<7;i++){
+		_arr.push(formatMonthDateStr(_today));
+		_today.setDate(_today.getDate()-1);
+	}
+	_today = null;
+	
+	$(function() {
+		// 小时段
+		creatShortTimeOption();
+
+		// 查询次数统计
+		creatAnayticsTag("today");
+		creatUserDataTable("today");
+		//var ss = [1,3,3,3,3,3,4,5,5,5,43134,123,11]
+		//console.log(Math.max.apply({},ss));
+		//console.log(Math.min.apply({},ss));
+	})
+	
+	// 小时段 option生成
+	function creatShortTimeOption(){
+		var start = new Date();
+		var _option = ["<option>全部</option>"];
+		start.setHours(0);
+		
+		for(var i=0;i<24;i++){
+			start.setMinutes(0);
+			var _timeStart = formatTimeStr(start);
+			start.setMinutes(59);
+			var _timeEnd = formatTimeStr(start);
+			_option.push("<option>"+_timeStart + "-" + _timeEnd+"</option>");
+			start.setHours(i+1);
+		}
+		$("#short_time_select").empty().append(_option.join(""));
+	}
+
+	function fu_detail_change(obj,str){
+		if(obj){
+			var $that = $(obj);
+			$that.parent().find("a").removeClass("nui-select-tag-active");
+			$that.addClass("nui-select-tag-active");
+		}
+		creatAnayticsTag(str);
+		creatUserDataTable(str);
+	}
+
+	// 生成页面首部 查询统计信息table
+	function creatAnayticsTag(str){
+		$.post("../../test/fuserManagement/data/analytics_overview_data.js","",function(data){
+			data = eval(data)(str);
+			
+			var $anayticsTag = $("ul.analytics-overview-panel");
+			$anayticsTag.find("li").each(function(i){
+				var $that = $(this);
+				$that.find("span").text(data[i]);
+			});
+		},"text");
+	}
+
+
+	function creatUserDataTable(str){
+		$.post("../../test/fuserManagement/data/analytics_user_table_data.js","",function(data){
+			data = eval(data)(str);
+			var list = data.dataMap.list;
+			var _TR = [];
+			for(var i=0,elem;(elem=list[i])!=null;i++){
+				_TR.
+				push("<tr>",
+						"<td>",elem.time,"</td>",
+						"<td>",elem.person_name,"</td>",
+						"<td>",elem.query_port,"</td>",
+						"<td>",elem.ip,"</td>",
+						"<td>",elem.area,"</td>",
+						"<td>",elem.org_name,"</td>",
+				"</tr>");
+			}
+			
+			var $Tbody = $("#result_table tbody");
+			$Tbody.empty().append(_TR.join(""));
+		},"text");
+	}
+
+	
+	
+
+	
+	</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap-nobd">
+
+		<div class="left-side"><div class="left-slide-top-line"></div>
+				<ul class="left-side-menu mt50">
+					<li><a href="analytics.shtml" class="left-side-menu-a"><i class="fs14">&#x35ab;</i> 统计概况<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">流量分析：</li>
+					<li><a href="analytics-trend.shtml" class="left-side-menu-a">趋势分析<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-online.shtml" class="left-side-menu-a">当前在线<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-detail.shtml" class="left-side-menu-a active">访问明细<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">访问分析：</li>
+					<li><a href="analytics-activity.shtml" class="left-side-menu-a">活跃度<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-pql.shtml" class="left-side-menu-a">查询分析<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">会员分析：</li>
+					<li><a href="analytics-activity-new.shtml" class="left-side-menu-a">活跃度分析<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-loss-rate.shtml" class="left-side-menu-a">流失率<i class="right ">&#13726</i></a></li>
+				</ul>
+				<div class="left-slide-bottom-line"></div>
+			</div>
+		<div class="right-side">
+			<div class="main-title">
+				<h1>流量分析-访问明细<small>（2013-12-04至2013-12-05）</small></h1>
+			</div>
+
+			
+
+			<div class="grid-box">
+			<a href="javascript:" onclick="fu_detail_change(this,'today')" class="nui-select-tag nui-select-tag-active">今日</a>
+			<a href="javascript:" onclick="fu_detail_change(this,'yestoday')" class="nui-select-tag">昨日</a>
+			<a href="javascript:" onclick="fu_detail_change(this,'last2')" class="nui-select-tag">前天</a>
+			<a href="javascript:" onclick="fu_detail_change(this,'last3')" class="nui-select-tag"><script>document.write(_arr[3])</script></a>
+			<a href="javascript:" onclick="fu_detail_change(this,'last4')" class="nui-select-tag"><script>document.write(_arr[4])</script></a>
+			<a href="javascript:" onclick="fu_detail_change(this,'last5')" class="nui-select-tag"><script>document.write(_arr[5])</script></a>
+			<a href="javascript:" onclick="fu_detail_change(this,'last6')" class="nui-select-tag"><script>document.write(_arr[6])</script></a>
+			
+			小时段
+			<select id = "short_time_select">
+			</select>
+				<!--<div class="nui-form-cell nui-select w200">
+					<div class="nui-form-cell-cnt">
+						<input type="text"  class="nui-input" />
+						<i class="nui-form-cell-icon ">&#13370</i>
+					</div>
+				</div>-->
+			</div>
+
+			<ul class="analytics-overview-panel">
+				<li>
+				<p>查询次数
+					<span>&nbsp;</span>
+					</p>
+				</li><li>
+				<p>用户（账号）
+					<span>&nbsp;</span>
+					</p>
+				</li><li>
+				<p>IP
+					<span>&nbsp;</span>
+					</p>
+				</li><li>
+				<p>企业
+					<span>&nbsp;</span>
+					</p>
+				</li><li>
+				<p>新用户（账号）
+					<span>&nbsp;</span>
+					</p>
+				</li><li>
+				<p>登录次数
+					<span>&nbsp;</span>
+					</p>
+				</li>				
+			</ul>
+
+
+			<div class="grid">
+				<div id="container_detail"></div>
+				
+			</div>
+			<div class="chart-cnt">
+				
+			</div>
+
+			<div class="adv-table">
+			<ul class="adv-table-tab">
+				<li> 查看：</li>
+				<li><a href="javascript:" class="active">当前访问</a></li>
+				<!-- <li><a href="javascript:">按用户显示</a></li> -->
+			</ul>
+			<div class="adv-table-fn-area">
+				<span class="nui-radio"><input type="radio" name="" id="1" checked="checked"/><label for="1" >按用户显示</label></span>
+				
+				<div class="right">
+					<div class="nui-form-cell w150">
+							<input type="text"  class="nui-input" />
+					</div>
+					<button class="nui-btn">搜索</button><button class="nui-btn nui-btn-link">高级筛选 ︾</button>
+				</div>
+			</div>
+				<table id="result_table" class="">
+				<thead>
+					<tr>
+						<th>最近浏览时间</th>
+						<th>用户名称</th>
+						<th>查询港口</th>
+						<th>IP</th>
+						<th>地区</th>
+						<th>企业名</th>
+					</tr>
+				</thead>
+					<tbody>
+						<tr class="fwb">
+							<td>07:00-07:59   </td>
+							<td>斯蒂芬</td>
+							<td>NINGBO</td>
+							<td>192.168.1.1</td>
+							<td>浙江</td>
+							<td>大掌柜</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="adv-table-footer">
+					<label for="">每页显示：</label><select name="" id="">
+						<option value="">20</option>
+						<option value="">50</option>
+						<option value="">100</option>
+					</select>
+
+					<div class="page">
+						<span>上一页</span>
+						<a href="javascript:" class="active">1</a>
+						<a href="javascript:">2</a>
+						<a href="javascript:">3</a>
+						<a href="javascript:">4</a>
+						<a href="javascript:">5</a>
+						<span>…</span>
+						<a href="javascript:">25</a>
+						<a href="javascript:">下一页</a>
+						
+
+						到第 <input type="text" class="w30 h20" /> 页 <button class="nui-btn nui-btn-20">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include file="footer.html"-->
+</body>
+</html>

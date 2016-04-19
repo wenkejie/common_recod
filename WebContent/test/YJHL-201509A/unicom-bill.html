@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	
+	<!-- <link rel="stylesheet" href="../../release/freight/css/common.css"/> -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<!-- <link rel="stylesheet" href="../../src/css/richSelect.css" />richselect样式 -->
+	
+</head>
+<body class="home-body">
+	<div id="header">
+		<div class="top-info">
+			<div class="wrap">
+				<a href="/" class="logo">运价通</a>
+				<ul class="nav">
+					<li class="nav-cell">
+						<a class="nav-link nav-link-first nav-link fonticon" href="#">&#x3497;</a>
+						<span class="newinfo-icon">!</span>
+					</li>
+					<li class="nav-cell">
+						<a class="nav-link fonticon" href="index.shtml">&#x3482;</a>
+					</li>
+					<li class="nav-cell">
+						<a class="nav-link" href="../crm/index.shtml">我的办公桌</a>
+						<div class="nav-cell-arrow none">
+							◆ <em>◆</em>
+						</div>
+					</li>
+					<li class="nav-cell">
+						<a class="nav-link" href="../crm/list.shtml">CRM</a>
+						<div class="nav-cell-arrow none">
+							◆ <em>◆</em>
+						</div>
+					</li>
+					<li class="nav-cell">
+						<a class="nav-link " href="#">运价通</a>
+						<div class="nav-cell-arrow">
+							◆
+							<em>◆</em>
+						</div>
+					</li>
+					<li class="nav-cell">
+						<a class="nav-link nav-link-last" href="staffManage.shtml">员工管理</a>
+						<div class="nav-cell-arrow none">
+							◆
+							<em>◆</em>
+						</div>
+					</li>
+				</ul>
+				<ul class="top-menu">
+
+					<li class="top-menu-cell">
+						<a class="top-menu-link" target="_blank" href="http://b.qq.com/webc.htm?new=0&amp;sid=4008828871&amp;eid=218808P8z8p8x8q8P8z8z&amp;q=7">咨询</a>
+					</li>
+					<li id="help-center" class="top-menu-cell cur-p has-dropdown">
+						帮助中心 <i class="top-menu-icon">㐸</i>
+						<div class="nui-drop-down block" style="*width:115px;">
+							<ul class="nui-select-list">
+								<li class="nui-select-list-li" style="padding-left: 10px;">
+									<a target="_blank" href="/cms/publicHelpHome.ctrl">帮助中心</a>
+								</li>
+								<li class="nui-select-list-li last" style="padding-left: 10px;">
+									<a target="_blank" href="/cms/view/yunjiaUe/help.jsp">新手引导</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="top-menu-cell pr0">你好：</li>
+					<li class="top-menu-cell cur-p has-dropdown">
+						<span id="relateEmployeeName">胡伟</span> <i class="top-menu-icon">㐸</i>
+						<input id="currUserId" type="hidden" value="209080">	
+						<input id="currEmployeeName" type="hidden" value="胡伟">	
+						<input id="setEmployeeName" type="hidden" value="胡伟">	
+						<input id="setEmployeeId" type="hidden" value="44411">	
+						<input id="setUserId" type="hidden" value="209080">	
+						<div class="nui-drop-down block" style="*width:150px;">
+							<ul class="nui-select-list">
+								<li class="nui-select-list-li">
+									<a id="userInfo" href="javascript:">
+										<i class="mr5 animate">㓬</i>
+										账户信息
+									</a>
+								</li>
+								<!-- modify by 曹金彦,2014-7-23,修改密码从登录信息中获取 -->	
+								<li class="nui-select-list-li">
+									<a href="javascript:" id="modifyPassWord" name="modifyPassWord" onclick="openWindow('/cpmembership/memuser.ctrl?$action=modifyUserPassword&amp;actionType=show','修改密码',{width:750,height:450})">
+										<i class="mr5 animate">㔳</i>
+										修改密码
+									</a>
+								</li>
+
+							</ul>
+						</div>
+					</li>
+					<li class="top-menu-cell">
+						<em>|</em>
+					</li>
+
+					<!-- modify by 曹金彦,201406A,基础设置页面没有与生意通相关的设置-->	
+
+					<li class="top-menu-cell">
+						<a class="top-menu-link" href="javascript:" id="home_baseset" data-module="home_baseset">基础设置</a>
+					</li>
+
+					<li class="top-menu-cell">
+						<a class="top-menu-link" href="/cpmembership/privateLog.ctrl?$action=logoutAction">退出</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 应用内部导航 -->	
+		<div class="main-nav bdn">
+			<ul class="wrap">
+				<li class="main-nav-cell">
+					<a href="#" class="main-nav-link">
+						<i>&#x343c;</i>
+						运价首页
+					</a>
+				</li>
+				<li class="main-nav-cell">
+					<a href="#" class="main-nav-link">
+						<i>&#x355d;</i>
+						运价查询
+					</a>
+					<ol class="main-nav-drop-down">
+						<li class="main-sub-nav-arrow-line">◆</li>
+						<li>
+							<a href="javascript:" class="main-nav-drop-down-link">海运整箱查询</a>
+						</li>
+						<li>
+							<a href="javascript:" class="main-nav-drop-down-link">海运出口拼箱查询</a>
+						</li>
+						<li>
+							<a href="javascript:" class="main-nav-drop-down-link">空运查询</a>
+						</li>
+					</ol>
+				</li>
+				<li class="main-nav-cell psr">
+					<a href="#" class="main-nav-link">
+						<i>&#x358d;</i>
+						运价维护
+					</a>
+				</li>
+				<li class="main-nav-cell">
+					<a href="#" class="main-nav-link">
+						<i>&#x34fb;</i>
+						基础资料
+					</a>
+				</li>
+				<li class="main-nav-cell">
+					<a href="list.shtml" class="main-nav-link">
+						<i>&#x351d;</i>
+						客户管理
+					</a>
+					<ol class="main-nav-drop-down">
+						<li class="main-sub-nav-arrow-line">◆</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="list.shtml" >账户管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="analytics.shtml">行为分析管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="ruleset.shtml">多级运价管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="javascript:">邀请体验管理</a>
+						</li>
+					</ol>
+
+				</li>
+				<li class="main-nav-cell">
+					<a href="list.shtml" class="main-nav-link">
+						<i class="fwb">&#xe61b;</i>
+						运价互联
+					</a>
+					<ol class="main-nav-drop-down">
+						<li class="main-sub-nav-arrow-line">◆</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="list.shtml" >账户管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="analytics.shtml">行为分析管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="ruleset.shtml">多级运价管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="javascript:">邀请体验管理</a>
+						</li>
+					</ol>
+
+				</li>
+				<li class="main-nav-cell">
+					<a href="#" class="main-nav-link">
+						<i>&#x3590;</i>
+						更多功能
+					</a>
+					<div class="main-nav-drop-down">
+						<span class="main-sub-nav-arrow-line">◆</span>
+						<table>
+							<tr>
+								<td class="first">
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+								<td>
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+								<td>
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+								<td class="last">
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+	<div class="wrap">
+		<div class="title-info clearfix">
+			<div class="right mt5">
+				本月消费:<span class="text-red fs20">￥550</span> | 账户余额:<span class="text-success fs20">￥1000</span>
+			</div>
+			<h2>互联账单</h2>
+			已导入 <span class="text-warning fwb">10</span> 家互联公司 | 共计 <span class="text-warning fwb">5</span> 家船公司，<span class="text-warning fwb">500</span> 个目的港
+		</div>
+		<div class="result-table-area">
+			<table class="result-table">
+				<thead>
+					<th>公司名称</th>
+					<th>消费金额</th>
+					<th>船公司</th>
+					<th>目的港</th>
+					<th class="tar"></th>
+				</thead>
+				<tbody class="result-table-wrap">
+					<tr>
+						<td>奥林科技有限公司</td>
+						<td><span>￥200</span></td>
+						<td>5家</td>
+						<td>100个</td>
+						<td class="tar"><a class="unicom-detail-link" href="javascript:">查看目的港 <i class="fs12">&#xe609;</i></a></td>
+					</tr>
+					<tr class="result-table-extend none">
+						<td colspan="5">
+							<div class="result-detail">
+								<div class="result-detail-title">船公司：<span class="fwb">APL</span></div>
+								<div class="result-detail-list">
+									<span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span>
+								</div>
+								<div class="result-detail-title">船公司：<span class="fwb">APL</span></div>
+								<div class="result-detail-list">
+									<span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span>
+								</div>
+								<div class="result-detail-title">船公司：<span class="fwb">APL</span></div>
+								<div class="result-detail-list">
+									<span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+				<tbody class="result-table-wrap">
+					<tr>
+						<td>奥林科技有限公司</td>
+						<td><span>￥200</span></td>
+						<td>5家</td>
+						<td>100个</td>
+						<td class="tar"><a class="unicom-detail-link" href="javascript:">查看目的港 <i class="fs12">&#xe609;</i></a></td>
+					</tr>
+					<tr class="result-table-extend none">
+						<td colspan="5">
+							<div class="result-detail">
+								<div class="result-detail-title">船公司：<span class="fwb">APL</span></div>
+								<div class="result-detail-list">
+									<span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span>
+								</div>
+								<div class="result-detail-title">船公司：<span class="fwb">APL</span></div>
+								<div class="result-detail-list">
+									<span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span>
+								</div>
+								<div class="result-detail-title">船公司：<span class="fwb">APL</span></div>
+								<div class="result-detail-list">
+									<span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+				<tbody class="result-table-wrap">
+					<tr>
+						<td>奥林科技有限公司</td>
+						<td><span>￥200</span></td>
+						<td>5家</td>
+						<td>100个</td>
+						<td class="tar"><a class="unicom-detail-link" href="javascript:">查看目的港 <i class="fs12">&#xe609;</i></a></td>
+					</tr>
+					<tr class="result-table-extend none">
+						<td colspan="5">
+							<div class="result-detail">
+								<div class="result-detail-title">船公司：<span class="fwb">APL</span></div>
+								<div class="result-detail-list">
+									<span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span>
+								</div>
+								<div class="result-detail-title">船公司：<span class="fwb">APL</span></div>
+								<div class="result-detail-list">
+									<span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span>
+								</div>
+								<div class="result-detail-title">船公司：<span class="fwb">APL</span></div>
+								<div class="result-detail-list">
+									<span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span><span>DUBAI</span>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="result-footer mt30">
+				<div class="page">
+					<input type="hidden" id="pageNo" name="pageNo" value="1">			
+					<span class="pageInfo">1-30条，共278条</span>
+					<a href="javascript:nextPage();">下一页</a>
+					<a href="javascript:buildData(10);">尾页</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer" class="wrap">
+		<p>
+			大掌柜国际物流有限公司 powered by
+			<a href="#">大掌柜</a>
+		</p>
+	</div>
+	<div class="to-place">
+		<div id="j-place-move" class="to-place-head">
+			<div class="to-place-move"></div>
+		</div>
+		<a href="javascript:" title="回到顶部" class="to-top"></a>
+		<div id="help_div" title="帮助中心" class="to-help-out">
+			<a class="to-help-cnt" href="javascript:"></a>
+			<a class="insert" href="javascript:"></a>
+		</div>
+	</div>
+
+	<div class="to-place-old none">
+		<a href="javascript:" title="回到顶部" class="to-top-old fonticon"></a>
+	</div>
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/unicom-freight/manage.js"></script>	
+</body>
+</html>

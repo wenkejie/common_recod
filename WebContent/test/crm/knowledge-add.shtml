@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://fcommon.600jit.com/fcommon/release/freight/css/common-v1.2.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="fui-dialog mg10" style="width:700px">
+		<div class="fui-dialog-title">
+			<h4 class="tal">贡献知识分享</h4>
+			<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+		</div>
+		<div class="fui-dialog-cnt">
+				<div class="form-line">
+					<div class="nui-form-cell w500" style="width:658px;">
+						<input type="text" class="nui-input " id="" placeholder="请输入标题" />
+					</div>
+				</div>
+				<div class="nui-shadow-box nui-shadow-box-konwlodge"></div>
+				<div class="form-line mt10">
+					<label for="" class="nui-label w30">分类</label> 
+					<div class="nui-form-cell nui-select"> 
+						<div class="nui-form-cell-cnt"> 
+						<input type="text" value="选择的值" class="nui-input"> 
+						<i class="nui-form-cell-icon">&#x3438;</i> 
+						<div class="nui-drop-down"> 
+							<ul class="nui-select-list"> 
+								<li class="nui-select-list-li">选择值1</li> 
+								<li class="nui-select-list-li">选择值2</li> 
+								<li class="nui-select-list-li">选择值2</li> 
+							</ul> 
+						</div> 
+						</div> 
+					</div>
+					
+				</div>
+				<div class="form-line">
+						<label for="" class="nui-label w30">标签</label>
+						<div class="nui-form-cell w90">
+							<input type="text" class="nui-input" id="" />
+						</div>
+						<button class="nui-btn ">添加</button>
+				</div>
+			</div>
+		<div class="fui-dialog-btm-bar pss"> 
+			<a href="javascript:" class="fui-btn-dialog-primary"><span>发布</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+		</div> 
+	</div>
+</body>
+</html>

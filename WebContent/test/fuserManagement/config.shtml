@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../release/freight/js/highcharts.js"></script>
+	<script type="text/javascript" src="../../src/js/frame_common.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+		$(function() {
+			$('table:eq(2)').myhover(
+				"tr",
+				function() {
+					$(this).find('button').removeClass('none')
+				},
+				function() {
+					$(this).find('button').addClass('none')
+				}
+				)
+
+			$("#j-source").click(function() {
+				var that = $(this);
+				var htmlWin;
+				htmlWin = fwindow.create({
+					title: "注册信息来源",
+					width:480,
+					content: '<div class="pd20 tal clearfix pl30"><div class="nui-form-line"> <label class="nui-label w100">注册信息来源：</label> <div class="nui-group-btn"> <button class="nui-btn nui-btn-small">启用</button> <button class="nui-btn nui-btn-small nui-btn-primary">关闭</button> </div> </div> <div class="nui-form-line"> <label class="nui-label vat w100">显示内容：</label> <div class="w300 dpib vat"> <ul class="nui-tags"> <li class="nui-tags-del" style="left: 105px;"> <a class="close" href="javascript:">×</a> </li> <li id="+1" class="nui-tags-cell mb10" type="undefined">倒萨</li> </ul> <div class="nui-condition-input clearfix"> <input id="salesInput" class="adv-search-input" type="text" value=""> <a class="adv-search-add adv-search-add-disable" title="增加" href="javascript:"></a></div> </div> </div></div></div> <div class="fui-dialog-btm-bar pss cb mt10"> <a class="fui-btn-dialog-primary" href="javascript:" id="j-thr-BtnActive"> <span>确定</span> </a> <a class="fui-btn-dialog" href="javascript:" id="j-windowClose"> <span>取消</span> </a> </div>', draggable: false }) //////////////////////为了调用详情弹窗界面的添加员工控件，by：Evan/////////////////
+
+							// 客服人员id,name,type,为了新增,删除客服
+							var g_salesId=[],g_salesName=[],g_salesType=[],g_salesUser_id=[],g_salesTypeCnname={};
+							// 客服人员全局对象 为了客服显示列表、客服select菜单正确显示不同客服类型对应客服的名称
+							g_salesTypeCnname = {"0":"萨博","1":"纽盖特","2":"路飞","3":"乔巴","4":"艾斯"}; 
+
+							var $document = $(document),
+							$condition = $('div.condition');
+							// 客服 高级下拉框点击 弹出li标签
+							$('div.nui-adv-search-con').delegate('.condition', 'click', function() {
+								$(this).find('div.nui-drop-down-con').length>0 && $(this).find('div.nui-drop-down-con').show();
+							});
+
+							// console.log($("input.adv-search-input").val()!=="");
+
+							
+
+							// $("input.adv-search-input").keyup(function() {
+								
+							// 	$("div.nui-drop-down-con").show();
+
+								
+							// });///////////by,Evan
+
+
+
+							// 客服 高级下拉框select
+							// $condition.mouseleave(function() {
+							// 	$(this).children(".nui-drop-down-con").hide()
+							// }).delegate('li', 'click', function() {
+							// 	$(this).parent().parent().hide();
+							// 	$('span.condition-selected').attr('type',$(this).attr('type')).text($(this).text());
+							// 	$('a.adv-search-add').removeClass('adv-search-add-disable');
+							// 	$('input.adv-search-input').bind('focus',function(){
+							// 		showSelectUser(this);
+							// 	}).focus().attr("autocomplete","off");
+							// });
+							// $("div.nui-adv-search-con").delegate('li', 'click', function() {
+							// 	// console.log($(this).parent().parent());
+							// 	$(this).parent().parent().hide();
+							// 	$('input.adv-search-input').val(($(this).text()));
+							// 	$('a.adv-search-add').removeClass('adv-search-add-disable');
+							// 	$('input.adv-search-input').bind('focus',function(){
+							// 		showSelectUser(this);
+							// 	}).focus().attr("autocomplete","off");
+							// });
+							// 客服人员增加
+							$("input.adv-search-input").keyup(function() {
+								var $val=$.trim($(this).val());
+
+								if (!$val=="") {
+									$('a.adv-search-add').removeClass('adv-search-add-disable');
+
+								}else{
+									$('a.adv-search-add').addClass('adv-search-add-disable');
+								};
+								
+							});//Evan
+
+							$('a.adv-search-add').click(function() {
+								var $txt = $(this).prev().val();
+								
+								if (!$(this).is('.adv-search-add-disable')) {
+									$('ul.nui-tags').append("<li class='nui-tags-del' style='left: 105px;'> <a class='close' href='javascript:'>×</a> </li> <li id='+1' class='nui-tags-cell mb10'>"+$txt+"</li>");
+								
+								};
+								
+								
+							});
+
+						// 	$('a.adv-search-add').focusin(function(){
+								
+						// 		var msg = "",advinputVal = $('input.adv-search-input').val();
+						// 		if($(this).hasClass('adv-search-add-disable')){
+						// 			// msg += "请先选择客服类型";
+						// 		}
+						// 		if(!$.trim(advinputVal)){
+						// 			msg += "\r客服人员名称不能为空";
+						// 		}
+						// 		if($.trim(msg)){
+						// 			messageclose();
+						// 			messageshow(msg);
+						// 			return false;
+						// 		}
+						// 		var salesType = $('div.condition span.condition-selected').attr('type');
+						// 		$('div.condition ul.nui-select-list li[type='+salesType+']').remove();
+						// 		var typecnname = g_salesTypeCnname[salesType];
+						// 		var li = "<li class=\"nui-tags-cell\" id=\"+1\" type=\""+salesType+"\">"+escapeHTML(advinputVal)+"</li>";
+						// 		$('ul.nui-tags').append($(li));
+						// 		$('span.condition-selected').removeAttr('type').text('选择类型');
+						// 		$('a.adv-search-add').addClass('adv-search-add-disable');
+						// 		$('input.adv-search-input').focus().val('').removeAttr("autocomplete");
+						// 	// 重置 客服人员 高级下拉框
+						// 	var salesIndex = $('ul.nui-tags li.nui-tags-cell').length;
+						// 	if(salesIndex >=5 ){
+						// 		$('input.adv-search-input').unbind().val('');
+						// 		$('div.nui-adv-search-con').hide();
+						// 	}else{
+						// 	// 增加客服人员时,引导页位置调整
+						// 	if(salesIndex == 3 && $(window.parent.document.body).find('.guide-content').length) {
+						// 		$.guide.guideMove(-130,139);
+						// 	}
+						// }
+						// 	// 保存 全局数组
+						// 	g_salesId.push('+1'); // sales_id末尾>>-1：删除, +1:新增, +0:不做处理
+						// 	g_salesName.push(advinputVal);
+						// 	g_salesType.push(salesType);
+						// 	g_salesUser_id.push($("#sales_user_id").val());
+						// })
+							// 客服人员删除
+							var $tagsdel = $('li.nui-tags-del');
+							$('ul.nui-tags').delegate('.nui-tags-cell', 'mouseenter', function() {
+								var _left = $(this).position().left;
+								var _top = $(this).position().top;
+								_w = $(this).outerWidth();
+								pos = _left + _w -3;
+								$(this).addClass('hover').siblings().removeClass("hover");
+								// $tagsdel.css("left",pos).show();
+								$tagsdel.css({
+									'left': pos,
+									'top': _top
+								}).show();
+							}).delegate('.nui-tags-del', 'click', function() {
+								var $tagshover = $(this).siblings(".hover");
+								var deleteSalesId = $tagshover.attr('id');
+								var deleteSalesType = $tagshover.attr('type');
+								for(var i=0;i<g_salesId.length;i++){
+									if(g_salesId[i]==deleteSalesId && g_salesType[i]==deleteSalesType){
+										if(g_salesId[i]=="+1"){
+							// 如果为新增记录直接删除
+							g_salesId.splice(i,1);
+							g_salesName.splice(i,1);
+							g_salesType.splice(i,1);
+							g_salesUser_id.splice(i,1);
+							break;
+						}else{
+							g_salesId[i]=g_salesId[i]+"-1";
+							break;
+						}
+					}
+				}
+							// 客服人员元素移除
+							$(this).hide().siblings(".hover").remove();
+							var $tagscell = $('ul.nui-tags li.nui-tags-cell');
+							var booleanAppend = true;
+							for(var i=0;i<$tagscell.length;i++){
+								if($tagscell.eq(i).attr('type')==deleteSalesType){
+									booleanAppend = false;
+									break;
+								}
+							}
+							booleanAppend && $('div.condition ul.nui-select-list').append($("<li type=\""+deleteSalesType+"\">"+g_salesTypeCnname[deleteSalesType]+"</li>"));
+							// 重置 客服人员 高级下拉框
+							//$('span.condition-selected').removeAttr('type').text('选择类型');
+							//$('a.adv-search-add').addClass('adv-search-add-disable');
+							//$('input.adv-search-input').focus().val('');
+							// 客服人员小于5 显示select下拉框
+							var salesIndex = $('ul.nui-tags li.nui-tags-cell').length;
+							if(salesIndex < 5){
+								$('div.nui-adv-search-con').show();
+							// 减少客服人员时,引导页位置调整
+							if(salesIndex == 2 && $(window.parent.document.body).find('.guide-content').length) {
+								$.guide.guideMove(500,769);
+							}
+						}
+					}).mouseleave(function(){
+						$(this).children(".hover").removeClass("hover");
+						$tagsdel.hide()
+					}); 
+
+					///////////////////////////////
+
+				$(htmlWin).find("#j-windowClose").click(function() {
+					htmlWin.fwindow("close");
+					return true;
+				});
+			})	
+
+
+			$("#j-pepole").click(function() {
+				var that = $(this);
+				var htmlWin;
+				htmlWin = fwindow.create({
+					title: "推荐人",
+					width:340,
+					content: '<div class="pd20 tal clearfix pl30"><label for="11111" class="nui-radio pb10"><input type="radio" name="cource" id="11111" /> 推荐人只能选择公司内部员工</label><label for="22222" class="nui-radio pb10 dpb"><input type="radio" name="cource" id="22222" /> 推荐人可以随意录入</label><label for="33333" class="nui-radio"><input type="radio" name="cource" id="33333" /> 关闭</label></div><div class="fui-dialog-btm-bar pss cb mt10"><a class="fui-btn-dialog-primary" href="javascript:" id="j-thr-BtnActive"><span>确定</span></a> <a class="fui-btn-dialog" href="javascript:" id="j-windowClose"><span>取消</span></a> </div>', 
+					draggable: false })
+
+				$(htmlWin).find("#j-windowClose").click(function() {
+					htmlWin.fwindow("close");
+					return true;
+				});
+			})	
+
+		})
+	</script>
+</head>
+<body >
+	<!--#include file="header.html"-->
+
+	<div class="wrap two-column-wrap-nobd">
+
+
+		<div class="left-side">
+
+			<ul class="left-side-menu mt30">
+				<li><a href="analytics.shtml" class="left-side-menu-a active"><i class="fs14">&#x35ab;</i> 用户注册<i class="right ">&#13726</i></a></li>
+				<li class="left-side-menu-categories">流量分析：</li>
+				<li><a href="analytics-trend.shtml" class="left-side-menu-a">趋势分析<i class="right ">&#13726</i></a></li>
+				<li><a href="analytics-online.shtml" class="left-side-menu-a">当前在线<i class="right ">&#13726</i></a></li>
+				<li><a href="analytics-detail.shtml" class="left-side-menu-a">访问明细<i class="right ">&#13726</i></a></li>
+				<li class="left-side-menu-categories">访问分析：</li>
+				<li><a href="analytics-activity.shtml" class="left-side-menu-a">活跃度<i class="right ">&#13726</i></a></li>
+				<li><a href="analytics-pql.shtml" class="left-side-menu-a">查询分析<i class="right ">&#13726</i></a></li>
+			</ul>
+			<div class="left-slide-bottom-line"></div>
+		</div>
+
+		<div class="right-side">
+			<div class="main-title-has-bd">
+				<h1>用户注册</h1>
+			</div>
+
+
+			<table class="config-table">
+				<thead>
+					<tr><th colspan="4">
+						注册内容选填设置
+					</th>
+				</tr></thead>
+				<tbody>
+					<tr>
+						<td width="100"><strong>公司名称</strong></td>
+						<td> <div class="nui-group-btn"><button class="nui-btn nui-btn-small">必填</button><button class="nui-btn  nui-btn-small nui-btn-primary">选填</button></div>
+						</td>
+					</tr><tr>
+					<td><strong>公司电话</strong> </td>
+					<td><div class="nui-group-btn"><button class="nui-btn nui-btn-primary nui-btn-small">必填</button><button class="nui-btn  nui-btn-small">选填</button></div>
+					</td>
+				</tr>
+				<tr>
+					<td ><strong>省份/城市</strong></td>
+					<td> <div class="nui-group-btn"><button class="nui-btn nui-btn-primary nui-btn-small">必填</button><button class="nui-btn  nui-btn-small">选填</button></div>
+					</td>
+				</tr><tr>
+				<td><strong>公司邮编</strong> </td>
+				<td><div class="nui-group-btn"><button class="nui-btn nui-btn-primary nui-btn-small">必填</button><button class="nui-btn  nui-btn-small">选填</button></div>
+				</td>
+			</tr>
+		</tr>
+	</tbody>
+</table>
+<table class="config-table">
+	<thead>
+		<tr><th colspan="4">
+			注册信息来源及推荐设置
+		</th>
+	</tr></thead>
+	<tbody>
+		<tr>
+			<td><strong>注册信息来源</strong></td>
+			<td><span class="text-success">已启用</span></td>
+			<td>启用后可选择注册信息来源</td>
+			<td width="70"><a href="javascript:" id="j-source">设置</a></td>
+		</tr>
+		<tr>
+			<td><strong>推介人</strong></td>
+			<td><span>未启用</span></td>
+			<td>启用后可选择注册信息来源</td>
+			<td><a href="javascript:" id="j-pepole">设置</a></td>
+		</tr>
+
+	</tbody>
+</table>
+
+<table class="config-table">
+	<thead>
+		<tr><th colspan="2">
+			审核开通后功能配置
+		</th>
+	</tr></thead>
+	<tbody>
+		<tr>
+			<td width="250"> 手工配置</td>
+			<td> <button class="nui-btn nui-btn-primary nui-btn-small none">设为默认</button></td>
+		</tr>
+
+		<tr>
+			<td>审核开通后不用验证直接开放给客户使用</td>
+			<td><span class="text-info">默认配置</span></td>
+		</tr>
+		<tr>
+			<td>审核开通后不用验证直接开放给客户使用</td>
+			<td><button class="nui-btn nui-btn-primary nui-btn-small none">设为默认</button></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<table class="config-table">
+	<thead>
+		<tr>
+			<th>
+				<div class="nui-group-btn right"><button class="nui-btn nui-btn-small">启用</button><button class="nui-btn nui-btn-primary  nui-btn-small">关闭</button></div>一键设置功能配置
+			</th>
+		</tr></thead>
+
+		<tbody class="config-table-disable">
+			<tr class="no-hover">
+				<td>
+					<table class="config-table">
+						<thead>
+							<tr>
+								<th colspan="2" class="title">默认查询模块</th>
+
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr>
+								<td width="150">海运出口整箱</td>
+								<td>未启用 | <a href="javascript:">启用</a></td>
+
+							</tr>
+							<tr>
+								<td>海运出口拼箱</td>
+								<td>未启用 | <a href="javascript:">启用</a></td>
+
+							</tr>	
+							<tr>
+								<td>空运</td>
+								<td>未启用 | <a href="javascript:">启用</a></td>
+
+							</tr>
+
+						</tbody>
+					</table>
+
+					<table class="config-table">
+						<thead>
+							<tr>
+							<th colspan="2" class="title">其他</th>
+
+							</tr>
+						</thead>
+						<tbody>
+
+
+							<tr>
+								<td width="150">启用航线控制功能</td>
+								<td>未启用 | <button class="nui-btn nui-btn-link nui-btn-mini nui-btn-link-disable vat" id="j-test" disabled="disabled">启用</button></td>
+
+							</tr>
+							<tr>
+								<td>所有用户启用登录控制</td>
+								<td><span class="text-success">已启用</span> | <a href="javascript:">关闭</a></td>
+							</tr>
+
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+<!--#include file="footer.html"-->
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>帮助首页</title>
+	<!-- <link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" /> -->
+	<link rel="stylesheet" type="text/css" href="../../release/freight/css/help-center/hcommon.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/help-center/help-center.js"></script>
+	<script>
+		$(function() {
+			var $tabMenu = $('li.help-tab-menu-cell');
+			var $tabCnt = $('div.help-tab-cnt');
+			$tabMenu.click(function() {
+				var index = $(this).index();
+				$tabMenu.removeClass("help-tab-menu-active");
+				$(this).addClass('help-tab-menu-active');
+				$tabCnt.hide().eq(index).show();
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrap-head">
+			<div class="wrap-head-area">
+				
+				<div class="head-left">
+					<div class="logo"></div>
+					<h1 class="title"><span>运价通帮助中心</span></h1>
+				</div>
+			</div>
+			<div class="wrap-head-nav">
+				<ul class="left clearfix">
+					<li class="nav-cell"><a class="nav-cell-a nav-cell-a-active" href="index.html">首页</a></li>
+					<li class="nav-cell"><a class="nav-cell-a" href="question-index.html">常见问题</a></li>
+				</ul>
+				<a class="wrap-head-nav-goto" href="javascript:">新手引导教学 >></a>
+			</div>
+		</div>
+		<div class="wrap-content">
+			<div class="left-column"></div>
+			<div class ="right-column-index">
+				<div class="search-area clearfix">
+					
+					<div class="search-cell">
+						<input type="text" class="search-cell-input" id="" placeholder="请输入问题关键字；如：运价导入" />
+					</div>
+					<a class="search-btn" href="search-answer.html">搜索</a>
+				</div>
+				<div class="content-title">
+					<h2>多种服务渠道</h2>
+					<span>为您解决运价问题</span>
+				</div>
+				<div class="content-grid">
+					<div class="help-box clearfix">
+						<div class="help-item">
+							<div class="help-item-border">
+								<div class="help-item-cnt">
+									<div class="help-item-top-1"></div>
+									<div class="help-item-bottom">
+										为您在线实时解决问题
+										<br>
+										服务时间：9:00—24:00
+										<br>
+										<label class="contact-label">立即联系：</label>
+										<img border="0" style="CURSOR: pointer" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=4008828871&eid=218808P8z8p8x8q8P8z8z&o=www.500jit.com&q=7&ref='+document.location, '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');" src="http://im.bizapp.qq.com:8000/zx_qq.gif">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="help-item">
+							<div class="help-item-border">
+								<div class="help-item-cnt">
+									<div class="help-item-top-2"></div>
+									<div class="help-item-bottom">
+										更好更快更贴心的服务热线
+										<br/>
+										主要服务时间：
+										<br/>
+										<span style="color:#FF6600">9:00—24:00</span>
+										<br>
+										<p class="help-goto" href="javascript:">400-882-8871</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="help-item">
+							<div class="help-item-border">
+								<div class="help-item-cnt">
+									<div class="help-item-top-3"></div>
+									<div class="help-item-bottom">
+										随时观看图文培训教程
+										<br>
+										无须等待，您的服务首选
+										<br>
+										<a class="help-goto" href="javascript:">立即使用 ></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="help-item-last">
+							<div class="help-item-cnt">
+								<div class="help-item-top-4"></div>
+								<div class="help-item-bottom">
+									<a class="help-goto" href="javascript:">更新介绍</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="content-title">
+					<h2>各种常见问题</h2>
+					<span>为您解决运价问题</span>
+				</div>
+				<div class="content-grid">
+					<div class="help-tab">
+						<div class="help-tab-menu mt20">
+							<ul>
+								<li class="help-tab-menu-cell help-tab-menu-active"><a class="help-tab-menu-link" href="javascript:">运价管理</a></li>
+								<li class="help-tab-menu-cell"><a class="help-tab-menu-link" href="javascript:">客户管理</a></li>
+								<li class="help-tab-menu-cell"><a class="help-tab-menu-link" href="javascript:">员工管理</a></li>
+								<li class="help-tab-menu-cell help-tab-menu-cell-last"><a class="help-tab-menu-link" href="javascript:">其他功能</a></li>
+							</ul>
+						</div>
+					
+					</div>
+					<div class="help-tab-cnt">
+						<div class="help-item">			
+							<h3>担保交易</h3>
+							<div class="help-item-info">卖家发起交易，买家付款后，由支付宝先帮买家保管货款，等买家收货确认后，支付宝再将货款给到卖家。</div>
+							<a href="javascript:" class="help-item-btn">
+								<span class="ui-button-text">查询详情</span>
+							</a> 			
+						</div>
+						<div class="help-item">			
+							<h3>担保交易</h3>
+							<div class="help-item-info">卖家发起交易，买家付款后，由支付宝先帮买家保管货款，等买家收货确认后，支付宝再将货款给到卖家。</div>
+							<a href="javascript:" class="help-item-btn">
+								<span class="ui-button-text">查询详情</span>
+							</a> 			
+						</div>
+						<div class="help-item">			
+							<h3>担保交易</h3>
+							<div class="help-item-info">卖家发起交易，买家付款后，由支付宝先帮买家保管货款，等买家收货确认后，支付宝再将货款给到卖家。</div>
+							<a href="javascript:" class="help-item-btn">
+								<span class="ui-button-text">查询详情</span>
+							</a> 			
+						</div>
+						<div class="help-item-last">
+							<h3>担保交易</h3>
+							<div class="help-item-info">卖家发起交易，买家付款后，由支付宝先帮买家保管货款，等买家收货确认后，支付宝再将货款给到卖家。</div>
+							<a href="javascript:" class="help-item-btn">
+								<span class="ui-button-text">查询详情</span>
+							</a>
+						</div>
+					</div>
+					<div class="help-tab-cnt none">
+						
+						<div class="help-item">			
+							<h3>担保交易</h3>
+							<div class="help-item-info">卖家发起交易，买家付款后，由支付宝先帮买家保管货款，等买家收货确认后，支付宝再将货款给到卖家。</div>
+							<a href="javascript:" class="help-item-btn">
+								<span class="ui-button-text">查询详情</span>
+							</a> 			
+						</div>
+						<div class="help-item">			
+							<h3>担保交易</h3>
+							<div class="help-item-info">卖家发起交易，买家付款后，由支付宝先帮买家保管货款，等买家收货确认后，支付宝再将货款给到卖家。</div>
+							<a href="javascript:" class="help-item-btn">
+								<span class="ui-button-text">查询详情</span>
+							</a> 			
+						</div>
+						<div class="help-item-last">
+							<h3>担保交易</h3>
+							<div class="help-item-info">卖家发起交易，买家付款后，由支付宝先帮买家保管货款，等买家收货确认后，支付宝再将货款给到卖家。</div>
+							<a href="javascript:" class="help-item-btn">
+								<span class="ui-button-text">查询详情</span>
+							</a>
+						</div>
+					</div>
+					<div class="help-tab-cnt none">
+						
+						<div class="help-item">			
+							<h3>担保交易</h3>
+							<div class="help-item-info">卖家发起交易，买家付款后，由支付宝先帮买家保管货款，等买家收货确认后，支付宝再将货款给到卖家。</div>
+							<a href="javascript:" class="help-item-btn">
+								<span class="ui-button-text">查询详情</span>
+							</a> 			
+						</div>
+						<div class="help-item-last">
+							<h3>担保交易</h3>
+							<div class="help-item-info">卖家发起交易，买家付款后，由支付宝先帮买家保管货款，等买家收货确认后，支付宝再将货款给到卖家。</div>
+							<a href="javascript:" class="help-item-btn">
+								<span class="ui-button-text">查询详情</span>
+							</a> 
+						</div>
+					</div>
+					<div class="help-tab-cnt none">
+						
+						<div class="help-item-last">
+							<h3>担保交易</h3>
+							<div class="help-item-info">卖家发起交易，买家付款后，由支付宝先帮买家保管货款，等买家收货确认后，支付宝再将货款给到卖家。</div>
+							<a href="javascript:" class="help-item-btn">
+								<span class="ui-button-text">查询详情</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-footer">
+			
+			<div class="copyright">
+				 <a href="http://www.500jit.com" target="_blank" class="mr10"><img width="68" height="19" src="http://cpcommon.600jit.com/fcommon/public/images/login_logo.gif"></a>版权所有 &copy; 2013 奥林科技(宁波)有限公司    Powered by <a href="http://www.500jit.com" target="_blank">OlymTech(NingBo), Ltd.</a>  <span style="cursor:pointer;" onclick="alert('系统参数:Orange-PC');">&nbsp;</span> 
+			</div>
+		</div>
+	</div>
+</body>
+</html>

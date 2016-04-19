@@ -1,0 +1,237 @@
+// =============== 船期查询样式 ================
+.shipment-search-content{
+	height: 46px;
+}
+.shipment-search-input{
+	float: left;
+    height: 43px;
+    border-top: 2px solid #0083e5;
+    border-bottom: 1px solid #0083e5;
+}
+.shipment-search-label{
+	position: absolute;
+	left: 0;
+	top:0;
+	padding-left:10px;
+	height:43px;
+	line-height: 43px;
+	width:45px;
+}
+.gui-search-input-cell .search-input-item{
+	padding-left: 55px;
+	width: 150px;
+	height: 43px;
+	line-height: 43px;
+
+    border-right: 1px solid #0083e5;
+    overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+// 兼容IE6、IE7
+*+html .gui-search-input-cell .search-input-item{
+	margin-top:-1px; 
+}
+*html .gui-search-input-cell .search-input-item{
+	margin-top:-2px; 
+}
+// ============================
+
+.gui-search-input-cell .search-input-item-esp{
+    border-left: 1px solid #0083e5;
+}
+.vessel-btn-wrap{
+	background-color: #f6f6f6;
+	padding: 10px 15px 5px 10px;
+}
+.vessel-btn-wrap span{
+	display: inline-block;
+	text-align: center;
+	margin-right: 5px;
+	width: 50px;
+	height: 20px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	cursor: pointer;
+}
+.vessel-btn-wrap .vessel-btn{
+	border: none;
+	background-color: #f6f6f6;
+	margin:0 0 0 56px;
+}
+.vessel-btn-wrap .vessel-btn-active{
+	background-color: #0083e5;
+	color: #fff;
+}
+// ========= 承运人下拉列表 ==============
+.vessel-list-container{
+	position: absolute;
+	top: 44px;
+	left: -1px;
+	width: 325px;
+	padding-bottom:5px;
+	border: 1px solid #bbb;
+	background-color: #fff;
+	z-index: 999;
+}
+.carrier-list{
+	overflow: hidden;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+.carrier-list li{
+	float: left;
+	text-align: center;
+	width:88px;
+	height: 26px;
+	line-height: 26px;
+	margin-right:5px; 
+	margin-bottom: 5px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+}
+.carrier-list .carrier-list-item{
+	width: 183px;
+}
+.carrier-list .carrier-list-item-active{
+	color: #0083e5;
+	border: 1px solid #0083e5;
+	background-color: #e5f4ff;
+}
+// ======== 起运港、目的港下拉列表 ============
+.shipment-place-list{
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 220px;
+	border: 1px solid #bbb;
+	background-color: #fff;
+	max-height:240px;
+	_height:240px;
+	overflow-y: auto;
+	z-index: 999;
+}
+.shipment-place-list-esp{
+	left: -1px;
+}
+.shipment-place-list li{
+	padding-left: 15px;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	&:hover{
+		background-color: #eee;
+	}
+}
+// ===== 船期搜索按钮 ===========
+.shipment-search-btn{
+	width: 105px;
+	height: 46px;
+	line-height: 46px;
+}
+//=============  历史搜索条 =============
+.shipment-search-history{
+	width: 100%;
+	margin-top:10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.shipment-search-history a{
+	color: #666;
+	&:hover{
+		color: #0083e5;
+	}
+}
+// =========== end ================
+// =========== 表格 ==============
+.gui-table-shipment{
+	margin-top:20px;
+}
+.gui-table-shipment .shipment-table-header{
+	background-color: #eee;
+	color: #666;
+	border: 1px solid #ddd;
+    border-bottom: none;
+}
+.vessel{
+	color:#0083e5;
+}
+.detail-btn{
+	position: relative;
+	cursor: pointer;
+	color:#0083e5;
+}
+.detail-arrow-icon{
+	position: absolute;
+    right: 36px;
+    top: 18px;
+    font-size: 16px;
+    color: #0083e5;
+    cursor: pointer;
+}
+// ===================
+.gui-table td{
+	word-wrap:break-word;
+}
+.gui-table .shipment-table-detail{
+	background-color: #f6f6f6;
+}
+.gui-detail-default{
+	.gui-detail-item{
+		position: relative;
+		float: left;
+		width: 220px;
+		padding-left: 30px;
+	}
+	.gui-detail-item-esp{
+		width: 250px;
+		padding-left: 0;
+	}
+}
+.gui-detail-thr{
+	.gui-detail-item{
+		position: relative;
+		float: left;
+		width: 200px;
+		padding-left: 30px;
+	}
+	.gui-detail-item-esp{
+		width: 225px;
+		padding-left: 0;
+	}
+}
+.gui-detail-four{
+	.gui-detail-item{
+		position: relative;
+		float: left;
+		width: 180px;
+		padding-left: 30px;
+	}
+	.gui-detail-item-esp{
+		width: 200px;
+		padding-left: 0;
+	}
+}
+.gui-detail-five{
+	.gui-detail-item{
+		position: relative;
+		float: left;
+		width: 150px;
+		padding-left: 30px;
+	}
+	.gui-detail-item-esp{
+		width: 175px;
+		padding-left: 0;
+	}
+}
+.gui-detail-item-p{
+	margin-top: 10px;
+}
+.gui-detail-item-arrow{
+	position: absolute;
+	left: 10px;
+}
+

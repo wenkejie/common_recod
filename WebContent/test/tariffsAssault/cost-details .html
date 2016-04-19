@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://cpcommon.600jit.com/fcommon/release/freight/css/common-v1.2.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="fui-dialog mg10" style="width:800px">
+		<div class="fui-dialog-title">
+			<h4 class="tal">目的港费用详情</h4>
+			<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+		</div>
+		<div class="fui-dialog-cnt">
+			
+			<div class="clearfix">
+				<div class="left">
+					<div class="form-line">
+						<label for="" class="nui-label w55">代码</label>
+						<div class="nui-form-cell w90">
+							<input type="text" class="nui-input" id="" />
+						</div>
+					</div>
+				
+				
+				
+					<div class="form-line">
+						<label for="" class="nui-label w55">目的港</label>
+						<div class="nui-form-cell w170"> 
+							<div class="nui-form-cell-cnt"> 
+							<input type="text" value="选择的值" class="nui-input"> 
+							<i class="nui-form-cell-icon">&#x3438;</i> 
+							<div class="nui-drop-down"> 
+								<ul class="nui-select-list"> 
+									<li class="nui-select-list-li">选择值1</li> 
+									<li class="nui-select-list-li">选择值2</li> 
+									<li class="nui-select-list-li">选择值2</li> 
+								</ul> 
+							</div> 
+							</div> 
+						</div>
+					</div>
+				
+					<div class="form-line">
+						<label for="" class="nui-label w55">代理名称</label>
+						<div class="nui-form-cell nui-select w170"> 
+							<div class="nui-form-cell-cnt"> 
+							<input type="text" value="选择的值" class="nui-input"> 
+							<i class="nui-form-cell-icon">&#x3438;</i> 
+							<div class="nui-drop-down"> 
+								<ul class="nui-select-list"> 
+									<li class="nui-select-list-li">选择值1</li> 
+									<li class="nui-select-list-li">选择值2</li> 
+									<li class="nui-select-list-li">选择值2</li> 
+								</ul> 
+							</div> 
+							</div> 
+						</div>
+					</div>
+				
+					<div class="form-line">
+						<label for="" class="nui-label w55">电话</label>
+						<div class="nui-form-cell nui-form-cell-readonly w90">
+							<input type="text" class="nui-input" id="" readonly="readonly" />
+						</div>
+						<label for="" class="nui-label w40">传真</label>
+						<div class="nui-form-cell nui-form-cell-readonly w95">
+							<input type="text" class="nui-input" id="" readonly="readonly" />
+						</div>
+					</div>
+				
+				
+					<div class="form-line">
+						<label for="" class="nui-label w55">地址</label>
+						<div class="nui-form-cell nui-form-cell-readonly w250">
+							<input type="text" class="nui-input" id="" readonly="readonly" />
+						</div>
+					</div>
+				</div>
+				<div class="count-box right psr">
+					<!-- <h2 class="count-box-title">计算器提示语编辑：</h2> -->
+					
+					<!-- <input class="count-box-title-input" type="text" class="nui-input" placeholder="计算器提示语编辑" id="" />  -->
+			
+						<div class="nui-form-cell count-box-title-input">
+							<input type="text" placeholder
+							="计算器提示语编辑：" class="nui-input" id="" />
+						</div>
+				
+					
+					<div class="psr">
+						<table class="count-box-table">
+							<tbody>
+								<tr>
+									<td class="slipt">汇率</td>
+									<td>
+										<input class="count-box-table-input" type="text" class="nui-input" placeholder="设置值" id="" />
+									</td>
+								</tr>
+								<tr>
+									<td class="slipt">件数</td>
+									<td>
+										<input class="count-box-table-input" type="text" placeholder="请输入数值"  class="nui-input" id="" />
+									</td>
+								</tr>
+								<tr>
+									<td class="slipt">立方</td>
+									<td>
+										<input class="count-box-table-input" type="text" placeholder="请输入数值"  class="nui-input" id="" />
+									</td>
+								</tr>
+								<tr>
+									<td class="slipt">重量</td>
+									<td>
+										<input class="count-box-table-input" type="text" placeholder="请输入数值"  class="nui-input" id="" />
+									</td>
+								</tr>
+								<tr>
+									<td class="slipt">总计</td>
+									<td>
+										<input class="count-box-table-input" type="text" placeholder=""  class="nui-input" id="" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<a href="javascript:" class="count-box-mask">
+							<span class="count-box-mask-span">点击预览</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+
+
+<div class="result-area">
+	
+			<div class="result-fn-area">
+
+				<button class="nui-btn nui-btn-primary"><i class="fs12">㖦</i> 新增</button>
+				<button class="nui-btn">删除</button>
+				
+			</div>
+			<table class="result-table">
+				<thead>
+					<tr>
+						<th width="15"><input type="checkbox" title="选中/取消选中" name="" id="jselAll"></th>
+						<th >费用英文名</th>
+						<th>中文描述</th>
+						<th >单价</th>
+						<th width="30">币别</th>
+						<th>计费单位</th>
+						<th>金额/计费单位</th>
+						<th>MIN</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+			
+				<tbody>
+				<tr>
+					<td><input type="checkbox" name="" /></td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>美元</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td><div class="action-cnt"><ul class="slide-down-menu"><li class=""><a class="first user-detail" href="javascript:">详情<i class="icon-down-arrow">㐸</i></a></li><li class="slide-down-menu-li slide-down-menu-li-ol psr"><a class="set-power" href="javascript:">权限设置</a></td>
+				</tr>
+				<tr class="split">
+					<td><input type="checkbox" name="" /></td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>美元</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td><div class="action-cnt"><ul class="slide-down-menu"><li class=""><a class="first user-detail" href="javascript:">详情<i class="icon-down-arrow">㐸</i></a></li><li class="slide-down-menu-li slide-down-menu-li-ol psr"><a class="set-power" href="javascript:">权限设置</a></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" /></td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>美元</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td><div class="action-cnt"><ul class="slide-down-menu"><li class=""><a class="first user-detail" href="javascript:">详情<i class="icon-down-arrow">㐸</i></a></li><li class="slide-down-menu-li slide-down-menu-li-ol psr"><a class="set-power" href="javascript:">权限设置</a></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" /></td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>美元</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td><div class="action-cnt"><ul class="slide-down-menu"><li class=""><a class="first user-detail" href="javascript:">详情<i class="icon-down-arrow">㐸</i></a></li><li class="slide-down-menu-li slide-down-menu-li-ol psr"><a class="set-power" href="javascript:">权限设置</a></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" /></td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>美元</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td><div class="action-cnt"><ul class="slide-down-menu"><li class=""><a class="first user-detail" href="javascript:">详情<i class="icon-down-arrow">㐸</i></a></li><li class="slide-down-menu-li slide-down-menu-li-ol psr"><a class="set-power" href="javascript:">权限设置</a></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" /></td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>美元</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td><div class="action-cnt"><ul class="slide-down-menu"><li class=""><a class="first user-detail" href="javascript:">详情<i class="icon-down-arrow">㐸</i></a></li><li class="slide-down-menu-li slide-down-menu-li-ol psr"><a class="set-power" href="javascript:">权限设置</a></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" /></td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>美元</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td><div class="action-cnt"><ul class="slide-down-menu"><li class=""><a class="first user-detail" href="javascript:">详情<i class="icon-down-arrow">㐸</i></a></li><li class="slide-down-menu-li slide-down-menu-li-ol psr"><a class="set-power" href="javascript:">权限设置</a></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" /></td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>美元</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td><div class="action-cnt"><ul class="slide-down-menu"><li class=""><a class="first user-detail" href="javascript:">详情<i class="icon-down-arrow">㐸</i></a></li><li class="slide-down-menu-li slide-down-menu-li-ol psr"><a class="set-power" href="javascript:">权限设置</a></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="" /></td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>美元</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td>里面的值</td>
+					<td><div class="action-cnt"><ul class="slide-down-menu"><li class=""><a class="first user-detail" href="javascript:">详情<i class="icon-down-arrow">㐸</i></a></li><li class="slide-down-menu-li slide-down-menu-li-ol psr"><a class="set-power" href="javascript:">权限设置</a></td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- <div class="result-footer">
+				<div class="page"><input type="hidden" id="pageNo" name="pageNo" value="1"><span class="pageInfo">1-30条，共1615条</span> <a href="javascript:nextPage();">下一页</a> <a href="javascript:buildData(54);">尾页</a></div>
+		  </div> -->
+		</div>
+
+
+		</div> 
+		<div class="fui-dialog-btm-bar pss"> 
+			<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+		</div> 
+	</div>
+</body>
+</html>

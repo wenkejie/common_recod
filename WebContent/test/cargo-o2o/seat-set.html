@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>互联舱位</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+
+</head>
+<body>
+
+<div class="fui-dialog"  style="height:570px;width:1000px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">咖狗网舱位设置</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt">
+		<div class="nui-table-area">
+			<div class="result-fn-area">
+				<a class="nui-btn nui-btn-primary mr8" href="javascript:"><i class="iconfont add-icon">&#x35a6;</i>新增仓位</a>
+				<a class="nui-btn" href="javascript:">批量删除</a>
+			</div>
+			<div class="table-area psr">
+				<table class="nui-table nui-table-popup">
+					<thead>
+						<th width="15"><input type="checkbox"></th>
+						<th width=""><span class="asterisk">*</span>船公司</th>
+						<th width=""><span class="asterisk">*</span>航线</th>
+						<th>航线代码</th>
+						<th>起运港</th>
+						<th width="">目的港</th>
+						<th width="">总舱位</th>
+						<th width="">剩余舱位</th>
+						<th width="90">分配客服</th>
+						<th width="90">操作</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>利丰国际物流有限公司</td>
+							<td>亚太航线</td>
+							<td>PPO</td>
+							<td>NINGBO</td>
+							<td class="dest-cell">
+								<a href="javascript:" class="show-destinfo j-more">更多<i class="iconfont">&#xe61d;</i></a>
+								<em class="arrow1 none">◆</em><em class="arrow2 none">◆</em>
+							</td>
+							<td class="seat-cell">
+								<span>20</span><i class="iconfont pencil-icon">&#x3580;</i>
+							</td>
+							<td>20</td>
+							<td>
+								<div class="nui-form-cell nui-select w80"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="未分配" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">小二A</li> 
+												 <li class="nui-select-list-li">小二二二二二二二B</li> 
+												 <li class="nui-select-list-li">小二C</li> 
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td class="add-set-cell">
+								<a href="javascript:" class="add-set">加价设置<i class="iconfont">&#xe61d;</i></a>
+								<ul class="add-set-list none">
+									<li><a href="javascript:">编辑</a></li>
+									<li><a href="javascript:" class="j-delete">删除</a></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="10" class="dest-info none">
+								<div>目的港：</div><div class="dest-info-column">WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON</div>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>利丰国际物流有限公司</td>
+							<td>亚太航线</td>
+							<td>PPO</td>
+							<td>NINGBO、QINGDAO、NINGBO</td>
+							<td class="dest-cell">
+								<a href="javascript:" class="show-destinfo j-more">更多<i class="iconfont">&#xe61d;</i></a>
+								<em class="arrow1 none">◆</em><em class="arrow2 none">◆</em>
+							</td>
+							<td class="seat-cell">
+								<span>20</span><i class="iconfont pencil-icon">&#x3580;</i>
+							</td>
+							<td>20</td>
+							<td>
+								<div class="nui-form-cell nui-select w80"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="未分配" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">小二A</li> 
+												 <li class="nui-select-list-li">小二二二二二二二B</li> 
+												 <li class="nui-select-list-li">小二C</li> 
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td class="add-set-cell">
+								<a href="javascript:" class="add-set">加价设置<i class="iconfont">&#xe61d;</i></a>
+								<ul class="add-set-list none">
+									<li><a href="javascript:" class="add-set-item none">编辑</a></li>
+									<li><a href="javascript:" class="add-set-item none j-delete">删除</a></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="10"  class="dest-info none">
+								<div>目的港：</div><div class="dest-info-column">WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON</div>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>利丰国际物流有限公司</td>
+							<td>亚太航线</td>
+							<td>PPO</td>
+							<td>NINGBO</td>
+							<td class="dest-cell">
+								<a href="javascript:" class="show-destinfo j-more">更多<i class="iconfont">&#xe61d;</i></a>
+								<em class="arrow1 none">◆</em><em class="arrow2 none">◆</em>
+							</td>
+							<td class="seat-cell">
+								<span>20</span><i class="iconfont pencil-icon">&#x3580;</i>
+							</td>
+							<td>20</td>
+							<td>
+								<div class="nui-form-cell nui-select w80"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="未分配" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">小二A</li> 
+												 <li class="nui-select-list-li">小二二二二二二二B</li> 
+												 <li class="nui-select-list-li">小二C</li> 
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td class="add-set-cell">
+								<a href="javascript:" class="add-set">加价设置<i class="iconfont">&#xe61d;</i></a>
+								<ul class="add-set-list none">
+									<li><a href="javascript:" class="add-set-item none">编辑</a></li>
+									<li><a href="javascript:" class="add-set-item none j-delete">删除</a></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="10" class="dest-info none">
+								<div>目的港：</div><div class="dest-info-column">WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON</div>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>利丰国际物流有限公司</td>
+							<td>亚太航线</td>
+							<td>PPO</td>
+							<td>NINGBO</td>
+							<td class="dest-cell">
+								<a href="javascript:" class="show-destinfo j-more">更多<i class="iconfont">&#xe61d;</i></a>
+								<em class="arrow1 none">◆</em><em class="arrow2 none">◆</em>
+							</td>
+							<td class="seat-cell">
+								<span>20</span><i class="iconfont pencil-icon">&#x3580;</i>
+							</td>
+							<td>20</td>
+							<td>
+								<div class="nui-form-cell nui-select w80"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="未分配" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">小二A</li> 
+												 <li class="nui-select-list-li">小二二二二二二二B</li> 
+												 <li class="nui-select-list-li">小二C</li> 
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td class="add-set-cell">
+								<a href="javascript:" class="add-set">加价设置<i class="iconfont">&#xe61d;</i></a>
+								<ul class="add-set-list none">
+									<li><a href="javascript:" class="add-set-item none">编辑</a></li>
+									<li><a href="javascript:" class="add-set-item none j-delete">删除</a></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="10" class="dest-info none">
+								<div>目的港：</div><div class="dest-info-column">WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON</div>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>利丰国际物流有限公司</td>
+							<td>亚太航线</td>
+							<td>PPO</td>
+							<td>NINGBO、QINGDAO、NINGBO</td>
+							<td class="dest-cell">
+								<a href="javascript:" class="show-destinfo j-more">更多<i class="iconfont">&#xe61d;</i></a>
+								<em class="arrow1 none">◆</em><em class="arrow2 none">◆</em>
+							</td>
+							<td class="seat-cell">
+								<span>20</span><i class="iconfont pencil-icon">&#x3580;</i>
+							</td>
+							<td>20</td>
+							<td>
+								<div class="nui-form-cell nui-select w80"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="未分配" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">小二A</li> 
+												 <li class="nui-select-list-li">小二二二二二二二B</li> 
+												 <li class="nui-select-list-li">小二C</li> 
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td class="add-set-cell">
+								<a href="javascript:" class="add-set">加价设置<i class="iconfont">&#xe61d;</i></a>
+								<ul class="add-set-list none">
+									<li><a href="javascript:" class="add-set-item none">编辑</a></li>
+									<li><a href="javascript:" class="add-set-item none j-delete">删除</a></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="10" class="dest-info none">
+								<div>目的港：</div><div class="dest-info-column">WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON</div>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"></td>
+							<td>利丰国际物流有限公司</td>
+							<td>亚太航线</td>
+							<td>PPO</td>
+							<td>NINGBO、QINGDAO、NINGBO</td>
+							<td class="dest-cell"><a href="javascript:" class="show-destinfo j-more">更多<i class="iconfont">&#xe61d;</i></a><em class="arrow1 none">◆</em><em class="arrow2 none">◆</em></td>
+							<td class="seat-cell">
+								<span>20</span><i class="iconfont pencil-icon">&#x3580;</i>
+							</td>
+							<td>20</td>
+							<td>
+								<div class="nui-form-cell nui-select w80"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="未分配" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">小二A</li> 
+												 <li class="nui-select-list-li">小二二二二二二二B</li> 
+												 <li class="nui-select-list-li">小二C</li> 
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td class="add-set-cell">
+								<a href="javascript:" class="add-set">加价设置<i class="iconfont">&#xe61d;</i></a>
+								<ul class="add-set-list none">
+									<li><a href="javascript:" class="add-set-item">编辑</a></li>
+									<li><a href="javascript:" class="add-set-item j-delete">删除</a></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="10" class="dest-info none">
+								<div>目的港：</div><div class="dest-info-column">WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON,WASHIONTONNTON</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="ui-popdown-box none">
+					<em class="arrow1">◆</em><em class="arrow2">◆</em>
+					总舱位“<span class="seat-num">20</span>”改为：
+					<div class="nui-form-cell w50 mr5">
+						<input class="nui-input" type="text">
+					</div>
+					<a class="nui-btn seat-edit-btn j-ensure mr5" href="javascript:">确定</a><a class="nui-btn nui-btn-link j-cancle" href="javascript:">取消</a>
+				</div>
+			</div>
+			<div class="nui-table-footer mt10">
+				<div class="page">
+					<span class="pageinfo">
+						<input type="hidden" id="pageNo" name="pageNo" value="1" autocomplete="off">			
+						<input type="hidden" id="pageCount" name="pageCount" value="5" autocomplete="off">			
+						<input type="hidden" id="count" name="count" value="84" autocomplete="off">			
+						1-20条，共 <em class="pageinfo">84</em>
+						条
+					</span>
+					<a href="javascript:" id="next_page">下一页</a>
+					<a href="javascript:" id="last_page">尾页</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>保存</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../release/freight/js/unicom-freight/rule.js"></script>
+<script type="text/javascript" src="../../release/freight/js/cargo-o2o/rule.js"></script>
+</body>
+</html>

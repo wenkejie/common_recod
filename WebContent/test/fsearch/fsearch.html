@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>高级查询</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+	
+	<script>
+		 $(function(){
+			$("#advSearch").fsearch({
+				items : [ 
+							{ text:'航线',name:'hangxian' },
+							{ text:'码头',name:'matou',binding: function(input,width){
+ // console.log(input.width() + "    " +  input.outerWidth());
+								
+										input.fselect({ 
+										//	width:input.width() ,
+											itemWidth : fc.ie67 ? 200:null,
+										  	size : 4,
+											items:[{text:'一ddddddddddddddddddddddddddddd',value:'1'},
+											       {text:'二',value:'2'},
+											       {text:'三',value:'3'},
+											       {text:'四',value:'4'},
+											       {text:'五',value:'5'},
+											       {text:'六',value:'6'}
+												],
+											select: function(event,ui){
+											},
+											change : function (event,ui){
+												//console.log(ui);
+											}
+										});
+
+								}},
+							{ text:'中转',name:'zhongzhuangang' },
+							{ text:'船公',name:'chuangongsi' },
+							{ text:'箱型',name:'xiangxing' },
+							{ text:'日期',name:'riqi' ,binding : function(input){
+									input.datepicker();
+								}},
+							{ text:'很多的文字显示的效果',title:'很多的文字显示的效果',name:'hengduode',binding:function(input){
+											input.click(function(){
+ 
+												});
+								} },
+							{ text:'条件1',name:'tiaojian1' },
+							{ text:'条件2',name:'tiaojian2' },
+							{ text:'条件3',name:'tiaojian3' },
+							{ text:'条件4',name:'tiaojian4' },
+							{ text:'条件5',name:'tiaojian5' },
+							{ text:'条件6',name:'tiaojian6' },
+							{ text:'条件7',name:'tiaojian7' },
+							{ text:'条件8',name:'tiaojian8' },
+							{ text:'条件9',name:'tiaojian9' },
+							{ text:'条件0',name:'tiaojian0' }
+							
+								
+				],
+				add : function(event,ui){
+					//console.log("add");
+				},
+				remove : function(event,ui){
+					//console.log("remove");
+					//console.log(ui);
+				},
+				changeItem: function(event,ui){
+					if(ui.itemName=="matou"){
+						if($("#advSearch").find("input[name='matou']").length>1){
+							$(ui).fsearch("remove",ui);
+						} 
+					}
+				}
+			});
+
+			//select_f();
+		});
+
+
+
+		function select_f(){
+			$("#advSearch").fsearch("select" , 0 ,"riqi");
+		}
+
+		function add_f(){
+			$("#advSearch").fsearch("add"  );
+		}
+			
+	</script>
+</head>
+<body>
+
+<div style='margin:50px 0 0 100px;'>
+
+ 
+	
+	
+	<div ></div>
+	
+	<button type='button' onclick='select_f()'>select</button>
+	
+	<button type='button' onclick='add_f()'>add</button>
+
+	<div id='advSearch' class='fui-adv-search-con  '  style='width:200px;'>
+	 	<div class='fui-condition-input clearfix'>
+	 		<div class='condition'>
+	 			<span class="condition-selected"></span>
+	 		</div>
+	 		<input type='text' class='adv-search-input'/>
+	 		<a class="adv-search-del" href="javascript:"></a>
+	 		<a class="adv-search-add" href="javascript:"></a>
+	 	</div>
+	 </div>
+	 
+	 
+</div>
+	 
+	 
+</body>
+</html>

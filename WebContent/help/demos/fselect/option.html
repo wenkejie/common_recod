@@ -1,0 +1,36 @@
+<script>
+(function($){
+	var arr = [];
+	for(var i=0;i<10;i++){
+		arr[i] = {text:"显示   " + i,value:i};
+	}
+
+	
+ 	$("#fSelectTest").fselect({
+ 		items : arr ,
+ 		width : 200,
+ 		itemWidth : 200
+ 	 });
+})(jQuery);
+
+</script>
+
+我是原生态select的替代品。好处不多说了，太累。自己想去吧
+<br/>
+
+
+readonly : <select onchange='$("#fSelectTest").fselect("option","readonly",this.value=="true")'>
+	<option value='true'>true</option>
+	<option value='false' selected>false</option>
+</select>
+<br/>
+width : <input value='200' onchange='$("#fSelectTest").fselect("option","width",this.value )'/>
+<br/>
+itemWidth: <input value='200' onchange='$("#fSelectTest").fselect("option","itemWidth",this.value )'/>选项的宽度 ，但宽度不会小于控件，小了很难看的。
+<br/>
+size：<input value='' onchange='$("#fSelectTest").fselect("option","size",this.value )'/>
+<br/><input id='fSelectTest'/>
+
+
+
+ 

@@ -1,0 +1,62 @@
+<script>
+(function($){
+	$.extend({
+		openWin : function(){
+			fwindow.create({
+				title : "普通窗口",
+				url : "demos/fwindow/subwin.html" 
+			});
+		},
+		openResizeWin : function(){
+			fwindow.create({
+				title : "你可以改变我的大小",
+				url : "demos/fwindow/subwin.html",
+				resizeable : true,
+				maxable : true 
+			});
+		},
+		openSizeWin : function(){
+			var w = $("#width").val();
+			var h = $("#height").val();
+			
+			var fw = fwindow.create({
+				title : w + " * " + h + "  窗口",
+				url : "demos/fwindow/subwin.html",
+				height: h,
+				width: w,
+				resizeable : true,
+				maxable : true 
+			});
+			
+			w = fw.fwindow("option","width");
+			h = fw.fwindow("option","height");
+
+
+			console.log(w + " * " + h  );
+			
+			fw.fwindow("option","title",w + " * " + h + "  窗口");
+		},
+		openUndragWin : function(){
+			fwindow.create({
+				title : "我不会动",
+				url : "demos/fwindow/subwin.html",
+				draggable : false
+			});
+		}
+	});
+})(jQuery);
+
+</script>
+
+<button onclick='$.openWin()'>普通窗口</button>
+<br></br>
+<button onclick='$.openResizeWin()'>你可以改变我的大小</button>
+<br></br>
+<button onclick='$.openUndragWin()'>我不会动</button>
+<br></br>
+高<input id='height' value='300'/> 宽<input id='width' value='400'/> <button onclick='$.openSizeWin()'>自定义大小窗口</button>
+<br></br>
+<select></select>
+
+
+

@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+
+	<!-- <link rel="stylesheet" href="../../release/freight/css/common.css"/> -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<!-- <link rel="stylesheet" href="../../src/css/richSelect.css" />richselect样式 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(function () {
+			//列表排序箭头
+			$('table.nui-data-table').delegate('a.icon', 'click', function(){
+
+				$(this).removeClass('icon-com');
+				$(this).addClass('icon-top');
+				return false;
+			});
+			$('table.nui-data-table').delegate('a.icon-top', 'click', function(){
+
+				$(this).removeClass('icon-top');
+				$(this).addClass('icon-down');
+				return false;
+			});
+			$('table.nui-data-table').delegate('a.icon-down', 'click', function(){
+
+				$(this).removeClass('icon-down');
+				$(this).addClass('icon-top');
+
+				return false;
+			});
+
+			$('a.group-tag-cell').click(function() {
+				$('a.group-tag-cell').removeClass('group-tag-cell-active');
+				$(this).addClass('group-tag-cell-active');
+			});
+		})	
+	</script>
+	
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	<div class="wrap main-wrap">
+		
+		<div class="search-subnav clearfix mt20">
+			<div class="search-subnav-cnt clearfix">
+				<div class="left">
+					<a href="javascript:" class="search-subnav-link search-subnav-link-active">海运整箱</a>
+					<a href="javascript:" class="search-subnav-link">海运拼箱</a>
+					<a href="javascript:" class="search-subnav-link">海运进口拼箱</a>
+					<a href="javascript:" class="search-subnav-link">空运</a>
+				</div>
+				<div class="right">
+				</div>
+			</div>
+			<div class="">
+				<div class="search-area">
+					<div class="search-area-grid">
+						<div class="search-area-line">
+							<label class="search-line-label ml10" for="">目的港：</label>
+							<div class="nui-form-cell">
+								<input type="text" class="nui-input">
+							</div>
+							<label class="search-line-label" for="">航线：</label>
+							<div class="nui-form-cell">
+								<input type="text" class="nui-input">
+							</div>
+							<label class="search-line-label" for="">船公司：</label>
+							<div class="nui-form-cell mr10">
+								<input type="text" class="nui-input">
+							</div>
+							<a onclick="" class="nui-btn nui-btn-primary mr10">搜 索</a>
+							<div class="nui-form-cell nui-condition-select">
+								<div class="nui-select">
+									<div class="nui-select-value">其他条件</div><i>&#x3438;</i>
+									<div class="nui-drop-down w100" style="display: none;">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">目的港</li>
+											<li class="nui-select-list-li">航线</li>
+											<li class="nui-select-list-li">起运港</li>
+										</ul>
+									</div>
+								</div>
+								<div class="nui-form-cell-cnt pl5 psr left">
+									<input type="text" class="nui-input no-chinese">
+									<div class="nui-drop-down block">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">目的港</li>
+											<li class="nui-select-list-li">航线</li>
+											<li class="nui-select-list-li">起运港</li>
+										</ul>
+									</div>
+									<i class="nui-form-cell-icon fs12 cur-p">&#x35a6;</i>
+								</div>
+							</div>
+						</div>
+						<div class="hr hr-nomg"></div>
+						<div class="search-area-line search-area-line-last">
+							<div class="psr">
+								<label class="search-condition-label" >你已选择：</label>
+								<ul class="search-condition clearfix">
+									<li class="search-condition-cell">
+										<div class="condition-cnt">
+											<label class="condition-label">海运整箱：</label>
+											<span class="condition-detail">dawdwa dawdawd</span>
+										</div>
+										<a class="search-condition-del" href="javascript:">×</a>
+									</li>
+									<li class="search-condition-cell">
+										<div class="condition-cnt">
+											<label class="condition-label">目的港：</label>
+											<span class="condition-detail">dawdwa dawdawd</span>
+										</div>
+										<a class="search-condition-del" href="javascript:">×</a>
+									</li>
+									<li class="search-condition-cell">
+										<div class="condition-cnt">
+											<label class="condition-label">目的港：</label>
+											<span class="condition-detail">dawdwa dawdawd</span>
+										</div>
+										<a class="search-condition-del" href="javascript:">×</a>
+									</li>
+									<li class="search-condition-cell">
+										<div class="condition-cnt">
+											<label class="condition-label">目的港：</label>
+											<span class="condition-detail">dawdwa dawdawd</span>
+										</div>
+										<a class="search-condition-del" href="javascript:">×</a>
+									</li>
+									<li class="search-condition-cell">
+										<div class="condition-cnt">
+											<label class="condition-label">目的港：</label>
+											<span class="condition-detail">dawdwa dawdawd</span>
+										</div>
+										<a class="search-condition-del" href="javascript:">×</a>
+									</li>
+									<li class="search-condition-cell">
+										<div class="condition-cnt">
+											<label class="condition-label">目的港：</label>
+											<span class="condition-detail">dawdwa dawdawd</span>
+										</div>
+										<a class="search-condition-del" href="javascript:">×</a>
+									</li>
+									<li class="search-condition-cell">
+										<div class="condition-cnt">
+											<label class="condition-label">目的港：</label>
+											<span class="condition-detail">dawdwa dawdawd</span>
+										</div>
+										<a class="search-condition-del" href="javascript:">×</a>
+									</li>
+									<li class="search-condition-cell">
+										<div class="condition-cnt">
+											<label class="condition-label">目的港：</label>
+											<span class="condition-detail">dawdwa dawdawd</span>
+										</div>
+										<a class="search-condition-del" href="javascript:">×</a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="search-content">
+			<div class="data-table-group mt15">
+				<div class="data-group-fn clearfix">
+					<div class="group-fn-left">
+						<div class="data-group-tag clearfix">
+							<a class="group-tag-cell group-tag-cell-active" href="javascript:">已发布</a>
+							<a class="group-tag-cell" href="javascript:">未发布</a>
+						</div>
+					</div>
+					<div class="group-fn-right">
+						<a class="nui-btn" ><i>&#x356f;</i> 自定义表头</a>
+						<a class="nui-btn mr5" ><i>&#x3455;</i> 导出运价</a>
+						<label class="nui-label mr10">状态筛选：</label>
+						<div class="group-fn-btn">
+							<a class="nui-btn pr5"><em>所有账号</em> <i class="icon-down-arrow">&#x3438;</i></a>
+						</div>
+					</div>
+				</div>
+				<table class="nui-data-table data-lattice-table">
+					<thead>
+						<tr>
+							<th rowspan="2" width="15">
+								<input style="" type="checkbox" title="选中/取消选中">
+							</th>
+							<th rowspan="2" width="45">明细</th>
+							<th rowspan="2" width="83">起运港 <a class="icon icon-com" href="javascript:"></a></th>
+							<th rowspan="2" width="118">目的港 <a class="icon icon-com" href="javascript:"></a></th>
+							<th rowspan="2" width="74">国家 <a class="icon icon-com" href="javascript:"></a></th>
+							<th colspan="2" width="137" class="center">有效期</th>
+							<th></th>
+							
+						</tr>
+						<tr>
+							<th>开始 <a class="icon icon-com" href="javascript:"></a></th>
+							<th>结束 <a class="icon icon-com" href="javascript:"></a></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input style="" type="checkbox" title="选中/取消选中"></td>
+							<td><a href="javascript:">详情</a></td>
+							<td>NINGBO</td>
+							<td>daw</td>
+							<td>daw</td>
+							<td>dad</td>
+							<td>dad</td>
+							<td></td>
+						</tr>
+						<tr class="tr-item">
+							<td><input style="" type="checkbox" title="选中/取消选中"></td>
+							<td><a href="javascript:">详情</a></td>
+							<td>NINGBO</td>
+							<td>daw</td>
+							<td>daw</td>
+							<td>dad</td>
+							<td>dad</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><input style="" type="checkbox" title="选中/取消选中"></td>
+							<td><a href="javascript:">详情</a></td>
+							<td>NINGBO</td>
+							<td>daw</td>
+							<td>daw</td>
+							<td>dad</td>
+							<td>dad</td>
+							<td></td>
+						</tr>
+						<tr class="tr-item">
+							<td><input style="" type="checkbox" title="选中/取消选中"></td>
+							<td><a href="javascript:">详情</a></td>
+							<td>NINGBO</td>
+							<td>daw</td>
+							<td>daw</td>
+							<td>dad</td>
+							<td>dad</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><input style="" type="checkbox" title="选中/取消选中"></td>
+							<td><a href="javascript:">详情</a></td>
+							<td>NINGBO</td>
+							<td>daw</td>
+							<td>daw</td>
+							<td>dad</td>
+							<td>dad</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="data-group-foot clearfix">
+					<div class="left-area"><i class="tips-icon">&#x3573;</i><span class="change-tips">有新的运价发布</span></div>
+					<div class="page">
+						<a href="javascript:prePage();">上一页</a>
+						<a href="javascript:prePage();">1</a>
+						<a href="javascript:prePage();">2</a>
+						<a class="mr20" href="javascript:nextPage();">下一页</a>
+						<span class="pageInfo">共278条 | 每页显示</span>
+						<select>
+							<option value ="30">30</option>
+							<option value ="40">40</option>
+							<option value="50">50</option>
+							<option value="100">100</option>
+						</select>
+						<span class="pageInfo">条</span>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--#include file="footer.html"-->
+
+</body>
+</html>

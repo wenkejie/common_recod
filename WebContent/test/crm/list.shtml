@@ -1,0 +1,159 @@
+<!--#include file="header.html"-->
+
+<!-- 主内容开始 -->
+<div class="auto-wrap">
+<div class="grid">
+<div class="left">
+	<i class="fs14">&#x351a;</i> <strong>客户: </strong>
+	<div class="nui-select-no-box"><div class="nui-select-value">我的客户</div><i>&#x3438;</i>
+	<div class="nui-drop-down w140 h-a">
+		<ul class="nui-select-list nui-select-list-with-title">
+			<li class="nui-select-list-title">我的视图</li>
+			<li class="nui-select-list-li">我的客户</li>
+			<li class="nui-select-list-li">我关注的客户</li>
+			<li class="nui-select-list-li">A（重点客户）</li>
+			<li class="nui-select-list-li">B（普通客户）</li>
+			<li class="nui-select-list-li">C（非优先客户）</li>
+			<li class="nui-select-list-title">其他视图</li>
+			<li class="nui-select-list-li">我的下属客户</li>
+		</ul>
+	</div>
+	
+</div>
+</div>
+	
+	<div class="right">
+		<button class="nui-btn nui-btn-primary"><i class="fcf">&#x35a6;</i> 新建联系人</button>
+		<button class="nui-btn nui-btn-primary"><i class="fcf">&#x3594;</i> 导入联系人</button>
+	</div>
+</div>
+	<div class="result-area">
+			
+		<div class="result-fn-area">
+			<div class="left">
+				<div class="nui-form-cell nui-search-with-select">
+					<div class="nui-select">
+						<div class="nui-select-value">
+							按客户天数搜索
+						</div><i>&#x3438;</i>
+						<div class="nui-drop-down w100">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">按客户名称</li>
+											<li class="nui-select-list-li">未跟进天数</li>
+											<li class="nui-select-list-li">海外国内</li>
+											<li class="nui-select-list-li">客户类型</li>
+											<li class="nui-select-list-li">业务类型</li>
+										</ul>
+									</div>
+					</div>
+					<div class="nui-form-cell-cnt pl5 psr left">
+						<input type="text" class="nui-input no-chinese">
+						<div class="nui-drop-down mw-n w145 block">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">按客户名称</li>
+											<li class="nui-select-list-li">未跟进天数</li>
+											<li class="nui-select-list-li">海外国内</li>
+											<li class="nui-select-list-li">客户类型</li>
+											<li class="nui-select-list-li">业务类型</li>
+										</ul>
+									</div>
+						<i class="nui-form-cell-icon fs12 cur-p">&#x355d;</i>
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<button class="nui-btn">删除</button>
+				<button class="nui-btn">导入日志</button>
+				<button class="nui-btn">编辑显示字段</button>
+			</div>
+		</div>
+			<table class="result-table">
+				<thead>
+					<tr>
+				
+						<th class="checkbox"><input id="" type="checkbox" name="" id="" title="选中/取消选中" /></th>
+						<th class="name">姓名</th>
+						<th class="company">公司名称 </th>
+						<th>职务</th>
+						<th>电话</th>
+						<th>手机</th>
+						<th>电子邮件</th>
+						<th>创建日期</th>
+					</tr>
+				</thead>
+			
+			<tbody>
+				<tr>
+					<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+					<td>李光耀</td>
+					<td><a href="customersTrend.shtml">宁波开源国际物流有限公司</a></td>
+					<td>副总经理</td>
+					<td>0574-88284856</td>
+					<td>13958888888</td>
+					<td>sflkdj@sldkf.com</td>
+					<td>2013-12-12 </td>
+				</tr>
+				<tr class="split">
+					<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+					<td>李光耀</td>
+					<td><a href="javascript:">宁波开源国际物流有限公司</a></td>
+					<td>副总经理</td>
+					<td>0574-88284856</td>
+					<td>13958888888</td>
+					<td>sflkdj@sldkf.com</td>
+					<td>2013-12-12</td>
+				</tr>
+				<tr>
+					<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+					<td>李光耀</td>
+					<td><a href="javascript:">宁波开源国际物流有限公司</a></td>
+					<td>副总经理</td>
+					<td>0574-88284856</td>
+					<td>13958888888</td>
+					<td>sflkdj@sldkf.com</td>
+					<td>2013-12-12</td>
+				</tr>
+				<tr class="split">
+					<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+					<td>李光耀</td>
+					<td><a href="javascript:">宁波开源国际物流有限公司</a></td>
+					<td>副总经理</td>
+					<td>0574-88284856</td>
+					<td>13958888888</td>
+					<td>sflkdj@sldkf.com</td>
+					<td>2013-12-12</td>
+				</tr><tr class="split">
+					<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+					<td>李光耀</td>
+					<td><a href="javascript:">宁波开源国际物流有限公司</a></td>
+					<td>副总经理</td>
+					<td>0574-88284856</td>
+					<td>13958888888</td>
+					<td>sflkdj@sldkf.com</td>
+					<td>2013-12-12</td>
+				</tr><tr class="split">
+					<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+					<td>李光耀</td>
+					<td><a href="javascript:">宁波开源国际物流有限公司</a></td>
+					<td>副总经理</td>
+					<td>0574-88284856</td>
+					<td>13958888888</td>
+					<td>sflkdj@sldkf.com</td>
+					<td>2013-12-12</td>
+				</tr>
+
+		
+			
+
+			</tbody>
+			</table>
+			<div class="result-footer">
+			  <div class="left-area"><i class="fs14">&#x358d;</i></div>
+				<div class="page"><input type="hidden" id="pageNo" name="pageNo" value="1" /><span class="pageinfo">1-20条，共64条 </span><a href="javascript:nextPage();">下一页</a>
+				<a href="javascript:">尾页</a></div>
+		  </div>
+		</div>
+	</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

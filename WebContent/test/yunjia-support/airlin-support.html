@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>在线招标详情弹框</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../src/js/2015-06f/jsurcharge.js"></script>
+</head>
+<body>
+
+<div class="fui-dialog ofh" style="width:700px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">详细方案</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div>
+		<div class="pd20 tal clearfix">
+			<div class="list-box w200"> 
+				<h2 class="list-box-title">航线列表</h2>
+				<div class="list-box-head">
+					<div class="nui-form-cell nui-select w170"> 
+						<div class="nui-form-cell-cnt"> 
+							<input class="nui-input" type="text" placeholder="搜索"> 
+							<i class="nui-form-cell-icon fs12">&#x355d;</i> 
+						</div> 
+					</div> 
+				</div> 
+				<ul class="list-box-ul-left"> 
+					<li class="list-box-li"> 
+						<label class="nui-checkbox" for="1"> <input id="1" type="checkbox" name="items"> 整箱1 </label>
+						<a href="javascript:" class="fonticon right vam add fs12">&#x35a6;</a> 
+					</li> 
+					<li class="list-box-li"> 
+						<label class="nui-checkbox" for="2"> <input id="2" type="checkbox" name="items"> 整箱1 </label>
+						<a href="javascript:" class="fonticon right vam add fs12">&#x35a6;</a> 
+					</li>
+					<li class="list-box-li"> 
+						<label class="nui-checkbox" for="3"> <input id="3" type="checkbox" name="items"> 整箱1 </label>
+						<a href="javascript:" class="fonticon right vam add fs12">&#x35a6;</a> 
+					</li>
+				</ul> 
+			</div>
+			<i class="list-box-toright fonticon">&#x3443;</i>
+			<div class="list-box airline-wrap"> 
+				<h2 class="list-box-title">大航线匹配规则</h2>
+				<div class="list-box-ul-right"> 
+					<div class="support-line">
+						<label class="support-line-label">大航线：</label>
+						<div class="support-line-cell"><label><input type="checkbox" class="mr5">中南美</label></div>
+						<div class="support-line-cell"><label><input type="checkbox" class="mr5">美加线</label></div>
+						<div class="support-line-cell"><label><input type="checkbox" class="mr5">欧地黑</label></div>
+						<div class="support-line-cell"><label><input type="checkbox" class="mr5">澳新线</label></div>
+						<div class="support-line-cell"><label><input type="checkbox" class="mr5">东南亚</label></div>
+						<div class="support-line-cell"><label><input type="checkbox" class="mr5">远东中亚</label></div>
+						<div class="support-line-cell"><label><input type="checkbox" class="mr5">港台日韩</label></div>
+						<div class="support-line-cell"><label><input type="checkbox" class="mr5">中东红海印巴非洲</label></div>
+					</div>	
+					<div class="airline-box">
+						<div class="airline-btn-wrap">
+							<a href="javascript:" class="nui-btn airline-btn"><i class="fonticon">&#xe611;</i></a><a href="javascript:" class="nui-btn airline-btn mt5"><i class="fonticon">&#xe612;</i></a>
+						</div>
+						<div class="airline-list-wrap">
+							<p class="pb5">东南亚</p>
+							<ul class="airline-list">
+								<li class="list-box-li"><span>南美东</span><a href="javascript:" class=" delete fonticon right vam">&#x3586;</a></li>
+								<li class="list-box-li"><span>南美西</span><a href="javascript:" class=" delete fonticon right vam">&#x3586;</a></li>
+								<li class="list-box-li"><span>加勒比</span><a href="javascript:" class=" delete fonticon right vam">&#x3586;</a></li>
+							</ul>
+						</div>	
+					</div>	
+					<div class="airline-box mt10">
+						<div class="airline-btn-wrap">
+							<a href="javascript:" class="nui-btn airline-btn"><i class="fonticon">&#xe611;</i></a><a href="javascript:" class="nui-btn airline-btn mt5"><i class="fonticon">&#xe612;</i></a>
+						</div>
+						<div class="airline-list-wrap">
+							<p class="pb5">东南亚</p>
+							<ul class="airline-list">
+								<li class="list-box-li"><span>美国东</span><a href="javascript:" class=" delete fonticon right vam">&#x3586;</a></li>
+								<li class="list-box-li"><span>美国西</span><a href="javascript:" class=" delete fonticon right vam">&#x3586;</a></li>
+								<li class="list-box-li"><span>加拿大</span><a href="javascript:" class=" delete fonticon right vam">&#x3586;</a></li>
+							</ul>
+						</div>	
+					</div>	
+					<div class="airline-box airline-box-last mt10">
+						<div class="airline-btn-wrap">
+							<a href="javascript:" class="nui-btn airline-btn"><i class="fonticon">&#xe611;</i></a><a href="javascript:" class="nui-btn airline-btn mt5"><i class="fonticon">&#xe612;</i></a>
+						</div>
+						<div class="airline-list-wrap">
+							<p class="pb5">东南亚</p>
+							<ul class="airline-list">
+								<li class="list-box-li"><span>欧基线</span><a href="javascript:" class=" delete fonticon right vam">&#x3586;</a></li>
+								<li class="list-box-li"><span>北欧线</span><a href="javascript:" class=" delete fonticon right vam">&#x3586;</a></li>
+								<li class="list-box-li"><span>东欧线</span><a href="javascript:" class=" delete fonticon right vam">&#x3586;</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div> 
+
+	</div>
+	<div class="fui-dialog-btm-bar pss cb mt10"><a class="fui-btn-dialog-primary" href="javascript:" id="j-thr-BtnActive"><span>保存</span></a><!--  <a class="fui-btn-dialog" href="javascript:" id="j-windowClose"><span>取消</span></a> -->
+	</div>
+	</div>
+</body>
+</html>

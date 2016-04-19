@@ -1,0 +1,30 @@
+//
+// 表单框架
+// --------------------------------------------------
+// 常量
+
+
+.wui-form{
+	position: relative;
+	padding: 0.625rem 0.625rem 0 0.625rem;
+	
+}
+
+.wui-form-line{
+	&:extend(.clearfix all);
+	padding-top: 0.625rem;
+	&.button-line{
+		padding-top: 1.25rem;
+	}
+	>.line-left{
+		float: left;
+		width: 55%;padding-right: 0.188rem;
+	}
+	>.line-right{
+		float: left;
+		width: 45%;padding-left: 0.313rem;
+		>.wui-btn{
+			font-size: 0.875rem;
+		}
+	}
+}

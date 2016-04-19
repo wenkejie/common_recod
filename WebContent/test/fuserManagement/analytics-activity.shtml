@@ -1,0 +1,752 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="../../release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../src/js/highcharts.src.js"></script>
+	<script type="text/javascript" src="../../src/js/frame_common.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+	
+	// 用户活跃度TOP10指标
+	function activity_user_chart(obj){
+		if(obj){
+			var $that = $(obj);
+			$that.parent().find('button').removeClass("nui-btn-active");
+			$that.addClass("nui-btn-active");
+		}
+		
+		$.post("../../test/fuserManagement/data/analytics_activity_data.js","",function(data){
+			data = eval(data);
+
+			$('#container_new_old').highcharts({
+	            chart: {
+	            },
+	            // 主标题
+		        title: {
+					//text : "新老访客分布"
+		        	text : ""
+				},
+				// 副标题
+				subtitle: {
+					//text : "航线"
+				},
+	            tooltip: {
+					pointFormat: '百分比: <b>{point.percentage:.1f}%</b>'
+					//pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	                //formatter: function() {
+	                //this.percentage this.y
+	            	//	return '<b>' + this.point.name + '</b>: ' + this.y + ' 次';  
+	                    //return '<b>'+ this.series.name +'</b><br/>'+
+	                    //    this.x +': '+ this.y+"次";
+	                //}
+	            },
+	            plotOptions: {
+	                pie: {
+	                   // allowPointSelect: true,
+	                    //cursor: 'pointer',
+	                    dataLabels: {
+	                        //enabled: true,
+	                    	color: '#000000',
+	                    	connectorColor: '#000000',
+	                        format: '{point.name}:<br/> {y} 次'
+	                    }
+	                }
+	            },
+	            series: [{ 
+		            type: 'pie',
+		            //type: 'column',   
+	            	//type: 'line',
+	            	data: data,
+	                name : ""
+	            }],
+	         	// 版权信息
+	            credits: {
+		            enable: false
+		            ,text:""
+		        }
+	        });
+		},"text");
+	}
+
+	// 企业活跃度TOP10指标
+	function activity_org_chart(obj){
+		if(obj){
+			var $that = $(obj);
+			$that.parent().find('button').removeClass("nui-btn-active");
+			$that.addClass("nui-btn-active");
+		}
+		
+		$.post("../../test/fuserManagement/data/analytics_orgtop10_data.js","",function(data){
+			data = eval(data);
+
+			$('#container_new_old').highcharts({
+	            chart: {
+	            },
+	            // 主标题
+		        title: {
+					//text : "新老访客分布"
+		        	text : ""
+				},
+				// 副标题
+				subtitle: {
+					//text : "航线"
+				},
+	            tooltip: {
+					pointFormat: '百分比: <b>{point.percentage:.1f}%</b>'
+					//pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	                //formatter: function() {
+	                //this.percentage this.y
+	            	//	return '<b>' + this.point.name + '</b>: ' + this.y + ' 次';  
+	                    //return '<b>'+ this.series.name +'</b><br/>'+
+	                    //    this.x +': '+ this.y+"次";
+	                //}
+	            },
+	            plotOptions: {
+	                pie: {
+	                   // allowPointSelect: true,
+	                    //cursor: 'pointer',
+	                    dataLabels: {
+	                        //enabled: true,
+	                    	color: '#000000',
+	                    	connectorColor: '#000000',
+	                        format: '{point.name}:<br/> {y} 次'
+	                    }
+	                }
+	            },
+	            series: [{ 
+		            type: 'pie',
+		            //type: 'column',   
+	            	//type: 'line',
+	            	data: data,
+	                name : ""
+	            }],
+	         	// 版权信息
+	            credits: {
+		            enable: false
+		            ,text:""
+		        }
+	        });
+		},"text");
+	}
+	function fu_acticity_change(obj,str){
+		if(obj){
+			var $that = $(obj);
+			$that.parent().find("a").removeClass("nui-select-tag-active");
+			$that.addClass("nui-select-tag-active");
+		}
+		creatAnayticsTag(str);
+	}
+
+	
+	// 生成页面首部 查询统计信息table
+	function creatAnayticsTag(str){
+		$.post("../../test/fuserManagement/data/analytics_overview_data.js","",function(data){
+			data = eval(data)(str);
+			var $anayticsTag = $("ul.analytics-overview-panel");
+			$anayticsTag.find("li").each(function(i){
+				var $that = $(this);
+				$that.find("span").text(data[i]);
+			});
+		},"text");
+	}
+
+	
+		$(function() {
+			activity_user_chart();
+			fu_acticity_change(null,'today');
+			
+			// 统计概况
+			$.post("../../test/fuserManagement/data/analytics_trend_data.js","",function(data){
+				data = eval(data)("today");
+				//var start,pointStart,pointInterval,_x_formatter,_tooltip_msg;
+				//start = new Date();
+				//var	pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate(),0,59);
+				//var	pointInterval = 1 * 3600 * 1000;
+				var	_x_formatter = "%H:%M";
+				var	_tooltip_msg = function(x,y){
+						var _prev_date = x - 59*60*1000;
+						var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+				    		Highcharts.dateFormat('-%H:%M', x);
+						return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+					};
+					
+				 $('#container_analytics').highcharts({
+				        chart: {
+				        },
+				        // 主标题
+				        title: {
+							text : ""
+						},
+						// 副标题
+						subtitle: {
+							//text : "查询公司详细",
+							//x : 20
+						},
+						// x轴选项
+				        xAxis: {
+								type: 'datetime',
+				            	labels: {
+		                			formatter: function() {
+		                    			return Highcharts.dateFormat(_x_formatter, this.value);                  
+		                			}        
+		            			}
+				        },
+				    	 // y轴选项
+				        yAxis: {
+			                title: {
+			                    text: ''
+			                }
+			            },
+			            // 数据列选项
+				        series: data,
+				        // 图表对话框
+				        legend: {
+			            	//align: 'center',
+			                //verticalAlign: 'top',
+			                //floating:true,
+			                //x: 0,
+			                //y: 100,
+				        	//layout: 'vertical',
+			                //align: 'right',
+			                //verticalAlign: 'middle',
+			                borderWidth: 0
+					    },
+					    // 数据点提示框
+					    tooltip: {
+					    	formatter: function() {
+					    	//var _prev_date = this.x - 59*60*1000;
+					    	//var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+					    	//	Highcharts.dateFormat('-%H:%M', this.x);
+			               	// 	return _msg +  '<br/><b>访问次数：'+ this.y +'</b>';
+			               		return _tooltip_msg(this.x,this.y);
+			            	},
+			            	// 穿越线  point之间
+					    	crosshairs: true
+					    	//,
+					    	// 是否共享同一个tip框 shared:默认为false
+		                	//shared: true
+						},
+						plotOptions: {
+				            //series: {
+				                //cursor: 'pointer',
+				                //point: {
+				                //    events: {
+				                //        click: function() {
+				                            //alert ('Category: '+ this.category +', value: '+ this.y);
+				                        	//location.href = this.options.url;
+				                        	//console.log(this.options);
+				                        	//console.log(this.series);
+				                        	//location.href = this.options.url;
+				                //        }
+				                //    }
+				                //}
+								//,dashStyle: 'longdash'
+				            //}
+				        },
+				        // 版权信息
+			            credits: {
+				            enable: false,
+				            text: ""
+				        }
+				    });
+			},"text");
+			
+
+			$("table.analytics-table").delegate("a.nui-add-cell","click",function(){
+
+
+				// $(this).text('-').addClass('nui-minus-cell');
+				// $(this).parent().parent().next('tr.tr-inside-table').removeClass('none');
+				// // $('tr.tr-inside-table').removeClass('none');
+ 				console.log($(this).parent().parent().next());
+ 				$(this).text('-').addClass('nui-minus-cell');
+
+ 				$("tr.tr-inside-table").remove();
+				$(this).parent().parent().after("<tr class='tr-inside-table'> <td colspan='5'><div class='nui-inside-table'><h2>目的港TOP10</h2><table><thead><th>港口名</th><th>查询次数</th> <th>港口名</th> <th>查询次数</th></thead><tbody><tr><td>1.宁波</td><td>567</td><td>2.香港</td><td>378</td></tr><tr><td>3.深圳</td><td>1311</td><td>4.广州</td><td>3123</td></tr> <tr><td>5.伦敦</td><td>865</td><td>6.上海</td><td>4324</td></tr><tr><td>7.大连</td><td>3123</td><td>8.天津</td><td>3123</td></tr><tr><td>9.钓鱼岛</td><td>524</td><td>10.澳门</td><td>4124</td></tr></tbody></table></div></td></tr>")
+
+			})
+
+
+			$("table.analytics-table").delegate("a.nui-minus-cell","click",function(){
+
+
+				$(this).text('+').removeClass('nui-minus-cell');
+
+				// $('tr.tr-inside-table').addClass('none');
+				$(this).parent().parent().next('tr.tr-inside-table').remove();
+				// $(this).parent().parent().next('tr.tr-inside-table').addClass('none');
+ 				
+
+			})
+			
+			$("ul.adv-table-tab").delegate("li","click",function(){
+				var $that = $(this);
+				if(!$that.find("a").length){
+					return false;
+				}
+				$that.parent().find("a").removeClass("active");
+				$that.find("a").addClass("active");
+
+				var _index = $(this).prevAll("li").length;
+				$that.parent().nextAll("table").addClass("none").eq(_index-1).removeClass("none");
+
+			})
+
+		});
+	</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap-nobd">
+
+		
+			<div class="left-side"><div class="left-slide-top-line"></div>
+				<ul class="left-side-menu mt50">
+					<li><a href="analytics.shtml" class="left-side-menu-a"><i class="fs14">&#x35ab;</i> 统计概况<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">流量分析：</li>
+					<li><a href="analytics-trend.shtml" class="left-side-menu-a">趋势分析<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-online.shtml" class="left-side-menu-a">当前在线<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-detail.shtml" class="left-side-menu-a">访问明细<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">访问分析：</li>
+					<li><a href="analytics-activity.shtml" class="left-side-menu-a active">活跃度<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-pql.shtml" class="left-side-menu-a">查询分析<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">会员分析：</li>
+					<li><a href="analytics-activity-new.shtml" class="left-side-menu-a">活跃度分析<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-loss-rate.shtml" class="left-side-menu-a">流失率<i class="right ">&#13726</i></a></li>
+				</ul>
+				<div class="left-slide-bottom-line"></div>
+			</div>
+			<div class="right-side">
+			<div class="main-title">
+				<h1>访问分析 - 活跃度</h1>
+			<!-- 	<div class="main-title-des">服务开通日期：2013-09-13</div> -->
+			</div>
+			
+			
+			<div class="grid-box">
+			<div class="nui-group-btn mr20"><button class="nui-btn fma fs14"><</button><button class="nui-btn fma fs14 nui-btn-disable">></button></div>
+
+			<a href="javascript:" onclick="fu_acticity_change(this,'today')" class="nui-select-tag nui-select-tag-active">今日</a>
+			<a href="javascript:" onclick="fu_acticity_change(this,'yestoday')" class="nui-select-tag">昨日</a>
+			<a href="javascript:" onclick="fu_acticity_change(this,'last7')" class="nui-select-tag">最近7日</a>
+			<a href="javascript:" onclick="fu_acticity_change(this,'last30')" class="nui-select-tag">最近30日</a>
+				<div class="nui-form-cell nui-select w200">
+					<div class="nui-form-cell-cnt">
+						<input type="text"  class="nui-input" />
+						<i class="nui-form-cell-icon ">&#13370</i>
+					</div>
+				</div>
+			</div>
+		<!-- 	<div class="grid">
+				<button class="nui-btn nui-btn-28">高级筛选</button>
+				<button class="nui-btn nui-btn-28">对比维度 <i class="icon-down-arrow">&#13783</i></button>
+				<div class="nui-group-btn right"><button class="nui-btn nui-btn-28">年</button><button class="nui-btn nui-btn-28">月</button><button class="nui-btn nui-btn-28">日</button></div>
+			</div> -->
+			<ul class="analytics-overview-panel">
+				<li>
+				<p>查询次数
+					<span>&nbsp;</span>
+					</p>
+				</li><li>
+				<p>用户（账号）
+					<span>&nbsp;</span>
+					</p>
+				</li><li>
+				<p>IP
+					<span>&nbsp;</span>
+					</p>
+				</li><li>
+				<p>企业
+					<span>&nbsp;</span>
+					</p>
+				</li><li>
+				<p>新用户（账号）
+					<span>&nbsp;</span>
+					</p>
+				</li><li>
+				<p>登录次数
+					<span>&nbsp;</span>
+					</p>
+				</li>				
+			</ul>
+			
+			
+				<div class="chart-2-span clearfix">
+				<div class="fn">
+					选择指标：<div class="nui-group-btn mr30"><button onclick="activity_user_chart(this)" class="nui-btn nui-btn-active">用户</button><button onclick="activity_org_chart(this)" class="nui-btn">企业</button></div>
+					图表类型：<div class="nui-group-btn"><button class="nui-btn nui-btn-active pt4 pb4"><i>&#13566;</i></button>
+					<!--<button class="nui-btn pt4 pb4"><i>&#13569;</i></button>-->
+					</div>
+				</div>
+					<div id="container_new_old"  class="left"></div> 
+					<div id="container_analytics" class="right"></div>	
+				</div>
+			
+
+
+			<div class="adv-table">
+			<ul class="adv-table-tab">
+				<li> 查看：</li>
+				<li><a href="javascript:" class="active">按用户</a></li>
+				<li><a href="javascript:">按企业</a></li>
+			</ul>
+			<div class="adv-table-fn-area">
+				
+				<div class="right">
+					<div class="nui-form-cell w150">
+							<input type="text"  class="nui-input" />
+					</div>
+					<button class="nui-btn">搜索</button><button class="nui-btn nui-btn-link">高级筛选 <span class="fms">︾</span></button>
+				</div>
+			</div>
+			<table class="analytics-table">
+				<thead>
+					<tr>
+						<th>用户名</th>
+						<th>登录次数</th>
+						<th>查询次数</th>
+						<th>公司</th>
+					</tr>
+				</thead>
+					<tbody>
+						<tr class="analytics-table-tr-first">
+							<td>统计</td>
+							<td>123123</td>
+							<td>123</td>
+							<td>-</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 李光耀</td>
+							<td>67</td>
+							<td>146</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 过路人</td>
+							<td>65</td>
+							<td>144</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 双双</td>
+							<td>60</td>
+							<td>141</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 掌柜小侯</td>
+							<td>56</td>
+							<td>138</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 掌柜陈</td>
+							<td>51</td>
+							<td>132</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 销售小陈</td>
+							<td>46</td>
+							<td>129</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 客服小李</td>
+							<td>45</td>
+							<td>125</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 商务小陈</td>
+							<td>44</td>
+							<td>122</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 客服小丽</td>
+							<td>43</td>
+							<td>111</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 商务小陈</td>
+							<td>41</td>
+							<td>111</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 销售小王</td>
+							<td>39</td>
+							<td>90</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 佳佳</td>
+							<td>34</td>
+							<td>88</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 莹莹</td>
+							<td>12</td>
+							<td>77</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 依依</td>
+							<td>11</td>
+							<td>69</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 妖妖</td>
+							<td>9</td>
+							<td>11</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 浩方</td>
+							<td>8</td>
+							<td>11</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 掌柜李</td>
+							<td>7</td>
+							<td>11</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 友友</td>
+							<td>6</td>
+							<td>11</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 右右</td>
+							<td>5</td>
+							<td>12</td>
+							<td>大掌柜</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 微微</td>
+							<td>4</td>
+							<td>11</td>
+							<td>大掌柜</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				
+				<table class="analytics-table none">
+				<thead>
+					<tr>
+						<th>企业名称</th>
+						<th>省份</th>
+						<th>城市</th>
+						<th>查询次数</th>
+					</tr>
+				</thead>
+					<tbody>
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td>上海腾钻精密仪器有限公司</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						<tr>
+							<td><a href="javascript:" class="nui-add-cell">+</a> 大掌柜</td>
+							<td>浙江</td>
+							<td>宁波</td>
+							<td>22</td>
+						</tr>
+						
+						
+					</tbody>
+				</table>
+				<div class="adv-table-footer">
+					<label for="">每页显示：</label><select name="" id="">
+						<option value="">20</option>
+						<option value="">50</option>
+						<option value="">100</option>
+					</select>
+
+					<div class="page">
+						<span>上一页</span>
+						<a href="javascript:" class="active">1</a>
+						<a href="javascript:">2</a>
+						<a href="javascript:">3</a>
+						<a href="javascript:">4</a>
+						<a href="javascript:">5</a>
+						<span>…</span>
+						<a href="javascript:">25</a>
+						<a href="javascript:">下一页</a>
+						
+
+						到第 <input type="text" class="w30 h20" /> 页 <button class="nui-btn nui-btn-20">确定</button>
+					</div>
+				</div>
+			</div>
+
+			</div>
+	
+		
+	</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

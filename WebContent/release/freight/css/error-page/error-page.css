@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,p,h1,img,span,strong,em,i,a,h3{margin:0; padding:0;}
+body{font: 14px/1.5 tahoma,arial,"Hiragino Sans GB","Microsoft Yahei",宋体;color: #808080;background: #F4F5F7}
+
+html{height: 100%}
+body{
+	background: #00BFFF;height: 100%;min-width: 900px;min-height: 344px;
+}
+
+.wrap{
+	height: 100%;
+	background: url(../../images/error-page/bottom-bg.png) repeat-x;background-attachment:fixed;background-position:bottom;
+}
+
+.wrap-content{
+	width: 800px;margin: 0 auto;padding-top: 96px;
+}
+
+.wrap-content-nopower{
+	width: 595px;*width:610px;
+}
+
+
+.wrap-content-left{
+	float: left;
+	padding-top: 75px;
+	
+}
+
+.icon-404{
+	width: 299px;height: 163px;
+	background: url(../../images/error-page/error-page.png) -36px -197px; 
+}
+
+.icon-500{
+	width: 301px;height: 163px;
+	background: url(../../images/error-page/error-page.png) -700px -197px; 
+}
+
+.icon-nopower{
+	width: 278px;height: 91px;
+	background: url(../../images/error-page/error-page.png) -378px -197px; 
+}
+
+.wrap-content-right{
+	float: left;
+	padding-left: 20px;
+	color: #fff;
+}
+
+
+.icon-sorry{
+	width: 116px;height: 97px;
+	background: url(../../images/error-page/error-page.png) -36px -27px; 
+}
+
+.icon-jong{
+	width: 116px;height: 97px;
+	background: url(../../images/error-page/error-page.png) -219px -27px; 
+}
+
+.reason-tips{
+	padding-top: 25px;padding-left: 15px;
+}
+.reason-tips h1{
+	font-size: 32px;
+}
+.reason-tips h3{
+	font-size: 16px;
+}
+.reason-tips p{
+	font-size: 14px;
+}
+
+.content-right-bottom{
+	padding-top: 30px;padding-left: 15px;
+}
+
+.return-btn{
+	float: left;
+	width: 127px;height: 40px;padding-left: 18px;line-height: 40px;
+	background: url(../../images/error-page/error-page.png) -377px -27px; color: #fff;text-decoration: none;font-size: 16px;font-weight: bold;
+}
+
+.return-tips{
+	float: left;
+	padding-left: 14px;line-height: 40px;font-size: 12px;color: #CCF2FF;
+}

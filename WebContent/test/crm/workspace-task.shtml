@@ -1,0 +1,299 @@
+<!--#include file="header.html"-->
+<div class="auto-wrap">
+<div class="left-column">
+	<div class="self-info clearfix">
+		<img src="../../src/images/crm/noImg.jpg" alt="" class="user-img">
+		李光耀<br/>
+		<a href="persona-site.shtml">个人设置</a>
+	</div>
+	<ul class="left-menu">
+		<li><a href="javascript:" class="left-menu-link left-menu-link-active"><i>&#x343c;</i> 我的首页</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3497;</i> 我的私信</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3442;</i> 提到我的</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3515;</i> 同事动态</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3569;</i> 通知公告</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3575;</i> 我的收藏</a></li>
+	</ul>
+	<div class="widget ml10">
+		<div class="widget-title-cnt">
+			<h2 class="widget-title">热门话题</h2>
+		</div>
+		<div class="widget-cnt">
+			<ul class="widget-list">
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">如何给客户报价</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">出售技巧</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">出口拼箱小立方特惠</a></li>
+				
+				<li class="widget-list-cell"><i>&#x355d;</i> <a href="javascript:" class="widget-list-link widget-list-link-strong">查看全部热门话题</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="right-column clearfix">
+	<div class="left">
+				<!--#include file="mainNavIn.html"-->
+			
+				<div class="main-content">
+				<!-- 右侧主要内容开始 -->
+				<div class="main-right-column ">
+						<div class="widget">
+							<div class="widget-title-cnt">
+								<h2 class="widget-title">我相关的任务</h2><i class="fs14">&#x3438;</i><a href="javascript:" class="right none">全部</a>
+							</div>
+							<div class="widget-cnt">
+								<ul class="widget-list">
+									<li class="widget-list-cell">
+										<div class="nui-checkbox-sim fs12 dpib fonticon " >
+											<input id="fcl" type="checkbox" name="" >
+											&#x3448;
+										</div>
+										<a href="javascript:" class="widget-list-link ml20 text-error dpib">如何给客户报价</a>
+									</li>
+								</ul>
+		
+								<button class="nui-btn mt10 mb20 pl10"><i class="fs14">&#x3545;</i> 给自己安排任务</button>
+								<button class="nui-btn mt10 mb20 pl10"><i class="fs14">&#x3545;</i> 给他人分配任务</button>
+							</div>
+						</div>
+						<div class="widget">
+							<div class="widget-title-cnt">
+								<h2 class="widget-title">我的销售机会</h2><a href="javascript:" class="right none">全部</a>
+							</div>
+							<div class="widget-cnt">
+								<ul class="widget-list">
+									<li class="widget-list-cell">
+										<div class="nui-checkbox-sim fs12 dpib fonticon " >
+											<input id="fcl" type="checkbox" name="" >
+											&#x3448;
+										</div>
+										<a href="javascript:" class="widget-list-link ml20 text-error dpib">如何给客户报价</a>
+									</li>
+
+								</ul>
+								<button class="nui-btn mt10 mb20 pl10"><i class="fs14">&#x3545;</i> 给自己安排任务</button>
+								<button class="nui-btn mt10 mb20 pl10"><i class="fs14">&#x3545;</i> 给他人分配任务</button>
+							</div>
+						</div>
+						<div class="widget mt20">
+							<div class="widget-title-cnt">
+								<h2 class="widget-title">我的关注</h2>
+							</div>
+							<div class="widget-cnt">
+								<div class="img-box  clearfix">
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									
+									
+								</div>
+							</div>
+							<ul class="widget-list">
+								<li class="widget-list-cell">
+									<i>&#x3449;</i>
+									<a class="widget-list-link" href="javascript:">如何给客户报价</a>
+								</li>
+								<li class="widget-list-cell">
+									<i>&#x3449;</i>
+									<a class="widget-list-link" href="javascript:">如何给客户报价</a>
+								</li>
+								<li class="widget-list-cell">
+									<i>&#x3449;</i>
+									<a class="widget-list-link" href="javascript:">如何给客户报价</a>
+								</li>
+								<li class="widget-list-cell">
+									<i>&#x3449;</i>
+									<a class="widget-list-link" href="javascript:">如何给客户报价</a>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="widget mt20">
+							<div class="widget-title-cnt">
+								<h2 class="widget-title">关注我的人</h2>
+							</div>
+							<div class="widget-cnt">
+								<div class="img-box  clearfix">
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!-- 左侧主要内容开始 右侧主要内容结束 -->
+					<div class="main-left-column clearfix">
+						<div class="main-cnt w100p left">
+							<div class="data-list-top"> <strong class="data-list-title fs16 faa">按时间</strong>
+
+								<div class="nui-toggle right mr10 ">
+									<a class="nui-toggle-cell nui-toggle-cell-active" href="javascript:">进行中</a>
+									<a id="b01" class="nui-toggle-cell" href="javascript:">已完成</a>
+								</div>
+							</div>
+							<div id="" class="data-list-cell">
+
+								<div class="staff-dynamic">
+									<a employeeid="34" href="javascript:" class="avatar_picture2 info-picture">
+										<img class="user-img " src="">
+									</a>
+									<p id="" class="timing-icon mr5" href="javascript:"><i>&#xf0006;</i> 进行中</p>
+									<ul class="task-info-list">
+										<li class="task-info-cell psr">
+
+											<a employeeid="34" href="javascript:" class="data-list-title">on_no</a>
+
+											<div>sss</div>
+										</li>
+										<li class="task-info-cell psr">
+
+											<i>&#x3506;</i>
+											<div class="task-info-grid">
+												<span class="task-leader" title="负责人">luky</span>
+												<span class="member">luky</span>
+												<span class="member">luky</span>
+											</div>
+										</li>
+										<li class="task-info-cell psr">
+											<i>&#x3443;</i>
+											<div class="task-info-grid">
+												<span>2013-23-1</span><i class="fs12">&#x3545;</i>
+												<span>2013-23-1</span>
+											</div>	
+										</li>
+										<li class="task-info-cell psr">
+											<i>&#x358c;</i>
+											<div class="task-info-grid">
+												<a id="downfile_290" fileid="227" filename="生意通201403A开发设计.docx" href="/cpcrm/fileUpload.ctrl?$action=fileDown&fileId=227">生意通201403A开发设计.docx</a>
+											</div>	
+										</li>
+
+									</ul>
+									<div class="exchange-box cb">
+										<div class="exchange-box-footer clearfix">
+											<div class="left fcc">11天22小时前</div>
+											<div class="exchange-task-option">
+												<a  href="javascript:" class="mr10 ">
+													<i>&#x3580;</i>
+													编辑
+												</a>
+												<a  href="javascript:" class="mr10 ">
+													<i>&#xf0007;</i>
+													完成
+												</a>
+												<a  href="javascript:" class="mr10 ">
+													<i>&#x3436;</i>
+													重启
+												</a>
+												<a   href="javascript:" class="mr10">
+													<i>&#x344a;</i>
+													评论(<span id="">0</span>)
+												</a>
+												<a  href="javascript:" class="">
+													<i>&#x3570;</i>
+													删除
+												</a>
+											</div>
+										</div>
+										<div class=""></div>
+									</div>
+
+								</div>
+
+							</div>
+							<div id="" class="data-list-cell">
+
+								<div class="staff-dynamic">
+									<a employeeid="34" href="javascript:" class="avatar_picture2 info-picture">
+										<img class="user-img " src="">
+									</a>
+									<ul class="task-info-list">
+										<li class="task-info-cell psr">
+
+											<a employeeid="34" href="javascript:" class="data-list-title">on_no</a>
+
+											<div>sss</div>
+										</li>
+
+									</ul>
+									<div class="exchange-box cb">
+										<div class="exchange-box-footer clearfix">
+											<div class="left fcc">11天22小时前</div>
+											<div class="exchange-task-option">
+
+												<a  href="javascript:" class="mr10 ">删除</a>
+
+												<a   href="javascript:" class="">
+													评论(
+													<span id="">0</span>
+													)
+												</a>
+											</div>
+										</div>
+										<div class=""></div>
+									</div>
+
+								</div>
+
+							</div>
+							<div id="" class="data-list-cell">
+								<div class="staff-dynamic">
+									<a employeeid="34" href="javascript:" class="avatar_picture2 info-picture">
+										<img class="user-img " src="">
+									</a>
+									<ul class="task-info-list">
+										<li class="task-info-cell psr">
+
+											<a employeeid="34" href="javascript:" class="data-list-title">on_no</a>
+
+											<div>sss</div>
+										</li>
+
+									</ul>
+									<div class="exchange-box cb">
+										<div class="exchange-box-footer clearfix">
+											<div class="left fcc">11天22小时前</div>
+											<div class="exchange-task-option">
+
+												<a  href="javascript:" class="mr10 ">删除</a>
+
+												<a   href="javascript:" class="">
+													评论(
+													<span id="">0</span>
+													)
+												</a>
+											</div>
+										</div>
+										<div class=""></div>
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="data-list-page">
+							<span class="pageinfo">1-20条，共64条</span>
+							<a href="javascript:nextPage();">下一页</a>
+							<a href="javascript:">尾页</a>
+							</div>
+						</div>
+						
+					</div>
+					<!-- 左侧主要内容结束 --></div>
+
+	</div>
+</div>
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

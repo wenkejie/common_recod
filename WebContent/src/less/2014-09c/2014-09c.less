@@ -1,0 +1,364 @@
+// ====================09C项目（询价宝）新增结构，by:Evan=================
+
+//=========账户设置弹窗部分新增结构==============
+
+
+
+// 引导框架结构
+.nui-gride-box{}
+.nui-gride-head{}
+.nui-gride-body{
+	.rule-content{
+		.leftRightw250{
+			width: 695px;min-width: 695px;
+			background-position: -88px;
+			.right-side{
+				width: 435px;
+			}
+			.left-side{
+				width: 210px;
+			}
+		}
+	}
+}
+
+.gride-endinfo-box{
+	&:extend(.clearfix all);
+	padding-top: 50px;padding-left: 129px;
+}
+.middle-form-box{
+	width: 170px;margin: 0 auto;padding-left: 0;
+	.form-line{
+		*white-space: nowrap;
+	}
+	.nui-form-cell{
+		width: 154px;
+	}
+	.nui-label{
+		_position: relative;
+		margin-left: -75px;
+		font-weight: bold;
+	}
+}
+
+
+// 步骤引导
+
+.nui-navi-container{
+	padding-left: 30px;padding-right: 30px;
+}
+
+.nui-step{
+	&:extend(.clearfix all);
+	position: relative;
+    margin: 0 auto;overflow: hidden;padding: 0 40px;
+    color: #999;font-size: 12px;list-style: none;
+    li{
+    	position: relative;float: left;
+    	height: 64px;margin: 0;
+    	width: 33.3%;
+    	.nui-step-icon{
+    		left: 50%;
+    		margin-left: -12px;
+    	}
+    }
+    .nui-step-start,.nui-step-end{
+    	width: 16.6%;
+    	.nui-step-icon{
+    		left: -15px;
+    		
+    	}
+    }
+    .nui-step-end{
+    	width: 16.6%;
+    	.nui-step-icon{
+    		left: auto;right: -25px;
+    		.nui-step-number{
+    			padding-left: 8px;
+    			font-weight: normal;font-size: 15px;
+    		}
+    	}
+    }
+}
+
+
+
+.nui-step-active{
+	.nui-step-line{
+
+		background: #1C8DDC;
+	}
+	.step-icon-cell{
+		.icon-bg{
+			color: #1C8DDC;
+		}
+	}
+}
+
+.nui-step-current{
+	.nui-step-line{
+		background: #A9D3F0;
+	}
+	.step-icon-cell{
+		.icon-bg{
+			color: #1C8DDC;
+		}
+		.icon-shadow{
+			display: block;
+		}
+
+	}
+	.nui-step-icon{
+		.nui-step-text{
+			color: #1C8DDC;
+		}
+	}
+}
+
+
+.nui-step-line{
+	display: block;
+    height: 3px;margin-top: 23px;
+    overflow: hidden;background: #ccc;line-height: 1;border-right: 1px solid #fff;
+}
+
+
+.nui-step-icon{
+	position: absolute;top: 0;left: -25px;
+	height: 50px;width: 30px;
+
+	text-align: center;font-family: tahoma;
+	.nui-step-text{
+		position: relative;top: 40px;left: 0;display: block;
+		height: 20px;width: 120px;margin: 0 -45px;
+		text-shadow: 0 1px 0 #fff;line-height: 20px;color: #999;font-weight: bold;
+	}
+}
+
+
+
+.nui-step-active{
+
+}
+
+
+.step-icon-cell{
+	position: absolute;left: 0;top: 50%;
+	width: 30px;height: 30px;margin-top: -15px;
+	text-align: center;
+	.icon-bg{
+		position: absolute;left: 50%;top: 50%;z-index: 100;
+		width: 24px;height: 24px;margin-left: -12px;margin-top: -13px;
+		color: #ccc;font-size: 24px;
+	}
+	.icon-shadow{
+		display: none;
+		width: 30px;height: 30px;
+		color: #A9D3F0;font-size: 30px;
+	}
+	.nui-step-number{
+		position: absolute;top: 9px;left: 0;z-index: 110;
+		padding: 0 10px;
+		color: #fff;font-style: normal;font-weight: 700;
+		line-height: 14px;
+	}
+}
+
+
+.nui-step-3{
+	li{
+    	width: 50%;
+    }
+    .nui-step-start,.nui-step-end{
+    	width: 25%;
+    }
+}
+
+
+
+//最后一步信息显示
+
+.endinfo-box-left,.endinfo-box-right{
+	float: left;
+}
+.endinfo-box-left{
+	padding-right: 15px;
+	font-size: 45px;color: #468646;
+}
+.endinfo-box-right{
+	width: 377px;
+	font-size: 16px;
+	strong{
+		color: #666;
+	}
+	h3{
+		color: #468646;font-weight: bold;
+	}
+	p{
+		padding-top: 15px;
+		font-size: 13px;color: #999;
+	}
+	a{
+		color: #1C8DDC;
+	}
+}
+
+
+// 帐号设置弹窗
+
+.account-info-line{
+	padding: 10px 0 17px 15px;
+	.account-info-title,.account-info-txt,.account-info-del{
+		display: inline-block;*zoom:1;
+		vertical-align: middle;
+	}
+	.account-info-title{
+		font-weight: bold;font-size: 16px;
+	}
+	.account-info-txt{
+		font-size: 14px;
+	}
+	.account-info-del{
+		margin-left: 10px;
+		color: #ccc;
+		&:hover{
+			color: #666;
+		}
+	}
+	.nui-btn-disable{
+		background: #A1CFEF;border-color: #95C2ED;
+		color: #fff;
+	}
+}
+
+.account-info-fixed{
+	position: relative;
+	padding-left: 111px;
+	.account-info-title{
+		position: absolute;left: 15px;top: 10px;
+		width: 96px;
+	}
+	.account-info-txt{
+		.word-break;
+		display: block;
+		padding-top: 1px;width: 230px;
+	}
+}
+
+
+
+
+// 被新的结构替代，by:evan,2015-9-8;
+// // 导入首页结构
+
+// // 瀑布流结构的
+// .@{ui}-waterfall-area{
+// 	&:extend(.clearfix all);
+// }
+
+// .@{ui}-waterfall-item{
+// 	float: left;*display: inline;
+// }
+
+
+
+// // 用于运价通导入的结构
+// .new-freight-import{
+// 	.@{ui}-waterfall-item{
+// 		width: 237px;height: 119px;margin: 0 3px 12px 3px;
+// 		background: #fff;border: 1px solid #ccc;border-radius: 3px;
+// 		&:hover{
+// 			.box-shadow(3px 3px 3px #e3e3e3);
+// 		}
+// 		.import-info-line{
+// 			&:extend(.clearfix all);
+// 			padding: 10px 15px 0 15px;
+// 		}
+// 		.import-info-left{
+// 			float: left;*display: inline;
+// 		}
+// 		.import-info-logo{
+// 			display: none;
+// 		}
+// 		.import-info-right{
+// 			position: relative;*zoom:1;
+// 			float: right;*display: inline;
+// 			.nui-select-list{
+// 				padding: 8px 0;
+// 			}
+// 		}
+// 		.import-info-right-fn{
+// 			color: #666;
+// 			text-decoration: none;
+// 			i{
+// 				font-size: 12px;color: #666;
+// 			}
+// 			&:hover{
+// 				color: #333;
+// 			}
+// 		}
+// 		.import-company-name{
+// 			.toe;
+// 			width: 150px;
+// 			font-size: 14px;font-weight: bold;
+// 		}
+// 		.import-times,.import-freight-num{
+// 			color: #FF870F;
+// 		}
+// 		.import-state-label{
+// 			color: #000;
+// 		}
+// 		.import-state-tips{
+// 			color: #36D900;
+// 			i{
+// 				font-size: 12px;color: #36D900;
+// 			}
+// 		}
+// 		.import-tips-error{
+// 			color: #BD4832;
+// 			i{
+// 				font-size: 12px;color: #BD4832;
+// 			}
+// 		}
+// 		.nui-tips-setup{
+// 			left: -30px;top: 22px;z-index: 899;*zoom:1;
+// 			padding: 0;background: #fff;
+// 		}
+// 		.nui-tips-freight-num{
+// 			left: -38px;top: 22px;z-index: 899;*zoom:1;
+// 			padding: 0;background: #fff;
+// 			.nui-select-list-li{
+// 				text-align: right;cursor: default;
+// 				&:hover{
+// 					background-color: #fff;
+// 					color: #666;
+// 				}
+// 				span{
+// 					color: #ff870f;
+// 				}
+// 			}
+// 			.select-list-li-hover{
+// 				background-color: #fff;
+// 				color: #666;
+// 			}
+// 		}
+// 	}
+// 	.freight-add{
+// 		position: relative;
+// 		border-style: dashed;cursor: pointer;
+// 		&:hover{
+// 			background: #f8f8f8;cursor: pointer;
+// 		}
+// 		.freight-add-txt{
+// 			position: absolute;left: 50%;top: 50%;
+// 			width: 90px;height: 24px;margin-left: -45px;margin-top: -12px;
+// 			font-size: 16px;color: #666;
+// 			i{
+// 				color: #666;
+// 			}
+// 		}
+// 	}
+// }
+
+
+

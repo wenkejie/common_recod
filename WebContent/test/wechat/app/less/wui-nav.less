@@ -1,0 +1,41 @@
+//
+// 导航
+// --------------------------------------------------
+
+
+.wui-nav{
+  table-layout: fixed;display: table;
+  width: 100%;
+  border-radius: 4px;border: 1px solid #006cb3;box-shadow: 0 1px 1px #40a6e8;
+  .linear(#1396EA,#0089E1);
+}
+
+.wui-nav-link{
+  display: table-cell;
+  height: @header-height;line-height: @header-height;
+  border-right: 1px solid #0065A6;border-left: 1px solid #2792D7;
+  text-align: center;color: #fff;font-size: 1rem;font-weight: bold;
+  // &:hover{
+  //   cursor: pointer;
+  //   background-color: #0067AA;
+  // }
+
+  &:focus,&.active{
+    .linear(#006bb2,#0064a5);
+  }
+
+  // &[disabled],&.disabled{
+  //   &,&:hover{
+  //     background-color: #f5f5f5;
+  //     color: #aaa;
+  //     border-color: lighten(@input-border-color, 10%);
+  //     box-shadow: none;
+  //   }
+  // }
+  &:first-child{
+    border-left-width: 0;
+  }
+  &:last-child{
+    border-right-width: 0;
+  }
+}

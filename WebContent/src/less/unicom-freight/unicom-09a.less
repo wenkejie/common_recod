@@ -1,0 +1,728 @@
+// ====================09C项目（询价宝）新增结构，by:Evan=================
+
+// .wrap-unicom{
+// 	width: auto;
+// }
+
+// html,body{
+// 	width: 100%;height: 100%
+// }
+
+.unicom-wrap{
+	// position: relative;z-index: 1;
+	padding-top: 110px;
+}
+
+.wrap-unicom-cnt{
+	width: 980px;
+	margin: 0 auto;
+}
+
+.unicom-header{
+	position: absolute;left: 0;right: 0;top: 110px;z-index: 101;
+	width: 100%;
+	background-color: #201c32;
+}
+
+.unicom-header-cnt{
+	height: 80px;width:1200px;margin: 0 auto;
+	// padding-left: 117px;
+	// background-color: #201b32;
+	.nui-btn{
+		
+	}
+	.unicom-header-bg{
+		width: 1200px;height: 80px;
+	}
+}
+
+.unicom-header-line{
+	height: 30px;
+	background-color: #646370;
+}
+
+
+// 互联新增结构
+.unicom-add{
+	position: relative;*z-index: 150;
+	display: inline-block;*display: inline;*zoom:1;
+	margin-left: -113px;
+	vertical-align: middle;
+}
+
+.unicom-search{
+	width: 228px;
+}
+
+.unicom-add-dropdown{
+	position: absolute;left: 0;top: 35px;z-index: 230;
+	width: 270px;
+	background-color: #fff;border: 1px solid #cdcdcd;
+	.box-shadow(0 0 3px rgba(0,0,0,.25));
+}
+
+
+.unicom-filter{
+	margin-bottom: 10px;
+	border: 1px solid #cdcdcd;
+	font-size: 0;
+}
+
+.unicom-filter-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	width: 50%;
+	font-size: 12px;text-align: center;
+}
+
+.unicom-filter-btn{
+	display: block;
+	height: 26px;line-height: 26px;
+	color: #666;
+	&:hover{
+		color: #333;
+		text-decoration: none;
+	}
+}
+
+.unicom-filter-active{
+	background-color: #ebebeb;
+	color: #333;
+	text-decoration: none;
+}
+
+.unicom-filter-first{
+	border-right: 1px solid #cdcdcd;
+}
+
+.unicom-add-header{
+	padding: 15px;
+	border-bottom: 1px solid #ebebeb;
+}
+
+.unicom-add-cnt{
+	padding: 10px 15px 15px 15px;
+}
+
+.unicom-list{
+	max-height: 270px;_height:270px;
+	border-top: 1px solid #efefef;
+	overflow: auto;*overflow-x: hidden;
+}
+
+.unicom-info{
+	padding-bottom: 5px;
+}
+
+.unicom-info-pager{
+	float: right;*display: inline;*zoom:1;
+	color: #999;
+	a{
+		*zoom:1;
+		color: #ccc;font-family: '宋体';font-weight: bold;
+		text-decoration: none;
+		&:hover{
+			color: #1c8ddc;
+			text-decoration: none;
+		}
+	}
+}
+
+.unicom-list-cell{
+	border-bottom: 1px solid #efefef;
+}
+
+.unicom-list-link{
+	&:extend(.toe all);
+	display: block;
+	width: 100%;height: 26px;line-height: 26px;
+	color: #666;
+	&:hover{
+		background-color: #efefef;
+	}
+}
+
+
+
+// =====================================
+
+.new-tab{
+	// _position: relative;_z-index: 101;*zoom: 1;
+	// margin-top: -30px;
+}
+
+.new-tab-menu{
+	// position: relative;z-index: 101;
+	background-color: #646370;
+	text-align: center;
+	//样式调整，新增绑定历史
+	width: 980px;margin: 0 auto;
+}
+.new-tab-cnt{
+	&:extend(.clearfix all);
+}
+
+.new-tab-footer{
+	// clear: both;
+	padding: 10px 8px;height: 20px;
+	background-color: #f5f5f5;border-top: 1px solid #c9ced8;border-bottom: 1px solid #c9ced8;
+}
+
+.new-tab-menu-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	padding: 0 50px;height: 30px;line-height: 30px;
+	vertical-align: middle;
+	font-size: 14px;
+}
+
+.new-tab-menu-line{
+	display: inline-block;*display: inline;*zoom:1;
+	height: 10px;border-left: 1px solid #9a9a9f;
+	vertical-align: middle;
+}
+
+.new-tab-menu-link{
+	cursor: pointer;
+	color: #e0e0e0;
+	&:hover{
+		text-decoration: none;
+		color: #fee830;
+		.dot-point{
+			border-color: #fee830;
+			background-color: #fee830;
+		}
+	}
+	span{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+	}
+	.dot-point{
+		width: 8px;height: 8px;margin-right: 10px;
+		border-radius: 50%;border: 2px solid #fff;
+		*overflow: hidden;
+	}
+}
+
+.new-tab-menu-active{
+	text-decoration: none;
+	color: #fee830;
+	span{
+		color: #fee830;
+	}
+	.dot-point{
+		border-color: #fee830;
+		background-color: #fee830;
+	}
+}
+
+
+
+// 瀑布流结构的
+.nui-waterfall-area{
+	&:extend(.clearfix all);
+	min-height: 450px;_height:450px;
+	*zoom: 1;
+}
+
+.nui-waterfall-item{
+	position: relative;
+	float: left;*display: inline;*zoom: 1;
+	width: 179px;margin: 0 15px 15px 0;
+	background: #fff;border: 1px solid #ddd;border-radius: 3px;
+	 .box-shadow(1px 1px 3px #ebebeb);
+	padding-bottom: 30px;
+	transition: box-shadow .3s ease;
+
+	&:hover{
+		.box-shadow(1px 2px 10px #ddd);
+	}
+}
+
+.waterfall-item-header{
+	height: 32px;padding: 15px 25px;
+	background-color: #f5f5f5;
+	text-align: center;color: #333;font-weight: bold;
+	span{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+	}
+	.header-empty{
+		height: 32px;
+		font-size: 0;
+	}
+}
+
+.waterfall-item-cnt{
+	position: relative;
+	padding-top: 20px;padding-bottom: 15px;
+	min-height: 100px;
+	_height: 100px;
+
+	.info-feadback{
+		position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 1;
+		width: 100%;height: 100%;
+	}
+	.info-feadback-cnt{
+		padding: 15px;
+		font-size: 14px;
+		h3{
+			color: #d31f1f;font-weight: bold;
+		}
+	}
+	.info-mask{
+		position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: -1;
+		height: 100%;width: 100%;_height:95px;
+		background-color: #ffe8e8;
+		.opacity(70);
+	}
+}
+
+.waterfall-item-footer{
+	position: absolute;left: 0;bottom: 0;z-index: 10;
+	width: 100%;height: 30px;
+	border-top: 1px solid #ddd;
+	.item-footer-left,.item-footer-right{
+		float: left;*display: inline;*zoom:1;
+		width: 50%;height: 30px;
+	}
+	.item-footer-left{
+		.waterfall-item-btn{
+			border-right: 1px solid #ddd;
+		}
+	}
+	.item-footer-right{
+		*margin-left: -1px;
+	}
+}
+
+.waterfall-item-btn{
+	display: block;_float: left;*zoom:1;
+	height: 30px;line-height: 30px;_width:100%;_margin-left:-1px;
+	text-align: center;
+	color: #666;
+	&:hover{
+		background-color: #fbfbfb;
+		color: #1c8ddc;text-decoration: none;
+		i{
+			color: #1c8ddc;
+		}
+	}
+	i{
+		margin-right: 5px;
+		font-size: 12px;color: #666;
+	}
+}
+
+.waterfall-item-btn-active{
+	background-color: #fbfbfb;
+	color: #1c8ddc;text-decoration: none;
+	i{
+		color: #1c8ddc;
+	}
+}
+
+
+.import-info-line{
+	&:extend(.clearfix all);
+	padding: 2px 15px;
+	height: 18px;
+}
+.import-info-left{
+	float: left;*display: inline;
+
+	span{//by fen 因为需要右对齐
+		display: inline-block;
+		width:5em;
+		text-align: right;
+		color: #999;
+	}
+}
+.import-info-logo{
+	display: none;
+}
+.import-info-right{
+	position: relative;*zoom:1;
+	float: right;*display: inline;
+	.nui-select-list{
+		padding: 8px 0;
+	}
+	// .nui-btn{
+	// 	position: absolute;
+	// 	// display: block;
+	// 	&:extend(.oneline all);
+	//     right: 0;
+	//     top: -5px;
+	//     // width: 50px;
+	// }
+}
+.info-cnt{
+	&:extend(.toe all);
+	display: block;
+	width: 110px;
+	text-align: right;
+}
+.import-info-right-fn{
+	color: #666;
+	text-decoration: none;
+	i{
+		font-size: 12px;color: #666;
+	}
+	&:hover{
+		color: #333;
+	}
+}
+.import-company-name{
+	.toe;
+	width: 150px;
+	font-size: 14px;font-weight: bold;
+}
+.import-times,.import-freight-num{
+	color: #FF870F;
+}
+.import-state-label{
+	color: #000;
+}
+.import-state-tips{
+	// color: #36D900;
+	i{
+		font-size: 12px;color: #36D900;
+	}
+	.text-success{
+		color: #009C95;
+	}
+}
+.import-tips-error{
+	color: #BD4832;
+	i{
+		font-size: 12px;color: #BD4832;
+	}
+}
+
+
+.nui-tips-setup{
+	left: 0;top: 30px;z-index: 899;*zoom:1;
+	padding: 0;background: #fff;
+}
+
+
+// 运价互联申请弹窗
+.unicom-apply-area{
+	padding: 15px 20px;
+}
+
+//运价同步按钮 by fen
+.sync-freight{
+	box-shadow: 0 1px 2px #e9e9e9;
+	border-color: #ddd;
+	
+	&:hover{
+		color:#248FDD;
+		background: #fff;
+		border-color: #ccc;
+	}
+}
+
+
+.waterfall-area-down{
+	_position: relative;
+	.nui-waterfall-item{
+		width: 228px;
+		// height: 185px;
+	}
+	// .waterfall-item-cnt{
+	// 	height: 102px;
+	// }
+	// .info-feadback{
+	// 	height: 122px;
+	// }
+	.info-mask{
+		_height: 118px;
+	}
+}
+
+.waterfall-area-down{
+	// .waterfall-item-cnt{
+	// 	height: 162px;
+	// }
+}
+
+.nui-tips-freight-num{
+	left: -52px;top: 22px;z-index: 899;*zoom:1;
+	padding: 0;background: #fff;
+	width: 133px;
+	.nui-select-list-li{
+		text-align: right;cursor: default;
+		&:hover{
+			background-color: #fff;
+			color: #666;
+		}
+		span{
+			color: #ff870f;
+		}
+	}
+	.select-list-li-hover{
+		background-color: #fff;
+		color: #666;
+	}
+}
+
+
+// 导入规则框
+.rule-container-left,.rule-container-mid,.rule-container-right{
+	float: left;*display: inline;
+	label{
+		float: none;
+		width: auto;height: auto;
+	}
+}
+
+.rule-container-left{
+	width: 500px;
+}
+
+.rule-container-right{
+	width: 370px;
+}
+
+.rule-container-mid{
+	position: relative;
+	height: 415px;margin: 0 24px;
+	border-left: 1px solid #dedede;
+	.shadow{
+		position: absolute;left: 50%;top: 50%;
+		width: 38px;height: 38px;margin-left: -19px;margin-top: -19px;
+		padding-top: 10px;
+		// background-color: #fff;
+		text-align: center;
+	}
+	.nui-btn{
+		padding: 5px;
+		width: 15px;height: 15px;line-height: 15px;
+		// i{
+		// 	color: #9b9a9b;
+		// }
+	}
+}
+
+.unicom-rule-hd{
+	&:extend(.clearfix all);
+	padding: 5px 10px;margin-top: 20px;
+	border: 1px solid #ccc;background-color: #ebebeb;
+	.hd-left{
+		float: left;*display: inline;
+		span,label{
+			display: inline-block;*display: inline;*zoom:1;
+			vertical-align: middle;
+		}
+		label{
+			float: none;
+			width: auto;height: auto;
+			overflow: inherit;
+		}
+	}
+	.hd-right{
+		float: right;*display: inline;
+	}
+}
+
+.unicom-rule-items{
+	padding: 15px 0;
+	border-bottom: 1px solid #ccc;
+	.nui-checkbox{
+		float: none;
+		width: auto;height: auto;
+		padding-bottom: 5px;
+	}
+}
+
+.rule-items-cnt{
+	&:extend(.clearfix all);
+	padding: 0 10px;
+}
+
+.rule-items-title{
+	padding-bottom: 5px;
+}
+
+
+.unicom-rule-list{
+	height: 320px;margin-top: 10px;
+	overflow-y: auto;
+}
+
+
+.rule-list-info{
+	margin-top: 25px;
+	.unicom-rule-items{
+		padding-top: 0;
+		border-bottom: none;
+	}
+
+	.unicom-rule-title{
+		height: 28px;line-height: 28px;
+		padding: 0 5px;
+		background-color: #f1f1f1;
+	}
+	
+	.rule-items-cnt{
+		padding: 0;padding-top: 10px;
+	}
+}
+
+.unicom-rule-title{
+	span,label{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+	}
+}
+
+.unicom-rule-del{
+	float: right;
+	margin-right: 3px;margin-top: 5px;
+	color: #aaa;
+	i{
+		color: #aaa;
+	}
+	&:hover{
+		text-decoration: none;
+		color: #666;
+		i{
+			color: #666;
+		}
+	}
+}
+
+.ruleall-del{
+	float: right;
+	color: #aaa;font-size: 12px;
+	&:hover{
+		text-decoration: none;
+		color: #666;
+	}
+}
+
+.unicom-tags-cell{
+	&:extend(.clearfix all);
+	float: left;*display: inline;
+	width: 110px;height: 22px;margin-bottom: 5px;margin-right: 5px;
+	line-height: 22px;
+	background-color: #e9e9e9;
+	text-align: center;
+}
+
+.unicom-tags-hover{
+	background-color: #0064d1;border-radius: 2px;
+	color: #fff;
+	.unicom-tags-del{
+		display: block;
+		color: #fff;
+	}
+}
+
+.unicom-tags-info{
+	&:extend(.toe all);
+	float: left;*display: inline;
+	width: 88px;
+}
+
+.unicom-tags-del{
+	float: right;*display: inline;
+	display: none;
+	width: 22px;height: 22px;
+	text-align: center;
+	.close{
+		display: block;
+	    height: 22px;
+	    padding: 0;
+	    overflow: hidden;
+	    font: 14px/19px tahoma;
+	    text-align: center;
+	    // background: #3d7cca;
+	    z-index: 1150;
+	    text-shadow: 0 -1px 0 #2a568b;
+	    border-top-right-radius: 2px;
+	    border-bottom-right-radius: 2px;
+	    color: #fff;
+	    text-decoration: none;
+	}
+}
+
+
+// 表格扩充
+.result-table-extend{
+	background-color: #f5f5f5;
+	td{
+		padding: 0;
+	}
+}
+
+.result-detail-title{
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.result-detail-list{
+	border-bottom: 1px solid #ddd;
+	font-size: 0;
+	
+	span{
+		display: inline-block;*display: inline;*zoom:1;
+		padding: 10px;margin-bottom: -1px;
+		vertical-align: middle;border-bottom: 1px solid #ddd;
+		font-size: 12px;
+	}
+}
+
+
+.unicom-detail-link{
+	text-decoration: none;
+	&:hover{
+		text-decoration: none;
+		
+	}
+}
+
+
+
+
+// cargo网整合结构新增
+.unicom-opition{
+	padding: 5px 10px;margin: 10px 0;
+	min-height: 26px;
+	background-color: #efefef;
+	border-top: 1px solid #d7d9df;border-bottom: 1px solid #d7d9df;
+}
+
+//会员管理首页样式微调
+.unicom-opition-p{
+	display: inline-block;
+	float: right;
+	padding-top: 3px;
+	.color-green1{
+		color: #518f52;
+	}
+	.color-yellow1{
+		color: #fc973e;
+	}
+	.bold{
+		font-weight: bold;
+	}
+}
+
+//dialog1弹出对话层一
+
+.u-icon-sorry{
+	padding-top: 35px;
+	i{
+		font-size: 50px;
+	}
+
+}
+.u-fui-dialog-cnt-p{
+	width: 206px;
+	margin: 20px auto;
+}
+
+
+.nui-tips-unicom{
+	top: 245px;
+}

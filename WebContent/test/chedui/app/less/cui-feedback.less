@@ -1,0 +1,40 @@
+//
+// 反馈列表
+// --------------------------------------------------
+// 常量
+
+.cui-feedback-list{}
+
+.cui-feedback-grid,.cui-feedback-footer{
+  border-top: 1px solid #f3f3f3;
+}
+
+.cui-feedback-footer{
+  padding-top: 20px;
+  text-align: center;
+}
+
+
+
+.cui-feedback-line{
+  &:extend(.clearfix all);
+  padding: 10px 0;
+  .word-break;
+}
+
+.feedback-username{
+  .left;
+}
+
+.feedback-times{
+  .right;
+}
+
+.feedback-username,.feedback-times{
+  label,span{
+    .inline-block;
+    vertical-align: middle;
+    color: #aaa;
+  }
+}
+

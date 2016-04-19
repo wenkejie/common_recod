@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>susd 3.0</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('div.fui-drop-down-con').delegate('li', 'mouseenter', function() {
+				$(this).addClass('hover')
+			})
+			.delegate('li', 'mouseleave', function() {
+				$(this).removeClass('hover')
+			});
+			$('#datepic').datepicker();;
+		})
+	</script>
+</head>
+<body class="pd30">
+<!-- <div class="fui-tips fui-tips-hasclose">
+	<div class="fui-tips-arrow">◆<em>◆</em></div>
+	电话：阿萨德将发送旅客减肥路上看到及法律上看见<br />
+	手机：13958201588 <br />
+	邮箱：<a href="mailto:zjnbyzcn@163.com">zjnbyzcn@163.com</a>
+	<a href="javascript:void(0)" class="fui-close">×</a>
+</div> -->
+
+<input type="text" id="datepic" />
+</body>
+</html>

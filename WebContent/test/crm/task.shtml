@@ -1,0 +1,340 @@
+<!--#include file="header.html"-->
+<div class="auto-wrap">
+<div class="left-column">
+<div class="self-info clearfix">
+	<img src="../../src/images/crm/noImg.jpg" alt="" class="user-img">
+	李光耀<br/>
+<a href="javascript:">个人设置</a>
+</div>
+	<ul class="left-menu">
+		<li><a href="javascript:" class="left-menu-link left-menu-link-active"><i>&#x343c;</i> 我的首页</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3497;</i> 我的私信</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3442;</i> 提到我的</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3515;</i> 同事动态</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3569;</i> 通知公告</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3575;</i> 我的收藏</a></li>
+	</ul>
+	<div class="widget ml10">
+		<div class="widget-title-cnt">
+			<h2 class="widget-title">热门话题</h2>
+		</div>
+		<div class="widget-cnt">
+			<ul class="widget-list">
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">如何给客户报价</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">出售技巧</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">出口拼箱小立方特惠</a></li>
+				
+				<li class="widget-list-cell"><i>&#x355d;</i> <a href="javascript:" class="widget-list-link widget-list-link-strong">查看全部热门话题</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="right-column clearfix">
+	<div class="left w100p">
+				<!--#include file="mainNavIn.html"-->
+			
+				<div class="main-content">
+				<div class="main-top-column pd10 bd0">
+					<div class="left">
+						<h2 class="task-title">任务</h2>
+					</div>
+					<div class="right">
+						<!-- <a class="nui-btn task-option" href="javascript:">新建任务 <i class="fs12">&#x35a1;</i></a>
+						<ul class="task-list">
+							<li class="task-list-cell"><a href="javascript:">给自己安排任务</a></li>
+							<li class="task-list-cell"><a href="javascript:">给他人分配任务</a></li>
+						</ul> -->
+						<div class="result-fn-area-port right">
+							<button class="nui-btn mr0 pr5">
+								<em>新建任务</em>
+								<i class="icon-down-arrow ml5 fs12">&#x35a1;</i>
+							</button>
+							<div class="nui-drop-list nui-drop-list-replace">
+								<ul class="nui-drop-list-choose oneline">
+									<li>
+										<a onclick="changeStatus(this)" status="" href="javascript:">给自己安排任务</a>
+									</li>
+									<li>
+										<a onclick="changeStatus(this)" status="0" href="javascript:">给他人分配任务</a>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+						<!-- <select id="" class="nui-native-select w150" name="">
+							<option value="">给自己安排任务</option>
+							<option value="">给自己安排任务</option>
+							<option value="">给他人分配任务</option>
+						</select> -->
+					</div>
+					
+				</div>
+				<div class="main-top-column">
+					<div class="left">
+						<ul class="nui-sub-nav clearfix mt20 mb20">
+							<li class="nui-sub-nav-li pr10"><a class="nav-li-a nav-li-a-active" href="javascript:">我负责任务</a></li>
+							<li class="nui-sub-nav-li pr10"><a class="nav-li-a" href="javascript:">我分配的任务</a></li>
+							<li class="nui-sub-nav-li pr10"><a class="nav-li-a" href="javascript:">我参与的任务</a></li>
+						</ul>
+					</div>
+					<div class="right">
+						<button class="nui-btn mt20 mb20 pl10">
+							<i class="fs14">&#x3545;</i>
+							给自己安排任务
+						</button>
+						<button class="nui-btn mt20 mb20 pl10">
+							<i class="fs14">&#x3545;</i>
+							给他人分配任务
+						</button> 
+					</div>
+					
+				</div>
+
+				<!-- 右侧主要内容开始 -->
+				<div class="main-right-column w400 psr">
+					<div class="widget list-widget w100p">
+						<div class="">
+							<div class="widget-title-cnt clearfix psr">
+								<div class="widget-title-cnt-top clearfix">
+									<div class="left">
+										<i class="i-complete left fs24 pd0-10">&#x344d;</i>
+										
+										<h2 class="widget-title left vam fs16">发给xx的邮件</h2>
+									</div>
+									<a href="javascript:" class="timing-icon"><i>&#xf0006;</i> 已过期</a>
+
+								</div>	
+								<em class="dpb">未填写详细描述</em>
+								
+								
+							</div>
+							<div class="widget-cnt ml30">
+								<ul class="widget-list">
+									<li class="normal-dividing-line ml-20"></li>
+
+									<li class="widget-list-cell mt10"><span>该任务与 2013-11-7 由<a href="javascript:">萧萧姐</a>创立</span></li>
+									<li class="widget-list-cell">
+										<label class="nui-label">负责人：</label><a class="avatar_picture dpib vam" href="javascript:"></a>
+										<div></div>
+									</li>
+									<li class="widget-list-cell">
+										<label class="nui-label">截止：</label><a class="cell-info" href="javascript:">2013-11-27 16：35</a>
+										<div></div>
+									</li>
+									<li class="widget-list-cell">
+										<label class="nui-label">提醒：</label><a class="cell-info" href="javascript:">提前五分钟</a>
+										<div></div>
+									</li>
+									<li class="widget-list-cell">
+										<label class="nui-label">参与人：</label><a class="cell-info" href="javascript:">未设置</a>
+										<div></div>
+									</li>
+									<li class="widget-list-cell">
+										<label class="nui-label">业务：</label><a class="cell-info" href="javascript:">未设置</a>
+										<div></div>
+									</li>
+
+
+								</ul>
+								<div class="widget-foot-cnt">
+									<div class="talk-box psr">
+										<ul class="talk-box-nav mt10 mb10 clearfix">
+											<li class="talk-box-nav-li pr5"><strong class="mr10">讨论</strong></li>
+											<li class="talk-box-nav-li "><span class="mr10">附件(0)</span></li>
+											<li class="talk-box-nav-li "><span class="mr10">任务历史</span></li>
+										</ul>
+										<div class="normal-dividing-line ml-20 psr">
+											<div class="talk-box-arrow line-arrow">
+												◆
+												<em>◆</em>
+											</div>
+										</div>
+										<div class="send-box mt10">
+											<textarea class="nui-textarea send-cnt ofh"></textarea>
+											<ul class="insert-fun">
+
+												<li class="insert-fun-btn"><a class="send-btn" href="javascript:">讨论</a></li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<!-- 左侧主要内容开始 右侧主要内容结束 -->
+					<div class="main-left-column pr0 mr430">
+						
+						<div class="data-list-top">
+								<!-- <div class="nui-form-cell nui-search-with-select">
+									<div class="nui-select">
+										<div class="nui-select-value">
+											按时间查找
+										</div><i>&#x3438;</i>
+										<div class="nui-drop-down w100">
+											<ul class="nui-select-list">
+												<li class="nui-select-list-li">今天</li>
+												<li class="nui-select-list-li">一礼拜前</li>
+												<li class="nui-select-list-li">一个月前</li>
+												<li class="nui-select-list-li">一年前</li>
+												
+											</ul>
+										</div>
+									</div>
+									<div class="nui-form-cell-cnt left">
+										<input type="text" class="nui-input no-chinese">
+										<i class="nui-form-cell-icon fs12 cur-p">&#x355d;</i>
+									</div>
+								</div> -->
+								<!-- 如输入：如何给客户报价 -->
+								<strong class="data-list-title fs16 faa">按时间</strong>
+								
+
+								<div class="nui-toggle right mr10 ">
+									<a class="nui-toggle-cell nui-toggle-cell-active" href="javascript:">进行中</a>
+									<a id="b01" class="nui-toggle-cell" href="javascript:">已完成</a>
+								</div>
+							</div>
+							<dl class="data-list-group mt10">
+								<dt class="data-list-title fs16 text-red pd10-0 fwb">昨天 <span class="data-list-title-num bg-red dpib fs12">3</span></dt>
+								<dd class="data-list-options psr">
+									<i class="un-complete dpib vam">&#x344e;</i>
+									<span class="dpib vam">打电话给慈溪进出口公司的张经理</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+								</dd>
+								<dd class="data-list-options data-list-options-complete psr">
+									<i class="un-complete dpib vam">&#x344e;</i>
+									<span class="dpib vam">下午三点到恒隆中心拜访客户</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+									<!-- <div class="leftdirection none dpib vam right"></div> -->
+								</dd>
+								<dd class="data-list-options data-list-options-complete psr">
+									<i class="un-complete dpib vam">&#x344d;</i>
+									<span class="dpib vam">发邮件给梁经理报价</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+									<!-- <div class="leftdirection none dpib vam right"></div> -->
+								</dd>
+								<dd class="data-list-options psr">
+									<i class="un-complete dpib vam">&#x344e;</i>
+									<span class="dpib vam">发邮件给梁经理报价</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+									<!-- <div class="leftdirection none dpib vam right"></div> -->
+								</dd>
+								<dd class="data-list-options psr">
+									<i class="un-complete dpib vam">&#x344e;</i>
+									<span class="dpib vam">发邮件给梁经理报价</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+									<!-- <div class="leftdirection none dpib vam right"></div> -->
+								</dd>
+								<dd class="data-list-options psr">
+									<i class="un-complete dpib vam">&#x344e;</i>
+									<span class="dpib vam">发邮件给梁经理报价</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+									<!-- <div class="leftdirection none dpib vam right"></div> -->
+								</dd>
+								<dd class="data-list-options psr">
+									<i class="un-complete dpib vam">&#x344e;</i>
+									<span class="dpib vam">发邮件给梁经理报价</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+									<!-- <div class="leftdirection none dpib vam right"></div> -->
+								</dd>
+								<dd class="data-list-options psr">
+									<i class="un-complete dpib vam">&#x344e;</i>
+									<span class="dpib vam">发邮件给梁经理报价</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+									<!-- <div class="leftdirection none dpib vam right"></div> -->
+								</dd>
+								<dd class="data-list-options psr">
+									<i class="un-complete dpib vam">&#x344e;</i>
+									<span class="dpib vam">发邮件给梁经理报价</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+									<!-- <div class="leftdirection none dpib vam right"></div> -->
+								</dd>
+								<dd class="data-list-options psr">
+									<i class="un-complete dpib vam">&#x344e;</i>
+									<span class="dpib vam">发邮件给梁经理报价</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+									<!-- <div class="leftdirection none dpib vam right"></div> -->
+								</dd>
+								<dd class="data-list-options psr">
+									<i class="un-complete dpib vam">&#x344e;</i>
+									<span class="dpib vam">发邮件给梁经理报价</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+									<!-- <div class="leftdirection none dpib vam right"></div> -->
+								</dd>
+							</dl>
+							<dl class="data-list-group ">
+								<dt class="data-list-title fs16 pd10-0 fwb">今天 <span class="data-list-title-num dpib bg-gray fs12">1</span></dt>
+								<dd class="data-list-options psr">
+									<i class="un-complete dpib vam">&#x344e;</i>
+									<span class="dpib vam">发邮件给梁经理报价</span>
+									<!-- <i class="leftdirection none fonticon right">&#x3445;</i> -->
+									<div class="leftdirection none">
+										◆
+										<em>◆</em>
+									</div>
+									<!-- <div class="leftdirection none dpib vam right"></div> -->
+								</dd>
+							</dl>
+							
+							
+							<div class="data-list-page"><span class="pageinfo">1-20条，共64条 </span><a href="javascript:nextPage();">下一页</a>
+								<a href="javascript:">尾页</a></div>
+							</div>
+						
+					<!-- 左侧主要内容结束 --></div>
+
+		</div>
+</div>
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

@@ -1,0 +1,100 @@
+//========================================
+.hr{
+  // .clearfix;
+  height: 0px;
+  overflow: hidden;
+  margin: 5px 0;
+  border-top:1px solid #eee;
+  clear: both
+}
+
+// .hr-y{
+//   // .clearfix;
+//   display: inline-block;vertical-align: middle;
+//   width: 0;height: 24px;margin: 0 10px;
+//   border-left: 1px solid #eee;border-right: 1px solid #dfdfdf;overflow: hidden;
+//   clear: both
+// }
+
+
+.w10{ width:10px}
+.w20{ width:20px}
+.w25{ width:25px}
+.w30{ width:30px}
+.w35{ width:35px}
+.w40{ width:40px}
+.w45{ width:45px}
+.w47{ width:47px}
+.w50{ width:50px}
+.w55{ width:55px}
+.w60{ width:60px}
+.w65{ width:65px}
+.w70{ width:70px}
+.w75{ width:75px}
+.w80{ width:80px}
+.w85{ width:85px}
+.w88{width: 88px}
+.w90{ width:90px}
+.w95{ width:95px}
+.w100{ width:100px}
+.w110{ width:110px}
+.w120{ width:120px}
+.w130{ width:130px}
+.w140{ width:140px}
+.w145{ width:145px}
+.w150{width: 150px}
+.w100p{width: 100%}
+
+.mt20{margin-top: 20px;}
+
+.txt-orange{
+  color: orange;
+}
+
+// 文字省略
+.toe{white-space:nowrap;overflow:hidden;text-overflow:ellipsis; -o-text-overflow:ellipsis;}
+//强制换行
+.word-break{word-wrap: break-word; word-break: normal;}
+
+/*强制不换行*/
+.oneline{white-space:nowrap}
+
+.tar{text-align: right;}
+
+.psr{position: relative;}
+// 渐变背景色
+
+.zindex-up{ z-index:150 !important}//用来下拉结构的层级兼容
+.scroll-y{ overflow:hidden;overflow-y:auto}
+
+.linear(@starColor,@endColor){
+  background: @endColor; /* Old browsers */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@starColor), color-stop(100%,@endColor)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  @starColor 0%,@endColor 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to bottom,  @starColor 0%,@endColor 100%); /* W3C */
+}
+// ===============
+
+//
+/* 隐藏, 通常用来与 JS 配合 */
+.none {display:none}
+.block{display: block}
+.hide{visibility: hidden;}
+// .visible{visibility: visible;}
+// .opacity0{.opacity(0)}
+
+//=================
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+

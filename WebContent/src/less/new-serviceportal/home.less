@@ -1,0 +1,441 @@
+// ============================================
+// ============== 首页结构样式 =================
+// ============================================
+
+
+.gui-header-home{
+	.gui-header-content{
+		height: 130px;
+	}
+	.gui-search{
+		padding-top: 25px;
+	}
+	.gui-logo{
+		padding-top: 25px;
+	}
+}
+
+// 首页新增的搜索切换
+.gui-search-tab{
+	&:extend(.clearfix all);
+}
+
+.search-tab-cell{
+	float: left;
+	width: 92px;height: 30px;line-height: 30px;
+	background-color: #f1f1f1;margin-left: 1px;
+	text-align: center;
+	cursor: pointer;
+	color: @emphasis-color;
+	&:hover{
+		color: @normal-color;
+	}
+}
+
+.search-tab-first{
+	margin-left: 0;
+	border-top-left-radius: 3px;
+}
+
+.search-tab-current{
+	background-color: @normal-color;
+	color: #fff;
+	&:hover{
+		color: #fff;
+	}
+}
+
+.gui-search-home{
+	.gui-search-input{
+		border-left: 2px solid @normal-color;
+	}
+	.gui-search-content{
+		width: auto;
+	}
+}
+
+
+// 微信链接
+.wechat-link{
+	float: left;*display: inline;
+	width: 90px;margin-top: 15px;margin-left: 60px;margin-left: _57px;
+	border: 1px solid #f1f1f1;
+	text-align: center;
+	img{
+		width: 80px;height: 80px;
+	}
+}
+
+// ===================
+.home-body{
+	&:extend(.clearfix all);
+	.gui-content-left{
+		width: 755px;
+	}
+	.gui-content-right{
+		width: 225px;
+	}
+}
+
+.gui-content-left{
+	float: left;*display: inline;
+}
+
+.gui-content-right{
+	float: right;*display: inline;
+}
+
+.slide-banner{
+
+}
+
+.slide-banner-cnt{
+	img{
+		 width:755px;height:100px;
+	}
+}
+
+
+.freight-card{
+	float: left;*display: inline;
+	width: 234px;margin-right: 10px;margin-bottom: 10px;
+	
+}
+
+.freight-card-last{
+	margin-right: 0;
+}
+
+
+.freight-card-header{
+	padding: 10px;
+	background: @card-hd-bg;border: 1px solid #ddd;border-bottom: none;
+	color: #333;
+}
+
+.freight-card-cnt{
+	border: 1px solid #ddd;border-top: none;
+}
+
+.card-inner-table{
+	width: 100%;
+	table-layout: fixed;
+	td,th{
+		border: none;
+	}
+	th{
+		padding: 3px 5px;
+		background: @card-hd-bg;
+		color: @caption-fs-color;
+	}
+	td{
+		padding: 5px;
+		color: #f1630c;font-size: 12px;font-weight: bold;
+	}
+}
+
+
+.freight-card-form{
+	width: 229px;
+	padding: 5px 0;
+	border-top: 1px solid #ddd;
+	_white-space:nowrap;_overflow:hidden;_text-overflow:ellipsis;_o-text-overflow:ellipsis;
+}
+
+.card-form-line{
+	&:extend(.toe all);
+	padding-left: 65px;
+	color: @caption-fs-color;
+	label{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		margin-left: -60px;width: 60px;
+		text-align: right;color: @caption-fs-color;
+	}
+
+}
+
+.card-form-line-last{
+	position: relative;
+	padding-right: 68px;
+	min-height: 28px;_height: 28px;
+	.gui-btn{
+		position: absolute;right: 0;top: 0;z-index: 11;_right: 10px;
+		vertical-align: top;
+	}
+	span{
+		&:extend(.word-break all);
+		&:extend(.toe all);
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		width: 92px;
+		
+	}
+}
+
+
+
+// panel中结构块
+.panel-items{
+	min-height: 108px;
+}
+
+.panel-items-title{
+	height: 35px;line-height: 35px;
+	border-top: 1px solid #eee;border-bottom: 1px solid @bd-color2;
+	span{
+		padding-left: 15px;margin-left: -1px;
+		border-left: 2px solid #238ccd;
+		color: @title-color;font-weight: bold;
+	}
+	.more-link{
+		float: right;*display: inline;
+		padding-right: 10px;
+		color: @default-fs-color;
+		&:hover{
+			color: #238CCD;
+		}
+	}
+}
+
+
+
+.shipping-company-list{
+	padding: 5px 10px;
+	p{
+		padding: 3px 0;
+	}
+	a{
+		&:extend(.toe all);
+		display: block;
+		width: 100%;
+		color: @default-fs-color;
+		&:hover{
+			color: #238CCD;
+		}
+	}
+}
+
+
+.panel-items-mask{
+	position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 100;
+	width: 100%;height: 100%;_height:108px;
+}
+
+.items-mask-shadow{
+	position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 101;
+	width: 100%;height: 100%;
+	background-color: #fff;
+	.opacity(60);
+}
+
+.items-mask-info{
+	position: absolute;left: 50%;top: 50%;z-index: 111;
+	width: 94px;height: 40px;margin-left: -47px;margin-top: -20px;
+	background-color: #e1e3e5;border-radius: 20px;
+	text-align: center;line-height: 40px;font-size: 16px;color: #fff;
+}
+
+// 侧边栏菜单
+
+.sub-menu{
+	&:extend(.clearfix all);
+}
+
+.sub-menu-items{
+	float: left;*display: inline;
+	width: 33.3%;padding: 12px 0;*margin-left: -1px;
+	text-align: center;
+}
+
+.sub-menu-items-last{
+	.sub-menu-cnt{
+		border-right: none;
+	}
+}
+
+.sub-menu-cnt{
+	border-right: 1px solid #eee;
+}
+
+.sub-menu-link{
+	display: block;
+	color: @default-fs-color;
+	.num{
+		color: #d93600;
+		font-weight: bold;font-size: 14px;
+	}
+	.icon{
+		color: #333;font-size: 18px;
+	}
+	&:hover{
+		color: #333;
+		.icon{
+			color: @normal-color;
+		}
+	}
+}
+
+.sub-menu-double{
+	.sub-menu-items{
+		width: 50%;
+	}
+}
+
+
+
+
+// 客服列表
+.server-area{
+	position: absolute;
+	right: 40px;top: 0;z-index: 450;
+	width: 208px;padding-right: 132px;height: 130px;
+	background-color: #fff;border: 1px solid #ddd;
+	box-shadow: 0 1px 4px #D1D3D4;
+}
+
+.server-area-arrow{
+    position: absolute;right: -7px;right: -8px;top: 7px;
+    font: 14px Arial,Helvetica,sans-serif;color: #ddd;
+    em{
+    	position: absolute;right: 1px;top: 0;
+		color: #fff;font-style: normal;
+    }
+
+}
+
+.server-list{
+	// float: right;
+	position: absolute;right: 0;top: 0;
+	width: 132px;
+}
+
+.server-list-cell{
+	height: 32px;line-height: 32px;
+	border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;
+	text-align: center;
+}
+
+.server-list-link{
+	display: block;*zoom:1;
+	color: @default-fs-color;
+	i{
+		float: left;*display: inline;
+		margin-top: 9px;margin-left: 5px;
+	}
+	&:hover{
+		color: #238ccd;
+	}
+}
+
+.server-list-current{
+	border-left: none;
+	a{
+		color: #238ccd;
+	}
+}
+
+.server-list-cell-last{
+	border-bottom: none;
+}
+
+
+.server-list-cnt{
+	height: 120px;padding:5px 15px;
+	p{
+		padding: 3px 0;
+		color: #999;
+	}
+	label{
+		color: @default-fs-color;
+	}
+}
+
+
+
+// 航线选择
+.route-select{
+
+	padding: 0 10px;
+	font-size: 0;
+}
+
+.route-select-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	padding-right: 5px;
+	font-size: 12px;
+}
+
+.route-select-link{
+	display: block;_float: left;
+	padding: 5px;height: 21px;
+	color: @default-fs-color;
+	&:hover{
+		color: @normal-color;
+	}
+}
+
+.route-select-current{
+	position: relative;z-index: 380;
+	border-top: 2px solid #238ccd;
+	border-left: 1px solid #ddd;border-right: 1px solid #ddd;outline:none;
+	background-color: #fff;
+}
+
+
+// 港口选择
+.harbour-select{
+	position: absolute;left: -1px;top: 0;z-index: 370;
+	width: 753px;
+	background-color: #fff;border: 1px solid #ddd;
+}
+
+.harbour-select-close{
+	position: absolute;right: 5px;top: 5px;z-index: 11;
+	color: #999;font-size: 12px;
+	&:hover{
+		color: @default-fs-color;
+	}
+}
+
+.harbour-select-cnt{
+	&:extend(.clearfix all);
+	min-height: 120px;_height:120px;
+	padding: 15px 0;
+}
+
+.harbour-select-items{
+	
+	float: left;*display: inline;
+	width: 220px;padding: 0 15px;
+	a{
+		&:extend(.toe all);
+		display: block;
+		width: 100%;
+		color: @default-fs-color;
+		&:hover{
+			text-decoration: underline;
+			color: #238ccd;
+		}
+	}
+}
+
+.harbour-more{
+	display: block;
+	height: 30px;line-height: 30px;
+	background-color: #f1f1f1;
+	text-align: center;color: @default-fs-color;
+	&:hover{
+		background-color: darken(#f1f1f1,5%);
+	}
+}
+
+.news-link{
+	&:extend(.toe all);
+	width: 100%;
+	display: block;
+	color: @default-fs-color;
+	&:hover{
+		color: #238ccd;
+	}
+}

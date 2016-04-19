@@ -1,0 +1,81 @@
+//
+// tab
+// --------------------------------------------------
+// 变量
+@btn-default-border:#ccc;
+@btn-default-bg:#fff;
+@primary-color:         #238CCD;
+@primary-border-color:  #DFDFDF;
+
+
+// ========mixin
+.line-tab-size(@height:45px;@padding:15px;@font-size:14px){
+  height: @height;
+  line-height: @height;
+
+  .nui-line-tab-link{
+    padding-left: @padding;
+    padding-right: @padding;
+    font-size: @font-size;
+  }
+
+}
+
+
+// 按钮样式开始
+.nui-line-tab{
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid #ccc;
+}
+
+.nui-line-tab-title{
+  float: left;
+  height: 100%;
+  margin-right: 15px;
+  font-size: 15px;
+  font-weight: 700
+}
+
+.nui-line-tab-item{
+  float: left;
+  height: 35px;
+  margin-right: 20px;
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.nui-line-tab-link{
+  display: block;
+  height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  color: #888;
+  &:hover{
+    color: #333;
+    border-bottom: 3px solid lighten(desaturate(@primary-color,50%), 40%);
+    text-decoration: none;
+  }
+
+  &.active{
+    border-bottom: 3px solid @primary-color;
+    color: @primary-color;font-weight: bold;
+  }
+}
+
+
+.nui-line-tab-large{
+  .line-tab-size(50px;10px;16px)
+}
+
+.nui-line-tab-small{
+  .line-tab-size(35px;5px;14px)
+}
+
+.nui-line-tab-mb{
+  margin-bottom: 25px;
+}
+
+

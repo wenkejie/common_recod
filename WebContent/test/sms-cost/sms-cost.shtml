@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+
+	<!-- <link rel="stylesheet" href="../../release/freight/css/common.css"/> -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<!-- <link rel="stylesheet" href="../../src/css/richSelect.css" />richselect样式 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(function () {
+			$('a.group-tag-cell').click(function() {
+				$('a.group-tag-cell').removeClass('group-tag-cell-active');
+				$(this).addClass('group-tag-cell-active');
+			});
+		})	
+	</script>
+	
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	<div class="wrap main-wrap">
+		
+		<div class="search-area search-area-slidedown  mt15">
+
+			<div class="title-info">
+				<h2><i class="fs24 mr5">&#x344a;</i>短信余额<span class="text-warning fwb fs16 pl10">800.25</span><span>元</span></h2> 
+				<h2 class="pl20"><i class="fs24 mr5">&#x3569;</i>短信余额<span class="text-warning fwb fs16 pl10">500.25</span><span>元</span></h2>
+				<span>当前余额的显示可能存在延迟效应</span>
+			</div>
+		</div>
+		<div class="data-table-group bd-n mt20">
+			<div class="data-group-fn data-group-fn-sms clearfix">
+				<div class="group-fn-left">
+					<div class="data-group-tag clearfix">
+						<a href="javascript:" class="group-tag-cell group-tag-cell-active">短信</a>
+						<a href="javascript:" class="group-tag-cell">邮件</a>
+					</div>
+				</div>
+				
+			</div>
+			<div class="result-area pt0">
+				<div class="result-table-area">
+					<table class="result-table result-table-sms">
+						<thead>
+							<tr>
+								<th width="210">创建时间</th>
+								<th width="200">项目</th>
+								<th width="100">金额</th>
+								<th width="100">余额</th>
+								<th width="75">备注</th>
+							</tr>
+						</thead>
+			
+						<tbody>
+							<tr>
+								<td>2014-07-31</td>
+								<td>充值短信</td>
+								<td>+10000</td>
+								<td>+10000</td>
+								<td>
+									<a href="javascript:">详情</a>
+								</td>
+							</tr>
+							<tr class="split">
+								<td>2014-07-31</td>
+								<td>充值短信</td>
+								<td>+10000</td>
+								<td>+10000</td>
+								<td>
+									<a href="javascript:">详情</a>
+								</td>
+							</tr>
+							<tr>
+								<td>2014-07-31</td>
+								<td>充值短信</td>
+								<td>+10000</td>
+								<td><span class="text-red">-10000</span></td>
+								<td>
+									<a href="javascript:">详情</a>
+								</td>
+							</tr>
+							<tr class="split">
+								<td>2014-07-31</td>
+								<td>充值短信</td>
+								<td><span class="text-success">+10000</span></td>
+								<td>+10000</td>
+								<td>
+									<a href="javascript:">详情</a>
+								</td>
+							</tr>
+						</tbody>
+			
+					</table>
+					<!-- <div class="result-table-area-info">
+						<span>已勾选本页 25 个选项</span>，<a href="javascript:" id="jWhole">勾选表格中全部955个选项</a>
+					</div> -->
+				</div>
+				<div class="result-footer">
+					<div class="page"><input type="hidden" value="1" name="pageNo" id="pageNo"><span class="pageInfo">1-30条，共278条 </span><a href="javascript:nextPage();">下一页</a> <a href="javascript:buildData(10);">尾页</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--#include file="footer.html"-->
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!--#include file="header.html"-->
+
+<!-- 主内容开始 -->
+<div class="auto-wrap">
+	<div class="grid">
+		<div class="left">
+			<ul class="nui-sub-nav clearfix mt20 mb20">
+				<li class="nui-sub-nav-li pr10"><a class="nav-li-a nav-li-a-active" href="javascript:">按人员显示</a></li>
+				<li class="nui-sub-nav-li pr10"><a class="nav-li-a" href="javascript:">按时间显示</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="grid">
+		<div class="active-cnt">
+			<div class="active-cnt-head clearfix">
+				<div class="left">
+					<a class="avatar_picture2 dpib vam mr10" href="javascript:"></a>
+					<span class="dpib vam mr10">王小贱的活动记录</span>
+					<div class="nui-form-cell w150">
+						<div class="nui-form-cell-cnt">
+							<input id="datepicker_input" class="nui-input" type="text">
+							<i class="nui-form-cell-icon cur-p">&#x355d;</i>
+						</div>
+					</div>
+				</div>
+				
+				<div class="right">
+					<select id="" class="nui-native-select w150 mt10" name="">
+						<option value="">全部活动记录</option>
+						<option value="">电话</option>
+						<option value="">邮件</option>
+						<option value="">拜访签到</option>
+						<option value="">备忘</option>
+						<option value="">任务</option>
+					</select>
+					
+				</div>
+				
+			</div>
+			<div class="active-cnt-body">
+				<ul class="active-cnt-body-option clearfix">
+					<li class="option-cell"><a class="option-cell-a" href="javascript:">昨天</a></li>
+					<li class="option-cell"><a class="option-cell-a option-cell-a-active" href="javascript:">今天</a></li>
+					<li class="option-cell"><a class="option-cell-a" href="javascript:">本周</a></li>
+					<li class="option-cell"><a class="option-cell-a" href="javascript:">上周</a></li>
+					<li class="option-cell"><a class="option-cell-a fonticon fs18" href="javascript:">&#x343a;</a></li>
+				</ul>
+				<div class="active-cnt-body-line"></div>
+				<dl class="active-cnt-body-list mt20">
+					<dt class="body-list-title">2013-12-04 星期三</dt>
+					<dd class="body-list-cell"><i class="mr10">&#x34d3;</i><span class="">10.22 电话 <a class="body-list-cell-link"  href="javascript:">下个月有10个柜子到汉堡 <i>&#x344a;</i></a> (0)</span></dd>
+					<dd class="body-list-cell"><i class="mr10">&#x34d3;</i><span class="">10.22 电话 <a class="body-list-cell-link"  href="javascript:">下个月有10个柜子到汉堡 <i>&#x344a;</i></a> (0)</span></dd>
+					<dd class="body-list-cell"><i class="mr10">&#x34d3;</i><span class="">10.22 电话 <a class="body-list-cell-link"  href="javascript:">下个月有10个柜子到汉堡 <i>&#x344a;</i></a> (0)</span></dd>
+					<dd class="body-list-cell"><i class="mr10">&#x34d3;</i><span class="">10.22 电话 <a class="body-list-cell-link"  href="javascript:">下个月有10个柜子到汉堡 <i>&#x344a;</i></a> (0)</span></dd>
+				</dl>				
+			</div>
+		</div>
+	</div>
+
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

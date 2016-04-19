@@ -1,0 +1,30 @@
+<script>
+(function($){
+ 	var arr = [];
+	for(var i=0;i<10;i++){
+		arr[i] = {text:"显示   " + i,value:i,other:"其他的值 "+i};
+	}
+
+	
+ 	$("#fSelectTest").fselect({
+ 		items : arr  ,
+ 		change : function(event,ui){
+			$("#otherdisplay").val(ui.item.other);
+ 		}
+ 	 }) ;
+
+	  
+ 	 
+})(jQuery);
+
+</script>
+
+这个功能看上去没啥奇特的，但是请注意，边上输入框中的值，既不是key也不是value。而是任意你希望的值。用原生态的实现就比我麻烦了。
+<br/>
+ <input id='fSelectTest'/>
+ 
+ <input id='otherdisplay'/>
+
+
+
+ 

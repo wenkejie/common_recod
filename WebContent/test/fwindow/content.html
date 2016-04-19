@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>弹出窗口</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+	
+	<script>
+	$(function(){
+		//console.log( fwindow.widget().fwindow("option","width"));
+		
+		
+			//$(window).focus();
+		
+		});
+		function myResize(ui){
+			alert("content : height :" + ui.size.height);
+		}
+	
+		function openWin(){
+			var w = $("#width").val();
+			var h = $("#height").val();
+			
+			fwindow.create({
+				title : "内部测试",
+				maxable : true,
+				resizeable : true,
+				url : "content.html" ,
+				height : h,
+				width : w,
+				beforeUnload : function(){
+					return true || confirm("关闭吗？")  ;
+				}
+			});
+		}
+
+		function openWinNoA(){
+			fwindow.create({
+				title : "内部测试",
+				maxable : true,
+				resizeable : true,
+				url : "content.html",
+				height : 3000,
+				width : 4000 ,
+				animate : false
+			});
+
+		}
+
+
+		var htmlWin;
+		function openHtmlWin(){
+			htmlWin = fwindow.create({
+				title : "内部html测试",
+				content:"<div style='width:200px;height:100px;'><input id='myclose' type='button' value='功能'/></div>",
+				resizeable : true,
+				maxable : true,
+				create : function (event,ui){
+					//console.log("create");
+					//console.log(event);
+					//console.log(ui);
+					},
+				load : function(){
+					//console.log("load");
+				},
+				beforeUnload : function(){
+					return window.confirm("关闭吗？");
+				},
+				resizeStart : function(event,ui){
+					//console.log("resizeStart");
+					//console.log(ui);
+				},
+				resizeStop  : function(event,ui){
+					//console.log("resizeStop");
+					//console.log(ui);
+				}
+			});
+			
+
+			htmlWin.fwindow("widget").find("#myclose").click(function(){
+				//console.log(htmlWin.fwindow("parent"));
+
+				//htmlWin.fwindow("close");
+
+				var a = fwindow.create({
+					title:"abc",
+					content:"<div style='width:200px;height:100px;'><input id='myclose1' type='button' value='功能'/></div>"
+				});
+				a.fwindow("widget").find("#myclose1").click(function(){
+					//console.log(htmlWin.fwindow("parent"));
+					
+					//a.fwindow("close");
+				});
+			});
+		}
+
+		function openJqueryWin(){
+			var obj =  "<div><input type=button value='ok'> </div>" ;
+
+			var win = fwindow.create({
+				title : "内部jquery测试",
+				maxable : true,
+				resizeable : true,
+				content : obj,
+				height : 300,
+				width : 400 
+			});
+
+			$(obj).find("input").click(function(){
+				win.fwindow("close");
+			});
+		}
+		
+		function confirm_dialog1(message,callback){
+			var obj = "<div class=\"confirm-cnt confirm-warning\"><div class=\"confirm-icon\"></div><h3>您确定执行xxx操作？</h3></div><div class=\"fui-dialog-btm-bar\"><a class=\"fui-btn-dialog-primary\" id=\"btn-yes\"><span>确认</span></a><a class=\"fui-btn-dialog\" id=\"btn-no\"><span>返回</span></a></div>";
+			var win = fwindow.create({
+				title : "操作提示",
+				maxable : false,
+				resizeable : false,
+				content : obj,
+				height : 150,
+				width : 400 
+			});
+			
+			$(win).find("#btn-yes").click(function(){
+				win.fwindow("close");
+				alert(true);
+				return true;
+			});
+			$(win).find("#btn-no").click(function(){
+				win.fwindow("close");
+				alert(false);
+				return false;
+			});
+		}
+		
+		function confirm_dialog(){
+			var result =confirm("111111111111");
+			alert(result);
+		}
+		
+	</script>
+</head>
+<body>
+	<input />
+
+	<div style="line-height:30px;">
+	
+		<input id='width' value='400'/>
+		<input id='height' value='300'/>
+	
+		<a style="margin-left: 10px;" href="javascript:openWin()">打开url窗口</a><br/>
+		
+		<a style="margin-left: 10px;" href="javascript:openWinNoA()">打开窗口没动画</a>
+		<a style="margin-left: 10px;" href="javascript:openHtmlWin()">打开html窗口</a>
+		<a style="margin-left: 10px;" href="javascript:openJqueryWin()">打开jQuery 对象窗口</a>
+	</div>
+	<input type="button" onclick="confirm_dialog()" value="测试弹出框"/>
+	<input type="button" onclick="alert(fwindow.parent())  " value="调父窗口方法"/>
+	<input type="button" onclick=" fwindow.resize({width:100,height:50}) " value="改变窗口大小"/>
+	<input type="button" onclick=" fwindow.drag({top:10,left:10}) " value="改变窗口位置"/>
+	<input type="button" onclick=" fwindow.destory()   " value="关闭"/>
+	
+	<select></select>
+</body>
+</html>

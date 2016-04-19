@@ -1,0 +1,791 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	
+	<!-- <link rel="stylesheet" href="../../release/freight/css/common.css"/> -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<!-- <link rel="stylesheet" href="../../src/css/richSelect.css" />richselect样式 -->
+	
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	<div class="wrap">
+		<div class="new-tab">
+			<div class="new-tab-menu">
+				<div class="new-tab-menu-cell  new-tab-menu-active">
+					<a class="new-tab-menu-link" href="javascript:"><span class="dot-point"></span><span>已合作(50)</span></a>
+				</div>
+				<span class="new-tab-menu-line"></span>
+				<div class="new-tab-menu-cell">
+					<a class="new-tab-menu-link" href="javascript:"><span class="dot-point"></span><span>作业信息</span></a>
+				</div>
+				
+			</div>
+			<div class="new-tab-cnt mt30">
+				<div class="nui-waterfall-item">
+					<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+					<div class="waterfall-item-cnt">
+						<div class="import-info-line">
+							<div class="import-info-left">
+								<span>今日发布</span>
+							</div>
+							<div class="import-info-right">
+								<span>
+									<a href="javascript:" class="import-freight-num j-numinfo">100</a>
+									条
+								</span>
+								<div class="nui-tips nui-tips-freight-num none">
+									<div class="nui-tips-arrow top top-middle">
+										◆ <em>◆</em>
+									</div>
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">
+												海运出口整箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												海运出口拼箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												空运
+												<span>100</span>
+												条
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="import-info-line mt15">
+							<div class="import-info-left">
+								<div class="import-state-tips">
+									<span class="text-success">
+										导入成功
+									</span>
+								</div>
+							</div>
+							<div class="import-info-right">
+								
+							</div>
+						</div>
+					</div>
+					<div class="waterfall-item-footer">
+						<div class="item-footer-left">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x358d;</i>
+								刷新
+							</a>
+						</div>
+						<div class="item-footer-right psr">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+								设置
+							</a>
+							<div class="nui-tips nui-tips-setup none">
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">设置互联规则</li>
+										<li class="nui-select-list-li">解绑</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+					<div class="waterfall-item-cnt">
+						<div class="import-info-line">
+							<div class="import-info-left">
+								<span>今日发布</span>
+							</div>
+							<div class="import-info-right">
+								<span>
+									<a href="javascript:" class="import-freight-num j-numinfo">100</a>
+									条
+								</span>
+								<div class="nui-tips nui-tips-freight-num none">
+									<div class="nui-tips-arrow top top-middle">
+										◆ <em>◆</em>
+									</div>
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">
+												海运出口整箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												海运出口拼箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												空运
+												<span>100</span>
+												条
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="import-info-line mt15">
+							<div class="import-info-left">
+								<div class="import-state-tips">
+									<span class="text-success">
+										导入成功
+									</span>
+								</div>
+							</div>
+							<div class="import-info-right">
+								
+							</div>
+						</div>
+						<div class="info-feadback">
+							<div class="info-feadback-cnt">
+								<h3>系统异常</h3>
+								<p>请联系我们</p>
+								<p>电话：1920312312</p>
+							</div>
+							<div class="info-mask"></div>
+						</div>
+					</div>
+					<div class="waterfall-item-footer">
+						<div class="item-footer-left">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x358d;</i>
+								刷新
+							</a>
+						</div>
+						<div class="item-footer-right psr">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+								设置
+							</a>
+							<div class="nui-tips nui-tips-setup none">
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">设置互联规则</li>
+										<li class="nui-select-list-li">解绑</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+					<div class="waterfall-item-cnt">
+						<div class="import-info-line">
+							<div class="import-info-left">
+								<span>今日发布</span>
+							</div>
+							<div class="import-info-right">
+								<span>
+									<a href="javascript:" class="import-freight-num j-numinfo">100</a>
+									条
+								</span>
+								<div class="nui-tips nui-tips-freight-num none">
+									<div class="nui-tips-arrow top top-middle">
+										◆ <em>◆</em>
+									</div>
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">
+												海运出口整箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												海运出口拼箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												空运
+												<span>100</span>
+												条
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="import-info-line mt15">
+							<div class="import-info-left">
+								<div class="import-state-tips">
+									<span class="text-warning">
+										资料异常！
+									</span>
+								</div>
+							</div>
+							<div class="import-info-right">
+								<a class="nui-btn nui-btn-orange" href="javascript:">去处理</a>
+							</div>
+						</div>
+					</div>
+					<div class="waterfall-item-footer">
+						<div class="item-footer-left">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x358d;</i>
+								刷新
+							</a>
+						</div>
+						<div class="item-footer-right psr">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+								设置
+							</a>
+							<div class="nui-tips nui-tips-setup none">
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">设置互联规则</li>
+										<li class="nui-select-list-li">解绑</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+					<div class="waterfall-item-cnt">
+						<div class="import-info-line">
+							<div class="import-info-left">
+								<span>今日发布</span>
+							</div>
+							<div class="import-info-right">
+								<span>
+									<a href="javascript:" class="import-freight-num j-numinfo">100</a>
+									条
+								</span>
+								<div class="nui-tips nui-tips-freight-num none">
+									<div class="nui-tips-arrow top top-middle">
+										◆ <em>◆</em>
+									</div>
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">
+												海运出口整箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												海运出口拼箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												空运
+												<span>100</span>
+												条
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="import-info-line mt15">
+							<div class="import-info-left">
+								<div class="import-state-tips">
+									<span class="">
+										正在导入...
+									</span>
+								</div>
+							</div>
+							<div class="import-info-right">
+								
+							</div>
+						</div>
+					</div>
+					<div class="waterfall-item-footer">
+						<div class="item-footer-left">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x358d;</i>
+								刷新
+							</a>
+						</div>
+						<div class="item-footer-right psr">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+								设置
+							</a>
+							<div class="nui-tips nui-tips-setup none">
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">设置互联规则</li>
+										<li class="nui-select-list-li">解绑</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+					<div class="waterfall-item-cnt">
+						<div class="import-info-line">
+							<div class="import-info-left">
+								<span>今日发布</span>
+							</div>
+							<div class="import-info-right">
+								<span>
+									<a href="javascript:" class="import-freight-num j-numinfo">100</a>
+									条
+								</span>
+								<div class="nui-tips nui-tips-freight-num none">
+									<div class="nui-tips-arrow top top-middle">
+										◆ <em>◆</em>
+									</div>
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">
+												海运出口整箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												海运出口拼箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												空运
+												<span>100</span>
+												条
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="import-info-line mt15">
+							<div class="import-info-left">
+								<div class="import-state-tips">
+									<span class="text-success">
+										导入成功
+									</span>
+								</div>
+							</div>
+							<div class="import-info-right">
+								
+							</div>
+						</div>
+					</div>
+					<div class="waterfall-item-footer">
+						<div class="item-footer-left">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x358d;</i>
+								刷新
+							</a>
+						</div>
+						<div class="item-footer-right psr">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+								设置
+							</a>
+							<div class="nui-tips nui-tips-setup none">
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">设置互联规则</li>
+										<li class="nui-select-list-li">解绑</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+					<div class="waterfall-item-cnt">
+						<div class="import-info-line">
+							<div class="import-info-left">
+								<span>今日发布</span>
+							</div>
+							<div class="import-info-right">
+								<span>
+									<a href="javascript:" class="import-freight-num j-numinfo">100</a>
+									条
+								</span>
+								<div class="nui-tips nui-tips-freight-num none">
+									<div class="nui-tips-arrow top top-middle">
+										◆ <em>◆</em>
+									</div>
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">
+												海运出口整箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												海运出口拼箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												空运
+												<span>100</span>
+												条
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="import-info-line mt15">
+							<div class="import-info-left">
+								<div class="import-state-tips">
+									<span class="text-success">
+										导入成功
+									</span>
+								</div>
+							</div>
+							<div class="import-info-right">
+								
+							</div>
+						</div>
+					</div>
+					<div class="waterfall-item-footer">
+						<div class="item-footer-left">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x358d;</i>
+								刷新
+							</a>
+						</div>
+						<div class="item-footer-right psr">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+								设置
+							</a>
+							<div class="nui-tips nui-tips-setup none">
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">设置互联规则</li>
+										<li class="nui-select-list-li">解绑</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="new-tab-footer">
+					<div class="page">
+						<input type="hidden" id="pageNo" name="pageNo" value="1">				
+						<span class="pageInfo">1-30条，共278条</span>
+						<a href="javascript:nextPage();">下一页</a>
+						<a href="javascript:buildData(10);">尾页</a>
+					</div>
+				</div>
+			</div>
+			<div class="new-tab-cnt none mt30">
+				<div class="nui-waterfall-item">
+					<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+					<div class="waterfall-item-cnt">
+						<div class="import-info-line">
+							<div class="import-info-left">
+								<span>今日发布</span>
+							</div>
+							<div class="import-info-right">
+								<span>
+									<a href="javascript:" class="import-freight-num j-numinfo">100</a>
+									条
+								</span>
+								<div class="nui-tips nui-tips-freight-num none">
+									<div class="nui-tips-arrow top top-middle">
+										◆ <em>◆</em>
+									</div>
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">
+												海运出口整箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												海运出口拼箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												空运
+												<span>100</span>
+												条
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="import-info-line mt15">
+							<div class="import-info-left">
+								<div class="import-state-tips">
+									<span class="text-success">
+										导入成功
+									</span>
+								</div>
+							</div>
+							<div class="import-info-right">
+								
+							</div>
+						</div>
+					</div>
+					<div class="waterfall-item-footer">
+						<div class="item-footer-left">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x358d;</i>
+								刷新
+							</a>
+						</div>
+						<div class="item-footer-right psr">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+								设置
+							</a>
+							<div class="nui-tips nui-tips-setup none">
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">设置互联规则</li>
+										<li class="nui-select-list-li">解绑</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+					<div class="waterfall-item-cnt">
+						<div class="import-info-line">
+							<div class="import-info-left">
+								<span>今日发布</span>
+							</div>
+							<div class="import-info-right">
+								<span>
+									<a href="javascript:" class="import-freight-num j-numinfo">100</a>
+									条
+								</span>
+								<div class="nui-tips nui-tips-freight-num none">
+									<div class="nui-tips-arrow top top-middle">
+										◆ <em>◆</em>
+									</div>
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">
+												海运出口整箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												海运出口拼箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												空运
+												<span>100</span>
+												条
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="import-info-line mt15">
+							<div class="import-info-left">
+								<div class="import-state-tips">
+									<span class="text-success">
+										导入成功
+									</span>
+								</div>
+							</div>
+							<div class="import-info-right">
+								
+							</div>
+						</div>
+						<div class="info-feadback">
+							<div class="info-feadback-cnt">
+								<h3>系统异常</h3>
+								<p>请联系我们</p>
+								<p>电话：1920312312</p>
+							</div>
+							<div class="info-mask"></div>
+						</div>
+					</div>
+					<div class="waterfall-item-footer">
+						<div class="item-footer-left">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x358d;</i>
+								刷新
+							</a>
+						</div>
+						<div class="item-footer-right psr">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+								设置
+							</a>
+							<div class="nui-tips nui-tips-setup none">
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">设置互联规则</li>
+										<li class="nui-select-list-li">解绑</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+					<div class="waterfall-item-cnt">
+						<div class="import-info-line">
+							<div class="import-info-left">
+								<span>今日发布</span>
+							</div>
+							<div class="import-info-right">
+								<span>
+									<a href="javascript:" class="import-freight-num j-numinfo">100</a>
+									条
+								</span>
+								<div class="nui-tips nui-tips-freight-num none">
+									<div class="nui-tips-arrow top top-middle">
+										◆ <em>◆</em>
+									</div>
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">
+												海运出口整箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												海运出口拼箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												空运
+												<span>100</span>
+												条
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="import-info-line mt15">
+							<div class="import-info-left">
+								<div class="import-state-tips">
+									<span class="text-warning">
+										资料异常！
+									</span>
+								</div>
+							</div>
+							<div class="import-info-right">
+								<a class="nui-btn nui-btn-orange" href="javascript:">去处理</a>
+							</div>
+						</div>
+					</div>
+					<div class="waterfall-item-footer">
+						<div class="item-footer-left">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x358d;</i>
+								刷新
+							</a>
+						</div>
+						<div class="item-footer-right psr">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+								设置
+							</a>
+							<div class="nui-tips nui-tips-setup none">
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">设置互联规则</li>
+										<li class="nui-select-list-li">解绑</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+					<div class="waterfall-item-cnt">
+						<div class="import-info-line">
+							<div class="import-info-left">
+								<span>今日发布</span>
+							</div>
+							<div class="import-info-right">
+								<span>
+									<a href="javascript:" class="import-freight-num j-numinfo">100</a>
+									条
+								</span>
+								<div class="nui-tips nui-tips-freight-num none">
+									<div class="nui-tips-arrow top top-middle">
+										◆ <em>◆</em>
+									</div>
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">
+												海运出口整箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												海运出口拼箱
+												<span>100</span>
+												条
+											</li>
+											<li class="nui-select-list-li">
+												空运
+												<span>100</span>
+												条
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="import-info-line mt15">
+							<div class="import-info-left">
+								<div class="import-state-tips">
+									<span class="">
+										正在导入...
+									</span>
+								</div>
+							</div>
+							<div class="import-info-right">
+								
+							</div>
+						</div>
+					</div>
+					<div class="waterfall-item-footer">
+						<div class="item-footer-left">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x358d;</i>
+								刷新
+							</a>
+						</div>
+						<div class="item-footer-right psr">
+							<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+								设置
+							</a>
+							<div class="nui-tips nui-tips-setup none">
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">设置互联规则</li>
+										<li class="nui-select-list-li">解绑</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="new-tab-footer">
+					<div class="page">
+						<input type="hidden" id="pageNo" name="pageNo" value="1">				
+						<span class="pageInfo">1-30条，共278条</span>
+						<a href="javascript:nextPage();">下一页</a>
+						<a href="javascript:buildData(10);">尾页</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+	<!--#include file="footer.html"-->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/unicom-freight/manage.js"></script>	
+</body>
+</html>

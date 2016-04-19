@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>运价维护</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<!-- 此js仅供参考，详细请参照服务人员添加的结构 -->
+	<script>
+		$(function() {
+			var $tabMenu = $('li.nui-tab-menu-cell');
+			var $tabCnt = $('div.nui-tab-cnt');
+			$tabMenu.click(function() {
+				var index = $(this).index();
+				$tabMenu.removeClass("nui-tab-menu-active");
+				$(this).addClass('nui-tab-menu-active');
+				$tabCnt.hide().eq(index).show();
+			});
+
+			// 客服人员删除
+			// var $tagsdel = $('li.nui-tags-del');
+			var $add = $('a.j-add-tags');
+			var $tagsdel = $('<div class=\"nui-tags-del\"> <a class=\"close\" href=\"javascript:\">×</a> </div>');
+			var $inputTxt = $('.add-input-group').children('.nui-input').text();
+			
+			// var $delbtn = $('.nui-tags-del');
+			// var $tagsbox = $('table.nui-manage-table'),
+			var $tagsbox = $('.nui-tags-new');
+				$tagCell = $tagsbox.find('li.nui-tags-cell');
+				$tagCell.append($tagsdel);
+
+			$tagsbox.delegate('.nui-tags-cell', 'mouseenter', function() {
+				$(this).children($('.nui-tags-del')).show();
+			 	$(this).addClass('hover');
+			}).delegate('.nui-tags-cell', 'mouseleave', function() {
+				$(this).children($('.nui-tags-del')).hide();
+			 	$(this).removeClass('hover');
+			}).delegate('.nui-tags-del', 'click', function() {
+				$(this).parent().remove();
+			})
+
+			// ============================
+			$('.nui-sign').delegate('.nui-sign-cell', 'click', function() {
+				// var $info = $(this).text();
+				var $newTagCell = $("<li class=\"nui-tags-cell\">"+ $(this).text() +"<div class=\"nui-tags-del\"><a class=\"close\" href=\"javascript:\">×</a></div></li>"
+					);
+			 	$(this).addClass('active').siblings().removeClass("active");
+			 	$(this).parents('.nui-sign-line').addClass('none');
+			 	$tagsbox.append($newTagCell);
+			});
+
+			$('a.j-edit-sign').click(function() {
+				$('.nui-sign').removeClass('none');
+				$(this).text('取消').addClass('j-cancel');
+			});
+
+			$('a.j-cancel').click(function() {
+				$('.nui-sign').addClass('none');
+				$(this).text('确定').removeClass('j-cancel');
+			});
+			
+		})
+	</script>
+</head>
+<body>
+
+<div class="fui-dialog">
+	<div class="fui-dialog-title">
+		<h4 class="tal">企业标签设置</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt" style="width:630px;height:360px;">
+		<div class="">
+			<div class="nui-sign-title">
+				<span class="pr20">你已勾选了 <span class="text-orange">100</span> 企业 </span> 
+				<span class="tips"><i class="mr5">&#x3573;</i> 选择标签,替换所有已选企业当前类别下的标签内容</span>
+			</div>
+			<ul class="nui-tags nui-tags-new h28">
+				
+			</ul>
+			<div class="hrd"></div>
+			<div class="nui-sign">
+				<div class="nui-sign-line">
+					<label for="" class="nui-label">客户类型：</label>
+					<div class="nui-sign-content w500">
+						<a href="javascript:" class="nui-sign-cell active">全部</a>
+						<a href="javascript:" class="nui-sign-cell">全部1</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						<a href="javascript:" class="nui-sign-cell">全部1</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						
+					</div>
+				</div>
+				<div class="nui-sign-line">
+					<label for="" class="nui-label">客户等级：</label>
+					<div class="nui-sign-content w500">
+						<a href="javascript:" class="nui-sign-cell active">全部</a>
+						<a href="javascript:" class="nui-sign-cell">全部1</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+			
+					</div>
+				</div>
+				<div class="nui-sign-line">
+					<label for="" class="nui-label">公司规模：</label>
+					<div class="nui-sign-content w500">
+						<a href="javascript:" class="nui-sign-cell active">全部</a>
+						<a href="javascript:" class="nui-sign-cell">全部1</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						<a href="javascript:" class="nui-sign-cell">全部3</a>
+						<a href="javascript:" class="nui-sign-cell">全部1</a>
+					</div>
+				</div>
+				<div class="nui-sign-line">
+					<label for="" class="nui-label">所属公司：</label>
+					<div class="nui-sign-content w500">
+						<a href="javascript:" class="nui-sign-cell active">全部</a>
+						<a href="javascript:" class="nui-sign-cell">全部1</a>
+						<a href="javascript:" class="nui-sign-cell">dawdwadwadawda</a>
+						<a href="javascript:" class="nui-sign-cell">全部1</a>
+						<a href="javascript:" class="nui-sign-cell">dawdwadwadawda</a>
+						<a href="javascript:" class="nui-sign-cell">dawdwadwadawda</a>
+						<a href="javascript:" class="nui-sign-cell">dawdwadwadawda</a>
+					</div>
+				</div>
+				<div class="nui-sign-line">
+					<label for="" class="nui-label">所属公司：</label>
+					<div class="nui-sign-content w500">
+						<a href="javascript:" class="nui-sign-cell active">全部</a>
+						<a href="javascript:" class="nui-sign-cell">全部1</a>
+						<a href="javascript:" class="nui-sign-cell">dawdwadwadawda</a>
+						<a href="javascript:" class="nui-sign-cell">全部1</a>
+						<a href="javascript:" class="nui-sign-cell">dawdwadwadawda</a>
+						<a href="javascript:" class="nui-sign-cell">dawdwadwadawda</a>
+						<a href="javascript:" class="nui-sign-cell">dawdwadwadawda</a>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>下一步</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+</body>
+</html>

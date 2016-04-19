@@ -1,0 +1,29 @@
+/* 隐藏, 通常用来与 JS 配合 */
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+.hide {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+.opacity0 {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}

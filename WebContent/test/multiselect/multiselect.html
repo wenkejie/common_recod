@@ -1,0 +1,62 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css">
+	<link rel="stylesheet" href="../../release/jqueryplugin/jquery.multiselect.css">
+	<link rel="stylesheet" href="../../release/jqueryplugin/jquery.multiselect.filter.css">
+	<script type="text/javascript" src="../../release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-2.0.min.js"></script>
+	<script type="text/javascript" src="../../src/js/jquery.multiselect.js"></script>
+	<script type="text/javascript" src="../../release/jqueryplugin/jquery.multiselect.filter.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$("#j-loadport").multiselect({
+			click:function(){
+				//alert();
+			},
+			footer:true,
+			selectedList:10,//可以显示的选项
+	        multiple:true,//是否多选 
+	        isimg:false,
+	        header:"",
+			close: function(){
+				$("textarea").empty();
+	        	var sdf =  $("select").multiselect("getChecked").map(function(){
+					$("textarea").append(this.title+"=="+this.value+"；");
+	        		return this.value;    
+	           }).get();
+	           
+	         }
+		}).multiselectfilter({
+			label:"Filter",
+			width:200,
+			placeholder:"请输入"
+		});
+		
+	});
+	
+	</script>
+</head>
+<body>
+<div>
+<textarea rows="5" cols="80" id="textarea"></textarea>
+<br/>
+		<select id="j-loadport" multiple="multiple" name="loadport_id"
+			style="width: 370px">
+			<option value="NINGBO">NINGBO，宁波</option>
+			<option value="SHANGHAI">SHANGHAI，上海</option>
+			<option value="TIANJING">TIANJING，天津</option>
+			<option value="QINGDAO">QINGDAO，青岛</option>
+			<option value="XIAMEN">XIAMEN，厦门</option>
+			<option value="DUBAI">DUBAI，迪拜</option>
+			<option value="123">123</option>
+			<option value="444">444</option>
+			<option value="555">6666</option>
+		</select>
+	</div>
+	
+</body>
+</html>

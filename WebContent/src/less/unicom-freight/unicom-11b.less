@@ -1,0 +1,364 @@
+// ====================运价互联，by:Evan=================
+// =====================================================
+
+.table-container-transform{
+	*position: relative;
+	height: 300px;padding-right: 10px;
+	overflow-y: auto;*overflow-x: hidden;
+}
+
+.nui-process{
+	width: 100%;
+	font-size: 0;
+}
+
+.nui-process-items{
+	position: relative;
+	display: inline-block;*display: inline;*zoom: 1;
+	width: 20%;height: 25px;
+	background-color: #ebebeb;
+	text-align: center;font-size: 14px;
+	vertical-align: middle;
+}
+
+
+.nui-process-icon{
+	position: absolute;left: -8px;top: 50%;z-index: 1;
+	width: 32px;height: 32px;margin-top: -16px;
+	border-radius: 50%;
+	font-size: 32px;color: #fff;
+}
+
+.process-icon-num{
+	position: absolute;left: 50%;top: 50%;
+	width: 28px;height: 28px;margin-top: -14px;margin-left: -14px;
+	line-height: 28px;
+	text-align: center;font-size: 28px;color: #999;	
+}
+
+.process-items-info{
+	height: 25px;line-height: 25px;
+	color: #999;font-weight: bold;
+}
+
+
+.nui-process-active{
+	background-color: #c6e5fe;
+	.process-icon-num,.process-items-info{
+		color: #0082ec;
+	}
+}
+
+.nui-process-current{
+	background-color: #0082ec;
+	.process-icon-num{
+		color: #0082ec;
+	}
+	.process-items-info{
+		color: #fff;
+	}
+}
+
+.process-end-bd{
+	position: absolute;right: -8px;top: 0;z-index: 1;
+	width: 25px;height: 25px;line-height: 25px;
+	font-size: 26px;
+	color: #ebebeb;
+}
+
+
+
+// 转换表格
+// 
+
+.nui-table-transform{
+	table-layout: fixed;
+	td,th{
+		border: 1px solid #ddd;border-right: none;
+	}
+	th{
+		background-color: #ebebeb;
+	}
+	td{
+		&:extend(.wordbreak all);
+		height: 35px;
+	}
+	.turn-rol{
+		background-color: #f9f9f9;
+		border: 1px dashed #ddd;
+	}
+	.turn-error{
+		border:1px solid red;
+	}
+}
+
+
+
+// 搜索结构
+
+.unicom-search{
+	width: 695px;
+	// margin: 0 auto;
+	padding-bottom: 30px;
+}
+
+
+.unicom-search-tab{
+	&:extend(.clearfix all);
+	width: 820px;
+	margin: 0 auto;
+}
+
+.search-tab-cell{
+	float: left;
+	padding: 0 13px;
+	height: 30px;line-height: 30px;
+	background-color: #fff;
+	border:none;
+	text-align: center;
+	cursor: pointer;
+	color: #666;font-size: 14px;font-weight: bold;
+}
+
+.unicom-search-content{
+	&:extend(.clearfix all);
+	width: 820px;
+	margin: 0 auto;
+	height: 36px;
+	border: 3px solid #0082ec;
+	border-right: none;
+}
+
+.unicom-search-disable{
+	border-color: #d5d5d5;
+}
+
+.search-input{
+	width: 100%;height: 36px;line-height: 36px;*height: 34px;
+	border: none;background-color: transparent;
+}
+
+.unicom-search-area{
+	position: relative;
+	padding-left: 30px;
+	padding-right: 90px;
+	background-color: #fff;
+}
+.unicom-search-addon{
+	position: absolute;
+	left: 0;top: 0;z-index: 1;
+	width: 30px;height: 36px;line-height: 36px;
+	text-align: center;color: #999;
+}
+
+.unicom-search-btn{
+	position: absolute;
+	right: 0;top: 0;z-index: 1;
+	width: 90px;height: 36px;line-height: 36px;*height:39px;
+	background-color: #0082ec;
+	text-align: center;color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	&:hover{
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+
+
+
+// 搜索组合
+.unicom-search-group{
+	width: auto;
+	margin: inherit;
+	.unicom-search-content{
+		// display: inline-block;*display: inline;
+		vertical-align: middle;
+	}
+}
+
+.unicom-search-link{
+	display: inline-block;*display: inline;
+	vertical-align: middle;
+	width: 35px;height: 35px;margin-left: 5px;
+	text-align: center;
+	color: #666;
+	&:hover{
+		text-decoration: none;
+	}
+	&.no-history{
+		color: #999;
+	}
+}
+
+.search-tab-current{
+	height: 33px;
+    margin-bottom: -3px;
+    cursor: default;
+	background-color: #0082ec;
+	color: #fff;
+}
+
+
+// 互联查询结构列表
+.unicom-search-list{
+	table-layout: fixed;
+	border: none;
+	th{
+		padding: 10px 9px;
+		color: #333;
+		background-color: #eee;
+		background-color: #f7f7f7;border-top: 1px solid #ddd;
+	}
+	tr{
+		color: #666;
+	}
+	td{
+		&:extend(.wordbreak all);
+		vertical-align: top;
+		padding: 15px 9px;
+		background-color: #fff;
+		font-size: 14px;
+		border-bottom: 1px solid #ddd;
+	}
+	.table-nodata{
+		vertical-align: middle;
+	}
+	.cp-name{
+		font-weight: bold;
+		color: #666;
+		text-decoration: underline;
+	}
+	.cp-name-del{
+		font-weight: bold;
+		color: #1c8ddc;
+		text-decoration: none;
+	}
+	tr:hover{
+		.cp-name{
+			color: #0082ec;
+		}
+	}
+}
+
+
+.table-transform-nodata{
+	height: 240px;line-height: 240px;
+	text-align: center;
+}
+
+
+.unicom-search-slidedown{
+	position: absolute;left: -3px;top: 36px;z-index: 1;
+	// width: 682px;
+	width: 727px;
+	// width: 601px;
+	min-height: 200px;_height: 200px;
+	background-color: #fff;border: 2px solid #ddd;
+}
+
+.route-list{
+	padding: 20px 0 20px 20px;
+	font-size: 0;
+}
+
+.route-list-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	width: 20%;
+	
+	font-size: 12px;
+}
+.route-list-link{
+	display: block;*zoom:1;
+	padding-bottom: 3px;padding-top: 4px;margin-right: 20px;
+	border-bottom: 1px solid #ddd;
+	color: #666;
+}
+
+
+
+.unicom-recommend{
+	.title{
+		padding: 10px 0;
+		font-size: 16px;color: #333;font-weight: bold;
+	}
+}
+// ========== 12-1 ==============
+.unicom-search-area-esp{
+	padding-left: 0;
+	overflow: hidden;
+}
+.search-input-area{
+	float: left;
+	padding-right: 10px;
+	border-right: 1px solid #4ca7f2;
+}
+
+.search-input-area-last{
+	border-right: none;
+	padding-right: 0;
+}
+
+.search-input-line{
+	*display:inline-block;
+	vertical-align: middle;
+	height: 14px;
+	width: 0;
+	border-left: 1px solid #ebebeb;	
+}
+.search-input-small{
+	padding-left: 10px;
+	width: 180px;
+	// width: 179px;
+}
+.search-input-smaller{
+	padding-left: 10px;
+	width: 140px;
+}
+
+.search-input-company{
+	width: 190px;
+}
+
+.headth-first{
+	border-left: 1px solid #ddd;
+}
+.headth-last{
+	border-right: 1px solid #ddd;
+}
+.table-line-even td{
+	background-color: #f7f7f7;
+}
+.unicom-search-list .color-esp{
+	color: #333;
+} 
+.icon-more-tips{
+	padding-left: 5px;
+	font-size: 14px;
+	cursor: pointer;
+	color: #1c8ddc;
+}
+// 绑定历史
+.bindhistory-area{
+	padding:10px 0 ;
+	color: #999;
+	label{
+		color: #333;
+	}
+}
+.cp-name-icon{
+	display: inline-block;
+	width: 63px;
+	height: 18px;margin-bottom: 3px;
+	background-image: url(../../../release/freight/images/unicom-freight/manager-icon.png);
+	background-repeat: no-repeat;
+}
+.icon-connect{
+	vertical-align: top;
+	padding-left: 5px;
+	cursor: pointer;
+	color: #1c8ddc;
+}
+
+

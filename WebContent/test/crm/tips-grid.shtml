@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://fcommon.600jit.com/fcommon/release/freight/css/common-v1.2.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+			<div class="nui-shadow-grid nui-openwin w500 clearfix">
+				
+				<div class="clearfix">
+					<div class="left pl10">
+						<img class="user-img " src="../../src/images/crm/tx1.jpg">
+						<span class="dpb tac">大掌柜</span>
+					</div>
+					<div class="info-list-cell ml80">
+						<h2 class="fwb">我的xxx的小伙伴</h2>
+						<div class="pb10">长荣11月22日大火围困的卡我的卡瓦达我看到到家啦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦</div>
+					</div>
+				</div>
+				<a href="javascript:" class="nui-btn nui-btn-primary right"><span>我知道了</span></a>
+			</div>
+
+</body>
+</html>

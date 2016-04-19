@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>详情界面</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<link rel="stylesheet" href="../../release/freight/css/zTreeStyle/zTreeStyle.css" />
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../release/freight/js/jquery.ztree.all-3.5.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="headNav.js"></script>
+
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+<!--弹窗的内容复制 -->
+<div class="fui-dialog" >
+	<div class="fui-dialog-title">
+		<h4 class="tal">详情</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+		</div>
+	<div class="fui-dialog-cnt clearfix">
+			<div class="left">
+				<ul class="left-sideBar">
+					<li class="left-sideBar-cell left-sideBar-cell-active"><a class="left-sideBar-cell-link" href="#1"><span class="dpib vam">全部权限</span><i class="circle">&#xf0009;</i></a></li>
+					<li class="left-sideBar-cell"><a class="left-sideBar-cell-link" href="#2"><span class="dpib vam">生意通</span><i class="circle">&#xf0009;</i></a></li>
+					<li class="left-sideBar-cell"><a class="left-sideBar-cell-link" href="#3"><span class="dpin vam">客户管理</span><i class="circle">&#xf0009;</i></a></li>
+					<li class="left-sideBar-cell"><a class="left-sideBar-cell-link" href="#4"><span class="dpib vam">运价通</span><i class="circle">&#xf0009;</i></a></li>
+					<li class="left-sideBar-cell"><a class="left-sideBar-cell-link" href="#5"><span class="dpib vam">公告管理</span><i class="circle">&#xf0009;</i></a></li>
+				</ul>
+			</div>
+			<div class="left nui-shadow-box h350 ofa">
+				<table class="params-list table-thr" id="1">
+					<thead>
+						<tr>
+							<th colspan="4"><span class="title">海运整箱-运价查询</span> <a href="javascript:" class="selectall" id="">全选</a> / <a href="javascript:" class="reverse" id="">反选</a></th> 
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td width="15"><input type="checkbox" id="" name="items"></td><td class="params-list-title">航线控制</td><td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td><td class="action"></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="params-list table-thr" id="2">
+					<thead>
+						<tr>
+							<th colspan="4"><span class="title">海运整箱-运价查询</span> <a href="javascript:" class="selectall" id="">全选</a> / <a href="javascript:" class="reverse" id="">反选</a></th> 
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td width="15"><input type="checkbox" id="" name="items"></td><td class="params-list-title">航线控制</td><td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td><td class="action"></td>
+						</tr>
+					</tbody>
+					
+				</table>
+				<table class="params-list table-thr" id="3">
+					<thead>
+						<tr>
+							<th colspan="4"><span class="title">海运整箱-运价查询</span> <a href="javascript:" class="selectall" id="">全选</a> / <a href="javascript:" class="reverse" id="">反选</a></th> 
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td width="15"><input type="checkbox" id="" name="items"></td><td class="params-list-title">航线控制</td><td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td><td class="action"></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="params-list table-thr" id="4">
+					<thead>
+						<tr>
+							<th colspan="4"><span class="title">海运整箱-运价查询</span> <a href="javascript:" class="selectall" id="">全选</a> / <a href="javascript:" class="reverse" id="">反选</a></th> 
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td width="15"><input type="checkbox" id="" name="items"></td><td class="params-list-title">航线控制</td><td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td><td class="action"></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="params-list table-thr" id="5">
+					<thead>
+						<tr>
+							<th colspan="4"><span class="title">海运整箱-运价查询</span> <a href="javascript:" class="selectall" id="">全选</a> / <a href="javascript:" class="reverse" id="">反选</a></th> 
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td width="15"><input type="checkbox" id="" name="items"></td><td class="params-list-title">航线控制</td><td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td><td class="action"></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="params-list table-thr" id="5">
+					<thead>
+						<tr>
+							<th colspan="4"><span class="title">海运整箱-运价查询</span> <a href="javascript:" class="selectall" id="">全选</a> / <a href="javascript:" class="reverse" id="">反选</a></th> 
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td width="15"><input type="checkbox" id="" name="items"></td><td class="params-list-title">航线控制</td><td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td><td class="action"></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="params-list table-thr" id="5">
+					<thead>
+						<tr>
+							<th colspan="4"><span class="title">海运整箱-运价查询</span> <a href="javascript:" class="selectall" id="">全选</a> / <a href="javascript:" class="reverse" id="">反选</a></th> 
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td width="15"><input type="checkbox" id="" name="items"></td><td class="params-list-title">航线控制</td><td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td><td class="action"></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="params-list table-thr" id="5">
+					<thead>
+						<tr>
+							<th colspan="4"><span class="title">海运整箱-运价查询</span> <a href="javascript:" class="selectall" id="">全选</a> / <a href="javascript:" class="reverse" id="">反选</a></th> 
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td width="15"><input type="checkbox" id="" name="items"></td><td class="params-list-title">航线控制</td><td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td><td class="action"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+	<div class="fui-dialog-btm-bar pss"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+
+<!-- ================= -->		
+<!--#include file="footer.html"-->
+</body>
+</html>

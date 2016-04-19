@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://fcommon.600jit.com/fcommon/release/freight/css/common-v1.2.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="fui-dialog" style="width:600px;">
+		<div class="fui-dialog-title">
+			<h4 class="tal">广告上传</h4>
+			<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+			</div>
+		<div class="fui-dialog-cnt">
+			<div class="pd10">
+				<a href="javascript:" class="nui-file-upload nui-btn nui-btn-primary">
+					<i>㓮</i> 上传图片
+					<input type="file" name="client_logo" id="client_logo" style="*width:100px;" class="nui-file-upload-input">
+				</a>
+				<p>此类型广告支持jpg,gif,png格式，文件小于5m</p>
+				<label class="nui-checkbox" for=""><input type="checkbox" id="" name="">上传原始图片，生成高清广告图像</label>
+				<div class="ad-banner-picture">
+					<img src="" alt="" />
+				</div> 
+			</div>
+		</div> 
+		<div class="fui-dialog-btm-bar pss"> 
+			<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+		</div> 
+	</div>
+</body>
+</html>

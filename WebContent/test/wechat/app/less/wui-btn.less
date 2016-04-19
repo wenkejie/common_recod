@@ -1,0 +1,84 @@
+//
+// 按钮
+// --------------------------------------------------
+// 常量
+@btn-default-border:#ccc;
+@btn-default-bg:#fff;
+// @normal-height:            2.813rem;
+
+// ========mixin
+.button-size(@height:@normal-height;@padding:1.063rem;@font-size:1rem;@border-radius:0.188rem){
+  height: @normal-height;
+  line-height: @height - 0.125rem;
+  padding-left: @padding;
+  padding-right: @padding;
+  font-size: @font-size;
+  border-radius: @border-radius;
+}
+
+// // 改过的button,所有按钮都改成了渐变
+.button-type(@btn-bg1;@btn-bg2;@border-color;@btn-color){
+  border-color: darken(@border-color, 5%);
+  .linear(@btn-bg1,@btn-bg2);
+  color: @btn-color;
+
+  &:hover{
+    border-color: darken(@border-color, 15%);
+    .linear(@btn-bg1,@btn-bg2);
+  }
+}
+
+
+// 按钮样式开始
+.wui-btn{
+  display: block;
+  width: 100%;
+  vertical-align: middle;cursor: pointer;border: 1px solid #ccc;
+  font-weight: 700;text-align: center;white-space: nowrap;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  // background-color: @btn-default-bg;
+  .button-type(#fff;#f5f5f5;#cfcfcf;#666);
+  .button-size;
+  outline: none;
+
+  &:active,
+  &.active {
+    outline: 0;
+    // background-image: none;
+    box-shadow:inset 0 3px 5px rgba(0,0,0,.125);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+    .button-type(#a7d5f2;#a0d0ef;#a0cce3;#fff);
+  }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.wui-btn-inline{
+  display: inline-block;
+  width: auto;
+}
+
+// // Success appears as green
+.wui-btn-success {
+  .button-type(#02c556;#00bc51;#02ab4b;#fff);
+}
+// // Info appears as blue-green
+.wui-btn-primary {
+  .button-type(#1497eb;#0089e1;#027fbe;#fff);
+}
+// // Warning appears as orange
+.wui-btn-warning {
+  .button-type(#ffbf67;#ffb042;#f1a63d;#fff);
+}
+// // Danger and error appear as red
+.wui-btn-danger {
+  .button-type(#eb6464;#ed4545;#ce4342;#fff);
+}

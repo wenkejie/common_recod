@@ -1,0 +1,143 @@
+﻿@charset "utf-8";
+
+// 基础配置
+
+
+
+
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+
+// ============================
+
+.city_input{border:1px solid #d6d6d6;width:180px;height:28px;background:url(../img/ts-indexcity.png) no-repeat;line-height:28px;margin-top:5px;text-indent:5px;}
+
+
+.list-ul{
+	&:extend(.clearfix all);
+	li{
+		width: 25%;
+		a{
+			display: inline-block;*zoom:1;
+		}
+	}
+}
+
+
+.provinceCityAll{
+	.hotCityAll{
+		li{
+			width: 25%;
+			text-align: left;
+			a{
+				display: inline-block;*zoom:1;
+				padding: 0 5px;
+				text-align: left;
+				&:hover{
+					background: #0089e1;border-radius: 2px;
+					input{
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+.provinceCityAll{
+	.provinceAll,.cityAll,.countyAll{
+		.list{
+			li{
+				width: 33.3%;
+				text-align: center;
+				a{
+					display: inline-block;*zoom:1;
+					padding: 0 5px;
+					text-align: left;
+					&:hover{
+						background: #0089e1;border-radius: 2px;
+						color: #fff;
+					}
+				}
+			}
+		}	
+	}
+}
+  
+
+
+.provinceCityAll {
+	width: 310px;
+	.tabs{
+		padding: 10px 10px 0 10px;height: 29px;
+		background: #fff;
+		border-left: 1px solid #ccc;border-right: 1px solid #ccc;border-top: 1px solid #ccc;border-bottom: 1px solid #0089e1;
+		ul{
+			&:extend(.clearfix all);
+		}
+		li{
+			width: 72px;height: 30px;
+			a{
+				color: #666;
+				display: block;*zoom:1;
+				width: 70px;
+				background: #f7f7f7;border-left: 1px solid #d2d2d2;border-right: 1px solid #d2d2d2;border-top: 1px solid #d2d2d2;
+				&.current{
+					background: #fff;border-top: 1px solid #0089e1;border-left: 1px solid #0089e1;border-right: 1px solid #0089e1;
+					color: #666;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*============================================*/
+/*基础配置*/
+
+.clearfix {
+  *zoom: 1;
+}
+
+
+.clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clearfix:after {
+    clear: both;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>订舱详情</title>
+	<link rel="stylesheet" href="../../release/jqueryplugin/spinner/jquery.spinner.css" /><!-- 加减控件样式 -->
+	<link rel="stylesheet" href="../../release/freight/css/ebooking.css" />
+</head>
+<body>
+	<div class="eui-top">
+		<div class="eui-top-content">
+			<div class="eui-top-left"><span>2014版运价通体验公司</span></div>
+			<ul class="eui-topbar">
+				<li class="eui-topbar-cell">
+					<a class="eui-topbar-link" href="javascript:">回到运价首页</a>
+				</li>
+				<li class="eui-topbar-cell">
+					<a class="eui-topbar-link" href="javascript:"><span>你好，</span>王尼玛</a>
+				</li>
+				<li class="eui-topbar-cell eui-topbar-cell-last">
+					<a class="eui-topbar-link eui-topbar-quit" href="javascript:">退出</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="eui-header">
+		<div class="eui-header-content">
+			<h1 class="eui-logo mt5">
+			    <a href="javascript:"></a>
+			    咖狗网-中国领先的国际物流电子商务平台
+			</h1>
+			<div class="eui-header-info">
+				订舱详情
+			</div>
+			<ul class="eui-process">
+				<li class="eui-process-cell eui-process-current">
+					订舱
+				</li>
+				<li class="eui-process-cell">
+					舱位确定
+				</li>
+				<li class="eui-process-cell">
+					上船离港
+				</li>
+				<li class="eui-process-cell eui-process-cell-last">
+					到港
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="eui-body">
+		<div class="eui-blank-line"></div>
+		<div class="eui-body-content">
+			<div class="eui-panel eui-panel-item h500 mt20">
+				<div class="eui-panel-bd">
+					<div class="eui-lost-area">
+						<div class="eui-lost-cnt">
+							<p>Sorry</p>
+							<p>此条运价已停航。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="eui-footer">
+		<div class="eui-footer-content"><a href="javascript:"><img src="../../release/freight/images/ebooking/login_logo.gif" height="19" width="68" alt="" /></a>版权所有 © 2014 奥林科技(宁波)有限公司</div>
+	</div>
+	<!-- 插件及js应用 -->
+	<!-- Jquery引入 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryplugin/spinner/jquery.spinner.js"></script><!-- 控件 -->
+	<script type="text/javascript" src="../../release/freight/js/ebooking/ebooking.js"></script><!-- ebooking 1.2添加 -->
+	<!-- js end -->
+	<script type="text/javascript">
+		$('.spinner').spinner({value:0,max : 5});
+	</script>
+</body>
+</html>

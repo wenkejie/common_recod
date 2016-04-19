@@ -1,0 +1,867 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	
+	<!-- <link rel="stylesheet" href="../../release/freight/css/common.css"/> -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<!-- <link rel="stylesheet" href="../../src/css/richSelect.css" />richselect样式 -->
+	
+</head>
+<body class="home-body">
+	<div id="header">
+		<div class="top-info">
+			<div class="wrap">
+				<a href="/" class="logo">运价通</a>
+				<ul class="nav">
+					<li class="nav-cell">
+						<a class="nav-link nav-link-first nav-link fonticon" href="#">&#x3497;</a>
+						<span class="newinfo-icon">!</span>
+					</li>
+					<li class="nav-cell">
+						<a class="nav-link fonticon" href="index.shtml">&#x3482;</a>
+					</li>
+					<li class="nav-cell">
+						<a class="nav-link" href="../crm/index.shtml">我的办公桌</a>
+						<div class="nav-cell-arrow none">
+							◆ <em>◆</em>
+						</div>
+					</li>
+					<li class="nav-cell">
+						<a class="nav-link" href="../crm/list.shtml">CRM</a>
+						<div class="nav-cell-arrow none">
+							◆ <em>◆</em>
+						</div>
+					</li>
+					<li class="nav-cell">
+						<a class="nav-link " href="#">运价通</a>
+						<div class="nav-cell-arrow">
+							◆
+							<em>◆</em>
+						</div>
+					</li>
+					<li class="nav-cell">
+						<a class="nav-link nav-link-last" href="staffManage.shtml">员工管理</a>
+						<div class="nav-cell-arrow none">
+							◆
+							<em>◆</em>
+						</div>
+					</li>
+				</ul>
+				<ul class="top-menu">
+
+					<li class="top-menu-cell">
+						<a class="top-menu-link" target="_blank" href="http://b.qq.com/webc.htm?new=0&amp;sid=4008828871&amp;eid=218808P8z8p8x8q8P8z8z&amp;q=7">咨询</a>
+					</li>
+					<li id="help-center" class="top-menu-cell cur-p has-dropdown">
+						帮助中心 <i class="top-menu-icon">㐸</i>
+						<div class="nui-drop-down block" style="*width:115px;">
+							<ul class="nui-select-list">
+								<li class="nui-select-list-li" style="padding-left: 10px;">
+									<a target="_blank" href="/cms/publicHelpHome.ctrl">帮助中心</a>
+								</li>
+								<li class="nui-select-list-li last" style="padding-left: 10px;">
+									<a target="_blank" href="/cms/view/yunjiaUe/help.jsp">新手引导</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="top-menu-cell pr0">你好：</li>
+					<li class="top-menu-cell cur-p has-dropdown">
+						<span id="relateEmployeeName">胡伟</span> <i class="top-menu-icon">㐸</i>
+						<input id="currUserId" type="hidden" value="209080">	
+						<input id="currEmployeeName" type="hidden" value="胡伟">	
+						<input id="setEmployeeName" type="hidden" value="胡伟">	
+						<input id="setEmployeeId" type="hidden" value="44411">	
+						<input id="setUserId" type="hidden" value="209080">	
+						<div class="nui-drop-down block" style="*width:150px;">
+							<ul class="nui-select-list">
+								<li class="nui-select-list-li">
+									<a id="userInfo" href="javascript:">
+										<i class="mr5 animate">㓬</i>
+										账户信息
+									</a>
+								</li>
+								<!-- modify by 曹金彦,2014-7-23,修改密码从登录信息中获取 -->	
+								<li class="nui-select-list-li">
+									<a href="javascript:" id="modifyPassWord" name="modifyPassWord" onclick="openWindow('/cpmembership/memuser.ctrl?$action=modifyUserPassword&amp;actionType=show','修改密码',{width:750,height:450})">
+										<i class="mr5 animate">㔳</i>
+										修改密码
+									</a>
+								</li>
+
+							</ul>
+						</div>
+					</li>
+					<li class="top-menu-cell">
+						<em>|</em>
+					</li>
+
+					<!-- modify by 曹金彦,201406A,基础设置页面没有与生意通相关的设置-->	
+
+					<li class="top-menu-cell">
+						<a class="top-menu-link" href="javascript:" id="home_baseset" data-module="home_baseset">基础设置</a>
+					</li>
+
+					<li class="top-menu-cell">
+						<a class="top-menu-link" href="/cpmembership/privateLog.ctrl?$action=logoutAction">退出</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 应用内部导航 -->	
+		<div class="main-nav bdn">
+			<ul class="wrap">
+				<li class="main-nav-cell">
+					<a href="#" class="main-nav-link">
+						<i>&#x343c;</i>
+						运价首页
+					</a>
+				</li>
+				<li class="main-nav-cell">
+					<a href="#" class="main-nav-link">
+						<i>&#x355d;</i>
+						运价查询
+					</a>
+					<ol class="main-nav-drop-down">
+						<li class="main-sub-nav-arrow-line">◆</li>
+						<li>
+							<a href="javascript:" class="main-nav-drop-down-link">海运整箱查询</a>
+						</li>
+						<li>
+							<a href="javascript:" class="main-nav-drop-down-link">海运出口拼箱查询</a>
+						</li>
+						<li>
+							<a href="javascript:" class="main-nav-drop-down-link">空运查询</a>
+						</li>
+					</ol>
+				</li>
+				<li class="main-nav-cell psr">
+					<a href="#" class="main-nav-link">
+						<i>&#x358d;</i>
+						运价维护
+					</a>
+				</li>
+				<li class="main-nav-cell">
+					<a href="#" class="main-nav-link">
+						<i>&#x34fb;</i>
+						基础资料
+					</a>
+				</li>
+				<li class="main-nav-cell">
+					<a href="list.shtml" class="main-nav-link">
+						<i>&#x351d;</i>
+						客户管理
+					</a>
+					<ol class="main-nav-drop-down">
+						<li class="main-sub-nav-arrow-line">◆</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="list.shtml" >账户管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="analytics.shtml">行为分析管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="ruleset.shtml">多级运价管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="javascript:">邀请体验管理</a>
+						</li>
+					</ol>
+
+				</li>
+				<li class="main-nav-cell">
+					<a href="#" class="main-nav-link">
+						<i>&#x3590;</i>
+						更多功能
+					</a>
+					<div class="main-nav-drop-down">
+						<span class="main-sub-nav-arrow-line">◆</span>
+						<table>
+							<tr>
+								<td class="first">
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+								<td>
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+								<td>
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+								<td class="last">
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="wrap wrap-unicom">
+		<div class="unicom-header">
+			<div class="unicom-header-cnt">
+				<!-- <div class="unicom-add">
+					<a class="nui-btn nui-btn-primary j-addPartner nui-btn-28" href="javascript:">+ 添加互联伙伴</a>
+					<div class="unicom-add-dropdown none">
+						<div class="unicom-add-header">
+							<div class="unicom-filter">
+								<div class="unicom-filter-cell">
+									<a class="unicom-filter-btn unicom-filter-first" href="javascript:">按会员账号查找</a>
+								</div>
+								<div class="unicom-filter-cell">
+									<a class="unicom-filter-btn unicom-filter-active" href="javascript:">按公司名称查找</a>
+								</div>
+							</div>
+							<div class="nui-form-cell nui-form-cell-icon-right unicom-search">
+							    <div class="nui-form-cell-cnt">
+							    	<input class="nui-input" type="text" placeholder="请完整填写手机账号" />
+							    	<i class="nui-form-cell-icon fs12">㕝</i>
+							    </div>
+							</div>
+						</div>
+						<div class="unicom-add-cnt">
+							<p class="unicom-info">共查到 <span class="text-orange">20</span> 家相关公司</p>
+							<ul class="unicom-list">
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+								<li class="unicom-list-cell"><a class="unicom-list-link" href="javascript:">马里奥兜逼脑残有限公司</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> -->
+				<img class="unicom-header-bg" src="../../release/freight/images/unicom-freight/down-unicom.png" />	
+			</div>
+			<div class="unicom-header-line"></div>
+		</div>
+		<div class="wrap-unicom-cnt">
+			<div class="new-tab">
+				<div class="new-tab-menu">
+					<div class="new-tab-menu-cell  new-tab-menu-active">
+						<a class="new-tab-menu-link" href="javascript:"><span class="dot-point"></span><span>已合作 (50)</span></a>
+					</div>
+					<span class="new-tab-menu-line"></span>
+					<div class="new-tab-menu-cell">
+						<a class="new-tab-menu-link" href="javascript:"><span class="dot-point"></span><span>待合作 (10)</span></a>
+					</div>
+					
+				</div>
+				<div class="new-tab-cnt mt30">
+					<div class="nui-waterfall-area waterfall-area-down">
+						<div class="nui-waterfall-item">
+							<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+							<div class="waterfall-item-cnt">
+								<div class="import-info-line">
+									<div class="import-info-left">
+										<span>会员账号</span>
+									</div>
+									<div class="import-info-right">
+										135423531321
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>客服</span>
+									</div>
+									<div class="import-info-right">
+										<span class="info-cnt">dawdadwad</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>多级运价规则</span>
+									</div>
+									<div class="import-info-right">
+										<a class="info-cnt" href="javascript">dawdadwad</a>
+									</div>
+								</div>
+							</div>
+							<div class="waterfall-item-footer">
+								<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+									设置
+								</a>
+								<div class="nui-tips nui-tips-setup none">
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">设置互联规则</li>
+											<li class="nui-select-list-li">解绑</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="nui-waterfall-item">
+							<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+							<div class="waterfall-item-cnt">
+								<div class="import-info-line">
+									<div class="import-info-left">
+										<span>会员账号</span>
+									</div>
+									<div class="import-info-right">
+										135423531321
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>客服</span>
+									</div>
+									<div class="import-info-right">
+										<span class="info-cnt">dawdadwad</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>多级运价规则</span>
+									</div>
+									<div class="import-info-right">
+										<a class="info-cnt" href="javascript">dawdadwad</a>
+									</div>
+								</div>
+								<div class="info-feadback">
+									<div class="info-feadback-cnt">
+										<h3>系统异常</h3>
+										<p>请联系我们</p>
+										<p>电话：1920312312</p>
+									</div>
+									<div class="info-mask"></div>
+								</div>
+							</div>
+							<div class="waterfall-item-footer">
+								<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+									设置
+								</a>
+								<div class="nui-tips nui-tips-setup none">
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">设置互联规则</li>
+											<li class="nui-select-list-li">解绑</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="nui-waterfall-item">
+							<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+							<div class="waterfall-item-cnt">
+								<div class="import-info-line">
+									<div class="import-info-left">
+										<span>会员账号</span>
+									</div>
+									<div class="import-info-right">
+										135423531321
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>客服</span>
+									</div>
+									<div class="import-info-right">
+										<span class="info-cnt">dawdadwad</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>多级运价规则</span>
+									</div>
+									<div class="import-info-right">
+										<a class="info-cnt" href="javascript">dawdadwad</a>
+									</div>
+								</div>
+							</div>
+							<div class="waterfall-item-footer">
+								<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+									设置
+								</a>
+								<div class="nui-tips nui-tips-setup none">
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">设置互联规则</li>
+											<li class="nui-select-list-li">解绑</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="nui-waterfall-item">
+							<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+							<div class="waterfall-item-cnt">
+								<div class="import-info-line">
+									<div class="import-info-left">
+										<span>会员账号</span>
+									</div>
+									<div class="import-info-right">
+										135423531321
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>客服</span>
+									</div>
+									<div class="import-info-right">
+										<span class="info-cnt">dawdadwad</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>多级运价规则</span>
+									</div>
+									<div class="import-info-right">
+										<a class="info-cnt" href="javascript">dawdadwad</a>
+									</div>
+								</div>
+							</div>
+							<div class="waterfall-item-footer">
+								<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+									设置
+								</a>
+								<div class="nui-tips nui-tips-setup none">
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">设置互联规则</li>
+											<li class="nui-select-list-li">解绑</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="nui-waterfall-item">
+							<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+							<div class="waterfall-item-cnt">
+								<div class="import-info-line">
+									<div class="import-info-left">
+										<span>会员账号</span>
+									</div>
+									<div class="import-info-right">
+										135423531321
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>客服</span>
+									</div>
+									<div class="import-info-right">
+										<span class="info-cnt">dawdadwad</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>多级运价规则</span>
+									</div>
+									<div class="import-info-right">
+										<a class="info-cnt" href="javascript">dawdadwad</a>
+									</div>
+								</div>
+							</div>
+							<div class="waterfall-item-footer">
+								<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+									设置
+								</a>
+								<div class="nui-tips nui-tips-setup none">
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">设置互联规则</li>
+											<li class="nui-select-list-li">解绑</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="nui-waterfall-item">
+							<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+							<div class="waterfall-item-cnt">
+								<div class="import-info-line">
+									<div class="import-info-left">
+										<span>会员账号</span>
+									</div>
+									<div class="import-info-right">
+										135423531321
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>客服</span>
+									</div>
+									<div class="import-info-right">
+										<span class="info-cnt">dawdadwad</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>多级运价规则</span>
+									</div>
+									<div class="import-info-right">
+										<a class="info-cnt" href="javascript">dawdadwad</a>
+									</div>
+								</div>
+							</div>
+							<div class="waterfall-item-footer">
+								<a class="waterfall-item-btn" href="javascript:"> <i>&#x356f;</i>
+									设置
+								</a>
+								<div class="nui-tips nui-tips-setup none">
+									<div class="nui-tips-cnt">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">设置互联规则</li>
+											<li class="nui-select-list-li">解绑</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="new-tab-footer">
+						<div class="page">
+							<input type="hidden" id="pageNo" name="pageNo" value="1">				
+							<span class="pageInfo">1-30条，共278条</span>
+							<a href="javascript:nextPage();">下一页</a>
+							<a href="javascript:buildData(10);">尾页</a>
+						</div>
+					</div>
+				</div>
+				<div class="new-tab-cnt none mt30">
+					<div class="nui-waterfall-area waterfall-area-down">
+						<div class="nui-waterfall-item">
+							<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+							<div class="waterfall-item-cnt">
+								<div class="import-info-line">
+									<div class="import-info-left">
+										<span>联系人</span>
+									</div>
+									<div class="import-info-right">
+										<soan>张一</soan>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>联系电话</span>
+									</div>
+									<div class="import-info-right">
+										<span>23123312313123</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>会员账号</span>
+									</div>
+									<div class="import-info-right">
+										<span href="javascript">33113213123</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>客服</span>
+									</div>
+									<div class="import-info-right">
+										<span class="info-cnt" href="javascript">某某某的撒大网大大</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>多级运价规则</span>
+									</div>
+									<div class="import-info-right">
+										<a class="info-cnt" href="javascript">我是规则的啊大额的</a>
+									</div>
+								</div>
+							</div>
+							<div class="waterfall-item-footer">
+								<div class="item-footer-left">
+									<a class="waterfall-item-btn" href="javascript:">
+										确认
+									</a>
+								</div>
+								<div class="item-footer-right psr">
+									<a class="waterfall-item-btn" href="javascript:">
+										拒绝
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="nui-waterfall-item">
+							<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+							<div class="waterfall-item-cnt">
+								<div class="import-info-line">
+									<div class="import-info-left">
+										<span>联系人</span>
+									</div>
+									<div class="import-info-right">
+										<soan>张一</soan>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>联系电话</span>
+									</div>
+									<div class="import-info-right">
+										<span>23123312313123</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>会员账号</span>
+									</div>
+									<div class="import-info-right">
+										<span href="javascript">33113213123</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>客服</span>
+									</div>
+									<div class="import-info-right">
+										<span class="info-cnt" href="javascript">某某某的撒大网大大</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>多级运价规则</span>
+									</div>
+									<div class="import-info-right">
+										<a class="info-cnt" href="javascript">我是规则的啊大额的</a>
+									</div>
+								</div>
+							</div>
+							<div class="waterfall-item-footer">
+								<div class="item-footer-left">
+									<a class="waterfall-item-btn" href="javascript:">
+										确认
+									</a>
+								</div>
+								<div class="item-footer-right psr">
+									<a class="waterfall-item-btn" href="javascript:">
+										拒绝
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="nui-waterfall-item">
+							<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+							<div class="waterfall-item-cnt">
+								<div class="import-info-line">
+									<div class="import-info-left">
+										<span>联系人</span>
+									</div>
+									<div class="import-info-right">
+										<soan>张一</soan>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>联系电话</span>
+									</div>
+									<div class="import-info-right">
+										<span>23123312313123</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>会员账号</span>
+									</div>
+									<div class="import-info-right">
+										<span href="javascript">33113213123</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>客服</span>
+									</div>
+									<div class="import-info-right">
+										<span class="info-cnt" href="javascript">某某某的撒大网大大</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>多级运价规则</span>
+									</div>
+									<div class="import-info-right">
+										<a class="info-cnt" href="javascript">我是规则的啊大额的</a>
+									</div>
+								</div>
+							</div>
+							<div class="waterfall-item-footer">
+								<div class="item-footer-left">
+									<a class="waterfall-item-btn" href="javascript:">
+										确认
+									</a>
+								</div>
+								<div class="item-footer-right psr">
+									<a class="waterfall-item-btn" href="javascript:">
+										拒绝
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="nui-waterfall-item">
+							<div class="waterfall-item-header"><span class="company-name">厦门XXX物流有限公司</span><span class="header-empty"></span></div>
+							<div class="waterfall-item-cnt">
+								<div class="import-info-line">
+									<div class="import-info-left">
+										<span>联系人</span>
+									</div>
+									<div class="import-info-right">
+										<soan>张一</soan>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>联系电话</span>
+									</div>
+									<div class="import-info-right">
+										<span>23123312313123</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>会员账号</span>
+									</div>
+									<div class="import-info-right">
+										<span href="javascript">33113213123</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>客服</span>
+									</div>
+									<div class="import-info-right">
+										<span class="info-cnt" href="javascript">某某某的撒大网大大</span>
+									</div>
+								</div>
+								<div class="import-info-line mt15">
+									<div class="import-info-left">
+										<span>多级运价规则</span>
+									</div>
+									<div class="import-info-right">
+										<a class="info-cnt" href="javascript">我是规则的啊大额的</a>
+									</div>
+								</div>
+							</div>
+							<div class="waterfall-item-footer">
+								<div class="item-footer-left">
+									<a class="waterfall-item-btn" href="javascript:">
+										确认
+									</a>
+								</div>
+								<div class="item-footer-right psr">
+									<a class="waterfall-item-btn" href="javascript:">
+										拒绝
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="new-tab-footer">
+						<div class="page">
+							<input type="hidden" id="pageNo" name="pageNo" value="1">				
+							<span class="pageInfo">1-30条，共278条</span>
+							<a href="javascript:nextPage();">下一页</a>
+							<a href="javascript:buildData(10);">尾页</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+	</div>
+	<div id="footer" class="wrap">
+		<p>
+			大掌柜国际物流有限公司 powered by
+			<a href="#">大掌柜</a>
+		</p>
+	</div>
+	<div class="to-place">
+		<div id="j-place-move" class="to-place-head">
+			<div class="to-place-move"></div>
+		</div>
+		<a href="javascript:" title="回到顶部" class="to-top"></a>
+		<div id="help_div" title="帮助中心" class="to-help-out">
+			<a class="to-help-cnt" href="javascript:"></a>
+			<a class="insert" href="javascript:"></a>
+		</div>
+	</div>
+
+	<div class="to-place-old none">
+		<a href="javascript:" title="回到顶部" class="to-top-old fonticon"></a>
+	</div>
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/unicom-freight/manage.js"></script>	
+</body>
+</html>

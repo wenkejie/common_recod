@@ -1,0 +1,233 @@
+// ========================================
+// cargo-o2o化首页改造：头部区域=============
+// ========================================
+
+// 复用型结构 =============================
+
+.pointer-arrow{
+	position: absolute;left: 50%;margin-left: -8px;top: -8px;z-index: 11;width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 8px 8px 8px;
+	border-color: transparent transparent #ffffff transparent;
+}
+
+
+// 顶部菜单 ================================
+.top-bar{
+	height: 32px;
+	background-color: #eee;
+}
+
+.tb-menu{
+	float: right;
+}
+
+.tb-menu-cell{
+	position: relative;
+	float: left;*display: inline;
+	vertical-align: middle;
+	&.first{
+		padding: 8px 10px;
+	}
+	.newinfo-icon{
+		position: absolute;right: 5px;top: 0;z-index: 1;
+		width: 16px;height: 16px;line-height: 16px;text-align: center;
+		border-radius: 50%;background-color: #FF2626;font-size: 10px;
+		color: #fff;font-family: arial;
+	}
+}
+
+.tb-menu-active{
+	.tb-menu-sld{
+		display: block;
+	}
+	.tb-menu-link{
+		background-color: #fff;
+		border-left: 1px solid  #eee;border-right: 1px solid  #eee;
+		margin-left: -1px;margin-right: -1px;
+	}
+}
+
+.tb-menu-pipe{
+	float: left;*display: inline;
+	height: 32px;line-height: 32px;
+	vertical-align: middle;
+	color: #C9C9C9;
+}
+
+.tb-menu-link{
+	display: block;
+	padding: 0 15px;
+	height: 32px;line-height: 32px;
+	color: #777;
+	span,i{
+		display: inline-block;*display: inline;*zoom: 1;
+		vertical-align: middle;
+	}
+	i{
+		color: #999;
+	}
+	
+}
+
+.tb-menu-sld{
+	position: absolute;left: 0;top: 32px;z-index: 99;
+	display: none;
+	min-width: 120px;
+	border: 1px solid  #eee;border-top: none;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+	background-color: #fff;
+	text-align: left;
+	a{
+		display: block;
+		padding: 5px 15px ;
+		color: #666;
+		&:hover{
+			background-color: #eee;
+			color: #666;
+			text-decoration: none;
+		}
+	}
+}
+
+// 头部导航 ================================
+.header{
+	background-color: #0083E5;
+}
+
+.hd-logo{
+	float: left;*display: inline;
+}
+
+.hd-logo-img{
+	width: 56px;height: 77px;
+	margin-top: -15px;
+	float: left;*display: inline;
+	background: url(../../../release/freight/images/cargo-o2o/logo.png) no-repeat;
+}
+
+.hd-logo-extend{
+	width: 78px;height: 45px;
+	margin-top: 9px;margin-left: 20px;
+	float: left;*display: inline;
+	background: url(../../../release/freight/images/cargo-o2o/logo-extend.png) no-repeat;	
+}
+
+.hd-cnt{
+	&:extend(.clearfix all);
+	// height: 62px;
+}
+
+.mnav{
+	float: left;*display: inline;
+	margin-left: 40px;
+}
+.mnav-cell{
+	position: relative;
+	float: left;*display: inline;
+	width: 125px;
+	font-size: 18px;
+	&.current{
+		background-color: #2E97E4;
+		color: #fff;
+		.mnav-cell-pointer{
+			display: block;
+		}
+	}
+}
+
+.mnav-hover{
+	.mnav-sld{
+		display: block;
+	}
+}
+
+.mnav-cell-pointer{
+	display: none;
+	top: 54px;
+}
+
+.mnav-link{
+	display: block;
+	height: 62px;line-height: 62px;
+	color: #fff;
+	&:hover{
+		background-color: #2E97E4;
+		color: #fff;
+	}
+	i{
+		margin-left: 5px;
+		color: #fff;
+		font-size: 18px;
+	}
+}
+
+// 顶部导航下拉 ================================
+
+.mnav-sld{
+	position: absolute;left: 50%;top: 62px;z-index: 111;
+	margin-left: -160px;
+	display: none;
+	padding: 15px 20px;
+	background-color: #fff;border: 1px solid #eee;
+	box-shadow: 5px 5px 21px rgba(0,0,0,0.28);
+	font-size: 14px;
+	&:extend(.oneline all);
+}
+
+.mnav-sld-pointer{
+	left: 50%;margin-left: -12px;top: -12px;z-index: 11;width: 0;
+	border-width: 0 12px 12px 12px;
+}
+
+.mnav-sld-more{
+	left: -40px;
+	.mnav-sld-pointer{
+		left: 365px;
+	}
+}
+
+.sld-item{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: top;
+	width: 100px;padding-right: 15px;
+	text-align: left;
+	&.last{
+		padding-right: 0;
+	}
+}
+
+.sld-item-tt{
+	color: #333;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+	font-size: 16px;
+}
+
+.sld-item-cnt{
+	padding: 5px 0;
+}
+
+.sld-item-link{
+	display: block;
+	padding: 3px 0;
+	color: #333;
+}
+
+
+@media screen and (max-width: 1050px) { 
+	.mnav-sld-o{
+		right: -120px;left: inherit;
+		.mnav-sld-pointer{
+			left: inherit;right: 165px;
+		}
+	}
+
+	.mnav-sld-o{
+		right: -30px;left: inherit;
+		.mnav-sld-pointer{
+			left: inherit;right: 75px;
+		}
+	}
+} 

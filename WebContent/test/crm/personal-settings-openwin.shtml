@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>Document</title>
+		<link href="http://fcommon.600jit.com/fcommon/release/freight/css/common-v1.2.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../release/freight/css/PicPick/imgareaselect-default.css" />
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../../release/freight/js/PicPick/jquery.imgareaselect.pack.js"></script>
+  		<script type="text/javascript" src="../../release/freight/js/PicPick/jQueryRotate.js"></script>
+		<script>
+		$(function() {
+			var $tabMenu = $('li.nui-tab-menu-cell');
+			var $tabCnt = $('div.nui-tab-cnt');
+			$tabMenu.click(function() {
+				var index = $(this).index();
+				$tabMenu.removeClass("nui-tab-menu-active");
+				$(this).addClass('nui-tab-menu-active');
+				$tabCnt.hide().eq(index).show();
+			})
+
+			$('div.form-line').delegate('a.form-line-info', 'click', function() {
+				$(this).addClass('none');
+			})
+		})
+		</script>
+		<style>
+	.portrait_left{float: left; height: auto; width: 306px;}
+	#avatar{height: 280px;}
+	.portrait_revolve{height: auto; padding-top: 15px; width: 306px;}.revolve_left{background: url("images/setup.gif") repeat scroll -128px -55px rgba(0, 0, 0, 0); float: left; height: 22px; width: 22px;}.revol_left_txt{color: #FF6699; float: left; height: 22px; line-height: 22px; text-align: left; width: 110px;}
+	.revol_left_txt{color: #FF6699;float: left;height: 22px;line-height: 22px;text-align: left;width: 110px;}
+	.revol_right_txt{color: #FF6699;float: left;height: 22px;line-height: 22px;text-align: right;width: 131px;}
+	.revolve_right{background: url("images/setup.gif") repeat scroll -128px -77px rgba(0, 0, 0, 0); float: left; height: 22px; width: 22px;}
+	.setup_but{height: 28px; padding-left: 93px; padding-top: 40px; width: auto;}
+	.baseinf_but1{background: url("images/secondary.gif") repeat scroll -194px -96px rgba(0, 0, 0, 0); border: medium none; color: #FFFFFF; font-size: 14px; font-weight: bold; height: 28px; line-height: 28px; margin-right: 22px; outline: medium none; width: 78px;}
+	.portrait_right{float: left; font-size: 12px; height: 280px; padding-left: 80px; width: 320px;}
+	.portrait_right_bottom{color: #666666; height: 220px; width: 310px;}
+	.portrait1{float: left; height: 200px; width: 180px;}
+	#img_big_preview{height: 180px; margin: 0 auto; width: 180px;}.img_preview{border: 1px solid #000000; overflow: hidden; position: relative;}.img_preview img{margin: 0; position: relative;}.portrait2{float: left; height: auto; padding-left: 40px; width: 68px;}
+	#img_small_preview{height: 49px; margin: 0 auto; width: 49px;}.img_preview{border: 1px solid #000000; overflow: hidden; position: relative;}
+  </style>
+	</head>
+	<body>
+		<label class="nui-label">label标签：</label>
+		<label class="nui-checkbox" for=""><input type="checkbox" id="" name="">选项1</label>
+		<label class="nui-checkbox" for=""><input type="checkbox" id="" name="">选项1</label>
+		<label class="nui-checkbox" for=""><input type="checkbox" id="" name="">选项1</label>
+		<div class="fui-dialog" style="width:800px">
+			<div class="fui-dialog-title">
+				<h4 class="tal">详情</h4>
+				<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a>
+			</div>
+			<div class="fui-dialog-cnt">
+				<div class="nui-tab">
+					<div class="nui-tab-menu mt20">
+						<ul>
+							<li class="nui-tab-menu-cell nui-tab-menu-active"><a class="nui-tab-menu-link" href="javascript:">个人设置</a></li>
+							<li class="nui-tab-menu-cell"><a class="nui-tab-menu-link" href="javascript:">头像上传</a></li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="nui-tab-cnt">
+					<div class="nui-table-container mg0-10">
+							<table class="nui-table nui-table-fixed nui-table-inbox">
+								<thead>
+									<tr>
+										<th colspan="2">基本信息</th>
+									</tr>	
+								</thead>
+								<tbody>
+									<tr class="nui-table-border-bottom-none">
+										<td>
+											<div class="form-line">
+												<label for="" class="nui-label">姓名：</label>
+												<div class="nui-form-cell w150">
+													<input type="text" placeholder="xxx" class="nui-input" id="" />
+												</div>
+											</div>
+										</td>
+										<td>
+											<div class="form-line">
+												<label for="" class="nui-label">性别：</label>
+												<div class="nui-form-cell w150">
+													<input type="text" class="nui-input" id="" />
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="nui-table-border-bottom-none">
+										<td>
+											<div class="form-line">
+												<label for="" class="nui-label">部门：</label>
+												<div class="nui-form-cell w150">
+													<input type="text" class="nui-input" id="" />
+												</div>
+											</div>
+										</td>
+										<td>
+											<div class="form-line">
+												<label for="" class="nui-label">职位：</label>
+												<div class="nui-form-cell w150">
+													<input type="text" class="nui-input" id="" />
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="nui-table-border-bottom-none">
+										<td>
+											<div class="form-line">
+												<label for="" class="nui-label">家乡：</label>
+												<div class="nui-form-cell w150">
+													<input type="text" class="nui-input" id="" />
+												</div>
+											</div>
+										</td>
+										<td>
+											<div class="form-line">
+												<label for="" class="nui-label">出生日期：</label>
+												<div class="nui-form-cell w150">
+													<input type="text" class="nui-input" id="" />
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="nui-table-border-bottom-none">
+										<td colspan="2">
+											<label class="nui-label">入职时间：</label>
+											<div class="nui-form-cell w150">
+													<input type="text" placeholder="xxx" class="nui-input" id="" />
+											</div>
+										</td>
+									</tr>
+									<tr class="nui-table-border-bottom-none">
+										<td colspan="2">
+											<label class="nui-label vat">自我介绍：</label>
+											<div class="nui-form-cell">
+												<textarea class="nui-textarea h100 w150"></textarea>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<table class="nui-table nui-table-fixed nui-table-inbox">
+								<thead>
+									<tr>
+										<th colspan="2">联系方式</th>
+									</tr>	
+								</thead>
+								<tbody>
+									<tr class="nui-table-border-bottom-none">
+										<td>
+											<label class="nui-label">办公电话：</label>
+											<div class="nui-form-cell w150">
+												<input type="text" class="nui-input" id="" />
+											</div>
+										</td>
+										<td>
+											<label class="nui-label">手机号码：</label>
+											<div class="nui-form-cell w150">
+												<input type="text" class="nui-input" id="" />
+											</div>
+											<i class="right-icon">&#x3587;</i>
+										</td>
+									</tr>
+									<tr class="nui-table-border-bottom-none">
+										<td>
+											<label class="nui-label">公司邮箱：</label>
+											<div class="nui-form-cell w150">
+												<input type="text" class="nui-input" id="" />
+											</div>
+											<i class="right-icon">&#x3587;</i>
+										</td>
+										<td>
+											<label class="nui-label">QQ/MSN：</label>
+											<div class="nui-form-cell w150">
+												<input type="text" class="nui-input" id="" />
+											</div>
+										</td>
+									</tr>
+									<tr class="nui-table-border-bottom-none">
+										<td colspan="2">
+											<label class="nui-label">微博：</label>
+											<div class="nui-form-cell w150">
+												<input type="text" class="nui-input" id="" />
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<table class="nui-table nui-table-fixed nui-table-inbox">
+								<thead>
+									<tr>
+										<th colspan="2">兴趣专长</th>
+									</tr>	
+								</thead>
+								<tbody>
+									<tr class="nui-table-border-bottom-none">
+										<td colspan="2">
+											<label class="nui-label">业务专长：</label>
+											<div class="nui-form-cell w150">
+												<input type="text" class="nui-input" id="" />
+											</div>
+									
+										</td>
+									</tr>
+									<tr class="nui-table-border-bottom-none">
+										<td colspan="2">
+											<label class="nui-label">兴趣爱好：</label>
+											<div class="nui-form-cell w150">
+												<input type="text" class="nui-input" id="" />
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+					</div>
+				</div>
+				<div class="nui-tab-cnt none">
+					<div class="portrait_left">
+					<div id="picture" style="border: 1px solid #000000;overflow: hidden;position: relative;height: auto;width: 280px;margin: 0 auto;">
+					<img id="avatar" width="280" alt="请上传头像" src="images/Koala_cropped.jpg">
+					</div>
+					<form id="crop_form" method="post" action=".">
+					<!--通过生成尺寸和旋转角度 后台获取尺寸和旋转角度再进行裁剪-->
+					<input id="id_top" type="hidden" name="top" value="90">
+					<input id="id_left" type="hidden" name="left" value="61">
+					<input id="id_right" type="hidden" name="right" value="201">
+					<input id="id_bottom" type="hidden" name="bottom" value="200">
+					<input id="rotation" type="hidden" value="0" name="rotation">
+					</form>
+					<div class="portrait_revolve">
+					<div class="revolve_left"></div>
+					<a href="javascript:;" class="revol_left_txt" onClick="avatarrotateleft();">向左旋转</a>
+					<a href="javascript:;" class="revol_right_txt" onClick="avatarrotateright();">向右旋转</a>
+					<div class="revolve_right"></div>
+					</div>
+					<div class="setup_but">
+					<button class="baseinf_but1" onClick="submit_avatar();">确定</button>
+					</div>
+					</div>
+					<div class="portrait_right">
+					<p class="portrait_right_txt">您上传的头像会自动生成小尺寸头像，请注意小尺寸的头像是否清晰</p>
+					<div class="portrait_right_bottom">
+					<div class="portrait1">
+					<div id="img_big_preview" class="img_preview">
+					<img id="avatar1" alt="头像预览" src="images/Koala_cropped.jpg" style="width: 360px; height: 360px; margin-left: -117px; margin-top: -44px;">
+					</div>
+					<p>大尺寸头像，180×180</p>
+					</div>
+					</div>
+					<div class="portrait2">
+					<div id="img_small_preview" class="img_preview">
+					<img id="avatar2" alt="预览" src="images/Koala_cropped.jpg" style="width: 98px; height: 98px; margin-left: -32px; margin-top: -12px;">
+					</div>
+					<p>中尺寸头像</p>
+					<p>50×50</p>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="fui-dialog-btm-bar pss">
+				<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a>
+			</div>
+		</div>
+	</body>
+	
+</html>

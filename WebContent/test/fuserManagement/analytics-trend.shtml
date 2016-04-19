@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="../../release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../src/js/highcharts.src.js"></script>
+	<script type="text/javascript" src="../../src/js/frame_common.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+	$(function() {
+		fu_trends_change(null,'today');
+		//$("#datepicker_input").datepicker({
+		//	  changeMonth: true,
+		//	  changeYear: true,
+		//	  dateFormat: 'yy-mm-dd'
+	    //});
+	})
+	
+	function creatTrendDataTable(str){
+		$.post("../../test/fuserManagement/data/analytics_trend_table_data.js","",function(data){
+			data = eval(data)(str);
+			var list = data.dataMap.list;
+			var _TR = [];
+			for(var i=0,elem;(elem=list[i])!=null;i++){
+				_TR.
+				push("<tr>",
+						"<td>",elem.time,"</td>",
+						"<td>",elem.query_count,"</td>",
+						"<td>",elem.user_count,"</td>",
+						"<td>",elem.ip,"</td>",
+						"<td>",elem.org_count,"</td>",
+						"<td>",elem.new_user_count,"</td>",
+						"<td>",elem.access_count,"</td>",
+				"</tr>");
+			}
+			
+			var $trendTbody = $("#trend_result_table tbody");
+			$trendTbody.empty().append(_TR.join(""));
+		},"text");
+	}
+	
+		// 生成页面首部 查询统计信息table
+		function creatAnayticsTag(str){
+			$.post("../../test/fuserManagement/data/analytics_overview_data.js","",function(data){
+				data = eval(data)(str);
+				var $anayticsTag = $("ul.analytics-overview-panel");
+				$anayticsTag.find("li").each(function(i){
+					var $that = $(this);
+					$that.find("span").text(data[i]);
+				});
+			},"text");
+		}
+		
+		// 日期格式生成字符串
+		//function getDateStr(date){
+		//	return	date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+		//}
+
+		// 趋势分析（按今日、昨日、最近7天...）
+		function fu_trends_change(obj,str){
+			if(obj){
+				var $that = $(obj);
+				$that.parent().find("a").removeClass("nui-select-tag-active");
+				$that.addClass("nui-select-tag-active");
+			}
+			
+			creatAnayticsTag(str);
+			creatTrendDataTable(str);
+			
+			var start,_x_formatter,_tooltip_msg,$title,radio_msg;
+			start = new Date();
+			$title = $("div.main-title").find('small');
+			switch(str){
+			case "today":
+				var _msg1 = formatDateStr(start);
+				var _msg2 = _msg1;
+				$title.text(_msg2+"至"+_msg1);
+				//pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate(),0,59);
+				//pointInterval = 1 * 3600 * 1000;
+				_x_formatter = "%H:%M";
+				_tooltip_msg = function(x,y){
+					var _prev_date = x - 59*60*1000;
+					var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+			    		Highcharts.dateFormat('-%H:%M', x);
+					return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+				}
+				radio_msg = "按今日显示";
+				break;
+			case "yestoday":
+				var _msg1 = formatDateStr(start);
+				start.setDate(start.getDate()-1);
+				var _msg2 = formatDateStr(start);
+				$title.text(_msg2+"至"+_msg1);
+				//pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate(),0,59);
+				//pointInterval = 1 * 3600 * 1000;
+				_x_formatter = "%H:%M";
+				_tooltip_msg = function(x,y){
+					var _prev_date = x - 59*60*1000;
+					var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+			    		Highcharts.dateFormat('-%H:%M', x);
+					return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+				}
+				radio_msg = "按昨日显示";
+				break;
+			case "last7":
+				var _msg1 = formatDateStr(start);
+				start.setDate(start.getDate()-7);
+				var _msg2 = formatDateStr(start);
+				$title.text(_msg2+"至"+_msg1);
+				//pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+				//pointInterval = 24 * 3600 * 1000;
+				_x_formatter = "%m-%e";
+				_tooltip_msg = function(x,y){
+					var _prev_date = x - 24*60*60*1000;
+					var _msg = Highcharts.dateFormat('%Y-%m-%e', x);
+					return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+				}
+				radio_msg = "按最近7天显示";
+				break;
+			case "last30":
+				var _msg1 = formatDateStr(start);
+				start.setDate(start.getDate()-30);
+				var _msg2 = formatDateStr(start);
+				$title.text(_msg2+"至"+_msg1);
+				//pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+				//pointInterval = 24 * 3600 * 1000;
+				_x_formatter = "%m-%e";
+				_tooltip_msg = function(x,y){
+					var _prev_date = x - 24*60*60*1000;
+					var _msg = Highcharts.dateFormat('%Y-%m-%e', x);
+					return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+				}
+				radio_msg = "按最近30天显示";
+				break;
+			default:
+				var _msg1 = formatDateStr(start);
+				var _msg2 = _msg1;
+				$title.text(_msg2+"至"+_msg1);
+				//pointStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate(),0,59);
+				//pointInterval = 1 * 3600 * 1000;
+				_x_formatter = "%H:%M";
+				_tooltip_msg = function(x,y){
+					var _prev_date = x - 1*60*60*1000;
+					var _msg = Highcharts.dateFormat('%H:%M', _prev_date) +
+			    		Highcharts.dateFormat('~%H:%M', x);
+					return  '<b>' +_msg + '</b><br/>访问次数：'+ y +''
+				}
+				radio_msg = "按今日显示";
+				break;
+			}
+			// 统计报表 统计方式信息显示
+			$("input[name='advanced_radio']").next('label').text(radio_msg);
+			trends_analytics(str,_x_formatter,_tooltip_msg);
+		}
+		// 趋势分析（start,pointStart,pointInterval 无效）
+		function trends_analytics(str,_x_formatter,_tooltip_msg){
+			$.post("../../test/fuserManagement/data/analytics_trend_data.js","",function(data){
+				data = eval(data)(str);
+				 $('#container_analytics').highcharts({
+				        chart: {
+				        },
+				        // 主标题
+				        title: {
+							text : ""
+						},
+						// 副标题
+						subtitle: {
+							//text : "查询公司详细",
+							//x : 20
+						},
+						// x轴选项
+				        xAxis: {
+								type: 'datetime',
+				            	labels: {
+		                			formatter: function() {
+		                    			return Highcharts.dateFormat(_x_formatter, this.value);                  
+		                			}        
+		            			}
+				        },
+				    	 // y轴选项
+				        yAxis: {
+			                title: {
+			                    text: ''
+			                }
+			            },
+			            // 数据列选项
+				        series: data,
+				        // 图表对话框
+				        legend: {
+			            	//align: 'center',
+			                //verticalAlign: 'top',
+			                //floating:true,
+			                //x: 0,
+			                //y: 100,
+				        	//layout: 'vertical',
+			                //align: 'right',
+			                //verticalAlign: 'middle',
+			                borderWidth: 0
+					    },
+					    // 数据点提示框
+					    tooltip: {
+					    	formatter: function() {
+					    	//var _prev_date = this.x - 59*60*1000;
+					    	//var _msg = Highcharts.dateFormat('%Y-%m-%e %H:%M', _prev_date) +
+					    	//	Highcharts.dateFormat('-%H:%M', this.x);
+			               	// 	return _msg +  '<br/><b>访问次数：'+ this.y +'</b>';
+			               		return _tooltip_msg(this.x,this.y);
+			            	}
+						},
+						plotOptions: {
+				            //series: {
+				                //cursor: 'pointer',
+				                //point: {
+				                //    events: {
+				                //        click: function() {
+				                            //alert ('Category: '+ this.category +', value: '+ this.y);
+				                        	//location.href = this.options.url;
+				                        	//console.log(this.options);
+				                        	//console.log(this.series);
+				                        	//location.href = this.options.url;
+				                //        }
+				                //    }
+				                //}
+								//,dashStyle: 'longdash'
+				            //}
+				        },
+				        // 版权信息
+			            credits: {
+				            enable: false,
+				            text: ""
+				        }
+				    });
+			},"text");
+		}
+
+
+
+
+</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap-nobd">
+
+		
+		<div class="left-side"><div class="left-slide-top-line"></div>
+				<ul class="left-side-menu mt50">
+					<li><a href="analytics.shtml" class="left-side-menu-a"><i class="fs14">&#x35ab;</i> 统计概况<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">流量分析：</li>
+					<li><a href="analytics-trend.shtml" class="left-side-menu-a active">趋势分析<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-online.shtml" class="left-side-menu-a">当前在线<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-detail.shtml" class="left-side-menu-a">访问明细<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">访问分析：</li>
+					<li><a href="analytics-activity.shtml" class="left-side-menu-a">活跃度<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-pql.shtml" class="left-side-menu-a">查询分析<i class="right ">&#13726</i></a></li>
+					<li class="left-side-menu-categories">会员分析：</li>
+					<li><a href="analytics-activity-new.shtml" class="left-side-menu-a">活跃度分析<i class="right ">&#13726</i></a></li>
+					<li><a href="analytics-loss-rate.shtml" class="left-side-menu-a">流失率<i class="right ">&#13726</i></a></li>
+				</ul>
+				<div class="left-slide-bottom-line"></div>
+			</div>
+		<div class="right-side">
+			<div class="main-title">
+				<h1>流量分析-趋势分析<small></small></h1>
+			</div>
+			<div class="chart-cnt">
+				
+			</div>
+			<div class="grid-box"><h2 class="dpib mr20">展示类型</h2>
+
+			<a href="javascript:" onclick="fu_trends_change(this,'today')" class="nui-select-tag nui-select-tag-active">今日</a>
+			<a href="javascript:" onclick="fu_trends_change(this,'yestoday')" class="nui-select-tag">昨日</a>
+			<a href="javascript:" onclick="fu_trends_change(this,'last7')" class="nui-select-tag">最近7天</a>
+			<a href="javascript:" onclick="fu_trends_change(this,'last30')" class="nui-select-tag">最近30天</a>
+				<div class="nui-form-cell w200">
+					<div class="nui-form-cell-cnt">
+						<input id="datepicker_input" type="text"  class="nui-input" />
+						<i class="nui-form-cell-icon ">&#13370;</i>
+					</div>
+				</div>
+			</div>
+			
+			<ul class="analytics-overview-panel mb15">
+				<li>
+				<p>查询次数
+					<span>235</span>
+					</p>
+				</li><li>
+				<p>用户（账号）
+					<span>102</span>
+					</p>
+				</li><li>
+				<p>IP
+					<span>86</span>
+					</p>
+				</li><li>
+				<p>企业
+					<span>68</span>
+					</p>
+				</li><li>
+				<p>新用户（账号）
+					<span>97</span>
+					</p>
+				</li><li>
+				<p>登录次数
+					<span>145</span>
+					</p>
+				</li>				
+			</ul>
+			<div id="container_analytics"></div>
+			
+			<div class="adv-table">
+			<ul class="adv-table-tab">
+				<li> 查看：</li>
+				<li><a href="javascript:" class="active">统计报表</a></li>
+				<!-- <li><a href="javascript:">按用户显示</a></li> -->
+			</ul>
+			<div class="adv-table-fn-area">
+				<span class="nui-radio mt3"><input type="radio" name="advanced_radio" id="" checked="checked" /><label for="1" >按今日显示</label></span>
+				<!--
+				<div class="right">
+					<div class="nui-form-cell w150">
+							<input type="text"  class="nui-input" />
+					</div>
+					<button class="nui-btn">搜索</button><button class="nui-btn nui-btn-link">高级筛选 <span class="fms">︾</span></button>
+				</div>-->
+			</div>
+			<table id="trend_result_table">
+				<thead>
+					<tr>
+						<th>时段 </th>
+						<th>查询次数</th>
+						<th>用户（账号）</th>
+						<th>IP</th>
+						<th>企业</th>
+						<th>新用户（账号）</th>
+						<th>登录次数</th>
+					</tr>
+				</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</div>
+		<!--#include file="footer.html"-->
+</body>
+</html>

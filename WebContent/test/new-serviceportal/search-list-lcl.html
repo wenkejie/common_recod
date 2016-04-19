@@ -1,0 +1,947 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<title>demo</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+    <meta http-equiv="ClearType" content="true">
+	<!-- 样式引入 -->
+	<link rel="stylesheet" href="../../release/jqueryplugin/spinner/jquery.spinner.css" /><!-- 加减控件样式 -->
+	<link rel="stylesheet" href="../../release/freight/css/new-serviceportal/style.css" />
+	<!-- 样式 end -->
+</head>
+<body>
+	<div class="ui-top">
+		<div class="ui-top-content">
+			<div class="ui-top-user">
+				<a class="ui-top-username" href="javascript:">王尼玛 <i>&#xe602;</i></a>
+				<div class="ui-top-slidedown">
+					<div class="top-slidedown-bar">
+						<a href="javascript:">账户管理</a>
+						<span>|</span>
+						<a href="javascript:">退出</a>
+					</div>
+					<div class="top-slidedown-cnt">
+						<a class="top-slidedown-link" href="javascript:">
+							<i>&#xe621;</i>
+							<span>关注管理</span>
+						</a>
+						<a class="top-slidedown-link" href="javascript:">
+							<i>&#xe623;</i>
+							<span>推送设置</span>
+						</a>
+						<a class="top-slidedown-link" href="javascript:">
+							<i>&#xe622;</i>
+							<span>密码修改</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<ul class="ui-topbar">
+				<li class="ui-topbar-cell">
+					<a class="ui-topbar-link" href="javascript:">我的订单</a>
+				</li>
+				<li class="ui-topbar-cell">
+					<a class="ui-topbar-link" href="javascript:">帮助中心</a>
+				</li>
+				<li class="ui-topbar-cell">
+					<a class="ui-topbar-link" href="javascript:">联系我们</a>
+				</li>
+				<li class="ui-topbar-cell ui-topbar-cell-last">
+					<a class="ui-topbar-link" href="javascript:">英文</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="gui-header">
+		<div class="gui-header-content">
+			<h1 class="gui-logo">
+				<a href="javascript:">
+					<img src="../../release/freight/images/new-serviceportal/logo.png" alt="">
+				</a>
+				运价通
+			</h1>
+			<div class="gui-search">
+				<div class="gui-search-content">
+					<div class="gui-search-select">
+						<div class="gui-search-select-current">
+							<a class="gui-search-select-items" href="javascript:">海运出口整箱</a>
+							<i class="gui-search-select-icon">&#xe600;</i>
+						</div>
+						<ul class="gui-search-select-dropdown none">
+							<li class="gui-search-select-cell">
+								<a class="gui-search-select-items" href="javascript:">海运出口整箱</a>
+							</li>
+							<li class="gui-search-select-cell">
+								<a class="gui-search-select-items" href="javascript:">海运出口拼箱</a>
+							</li>
+							<li class="gui-search-select-cell gui-search-select-last">
+								<a class="gui-search-select-items" href="javascript:">空运</a>
+							</li>
+						</ul>
+					</div>
+					<div class="gui-search-input">
+						<div class="gui-search-input-cell">
+							<input ms-widget="textbox" class="search-input search-input-pol" type="textbox" ms-duplex="p" data-textbox-suggest="test1" placeholder="起运港"/>
+							<div class="gui-dropdown gui-dropdown-pol none">
+								<div class="gui-dropdown-header"></div>
+								<div class="gui-dropdown-content">
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell gui-dropdown-last">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+								</div>
+							</div>			
+						</div>
+						<div class="gui-search-input-cell">
+							<input ms-widget="textbox" class="search-input search-input-pod" type="textbox" ms-duplex="p" data-textbox-suggest="test1" placeholder="起运港"/>
+							<div class="gui-dropdown gui-dropdown-pod none">
+								<div class="gui-dropdown-header"></div>
+								<div class="gui-dropdown-content">
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:" class="gui-dropdown-cell gui-dropdown-last">
+											<span class="gui-port-code">上海</span>
+											<span class="gui-port-name">ShangHai</span>
+										</a>
+									</div>
+								</div>
+							</div>			
+						</div>
+					</div>
+					<a class="gui-search-btn" href="javascript:">搜索</a>
+					<a href="javascript:" class="gui-history-link">历史运价</a>
+				</div>
+				<p class="gui-search-extend">
+					<label class="gui-search-extend-label">历史搜索：</label>
+					<a href="javascript:" class="gui-search-extend-link">HongKong，</a>
+					<a href="javascript:" class="gui-search-extend-link">HongKong，</a>
+					<a href="javascript:" class="gui-search-extend-link">HongKong，</a>
+					<a href="javascript:" class="gui-search-extend-link">HongKong</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="gui-body">
+		<div class="gui-body-content">
+			<div class="gui-panel">
+				<div class="gui-panel-header">
+					<div class="gui-crumb">
+						<span>所有选择</span>
+						<em>></em> 
+						<span>目的港：NINGBO</span>
+						<em>></em> 
+						<a href="javascript:" class="gui-crumb-items">
+							<span class="gui-crumb-items-info">目的港：MSK，COCL</span>
+							<i class="gui-crumb-items-del">&#xe604;</i>
+						</a>
+						<a href="javascript:" class="gui-crumb-items">
+							<span class="gui-crumb-items-info">中转：MSK，COCL</span>
+							<i class="gui-crumb-items-del">&#xe604;</i>
+						</a>
+						<a href="javascript:" class="gui-crumb-items">
+							<span class="gui-crumb-items-info">船期：MSK，COCL</span>
+							<i class="gui-crumb-items-del">&#xe604;</i>
+						</a>
+					</div>
+					<div class="right">共搜索到 <span>50</span> 条运价</div>
+				</div>
+				<div class="gui-panel-body">
+					<div class="gui-tag-area">
+						<div class="gui-tag-line">
+							<div class="gui-tag-header">
+								起运港：
+							</div>
+							<div class="gui-tag-body">
+								<div class="gui-tag-group gui-tag-group-more">
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+								</div>
+							</div>
+							<div class="gui-tag-footer">
+								<a href="javascript:" class="gui-tag-multi">多选</a>
+								<a href="javascript:" class="gui-tag-more">更多<i class="gui-tag-more-icon">&#xe602;</i></a>
+							</div>
+						</div>
+						<div class="gui-tag-line">
+							<div class="gui-tag-header">
+								中&nbsp;&nbsp;&nbsp;转：
+							</div>
+							<div class="gui-tag-body">
+								<div class="gui-tag-group">
+									<a href="javascript:" class="gui-tag-cell">NINGBO</a>
+									<a href="javascript:" class="gui-tag-cell">SHAHAI</a>
+								</div>
+							</div>
+							<div class="gui-tag-footer">
+								<a href="javascript:" class="gui-tag-multi">多选</a>
+							</div>
+						</div>
+						<div class="gui-tag-line gui-tag-line-last">
+							<div class="gui-tag-header">
+								船&nbsp;&nbsp;&nbsp;期：
+							</div>
+							<div class="gui-tag-body">
+								<div class="gui-tag-group">
+									<a href="javascript:" class="gui-tag-cell">
+										<label for="data1" class="gui-checkbox"><input type="checkbox" name="" id="data1" />一/三</label>
+									</a>
+									<a href="javascript:" class="gui-tag-cell">
+										<label for="data2" class="gui-checkbox"><input type="checkbox" name="" id="data2" />二/三</label>
+									</a>
+									<a href="javascript:" class="gui-tag-cell">
+										<label for="data3" class="gui-checkbox"><input type="checkbox" name="" id="data3" />三/三</label>
+									</a>
+								</div>
+								<div class="gui-multi-confirm">
+									<a href="javascript:" class="gui-tag-btn gui-tag-btn-primary">提交</a>
+									<a href="javascript:" class="gui-tag-btn">取消</a>
+								</div>
+							</div>
+							<div class="gui-tag-footer">
+								<a href="javascript:" class="gui-tag-multi">多选</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="gui-table-area">
+				<table class="gui-table gui-table-condensed">
+					<thead>
+						<tr class="gui-table-header">
+							<th width="213">
+								港口
+							</th>
+							<th width="34">
+								轻货
+							</th>
+							<th width="34">
+								重货
+							</th>
+							<th width="72">
+								体积范围
+							</th>
+							<th width="60">
+								船公司
+							</th>
+							<th width="40">
+								航程
+							</th>
+							<th width="100">
+								船期
+							</th>
+							<th width="89">
+								有效期
+							</th>
+							<th width="60">
+								操作
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="gui-sep-row">
+							<td colspan="9"></td>
+						</tr>
+						<tr class="gui-table-content">
+							<td class="td-first">
+								<div class="gui-recommend-icon"></div>
+								<p><span class="port-name"><strong>SYDNEY</strong> 悉尼</span> <i>&#xe614;</i></p>
+								<p><span class="port-name"><strong>BUENOSAIRES</strong> 布宜诺斯艾利斯</span></p>
+								<p>【同行】 <i class="stress-icon">&#xe615;</i> */# @</p>
+							</td>
+							<td><span class="mete">(6000)</span></td>
+							<td><span class="mete">500000</span></td>
+							<td>100rt - 300rt</td>
+							<td><a class="gui-show-info j-company-info" href="javascript:">MSKK-KK <i>&#xe602;</i></a></td>
+							<td>
+								20天
+							</td>
+							<td>
+								<div class="data-one">
+									<p><span class="data">周一</span><label>截关</label>，<span class="data">周三</span><label>离港</label></p>
+								</div>
+								<div class="data-one">
+									<p><span class="data">周一</span><label>截关</label>，<span class="data">周三</span><label>离港</label></p>
+								</div>
+							</td>
+							<td>
+								<p><label>起：</label>2015-05-20</p>
+								<p><label>止：</label>2015-05-20</p>
+							</td>
+							<td>
+								<a href="javascript:">展开详情</a>
+							</td>
+						</tr>
+						<tr class="table-content-extend">
+							<td class="td-first">
+								<p class="gui-transit-info">
+									<label>中转港</label>
+									<span>HONGKONG</span>
+								</p>
+							</td>
+							<td colspan="3">
+								<label>仓库：</label>
+								<a class="gui-show-info j-warehouse-info" href="javascript:"><span class="gui-show-info-cnt">宁波龙兴仓库</span> <i>&#xe602;</i></a>
+							</td>
+							<td colspan="3" class="toe">
+								<label>目的港备注：</label>
+								特殊要求
+							</td>
+							<td colspan="2">
+								<label>预计上涨/下跌：</label><i class="trend-icon">&#xe61a;</i>
+							</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr class="gui-sep-row">
+							<td colspan="9"></td>
+						</tr>
+						<tr class="gui-table-content">
+							<td class="td-first">
+								<div class="gui-recommend-icon"></div>
+								<p><span class="port-name"><strong>SYDNEY</strong> 悉尼</span> <i>&#xe614;</i></p>
+								<p><span class="port-name"><strong>BUENOSAIRES</strong> 布宜诺斯艾利斯</span></p>
+							</td>
+							<td><span class="mete">(6000)</span></td>
+							<td><span class="mete">500000</span></td>
+							<td>100rt - 300rt</td>
+							<td>MSKK-KK <i>&#xe602;</i></td>
+							<td>
+								20天
+							</td>
+							<td>
+								<div class="data-one">
+									<p><span class="data">周一</span><label>截关</label>，<span class="data">周三</span><label>离港</label></p>
+								</div>
+								<div class="data-one">
+									<p><span class="data">周一</span><label>截关</label>，<span class="data">周三</span><label>离港</label></p>
+								</div>
+							</td>
+							<td>
+								<p><label>起：</label>2015-05-20</p>
+								<p><label>止：</label>2015-05-20</p>
+							</td>
+							<td>
+								<a href="javascript:">展开详情</a>
+							</td>
+						</tr>
+						<tr class="table-content-extend">
+							<td class="td-first">
+								<p class="gui-transit-info">
+									<label>中转港</label>
+									<span>HONGKONG</span>
+								</p>
+							</td>
+							<td colspan="8">
+								<label>仓库：</label>
+								<span>宁波龙兴仓库...<i>&#xe602;</i></span>
+							</td>
+						</tr>
+						<tr class="gui-table-detail">
+							<td colspan="9">
+								<div class="gui-detail-area">
+									<div class="gui-detail-surcharge">
+										<a href="" class="gui-detail-surcharge-close">
+											<i>&#xe605;</i>
+										</a>
+										<div class="gui-surcharge-form">
+											<dl class="gui-surcharge-calculate">
+												<dt class="title">计算器:</dt><dd>&nbsp;</dd>
+												<dt>体积</dt>
+												<dd>
+													<div class="gui-input psr gui-input-error w65">
+														<div class="gui-input-content">
+															<input class="gui-input-text tar" type="text"/>
+														</div>
+														<div class="gui-tips gui-tips-right gui-tips-error">
+															<div class="gui-tips-arrow">
+																◆ 
+																<em>◆</em>
+															</div>
+															<div class="gui-tips-cnt">格式有误格式有误格式有误格式有误格式有误格式有误格式有误格式有误格式有误格式有误格式有误格式有误格式有误格式有误格式有误格式有误格式有误</div>
+														</div>
+													</div>
+													<span class="unit">m³</span>
+												</dd>
+												<dt>重量</dt>
+												<dd>
+													<div class="gui-input w65">
+														<div class="gui-input-content">
+															<input class="gui-input-text tar" type="text"/>
+														</div>
+													</div>
+													<span class="unit">kg</span>
+												</dd>
+												<dt>件数</dt>
+												<dd>
+													<div class="gui-input w65">
+														<div class="gui-input-content">
+															<input class="gui-input-text tar" type="text"/>
+														</div>
+													</div>
+													<span class="unit">件</span>
+												</dd>
+												<dt>托板</dt>
+												<dd>
+													<div class="gui-input w65">
+														<div class="gui-input-content">
+															<input class="gui-input-text tar" type="text"/>
+														</div>
+													</div>
+													<span class="unit">托</span>
+												</dd>
+												<dt>目的港代理</dt>
+												<dd>
+													<div class="gui-input gui-input-drop gui-input-group-last w90">
+														<div class="gui-input-content">
+															<input class="gui-input-text j-slide-down" type="text" value="某某某代理">												
+															<span class="gui-input-addon"> <i>&#xe610;</i>
+															</span>
+														</div>
+														<ul class="gui-dropdown gui-dropdown-selct">
+															<li class="gui-dropdown-cell">
+																<div class="gui-dropdown-item">
+																	<a class="gui-dropdown-link" href="javascript:">32111111111111111111111111111</a>
+																</div>
+															</li>
+															<li class="gui-dropdown-cell">
+																<div class="gui-dropdown-item">
+																	<a class="gui-dropdown-link" href="javascript:">一代一代一代一代一代一代一代一代一代一代一代一代一代一代一代</a>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</dd>
+												<dt>客户类型</dt>
+												<dd>
+													<div class="gui-input gui-input-drop gui-input-group-last w90">
+														<div class="gui-input-content">
+															<input class="gui-input-text j-slide-down" type="text" value="直客">					
+															<span class="gui-input-addon"> <i>&#xe610;</i>
+															</span>
+														</div>
+														<ul class="gui-dropdown gui-dropdown-selct none">
+															<li class="gui-dropdown-cell">
+																<div class="gui-dropdown-item">
+																	<a class="gui-dropdown-link" href="javascript:">一代</a>
+																</div>
+															</li>
+															<li class="gui-dropdown-cell">
+																<div class="gui-dropdown-item">
+																	<a class="gui-dropdown-link" href="javascript:">二代</a>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</dd>
+												<dt></dt><dd><a href="javascript:" class="gui-btn gui-btn-calculate">算一算</a></dd>
+											</dl>
+											<div class="calculate-explain">
+												<div class="calculate-explain-title">
+													计算器说明
+												</div>
+												<div class="calculate-explain-cnt">
+													<div class="explain-line">
+														<label>比重：</label>
+														<span>1：750</span>
+													</div>
+													<div class="explain-line">
+														<label>服务税率：</label>
+														<span>20%</span>
+													</div>
+													<div class="explain-line">
+														<label>备注：</label>
+														<span>超宽超高货请电联。</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="gui-surcharge-area">
+											<table class="gui-surcharge-table">
+												<thead>
+													<th width="160">费用名称</th>
+													<th width="80">金额</th>
+													<th width="50">币别</th>
+													<th>收费描述</th>
+												</thead>
+												<tbody>
+													<tr>
+														<td>海运费</td>
+														<td>(5000.00)</td>
+														<td>USD</td>
+														<td>大王达娃大</td>
+													</tr>
+													<tr>
+														<td>THC(码头操作费)</td>
+														<td>1220.00</td>
+														<td>CNY</td>
+														<td></td>
+													</tr>
+													<tr class="gui-surcharge-table-title">
+														<td colspan="4">起运港费</td>
+													</tr>
+													<tr>
+														<td>BILLFEE(提单费)</td>
+														<td>1220.00</td>
+														<td>CNY</td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>CUS(报关费)</td>
+														<td>1220.00</td>
+														<td>CNY</td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>ISPS(安保费)</td>
+														<td>(1020.20)</td>
+														<td>USD</td>
+														<td>
+															<p>税率：8%，单价： (GBP) 50 。</p>
+															<p>单价： (GBP) 166 。Min: (GBP) 166 。</p>
+														</td>
+													</tr>
+													<tr>
+														<td>WARS(战争附加费)</td>
+														<td>(1020.20)</td>
+														<td>USD</td>
+														<td>
+															<p>单价： (GBP) 600 。 Min GBP: 600 。此为按重量收费。和体积相比，两者取其大。</p>
+														</td>
+													</tr>
+													<tr class="gui-surcharge-table-title">
+														<td colspan="4">目的港费</td>
+													</tr>
+													<tr>
+														<td>IAC(联运管理费)</td>
+														<td>(1020.20)</td>
+														<td>USD</td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>IPF(集装箱检查费)</td>
+														<td>(1020.20)</td>
+														<td>USD</td>
+														<td></td>
+													</tr>
+												</tbody>
+											</table>
+											<div class="gui-surcharge-footer">
+												<div>
+													<div class="gui-surcharge-total">
+														<label class="gui-surcharge-methods">
+															起运港费用：
+														</label>
+														<div class="gui-surcharge-num">
+															<p><label>CNY</label>6020.00</p>
+															<p><label>USD</label>6020.00</p>
+														</div>
+													</div>
+													<div class="gui-surcharge-total">
+														<label class="gui-surcharge-methods">
+															目的港费用：
+														</label>
+														<div class="gui-surcharge-num">
+															<p><label>CNY</label>6020.00</p>
+															<p><label>USD</label>6020.00</p>
+														</div>
+													</div>
+													<div class="gui-surcharge-total">
+														<label class="gui-surcharge-methods">
+															费用合计：
+														</label>
+														<div class="gui-surcharge-num">
+															<p><label>CNY</label>6020.00</p>
+															<p><label>USD</label>6020.00</p>
+														</div>
+													</div>
+												</div>
+												<div class="gui-surcharge-footer">
+													<a class="gui-btn gui-btn-big gui-btn-order" href="javascript:">订舱</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="gui-detail-grid gui-surcharge-extend">
+										<div class="gui-detail-line">
+											<label>附加费说明：</label>
+											翻舱费30%可预付翻舱费30%可预付翻舱费30%可预付翻舱费30%可预付翻舱费30%可预付翻舱费翻舱费30%可预付翻舱费30%可预付翻舱费30%可预付翻舱费30%可预付翻舱费。
+										</div>
+									</div>
+									<div class="gui-detail-grid">
+										<div class="gui-detail-line gui-detail-group">
+											<div class="gui-detail-cell"><label>目的港收货人：</label>同行</div>
+											<div class="gui-detail-cell"><label>目的港收费标准：</label>低标准</div>
+											<div class="gui-detail-cell"><label>FC(是否接受到付)：</label>是</div>
+											<div class="gui-detail-cell"><label>预计上涨：</label>20$</div>
+										</div>
+										<div class="gui-detail-line gui-detail-group">
+											<div class="gui-detail-cell"><label>目的港收货人：</label>同行</div>
+											<div class="gui-detail-cell"><label>目的港收费标准：</label>低标准</div>
+											<div class="gui-detail-cell"><label>FC(是否接受到付)：</label>是</div>
+											<div class="gui-detail-cell"><label>预计上涨：</label>20$</div>
+										</div>
+										<div class="gui-detail-line gui-detail-group">
+											<div class="gui-detail-cell"><label>目的港收货人：</label>同行</div>
+											<div class="gui-detail-cell"><label>目的港收费标准：</label>低标准</div>
+											<div class="gui-detail-cell"><label>FC(是否接受到付)：</label>是</div>
+											<div class="gui-detail-cell"><label>预计上涨：</label>20$</div>
+										</div>
+										<div class="gui-detail-line gui-detail-group">
+											<div class="gui-detail-cell"><label>目的港收货人：</label>同行</div>
+											<div class="gui-detail-cell"><label>目的港收费标准：</label>低标准</div>
+											<div class="gui-detail-cell"><label>FC(是否接受到付)：</label>是</div>
+											<div class="gui-detail-cell"><label>预计上涨：</label>20$</div>
+										</div>
+										<div class="gui-detail-line gui-detail-group">
+											<div class="gui-detail-cell"><label>目的港收货人：</label>同行</div>
+											<div class="gui-detail-cell"><label>目的港收费标准：</label>低标准</div>
+											<div class="gui-detail-cell"><label>FC(是否接受到付)：</label>是</div>
+											<div class="gui-detail-cell"><label>预计上涨：</label>20$</div>
+										</div>
+										<div class="gui-detail-line gui-detail-group">
+											<div class="gui-detail-cell"><label>目的港收货人：</label>同行</div>
+											<div class="gui-detail-cell"><label>目的港收费标准：</label>低标准</div>
+											<div class="gui-detail-cell"><label>FC(是否接受到付)：</label>是</div>
+											<div class="gui-detail-cell"><label>预计上涨：</label>20$</div>
+										</div>
+										<div class="gui-detail-line">
+											<label>限重：</label>  20GP 1.5T
+										</div>
+										<div class="gui-detail-line">
+											<label for="">开航日：</label>  2015-02-20
+										</div>
+										<div class="gui-detail-line">
+											<label for="">订舱代理：</label> 张一一，130000555
+										</div>
+										<div class="gui-detail-line">
+											<label for="">联系方式：</label>  张一一，130000555
+										</div>
+										<div class="gui-detail-line">
+											<label for="">附件：</label>  <a href="javascript:">下载托书1</a> , <a href="javascript:">下载托书2</a>
+										</div>
+										<div class="gui-detail-line">
+											<label for="">备注：</label> 达达娃嘟哇嘟哇低洼低洼大王达娃达瓦伟大大大王大王低洼的
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr class="gui-sep-row">
+							<td colspan="9"></td>
+						</tr>
+						<tr class="gui-table-content gui-suspended">
+							<td class="td-first">
+								<div class="gui-recommend-icon"></div>
+								<p><span class="port-name"><strong>SYDNEY</strong> 悉尼</span><i>&#xe614;</i></p>
+								<p><span class="port-name"><strong>BUENOSAIRES</strong> 布宜诺斯艾利斯</span></p>
+							</td>
+							<td><span class="mete">(6000)</span></td>
+							<td><span class="mete">500000</span></td>
+							<td>100rt - 300rt</td>
+							<td><a class="" href="javascript:">MSKK-KK <i>&#xe602;</i></a></td>
+							<td>
+								20天
+							</td>
+							<td>
+								<div class="data-one">
+									<p><span class="data">周一</span><label>截关</label>，<span class="data">周三</span><label>离港</label></p>
+								</div>
+								<div class="data-one">
+									<p><span class="data">周一</span><label>截关</label>，<span class="data">周三</span><label>离港</label></p>
+								</div>
+							</td>
+							<td>
+								<p><label>起：</label>2015-05-20</p>
+								<p><label>止：</label>2015-05-20</p>
+							</td>
+							<td>
+								<a href="javascript:">展开详情</a>
+							</td>
+						</tr>
+						<tr class="table-content-extend gui-suspended">
+							<td class="td-first">
+								<p class="gui-transit-info">
+									<label>中转港</label>
+									<span>HONGKONG</span>
+								</p>
+							</td>
+							<td colspan="8">
+								<label>仓库：</label>
+								<span>宁波龙兴仓库...<i>&#xe602;</i></span>
+							</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			<div class="gui-pager mt20">
+				<a class="gui-pager-prev gui-pager-disable" href="javascript:">上一页</a>
+				<a class="gui-pager-item" href="javascript:">1</a>
+				<span class="gui-pager-omit">...</span>
+				<a class="gui-pager-item gui-pager-item-current" href="javascript:">2</a>
+				<a class="gui-pager-item" href="javascript:">3</a>
+				<a class="gui-pager-item" href="javascript:">4</a>
+				<span class="gui-pager-omit">...</span>
+				<a class="gui-pager-item gui-pager-item-last" href="javascript:">20</a>
+				<a class="gui-pager-next" href="javascript:">下一页</a>
+				<div class="gui-pager-jump">
+					<span class="gui-pager-text">共15页，到第</span>
+					<div class="gui-pager-textbox-wrapper">
+						<input class="gui-pager-textbox"></div>
+					<span class="gui-pager-text">页</span>
+					<a class="gui-btn gui-btn-primary gui-pager-button gui-pager-disable">搜索</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gui-toolbar">
+		<a href="javascript:" class="gui-toolbar-cell gui-toolbar-first">
+			<i>&#xe61f;</i>
+			<span>客服</span>
+		</a>
+		<a href="javascript:" class="gui-toolbar-cell j-return-top">
+			<i>&#xe60a;</i>
+			<span>置顶</span>
+		</a>
+	</div>
+	<div class="gui-tips gui-tips-company none">
+		<div class="gui-tips-arrow">
+			◆ 
+			<em>◆</em>
+		</div>
+		<table class="tips-table">
+			<thead>
+				<th>船名</th>
+				<th>航次</th>
+				<th>截港</th>
+				<th>预计离港</th>
+				<th>预计到港</th>
+				<th>进港港区</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>海盗船</td>
+					<td>NTT04</td>
+					<td>2015-07-30</td>
+					<td>2015-07-30</td>
+					<td>2015-07-30</td>
+					<td>眉山</td>
+				</tr>
+				<tr>
+					<td>海盗船</td>
+					<td>NTT04</td>
+					<td>2015-07-30</td>
+					<td>2015-07-30</td>
+					<td>2015-07-30</td>
+					<td>眉山</td>
+				</tr>
+				<tr>
+					<td>海盗船</td>
+					<td>NTT04</td>
+					<td>2015-07-30</td>
+					<td>2015-07-30</td>
+					<td>2015-07-30</td>
+					<td>眉山</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="gui-tips gui-tips-warehouse none">
+		<div class="gui-tips-arrow">
+			◆ 
+			<em>◆</em>
+		</div>
+		<div class="gui-tips-cnt">
+			<div class="tips-form-line">
+				<label>仓库名称：</label>
+				<span>龙星物流</span>
+			</div>
+			<div class="tips-form-line">
+				<label>仓库地址：</label>
+				<span>宁波北仑区进港北路8号</span>
+			</div>
+			<div class="tips-form-line">
+				<label>仓库工作时间：</label>
+				<span>周一至周五0:00-24:00 周日08：30--17：30（法定假期安排另行通知）</span>
+			</div>
+			<div class="tips-form-line">
+				<label>温馨提示：</label>
+				<span>实际送仓地址可能发生变化，以进仓通知为准。我司不接受危险品，非铁桶装液体货以及裸装货，易碎品货物，极简易包装货物需要出具相关保函。超长，超宽，超高，超重货物需要单独事先确认。</span>
+			</div>
+			<div class="tips-form-line">
+				<label>附件：</label>
+				<a href="javascript:">仓库进仓单</a>
+			</div>
+		</div>
+	</div>
+	<!-- 插件及js应用 -->
+	<!-- Jquery引入 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryplugin/spinner/jquery.spinner.js"></script><!-- 控件 -->
+	<script type="text/javascript" src="../../release/freight/js/new-serviceportal/new.js"></script>
+	<!-- js end -->
+	<script type="text/javascript">
+		$('.spinner').spinner({value:0,max : 5});
+	</script>
+</body>
+</html>

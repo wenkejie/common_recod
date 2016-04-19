@@ -1,0 +1,35 @@
+//
+// label
+// --------------------------------------------------
+// 常量
+
+
+.wui-table{
+  width: 100%;
+  td{
+  	table-layout: fixed;
+  }
+}
+
+
+// 运价的一些其他信息表
+.wui-table-affix{
+	border: 1px solid #ccc;
+	tr{
+		border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;
+		&:nth-child(2n){
+			background: #fcfcfc;
+		}
+		&:first-child{
+			border-top-width: 0;
+		}
+		&:last-child{
+			border-bottom-width: 0;	
+		}
+	}
+	td{
+		padding: 0.625rem 0;
+		text-align: left;
+	}
+
+}

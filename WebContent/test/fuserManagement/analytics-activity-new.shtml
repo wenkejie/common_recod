@@ -1,0 +1,176 @@
+
+<!-- add by 陈峰 2014-12-29 -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="../../release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../src/js/highcharts.src.js"></script>
+	<script type="text/javascript" src="../../src/js/frame_common.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+	
+	$(function() {
+	    $('#container').highcharts({
+	        chart: {
+	            type: 'column'
+	        },
+	        title: {
+	            text: '' //'Stacked column chart'
+	        },
+	        xAxis: {
+	            categories: ['第一周', '第二周', '第三周', '第四周', '第五周'],
+	            labels: {
+	            	style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    },
+	                formatter : function(){
+	                	var rt = '<b>' + this.value + '</b>';
+	                	if(this.value == '第一周'){
+	                		rt += '<br/>' + '(10.26-11.1)';
+	                	}else if(this.value == '第一周'){
+	                		rt += '<br/>' + '(11.2-11.8)';
+	                	}else if(this.value == '第二周'){
+	                		rt += '<br/>' + '(11.9-11.15)';
+	                	}else if(this.value == '第三周'){
+	                		rt += '<br/>' + '(11.16-11.22)';
+	                	}else if(this.value == '第四周'){
+	                		rt += '<br/>' + '(11.23-11.29)';
+	                	}else if(this.value == '第五周'){
+	                		rt += '<br/>' + '(11.30-12.6)';
+	                	}
+	                    return rt
+                    }
+                }
+	        },
+	        yAxis: {
+	            min: 0,
+	            title: {
+	                text: '活跃用户数'
+	            },
+	            stackLabels: {
+	                enabled: true,
+	                style: {
+	                    fontWeight: 'bold',
+	                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+	                }
+	            }
+	        },
+	        legend: {
+	            align: 'right',
+	            x: -70,
+	            verticalAlign: 'top',
+	            y: 10,
+	            floating: true,
+	            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColorSolid) || 'white',
+	            borderColor: '#CCC',
+	            borderWidth: 1,
+	            enabled:false,
+	            shadow: false
+	        },
+	        tooltip: {
+	            formatter: function() {
+	            	// '<b>'+ this.x +'</b><br/>'
+	                return '<b>活跃用户数</b><br/>'+
+	                    this.series.name +': '+ this.y +'<br/>'+
+	                    'Total: '+ this.point.stackTotal;
+	            }
+	        },
+	        plotOptions: {
+	            column: {
+	                stacking: 'normal',
+	                dataLabels: {
+	                    enabled: true,
+	                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+	                }
+	            }
+	        },
+	        series: [{
+	            name: '10月',
+	            data: [20, null, null, null, null]
+	        }, {
+	            name: '11月',
+	            data: [6, 20, 23, 22, 5]
+	        }, {
+	            name: '12月',
+	            data: [null, null, null, null, 15]
+	        }],
+	     	// 版权信息
+			credits: {
+				enable: false,
+				text: ""
+			}
+	    });
+	});
+		
+	</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap-nobd">
+
+		
+	<div class="left-side"><div class="left-slide-top-line"></div>
+		<ul class="left-side-menu mt50">
+			<li><a href="analytics.shtml" class="left-side-menu-a"><i class="fs14">&#x35ab;</i> 统计概况<i class="right ">&#13726</i></a></li>
+			<li class="left-side-menu-categories">流量分析：</li>
+			<li><a href="analytics-trend.shtml" class="left-side-menu-a">趋势分析<i class="right ">&#13726</i></a></li>
+			<li><a href="analytics-online.shtml" class="left-side-menu-a">当前在线<i class="right ">&#13726</i></a></li>
+			<li><a href="analytics-detail.shtml" class="left-side-menu-a">访问明细<i class="right ">&#13726</i></a></li>
+			<li class="left-side-menu-categories">访问分析：</li>
+			<li><a href="analytics-activity.shtml" class="left-side-menu-a">活跃度<i class="right ">&#13726</i></a></li>
+			<li><a href="analytics-pql.shtml" class="left-side-menu-a">查询分析<i class="right ">&#13726</i></a></li>
+			<li class="left-side-menu-categories">会员分析：</li>
+			<li><a href="analytics-activity-new.shtml" class="left-side-menu-a active">活跃度分析<i class="right ">&#13726</i></a></li>
+			<li><a href="analytics-loss-rate.shtml" class="left-side-menu-a">流失率<i class="right ">&#13726</i></a></li>
+		</ul>
+		<div class="left-slide-bottom-line"></div>
+	</div>
+	 		
+	 <div class="right-side">
+		<div class="main-title">
+			<h1>活跃度分析</h1>
+		</div>
+	
+		<div class="analytics-grid mt15">
+				<div class="analytics-title"><h2>活跃度分析 </h2>
+					<div class="nui-group-btn ml20 pt5 left">
+						
+					</div>
+					<div class="analytics-title-fn pt7 right">
+						<a href="javascript:"  class="nui-select-tag nui-select-tag-active" start='1 month ago' end='today-1days'>上月</a>
+						<a href="javascript:"  class="nui-select-tag" start='today-7days' end='today-1days'>本月</a>
+						其他：<select>
+							 	<option value="" selected="selected">无</option>
+							 	<option value="6" >2014年6月</option>
+							 	<option value="7" >2014年7月</option>
+							 	<option value="8" >2014年8月</option>
+							 	<option value="9" >2014年9月</option>
+							 	<option value="10" >2014年10月</option>
+							 	<option value="11" >2014年11月</option>
+							 	<option value="12" >2014年12月</option>
+							 </select>
+						
+						<input type="hidden" name="dateStart" id="dateStart" value=""/>
+						<input type="hidden" name="dateEnd" id="dateEnd" value=""/>
+					</div>
+				</div>
+				<div class="analytics-cnt" style="height: 400px;">
+					<div id="container" class="big-chart" style="height: 400px;"></div>
+				</div>
+		</div>
+
+	</div>
+		
+	</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

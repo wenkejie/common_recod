@@ -1,0 +1,681 @@
+// ====================201507b，客户管理改造，by:Evan=================
+
+// 常量
+@color-primary:         #428bca;
+@color-success:         #5cb85c;
+@color-info:            #5bc0de;
+@color-warning:         #f0ad4e;
+@color-danger:          #d9534f;
+
+@gray-dark:              #333;   // #333
+@gray:                   #666; // #555
+@gray-light:             #777; 
+@gray-lighter:           #aaa; 
+
+
+//==============右侧弹窗内的任务详细容器===============
+.nui-details-box{
+	position: relative;
+  	height: 100%;width: 100%;
+  	
+}
+
+.details-box-left{
+	// display: table-cell;
+  	height: 100%;
+ 	padding:15px 25px 15px 25px;
+ 	background: #fff;
+ 	overflow-y: auto;overflow-x: hidden;
+}
+
+.details-box-right{
+  // display: table-cell;
+  position: absolute;right: 0;top: 0;z-index: 30;
+  height: 100%;width: 212px;
+  background: #f5f5f5;
+  border-left: 3px solid #ddd;vertical-align: top;
+  transition: All 0.1s ease 0.3s;
+}
+
+.box-right-hide{
+	width: 0;
+	// overflow: hidden;
+}
+
+
+.box-right-operate{
+	float: left;display: block;
+	width: 30px;height: 30px;line-height: 30px;margin-left: -30px;padding-top: 6px;
+	background: #ddd;border-top-left-radius: 3px;border-bottom-left-radius: 3px;
+	color: #666;text-align: center;
+	i{
+		margin-top: 10px;
+		color: #666;
+		transition: All 0.1s ease 0.3s;
+	}
+	&:hover{
+		text-decoration: none;
+		background: #a0a0a0;
+		i{
+			color: #f5f5f5;
+		}
+	}
+}
+
+
+
+
+.details-box-content{
+  padding: 10px;
+}
+
+
+.details-box-operate{
+	padding: 15px 20px;
+	text-align: left;
+	h3{
+		padding: 10px 0;
+		font-size: 14px;font-weight: bold;
+	}
+}
+
+// 新的按钮样式这里暂时使用
+.nui-btn-new{
+	display: block;
+	line-height: 32px;margin-bottom: 10px;
+	text-align: left;
+	i{
+		margin-right: 10px;
+		color: #666;
+	}
+}
+
+
+//
+// 记录列表
+// --------------------------------------------------
+// 变量
+
+.nui-record-area{
+	
+}
+
+
+.nui-record-grid{
+	position: relative;
+	margin-left: 15px;padding-top: 45px;padding-bottom: 10px;
+	border-left: 2px solid #ddd;
+	&:last-child{
+		padding-bottom: 0;
+	}
+}
+
+.nui-record-title{
+	position: absolute;left: -12px;top: 0;z-index: 100px;
+	height: 22px;line-height: 22px;
+	border-radius: 11px;background: #dadfe5;
+	text-align: left;color: #3B4857;font-size: 12px;
+}
+
+.record-title-content{
+	float: left;
+	height: 22px;padding: 0 8px;width: 57px;
+	border-radius: 11px;background: #3C4957;
+	color: #fff;
+	em{
+		display: inline-block;*display: inline;*zoom:1;
+		width: 6px;height: 6px;margin-right: 8px;margin-bottom: 2px;
+		border-radius: 50%;background: #fff;
+	}
+}
+
+.record-title-extend{
+	display: block;
+	height: 22px;padding: 0 8px;padding-left: 67px;
+	border-radius: 11px;background: #dadfe5;
+}
+
+
+.nui-record-item{
+	&:extend(.clearfix all);
+	position: relative;
+	padding-bottom: 20px;padding-left: 55px;
+	font-size: 12px;
+	i{
+		color: #aaa;
+	}
+}
+
+.nui-record-item-last{
+	padding-bottom: 0;
+	border-left-color: #fff;
+}
+
+.record-item-msg{
+	position: absolute;left: 0;top: 0;right: 0;bottom: 0;
+	width: 50px;padding-left: 15px;
+	.record-icon{
+		position: absolute;left: -12px;top: 0;z-index: 10;
+		width: 23px;height: 23px;line-height: 25px;
+		background: #b3bdca;border-radius: 12px;
+		text-align: center;color: #fff;font-size: 14px;
+	}
+	.record-icon-primary{
+		background: @color-primary;
+	}
+	.record-icon-success{
+		background: @color-success;
+	}
+	.record-icon-warning{
+		background: @color-warning;
+	}
+	.record-icon-danger{
+		background: @color-danger;
+	}
+
+	.record-timeinfo{
+		font-size: 12px;color: #999;
+	}
+}
+
+
+
+.record-item-content{
+	&:extend(.word-break all);
+	position: relative;
+	float: left;
+	width: 100%;
+	text-align: left;
+	.record-person{
+		display: inline-block;*display: inline;*zoom:1;
+	}
+
+
+	.record-state{
+		width: 120px;
+		color: #333;
+	}
+
+	.state-fcl{
+		color: #F0851D;
+	}
+
+	.state-lcl{
+		color: #B2B200;
+	}
+	
+
+	.record-username{
+		color: #0065B8;
+	}
+
+	.record-info{
+		color: #0065B8;
+		i{
+			color: #0065B8;	
+		}
+	}
+
+	.record-info-more{
+		cursor: pointer;
+		i{font-size: 12px;}
+	}
+
+	.record-delete,.record-fn{
+		position: absolute;right: 0;top: 0;
+		color: @gray-light;font-size: 12px;
+		&:hover{
+			color: @gray-dark;
+		}
+	}
+}
+
+.record-item-info{
+	display: block;position: relative;
+	padding-right: 50px;
+	font-size: 14px;
+	> strong{
+		display: block;
+		
+	}
+}
+
+.record-item-detail{
+	padding-top: 5px;margin-top: 5px;
+	border-top: 1px solid #ccc;
+}
+
+
+
+
+.nui-record-plan-area{
+	.nui-record-item{
+		padding-left: 30px;
+	}
+	.record-item-msg{
+		width: 30px;
+	}
+
+	.record-item-line{
+		padding: 3px 0;
+	}
+
+	.group-members{
+		display: inline-block;*display: inline;*zoom:1;
+		padding: 0 7px;line-height: 18px;
+		background: #F0B72A;vertical-align: middle;border-radius: 2px;color: #fff;
+	}
+}
+
+
+
+.nui-record-noinfo{
+	width: 290px;
+	margin: 100px auto 0;
+	p{
+		padding-top: 10px;
+		font-size: 14px;
+		span{
+			color: #333;font-weight: bold;
+		}
+		label{
+			color: #999;
+		}
+	}
+}
+
+.noinfo-pic{
+	text-align: center;
+	img{
+		height: 116px;width: 122px;
+
+	}
+}
+
+//
+// 成员列表
+// --------------------------------------------------
+// 变量
+
+.nui-team-group{
+	&:extend(.clearfix all);
+	padding: 5px 20px;margin-top: 20px;
+	text-align: left;
+}
+
+
+.team-group-header{
+	padding-left: 5px;padding-bottom: 10px;
+	font-size: 14px;font-weight: bold;
+	
+}
+
+.team-group-manage{
+	position: relative;
+	float: right;
+	font-size: 12px;
+	
+}
+
+.team-manage-content{
+	position: absolute;z-index: 135;
+	right: 0;top: 30px;
+	width: 164px;max-height: 195px;
+	background: #fff;border: 1px solid #ccc;border-radius: 3px;
+	overflow-y: auto;
+}
+
+
+.team-manage-cell{
+	&:extend(.word-break all);
+	padding: 7px 5px;padding-right: 32px;
+	font-weight: normal;
+	&:hover{
+		background: #F1F2F3;
+		cursor: pointer;
+		color: #333;
+		.team-manage-cell-del{
+			display: block;
+		}
+	}
+}
+
+.team-manage-cell-del{
+	float: right;
+	display: none;
+	margin-right: -27px;
+	color: #888;
+}
+
+
+.team-group-cnt{
+	max-height: 360px;
+	overflow-y: auto;
+}
+
+.team-group-cell{
+	position: relative;float: left;
+	width: auto;height: 30px;margin: 5px;min-width: 30px;
+	line-height: 28px;padding: 0 5px;
+	background: #fff;border-radius: 2px;border: 1px solid #ccc;
+	font-size: 12px;color: #666;text-align: center;
+	// .delete-icon{
+	//  	position: absolute;left: 0;top: 0;
+	// 	z-index: 100;display: block;
+	// 	height: 100%;width: 100%;
+	// 	line-height: 28px;
+	// 	background: rgba(0,0,0,.3);border-radius: 2px;
+	// 	font-size: 16px;color: #fff;text-align: center;
+	// 	&:hover{
+	// 		text-decoration: none;
+	// 	}
+	// }
+}
+
+.team-group-add{
+	float: none;
+	clear: both;
+	padding: 0;border: none;
+	width: 30px;background: transparent;
+	padding-top: 5px;
+}
+
+
+.team-group-add > a{
+	display: block;height: 30px;border: 1px solid #ddd;
+	color: #ddd;line-height: 25px;text-align: center;font-size: 28px;background: #fff;border-radius: 4px;
+	&:hover{
+		border-color: #ccc;color: #ccc;
+		text-decoration: none;
+	}
+}
+
+
+
+
+// 服务人员弹窗
+.nui-dialog-serve{
+	width: 340px;margin-left: -170px;
+}
+
+
+.nui-form-cell-stdmod{
+	.addon{
+		float: right;
+		margin-right: -26px;
+		height: 24px;line-height: 24px;
+		font-size: 14px;color: #B3BDCA;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+
+
+
+// 关注结构
+.attention-area{
+	position: relative;
+    display: inline-block;*display: inline;*zoom:1;
+    vertical-align: middle;
+    margin-left: 10px;
+    // &:hover{
+    // 	.attention-tips{
+    // 		display: block;
+    // 	}
+    // }
+    .nui-tags-cell{
+    	font-size: 12px;margin-bottom: 0;
+    }
+}
+
+.attention-area-hover{
+	.attention-tips{
+    	display: block;
+    }
+    .attention-icon{
+    	color: #F1630E;text-decoration: none;
+    }
+}
+
+.attention-area-active{
+	.attention-tips{
+    	display: none;
+    }
+    .attention-icon{
+    	color: #F1630E;text-decoration: none;
+    }
+}
+
+.attention-icon{
+	height: 20px;width: 20px;
+    font-size: 20px;color: #c4c8cc;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+
+.attention-tips{
+	left: 28px;top: -5px;
+	display: none;
+	width: 180px;line-height: 1.5;
+	background: #238CCD;border-radius: 3px;
+	color: #fff;
+	box-shadow: none;border: none;
+	font-size: 12px;
+	.nui-tips-arrow{
+		top: 8px;
+		color: #238CCD;
+		em{
+			color: #238CCD;
+		}
+	}
+}
+
+
+.user-status{
+	margin-left: 5px;
+	i{
+		margin-right: 5px;
+	}
+}
+
+.user-status-wait{
+	color: #F1630D;
+	i{
+		color: #F1630D;font-size: 16px;	
+	}
+}
+
+.user-form{
+
+}
+
+.user-form-grid{
+	+ .user-form-grid{
+		margin-top: 20px;
+	}
+	// .form-line{
+	// 	&:extend(.word-break all);
+	// 	padding-bottom: 20px;
+	// }
+	.nui-input{
+		box-sizing: content-box;
+	}
+	.nui-label{
+		vertical-align: top;
+	}
+}
+
+
+.user-form-line{
+	&:extend(.word-break all);
+	padding-bottom: 20px;
+}
+
+
+.user-form-header{
+	height: 26px;line-height: 26px;
+	background: #f2f2f2;
+	padding: 0 20px 0 10px;
+	span{
+		color: #333;font-size: 14px;
+	}
+	a{
+		float: right;
+	}
+}
+
+.edit-area{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	.nui-form-cell-textarea{
+		padding: 0;
+		.nui-textarea{
+			padding: 5px;
+		}
+	}
+}
+
+.user-info-edit{
+	display: inline-block;*display: inline;*zoom:1;
+	height: 14px;line-height: 14px;
+	vertical-align: top;font-size: 12px;
+
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+.user-info-content,.user-tags-selcet{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: top;padding-top: 3px;
+	min-height: 25px;max-width: 650px;
+	cursor: pointer;color: #333;
+	span{
+		// display: inline-block;
+		vertical-align: baseline;
+	}
+
+}
+
+
+// 图标区域
+.analysis-area{}
+
+.analysis-grid{
+	height: 425px;
+	border: 1px solid #D4DDE6;
+	box-shadow: 0 1px 3px #ccc;
+}
+
+
+
+// 合并弹窗内部表格
+.nui-table-merger{
+	th{
+		border: 1px solid #e6e6e6;background: #f5f5f5;
+		color: #999;
+	}
+	td{
+		&:extend(.word-break all);
+		border: 1px solid #e6e6e6;
+		color: #333;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+
+	.first-td{
+		text-align: center;
+	}
+
+	.last-td{
+		position: relative;
+		padding-right: 110px;
+	}
+
+	.last-td-hover,.last-td-current{
+		.td-hover-tips{
+			display: block;
+		}
+	}
+}
+
+.nui-table-serve{
+	table-layout: fixed;
+	th{
+		border: 1px solid #e6e6e6;background: #f5f5f5;
+		color: #999;
+	}
+	td{
+		&:extend(.word-break all);
+		border: 1px solid #e6e6e6;
+		color: #333;
+	}
+	.first-td{
+		// text-align: center;
+	}
+}
+
+
+.td-hover-tips{
+	position: absolute;right: 10px;top: 8px;
+	display: none;
+	width: 100px;height:18px;
+	color: #FF7F00;
+	i{
+		color: #FF7F00;
+	} 
+}
+
+.merger-info{
+	padding-left: 20px;
+	i{
+		float: left;
+		margin-left: -20px;
+	}
+}
+
+
+
+// 表头排序结构
+.sequence-btn{
+	display: block;
+	// *width: 50px;
+	color: #333;
+	span{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		*cursor: pointer;
+	}
+	&:hover{
+		text-decoration: none;
+		color: #666;
+	}
+}
+.sequence-icon{
+	margin-left: 3px;
+	*width:16px;cursor: pointer;
+	i{
+		display: block;
+		width: 16px;
+		font-size: 16px;color: #999;
+	}
+	.down-icon{
+		margin-top: -8px;
+	}
+}
+
+.sequence-btn-up{
+	.up-icon{
+		color: #4aa4e8;
+	}
+}
+
+.sequence-btn-down{
+	.down-icon{
+		color: #4aa4e8;
+	}
+}

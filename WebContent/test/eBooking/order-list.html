@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>订单列表</title>
+	<link rel="stylesheet" href="../../release/freight/css/ebooking.css" />
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			var tab = $('.eui-tag-cell');
+			var moreInfo = $('.eui-more-info');
+			tab.click(function() {
+				tab.removeClass('eui-tag-cell-active');
+				$(this).addClass('eui-tag-cell-active');
+			});
+			moreInfo.mouseenter(function() {
+				$(this).children('.fui-tips-buyers').removeClass('none');
+			}).mouseleave(function(event) {
+				$(this).children('.fui-tips-buyers').addClass('none');
+			});	
+		})
+	</script>
+</head>
+<body>
+	<div class="eui-header">
+		<div class="eui-header-content">
+			<h1 class="eui-logo mt5">
+			    <a href="javascript:"></a>
+			    咖狗网-中国领先的国际物流电子商务平台
+			</h1>
+			<div class="eui-nav">
+				<div class="eui-nav-cell"><a class="eui-nav-link eui-nav-link-current" href="javascript:">全部订单</a></div>
+				<div class="eui-nav-cell"><a class="eui-nav-link" href="javascript:">海运整箱订单</a></div>
+				<div class="eui-nav-cell"><a class="eui-nav-link" href="javascript:">海运拼箱订单</a></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="eui-body">
+	<div class="eui-blank-line"></div>
+		<div class="eui-search">
+			<div class="eui-search-content">
+				<div class="eui-search-line">
+					<label class="eui-label">订单状态：</label>
+					<div class="eui-tag">
+						<a class="eui-tag-cell eui-tag-cell-active" href="javascript:">待接受</a>
+						<a class="eui-tag-cell" href="javascript:">已接受</a>
+						<a class="eui-tag-cell" href="javascript:">全部</a>
+					</div>
+				</div>
+				<div class="eui-search-line">
+					<label class="eui-label">搜索条件：</label>
+					<div class="eui-input">
+						<div class="eui-input-content">
+							<input class="eui-input-text" placeholder="请输入订单号/订单相关信息搜索" type="text" />
+						</div>
+					</div>
+					<label class="eui-label ml25">交易时间：</label>
+					<div class="eui-input eui-input-times">
+						<div class="eui-input-content">
+							<input class="eui-input-text" type="text" />
+						</div>
+					</div>
+					<span>-</span>
+					<div class="eui-input eui-input-times">
+						<div class="eui-input-content">
+							<input class="eui-input-text" type="text" />
+						</div>
+					</div>
+					<a class="eui-btn eui-btn-primary ml10">
+						搜索
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="eui-body-content">
+			<div class="eui-panel eui-panel-order mt20">
+				<div class="eui-panel-hd">
+					<ul class="eui-panel-ul">
+						<li>
+							<div class="eui-order-mark">整箱</div>
+						</li>
+						<li>
+							<label class="ml15">订单号：</label>DFDFDFDF123123123
+						</li>
+						<li>
+							<label class="ml25">下单时间：</label>2014-12-12
+						</li>
+						<li class="name">
+							<div class="eui-buyers-info"><label class="ml40">买家：</label>深圳光海物流有限公司</div>
+							<div class="eui-more-info">
+								<a href="javascript:" class="eui-more-icon"> <i>&#xe613;</i>
+								</a>
+								<div class="fui-tips fui-tips-buyers none">
+									<div class="fui-tips-arrow top">
+										◆ <em>◆</em>
+									</div>
+									<div class="fui-tips-content">
+										<div>
+											<label for="">联系人:</label>
+											<span>13532418758（王尼玛）</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+
+				<div class="eui-panel-bd">
+					<table class="eui-panel-tabel">
+						<tbody>
+							<tr>
+								<td width="390" class="td-first">
+									<div class="td-grid">
+										<p class="place-name">BAKU（巴库）-ALBANY（奥尔巴尼）</p>
+										<p class="mt5">
+											<span>
+												ATL | <label>船期：</label>2015-04-11 周一 / 2015-05-11 周一
+											</span>
+										</p>
+										<p class="mt3">
+											<label>提单号：</label>123123123123
+										</p>
+									</div>
+
+								</td>
+								<td width="130">
+									<div class="td-grid">
+										<p>20GP <span class="num">X 2</span></p>
+										<p>20GP <span class="num">X 2</span></p>
+										<p>20GP <span class="num">X 2</span></p>
+									</div>
+								</td>
+								<td width="160">
+									<div class="td-grid td-grid-info">
+										<p>海关预配舱单已发送</p>
+										<p>舱位已确认</p>
+										<p>海关预配舱单发送状态</p>
+									</div>
+								</td>
+								<td width="120" class="psr">
+									<div class="eui-tips eui-tips-inside eui-tips-error">
+										<div class="eui-tips-content"> <i>&#xe60d;</i>
+											<span>订单已修改</span>
+										</div>
+									</div>
+									<div class="td-grid">
+										<p class="order-modify order-modify-success">已接受</p>
+									</div>
+								</td>
+								<td class="td-last">
+									<div class="td-grid">
+										<a class="order-detail-link" href="javascript:">订单详情</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="eui-panel eui-panel-order mt20">
+				<div class="eui-panel-hd">
+					<ul class="eui-panel-ul">
+						<li>
+							<div class="eui-order-mark">整箱</div>
+						</li>
+						<li>
+							<label class="ml15">订单号：</label>DFDFDFDF123123123
+						</li>
+						<li>
+							<label class="ml25">下单时间：</label>2014-12-12
+						</li>
+						<li class="name">
+							<label class="ml40">买家：</label>深圳光海物流有限公司
+						</li>
+					</ul>
+				</div>
+
+				<div class="eui-panel-bd">
+					<table class="eui-panel-tabel">
+						<tbody>
+							<tr>
+								<td width="390" class="td-first">
+									<div class="td-grid">
+										<p class="place-name">BAKU（巴库）-ALBANY（奥尔巴尼）</p>
+										<p class="mt5">
+											<span>
+												ATL | <label>船期：</label>2015-04-11 周一 / 2015-05-11 周一
+											</span>
+										</p>
+										<p class="mt3">
+											<label>提单号：</label>123123123123
+										</p>
+									</div>
+
+								</td>
+								<td width="130">
+									<div class="td-grid">
+										<p>20GP <span class="num">X 2</span></p>
+										<p>20GP <span class="num">X 2</span></p>
+										<p>20GP <span class="num">X 2</span></p>
+									</div>
+								</td>
+								<td width="160">
+									<div class="td-grid td-grid-info">
+									</div>
+								</td>
+								<td width="120">
+									<div class="td-grid">
+										<p class="order-modify order-modify-waring">待接受</p>
+									</div>
+								</td>
+								<td class="td-last">
+									<div class="td-grid">
+										<a class="order-detail-link" href="javascript:">订单详情</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="eui-panel eui-panel-order mt20">
+				<div class="eui-panel-hd">
+					<ul class="eui-panel-ul">
+						<li>
+							<div class="eui-order-mark eui-order-mark-lcl">拼箱</div>
+						</li>
+						<li>
+							<label class="ml15">订单号：</label>DFDFDFDF123123123
+						</li>
+						<li>
+							<label class="ml25">下单时间：</label>2014-12-12
+						</li>
+						<li class="name">
+							<label class="ml40">买家：</label>深圳光海物流有限公司
+						</li>
+					</ul>
+				</div>
+
+				<div class="eui-panel-bd">
+					<table class="eui-panel-tabel">
+						<tbody>
+							<tr>
+								<td width="390" class="td-first">
+									<div class="td-grid">
+										<p class="place-name">BAKU（巴库）-ALBANY（奥尔巴尼）</p>
+										<p class="mt5">
+											<span>
+												ATL | <label>船期：</label>2015-04-11 周一 / 2015-05-11 周一
+											</span>
+										</p>
+										<p class="mt3">
+											<label>提单号：</label>123123123123
+										</p>
+									</div>
+
+								</td>
+								<td width="130">
+									<div class="td-grid">
+										<p><span class="num">211</span>CBM</p>
+									</div>
+								</td>
+								<td width="160">
+									<div class="td-grid td-grid-info">
+									</div>
+								</td>
+								<td width="120">
+									<div class="td-grid">
+										<a class="eui-btn eui-btn-primary">接受</a>
+									</div>
+								</td>
+								<td class="td-last">
+									<div class="td-grid">
+										<a class="order-detail-link" href="javascript:">订单详情</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="eui-pager mt20">
+				<a class="eui-pager-prev" href="javascript:">上一页</a>
+				<a class="eui-pager-item" href="javascript:">1</a>
+				<span class="eui-pager-omit">...</span>
+				<a class="eui-pager-item eui-pager-item-current" href="javascript:">2</a>
+				<a class="eui-pager-item" href="javascript:">3</a>
+				<a class="eui-pager-item" href="javascript:">4</a>
+				<span class="eui-pager-omit">...</span>
+				<a class="eui-pager-item eui-pager-item-last" href="javascript:">20</a>
+				<a class="eui-pager-next" href="javascript:">下一页</a>
+				<div class="eui-pager-jump">
+					<span class="eui-pager-text">共15页，到第</span>
+					<div class="eui-pager-textbox-wrapper">
+						<input class="eui-pager-textbox"></div>
+					<span class="eui-pager-text">页</span>
+					<a class="eui-btn eui-btn-primary eui-pager-button">
+						搜索
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

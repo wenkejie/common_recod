@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://cpcommon.600jit.com/fcommon/release/freight/css/common-v1.2.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="fui-dialog" style="">
+		<div class="fui-dialog-title">
+			<h4 class="tal">费用明细详细页</h4>
+			<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+		</div>
+		<div class="fui-dialog-cnt">
+			<div class="wrap main-wrap">
+		<div class="search-area" id="j-searchArea">
+
+			
+				<div class="search-area-grid">
+					<div class="search-area-line">
+						<label for="username"  class="nui-label">姓名：</label>
+						<div class="nui-form-cell w100  mr20">
+							<input type="text" id="username" class="nui-input" />
+						</div>
+						<label for="companyname"  class="nui-label">公司名称：</label>
+						<div class="nui-form-cell w200  mr20">
+							<input type="text" id="companyname"  class="nui-input" onclick="changeCompany(this)"/>
+						</div>
+						<label for="mobile" class="nui-label">用户名：</label>
+						<div class="nui-form-cell w100  mr10">
+							<input type="text" id="mobile"  class="nui-input"/>
+						</div>
+						<span id="j-toggle">
+							<button class="nui-btn nui-btn-primary " onclick="searchData()">搜 索</button>
+							
+						</span>
+					</div>
+					<div class="search-area-line search-adv-area" >
+						<div class="form-line">
+							<div class="form-line-left w500 dpib">
+								<label for="typeoftime" class="nui-label">日期类型：</label><select name="" id="" class="nui-native-select w100"> 
+								<option value="">注册日期</option>
+								<option value="">审批日期</option>
+							</select>
+							<div class="nui-form-cell">
+								<input type="text" id="typeoftime-fir" class="nui-input w80" onfocus="$(this).datepicker();" />
+							</div><!-- 调用了日期控件 -->
+							<span> - </span>
+							<div class="nui-form-cell ml1">
+								<input type="text" id="typeoftime-sec" class="nui-input w80" onfocus="$(this).datepicker();"/>
+							</div>
+							
+						</div>
+						<div class="form-line-right dpib">
+							<label for="typeoftime" class="nui-label">关键词：</label><select name="" id="" class="nui-native-select w100"> 
+							<option value="">请选择</option>
+							<option value="">用户电话</option>
+							<option value="">用户传真</option>
+							<option value="">用户邮箱</option>
+							<option value="">企业备注名</option>
+							<option value="">省份</option>
+							<option value="">城市</option>
+						</select>
+						<div class="nui-form-cell w185">
+							<input type="text" id="typeoftime" class="nui-input"/>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="form-line">
+					<div class="form-line-left w500 dpib">
+						<label for="typeoftime" class="nui-label">服务选择：</label>
+						<label for="fcl" class="nui-checkbox"><input type="checkbox" name="" id="fcl" />整箱</label>
+						<label for="lcl"  class="nui-checkbox"><input type="checkbox" name="" id="lcl" />拼箱</label>
+						<label for="air"  class="nui-checkbox"><input type="checkbox" name="" id="air" />空运</label>
+
+					</div>
+					<div class="form-line-right dpib">
+						<label for="typeoftime" class="nui-label mr20">登录控制：</label>
+						<label for="" class="nui-radio"><input type="radio" name="control" checked="checked"/>全部</label>
+						<label for="" class="nui-radio"><input type="radio" name="control"/>启用</label>
+						<label for="" class="nui-radio"><input type="radio" name="control"/>未启用</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="search-area-btn-area">
+					<button class="nui-btn nui-btn-primary w80" id="j-searchBtn">搜 索</button>
+					<button class="nui-btn " id="j-backBtn">返回普通搜索 <i class="fs14">&#x3437;</i></button>
+				</div>
+
+			</div>
+			<div class="search-area-blank none">
+				<div class="search-area-blank-download">
+					<a href="javascript:" class="blank-download-fir">
+						<s class="icon icon-download"></s><span>下载查询结果：EXCEL</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="result-area">
+			<div class="result-filter">
+				<a href="javascript:" class="result-filter-btn active">目的港计算费用设置</a>
+				<a href="list_company.shtml" class="result-filter-btn">费用明细设置</a>
+
+			</div>
+			<div class="result-fn-area">
+				<div class="result-fn-area-port">
+					<button class="nui-btn nui-btn-primary">新增</button>	
+					
+				</div>
+				<div class="result-fn-area-port">
+					<button class="nui-btn">删除</button>
+					
+				</div>
+			</div>
+			<div class="result-table-area">
+				<table class="result-table result-table-up">
+					<thead>
+						<tr>
+							<th class="checkbox"><input id="jselAll" type="checkbox" name="" id="" title="选中/取消选中" /></th>
+							<th class="name">代码</th>
+							<th>航线</th>
+							<th class="company">目的港</th>
+							<th>代理名称</th>
+							<th>地址 | 电话</th>
+							<th class="action">操作</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+							<td>xxx</td>
+							<td>中欧</td>
+							<td>香港</td>
+							<td>DSDODSD</td>
+							<td>杭州 | 1323412414124</td>
+							<td><a href="javascript:">详情</a></td>
+						</tr>
+						<tr>
+							<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+							<td>xxx</td>
+							<td>中欧</td>
+							<td>香港</td>
+							<td>DSDODSD</td>
+							<td>杭州 | 1323412414124</td>
+							<td>
+								<a href="javascript:">详情</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+							<td>xxx</td>
+							<td>中欧</td>
+							<td>香港</td>
+							<td>DSDODSD</td>
+							<td>杭州 | 1323412414124</td>
+							<td>
+								<a href="javascript:">详情</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+							<td>xxx</td>
+							<td>中欧</td>
+							<td>香港</td>
+							<td>DSDODSD</td>
+							<td>杭州 | 1323412414124</td>
+							<td>
+								<a href="javascript:">详情</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox"><input type="checkbox" name="" id="" /></td>
+							<td>xxx</td>
+							<td>中欧</td>
+							<td>香港</td>
+							<td>DSDODSD</td>
+							<td>杭州 | 1323412414124</td>
+							<td>
+								<a href="javascript:">详情</a>
+							</td>
+						</tr>
+					</tbody>
+						
+					</table>
+					</div>
+					<div class="result-footer">
+						<div class="page"><input type="hidden" id="pageNo" name="pageNo" value="1" /><span class="pageinfo">1-20条，共64条 </span><a href="javascript:nextPage();">下一页</a>
+							<a href="javascript:">尾页</a></div>
+						</div>
+					</div>
+				</div>
+				<!--#include file="footer.html"-->
+		</div> 
+		<div class="fui-dialog-btm-bar pss"> 
+			<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+		</div> 
+	</div>
+</body>
+</html>

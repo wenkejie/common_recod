@@ -1,0 +1,654 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<title>装箱地址</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- 样式引入 -->
+	<!-- 外接插件样式 -->
+	<link href="css/cityLayout.css" type="text/css" rel="stylesheet">
+<!-- <link href="css/cityLayout-new.css" type="text/css" rel="stylesheet"> -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- 样式 end -->
+
+</head>
+<body>
+	<div class="cui-header">
+		<div class="cui-header-top">
+			<div class="cui-header-content">
+				<div class="cui-header-left">
+					<span>欢迎访问集卡通网站</span>
+				</div>
+				<div class="cui-header-right">
+					<label for="">下午好：</label>
+					<a href="javascript:">阿拉蕾 <i></i></a> | 
+					<a href="javascript:">退出</a>
+				</div>
+			</div>
+		</div>
+		<div class="cui-header-bottom">
+			<div class="cui-header-content">
+				<div class="cui-header-left">
+					<ul class="cui-nav">
+						<li class="cui-nav-cell">
+							<a href="javascript:" class="cui-nav-link current">
+								发车任务
+							</a>
+						</li>
+						<li class="cui-nav-cell">
+							<a href="javascript:" class="cui-nav-link">
+								通讯录
+							</a>
+						</li>
+						<li class="cui-nav-cell">
+							<a href="javascript:" class="cui-nav-link">
+								查询服务
+							</a>
+						</li>
+						<li class="cui-nav-cell">
+							<a href="javascript:" class="cui-nav-link">
+								个人设置
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="cui-header-right">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cui-wrap">
+		<div class="cui-panel cui-panel-form">
+			<div class="cui-panel-header">
+				托单信息
+			</div>
+			<div class="cui-panel-content">
+				<div class="cui-form pd10-0">
+					<div class="cui-form-line">
+						<label class="cui-label" for=""><span class="cui-required">*</span> 提单号：</label>
+						<div class="cui-input w280">
+							<input type="text"/>
+						</div>
+					</div>
+					<div class="cui-form-line">
+						<label class="cui-label" for=""><span class="cui-required">*</span> 受理车队：</label>
+						<div class="cui-input w280">
+							<input type="text"/>
+						</div>
+					</div>
+					<div class="cui-form-line">
+						<label class="cui-label" for="">目的港：</label>
+						<div class="cui-input disable w280">
+							<input disabled="disable" type="text"/>
+						</div>
+					</div>
+					<div class="cui-form-line">
+						<label class="cui-label" for="">航名航次：</label>
+						<div class="cui-input focus w280">
+							<input type="text"/>
+						</div>
+					</div>
+					<div class="cui-form-line">
+						<label class="cui-label" for="">船期：</label>
+						<div class="cui-input error w280">
+							<input type="text"/>
+						</div>
+					</div>
+					<div class="cui-form-line">
+						<label class="cui-label" for="">进港码头：</label>
+						<div class="cui-input w280">
+							<input type="text"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cui-panel cui-panel-form">
+			<div class="cui-panel-header">
+				取箱单信息
+			</div>
+			<div class="cui-panel-content">
+				<div class="cui-form">
+					<div class="cui-form-line form-line-check active">
+						<input type="checkbox" / checked="check">
+						<span class="check-info"><span class="name-info">闻人牧月</span> 浙江省舟山市普陀区朱家尖镇月岙小岙14号，13838483046</span>
+					</div>
+					<div class="cui-form-line form-line-check">
+						<input type="checkbox" />
+						<span class="check-info"><span class="name-info">闻人牧月</span> 浙江省舟山市普陀区朱家尖镇月岙小岙14号，13838483046</span>
+					</div>
+					<div class="cui-form-line pl70">
+						<a href="javascript:">+ 增加箱型</a>
+					</div>
+					<div class="hr-bg"></div>
+					<div class="cui-form-line mb20">
+						<label class="cui-label" for="">取单时间：</label>
+						<div class="cui-input w200">
+							<input type="text"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cui-panel cui-panel-form">
+			<div class="cui-panel-header">
+				装箱信息
+				<a href="javascript:" class="cui-panel-form-del">删除</a>
+			</div>
+			<div class="cui-panel-content">
+				<div class="pt20">
+					<div class="cui-table-area cui-table-area-inside">
+						<table class="cui-table cui-table-noborder">
+							<thead>
+								<th width="120">箱型</th>
+								<th width="120">箱量</th>
+								<th width="120">毛重</th>
+								<th></th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="cui-table-footer">
+							<a href="javascript:"> + 增加箱型</a>
+						</div>
+					</div>
+				</div>
+				<div class="cui-panel-add">
+					<div class="arrow">
+						◆
+						<em>
+							◆
+						</em>
+					</div>
+					<div class="cui-form cui-form-inside">
+						<div class="cui-form-title">
+							<div class="form-title-num">1</div>
+							<h3 class="form-title-txt">
+								装箱地址 <a href="javascript:">删除</a>
+							</h3>
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for=""><span class="cui-required">*</span> 装箱地址：</label>
+							<!-- <div class="cui-input w300">
+								<input type="text"/>
+							</div> -->
+							<input name="" id="start1" autocomplete="off" type="text" value="请选择/输入城市名称" class="city_input  inputFocus proCityQueryAll proCitySelAll" ov="请选择/输入城市名称">
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for=""><span class="cui-required">*</span> 受理车队：</label>
+							<div class="cui-input w280">
+								<input type="text"/>
+							</div>
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for="">目的港：</label>
+							<div class="cui-input w280">
+								<input type="text"/>
+							</div>
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for="">航名航次：</label>
+							<div class="cui-input w280">
+								<input type="text"/>
+							</div>
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for="">船期：</label>
+							<div class="cui-input w280">
+								<input type="text"/>
+							</div>
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for="">进港码头：</label>
+							<div class="cui-textarea w500">
+								<textarea></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="hr"></div>
+					<div class="cui-form cui-form-inside">
+						<div class="cui-form-title">
+							<div class="form-title-num">1</div>
+							<h3 class="form-title-txt">
+								装箱地址 <a href="javascript:">删除</a>
+							</h3>
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for=""><span class="cui-required">*</span> 提单号：</label>
+							<div class="cui-input w280">
+								<input type="text"/>
+							</div>
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for=""><span class="cui-required">*</span> 受理车队：</label>
+							<div class="cui-input w280">
+								<input type="text"/>
+							</div>
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for="">目的港：</label>
+							<div class="cui-input w280">
+								<input type="text"/>
+							</div>
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for="">航名航次：</label>
+							<div class="cui-input w280">
+								<input type="text"/>
+							</div>
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for="">船期：</label>
+							<div class="cui-input w280">
+								<input type="text"/>
+							</div>
+						</div>
+						<div class="cui-form-line">
+							<label class="cui-label" for="">进港码头：</label>
+							<div class="cui-input w280">
+								<input type="text"/>
+							</div>
+						</div>
+						<div class="hr"></div>
+						<div class="cui-form-last">
+							<a href="javascript:"> + 增加地址</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cui-panel-footer none">
+				<div class="hr-bg"></div>
+				<a href="javascript:" class="cui-btn cui-btn-large cui-btn-dashed">添加装箱任务</a>
+			</div>
+		</div>
+		<div class="cui-panel cui-panel-form">
+			<div class="cui-panel-header">
+				装箱信息
+				<a href="javascript:" class="cui-panel-form-del">删除</a>
+			</div>
+			<div class="cui-panel-content">
+				<div class="pt20">
+					<div class="cui-table-area cui-table-area-inside">
+						<table class="cui-table cui-table-noborder">
+							<thead>
+								<th width="120">箱型</th>
+								<th width="120">箱量</th>
+								<th width="120">毛重</th>
+								<th></th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="cui-table-footer">
+							<a href="javascript:"> + 增加箱型</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="cui-panel-footer none">
+				<div class="hr-bg"></div>
+				<a href="javascript:" class="cui-btn cui-btn-large cui-btn-dashed">添加装箱任务</a>
+			</div>
+		</div>
+		<div class="cui-panel cui-panel-form">
+			<div class="cui-panel-header">
+				装箱信息
+				<a href="javascript:" class="cui-panel-form-del">删除</a>
+			</div>
+			<div class="cui-panel-content">
+				<div class="pt20">
+					<div class="cui-table-area cui-table-area-inside">
+						<table class="cui-table cui-table-noborder">
+							<thead>
+								<th width="120">箱型</th>
+								<th width="120">箱量</th>
+								<th width="120">毛重</th>
+								<th></th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="cui-table-footer none">
+							<a href="javascript:"> + 增加箱型</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="cui-panel-footer none">
+				<div class="hr-bg"></div>
+				<a href="javascript:" class="cui-btn cui-btn-large cui-btn-dashed">添加装箱任务</a>
+			</div>
+		</div>
+		<div class="cui-panel cui-panel-form">
+			<div class="cui-panel-header">
+				装箱信息
+				<a href="javascript:" class="cui-panel-form-del">删除</a>
+			</div>
+			<div class="cui-panel-content">
+				<div class="pt20">
+					<div class="cui-table-area cui-table-area-inside">
+						<table class="cui-table cui-table-noborder">
+							<thead>
+								<th width="120">箱型</th>
+								<th width="120">箱量</th>
+								<th width="120">毛重</th>
+								<th></th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="cui-input-group ">
+											<a href="javascript:" class="cui-btn cui-input-btn before"><i>&#xe60f;</i></a><div class="cui-input-cell w70"><div class="cui-input"><input type="text"/></div></div>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input-group cui-input-group-num">
+											<a href="javascript:" class="cui-btn cui-input-btn before">－</a><div class="cui-input-cell w50"><div class="cui-input"><input type="text"/></div></div><a class="cui-btn cui-input-btn" href="javascript:">+</a>
+										</div>
+									</td>
+									<td>
+										<div class="cui-input w90">
+											<input type="text"/>
+										</div>
+									</td>
+									<td class="tar">
+										<a href="javascript:">删除</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="cui-table-footer none">
+							<a href="javascript:"> + 增加箱型</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="cui-panel-footer none">
+				<div class="hr-bg"></div>
+				<a href="javascript:" class="cui-btn cui-btn-large cui-btn-dashed">添加装箱任务</a>
+			</div>
+		</div>
+		<div class="cui-wrap-footer fixed">
+			<a href="javascript:" class="cui-btn cui-btn-primary cui-btn-large">发送托单</a>
+			<a href="javascript:" class="cui-btn cui-btn-default cui-btn-large ml10">存为草稿</a>
+		</div>	
+	</div>
+
+	<!--弹出省省市-->
+	<div class="provinceCityAll">
+
+		<div class="tabs clearfix">
+			<ul>
+				<li><a href="javascript:" class="current" tb="hotCityAll">热门城市</a></li>
+				<li><a href="javascript:" tb="provinceAll">省份</a></li>
+				<li><a href="javascript:" tb="cityAll" id="cityAll">城市</a></li>
+				<li><a href="javascript:" tb="countyAll" id="countyAll">区县</a></li>
+			</ul>
+		</div>
+
+		<div class="con">
+			<div class="hotCityAll invis">
+				<div class="pre"><a></a></div>
+				<div class="list">
+					<ul class="list-ul"></ul>
+				</div>
+				<div class="next"><a class="can"></a></div>
+			</div>
+			<div class="provinceAll invis">
+				<div class="pre"><a></a></div>
+				<div class="list">
+					<ul class="list-ul"></ul>
+				</div>
+				<div class="next"><a class="can"></a></div>
+			</div>
+			<div class="cityAll invis">
+				<div class="pre"><a></a></div>
+				<div class="list">
+					<ul class="list-ul"></ul>
+				</div>
+				<div class="next"><a class="can"></a></div>
+			</div>
+			<div class="countyAll invis">
+				<div class="pre"><a></a></div>
+				<div class="list">
+					<ul class="list-ul"></ul>
+				</div>
+				<div class="next"><a class="can"></a></div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- 插件及js应用 -->
+	<!-- Jquery引入 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<!-- // <script src="http://libs.baidu.com/jquery/1.6.2/jquery.min.js"></script> -->
+
+	<script type="text/javascript" src="js/pub.js"></script>
+
+	<script src="js/chedui.js"></script>
+	<!-- js end -->
+</body>
+</html>

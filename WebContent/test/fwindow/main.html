@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>弹出窗口</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+ 	
+	<script>
+		function openWin(){
+			fwindow.create({
+				title : "测试",
+				draggable : true,
+				resizeable : true,
+				width:950,height:450,
+				maxable : true,
+				url : "testcontent.html",
+				resizeStop : function(event,ui){
+					 ui.self.myResize(ui);
+				},
+				resizeStart : function(event,ui){
+					 
+				}
+			});
+		}
+		function openWin2(){
+			fwindow.create({
+				title : "测试",
+				draggable : true,
+				resizeable : true,
+				width:310,height:220,
+				maxable : true,
+				url : "openWin2.html",
+				resizeStop : function(event,ui){
+					// ui.self.myResize(ui);
+				},
+				resizeStart : function(event,ui){
+					 
+				}
+			});
+		}
+
+		$(function(){
+			$("#iframe").draggable();
+
+			 
+		});
+	</script>
+</head>
+<body>
+
+
+
+
+	<div>
+		<a href="javascript:openWin()">打开url窗口</a>
+		<a href="javascript:openWin2()">打开表单窗口</a>
+	</div>
+	<div id="iframe" style="background:yellow; margin-left:100px;">
+		<iframe name="content" src="content.html" height="300px" width="600px"></iframe>
+	</div>
+
+	
+
+  
+</body>
+</html>

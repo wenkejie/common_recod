@@ -1,0 +1,991 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,p,ul,dl,dt,dd,ol,li,h1,a,img,span,small,strong,em,i,a,form,button,input,h3,label,textarea{margin:0; padding:0;}
+table{ border-collapse:collapse;border-spacing:0; }
+body{font: 14px/1.5 tahoma,arial,"Hiragino Sans GB","Microsoft Yahei",宋体;color: #808080;background: #F4F5F7}
+a{text-decoration:none;color: #0088CC}
+li{list-style:none;}
+input{border:none;background: #fff;color: #999;}
+textarea{border: 0 none;overflow:auto}
+img{border:0;}
+i{font-style: normal;}
+.checkbox{width: 14px;height: 14px;vertical-align: middle;margin-right: 10px;}
+s{text-decoration: none;}
+.clearfix{*zoom:1}
+.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
+.clearfix:after{clear:both}
+
+
+
+
+/*图标文字*/
+
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('http://at.alicdn.com/t/font_1388653082_853284.eot'); /* IE9*/
+  src: url('http://at.alicdn.com/t/font_1388653082_853284.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('http://at.alicdn.com/t/font_1388653082_9366095.woff') format('woff'), /* chrome、firefox */
+  url('http://at.alicdn.com/t/font_1388653082_804482.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('http://at.alicdn.com/t/font_1388653083_0518029.svg#svgFontName') format('svg'); /* iOS 4.1- */
+}
+
+
+
+
+.nui-form-cell-icon,.iconfont{
+	font-family:"iconfont";
+	font-size:12px;font-style:normal;
+	margin-top: 1px;
+}
+
+
+
+/*头部*/
+.header{
+	background: #fff;
+}/*去掉了高度和背景*/
+
+.header-top{
+	
+	margin: 0 auto;height: 70px;background: #fff;width: 980px;
+}
+
+/*.header-con{width: 1111px;margin: 0 auto;background: #fff;}*/
+/*头部左*/
+/*.top-left{
+	float: left;
+	margin: 19px 0 12px 0;
+}*/
+/*.logo{
+	float: left;
+	margin-top: 1px;width: 106px;height: 31px;background: url(../../images/register/logo.png) no-repeat;
+}*/
+/*去掉了高度和背景*/
+.header-cnt {
+  margin: 0 auto;
+  height: 70px;
+  background: #fff;
+  width: 980px;
+}
+/*头部右*/
+.header-subnav {
+  float: right;
+  height: 17px;
+  margin-top: 38px;
+}
+
+/*应开发要求引入新注册部分样式 4，27*/
+.header-info{
+	float: left;
+	margin-left: 12px;margin-top: 10px;
+}
+.logo{
+	float: left;
+	margin-top: 1px;
+	/* background: url(../../images/register/logo.png) no-repeat;
+	 border-right: 2px solid #e2e5e9;*/
+	
+}
+
+.logo img{
+		height: 50px;
+	}
+
+.header-info-span{
+	float: left;
+	padding-left: 8px;margin-top: 25px;
+	font-size: 20px;font-family: 黑体;color: #999;margin-top: 5px;
+}
+.header-subnav-cell,
+.header-subnav-last {
+  float: left;
+  padding: 0 11px;
+  height: 13px;
+  line-height: 13px;
+}
+.header-subnav-cell {
+  border-right: 1px solid #bbbbbb;
+}
+.header-subnav-link {
+  color: #777;
+  font-size: 12px;
+}
+/*================================*/
+
+.top-left-span{
+	float: left;
+	padding-left: 5px;
+	font-size: 20px;font-family: 黑体;color: #ccc;margin-top: 5px;
+}
+/*头部右*/
+.top-right{
+	float: right;
+	height: 17px;margin-top: 38px
+}
+.top-right li{
+	float: left;
+	padding: 0 11px;height: 13px;
+	line-height: 13px
+}
+.right-fir,.right-sec,.right-thr{
+	border-right: 1px solid #BBBBBB
+}
+.top-right li a{
+	color: #777;font-size: 12px
+}
+
+.header-line{
+	height: 5px;background: url(../../images/register/header-line.png) repeat-x;overflow: hidden;
+}
+
+
+
+.body-content-title{
+	border-bottom: 1px solid #D9DCE1;color: #495669;
+	margin: 20px 50px;padding: 0 20px 10px 20px;font-size: 18px;
+}
+.agree{
+	padding:0 0 20px 174px;color: #555
+}
+.agree a{
+	color: #999
+}
+
+.agree .forget-password-link{
+	margin-left:7px;
+	color: #0066CC;
+}
+/*中间*/
+.body{
+	width: 800px;margin: 0 auto
+}/*宽度可去除*/
+
+.body-nav{
+	width: 800px;
+}
+
+
+/*注册成功*/
+.body-note{
+	background: #EFFFD2;border: 1px solid #ABC686;padding: 27px ;margin: 45px 0 200px 0;
+	line-height: 15px;
+}
+.body-note-war{
+	background-color: #FCF8E3;
+	border-color: #C0B6A9;
+	color: #8A6D3B;padding-bottom: 60px;
+}
+
+.note-icon{
+	float: left;
+	margin: 15px 0 0 60px;width: 39px;height: 39px;background: url(../../images/register/note-icon.png) no-repeat;
+}/*有定位错误修改了margin的值,by:evan*/
+
+.note-icon-war{
+	float: left;
+	margin: 15px 0 0 60px;width: 39px;height: 39px;
+	font-size: 28px;color: #DDAA5E;text-align: center;line-height: 39px;
+}
+
+.body-note h2{
+	float: left;padding: 25px 0 0 18px;margin: 0;
+	font-size:16px;font-weight: bold;
+}
+
+.body-note span{
+	float: left;padding: 25px 0 0 18px;
+	font-size: 18px;font-weight: bold;
+}
+.body-note span em{
+	font-style: normal;font-size: 12px;font-weight: normal;
+}
+
+.body-note h2 em{
+	font-style: normal;font-size: 12px;font-weight: normal;
+}
+/*===*/
+/*四个*/
+.nav-bar{
+	padding: 26px 36px 0 47px;
+}
+.nav-bar li{
+	float: left;
+	text-align: center;
+}
+.nav-bar i{
+	float: left;
+	width: 39px;height: 39px;color: #fff;
+	text-align: center;line-height: 39px;font-weight: bold;font-style: normal;
+}
+.nav-fir i{
+	background: url(../../images/register/icon1-c.png) no-repeat;
+}
+/*.nav-sec a{background: url(../../images/register/icon1.png) no-repeat;}*/
+.nav-sec,.nav-thr i{
+	background: url(../../images/register/icon2.png) no-repeat;
+}
+.nav-fou i{
+	background: url(../../images/register/icon-r.png) no-repeat;
+}
+/*.nav-fir,.nav-sec,.nav-thr,.nav-fou{width: 39px}*/
+
+.nav-bar span{
+	float: left;clear: both;position: relative;
+	width: 99px;margin: 0 -30px;line-height: 1.2
+}
+
+.nav-bar .wider{width: 140px;margin-left: -50px}
+/*.nav-line-1{width: 177px;height: 4px;background: #97CBFF;margin-top: 19px}*/
+
+.nav-bar div{
+	float: left;
+	width: 168px;height: 4px;background: #CCCCCC;margin-top: 19px;overflow: hidden;
+}
+/*.nav-line-1,.nav-line-2,.nav-line-3{float: left;width: 177px;height: 4px;background: #CCCCCC;margin-top: 19px;overflow: hidden;}*/
+
+/*三个*/
+.nav-bar-three{
+	padding: 26px 36px 0 47px;
+}
+.nav-bar-three li{
+	float: left;
+	text-align: center;
+}
+.nav-bar-three a{
+	display: block;
+	width: 39px;height: 39px;
+	color: #fff;text-align: center;line-height: 39px;font-weight: bold
+}
+.nav-fir-thr a{
+	background: url(../../images/register/icon1-c.png) no-repeat;
+}
+
+.nav-sec,.nav-thr a{
+	background: url(../../images/register/icon2.png) no-repeat;
+}
+.nav-fou a{
+	background: url(../../images/register/icon-r.png) no-repeat;
+}
+
+
+.nav-bar span{
+	float: left;clear:both;position: relative;
+	width: 99px;margin: 0 -30px;
+}
+.nav-bar-three div{
+	float: left;
+	width: 295px;height: 4px;background: #CCCCCC;margin-top: 19px;overflow: hidden;
+}
+/*.nav-line-1,.nav-line-2,.nav-line-3{float: left;width: 295px;height: 4px;background: #CCCCCC;margin-top: 19px;overflow: hidden;}*/
+
+
+
+/*表单*/
+.body-content{
+	width: 798px;padding:45px;background: #333;border: 1px solid #D9DCE1;border-radius: 3px 3px 3px 3px;box-shadow: 0 0 6px #D9DCE1 ;background: #fff;margin-top: 29px;
+}
+.body-content2{
+	margin-top: 115px;background: #333;border: 1px solid #D9DCE1;border-radius: 3px 3px 3px 3px;box-shadow: 0 0 6px #D9DCE1 ;background: #fff
+}
+.fui-form{
+	margin-top: 47px;/*height: 315px*/
+}
+.fui-form-line{
+	height: 0;border-top: 1px dashed #DDDDDD;margin-top: 15px 
+}
+
+/*表单标题*/
+.fui-form-title{
+	height: 36px;padding-top: 16px;
+}
+.fui-form-title h3{
+	float: left;width: 166px;
+	color: #4DA6FF;font-size: 16px;text-align: right;
+}
+.fui-form-title span{
+	float: left;margin-left: 10px;
+	color: #AAAAAA;
+}
+
+
+.fui-form-up{
+	width: 706px;margin: 0 auto ;margin-bottom: 59px;
+}
+.fui-form-up-port{
+	*zoom:1;display:table;position: relative;
+	padding-bottom: 15px;width: 100%;
+}
+/*.fui-form-up-port span{float: left;width: 159px;height: 34px;margin-right: 15px;text-align: right;line-height: 34px}*/
+/*.fui-form-up-port span{
+	float: left;
+	width: 159px;height: 34px;margin-right: 15px;
+	text-align: right;line-height: 34px;
+}*/
+.fui-form-up-port h3{
+	display: block;
+	height: 40px;
+	line-height: 40px;font-weight: bold;font-size: 14px
+}
+.focal-point{
+	float: left;
+	margin-left: 10px;
+	color: red;line-height: 34px;
+}/*重点红点标注*/
+
+.fui-form-up-note{
+	padding: 10px;background: #F0F8FF;border: 1px solid #D6EAFF
+}
+.fui-form-nav{
+	height: 39px;border-bottom: 1px solid #D9DCE1;margin: 20px 0 31px 0
+}
+.fui-form-nav a{
+	float: left;
+	width: 111px;height: 39px;border-top: 1px solid #D9DCE1;border-right: 1px solid #D9DCE1;
+	text-align: center;line-height: 38px;
+}
+.nav-f{
+	margin-left: 81px;;border-left: 1px solid #D9DCE1;background: #fff;
+	color: #D9DCE1;
+}
+.nav-s{
+	background: #EEEEEE;
+	color: #999999
+}
+/*输入框*/
+.input-form{
+	float: left;position: relative;
+	height: 30px;background: #fff;border: 1px solid #DDDDDD;
+	font-size: 14px;color: #ccc;
+}
+.input-form input{
+	float: left;
+	width: 100%;border: none;background-color: transparent;
+	font-size: 12px;color: #333;line-height:28px;
+}
+
+.input-form-sec{
+	float: left;position: relative;
+	width: 98px;height: 30px;background: #fff;border: 1px solid #DDDDDD;
+	font-size: 14px;color: #ccc;
+}
+.input-form-sec input{
+	float: left;
+	width: 49px;
+}
+
+
+/*帐号选择界面样式*/
+.body-content-title-account{
+	padding: 10px 20px 20px 10px;
+	font-size: 16px;
+}
+
+
+.fui-form-up-top{
+	*zoom:1;display:table;position: relative;
+	padding-bottom: 25px;width: 100%;
+}
+
+
+.user-select{
+	float: left;
+}
+
+.radio{
+	float: left;
+	height: 25px;margin-right: 5px;
+}
+
+.user-select-cell-label{
+	float: left;
+	line-height: 25px;
+}
+
+.user-select-cell-tips{
+	float: left;
+	margin-left: 10px;
+	line-height: 25px;color: #ccc;
+}
+
+.user-select-cell{
+	
+}
+
+/*2015-4-16 账号类别选择*/
+.select-sort{
+	float: left;
+}
+
+.select-sort-cell{
+	float: left;
+  height: 28px;
+  line-height: 28px;
+  width: 85px;
+  border: 1px solid #fff;
+  margin-right: 10px;
+  text-align: center;cursor: pointer;
+}
+
+.select-sort-cell-active{
+	background: #efefef;
+  	border-color: #ddd;
+  	border-radius: 2px;
+}
+
+
+
+/*边框变化效果*/
+.border-mouserover{
+	border-color: #ccc;box-shadow:0 0 2px #ccc
+}
+
+.input-form-change-focusin{
+	animation:myfirst .5s;border-color: #4FA7FF;box-shadow:0 0 2px #D6EAFF
+}
+.input-form-change-blur{}
+
+/*.input-form:hover{border-color: #4FA7FF;box-shadow: 0 0 2px #D6EAFF}
+.input-que:hover{border-color: #4FA7FF;box-shadow: 0 0 2px #D6EAFF}*/
+/*输入框下拉*/
+.input-form-list{
+	position: absolute;left: -1px;top: 30px;display: none;z-index: 1;
+	width: 118px;border: 1px solid #CCCCCC;box-shadow: 0 0 6px #D9DCE1;overflow-y:auto;height: 152px ;background: #fff
+}
+.input-form-list li{
+	border-bottom: 1px solid #EFEFEF;height: 37px;
+	text-align: left;line-height: 37px;color: #595959;font-size: 14px;*zoom:1;
+}
+.input-form-list li a,.nui-select-list li a{
+	display: block;padding-left:8px;padding-right: 8px;*zoom:1;
+	font-style: normal;color: #808080;text-align: left;
+}
+.input-form-list li a:hover,.nui-select-list li a:hover{
+	background: #EEEEEE;cursor: pointer;
+}
+
+.nui-select-list{
+	position: absolute;left: -1px;top: 30px;z-index: 1;
+	width: 118px;border: 1px solid #CCCCCC;box-shadow: 0 0 6px #D9DCE1;overflow-y:auto;height: 152px ;background: #fff 
+}/*Evan*/
+
+.nui-drop-down{
+	position: absolute;left: -1px;top: 0px;z-index: 1;
+}
+
+.input-form-list-sec{
+	z-index:5px;position: absolute;left: 0;top: 31px;display: none;
+	*width: 240px;min-width: 240px;margin-left: -1px;z-index: 1;
+	border: 1px solid #CCCCCC;box-shadow: 0 0 6px #D9DCE1;*overflow: hidden;overflow-y:auto;height: 152px ;background: #fff 
+}
+.input-form-list-sec li{
+	border-bottom: 1px solid #EFEFEF;height: 37px;
+	text-align: left;line-height: 37px;color: #595959;font-size: 14px;*zoom:1;
+}
+.input-form-list-sec li a{
+	display: block;
+	white-space:nowrap;font-style: normal;padding:0 10px;
+	color: #808080;text-align: left;*zoom:1;
+}
+.input-form-list-sec li a:hover{
+	background: #EEEEEE;cursor: pointer;
+}
+
+.input-form-list-fir{
+	position: absolute;left: 0;top: 34px;display: none;z-index:5px;z-index: 1;
+	*width: 240px;min-width: 240px;margin-left: -1px;border: 1px solid #CCCCCC;box-shadow: 0 0 6px #D9DCE1;*overflow: hidden;overflow-y:auto;height: 152px ;background: #fff 
+}
+.input-form-list-fir li{
+	border-bottom: 1px solid #EFEFEF;height: 37px;
+	text-align: left;line-height: 37px;color: #595959;font-size: 14px;*zoom:1;
+}
+.input-form-list-fir li a{
+	white-space:nowrap;display: block;
+	font-style: normal;color: #808080;text-align: left;padding:0 10px;*zoom:1;
+}
+.input-form-list-fir li a:hover{
+	background: #EEEEEE;cursor: pointer;
+}
+
+
+.list-font{
+	padding-left: 5px;
+	color: #808080;text-align: left;
+}
+.list-font:hover{
+	background: #EEEEEE;cursor: pointer;color:  #808080
+}
+.fwindow{
+	background: #F7F7F7;border-top:1px solid #ccc;
+	color: #006DD9;text-align: center;
+}
+
+/*.input-form {}*/
+.fui-form-up-port input{
+	float: left;
+	height: 16px;padding:7px 8px;width: 190px;
+	line-height: 16px;outline: none;
+}
+
+.input-que{
+	float: left;
+	height: 30px;background: #fff;border: 1px solid #DDDDDD;
+	font-size: 14px;color: #ccc;
+}
+.input-que input{
+	width: 131px;
+}
+.input-icon{
+	display: none;float: left;
+	width: 14px;height: 14px;background: url(../../images/register/input-icon.png) no-repeat;margin: 9px 12px 11px 0
+}
+.input-icon-error{
+	display: none;float: left;
+	width: 16px;height: 16px;background: url(../../images/register/error-icon.png) no-repeat;margin: 9px 12px 11px 0
+}
+
+.picture-que{
+	float: left;
+	margin-left: 11px;width: 110px;height: 30px;border: 1px solid #DDDDDD;background: url(../../images/register/picture-que.png) no-repeat;
+}
+/*按钮*/
+.form-list{
+	position: relative;float: left;
+	width: 110px;height: 30px;background: url(../../images/register/form-list1.png) repeat-x;border: 1px solid #D9D9D9;
+	text-align: left;line-height: 30px;color: #808080;padding-left: 8px;*zoom:1;
+}
+.nui-input{
+	position: relative;float: left;
+	width: 110px;height: 28px;background: url(../../images/register/form-list1.png) repeat-x;border: none;padding-left: 8px;
+	text-align: left;line-height: 28px;color: #808080;*zoom:1;
+}
+
+
+.form-list-sec{
+	float: left;
+	*margin-right: -1px;width: 40px;height: 30px;background: #F4F4F4;border-left: 1px solid #D9D9D9;
+	text-align: center;line-height: 30px;color: #777777;*zoom: 1;
+}
+.search{
+	width: 40px;height: 30px;background: url(../../images/register/form-list2.png) no-repeat;
+}
+.form-list em{
+	font-style: normal;
+}
+
+.form-list-thr{
+	position: relative;float: left;
+	width: 90px;height: 30px;background: url(../../images/register/form-list1.png) repeat-x;border: 1px solid #D9D9D9;padding-left: 8px;*zoom:1;
+	text-align: left;line-height: 30px;color: #808080;
+}
+
+
+/*功能类class名*/
+.cna{
+	cursor:not-allowed;
+}
+
+.mb10{margin-bottom: 10px;}
+.mb20{margin-bottom: 20px;}
+.pd20{padding: 20px;}
+/*===============*/
+.form-list-thr-disable{
+	cursor:not-allowed;
+}
+
+.form-list-thr em{
+	font-style: normal;
+}
+/*.form-list-thr ul{width: 100px;margin-left: -8px;border: 1px solid #ccc;max-height: 200px;overflow-x: hidden;overflow-y: auto;background: #fff;position: relative;z-index: 1000;}/*本来只有width;98px*/
+
+
+.down{
+	float: right;
+	width:0;height:0;line-height:0;border-width:5px;border-style:solid;border-color: #000 transparent transparent transparent;margin: 14px 16px 0 0; border-style:solid dashed dashed dashed;
+}/*向下箭头方案一*/
+/*.nui-form-cell-icon{float: right;width:0;height:0;line-height:0;border-width:5px;border-style:solid;border-color: #000 transparent transparent transparent;margin: 14px 16px 0 0; border-style:solid dashed dashed dashed;}*/
+
+.form-btn{
+	float: left;
+	width: 148px;height: 38px;border: 1px solid #006DD9;background: #4DA6FF;border-radius: 3px;
+	text-align: center;line-height: 38px;color: #fff;font-weight: bold
+}
+.form-btn:hover{
+	background: #32A1FF;color: #fff
+}
+
+.form-next{
+	float: left;
+	height: 40px;padding-left: 25px;
+	line-height: 40px;
+}
+/*提示*/
+.tips{
+	position: absolute;left: 380px;top: 0;*zoom: 1;
+}
+.tips-que s{
+	display: inline-block;vertical-align: top;padding: 0 5px;
+	font-size: 14px;
+}
+
+.tips-que i{
+	display: inline-block;vertical-align: middle;width: 200px;
+}/*给了个固宽限制有个技术的也用的是i记得年后回来更改*/
+
+.tips s{
+	position: absolute;left: -2px;top: 1px;
+	padding: 0 5px;vertical-align: top;
+	font-size: 14px;
+}/*后来加的*/
+
+.tips-que{
+	position: absolute;
+	left: 320px;top: 0;*zoom: 1;
+}
+
+.tips-vfn{
+	left: 445px;
+}
+
+
+
+.tips-input-sec{
+	position: absolute;left: 420px;top: 15px;
+	*zoom: 1;
+}
+.tips-com,.tips-war,.tips-error{
+	*display: inline;float: left;position: relative;z-index: 1;display: none;
+	border-radius: 2px 2px 2px 2px;margin-left: 10px;padding: 4px 10px 4px 20px;
+	font-size: 12px;color: #999999;
+}
+
+
+
+
+.tips-com{
+	border: 1px solid #C2C8C8;background: #F9F9F9;
+}
+.tips-com em{
+	position: absolute;left: -7px;top: 5px;
+	width: 7px;height: 14px;background: url(../../images/register/com-left.png) no-repeat;
+	}/*加postion是为了增加那个箭头的层级防止他被父级遮盖*/
+/*.tips-com s{
+	float: left;
+	width: 14px;height: 14px;background: url(../../images/register/com-icon.png) no-repeat;margin: 3px 3px 2px 7px
+}*/
+.tips-com s{
+	color: #428BCA;
+}
+
+.tips-war{
+	border: 1px solid #EDBC87;background: #FFF9E1;
+}
+.tips-war em{
+	position: absolute;top: 6px;left: -7px;
+	width: 7px;height: 14px;background: url(../../images/register/war-left.png) no-repeat;
+}
+/*.tips-war s{
+	float: left;
+	width: 16px;height: 16px;background: url(../../images/register/war-icon.png) no-repeat;margin: 3px 3px 2px 7px
+}*/
+.tips-war s{
+	color: #FF7F00;
+}
+
+.tips-error{
+	border: 1px solid #DD8785;background: #FEE8DE
+}
+.tips-error em{
+	position: absolute;top: 5px;left: -7px;
+	width: 7px;height: 14px;background: url(../../images/register/error-left.png) no-repeat;
+}
+/*.tips-error s{
+	float: left;
+	width: 16px;height: 16px;background: url(../../images/register/error-icon.png) no-repeat;margin: 3px 3px 2px 7px
+}*/
+
+.tips-error s{
+	color: #D9534F;
+}
+
+
+.tips-com,.tips-war,.tips-error i{
+	
+}
+/*页面底部*/
+.footer{
+	height: 120px;background: #E8EAEE;border-top: 2px solid #C9CED8;margin-top: 55px;
+	 /* Old browsers */
+  background: -moz-linear-gradient(top,  #E8EAEE 0%, #F4F5F7 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E8EAEE), color-stop(100%,#F4F5F7)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #E8EAEE 0%,#F4F5F7 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #E8EAEE 0%,#F4F5F7 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #E8EAEE 0%,#F4F5F7 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #E8EAEE 0%,#F4F5F7 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#E8EAEE, endColorstr=#F4F5F7,GradientType=0 ); /* IE6-9 */
+}
+.footer-sign{
+	padding-top: 27px;
+	text-align: center;
+}
+
+.footer-sign a{
+	display: inline-block;margin-right: 10px;border-right:1px solid #ddd;
+}
+
+.footer-sign span{
+	display: block;
+	font-size: 14px
+}
+.footer-sign em{
+	font-style: normal;
+}
+
+.footer-sign img{
+	vertical-align: middle;padding-right: 10px;
+}
+
+
+/*login-3表单底部提示*/
+.fui-form-footer-note{
+	padding: 25px 0 0 0
+}
+
+
+
+/*login-4的增加信息*/
+.body-note-new{
+	clear: both;
+	padding: 23px 0 0 117px;
+	line-height: 19px
+}
+
+
+
+/*导航调控*/
+
+
+.show{
+	display: block;
+}
+.hide{
+	display: none;
+}
+
+
+/*完善公司信息表单*/
+.fui-grid-left{
+	display: none;
+	padding: 30px 0 0 100px;
+}
+
+.add-btn{
+	float: right;
+	height: 34px;padding-left: 20px;border:1px dashed #ccc;
+	line-height: 34px;
+}
+.add-btn i{
+	float: left;
+	padding-right: 5px;
+}
+
+.add-form{
+	clear: both;display: none;
+	padding-top: 10px;
+}
+.add-form-port{
+	*zoom:1;display:table;position: relative;
+	padding-bottom: 5px
+}
+.add-form-port input{
+	width: 230px;padding-left: 10px;
+}
+.lab-left{
+	float: left;
+	height: 34px;width: 159px;margin-right: 15px;
+	line-height: 34px;text-align: right
+}
+.lab-right{
+	float: left;
+	height: 34px;margin-right: 15px;padding-left: 10px;
+	line-height: 34px;text-align: right;
+}
+.add-form-port textarea{
+	float: left;
+	padding-left: 10px;width: 281px ;height:80px;
+	line-height: 20px;resize: none;color: #999999
+}
+
+.add-form-port-two{
+	*zoom:1;display:table;clear:both;position: relative;
+	padding-bottom: 5px
+}
+.add-form-port-two input{
+	/*height: 34px;*/width: 54px;
+}
+
+/*.add-form-port-sec{*zoom:1;display:table;content:"";line-height:0;clear:both;position: relative;padding-bottom: 5px}
+.add-form-port-sec input{height: 40px;width: 232px}
+.add-form-port-sec label{height: 40px;line-height: 40px}*/
+
+.add-input-form{
+	float: left;position: relative;
+	background: #fff;border: 1px solid #DDDDDD;
+	color: #ccc;
+}
+
+.btn{
+	width: 50px;height: 28px ;margin-left: 367px;background: #ccc;
+	line-height: 28px;text-align: center;
+}
+
+.nui-register-btn{
+	background: url("../../images/register/form-list1.png") repeat-x;
+   padding: 0 5px;margin-left: 174px;display: inline-block;
+    height: 30px; border: 1px solid #D9D9D9;
+    line-height: 29px; color: #808080;
+   
+}
+.nui-register-btn:hover{
+	border-color: #ccc;box-shadow:0 0 2px #ccc;
+}
+
+.nui-btn-disable,.nui-btn-disable:hover {
+	cursor: not-allowed;
+	background: #eee;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border: 1px solid #ccc;
+	color: #999
+}
+
+/*引入了1.2内的样式*/
+.nui-select-list{
+	padding: 5px 0;
+}
+
+.nui-select-list-with-title{
+	
+}
+.nui-select-list-li{
+		padding: 3px 20px;border-bottom: 1px solid #EFEFEF;
+		text-align: left;line-height: 20px;color: #595959;font-size: 14px;*zoom:1;
+}
+
+.nui-select-list-li:hover{
+		background-color: #568DD8;
+		color: #fff;cursor: pointer;
+	}
+.nui-select-list-title{
+	padding: 3px 10px;
+	font-weight: 700;
+}
+/*引入了1.2内的样式*/
+.mr10{margin-right: 10px;}
+.mr20{margin-right: 20px;}
+.right{float: right;*display: inline;}
+.left{float: left;*display: inline;}
+/*弹窗样式*/
+
+.open-shadow{
+	position: fixed;_position: absolute;
+	left:0;top:0;bottom: 0;
+	background: #000;width: 100%;opacity: 0.7;filter: alpha(opacity = 70);
+	z-index: 999;
+}
+
+.open-win{
+	position: fixed;_position: absolute;left: 50%;z-index: 1000;
+	width: 598px;height: 458px;margin-left: -299px;margin-top: -200px;background: #fff;border: 1px solid #ccc;box-shadow: 0 0 4px #cccccc;
+	overflow: hidden;
+}
+
+
+.open-win-title{
+	border-bottom: 1px solid #DCDFE7;padding-left: 25px;
+	font-size: 20px;color: #333;
+}
+
+.open-win-title h1{
+	font-size: 18px;
+	height: 50px;line-height: 50px;
+	color: #aaa;
+}
+
+
+.open-win-content{
+	width: 563;height: 303px;margin: 20px 15px 0 15px;border: 1px solid #ccc;padding: 0 10px;
+	overflow-y:auto; color: #333;
+}
+
+.open-win-content p{
+	margin: 5px 0;
+	text-indent: 25px;
+}
+
+.open-win-btn{
+	margin: 15px 0 0 230px;
+}
+
+.open-win-close{
+	height: 50px;
+	color: #bbb;font-size: 16px;line-height: 50px;
+}
+
+.open-win-content-tilte{
+	text-align: center;font-size: 20px;
+}
+
+
+
+.open-win-form-btn{
+    background: none repeat scroll 0 0 #4DA6FF;
+    border: 1px solid #006DD9;
+    border-radius: 3px;
+    color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    padding: 0 10px;
+}
+.open-win-btn{
+    margin: 15px 0 0 230px;
+}
+.open-win-form-btn:hover{
+	background: #32A1FF;color: #fff;
+}
+
+
+
+/*会员激活的忘记密码链接，by:Evan,2014-06-13;*/
+.forget-password-link{
+	color: #0066CC;
+	line-height: 30px;
+}
+
+.forget-password-link:hover{
+	text-decoration: underline;
+}
+
+/*英文版logo样式添加*/
+/*.en .logo{
+	background:url(../../images/register/logo-en.png) no-repeat
+	}	
+*/
+
+/*==============================*/
+/*CSS3效果*/
+@keyframes myfirst
+{
+from {border-color: #DDDDDD;}
+to {border-color: #4FA7FF;}
+}
+
+/*.input-form:hover{animation: myfirst 2s;}*/
+
+
+
+.none{display: none;}

@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+	(function($) {
+		$.fn.myhover = function(item, fnOver, fnOut) {
+			// console.log($(this))
+			return $(this).delegate(item, 'mouseenter', fnOver).delegate(item, 'mouseleave', fnOut || fnOver)
+		}
+	})(jQuery);
+
+		$(function() {
+
+			var $mainNav = $('div.main-nav');
+			var $mainSubNav = $('div.main-sub-nav');
+
+			//判断是否有主导航
+			var url = window.location.href;
+			var urlLast = url.split("/");
+			var urlName = urlLast[urlLast.length - 1]
+			var types = [
+				"index.shtml",
+				"knowledge.shtml"
+			]
+
+			// var $scrollTop = $(document).scrollTop(); 
+			// console.log($scrollTop);
+			
+			$.each(types,function(i,v){
+				if(urlName == v ){
+					$mainNav.remove();
+					return false;
+				}
+			})
+
+
+			
+
+			if ( !! !$mainSubNav.length) {
+				$mainNav.addClass('main-nav-shadow');
+			};
+
+			$('div.nui-select-no-box,div.nui-select').click(function() {
+				$(this).find('div.nui-drop-down').show("fast");
+				return false;
+			});
+
+			$('div.nui-drop-down').delegate('li', 'click', function() {
+				var text = $(this).text();
+				$(this).parent().parent().hide();
+				$(this).parents("div.nui-select-no-box,div.nui-select").find('.nui-select-value').text(text)
+				return false;
+			});
+
+			$(document).click(function() {
+				// $('div.nui-drop-down').hide();
+			});
+
+
+			$('body').delegate('input,textarea,select', 'focus', function() {
+				if (this.nodeName == "SELECT") {
+					$(this).addClass('nui-form-cell-focus')
+				} else {
+
+					$(this).parents('div.nui-form-cell').addClass('nui-form-cell-focus')
+				}
+
+			})
+				.delegate('input,textarea,select', 'blur', function() {
+					if (this.nodeName == "SELECT") {
+						$(this).removeClass('nui-form-cell-focus')
+					} else {
+
+						$(this).parents('div.nui-form-cell').removeClass('nui-form-cell-focus')
+					}
+
+				});
+
+					$('div.widget').hover(function() {
+							$(this).find("div.widget-title-cnt").find('a').removeClass('none')
+					}, function() {
+							$(this).find("div.widget-title-cnt").find('a').addClass('none')
+					});	
+
+
+
+					$('a.info-list-li-span').dblclick(function() {
+						// console.log("ccc");
+						$(this).addClass('none');
+						// $(this).parent().children('div.nui-form-cell').removeClass('none');
+					});
+
+
+					// $('#jCheck').click(function() {
+						
+					// 	$(this).addClass('nui-checkbox-sim-a-p');
+					// 	$(this).text('√');
+					// });
+
+					
+					$('div.nui-checkbox-sim').click(function() {
+				
+						if (!$(this).is('.nui-checkbox-sim-check')) {
+
+							// var $top = 0;  
+
+							var $scrollTop = $(document).scrollTop();  
+
+							$(this).addClass('nui-checkbox-sim-check');
+							$(this).children('input').checked = true ;
+							$(this).parent().children('div.leftdirection').removeClass('none');
+							if ($scrollTop > 300) {
+								
+								$('div.list-widget').css({
+									'top': $scrollTop-300, 
+									property2: 'value2'
+								});	
+							};
+							}else{
+							$(this).removeClass('nui-checkbox-sim-check');
+							$(this).parent().children('div.leftdirection').addClass('none');
+						}
+						
+					});
+
+
+					$('dd.data-list-options').click(function() {
+
+						var $scrollTop = $(document).scrollTop();  
+
+						$('dd.data-list-options').removeClass('data-list-options-active');
+						$(this).addClass('data-list-options-active');
+						$('div.leftdirection').addClass('none');
+						$(this).children('div.leftdirection').removeClass('none');
+
+						if ($scrollTop > 300) {
+
+							$('div.list-widget').css({
+								'top': $scrollTop-300, 
+								property2: 'value2'
+							});	
+						}else{
+							$('div.list-widget').css({
+								'top': 0, 
+								property2: 'value2'
+							});
+						};
+					});
+
+
+					$('i.un-complete').click(function() {
+						// console.log('ccc');
+						// $(this).addClass('i-complete');
+						// $(this).parent().addClass('none');
+						$(this).html('&#x344d;')
+					});
+
+				
+					// $("#b01").click(function(){
+					// 	// console.log('ccc');
+					// 	htmlobj=$.ajax({url:"knowledge.shtml",async:false});
+					// 	$("#myDiv").html(htmlobj.responseText);
+					// });
+
+					$('#jTaskInfo').hover(function() {
+						$(this).children('div.nui-tips').removeClass('none');
+					}, function() {
+						$(this).children('div.nui-tips').addClass('none');
+					});
+
+
+					//crm的时间控件的js
+					// $('div.nui-time-box')
+
+					//crm的关注效果
+					// $('div.data-list-cell').delegate('button.nui-state-btn-active', 'hover', function() {
+					// 	console.log('ccc');
+					// });
+
+					// $('button.nui-state-btn-active').mouseenter{
+					// 	console.log('ccc');
+					// }
+					//==================
+
+					
+
+
+		})
+
+	
+
+
+	</script>
+	
+</head>
+<div id="header">
+	<div class="top-info">
+		<div class="auto-wrap">
+			<a href="/" class="logo">运价通</a>
+			<ul class="nav">
+				<li class="nav-cell"><a class="nav-link nav-link-first fonticon" href="#">&#x3497;</a></li>
+				<li class="nav-cell"><a class="nav-link fonticon" href="index.shtml">&#x3482;</a></li>
+				<li class="nav-cell">
+					<a class="nav-link" href="../crm/workspace.shtml">我的办公桌</a>
+					<div class="nav-cell-arrow none">
+						◆ 
+						<em>◆</em>
+					</div>
+				</li>
+				<li class="nav-cell">
+					<a class="nav-link" href="../crm/index.shtml">CRM</a>
+					<div class="nav-cell-arrow">
+						◆ 
+						<em>◆</em>
+					</div>
+				</li>
+				<li class="nav-cell">
+					<a class="nav-link " href="../fuserManagement/list.shtml">运价通</a>
+					<div class="nav-cell-arrow none">
+						◆ 
+						<em>◆</em>
+					</div>
+				</li>
+				<li class="nav-cell">
+					<a class="nav-link nav-link-last" href="../fuserManagement/staffManage.shtml">员工管理</a>
+					<div class="nav-cell-arrow none">
+						◆ 
+						<em>◆</em>
+					</div>
+				</li>
+			</ul>
+			<ul class="top-menu">
+				<li class="top-menu-cell pr0">你好：</li>
+				<li class="top-menu-cell cur-p has-dropdown">李光耀 <i class="top-menu-icon">&#x3438;</i>
+					<div class="nui-drop-down block">
+						<ul class="nui-select-list">
+							<li class="nui-select-list-li"><i class="mr5 animate">&#x34ec;</i> 账户信息</li>
+							<li class="nui-select-list-li last"><i class="mr5 animate">&#x3533;</i> 修改密码</li>
+						</ul>
+					</div>
+			</li>
+			<li class="top-menu-line"></li>
+			<li class="top-menu-cell"><a href="javascript:" class="top-menu-link">退出</a></li>
+		</ul>
+		</div>
+	</div>
+	<!-- 应用内部导航 -->
+
+
+	<div class="main-nav ">
+		<ul class="auto-wrap">
+			<li class="main-nav-cell"><a href="#" class="main-nav-link main-nav-link-active"><i>&#x343c;</i>CRM首页</a></li>
+			<li class="main-nav-cell"><a href="client-future.shtml" class="main-nav-link"><i>&#x343d;</i>潜在客户</a></li>
+			<li class="main-nav-cell"><a href="client-audit.shtml" class="main-nav-link"><i>&#x344b;</i>客户评审</a></li>
+			<li class="main-nav-cell"><a href="#" class="main-nav-link"><i>&#x3449;</i>正式客户</a></li>
+			<li class="main-nav-cell"><a href="#" class="main-nav-link"><i>&#x351d;</i>联系人</a></li>
+			<li class="main-nav-cell"><a href="#" class="main-nav-link"><i>&#x349f;</i>销售机会</a></li>
+			<li class="main-nav-cell"><a href="#" class="main-nav-link"><i>&#x3579;</i>市场活动</a></li>
+			<li class="main-nav-cell"><a href="active-record.shtml" class="main-nav-link"><i>&#x343a;</i>活动记录</a></li>
+			<li class="main-nav-cell"><a href="#" class="main-nav-link"><i>&#x34ff;</i>报表</a></li>
+			<li class="main-nav-cell"><a href="#" class="main-nav-link"><i>&#x3501;</i>销售预测</a></li>
+			<li class="main-nav-cell"><a href="#" class="main-nav-link"><i>&#x3441;</i>仪表盘</a></li>
+			<li class="main-nav-cell"><a href="#" class="main-nav-link"><i>&#x353e;</i>添加应用</a></li>
+		</ul>
+	</div>
+<!-- 	<div class="main-sub-nav">
+		<ul class="auto-wrap">
+			<li><a class="main-sub-nav-link main-sub-nav-link-active" href="../fuserManagement/list.shtml" >账户管理</a></li>
+			<li><a class="main-sub-nav-link" href="../fuserManagement/analytics.shtml">行为分析管理</a></li>
+			<li><a class="main-sub-nav-link" href="../fuserManagement/ruleset.shtml">多级运价管理</a></li>
+			<li><a class="main-sub-nav-link" href="../fuserManagement/javascript:">邀请体验管理</a></li>
+		</ul>
+
+	</div> -->
+</div>

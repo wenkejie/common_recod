@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>详情界面</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		$(function () {
+			var $mcnt = $('div.multiple-select-content');
+			$mcnt.on("myevent",(function() {
+				var $height = $(this).height();
+				var $theight = $(this).find('div.multiple-select-title').height();
+				$(this).find('ul.multiple-select-cnt').height($height - $theight -10);
+			}));
+			$mcnt.trigger('myevent');
+
+			$('li.multiple-select-cell').hover(function() {
+				$(this).find('a.delete').removeClass('none');
+			}, function() {
+				$(this).find('a.delete').addClass('none');
+			});
+		})
+
+	</script>
+	<!-- 用于ie6的兼容部分js -->
+	<!--[if IE 6]>
+		<script type="text/javascript">
+		$(function () {
+
+			$('li.multiple-select-cell').hover(function() {
+				$(this).addClass('multiple-select-cell-active');
+			}, function() {
+				$(this).removeClass('multiple-select-cell-active');
+			});
+		})
+		</script>
+	<![endif]-->
+
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+<!--弹窗的内容复制 -->
+<div class="fui-dialog" style="width:1000px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">详情</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<div class="fui-dialog-cnt clearfix" style="padding-top:50px;">
+
+		<!-- 这次的新内容，上面的js作为效果的参考，如果用的话建议命名改一下 -->
+			<div class="nui-multiple-select clearfix" style="">
+				<div class="multiple-select-content bdn">
+					<div class="multiple-select-left">
+						<div class="multiple-select-title">
+							<h2 class="multiple-top-info">目的港列表</h2>
+							<div class="select-search">
+								<div class="nui-form-cell w100p"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" placeholder="搜索成员、部门、分公司" class="nui-input"/> 
+										<i class="nui-form-cell-icon fs12">&#x355d;</i> 
+									</div>
+								</div>
+							</div>
+							<div class="select-option clearfix"> 
+								<div class="left">
+									<a class="selectall" href="javascript:">全选</a> /
+									<a class="reverse" href="javascript:">反选</a>
+								</div>
+								<a class="nui-btn nui-btn-mini right" href="javascript:">批量添加</a>
+							</div>
+							<div class="to-bottom">
+								◆ 
+								<em>◆</em>
+							</div>
+						</div>
+						<ul class="multiple-select-cnt">
+							<li class="multiple-select-cell multiple-select-cell-active">
+								<a href="javascript:" class="multiple-select-link">
+									<input class="mr5" type="checkbox" name="items"> 南美线
+
+								</a>
+							</li>
+							<li class="multiple-select-cell">
+								<a href="javascript:" class="multiple-select-link">
+									<input class="mr5" type="checkbox" name="items"> 南美线
+
+								</a>
+							</li>
+							<li class="multiple-select-cell">
+								<a href="javascript:" class="multiple-select-link">
+									<input class="mr5" type="checkbox" name="items"> 南美线
+
+								</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="multiple-select-middle">
+					<div class="middle-icon">
+						<i class="dpb">&#x3543;</i>
+						<i class="dpb">&#x3545;</i>
+					</div>
+				</div>
+				<div class="multiple-select-content content-for-ie6 bdn">
+					<div class="multiple-select-right">
+						<div class="multiple-select-title">
+							<h2 class="multiple-top-info">已选目的港列表</h2>
+							<div class="select-option mt40 clearfix"> 
+								<div class="left">
+									<a class="selectall" href="javascript:">全选</a> /
+									<a class="reverse" href="javascript:">反选</a>
+								</div>
+								<a class="nui-btn nui-btn-mini right" href="javascript:">删除</a>
+							</div>
+							<div class="to-bottom">
+								◆ 
+								<em>◆</em>
+							</div>
+						</div>
+						<ul class="multiple-select-cnt">
+							<li class="multiple-select-cell">
+								<a href="javascript:" class="multiple-select-link">
+									<input class="mr5" type="checkbox" name="items"> 南美线
+								</a>
+								<a class="delete fonticon none" href="javascript:">&#x3586;</a>
+							</li>
+							<li class="multiple-select-cell">
+								<a href="javascript:" class="multiple-select-link">
+									<input class="mr5" type="checkbox" name="items"> 南美线
+								</a>
+								<a class="delete fonticon none" href="javascript:">&#x3586;</a>
+							</li>
+							<li class="multiple-select-cell">
+								<a href="javascript:" class="multiple-select-link">
+									<input class="mr5" type="checkbox" name="items"> 南美线
+								</a>
+								<a class="delete fonticon none" href="javascript:">&#x3586;</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<!-- 新内容结束 -->	
+	</div>
+	<div class="fui-dialog-btm-bar pss"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+
+
+</div>

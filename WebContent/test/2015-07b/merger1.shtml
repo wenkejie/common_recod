@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>企业合并</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+
+</head>
+<body>
+
+<div class="fui-dialog"  style="height:420px;width:450px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">企业合并</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt">
+		<p class="merger-info"><i>&#x3573;</i>请选择要在合并后的记录中保留的企业，设为主记录。合并之后，其它企业下的员工信息都将迁移至主记录下，企业资料默认为主记录资料。</p>
+		<div class="nui-table-area mt15">
+			<table class="nui-table nui-table-merger">
+				<thead>
+					<th width="40">主纪录</th>
+					<th width="300">企业名</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="first-td">
+							<input class="j-radio" type="radio" name="only" value="" />
+						</td>
+						<td class="last-td">
+							阿林兜逼有限公司
+							<span class="td-hover-tips" href="javascript:"><i>&#x3448;</i>设置为主企业</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="first-td">
+							<input class="j-radio" type="radio" name="only" value="" />
+						</td>
+						<td class="last-td">
+							阿林兜逼有限公司
+							<span class="td-hover-tips" href="javascript:"><i>&#x3448;</i>设置为主企业</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="first-td">
+							<input class="j-radio" type="radio" name="only" value="" />
+						</td>
+						<td class="last-td">
+							阿林兜逼有限公司
+							<span class="td-hover-tips" href="javascript:"><i>&#x3448;</i>设置为主企业</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="first-td">
+							<input class="j-radio" type="radio" name="only" value="" />
+						</td>
+						<td class="last-td">
+							阿林兜逼有限公司
+							<span class="td-hover-tips" href="javascript:"><i>&#x3448;</i>设置为主企业</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="first-td">
+							<input class="j-radio" type="radio" name="only" value="" />
+						</td>
+						<td class="last-td">
+							阿林兜逼有限公司
+							<span class="td-hover-tips" href="javascript:"><i>&#x3448;</i>设置为主企业</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>开始合并</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script src="new-manger.js" type="text/javascript"></script>
+</body>
+</html>

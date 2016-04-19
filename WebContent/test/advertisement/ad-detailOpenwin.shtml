@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://fcommon.600jit.com/fcommon/release/freight/css/common-v1.2.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="fui-dialog" style="width:495px;">
+		<div class="fui-dialog-title">
+			<h4 class="tal">详情</h4>
+			<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+			</div>
+		<div class="fui-dialog-cnt">
+			<div class="form-line-grid mt10 pr20">
+				<div class="form-line">
+					<label for="" class="nui-label">广告标题</label>
+					<div class="nui-form-cell w350">
+						<input type="text" class="nui-input" id="" />
+					</div>
+				</div>
+				<div class="form-line">
+					<div class="form-line-left dpib">
+						<label for="" class="nui-label">投放人</label>
+						<div class="nui-form-cell w80">
+							<input type="text" class="nui-input" id="" />
+						</div>
+					</div>
+					<div class="form-line-right dpib">
+						<label for="" class="nui-label">投放企业</label>
+						<div class="nui-form-cell w176">
+							<input type="text" class="nui-input" id="" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hr"></div>
+			<div class="form-line-grid mt10 pr20">
+				<div class="form-line">
+					<div class="form-line-left dpib mr8">
+						<label for="" class="nui-label">投放范围</label>
+						<div class="nui-form-cell nui-select w160">
+							<div class="nui-form-cell-cnt">
+								<div class="nui-input">单公司</div><i class="nui-form-cell-icon fs12">&#x35d7;</i>
+								<div class="nui-drop-down">
+									<ul class="nui-select-list">
+										<li key="id_12" style="display: black" class="nui-select-list-li active">用户电话</li>
+										<li key="id_13" style="display: black" class="nui-select-list-li">用户名</li>
+										<li key="id_14" style="display: black" class="nui-select-list-li">用户传真</li>
+										<li key="id_15" style="display: black" class="nui-select-list-li">用户邮箱</li>
+										<li key="id_16" style="display: black" class="nui-select-list-li">省份</li>
+										<li key="id_17" style="display: black" class="nui-select-list-li">城市</li>
+										<li key="id_18" style="display: black" class="nui-select-list-li">服务人员</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-line-right dpib">
+						<div class="nui-form-cell w168"> 
+							<div class="nui-form-cell-cnt"> 
+								<input type="text" id="search" class="nui-input" placeholder="指定公司名称"> 
+								<a href="javascript:" class="nui-form-cell-icon fs12">&#x35d7;</a> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-line">
+					<label for="" class="nui-label">有效日期</label>
+					<div class="nui-form-cell w160">
+						<input type="text" class="nui-input" id="" />
+					</div>
+					<span class="pd0-3">-</span>
+					<div class="nui-form-cell w168">
+						<input type="text" class="nui-input" id="" />
+					</div>
+				</div>
+				
+			</div>
+			<div class="hr"></div>
+			<div class="form-line-grid pr20">
+				<div class="form-line">
+					<div class="form-line-left dpib">
+						<label for="" class="nui-label">投放产品</label>
+						<div class="nui-form-cell nui-select">
+							<div class="nui-form-cell-cnt">
+								<div class="nui-input">运价通</div><i class="nui-form-cell-icon fs12">&#x35d7;</i>
+								<div class="nui-drop-down">
+									<ul class="nui-select-list">
+										<li key="id_12" style="display: black" class="nui-select-list-li active">用户电话</li>
+										<li key="id_13" style="display: black" class="nui-select-list-li">用户名</li>
+										<li key="id_14" style="display: black" class="nui-select-list-li">用户传真</li>
+										<li key="id_15" style="display: black" class="nui-select-list-li">用户邮箱</li>
+										<li key="id_16" style="display: black" class="nui-select-list-li">省份</li>
+										<li key="id_17" style="display: black" class="nui-select-list-li">城市</li>
+										<li key="id_18" style="display: black" class="nui-select-list-li">服务人员</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-line-right dpib">
+						<label for="" class="nui-label w30">类型</label>
+						<div class="nui-form-cell nui-select w75">
+							<div class="nui-form-cell-cnt">
+								<div class="nui-input">静态图片</div><i class="nui-form-cell-icon fs12">&#x35d7;</i>
+								<div class="nui-drop-down">
+									<ul class="nui-select-list">
+										<li key="id_12" style="display: black" class="nui-select-list-li active">静态图片</li>
+										<li key="id_13" style="display: black" class="nui-select-list-li">用户名</li>
+										<li key="id_14" style="display: black" class="nui-select-list-li">用户传真</li>
+										<li key="id_15" style="display: black" class="nui-select-list-li">用户邮箱</li>
+										<li key="id_16" style="display: black" class="nui-select-list-li">省份</li>
+										<li key="id_17" style="display: black" class="nui-select-list-li">城市</li>
+										<li key="id_18" style="display: black" class="nui-select-list-li">服务人员</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-line">
+					<label for="" class="nui-label">投放位置</label>
+					<div class="nui-form-cell nui-select">
+						<div class="nui-form-cell-cnt">
+							<div class="nui-input">外部查询</div><i class="nui-form-cell-icon fs12">&#x35d7;</i>
+							<div class="nui-drop-down">
+								<ul class="nui-select-list">
+									<li key="id_12" style="display: black" class="nui-select-list-li active">用户电话</li>
+									<li key="id_13" style="display: black" class="nui-select-list-li">用户名</li>
+									<li key="id_14" style="display: black" class="nui-select-list-li">用户传真</li>
+									<li key="id_15" style="display: black" class="nui-select-list-li">用户邮箱</li>
+									<li key="id_16" style="display: black" class="nui-select-list-li">省份</li>
+									<li key="id_17" style="display: black" class="nui-select-list-li">城市</li>
+									<li key="id_18" style="display: black" class="nui-select-list-li">服务人员</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="nui-form-cell nui-select">
+						<div class="nui-form-cell-cnt">
+							<div class="nui-input">外部查询</div><i class="nui-form-cell-icon fs12">&#x35d7;</i>
+							<div class="nui-drop-down">
+								<ul class="nui-select-list">
+									<li key="id_12" style="display: black" class="nui-select-list-li active">用户电话</li>
+									<li key="id_13" style="display: black" class="nui-select-list-li">用户名</li>
+									<li key="id_14" style="display: black" class="nui-select-list-li">用户传真</li>
+									<li key="id_15" style="display: black" class="nui-select-list-li">用户邮箱</li>
+									<li key="id_16" style="display: black" class="nui-select-list-li">省份</li>
+									<li key="id_17" style="display: black" class="nui-select-list-li">城市</li>
+									<li key="id_18" style="display: black" class="nui-select-list-li">服务人员</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="nui-form-cell nui-select w88">
+						<div class="nui-form-cell-cnt">
+							<div class="nui-input">位置一</div><i class="nui-form-cell-icon fs12">&#x35d7;</i>
+							<div class="nui-drop-down">
+								<ul class="nui-select-list">
+									<li key="id_12" style="display: black" class="nui-select-list-li active">用户电话</li>
+									<li key="id_13" style="display: black" class="nui-select-list-li">用户名</li>
+									<li key="id_14" style="display: black" class="nui-select-list-li">用户传真</li>
+									<li key="id_15" style="display: black" class="nui-select-list-li">用户邮箱</li>
+									<li key="id_16" style="display: black" class="nui-select-list-li">省份</li>
+									<li key="id_17" style="display: black" class="nui-select-list-li">城市</li>
+									<li key="id_18" style="display: black" class="nui-select-list-li">服务人员</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-line">
+					<label for="" class="nui-label">访问链接</label>
+					<div class="nui-form-cell w350">
+						<input type="text" class="nui-input" id="" />
+					</div>
+				</div>
+				<div class="form-line pt10">
+					<div class="picture-upload">
+						<a href="javascript:" class="nui-file-upload nui-btn">
+							<i>&#x34ee;</i> 上传图片
+							<input type="file" name="client_logo" id="client_logo" style="*width:100px;" class="nui-file-upload-input">
+						</a>
+						<div class="picture-upload-tips">图片文件最大10MB，支持.jpg .gif .jpeg .png的图片格式</div>
+						<div class="picture-upload-place none">xxxxx.png<a class="close ml5" href="javascript:">×</a></div>
+					</div>
+				</div>
+				
+			</div>
+			<!-- <div class="hr"></div> -->
+			<!-- <div class="form-line-grid pr20">
+				<div class="form-line clearfix">
+					<label for="" class="nui-label">状态</label>
+					<span>草稿</span>
+				</div>
+			</div> -->
+		</div> 
+		<div class="fui-dialog-btm-bar pss">
+			<span class="checkbox-bar"><label for="" class="nui-label w60">状态:</label><span class="dpib vam">草稿</span></span> 
+			<a href="javascript:" class="fui-btn-dialog-primary"><span>保存</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>审批</span></a><a  href="javascript:" class="fui-btn-dialog"><span>撤销</span></a><a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+		</div> 
+	</div>
+</body>
+</html>

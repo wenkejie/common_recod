@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>详情界面</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<link rel="stylesheet" href="../../release/freight/css/zTreeStyle/zTreeStyle.css" />
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../release/freight/js/jquery.ztree.all-3.5.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="headNav.js"></script>
+
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+<!--弹窗的内容复制 -->
+<div class="fui-dialog" style="width:800px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">详情</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<div class="fui-dialog-cnt clearfix">
+		
+		<div class="power-set-box mt20">
+				<div class="power-set-title">
+					<div class="power-set-left">
+						<strong>指定服务人员 /</strong><span class="info">设置客户对应的服务人员</span>
+					</div>
+					<div class="power-set-right none">
+						<div class="power-set-info">
+							<span class="info">不被应用</span>
+						</div>
+						<div class="power-set-fn">
+							<a href="javascript:">设置</a>
+						</div>
+					</div>
+					<div class="power-set-right-close">
+						<a href="javascript:" class="fonticon close">&#x3586;</a>
+					</div>
+				</div>
+				<div class="power-set-cnt">
+					<div class="nui-tab"> 
+						<div class="nui-tab-menu pl15"> 
+							<ul class="clearfix dpib vam"> 
+								<li class="nui-tab-menu-cell nui-tab-menu-active"><a class="nui-tab-menu-link" href="javascript:">新增</a></li> 
+								<li class="nui-tab-menu-cell"><a class="nui-tab-menu-link" href="javascript:">修改</a></li>
+								<li class="nui-tab-menu-fn left"><span class="nui-form-des"><i class="mr5 fs14">&#x3573;</i>新增权限，不替换现有权限</span></li> 
+							</ul>
+						</div> 
+						<div class="nui-tab-cnt">
+							<div class="power-set-con">
+								<div class="server-person-list">
+									<label class="nui-adv-label">服务人员：</label>
+									<div class="ml80">
+										<ul class="nui-tags">
+											<li style="left: 256px; top: 146.5px; display: none;" class="nui-tags-del none">
+												<a href="javascript:" class="close">×</a>
+											</li>
+											
+											<li class="nui-tags-cell">on_no<input type="hidden" value="34" name="employee_id"></li>
+											
+											<li class="nui-tags-cell">曹金彦<input type="hidden" value="167" name="employee_id"></li>
+											
+										</ul>
+										<div class="nui-adv-search-con ml-3 mb5">
+											<div class="nui-condition-input clearfix w130 pd0 pl5 pr5">
+												<input type="text" class="adv-search-input" id="salesInput" autocomplete="off">
+												<input type="hidden" name="employee_id" id="employee_id">
+												<a href="javascript:" title="增加" class="adv-search-add"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div> 
+					</div>
+				</div>
+		</div>
+		<div class="power-set-box">
+				<div class="power-set-title">
+					<div class="power-set-left">
+						<strong>选择服务 /</strong><span class="info">设置客户对应的服务人员</span>
+					</div>
+					<div class="power-set-right">
+						<div class="power-set-info">
+							<span class="info">不被应用</span>
+						</div>
+						<div class="power-set-fn">
+							<a href="javascript:">设置</a>
+						</div>
+					</div>
+				</div>
+				<div class="power-set-cnt">
+					<div class="nui-tab"> 
+						<div class="nui-tab-menu pl15"> 
+							<ul class="clearfix dpib vam"> 
+								<li class="nui-tab-menu-cell nui-tab-menu-active"><a class="nui-tab-menu-link" href="javascript:">新增</a></li> 
+								<li class="nui-tab-menu-cell"><a class="nui-tab-menu-link" href="javascript:">修改</a></li>
+								<li class="nui-tab-menu-fn left"><span class="nui-form-des"><i class="mr5 fs14">&#x3573;</i>新增权限，不替换现有权限</span></li>  
+							</ul>
+						</div> 
+						<div class="nui-tab-cnt">
+							<div class="power-set-con pl20">
+								<div class="rule-select">
+
+									<a class="rule-select-cell rule-select-cell-mchoice rule-select-selected" href="javascript:" id="tr_fcl_price_query">海运整箱</a>
+
+
+									<a class="rule-select-cell rule-select-cell-mchoice rule-select-selected" href="javascript:" id="tr_lcl_price_query">海运拼箱出口</a>
+
+
+									<a class="rule-select-cell rule-select-cell-mchoice rule-select-selected" href="javascript:" id="tr_import_lcl_price_query">海运拼箱进口</a>
+
+
+									<a class="rule-select-cell rule-select-cell-mchoice rule-select-selected" href="javascript:" id="tr_air_price_query">空运</a>
+
+								</div>
+							</div> 
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="power-set-box">
+				<div class="power-set-title">
+					<div class="power-set-left">
+						<strong>设定查询规则 /</strong><span class="info">设置客户对应的服务人员</span>
+					</div>
+					<div class="power-set-right">
+						<div class="power-set-info">
+							<span class="info">不被应用</span>
+						</div>
+						<div class="power-set-fn">
+							<a href="javascript:">设置</a>
+						</div>
+					</div>
+				</div>
+				<div class="power-set-cnt">
+					<div class="nui-tab"> 
+						<div class="nui-tab-menu pl15"> 
+							<ul class="clearfix dpib vam"> 
+								<li class="nui-tab-menu-cell nui-tab-menu-active"><a class="nui-tab-menu-link" href="javascript:">新增</a></li> 
+								<li class="nui-tab-menu-cell"><a class="nui-tab-menu-link" href="javascript:">修改</a></li>
+								<li class="nui-tab-menu-fn left"><span class="nui-form-des"><i class="mr5 fs14">&#x3573;</i>新增权限，不替换现有权限</span></li>  
+							</ul>
+						</div> 
+						<div class="nui-tab-cnt">
+							<div class="power-set-con pl20">
+								<table class="params-list">
+
+									<tbody>
+										<tr>
+											<td class="params-list-title">航线控制</td>
+											<td>已设置</td>
+											<td class="params-list-des">根据设定，使客户只能查询指定的航线的运价</td>
+											<td class="action"><a class="nui-btn nui-btn-20 nui-btn-primary" href="javascript:" id="a_route">修改</a></td>
+										</tr>
+										<tr>
+											<td class="params-list-title">目的港类型控制</td>
+											<td>未启用</td>
+											<td class="params-list-des">启用此功能，则客户只能查询到目的港为标记成基本港的运价</td>
+											<td class="action"><a class="nui-btn nui-btn-20 nui-btn-primary" href="javascript:" id="a_query_destination_type">设置</a></td>
+										</tr>
+
+										<tr>
+											<td class="params-list-title">运价规则</td>
+											<td id="rule-price-status">
+
+												<span>未设置</span>
+
+											</td>
+											<td id="rulepricename" class="params-list-des">
+
+											</td>
+											<td class="action">
+												<a iseditpurview="false" rule_id="-1" class="nui-btn nui-btn-20 nui-btn-primary rulePriceSet">
+													设置
+												</a>
+											</td>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div> 
+				</div>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar pss"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+
+<!-- ================= -->		
+<!--#include file="footer.html"-->
+</body>
+</html>

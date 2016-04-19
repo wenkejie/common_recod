@@ -1,0 +1,60 @@
+
+body {
+    color: #333333;
+    font-family: Arial;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+form {
+    margin: 0;
+    padding: 0;
+}
+td {
+    font-family: "Arial","ËÎÌו";
+    font-size: 12px;
+}
+.b {
+    font-weight: 700;
+}
+td .select {
+    color: #0099CC;
+    font-size: 12px;
+    height: 397px;
+    width: 286px;
+}
+td .selectport {
+    color: #0099CC;
+    font-size: 12px;
+    height: 377px;
+    width: 300px;
+}
+td .select_field {
+    color: #0099CC;
+    font-size: 12px;
+    height: 330px;
+    width: 250px;
+}
+td .select_uploadprice_field {
+    color: #0099CC;
+    font-size: 12px;
+    height: 300px;
+    width: 250px;
+}
+input {
+    color: #333333;
+    font-size: 12px;
+    line-height: 18px;
+}
+.addrow1 {
+}
+.button {
+    cursor: pointer;
+    font-weight: normal;
+    height: 24px;
+    line-height: 20px;
+    padding: 0 2px 2px;
+}
+input.readonly1, textarea.readonly1, select.readonly1 {
+    background-color: #F1F0E9;
+}

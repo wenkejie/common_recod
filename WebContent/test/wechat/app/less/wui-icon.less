@@ -1,0 +1,57 @@
+//
+// 图标
+// --------------------------------------------------
+// 常量
+
+.iconfontset(@name:iconfont;@tag:i){
+	@font-face {
+		font-family: 'iconfont';
+		src: url('http://at.alicdn.com/t/font_1419409147_9481328.eot'); /* IE9*/
+		src: url('http://at.alicdn.com/t/font_1419409147_9481328.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('http://at.alicdn.com/t/font_1419409147_9481328.woff') format('woff'), /* chrome、firefox */
+		url('http://at.alicdn.com/t/font_1419409147_9481328.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+		url('http://at.alicdn.com/t/font_1419409147_9481328.svg#iconfont') format('svg'); /* iOS 4.1- */
+	}
+
+// [class^="icon-"], [class*=" icon-"]
+	.fonticon,.iconfont,@{tag} {
+	  font-family: '@{name}';
+	  speak: none;
+	  font-style: normal;
+	  font-weight: normal;
+	  font-variant: normal;
+	  font-size: 1.3rem;
+	  text-transform: none;
+	  //vertical-align: middle;
+	  line-height: 1;//会影响有些样式，所以先去掉，如果其他文字图标出错可以改动这里by；Evan
+
+	-webkit-text-stroke-width: 0.2px;//出现以上现象可以对字体图标的边缘进行模糊；（只支持webkit内核浏览器,参数数值不宜设置得很大，这会带来图标加粗的问题）
+	// -webkit-text-size-adjust:none;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	}
+
+	.icon-eye:before{content:"\e60f";}/*显示*/
+	.icon-search:before{content:"\e600";}/*搜索*/
+	.icon-arrow-right:before{content:"\e601";}/*向右*/
+	.icon-arrow-up:before{content:"\e610";}/*向上*/
+	.icon-arrow-down:before{content:"\e611";}/*向下*/
+	.icon-bilateral:before{content:"\e613";}/*双向箭头*/
+	.icon-wechat:before{content:"\e603";}/*微信*/
+	.icon-location:before{content:"\e604";}/*定位*/
+	.icon-return:before{content:"\e605";}/*返回*/
+	.icon-right:before{content:"\e607";}/*正确*/
+	.icon-password:before{content:"\e60e";}/*密码*/
+	.icon-company:before{content:"\e608";}/*公司*/
+	.icon-user:before{content:"\e609";}/*用户*/
+	.icon-tips:before{content:"\e606";}/*提示*/
+	.icon-filter:before{content:"\e60a";}/*过滤*/
+	.icon-phone:before{content:"\e60b";}/*电话*/
+	.icon-close:before{content:"\e60c";}/*关闭*/
+	.icon-focus:before{content:"\e60d";}/*起运港*/
+	.icon-to-right:before{content:"\e602";}/*起运港*/
+	.icon-clear:before{content:"\e612";}/*清理*/
+
+	.icon-search-nodata:before{content:"\e614";}/*搜索无数据*/
+}

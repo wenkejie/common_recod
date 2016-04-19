@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		<script>
+		$(function() {
+			var $tabMenu = $('li.nui-tab-menu-cell');
+			var $tabCnt = $('div.nui-tab-cnt');
+			$tabMenu.click(function() {
+				var index = $(this).index();
+				$tabMenu.removeClass("nui-tab-menu-active");
+				$(this).addClass('nui-tab-menu-active');
+				$tabCnt.hide().eq(index).show();
+			})
+		})
+		</script>
+	</head>
+	<body>
+		<label class="nui-label">label标签：</label>
+		<label class="nui-checkbox" for=""><input type="checkbox" id="" name="">选项1</label>
+		<label class="nui-checkbox" for=""><input type="checkbox" id="" name="">选项1</label>
+		<label class="nui-checkbox" for=""><input type="checkbox" id="" name="">选项1</label>
+		<div class="fui-dialog" style="width:800px">
+			<div class="fui-dialog-title">
+				<h4 class="tal">详情</h4>
+				<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a>
+			</div>
+			<div class="fui-dialog-cnt">
+				<div class="nui-tab">
+					<div class="nui-tab-menu mt20">
+						<ul>
+							<li class="nui-tab-menu-cell nui-tab-menu-active"><a class="nui-tab-menu-link" href="javascript:">tab选项1</a></li>
+							<li class="nui-tab-menu-cell"><a class="nui-tab-menu-link" href="javascript:">tab选项2</a></li>
+							<li class="nui-tab-menu-cell"><a class="nui-tab-menu-link" href="javascript:">tab选项3(0)</a></li>
+							<li class="nui-tab-menu-fn"><a href="javascript:">我可以是链接</a></li>
+						</ul>
+					</div>
+					<div class="nui-tab-cnt">
+						<div class="nui-form-title">我是一张牛逼的表单</div>
+						<div class="hr"></div>
+						<div class="form-line">
+							<div class="nui-form-cell nui-search-with-select">
+								<div class="nui-select">
+									<div class="nui-select-value">
+										按客户天数搜索
+									</div><i>㐸</i>
+									<div class="nui-drop-down w100">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">按客户名称</li>
+											<li class="nui-select-list-li">未跟进天数</li>
+											<li class="nui-select-list-li">海外国内</li>
+											<li class="nui-select-list-li nui-select-list-li-disable">客户类型</li>
+											<li class="nui-select-list-li">业务类型</li>
+										</ul>
+									</div>
+								</div>
+								<div class="nui-form-cell-cnt pl5 psr left">
+									<input type="text" class="nui-input no-chinese">
+									<div class="nui-drop-down mw-n w145 ">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">按客户名称</li>
+											<li class="nui-select-list-li">未跟进天数</li>
+											<li class="nui-select-list-li">海外国内</li>
+											<li class="nui-select-list-li">客户类型</li>
+											<li class="nui-select-list-li">业务类型</li>
+										</ul>
+									</div>
+									<i class="nui-form-cell-icon fs12 cur-p">㕝</i>
+								</div>
+							</div>
+							<span class="nui-form-des">我是很厉害的搜索</span>
+						</div>
+						
+						<div class="hr"></div>
+						
+						<div class="form-line">
+							<label for="" class="nui-label w80"><span class="nui-form-required">*</span>这里是标签</label>
+							<div class="nui-form-cell w50">
+								<input type="text" class="nui-input" id="" />
+								</div><label for="" class="nui-label w50">是标签</label><div class="nui-form-cell" style="width:83px">
+								<input type="text" class="nui-input" id="" />
+							</div>
+						</div>
+						<div class="form-line">
+							<label for="" class="nui-label w80">这里是标签</label>
+							<div class="nui-form-cell w200">
+								<input type="text" class="nui-input" id="" />
+							</div>
+						</div>
+						<div class="form-line">
+							<label for="" class="nui-label w80">这里标签</label>
+							<div class="nui-form-cell w200">
+								<input type="text" class="nui-input" id="" />
+							</div>
+						</div>
+						<div class="form-line">
+							<label for="" class="nui-label w80">这里是标签</label>
+							<div class="nui-form-cell nui-select w200">
+								<div class="nui-form-cell-cnt">
+									<input type="text" value="选择的值" class="nui-input">
+									<i class="nui-form-cell-icon">&#x3438;</i>
+									<div class="nui-drop-down">
+										<ul class="nui-select-list">
+											<li class="nui-select-list-li">选择值1</li>
+											<li class="nui-select-list-li">选择值2</li>
+											<li class="nui-select-list-li">选择值2</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="form-line">
+							<label for="" class="nui-label w80"><span class="nui-form-required">*</span>这里是</label>
+							<div class="nui-form-cell w200">
+								<div class="nui-form-cell-cnt">
+									<input type="text" value="选择的值" class="nui-input">
+									<i class="nui-form-cell-icon">$</i>
+								</div>
+							</div>
+							<span class="nui-form-des">这是说明文字,我能帮助别人哦</span>
+						</div>
+						<div class="form-line">
+							<label class="nui-label w80">label标签：</label>
+							<label class="nui-checkbox" for="ff"><input type="checkbox" id="ff" name="">选项1</label>
+							<label class="nui-checkbox" for=""><input type="checkbox" id="" name="">选项1</label>
+							<label class="nui-checkbox" for=""><input type="checkbox" id="" name="">选项1</label>
+						</div>
+						<div class="form-line">
+							<label class="nui-label w80">label标签：</label>
+							<label class="nui-radio" for="dd"><input type="radio" id="dd" name="">选项1</label>
+							<label class="nui-radio" for=""><input type="radio" id="" name="">选项1</label>
+							<label class="nui-radio" for=""><input type="radio" id="" name="">选项1</label>
+						</div>
+						
+						<div class="form-line">
+							<label for="" class="nui-label w80 vat"><span class="nui-form-required">*</span>这里标签</label>
+							<div class="nui-form-cell w200">
+								<textarea class="nui-textarea h100"></textarea>
+							</div>
+							<span class="nui-form-required">*</span>
+						</div>
+					</div>
+				</div>
+				<div class="nui-tab-cnt">
+					<div class="form-line">
+						<label for="" class="nui-label">姓名：</label><span class="nui-form-des">我是谁 <a href="javascript:">编辑</a></span>
+					</div>
+					<div class="form-line">
+						<label for="" class="nui-label">姓sdf名：</label><span class="nui-form-des">adasdfsadfa</span>
+					</div>
+					<div class="form-line">
+						<label for="" class="nui-label">姓fsdf名：</label><span class="nui-form-des">我sadfasdfasdf是谁</span>
+					</div>
+					<div class="form-line">
+						<label for="" class="nui-label">姓名：</label><span class="nui-form-des">我是asdfasdfasd谁</span>
+					</div>
+				</div>
+				
+				<div class="hr"></div>
+				<div class="nui-group-btn">
+					<button class="nui-btn">按钮</button><button class="nui-btn pl5 pr5"> <i class="l-h24">&#x3438;</i></button>
+					<div class="nui-drop-down block left0">
+						<ul class="nui-select-list nui-select-list-with-title">
+							<li class="nui-select-list-title">我的视图</li>
+							<li class="nui-select-list-li">我的客户</li>
+							<li class="nui-select-list-li">我关注的客户</li>
+							<li class="nui-select-list-li">A（重点客户）</li>
+							<li class="nui-select-list-li">B（普通客户）</li>
+							<li class="nui-select-list-li">C（非优先客户）</li>
+							<li class="nui-select-list-title">其他视图</li>
+							<li class="nui-select-list-li">我的下属客户</li>
+						</ul>
+						<div class="hr"></div>
+						<div class="tac pb5">
+							<a href="javascript:" class="nui-btn fl-n">按钮</a>
+						</div>
+					</div>
+				</div>
+				<div class="nui-group-btn">
+					<button class="nui-btn pr8">按钮</button><button class="nui-btn nui-btn-disable">按钮</button><button class="nui-btn">按钮</button>
+				</div>
+				<div  class="nui-btn pr8 psr">按钮 <i class="">&#x3438;</i>
+					<div class="nui-drop-down block">
+						<ul class="nui-select-list">
+							<li class="nui-select-list-li">选择值1</li>
+							<li class="nui-select-list-li">选择值2</li>
+							<li class="nui-select-list-li">选择值2</li>
+						</ul>
+					</div>
+				</div>
+				<button class="nui-btn nui-btn-green pr8">按钮 <i class="">&#x3438;</i></button>
+				<button class="nui-btn nui-btn-primary">按钮</button>
+				<button class="nui-btn nui-btn-primary nui-btn-mini">按钮</button>
+				<button class="nui-btn nui-btn-primary nui-btn-small">按钮</button>
+				<button class="nui-btn nui-btn-primary nui-btn-big">按钮</button>
+				<button class="nui-btn nui-btn-primary nui-btn-large">按钮</button>
+			</div>
+			<div class="fui-dialog-btm-bar pss">
+				<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>运价维护</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+
+</head>
+<body>
+
+<div class="fui-dialog" style="left:10px;height:260px;width:380px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">账户设置引导</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<div class="fui-dialog-cnt">
+		<div class="nui-gride-box">
+			<div class="nui-gride-head">
+				<div class="account-info-line account-info-fixed">
+					<label class="account-info-title" for="">已绑定账号：</label>
+					<span class="account-info-txt">12345678901</span>
+				</div>
+				<div class="hr"></div>
+			</div>
+			<div class="nui-gride-body">
+				<div class="account-info-line">
+					<a href="javascript:" class="nui-btn nui-btn-primary">变更</a>
+					<a href="javascript:" class="account-info-del">删除</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="fui-dialog" style="left:400px;height:260px;width:380px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">账户设置引导</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt" style="height:230px;width:350px;">
+		<div class="nui-gride-box">
+			<div class="nui-gride-head">
+				<div class="middle-form-box">
+					<div class="form-line">
+						<label for="" class="nui-label">企业名称：</label>
+						<div class="nui-form-cell">
+							<input type="text" class="nui-input" id="" />
+						</div>
+					</div>
+					<div class="form-line">
+						<label for="" class="nui-label">用户名：</label>
+						<div class="nui-form-cell">
+							<input type="text" class="nui-input" id="" />
+						</div>
+					</div>
+					<div class="form-line">
+						<label for="" class="nui-label">密码：</label>
+						<div class="nui-form-cell">
+							<input type="text" class="nui-input" id="" />
+						</div>
+					</div>
+				</div>
+				<div class="hr"></div>
+			</div>
+			<div class="nui-gride-body">
+				<div class="account-info-line">
+					<a href="javascript:" class="nui-btn nui-btn-primary">确定</a>
+					<a href="javascript:" class="account-info-del">返回</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="fui-dialog" style="left:800px;height:260px;width:380px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">账户设置引导</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt" style="height:230px;width:350px;">
+		<div class="nui-gride-box">
+			<div class="nui-gride-head">
+				<div class="account-info-line">
+					<label class="account-info-title" for="">已绑定账号：</label>
+					<span class="account-info-txt">12345678901</span>
+				</div>
+				<div class="hr"></div>
+			</div>
+			<div class="nui-gride-body">
+				<div class="account-info-line">
+					<a href="javascript:" class="nui-btn nui-btn-primary">变更</a>
+					<a href="javascript:" class="account-info-del">删除</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="fui-dialog" style="left:800px;height:180px;width:380px;">
+	<div class="fui-dialog-title cur-m">
+		<h4 class="tal">操作提示</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a>
+		<a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a>
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt" style="">
+		<div class="confirm-cnt confirm-warning tal" >
+			<div class="confirm-icon"></div>
+			<h3>删除此公司帐号及相关配置</h3>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar">
+		<a id="btn-yes" class="fui-btn-dialog" href="javascript:">
+			<span>确定</span>
+		</a>
+		<a id="btn-no" class="fui-btn-dialog" href="javascript:">
+			<span>取消</span>
+		</a>
+	</div>
+</div>
+
+
+</body>
+</html>

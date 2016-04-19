@@ -1,0 +1,37 @@
+<!--#include file="header.html"-->
+
+<!-- 弹窗内容 -->
+
+		<div class="grid mg20">
+			<div class="left">
+				<a class="avatar_picture2 dpib vam mr10" href="javascript:"></a>
+			</div>
+			<div class="left">
+				<ul class="info-list">
+					<li class="info-list-cell"><a class="" href="javascript:">王小贱</a> <i>&#x344c;</i><i>&#x3449;</i> 慈溪进出口有限公司 <i>&#x34fa;</i></li>
+					<li class="info-list-cell"><i class="mr10">&#x34d3;</i> 12月4日 10:11 电话</li>
+					<li class="info-list-cell">下周出差，上门洽谈延后</li>
+					
+				</ul>
+				<div class="exchange-box cb">
+					<div class="exchange-box-top clearfix">
+						<div class="left"><em>4小时前</em></div>
+						<div class="right">
+							<a class="dpib" href="javascript:">删除</a>
+							<a class="dpib" href="javascript:">评论(0)</a>
+						</div>
+					</div>
+					<div class="exchange-box-input">
+						<div class="nui-form-cell  w200">
+							<input placeholder="我来说几句" class="nui-textarea dpib" />
+						</div>
+					</div>	
+					
+				</div>
+			</div>
+
+
+		</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

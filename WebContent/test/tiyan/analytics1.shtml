@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+
+		
+
+
+	</script>
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap-nobd">
+		<div class="left-side"><div class="left-slide-top-line"></div>
+		<!--#include file="leftside.html"-->
+		<div class="left-slide-bottom-line"></div>
+	</div>
+	<div class="right-side pt0">
+		<div class="main-title clearfix">
+			<h1>会员转化率分析 <i class="fs14 cur-d">&#x3574;</i></h1>
+			<div class="right">
+			<label for="p_tag" class="nui-label">标签类别：</label>
+			<div class="nui-form-cell nui-select">
+				<div class="nui-form-cell-cnt">
+					<div class="nui-input">客户等级</div>
+					<i class="nui-form-cell-icon fs12">&#x35d7;</i>
+					<div class="nui-drop-down none">
+						<ul class="nui-select-list">
+							<li class="nui-select-list-li" key="id_2">全部</li>
+							<li class="nui-select-list-li" key="id_3">客户类型</li>
+							<li class="nui-select-list-li" key="id_4">客户性质</li>
+							<li class="nui-select-list-li active" key="id_5">客户等级</li>
+							<li class="nui-select-list-li" key="id_6">客户地区</li>
+						</ul>
+					</div>
+				</div>
+				<input id="p_tag" value="-1" style="display: none;">
+			</div>
+			<label for="tag" class="nui-label w20">至</label>
+			<div class="nui-form-cell nui-select">
+				<div class="nui-form-cell-cnt">
+					<div class="nui-input">客户等级</div>
+					<i class="nui-form-cell-icon fs12">&#x35d7;</i>
+					<div class="nui-drop-down none">
+						<ul class="nui-select-list">
+							<li class="nui-select-list-li" key="id_7">全部</li>
+							<li class="nui-select-list-li" key="id_8">客户等级</li>
+							<li class="nui-select-list-li active" key="id_9">客户等级</li>
+							<li class="nui-select-list-li" key="id_10">客户等级</li>
+							<li class="nui-select-list-li" key="id_11">客户等级</li>
+						</ul>
+					</div>
+				</div><input id="tag" value="-1" style="display: none;">
+			</div>
+		</div>
+		</div>
+
+		
+		<ul class="analytics-overview-panel analytics-overview-panel-4">
+			<li>
+				<p>总邀请数
+					<span>50.000</span>
+				</p>
+			</li>
+			<li>
+				<p>邀请响应数
+					<span>24.000</span>
+				</p>
+			</li>
+			<li>
+				<p>升级会员数
+					<span>10.000</span>
+				</p>
+			</li>
+			<li class="last">
+				<p>体验到期流失数
+					<span>5.000</span>
+				</p>
+			</li>			
+		</ul>
+
+
+<div class="analytics-grid mt15">
+	<div class="analytics-title">
+		<h2>会员转化率</h2>
+
+	</div>
+	<div class="analytics-cnt clearfix">
+
+		<div class="member-conversion-chart-container">
+			<div class="member-conversion-chart-cnt">11</div>
+		</div>
+		<div class="member-conversion-help-container">
+			<h3>您的会员转化率为<span class="text-warning">20%</span>，平均转化天数<span class="text-warning">40天</span></h3>
+			<dl>
+				<dt>如何提升转化率</dt>
+				<dd><a href="javascript:">发布优势运价</a></dd>
+				<dd><a href="javascript:">发布优势运价</a></dd>
+				<dd><a href="javascript:">发布优势运价</a></dd>
+			</dl>
+		</div>
+
+
+	</div>
+</div>
+
+
+<div class="analytics-grid mt15">
+	<div class="analytics-title">
+		<h2>会员转化率</h2>
+
+	</div>
+	<div class="analytics-cnt clearfix">
+
+		<div class="member-conversion-chart-container">
+			<div class="member-conversion-chart-cnt">11</div>
+		</div>
+		<div class="member-conversion-help-container">
+			<h3>您的会员转化率为<span class="text-warning">20%</span>，平均转化天数40天</h3>
+			<dl>
+				<dt>如何提升转化率</dt>
+				<dd><a href="javascript:">发布优势运价</a></dd>
+				<dd><a href="javascript:">发布优势运价</a></dd>
+				<dd><a href="javascript:">发布优势运价</a></dd>
+			</dl>
+		</div>
+
+
+	</div>
+</div>
+
+
+<div class="analytics-grid mt15">
+	<div class="analytics-title">
+		<h2>会员转化率</h2>
+
+	</div>
+	<div class="analytics-cnt clearfix">
+
+		<div class="member-conversion-chart-container">
+			<div class="member-conversion-chart-cnt">11</div>
+		</div>
+		<div class="member-conversion-help-container">
+			<h3>您的会员转化率为20%，平均转化天数40天</h3>
+			<dl>
+				<dt>如何提升转化率</dt>
+				<dd><a href="javascript:">发布优势运价</a></dd>
+				<dd><a href="javascript:">发布优势运价</a></dd>
+				<dd><a href="javascript:">发布优势运价</a></dd>
+			</dl>
+		</div>
+
+
+	</div>
+</div>
+
+</div>
+
+
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

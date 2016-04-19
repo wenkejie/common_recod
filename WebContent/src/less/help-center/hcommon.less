@@ -1,0 +1,818 @@
+@import "base.less";
+.reset;
+.iconfontset;
+///////////
+// 配置区域  //
+///////////
+//
+//=================
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//==============   兼容 inline block 属性  ===============
+//==============   @author fen             ===============
+.inline-block(){
+  display: inline-block;
+  *display: inline;
+  *zoom:1;
+}
+
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.left,.right{
+	display: inline;
+}//解决ie6双倍边距bug
+
+//===================================
+.toe{white-space:nowrap;overflow:hidden;text-overflow:ellipsis; -o-text-overflow:ellipsis;}
+.none{
+	display: none;
+}
+
+.vbh{visibility: hidden;}
+
+.hr{
+  .clearfix;
+  height: 0px;
+  overflow: hidden;
+  margin: 8px 0;
+  border-top:1px solid @borderColor;
+  
+}
+
+@pageW:980px;
+@bgColor:#00A7DF;
+@borderColor:#D9D9D9;
+/////////////////////////////////
+//帮助中心框架 // 首页
+/////////////////////////////////
+.wrap{
+	width: @pageW;margin: 0 auto;
+}
+
+//==============头部==================
+.wrap-head{
+
+}
+.wrap-head-area{
+	.clearfix;
+	background: #fff;
+}
+.wrap-head-nav{
+	width: (@pageW - 10px);
+	background: @bgColor;height: 40px;border-radius: 3px;padding-left: 10px;line-height: 40px;
+
+}
+
+.wrap-head-nav-goto{
+	.right;
+	padding-right: 20px;
+	color: #fff;font-size: 14px;font-weight: bold;
+	&:hover{
+		color: #fff;
+	}
+}
+//====================================
+
+//===============中心任容部分================
+.wrap-content{
+	.clearfix;
+	// margin-top: 15px;
+}
+.left-column{
+	.left;
+}//左侧首页为后期预留
+
+
+
+.right-column-index{
+	width: @pageW;
+}//用于首页布局
+
+.right-column{
+	margin-left: 266px;
+}
+
+.right-column-cnt{
+	.left;
+	width: 100%;
+}
+
+
+
+//=================================
+//=============底部=================
+.wrap-footer{
+	height: 100px;margin-top: 30px;
+}
+
+//===================================
+///////////////////////////////////////////
+
+// 头部区域
+.wrap-head-area{
+
+}
+
+.head-left{
+	.clearfix;
+	.left;
+}
+
+.logo,.title{
+	.left;
+}
+.logo{
+	width: 93px;height: 42px;background: url(../../images/help-center/logo.png) no-repeat;margin: 0;
+}
+
+.title{
+	font-weight: bold;line-height: 42px;
+	span{
+		border-left: 1px solid #999999;padding-left: 5px;
+	}
+}
+
+.wrap-head-nav{
+
+}
+
+.nav-cell{
+	.left;
+	margin-top: 10px;margin-right: 10px;
+	a:hover{
+		text-decoration: none;
+	}
+}
+
+.nav-cell-a{
+	.left;
+	padding: 0 30px;height: 30px;
+	text-align: center;line-height: 30px;color: #fff;font-weight: bold;font-size: 16px;
+	&:hover{
+		background: #33B7E3;border-top-left-radius: 4px;border-top-right-radius: 4px;
+		color: #fff;
+	}
+}
+
+.nav-cell-a-active{
+	background: #fff;border-top-left-radius: 4px;border-top-right-radius: 4px;
+	color: #696969;
+	&:hover{
+		background: #fff;
+		color: #696969;
+	}
+}
+//========================
+
+//=========================中间内容起=================================
+.search-area{
+	border: 1px solid #D9D9D9;padding: 5px 0;background: #CDD2D9;margin: 15px 0;
+}
+.search-cell{
+	.left;
+	border: 1px solid #D9D9D9;padding:0 5px;width: 350px;margin-left: 10px;
+	// .box-shadow(inset 1px 1px 2px #ddd);
+	background-color: #F7F8F9;
+
+	.transition(all .3s ease 0s)
+}
+.search-btn{
+	.left;
+	width: 67px;height: 30px;margin-left: 10px;
+	background: url(../../images/help-center/item.png);background-position: -4px -144px;
+	overflow: hidden;
+	line-height: 30px;text-align: center;color: #fff;text-decoration: none;
+	&:hover{
+		text-decoration: none;
+	}
+}
+.search-cell-input{
+	width: 100%;padding: 4px 0;line-height:20px;height: 20px;
+	border: none;
+	background-color: transparent;font-size: 12px;color: #333
+}
+
+.content-title{
+	.clearfix;
+	padding: 15px 0 5px 5px;
+	h2{
+		.inline-block;
+		font-size: 18px;
+	}
+	span{
+		.inline-block;
+		padding-left: 15px;
+	}
+}
+
+//=====================left-weight区域内容=======================
+.sidebar-weight{
+	border: 1px solid @borderColor;width: 244px;
+	a:hover{
+		text-decoration: none;
+	}
+	i{
+		.inline-block;
+    	margin-right: 5px;vertical-align: middle;
+		color: #ACB0BB;font-size: 12px;
+	}
+}
+
+.sidebar-weight-title{
+	height: 40px;padding-left: 28px;
+	background: url(../../images/help-center/item.png);background-position: -4px -95px;border-bottom: 1px solid @borderColor;
+	font-size: 16px;line-height: 40px;
+}
+
+.sidebar-weight-cell{
+	width: 100%;
+	border-bottom: 1px solid @borderColor;
+}
+
+
+.slide-down{
+	display: block;*zoom:1;*vertical-align: middle;
+	height: 40px;padding-left: 30px;
+	background: url(../../images/help-center/item.png);background-position: -4px -48px;
+	color: #333333;text-align: left;line-height: 40px;
+	.toe;
+	span{
+		_line-height: 40px;_zoom:1;
+		cursor: pointer;
+	}
+}
+
+.slide-down-open{
+	border-bottom: 1px solid @borderColor;
+}
+
+.slide-down-menu{
+	zoom:1;
+	li{
+		zoom:1;
+	}
+}
+
+.slide-down-menu-a{
+	display: block;zoom:1;
+	padding: 7px 0;padding-left: 40px;
+	color: #333;text-align: left;
+	.toe;
+	&:hover{
+		background: #eee;
+	}
+	i{
+		color: #ACB0BB;font-size: 12px;
+	}
+}
+
+.slide-down-menu-a-active{
+	background: #eee;
+}
+
+
+//===============================================================
+
+
+//======================grid区域的内容======================
+.content-grid{
+	border: 1px solid @borderColor;
+	margin-bottom: 20px;
+}
+
+
+.content-grid-nbd{
+	border: none;
+}
+
+.help-box{
+	.help-item,.help-item-last{
+		// cursor: pointer;
+	}
+
+}
+.help-item,.help-item-last{
+    .left;
+    width: 25%;
+}//百分比宽度在ie7以下出现了问题待解决。
+.help-item-last{
+	*margin-right: -2px;
+	.help-item-bottom{
+		padding-left: 40px
+	}
+}
+
+.help-item-border{
+	border-right: 1px solid @borderColor;height: 280px;
+}//在ie7以下初相兼容问题
+
+.help-item-top-1,.help-item-top-2,.help-item-top-3,.help-item-top-4{
+	background-image: url("../../images/help-center/item.png");
+   
+    height: 151px;
+    // margin: 0 25px;
+    width: 180px;
+}
+.help-item-top-1{
+	background-position: -325px -14px;
+}
+.help-item-top-2{
+	background-position: -325px -194px;
+}
+.help-item-top-3{
+	background-position: -552px -194px;
+}
+
+.help-item-top-4{
+	background-position: -552px -14px;
+}
+
+.help-item-bottom{
+	padding-bottom: 10px;padding-left: 8px;
+}
+
+.help-item,.help-item-last{
+	h3{
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	.help-goto{
+		font-size: 18px;color: #007FFF;
+	}
+
+}
+
+.help-item-cnt{
+	width: 180px;margin: 0 auto;padding-top: 20px;
+}
+
+.help-item-info{
+	height: 107px;
+    margin: 0 20px 30px 20px;
+    overflow: hidden;
+    text-align: left;
+    word-break: break-all;
+    word-wrap: break-word;font-size: 14px;
+}
+
+.help-item-btn{
+	display: block;
+	width: 104px;height: 30px;margin: 0 auto;
+	background: url(../../images/help-center/item.png) no-repeat;background-position: -4px -6px;overflow: hidden;
+	line-height: 100px;
+}
+
+//===============引用运价标签============
+
+
+.help-tab{
+	a:hover{
+		text-decoration: none;
+	}
+}
+.help-tab-menu{
+	&:extend(.clearfix all);
+	border-bottom: 1px solid @borderColor;
+}
+
+.help-tab-menu-cell{
+	float: left;
+	border-bottom: none;width: 25%;
+	color: #777;text-align: center;
+	
+
+}
+
+.help-tab-menu-cell-last{
+	margin-right: -2px;
+	.help-tab-menu-link{
+		border-right: none;
+	}
+}
+
+.help-tab-menu-link{
+	display: block;
+	border-right: 1px solid @borderColor;
+	height: 40px;background: url(../../images/help-center/item.png) no-repeat;background-position: -4px -48px;
+	line-height: 40px;color: #777;font-size: 14px;
+
+}
+
+.help-tab-menu-fn{
+	float: right;line-height: 30px;
+}
+
+.help-tab-menu-active,.help-tab-menu-cell:hover{
+	margin-bottom: -1px;
+	text-decoration: none;background: #fff;
+	color: #fff;
+}
+
+.help-tab-menu-active{
+	
+	&,.help-tab-menu-link{
+		background: #fff;margin-bottom: -1px;height: 41px;
+		font-weight: 700;
+	}
+}
+.help-tab-cnt{
+	.clearfix;
+	padding: 20px 0;
+	font-size: 16px;
+}
+
+.help-tab-cnt-cell{
+	width: 25%;
+}
+
+//=====================标签引用，考虑整合在一起===============================
+.hui-tab{
+	a:hover{
+		text-decoration: none;
+	}
+}
+.hui-tab-menu{
+	&:extend(.clearfix all);
+	// .linear(#F2F4F5,#D8DCE0);
+	background: url(../../images/help-center/tab.png) repeat-x;
+	border-bottom: 1px solid #ddd;padding: 10px 0 0 30px;height: 30px;
+}
+
+.hui-tab-menu-cell{
+	float: left;
+	height:30px;border: 1px solid #ddd;border-bottom: none;padding: 0 10px;margin-right: 5px;
+	line-height: 30px;background-color: #f9f9f9;color: #777;
+	.border-top-radius(2px);
+	.transition(all .4s ease 0s);
+}
+
+.hui-tab-menu-link{
+	float: left;
+	
+	&,&:hover{
+		color: #777;
+	}
+}
+
+.hui-tab-menu-fn{
+	float: right;line-height: 30px;
+}
+
+.hui-tab-menu-active,.hui-tab-menu-cell:hover{
+	margin-bottom: -1px;height: 31px;padding: 0 15px;
+	text-decoration: none;background: #fff;
+}
+
+.hui-tab-menu-active{
+	
+	&,.hui-tab-menu-link{
+		font-weight: 700;color: #444;
+	}
+}
+.hui-tab-cnt{
+	.clearfix;
+	padding:10px 30px;
+
+}
+
+.info-list{
+	.left;
+	width: 50%;
+}
+.info-list-cell{
+	padding: 3px 0;
+	.clearfix;
+	a{
+		color: #333;
+	}
+	em{
+		float: left;
+		color: #FF3300;
+	}
+	.detail{
+		display: block;
+		margin-left: 42px;_width: 210px;
+		.toe;
+	}
+}
+
+.help-question{
+	.clearfix;
+	padding: 15px 30px 5px 30px;
+}
+
+.help-question-cate{
+	.left;
+    overflow: hidden;margin-bottom: 20px;
+    width: 50%;
+    dt{
+    	a{
+    		color: #333;
+    	}
+    	font-weight: 700;
+    }
+
+    dd{
+    	a{
+    		margin-right: 8px;
+    	}
+    }
+}
+
+
+//=============================================================
+
+.content-grid-nboder{
+
+  h2{
+  	.toe;
+  	padding: 10px 5px;
+  	font-weight: bold;font-size: 16px;
+  }
+
+}
+
+.grid-nboder-top{
+
+}
+
+.grid-nboder-top-nav{
+
+}
+.top-nav-cell{
+	.left;
+}
+
+.article-cnt{
+
+	padding: 25px 0 50px 0;
+}
+
+//===================表单提交===============================
+
+.form-box{
+	margin-top: 20px;
+	
+}
+
+.form-box-info{
+	padding: 10px 0 20px 0;
+	i{
+		.inline-block;
+		vertical-align: middle;margin-right: 5px;
+		font-size: 14px;color: #ccc;
+	}
+	span{
+		.inline-block;
+		vertical-align: middle;
+	}
+}
+
+.form-box-btn,.form-box-btn-no{
+	
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+
+
+.form-box-btn{
+	margin-right: 10px;
+
+}
+
+.form-box-btn-no,.form-box-btn{
+	.left;
+	border:1px solid @borderColor;padding: 0 10px;border-radius: 3px;
+	line-height: 30px;text-align: center;color: #333;
+}
+
+.form-box-btn-active{
+	 position: relative;z-index: 10;
+	 background:#FFFFFF;
+    border-bottom: none;height: 43px;margin-bottom: -12px;
+   
+    
+}
+
+.form-box-btn-disable{
+	cursor: not-allowed;
+	border:1px solid #ddd;
+	color: #aaa;
+}
+
+
+.feedback-box{
+	position: relative;
+	border: 1px solid @borderColor;margin-top: 10px;padding: 10px 10px 10px 22px;
+}
+
+.feedback-box-cnt{
+	margin:30px 115px 0 0 ;
+}
+
+.radio-group{
+	padding-bottom: 10px ;
+
+}
+
+.radio-group-cell{
+	padding-right: 20px;
+}
+
+.feedback-box-btn{
+	display: block;
+	width: 67px;height: 30px;margin-top: 12px;
+	background: url(../../images/help-center/item.png);background-position: -4px -144px;
+	overflow: hidden;
+	line-height: 30px;text-align: center;color: #fff;text-decoration: none;
+	a{
+		&:hover{
+			text-decoration: none;
+		}	
+	}
+}
+
+.feedback-box-btn-disable{
+	background-position: -83px -144px;
+	color: #999999;
+}
+
+
+.m-success{
+	i{
+		color: #69AE3F;
+	}
+}
+
+.hui-form-cell{
+
+
+	border: 1px solid @borderColor;padding:0 5px;
+	vertical-align: middle;background-color: #fff;
+	&:hover{
+		border-color: darken(@borderColor,10%);
+		// .box-shadow(inset 1px 1px 2px #ddd);
+	}
+
+	.transition(all .3s ease 0s)
+}
+
+.hui-textarea{
+
+	width: 100%;padding: 5px 0;
+	background-color: transparent;border: none;
+	resize:none;color: #333;
+}
+
+.feedback-box-close{
+	position: absolute;top: 10px;right: 10px;
+}
+
+
+//================搜索内容===============================
+
+.sch-cnt,.no-sch-found{
+	padding: 30px;
+    width: 600px;
+}
+
+.no-sch-found-title{ 
+	h2{
+		font-size: 16px;font-weight: bold;
+	}
+}
+
+.sch-list{
+
+    li{
+    	line-height: 1.5;
+   		 margin: 0 0 24px;
+   		 h4{
+   		 	.toe;
+   		 }
+    }
+}
+
+.bottom-search-line{
+	padding-top: 20px;
+	.search-cell{
+		margin-left: 0;
+	}
+}
+
+//======================================================
+
+
+.help-question-box{
+	
+}
+//=======================翻页条======================
+.page{
+	margin-top: 20px;
+	.page-before,.page-after{
+		.inline-block;
+		vertical-align: middle;
+		width: 67px;height: 22px;
+		background: url(../../images/help-center/item.png);background-position: -4px -180px;
+		line-height: 22px;text-align: center;color: #fff;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+	.page-num{
+		.inline-block;
+		vertical-align: middle;padding: 0 5px;
+		.page-num-active{
+			color: #333;
+		}
+		a{
+			padding: 0 5px;
+		}
+	}
+}
+//==============================================
+
+.help-question-list{
+
+}
+
+.help-question-list-cell{
+	border-bottom: 1px dashed #BECDDA;padding: 10px 5px;
+
+	
+	a{
+		color: #333;
+	}
+	i{
+		.inline-block;
+		margin-right: 5px;
+		color: #ACB0BB;
+	}
+}
+
+/////新手引导页面
+.newuser-guide{padding: 40px 80px;}
+.step-cnt{}
+.newuser-title{font-size: 25px;font-weight: 700;text-align: center;padding: 10px 0 25px;border-bottom: 1px solid #ddd;margin-bottom: 25px;}
+.step-mun{
+	position: absolute;left: -15px;
+width: 29px;height: 29px;line-height: 29px;
+	background:url(../../images/help-center/item.png) no-repeat -162px -144px;text-align: center;
+}
+.step-item{
+	position: relative;zoom: 1;
+	border-left: 1px solid #ccc;padding:0 20px 25px 35px;
+
+	dt{
+		font-weight: 700;font-size: 14px;margin-bottom: 5px;
+	}
+	dd{
+		color: #999
+	}
+	.more-info{padding: 10px 0}
+}
+.step-item-last{border: none;}
+.step-title-link{color: #333;
+	&:hover{
+		color: #06c
+	}
+}
+//===================================================================
+
+//=====================底部内容=====================================
+.wrap-footer{
+	padding: 26px 0;
+	text-align: center;border-top: 1px solid #ddd;
+}
+
+.footer-friendlink{
+	text-align: center;
+}
+.friendlink-cell{
+	.left;
+}
+
+.copyright{
+	margin-top: 10px;
+	text-align: center;
+}
+//===================================================================

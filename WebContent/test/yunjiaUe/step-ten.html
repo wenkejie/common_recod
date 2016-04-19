@@ -1,0 +1,894 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+	<!-- 自己的样式要加在引入样式的后面 -->
+	<link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/yunjiaue.css">
+	<style type="text/css">
+		.shadow-mask-cnt{
+			margin-top: -100px;
+		}
+	</style>
+</head>
+<body class="home-body">
+	<div id="header" style="height: 102px;">
+		<div class="" id="j-fixed">
+			<div class="top-info">
+				<div isautowrap="true" class="wrap">
+					<input type="hidden" value="101" id="employeeid">	
+					<input type="hidden" value="187" id="userId">	
+					<a class="logo" href="#">运价通</a>
+					<ul class="nav">
+						<li class="nav-cell">
+							<a href="javascript:" class="nav-link nav-link-first fonticon">㒗</a>
+						</li>
+						<li class="nav-cell">
+							<a href="javascript:" class="nav-link fonticon">㒂</a>
+						</li>
+						<li class="nav-cell">
+							<a data-module="home_office" id="home_office" href="javascript:" class="nav-link">我的办公桌</a>
+							<div class="nav-cell-arrow none">
+								◆ <em>◆</em>
+							</div>
+						</li>
+						<li class="nav-cell">
+							<a data-module="home_crm" id="home_crm" href="javascript:" class="nav-link">生意通</a>
+							<div class="nav-cell-arrow none">
+								◆ <em>◆</em>
+							</div>
+						</li>
+						<li class="nav-cell">
+							<a data-module="home_freight" id="home_freight" href="javascript:" class="nav-link nav-link-last">运价通</a>
+							<div class="nav-cell-arrow">
+								◆
+								<em>◆</em>
+							</div>
+						</li>
+					</ul>
+					<ul class="top-menu">
+						<li class="top-menu-cell pr0">你好：</li>
+						<li class="top-menu-cell cur-p has-dropdown">
+							曹金彦 <i class="top-menu-icon">㐸</i>
+							<div class="nui-drop-down block">
+								<ul class="nui-select-list">
+									<li class="nui-select-list-li">
+										<a href="javascript:" id="userInfo"> <i class="mr5 animate">㓬</i>
+											账户信息
+										</a>
+									</li>
+									<li class="nui-select-list-li last">
+										<a onclick="openWindow('/cpmembership/memuser.ctrl?$action=modifyUserPassword&amp;actionType=show&amp;org_id=10002&amp;user_id=187','修改密码',{width:350,height:250})" name="modifyPassWord" id="modifyPassWord" href="javascript:">
+											<i class="mr5 animate">㔳</i>
+											修改密码
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="top-menu-line"></li>
+						<li class="top-menu-cell">
+							<a href="/cpmembership/privateLog.ctrl?$action=logoutAction" class="top-menu-link">退出</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-nav" style="display: block;">
+				<div id="menu">
+					<ul class="wrap">
+						<li class="main-nav-cell">
+							<a class="main-nav-link main-nav-link-active" href="/priceservice/home.ctrl?$action=indexView" target="mainFrame" ischangesize="true">
+								<i>㐼</i>
+								运价首页
+							</a>
+						</li>
+
+						<li class="main-nav-cell">
+							<a class="main-nav-link" href="javascript:void(0);">
+								<i>㕝</i>
+								运价查询
+							</a>
+							<ol class="main-nav-drop-down">
+								<li class="main-sub-nav-arrow-line">◆</li>
+
+								<li>
+									<a href="javascript:openWinWithMax('/priceservice/priceMaintain.ctrl?$action=fcl_sale','海运整箱查询',{width:900,height:500});" class="main-nav-drop-down-link">海运整箱查询</a>
+								</li>
+
+								<li>
+									<a href="javascript:openWinWithMax('/priceservice/priceMaintain.ctrl?$action=lcl_sale','海运出口拼箱查询',{width:900,height:500});" class="main-nav-drop-down-link">海运出口拼箱查询</a>
+								</li>
+
+								<li>
+									<a href="javascript:openWinWithMax('/priceservice/seaImportLclMain.ctrl?$action=import_lcl_sale','海运进口拼箱查询',{width:900,height:500});" class="main-nav-drop-down-link">海运进口拼箱查询</a>
+								</li>
+
+								<li>
+									<a href="javascript:openWinWithMax('/priceservice/priceMaintain.ctrl?$action=air_sale','空运查询',{width:900,height:500});" class="main-nav-drop-down-link">空运查询</a>
+								</li>
+
+							</ol>
+						</li>
+
+						<li class="main-nav-cell">
+							<a class="main-nav-link" href="javascript:void(0);">
+								<i>㖍</i>
+								运价维护
+							</a>
+							<ol class="main-nav-drop-down">
+								<li class="main-sub-nav-arrow-line">◆</li>
+
+								<li>
+									<a href="/priceservice/priceMaintain.ctrl?$action=fcl_query" target="mainFrame" class="main-nav-drop-down-link">海运整箱维护</a>
+								</li>
+
+								<li>
+									<a href="/priceservice/priceMaintain.ctrl?$action=lcl_query" target="mainFrame" class="main-nav-drop-down-link">海运出口拼箱维护</a>
+								</li>
+
+								<li>
+									<a href="/priceservice/seaImportLclMain.ctrl?$action=import_lcl_query" target="mainFrame" class="main-nav-drop-down-link">海运进口拼箱维护</a>
+								</li>
+
+								<li>
+									<a href="/priceservice/priceMaintain.ctrl?$action=air_query" target="mainFrame" class="main-nav-drop-down-link">空运维护</a>
+								</li>
+
+							</ol>
+						</li>
+
+						<li class="main-nav-cell">
+							<a class="main-nav-link" href="javascript:void(0);">
+								<i>㓻</i>
+								基础资料
+							</a>
+							<div class="main-nav-drop-down" style="margin-left: -240px; top: 66px; opacity: 0;">
+								<span class="main-sub-nav-arrow-line">◆</span>
+								<table>
+									<tbody>
+										<tr>
+
+											<td>
+												<dl>
+													<dt>海运出口整箱</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSeaportFclExport.ctrl','海运出口整箱港口信息',{width:980,height:550});" class="main-nav-drop-down-link">港口</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSearouteFclExport.ctrl','海运出口整箱航线信息',{width:980,height:550});" class="main-nav-drop-down-link">航线</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>海运出口拼箱</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSeaportLclExport.ctrl','海运出口拼箱港口信息',{width:980,height:550});" class="main-nav-drop-down-link">港口</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSearouteLclExport.ctrl','海运出口拼箱航线信息',{width:980,height:550});" class="main-nav-drop-down-link">航线</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>海运进口拼箱</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSeaportLclImport.ctrl','海运进口拼箱港口信息',{width:980,height:550});" class="main-nav-drop-down-link">港口</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSearouteLclImport.ctrl','海运进口拼箱航线信息',{width:980,height:550});" class="main-nav-drop-down-link">航线</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>空运出口</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseAirport.ctrl?$baseAirportQuery','空运港口信息',{width:980,height:550});" class="main-nav-drop-down-link">港口</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseAirroute.ctrl','空运航线',{width:980,height:550});" class="main-nav-drop-down-link">航线</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>其他</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseBookingagent.ctrl?$action=baseBookingagentQuery','订舱代理信息',{width:880,height:550});" class="main-nav-drop-down-link">订舱代理信息</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseCarrier.ctrl','船公司信息',{width:880,height:550});" class="main-nav-drop-down-link">船公司信息</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseAirway.ctrl','航空公司信息',{width:880,height:550});" class="main-nav-drop-down-link">航空公司信息</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseFlightinfos.ctrl?$action=baseFlightinfosQuery','航班信息',{width:980,height:550});" class="main-nav-drop-down-link">航班信息</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseAirportAreas.ctrl?$action=baseAirportAreasQuery','航空港口分区',{width:880,height:550});" class="main-nav-drop-down-link">航空港口分区</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</li>
+
+						<li class="main-nav-cell">
+							<a class="main-nav-link" href="javascript:void(0);">
+								<i>㔝</i>
+								客户管理
+							</a>
+							<ol class="main-nav-drop-down" style="">
+								<li class="main-sub-nav-arrow-line">◆</li>
+
+								<li>
+									<a data-module="contact" href="javascript:void(0);" class="main-nav-drop-down-link contactManagerment main-nav-drop-down-link-active ">账号管理</a>
+								</li>
+
+								<li>
+									<a class="main-nav-drop-down-link">行为分析管理</a>
+								</li>
+
+								<li>
+									<a data-module="rulePrice" href="javascript:void(0);" class="main-nav-drop-down-link">多级运价管理</a>
+								</li>
+
+								<li>
+									<a data-module="invite" href="javascript:void(0);" class="main-nav-drop-down-link  inviteManagerment">邀请体验管理</a>
+								</li>
+
+							</ol>
+						</li>
+
+						<li class="main-nav-cell">
+							<a class="main-nav-link" href="javascript:void(0);" id="li_moreFun">
+								<i>㖐</i>
+								更多功能
+							</a>
+							<div class="main-nav-drop-down">
+								<span class="main-sub-nav-arrow-line">◆</span>
+								<table>
+									<tbody>
+										<tr>
+
+											<td>
+												<dl>
+													<dt>系统设置</dt>
+													<dd>
+														<ol>
+															<li>
+																<a href="/cpmembership/org.ctrl" target="mainFrame" ischangesize="true" class="main-nav-drop-down-link" id="org_sys_params">系统设置</a>
+															</li>
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>发布记录</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/SeaPriceHistoryController.ctrl?$action=FclHistoryQuery&amp;ispublish_valid=true','海运整箱发布记录',{width:900,height:550});" class="main-nav-drop-down-link">海运整箱</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/SeaPriceHistoryController.ctrl?$action=LclHistoryQuery&amp;ispublish_valid=true','海运出口拼箱发布记录',{width:900,height:550});" class="main-nav-drop-down-link">海运出口拼箱</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/seaImportLclMain.ctrl?$action=importLclHistoryQuery&amp;ispublish_valid=true','海运进口拼箱发布记录',{width:900,height:550});" class="main-nav-drop-down-link">海运进口拼箱</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>维护日志</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/seaMainPrice.ctrl?$action=logFclSearch','海运整箱维护操作日志',{width:900,height:510});" class="main-nav-drop-down-link">海运整箱</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/seaMainPrice.ctrl?$action=logLclSearch','海运出口拼箱维护操作日志',{width:900,height:510});" class="main-nav-drop-down-link">海运出口拼箱</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/seaImportLclMain.ctrl?$action=importLclLogSearch','海运进口拼箱维护操作日志',{width:900,height:510});" class="main-nav-drop-down-link">海运进口拼箱</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>运价公告</dt>
+													<dd>
+														<ol>
+															<li>
+																<a onclick="openNotice(this,'/priceservice/priceNoticeType1.ctrl?$noticeType1Query&amp;type=1',{width:980,height:520});return false;" href="javascript:void(0);" class="main-nav-drop-down-link">
+																	<em>我的公告</em>
+																</a>
+															</li>
+															<li>
+																<a onclick="openNotice(this,'/priceservice/priceNoticeType1.ctrl?$noticeType1Query&amp;type=2',{width:980,height:520});return false;" href="javascript:void(0);" class="main-nav-drop-down-link">
+																	<em>你的公告</em>
+																</a>
+															</li>
+															<li>
+																<a onclick="openNotice(this,'/priceservice/priceNoticeType1.ctrl?$noticeType1Query&amp;type=3',{width:980,height:520});return false;" href="javascript:void(0);" class="main-nav-drop-down-link">
+																	<em>他的公告</em>
+																</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWin('/priceservice/organizationManage.ctrl?$action=noticeSetView','公告类型名称维护',{width:420,height:162});" class="main-nav-drop-down-link">公告配置</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="wrap two-column-wrap-nobd psr">
+		<div class="left-side">
+			<div class="left-slide-top-line"></div>
+			<ul class="left-side-menu mt50">
+				<li>
+					<a class="left-side-menu-a active" href="/cpmembership/org.ctrl">
+						员工管理<i class="right">㖞</i>
+					</a>
+				</li>
+				<li>
+					<a class="left-side-menu-a" href="/cpmembership/org.ctrl?$action=baseParamsSetView">
+						基础设置 <i class="right">㖞</i>
+					</a>
+				</li>
+				<li>
+					<a class="left-side-menu-a" href="/priceservice/orgParam.ctrl?$action=maintainSetView">
+						维护设置
+						<i class="right">㖞</i>
+					</a>
+				</li>
+				<li>
+					<a class="left-side-menu-a" href="/cpmembership/org.ctrl?$action=registerSetView">
+						客户注册
+						<i class="right">㖞</i>
+					</a>
+				</li>
+				<li>
+					<a class="left-side-menu-a" href="/priceservice/orgParam.ctrl?$action=customerQueryView">
+						客户查询
+						<i class="right">㖞</i>
+					</a>
+				</li>
+				<li>
+					<a class="left-side-menu-a" href="/priceservice/orgParam.ctrl?$action=rulePriceSetView">
+						多级运价
+						<i class="right">㖞</i>
+					</a>
+				</li>
+				<li>
+					<a class="left-side-menu-a" href="/cpmembership/org.ctrl?$action=experimentalSetView">
+						邀请体验
+						<i class="right">㖞</i>
+					</a>
+				</li>
+			</ul>
+			<div class="left-slide-bottom-line"></div>
+
+		</div>
+		<div class="right-side right-side-diffent">
+			<div class="right-side-submenu">
+				<h2 class="left-side-title">
+					<i>&#13714;</i>
+					部门管理
+				</h2>
+				<div class="nui-group-btn ml15 mb15">
+					<button id="addLeaf" class="nui-btn nui-btn-28 pd5-10" title="添加管理员" onclick="return false;">
+						<i class="fs14">&#x351d;</i>
+					</button>
+					<button class="nui-btn nui-btn-28 pd5-10" id="edit" title="编辑" onclick="return false;">
+						<i class="fs14">&#13364;</i>
+					</button>
+					<button id="remove" class="nui-btn nui-btn-28 pd5-10"  title="添加" onclick="return false;">
+						<i class="fs14">&#x35a6;</i>
+					</button>
+					<button id="remove" class="nui-btn nui-btn-28 pd5-10"  title="删除" onclick="return false;">
+						<i class="fs14">&#13540;</i>
+					</button>
+				</div>
+				<div class="zTreeDemoBackground ml10">
+					<ul id="treeDemo" class="ztree"></ul>
+				</div>
+
+			</div>
+			<div class="right-side-cnt psr">
+				<div class="main-title">
+					<h1 class="" id="main_title_user">华东分公司 - 销售部</h1>
+					<!--<div class="main-title-des">
+					<i>&#13683</i>
+					成员120个，部门3个
+				</div>
+				-->
+			</div>
+
+			<div class="search-area-grid">
+				<div class="grid">
+					<label for="username"  class="nui-label w50">姓名：</label>
+					<div class="nui-form-cell w50  mr5">
+						<input type="text" id="username" class="nui-input" />
+					</div>
+					<label for="companyname"  class="nui-label w50">手机：</label>
+					<div class="nui-form-cell w80  mr5">
+						<input type="text" id="companyname"  class="nui-input"/>
+					</div>
+					<label for="email" class="nui-label w50">邮箱：</label>
+					<div class="nui-form-cell w100  mr5">
+						<input type="text" id="email"  class="nui-input"/>
+					</div>
+					<span id="j-toggle">
+						<button class="nui-btn " onclick="searchData()">搜 索</button>
+					</span>
+				</div>
+
+			</div>
+
+			<div class="result-area">
+
+				<div class="result-fn-area">
+
+					<button class="nui-btn ">
+						<i class="fs12">&#13734</i>
+						新增
+					</button>
+					<button class="nui-btn">删除</button>
+					<button class="nui-btn">设置所在部门</button>
+					<div class="result-fn-area-port">
+						<button class="nui-btn"> <em>批量操作</em>
+							<i class="icon-down-arrow">&#x3438;</i>
+						</button>
+						<div class="nui-drop-list none">
+							<ul class="nui-drop-list-choose oneline">
+								<li>
+									<a href="javascript:">设置权限</a>
+								</li>
+								<li>
+									<a href="javascript:">启用控制</a>
+								</li>
+								<li>
+									<a href="javascript:">取消控制</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<a href="importStaff.shtml" class="nui-btn">
+						<i>&#13716</i>
+						导入成员
+					</a>
+
+				</div>
+				<table class="result-table">
+					<thead>
+						<tr>
+							<th class="checkbox">
+								<input id="jselAll" type="checkbox" name="" id="" title="选中/取消选中" />
+							</th>
+							<th class="name">姓名 | 用户名</th>
+							<th>手机 | 邮箱</th>
+							<th class="company">企业名称</th>
+							<th class="action">操作</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" class="item" value="13" id="checkbox" name="checkbox"></td>
+							<td>
+								alningbo
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									alningbo
+								</p>
+							</td>
+							<td>
+								111
+								<p class="sub-info">
+									<a href="mailto:464753600@qq.com">464753600@qq.com</a>
+								</p>
+							</td>
+							<td>啊啦宁波测试外部查询公司</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first" href="../../test/fuserManagement/staffDetails.shtml">
+												详情
+												<i class="icon-down-arrow">&#x3438;</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li set-power">
+											<a href="javascript:">设置权限</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="last" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" class="item"  value="17" id="checkbox" name="checkbox"></td>
+							<td>
+								charlesZhang
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									charles
+								</p>
+							</td>
+							<td>
+								13336665553
+								<p class="sub-info">
+									<a href="mailto:charles@li-ling.com">charles@li-ling.com</a>
+								</p>
+							</td>
+							<td>宁波中量立领国际物流有限公司</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first" href="javascript:">
+												详情
+												<i class="icon-down-arrow">&#x3438;</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li set-power">
+											<a href="javascript:">设置权限</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="last" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox"  class="item"  value="18" id="checkbox" name="checkbox"></td>
+							<td>
+								李玲玲
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									553670
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:cus@li-ling.com">cus@li-ling.com</a>
+								</p>
+							</td>
+							<td>宁波中量立领国际物流有限公司</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first" href="javascript:">
+												详情
+												<i class="icon-down-arrow">&#x3438;</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li set-power">
+											<a href="javascript:">设置权限</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="last" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox"  class="item"  value="19" id="checkbox" name="checkbox"></td>
+							<td>
+								陈明
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									553671
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:op@li-ling.com">op@li-ling.com</a>
+								</p>
+							</td>
+							<td>宁波中量立领国际物流有限公司</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first" href="javascript:">
+												详情
+												<i class="icon-down-arrow">&#x3438;</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li set-power">
+											<a href="javascript:">设置权限</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="last" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input class="item"  type="checkbox" value="20" id="checkbox" name="checkbox"></td>
+							<td>
+								姚健
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									559459
+								</p>
+							</td>
+							<td>
+								15158322619
+								<p class="sub-info">
+									<a href="mailto:402706147@qq.com">402706147@qq.com</a>
+								</p>
+							</td>
+							<td>宁波中量立领国际物流有限公司</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first" href="javascript:">
+												详情
+												<i class="icon-down-arrow">&#x3438;</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li set-power">
+											<a href="javascript:">设置权限</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="last" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" class="item"  value="21" id="checkbox" name="checkbox"></td>
+							<td>
+								叶凌云
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									553668
+								</p>
+							</td>
+							<td>
+								13884460048
+								<p class="sub-info">
+									<a href="mailto:cus@li-ling.com">cus@li-ling.com</a>
+								</p>
+							</td>
+							<td>宁波中量立领国际物流有限公司</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first" href="javascript:">
+												详情
+												<i class="icon-down-arrow">&#x3438;</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li set-power">
+											<a href="javascript:">设置权限</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="last" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" class="item"  value="22" id="checkbox" name="checkbox"></td>
+							<td>
+								蔡双霞
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									552664
+								</p>
+							</td>
+							<td>
+								15606608516
+								<p class="sub-info">
+									<a href="mailto:237862023@qq.com">237862023@qq.com</a>
+								</p>
+							</td>
+							<td>宁波中量立领国际物流有限公司</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first" href="javascript:">
+												详情
+												<i class="icon-down-arrow">&#x3438;</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li set-power">
+											<a href="javascript:">设置权限</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="last" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" class="item"  value="23" id="checkbox" name="checkbox"></td>
+							<td>
+								唐毅丰
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									552669
+								</p>
+							</td>
+							<td>
+								13989305322
+								<p class="sub-info">
+									<a href="mailto:814348369@qq.com">814348369@qq.com</a>
+								</p>
+							</td>
+							<td>宁波中量立领国际物流有限公司</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first" href="javascript:">
+												详情
+												<i class="icon-down-arrow">&#x3438;</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li"></li>
+										<li class="slide-down-menu-li">
+											<a class="last" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="result-footer">
+					<div class="page">
+						<input type="hidden" value="1" name="pageNo" id="pageNo">
+						<span class="pageInfo">1-30条，共1615条</span>
+						<a href="javascript:nextPage();">下一页</a>
+						<a href="javascript:buildData(54);">尾页</a>
+					</div>
+				</div>
+			</div>
+			<a class="fonticon right-side-submenu-hide" href="javascript:">&#x359f;</a>
+		</div>
+
+	</div>
+</div>
+<div id="footer" class="wrap" style="height: 60px;margin-top: 10px;" isautowrap="true">
+	<a href="http://www.500jit.com" target="_blank" class="mr10">
+		<img width="68" height="19" src="http://cpcommon.600jit.com/fcommon/public/images/login_logo.gif"></a>
+	版权所有 &copy; 2013 奥林科技(宁波)有限公司    Powered by
+	<a href="http://www.500jit.com" target="_blank">OlymTech(NingBo), Ltd.</a>
+	<span style="cursor:pointer;" onclick="alert('系统参数:Orange-PC');">&nbsp;</span>
+</div>
+<div class="shadow-mask"></div>
+<div class="shadow-mask-cnt">
+	<div class="shadow-open-win" style="">
+		<div class="open-win-top clearfix">
+			<div class="top-logo"></div>
+			<div class="top-text">
+				<div class="top-text-cnt">
+					<p>
+						在”
+						<span>员工管理</span>
+						“栏目里，左边进行部门信息维护管理，右边进行员工帐号维护管理。
+					</p>
+					
+					
+					<p>
+						好了，到这里，我们基本介绍了如何使用运价通了，其他问题，你可以点击”？“，或者右上角的”
+						<span>帮助中心</span>
+						“详细了解。点击完成，我们来正式使用运价通吧。如果你觉得还想再看一遍，请点击
+						
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="open-win-bottom">
+			<a class="mask-btn-2" href="step-nine.html" style="margin-left:79px;"></a><a class="return" href="step-one.html">再看一遍</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

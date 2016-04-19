@@ -1,0 +1,378 @@
+
+//==============   兼容 inline block 属性  ===============
+//==============   @author fen             ===============
+.inline-block(){
+  display: inline-block;
+  *display: inline;
+  *zoom:1;
+}
+
+
+//==============   兼容 float 属性  ===============
+
+.left,.right {*display:inline}
+.left {float:left}
+.right {float:right}
+
+
+// ===============================
+.dib-wrap,.fui-form-grid,.fui-box{font-size:0}
+.dib-wrap,.fui-form-grid,.fui-box,.fui-multi-btn{
+  div,span,a,p,label,button,input,textarea,ul,table,dl{
+    font-size: 12px;
+  }
+}
+.checkbox{
+  width: 13px;
+  height: 13px;
+}
+//
+/*=========common==========*/
+.psr{position:relative}
+.psa{position:absolute}
+.pss{position:static}
+.psf{position: fixed;}
+.zindex-up{ z-index:150 !important}
+.zindex-down{ z-index:0 !important}
+.zindex-top{ z-index:2001 !important}
+.left0{left: 0}
+.top0{top: 0}
+.right{right: 0}
+.bottom0{bottom: 0}
+// display 缩写dp+属性开头
+.dpb{display:block}
+.dpi{display:inline}
+.dpib{.inline-block}
+// border 缩写 bd
+.bd{}
+.bdn{border: none;}
+.bln{border-left: none;}
+.brn{border-right: none;}
+
+.zm1{*zoom:1}
+.w100p{ width:100%}
+.w50p{ width:50%}
+.w-a{width:auto}
+.mnw-n,.minw-a{min-width: inherit}
+.mnh-n,.minh-a{max-height: inherit;}
+
+.mxw-n,.maxw-a{min-width: inherit}
+.mxh-n,.maxh-a{min-height: inherit}
+
+.mxh100{max-height: 100px;}
+.mnw500{min-width: 500px;}
+.mnw600{min-width: 600px;}
+.mnw800{min-width: 800px;}
+
+.mxw500{max-width: 500px;}
+.mxw600{max-width: 600px;}
+
+.tal{text-align: left}
+.tar{text-align: right}
+.tac{text-align:center}
+
+.tdlt{text-decoration:line-through;}//删除线
+
+.w10{ width:10px}
+.w15{ width:10px}
+.w20{ width:20px}
+.w25{ width:25px}
+.w30{ width:30px}
+.w35{ width:35px}
+.w40{ width:40px}
+.w45{ width:45px}
+.w47{ width:47px}
+.w50{ width:50px}
+.w55{ width:55px}
+.w60{ width:60px}
+.w65{ width:65px}
+.w70{ width:70px}
+.w75{ width:75px}
+.w80{ width:80px}
+.w85{ width:85px}
+.w88{width: 88px}
+.w90{ width:90px}
+.w95{ width:95px}
+.w100{ width:100px}
+.w110{ width:110px}
+.w120{ width:120px}
+.w130{ width:130px}
+.w140{ width:140px}
+.w145{ width:145px}
+.w150{width: 150px}
+
+.w160{width: 160px}
+.w168{width: 168px}
+.w170{width: 170px}
+.w176{width: 176px}
+.w180{width: 180px}
+.w185{width: 185px}//用于会员管理；by：Evan
+.w190{width: 190px}
+.w200{width: 200px}
+.w250{width: 250px}
+.w280{width: 280px}//用于规则界面的弹窗搜索，by：Evan
+.w300{width: 300px}
+.w350{width: 350px}
+.w360{width: 360px}
+.w400{width: 400px}
+.w430{width: 430px}
+.w440{width: 440px}
+.w450{width: 450px}
+.w500{width: 500px}
+.w545{width: 545px;}
+
+.w600{width: 600px}
+.w800{width: 800px}
+.w900{width: 900px;}
+.w620{width: 620px}
+.w650{width: 650px;}
+.w960{width: 960px}//用于调整运价弹窗的宽，by：Evan
+.w980{width: 980px}
+.h-a{height: auto}
+.h20{height: 20px}
+.h23{height: 23px;}
+.h25{height: 25px;}
+.h28{height: 28px}
+.h40{height: 40px;}
+.h50{height: 50px}
+.h60{height: 60px}
+.h70{height: 70px}
+.h80{height: 80px}
+.h90{height: 90px}
+.h90{height: 90px}
+.h120{height: 120px}
+.h150{height: 150px}
+.h350{height: 350px}
+.h450{height: 450px;}
+.h100p{height: 100%}
+//
+.layout-fixed,.table-fixed {
+    table-layout: fixed;
+}
+
+.fl-n{float: none;}
+/*clear*/
+.cb{ clear:both}
+.cl{ clear:left}
+.cr{ clear:right}
+/*强制不换行*/
+.oneline{white-space:nowrap}
+/*强制打散文字*/
+.wordbreak{word-break:break-all}
+/*自动换行 */
+.autoline{ word-wrap: break-word; word-break: normal} 
+/*强制大写*/
+.uppercase{ text-transform:uppercase}
+// 元素对齐
+.vat{vertical-align: top;}
+.vam{vertical-align: middle;}
+.vab{vertical-align: bottom;}
+// 禁止中文输入法
+.no-chinese{ime-mode : disabled}
+// 鼠标样式
+.cur-w{cursor:wait}
+.cur-p{cursor: pointer;}
+.cur-d{cursor: default;}
+.cur-m{cursor: move;}
+.cur-col-resize{cursor: col-resize}
+.cur-e{cursor: e-resize}
+.cur-s{cursor: s-resize}
+.cur-na{cursor: not-allowed;}
+//文字对齐
+.tal{text-align: left;}
+.tar{text-align: right;}
+.tac{text-align: center;}
+// 文字省略
+.toe{white-space:nowrap;overflow:hidden;text-overflow:ellipsis; -o-text-overflow:ellipsis;}
+//强制换行
+.word-break{word-wrap: break-word; word-break: normal;}
+// 文字颜色
+.text-warning,.text-orange{color:#FF7F00 }//原来#D86C00
+.text-error,.text-red {color: #db021b}
+.text-info {color: #06c}//原来颜色 #3A87AD
+.text-success {color: #468847}
+.text-stress {color: #3F5266}
+.fwb{font-weight: 700}
+.fwn{font-weight: 500}
+.fc3{color: #333;}
+.fc6{color: #666;}
+.fc9{color: #999;}
+.fc0{color: #000;}
+.fcf{color: #fff}
+.fcc{color: #ccc;}
+.faa{color: #aaa}
+.fs12{font-size: 12px}
+.fs14{font-size: 14px}
+.fs16{font-size: 16px}
+.fs18{font-size: 18px}
+.fs20{font-size: 20px}
+.fs24{font-size: 24px;}
+.fma{font-family: arial}
+.fmt{font-family: tahoma}
+.fms{font-family: "宋体"}
+
+.ofh{overflow:hidden}
+.ofa{overflow:auto}
+.ofv{overflow:visible}
+.ofs{overflow:scroll}
+
+.scroll{overflow: auto}
+.scroll-y{ overflow:hidden;overflow-y:auto}
+.scroll-x{ overflow:hidden;overflow-x:auto}
+
+.scroll-fixed{position: fixed;width: 100%;top: 0;left:0;z-index: 999;.box-shadow(0 2px 2px rgba(0,0,0,.1))}
+//表格状态背景
+.tr-odd-bgcolor{background:#F7F8FB}
+.tr-state-hover{background:#E9F3FE}
+.tr-state-active{background:#FFF7DD}
+
+//背景fixid
+.bgf{
+  background-attachment: fixed;
+}
+.bgn{background: none;}
+//=====
+
+/*===========  border设置  =============*/
+.btn,.bt-n{
+  border-top: none;
+}
+
+.bdn,.bd-n{
+  border: none;
+}
+//========================================
+
+.hr{
+  .clearfix;
+  height: 0px;
+  overflow: hidden;
+  margin: 8px 0;
+  border-top:1px solid #e7e7e7;
+  
+}
+
+.hrd{
+  border-top:1px dashed #e7e7e7;
+}
+
+.hr-nomg{
+  margin: 0;
+}
+
+.hr-bg{
+  .clearfix;
+  height: 8px;margin: 8px 0;
+  overflow: hidden;background: url(../img/hr-bg.png) repeat-x;
+}
+/*===========  margin设置  =============*/
+.mg0-a{margin: 0 auto;}//把a改成了g可能会出现问题
+.mg0-5{margin:0 5px;}
+.mg0-10{margin:0 10px;}
+.mg0-15{margin:0 15px;}
+.mg10-0{margin: 10px 0;}
+.mg15-0{margin: 15px 0;}
+
+.mg{ margin:0}.mg1{ margin:1px}.mg2{ margin:2px}.mg3{ margin:3px}.mg4{ margin:4px}.mg5{ margin:5px}.mg6{ margin:6px}.mg7{ margin:7px}.mg8{ margin:8px}
+.mg9{ margin:9px}.mg10{ margin:10px}.mg11{ margin:11px}.mg12{ margin:12px}.mg13{ margin:13px}.mg14{ margin:14px}.mg15{ margin:15px}.mg20{ margin:20px}
+.mg25{ margin:25px}.mg30{ margin:30px}
+/*-------- margin-left -------*/
+.ml-1{margin-left:-1px}.ml-5{margin-left:-5px}.ml-20{margin-left: -20px}.ml0{margin-left:0}.ml1{margin-left:1px}.ml2{margin-left:2px}.ml3{margin-left:3px}.ml4{margin-left:4px}
+.ml5{margin-left:5px}.ml6{margin-left:6px}.ml7{margin-left:7px}.ml8{margin-left:8px}.ml9{margin-left:9px}.ml10{margin-left:10px}.ml11{margin-left:11px}
+.ml12{margin-left:12px}.ml13{margin-left:13px}.ml14{margin-left:14px}.ml15{margin-left:15px}.ml20{margin-left:20px}.ml25{margin-left:25px}
+.ml30{margin-left:30px}.ml33{margin-left:33px}.ml34{margin-left:34px}.ml35{margin-left:35px}.ml40{margin-left:40px}.ml50{margin-left:50px}
+.ml60{margin-left:60px}.ml65{margin-left:65px}.ml70{margin-left:70px}.ml80{margin-left:80px}.ml85{margin-left:85px}.ml100{margin-left: 100px}.ml110{margin-left: 110px}.ml150{margin-left: 150px}.ml155{margin-left: 155px}.ml200{margin-left: 200px}
+.ml-3{margin-left: -3px;}//用于运价demo list界面的详情弹窗位子调整
+/*-------- margin-right -------*/
+.mr-1{margin-right:-1px} .mr-5{margin-right:-5px} .mr0{margin-right:0} .mr1{margin-right:1px} .mr2{margin-right:2px} .mr3{margin-right:3px}
+.mr4{margin-right:4px} .mr5{margin-right:5px} .mr6{margin-right:6px} .mr7{margin-right:7px} .mr8{margin-right:8px} .mr9{margin-right:9px} 
+.mr10{margin-right:10px} .mr11{margin-right:11px} .mr12{margin-right:12px} .mr13{margin-right:13px}.mr14{margin-right:14px}.mr15{margin-right:15px}.mr16{margin-right:16px}
+.mr20{margin-right:20px}.mr25{margin-right:25px}.mr30{margin-right:30px}.mr35{margin-right:35px}.mr40{margin-right: 40px;}.mr45{margin-right: 45px;}
+.mr50{margin-right: 50px;}.mr1em{margin-right: 1em}
+.mr330{margin-right: 330px;}
+.mr430{margin-right: 430px;}
+.mr400{margin-right: 400px}
+// margin top
+.mt-1{margin-top:-1px}
+.mt-5{margin-top:-5px}
+.mt-8{margin-top: -8px}
+.mt-10{margin-top: -10px}
+.mt0{margin-top:0}.mt1{margin-top:1px}.mt2{margin-top:2px}.mt3{margin-top:3px}.mt4{margin-top:4px}.mt5{margin-top:5px}.mt6{margin-top:6px}
+.mt7{margin-top:7px}.mt8{margin-top:8px}.mt9{margin-top:9px}.mt10{margin-top:10px}.mt11{margin-top:11px}.mt12{margin-top:12px}.mt13{margin-top:13px}
+.mt14{margin-top:14px}.mt15{margin-top:15px}.mt20{margin-top:20px}.mt25{margin-top:25px}.mt30{margin-top:30px}.mt50{margin-top: 50px}
+.mt100{margin-top:100px}.mt150{margin-top: 150px}.mt200{margin-top: 200px}
+.mb0{margin-bottom: 0}
+.mb5{margin-bottom:5px}
+.mb8{margin-bottom:8px}
+.mb10{margin-bottom: 10px}
+.mb15{margin-bottom: 15px}
+.mb20{margin-bottom: 20px}
+.mb25{margin-bottom: 25px}
+.mb30{margin-bottom: 30px}
+.mb40{margin-bottom: 40px}
+.mb50{margin-bottom: 50px}
+/*=========  padding设置  ============*/
+.pd5-10{padding: 5px 10px;}
+.pd5-0{padding: 5px 0}
+.pd10-0{padding: 10px 0;}
+.pd0-5{padding: 0 5px}
+.pd0-10{padding: 0 10px}
+.pd0-15{padding: 0 15px}
+.pd0-20{padding: 0 20px}
+.pd0-25{padding: 0 25px}
+.pd0-30{padding: 0 30px}
+.pd0{ padding:0}.pd1{ padding:1px}.pd2{ padding:2px}.pd3{ padding:3px}.pd4{ padding:4px}.pd5{ padding:5px}.pd6{ padding:6px}
+.pd7{ padding:7px}.pd8{ padding:8px}.pd9{ padding:9px}.pd10{ padding:10px}.pd11{ padding:11px}.pd12{ padding:12px}.pd13{ padding:13px}
+.pd14{ padding:14px}.pd15{ padding:15px}.pd20{ padding:20px}.pd25{ padding:25px}.pd30{ padding:30px}
+/*-------- padding-top -------*/
+.pt0{ padding-top:0}.pt1{ padding-top:1px}.pt2{ padding-top:2px}.pt3{ padding-top:3px}.pt4{ padding-top:4px}.pt5{ padding-top:5px}.pt6{ padding-top:6px}.pt7{ padding-top:7px}.pt8{ padding-top:8px}.pt9{ padding-top:9px}.pt10{ padding-top:10px}.pt15{ padding-top:15px}.pt20{ padding-top:20px}
+/*-------- padding-left -------*/
+.pl0{ padding-left:0}.pl1{ padding-left:1px}.pl2{ padding-left:2px}.pl3{ padding-left:3px}.pl4{ padding-left:4px}.pl5{ padding-left:5px}
+.pl6{ padding-left:6px}.pl7{ padding-left:7px}.pl8{ padding-left:8px}.pl9{ padding-left:9px}.pl10{ padding-left:10px}.pl15{ padding-left:15px}
+.pl20{ padding-left:20px}.pl30{ padding-left:30px}.pl40{ padding-left:40px}.pl50{ padding-left:50px}.pl60{ padding-left:60px}
+.pl70{ padding-left:70px}.pl80{ padding-left:80px}
+.pl45{padding-left: 45px;}
+/*-------- padding-right -------*/
+.pr0{ padding-right:0}.pr1{ padding-right:1px}.pr2{ padding-right:2px}.pr3{ padding-right:3px}.pr4{ padding-right:4px}.pr5{ padding-right:5px}
+.pr6{ padding-right:6px}.pr7{ padding-right:7px}.pr8{ padding-right:8px}.pr9{ padding-right:9px}.pr10{ padding-right:10px}.pr15{ padding-right:15px}
+.pr17{ padding-right:17px}.pr20{ padding-right:20px}.pr60{padding-right: 60px}
+/*-------- padding-top -------*/
+.pb0{ padding-bottom:0}.pb1{ padding-bottom:1px}.pb2{ padding-bottom:2px}.pb3{ padding-bottom:3px}.pb4{ padding-bottom:4px}.pb5{ padding-bottom:5px}
+.pb6{ padding-bottom:6px}.pb7{ padding-bottom:7px}.pb8{ padding-bottom:8px}.pb9{ padding-bottom:9px}.pb10{ padding-bottom:10px}.pb15{ padding-bottom:15px}
+.pb20{ padding-bottom:20px}
+
+//
+/* 隐藏, 通常用来与 JS 配合 */
+.none {display:none}
+.block{display: block}
+.hide{visibility: hidden;}
+.visible{visibility: visible;}
+.opacity0{.opacity(0)}
+
+.z-index-up{
+  z-index: 105;
+}//用来下拉结构的层级兼容
+
+// 
+.fui-resize-x,.fui-resize-y{position: absolute;width: 7px;height:100%;right: -3px;top:0;overflow: hidden;cursor: e-resize;z-index: 100}
+.fui-resize-y{cursor: s-resize;}
+.fui-resizeable-helper{position: absolute;border: 1px dotted #f60;z-index: 1000;background-color: rgba(255,120,0,.1)}
+.fui-resize-x-hover{background-color: #F2DBC5}
+// =================
+//=================
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+

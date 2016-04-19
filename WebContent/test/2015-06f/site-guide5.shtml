@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>运价维护</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+
+</head>
+<body>
+
+<div class="fui-dialog" style="left:10px;height:260px;width:380px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">新建附加费模板</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<div class="fui-dialog-cnt">
+		<div class="nui-newb-box">
+			<p class="nui-newb-info">
+				<i>&#x3573;</i>
+				你以勾选<span class="surcharge-num">10</span>条附加费添加至新的附加费模板
+			</p>
+			<div class="nui-newb-content">
+				<label class="nui-newb-label" for="">
+					创建模板名称：
+				</label>
+				<div class="nui-form-cell nui-form-cell-newb">
+					<input type="text" class="nui-input" id="" />
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar">
+		<a id="btn-yes" class="fui-btn-dialog-primary" href="javascript:">
+			<span>新建</span>
+		</a>
+		<a id="btn-no" class="fui-btn-dialog" href="javascript:">
+			<span>取消</span>
+		</a>
+	</div>
+
+</div>
+
+<div class="fui-dialog" style="left:400px;height:260px;width:380px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">新建附加费模板</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<div class="fui-dialog-cnt">
+		<div class="nui-newb-box">
+			<p class="nui-newb-info">
+				<i>&#x3573;</i>
+				你以勾选<span class="surcharge-num">10</span>条附加费添加至新的附加费模板
+			</p>
+			<div class="nui-newb-content">
+				<label class="nui-newb-label" for="">
+					创建模板名称：
+				</label>
+				<div class="nui-form-cell nui-form-cell-error nui-form-cell-newb">
+					<input type="text" class="nui-input" id="" />
+				</div>
+				<div class="nui-newb-tips nui-newb-tips-error">
+					<i>&#x3586;</i>此模板名已存在，请更改
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar">
+		<a id="btn-yes" class="fui-btn-dialog-primary" href="javascript:">
+			<span>新建</span>
+		</a>
+		<a id="btn-no" class="fui-btn-dialog" href="javascript:">
+			<span>取消</span>
+		</a>
+	</div>
+
+</div>
+
+
+<div class="fui-dialog" style="left:800px;height:200px;width:336px;">
+	<div class="fui-dialog-title cur-m">
+		<h4 class="tal">操作提示</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a>
+		<a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a>
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt" style="">
+		<div class="confirm-cnt confirm-warning tal" >
+			<div class="confirm-icon"></div>
+			<p class="nui-surcharge-line">你确定要删除此条</p>
+			<p class="nui-surcharge-line"><span class="surcharge-mould-name">"宁波港"</span>附加费模板？</p>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar">
+		<a id="btn-yes" class="fui-btn-dialog" href="javascript:">
+			<span>确定</span>
+		</a>
+		<a id="btn-no" class="fui-btn-dialog" href="javascript:">
+			<span>取消</span>
+		</a>
+	</div>
+</div>
+
+
+</body>
+</html>

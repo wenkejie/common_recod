@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>弹出窗口</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/src/js/fconfrim.js"></script>
+	
+ 	
+	<script>
+	function openC(obj){
+		var content = "<div class=\"fui-dialog-cnt\" >";
+		content += "<div class=\"confirm-cnt confirm-warning mt20\">";
+		content += "<div class=\"confirm-icon\"></div>";
+		content += "<h3 class=\"tal\">您的关注已达上限</h3>";
+		content += "<p class=\"tal\">请先删除部分关注再尝试</p>";
+		content += "</div></div>";
+		content += "<div class=\"fui-dialog-btm-bar\">";
+		content += "<a href=\"javascript:\"  class=\"fui-btn-dialog-primary\"><span>确定</span></a>";
+		content += "<a href=\"javascript:\"  class=\"fui-btn-dialog\"><span>关闭</span></a>";
+		content += "</div>";
+
+		function backFun(retVal){
+			if(retVal){
+				console.log(obj);
+				$("body").append("<a>"+retVal+"</a>");
+			}else{
+				console.log(obj);
+				$("body").append("<a>"+retVal+"</a>");
+			}
+		}
+		
+		$.confirm.create({
+			content : content,
+			okFun : backFun,
+			title :"关注",
+			width:350,
+			height:150
+		});
+		$.confirm.show();
+	}
+	</script>
+</head>
+<body>
+
+
+	<div>
+		<a href="#" onclick="openC(this)">弹出框测试</a>
+	</div>
+</body>
+</html>

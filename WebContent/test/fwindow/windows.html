@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>弹出框</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			function messageshow(text){
+					$('.fui-dialog-cnt').prepend("<div class='fui-message'>"+text+"</div>");
+				var $message = $('div.fui-message'),
+					w = $message.outerWidth();
+					$message.css('margin-left', -w/2).animate({height:26}, 150,function(){
+						$(this).animate({left: "50%"}, 300).delay(1000).animate({opacity: 0, height: 0}, 500,function () {
+							$(this).remove()
+					});
+				})
+				
+				// alert(w)
+			}
+			// messageshow()
+			$('.fui-btn-dialog-primary').click(function() {
+				messageshow("保存成功斯");
+			});
+						
+		})
+	</script>
+
+</head>
+<body class="">
+<div class="fui-overlay"></div>
+<!-- 弹出框	 -->
+<div style="height:2000px"></div>
+<div class="fui-dialog dialog-confirm " style="left:200px;top:100px">
+	<div class="fui-dialog-title"><h4>标题信息</h4>
+		<a href="javascript:" class="fui-dialog-top-btn maximize restore" title="最大化"></a>
+		<a href="javascript:" class="fui-dialog-top-btn close" title="关闭"></a>
+	</div>
+	<div class="fui-dialog-cnt">
+		
+		<div class="confirm-cnt"><!-- 其他样式 	confirm-success confirm-warning  confirm-erro -->
+			<div class="confirm-icon"></div>
+			<h3>审核通过成功！</h3>
+			<p>是否对这些客户进行批量查询设置？</p>
+			
+		</div>
+	</div>
+	<div class="fui-dialog-btm-bar pss">
+		<div class="checkbox-bar">
+			<input name="" type="checkbox" value="" id="noLongerShow" class="checkbox" />
+			<label for="noLongerShow">不再显示</label>
+		</div>
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a>
+		<a href="javascript:" class="fui-btn-dialog"><span>取消</span></a>
+	</div>
+		<span class="fui-dialog-resize"></span>
+</div>
+<!-- 弹出框结束 -->
+
+
+</body>
+</html>

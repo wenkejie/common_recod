@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>在线招标详情弹框</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="../../src/js/2015-06f/jsurcharge.js"></script>
+</head>
+<body>
+
+<div class="fui-dialog ofh" style="width:700px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">详细方案</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt pd0">
+		<!-- <div class="surcharge-site-area">  -->
+			<div class="tender-cnt-area">
+				<div class="clearfix">
+					<div class="order-grid-halve order-grid-trisection-4em">
+						<div class="order-detail-line">
+							<label>供应商：</label>宁波天时利国际货运代理有限公司
+						</div>
+						<div class="order-detail-line">
+							<label>联系人：</label>万晓利
+						</div>	
+					</div>
+					<div class="order-grid-halve order-grid-trisection-5em">
+						<div class="order-detail-line">
+							<label>投标时间：</label>2016-01-16
+						</div>
+						<div class="order-detail-line">
+							<label>联系电话：</label>15388888888
+						</div>	
+					</div>
+				</div>
+				<div class="bindding-box mt10">
+					<div class="bindding-box-column">
+						<div class="clearfix">
+							<div class="order-grid-trisection order-grid-trisection-4em w180">
+								<div class="order-detail-line">
+									<label>起运港：</label>NINGBO
+								</div>
+							</div>
+							<div class="order-grid-trisection order-grid-trisection-4em w280">
+								<div class="order-detail-line">
+									<label>发货地：</label>浙江省宁波市鄞州区日丽中路555号
+								</div>	
+							</div>
+							<div class="order-grid-trisection order-grid-trisection-5em w140">
+								<div class="order-detail-line">
+									<label></label>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix">
+							<div class="order-grid-trisection order-grid-trisection-4em w180">	
+								<div class="order-detail-line">
+									<label>目的港：</label>NINGBO
+								</div>
+							</div>
+							<div class="order-grid-trisection order-grid-trisection-4em w280">
+								<div class="order-detail-line">
+									<label>交货地：</label>VALENCIA
+								</div>
+							</div>
+							<div class="order-grid-trisection order-grid-trisection-5em w140">
+								<div class="order-detail-line">
+									<label>运输条款：</label>CY/DR
+								</div>
+							</div>
+						</div>
+						
+						<div class="bindding-box-bg">1</div>
+					</div>
+					<div class="bidding-table-area tender-table-area">
+						<div class="bidding-table-left">
+							<table class="nui-table bidding-table tender-table">
+								<thead>
+									<tr>
+										<th class="first-cell">箱型</th>
+										<th>箱量</th>
+										<th width="80">重量</th>
+										<th width="85">报价</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="first-cell">20GP</td>
+										<td>50</td>
+										<td>10000KG</td>
+										<td><p class="text-orange">$15500</p></td>
+									</tr>
+									<tr class="bidding-table-line">
+										<td class="first-cell">40GP</td>
+										<td>20</td>
+										<td>10000KG</td>
+										<td><p class="text-orange">$18500</p></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="bidding-table-right">	
+							<table class="nui-table bidding-table tender-table">
+								<thead>
+									<tr>
+										<th>附加费</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="bidding-table-line">
+										<td class="surcharge-cell">
+											<p>预付：文件费（DOC）：CNY1500/票；文件费（DOC）：CNY1500/票；文件费（DOC）：CNY1500/票</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>	
+					</div>	
+				</div>
+				<div class="bindding-box mt10">
+					<div class="bindding-box-column">
+						<div class="clearfix">
+							<div class="order-grid-trisection order-grid-trisection-4em w180">
+								<div class="order-detail-line">
+									<label>起运港：</label>NINGBO
+								</div>						
+							</div>
+							<div class="order-grid-trisection order-grid-trisection-4em w280">
+								<div class="order-detail-line">
+									<label>发货地：</label>浙江省宁波市鄞州区日丽中路555号
+								</div>							
+							</div>
+							<div class="order-grid-trisection order-grid-trisection-5em w140">
+								<div class="order-detail-line">
+									<label></label>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix">
+							<div class="order-grid-trisection order-grid-trisection-4em w180">
+								<div class="order-detail-line">
+									<label>目的港：</label>NINGBO
+								</div>
+							</div>
+							<div class="order-grid-trisection order-grid-trisection-4em w280">
+								<div class="order-detail-line">
+									<label>交货地：</label>VALENCIA
+								</div>
+							</div>
+							<div class="order-grid-trisection order-grid-trisection-5em w140">
+								<div class="order-detail-line">
+									<label>运输条款：</label>CY/DR
+								</div>
+							</div>
+						</div>
+						<div class="bindding-box-bg">2</div>
+					</div>
+					<div class="bidding-table-area tender-table-area">
+						<div class="bidding-table-left">
+							<table class="nui-table bidding-table tender-table">
+								<thead>
+									<tr>
+										<th class="first-cell">箱型</th>
+										<th>箱量</th>
+										<th width="80">重量</th>
+										<th width="85">报价</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="first-cell">20GP</td>
+										<td>50</td>
+										<td>10000KG</td>
+										<td><p class="text-orange">$15500</p></td>
+									</tr>
+									<tr class="bidding-table-line">
+										<td class="first-cell">40GP</td>
+										<td>20</td>
+										<td>10000KG</td>
+										<td><p class="text-orange">$18500</p></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="bidding-table-right">	
+							<table class="nui-table bidding-table tender-table">
+								<thead>
+									<tr>
+										<th>附加费</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="bidding-table-line">
+										<td class="surcharge-cell">
+											<p>预付：文件费（DOC）：CNY1500/票；文件费（DOC）：CNY1500/票；文件费（DOC）：CNY1500/票；文件费（DOC）：CNY1500/票；文件费（DOC）：CNY1500/票；文件费（DOC）：CNY1500/票；文件费（DOC）：CNY1500/票；文件费（DOC）：CNY1500/票；</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>	
+					</div>	
+				</div>
+				<p class="popup-remark"><span>备注：</span>需要14天免用箱，提供目的港清关服务</p>
+			</div>	
+			<div class="surcharge-table-footer">
+				<a href="javascript:" class="nui-btn nui-btn-big nui-btn-primary">保存</a>
+				<a href="javascript:" class="nui-btn nui-btn-big">取消</a>
+			</div>
+		<!-- </div> -->	
+	</div>
+</div>
+</body>
+</html>

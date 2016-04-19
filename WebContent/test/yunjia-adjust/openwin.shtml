@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>运价维护</title>
+	<link rel="stylesheet" href="../../release/freight/css/common.css" /><
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class="fui-dialog">
+	<div class="fui-dialog-title">
+		<h4 class="tal">运价发布模式设置</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:400px;width:550px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt" style="height: 200px; width: 400px;">
+		<div class="confirm-cnt confirm-warning mt20">
+			<div class="confirm-icon"></div><h3 class="tal">内部价格已更新</h3>
+			<p class="tal">继续发布平台报价请点击【发布平台报价】，不发布请点击【退出】</p>
+			<p class="mt10 fwb text-info">
+				<label for="out">
+
+					<input type="checkbox" name="" id="out" />
+					同时对外发布
+				</label>
+			</p>
+		</div>
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+</body>
+</html>

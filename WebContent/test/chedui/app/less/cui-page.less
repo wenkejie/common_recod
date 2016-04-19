@@ -1,0 +1,40 @@
+//
+// 翻页结构
+// --------------------------------------------------
+// 常量
+
+
+
+
+.cui-page-area{
+	height: 27px;padding: 15px 20px;
+	background: #f9f9f9;border: 1px solid #dfdfdf;
+	text-align: center;
+}
+
+.cui-page{
+	.inline-block;
+	vertical-align: middle;
+}
+
+.cui-page-cell{
+	.inline-block;
+	height: 28px;line-height: 28px;padding: 0 10px;
+	border: 1px solid #ccc;background: #f9f9f9;border-radius: 2px;
+	vertical-align: middle;
+	text-align: center;color: #666;
+	&:hover{
+		background: darken(#f9f9f9, 10%);
+	}
+	&.current{
+		border-color: #18abf0;background: #18abf0;
+		color: #fff;
+	}
+	&.disable{
+		border-color: #dfdfdf;background: #dfe0e0;cursor: not-allowed;
+		color: #999;
+	}
+	&.last{
+		margin-right: 20px;
+	}
+}

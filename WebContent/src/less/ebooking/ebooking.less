@@ -1,0 +1,1665 @@
+// ===================================================
+// ===================== 基础配置 =====================
+// ===================================================
+@import "base.less";
+.reset;
+.iconfontset;
+
+
+a{color: #238ccd}
+// a:hover{color: #1D80ED}
+[class $="link"]:hover{
+	text-decoration: none
+}
+label{
+	vertical-align: baseline;
+}
+
+body{
+	background: #f2f4f6;
+	color: #666;
+}
+// ===================== end =========================
+
+
+
+// ===================================================
+// ======================= 页脚 ======================
+// ===================================================
+
+.eui-footer{
+	
+}
+
+.eui-footer-content{
+	width: 990px;margin: 0 auto;padding: 20px 0 30px 0;
+	// border-top: 1px solid #ddd;
+	text-align: center;
+}
+
+// ====================== end =========================
+
+
+
+// ===================================================
+// ======================= 头部 ======================
+// ===================================================
+.eui-header{
+	border-top: 1px solid #cfcfcf;border-top: 1px solid #cfcfcf;
+	background: #fff;
+}
+
+.eui-header-content{
+	&:extend(.clearfix all);
+	width: 990px;padding-top: 5px;height: 75px;
+	margin: auto;
+}
+
+.eui-logo{
+  float: left;*display: inline;
+  width: 125px;height: 57px;
+  line-height: 100px;overflow: hidden;
+  a{
+    display: block;
+    width: 125px;height: 57px;line-height: 57px;
+    background: url(../../../release/freight/images/ebooking/logo.gif) no-repeat;
+  }
+}
+
+
+
+// 页面信息
+.eui-header-info{
+	float: left;*display: inline;
+	height: 42px;line-height: 42px;margin-top: 15px;margin-left: 15px;padding-left: 10px;
+	border-left: 2px solid #F2F2F2;
+	font-size: 20px;color: #666;
+}
+
+
+// 流程信息
+.eui-process{
+	float: right;*display: inline;
+	height: 30px;margin-top: 22px;
+}
+
+.eui-process-cell{
+	float: left;*display: inline;
+	width: 134px;height: 30px;line-height: 30px;margin-right: -9px;
+	background: url(../../../release/freight/images/ebooking/ebooking-bg.png) -6px -4px;
+	_background: url(../../../release/freight/images/ebooking/ebooking-bg-ie6.png) -6px -4px;
+	text-align: center;font-size: 14px;color: #666;
+}
+
+.eui-process-cell-last{
+	margin-right: 0;
+}
+
+.eui-process-current{
+	background-position: -6px -42px;
+	color: #fff;
+}
+
+
+.eui-blank-line{
+	height: 5px;_overflow:hidden;
+	background: url(../../../release/freight/images/ebooking/shadow.png) repeat-x;
+}
+// ===================== 导航 =========================
+.eui-nav{
+	float: left;*display: inline;
+	padding-left: 40px;
+	font-size: 0;
+}
+
+.eui-nav-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	font-size: 16px;text-align: center;
+}
+
+.eui-nav-link{
+	display: block;
+	width: 130px;height: 70px;line-height: 70px;
+	color: #333;font-weight: bold;border-bottom: 5px solid #fff;
+	&:hover{
+		border-bottom: 5px solid #0C91E0;
+		color: #0C91E0;
+	}
+}
+
+.eui-nav-link-current{
+	border-bottom: 5px solid #0C91E0;
+	color: #0C91E0;
+}
+
+// .eui-nav-numinfo{
+// 	position: absolute;right: 0;top: 0;z-index: 111;
+// }
+
+// ===================== end =========================
+
+
+// ===================================================
+// ==================== 主体内容 ======================
+// ===================================================
+
+.eui-body{
+	border-top: 1px solid #CFCFCF;
+	padding-bottom: 30px;	
+}
+
+.eui-search{
+	padding: 20px 0;
+	border-bottom: 1px solid #e6e6e6;
+	background: #f5f5f5;
+}
+
+.eui-search-content{
+	width: 890px;margin: 0 auto;
+}
+
+.eui-search-line{
+	padding: 8px 0;
+	.eui-input,.eui-label,span,.eui-btn{
+		*margin-right: 5px;
+	}
+}
+
+
+//===================== 表单元素 ======================
+
+.eui-input,.eui-textarea{
+	// position: relative;
+	// _zoom:1;
+	&:extend(.clearfix all);
+	display: inline-block;*display: inline;*zoom:1;
+	width: 240px;
+	border: 1px solid #dadada;
+	// .border-radius(2px);
+	.box-shadow(inset 0 1px 2px #ddd);
+	vertical-align: middle;background-color: #fff;
+	font-size: 12px;
+	&:hover{
+		border-color: #bbb;
+		// .box-shadow(inset 1px 1px 2px #ddd);
+	}
+
+	&:focus{
+		border-color: #0A8BDF;
+	}
+	// .transition(all .3s ease 0s)
+}
+
+
+.eui-input-content{
+	// &:extend(.clearfix all);
+	height: 24px;
+	padding:0 5px;*padding-right: 1px;
+	
+}
+
+// 输入框输入区
+.eui-input-text{
+	// float: left;
+	display: block;
+	width: 100%;padding: 5px 0;line-height:14px;height: 14px;
+	border: none;
+	background-color: transparent;font-size: 12px;color: #333
+}
+
+.eui-textarea{
+	textarea{
+		width: 100%;height: 100%;
+		background-color: transparent;border: none;
+		resize:none;color: #333;
+	}
+}
+
+.eui-textarea-content{
+	height: 100%;
+	padding:0 5px;*padding-right: 1px;
+}
+
+.eui-input-group{
+	position: relative;
+	padding-left: 20px;
+}
+
+.eui-input-group-last{
+	position: relative;
+	padding-left: 5px;padding-right: 20px;
+	.eui-input-addon{
+		right: 0;left: auto;
+	}
+}
+
+.eui-input-addon{
+	position: absolute;left: 0;top: 0;z-index: 11;
+	width: 20px;height: 21px;padding-top: 3px;
+	text-align: center;
+	i{
+		color: #999;
+	}
+}
+
+// 带下拉结构的输入框
+.eui-input-drop{
+	position: relative;
+}
+
+// ======== end ========
+
+// 时间输入框
+.eui-input-times{
+	width: 120px;
+}
+// ======== end ========
+
+// 错误输入框状态
+.eui-input-error{
+	border-color: #ff0303;
+
+	&:hover{
+		border-color: #ff0303;
+	}
+}
+// ======== end ========
+
+// 只读输入框状态
+.eui-input-readonly,.eui-readonly{
+	&,&:hover{
+		border-color: #ccc;
+		.box-shadow(none);background-color: #fafafa;
+		color: #999;
+	}
+
+	.eui-input{
+		color: #777
+	}
+
+	i{
+		border-color: #ddd;color: lighten(#677989,20%);background-color:transparent;
+	}
+}
+
+
+
+.eui-input-disable,.eui-disable{
+	&,&:hover{
+		border-color: #ccc;
+		.box-shadow(none);background-color: #fafafa;
+		color: #ccc;
+	}
+	.eui-input-text{
+		color: #999
+	}
+
+	i{
+		border-color: #ddd;color:#ccc;background-color:transparent;
+	}
+}
+
+// ======== end ========
+
+
+
+.eui-label{
+	display: inline-block;*display: inline;*zoom:1;
+	width: 65px;
+	vertical-align: middle;
+	text-align: left;
+}
+
+
+.eui-tag{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+}
+
+.eui-tag-cell{
+	display: inline-block;*display: inline;*zoom:1;
+	width: 55px;height: 26px;line-height: 26px;
+	vertical-align: middle;
+	text-align: center;color: #333;
+	
+}
+
+.eui-tag-cell-active{
+	background: #0C91E0;border-radius: 2px;
+	color: #fff;
+}
+
+// -------------按钮---------------
+
+.eui-btn{
+	.inline-block;
+	padding: 0 15px;height:26px;line-height: 26px;
+	border: 1px solid #bbb;
+	background: #fcfcfc;color: #333;
+	// .linear(#f7f7f7,#f3f3f3);
+	.border-radius(2px);
+	text-align: center;vertical-align: middle;cursor: pointer;
+	.transition(all .4s ease 0s);
+	// box-shadow:0 0 2px rgba(0,0,0,.05);
+
+	&:hover{
+		position: relative;
+		background:#f5f5f5;
+		// .linear(darken(#f9f9f9,3%),darken(#f3f3f3,3%));
+		color: #333;border-color: darken(#D8D8D8,10%);text-decoration: none;
+		box-shadow:1px 1px 2px rgba(0,0,0,.15);
+	}
+}
+
+.eui-btn-primary{
+	background: #1C8DDC;border-color: #006DD9;color: #fff;
+
+	&:hover{
+		background: #09A2FD;border-color:#0B85FF;color: #fff;
+	}
+
+	i{
+		color: #fff;
+	}
+}
+
+.eui-btn-order{
+	background: #f0851d;border-color: #f0851d;
+	// box-shadow:0 2px 2px #C76A0E;
+	color: #fff;font-weight: bold;
+	&:hover{
+		background: #E1780F;border-color: #E1780F;
+		// box-shadow:0 2px 2px #AE5E0D;
+		color: #fff;font-weight: bold;
+	}
+}
+
+.eui-btn-upload{
+	width: 85px;
+	background: #238ccd;border: none;border-radius: 0;
+	height: 36px;line-height: 36px;
+	color: #fff;font-weight: bold;
+	font-size: 14px;
+}
+
+.eui-btn-link{
+	.inline-block;
+	padding: 0 10px;
+	vertical-align: middle;
+	color: #1C8DDC;
+}
+
+.eui-btn-big{
+	padding: 0 20px;height: 32px;line-height: 32px;
+}
+
+.eui-btn-disable{
+	&,&:hover{
+		cursor:not-allowed;
+		background: #f5f5f5;
+		.box-shadow(none);
+		border: 1px solid #ddd;color: #aaa
+	}
+}
+
+// ------------- end ----------------
+
+// =================== 订单列表展示区 =================
+
+.eui-body-content{
+	width: 990px;margin: 0 auto;
+
+}
+
+.eui-order-mark{
+	display: inline-block;*display: inline;*zoom: 1;
+	width: 38px;height: 20px;line-height: 20px;*margin-top: 10px;
+	background: #0C91E0;color: #fff;border-radius: 2px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.eui-order-mark-lcl{
+	background: #13BBD9;
+}
+
+
+.eui-panel-order{
+	border: 1px solid #D1D9DE;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.08);
+	label{
+		vertical-align: baseline;
+		color: #999;
+	}
+}
+
+.eui-panel-hd{
+	position: relative;
+	padding: 0px 20px;height: 40px;line-height: 40px;
+	border-bottom: 1px solid #eee;
+ 	background: #f5f5f5;
+	color: #333;font-size: 12px;
+	
+}
+
+.eui-panel-ft{
+	padding: 20px 40px;
+	background: #fdf4ec;border-bottom: 2px solid #e3c4a5;
+}
+
+// 新增结构
+
+.eui-panel-item{
+	background: #fff;
+	.eui-panel-bd{
+		padding: 20px 40px;
+	}
+}
+
+.eui-panel-title{
+	padding: 10px 0;
+	border-bottom: 1px solid #ededed;
+	font-size: 16px;font-weight: bold;
+}
+
+.eui-panel-content{
+	padding: 20px 0;
+}
+
+.order-form-line{
+	&:extend(.clearfix all);
+	padding: 5px 0;
+}
+
+.order-form-cell{
+	float: left;*zoom:1;
+	width: 33.3%;
+	font-size: 0;
+	label,span{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: top;
+		font-size: 12px;
+	}
+	label{
+		width: 85px;
+		text-align: right;
+	}
+	span{
+		width: 170px;*margin-left: -3px;
+		color: #999;
+	}
+}
+
+.order-form-only{
+	width: 100%;
+	span{
+		width: 735px;*margin-left:-3px;
+		color: #999;
+	}
+}
+
+
+.order-form-textarea{
+	position: relative;
+	padding-left: 70px;
+	label{
+		position: absolute;left: 0;top: 5px;z-index: 11;display: block;
+		width: 70px;height: 20px;line-height: 20px;
+	}
+	.eui-textarea{
+		display: block;
+		width: auto;
+	}
+}
+
+
+.eui-panel-ul{
+	height: 40px;
+	li{
+		float: left;*display: inline;
+		height: 40px;line-height: 40px;
+		font-size: 999;
+	}
+	.name{
+
+	}
+
+}
+
+.eui-buyers-info{
+	&:extend(.toe all);
+	max-width: 200px;_width: 200px;
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+}
+
+.eui-more-info{
+	position: relative;
+	display: inline-block;*display: inline;*zoom:1;
+	width: 15px;padding-left: 5px;
+	vertical-align: middle;
+	.fui-tips-buyers{
+		left: -3px;top: 20px;*top: 28px;
+		width: 200px;padding: 8px;
+		line-height: normal;
+	}
+}
+
+
+
+.eui-more-icon{
+	color: #0c91e0;font-size: 12px;
+	i{
+		font-size: 18px;
+	}
+}
+
+
+.eui-panel-tabel{
+	width: 100%;
+	background: #fff;
+	color: #333;
+	.td-grid{
+		padding: 20px;
+	}
+	.td-grid-info{
+		color: #999;
+		text-align: left;
+	}
+	td{
+		border-right: 1px solid #e6e6e6;
+		text-align: center;
+	}
+	.td-last{
+		border-right: none;
+	}
+	.td-first{
+		text-align: left;
+	}
+
+	.order-detail-link{
+		text-decoration: underline;
+	}
+
+	.num{
+		color: #0C91DF;font-weight: bold;
+	}
+	.place-name{
+		color: #333;font-weight: bold;
+	}
+
+	.order-modify{
+		color: #666;
+	}
+	.order-modify-success{
+		color: #63A400;
+	}
+	.order-modify-waring{
+		color: #D96D00;
+	}
+
+	.order-modify-error{
+		color: #D96D00;
+	}
+	
+}
+
+
+// 订单详情结构
+
+.eui-panel-detail{
+	padding: 0 40px;
+	background: #fff;
+	// border: 1px solid #D1D9DE;
+	// box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.08);
+	.eui-panel-hd{
+		height: 60px;line-height: 60px;padding: 0;
+		background: #fff;
+	}
+
+	.eui-panel-bd{
+		&:extend(.clearfix all);
+		clear: both;//处理火狐的一个兼容问题
+		// background: #f6f6f6;
+		padding: 15px 0 30px 0;
+	}
+	.port-name{
+		font-size: 16px;color: #3E4C60;
+	}
+	.arrow-right{
+		margin: 0 5px;
+		color: #ccc;
+	}
+	.time-label{
+		vertical-align: baseline;
+	}
+}
+
+
+.eui-panel-left{
+	float: left;*display: inline;
+	.port-name,.arrow-right,.port-name,.eui-order-mark{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+	}
+
+}
+
+.eui-panel-right{
+	float: right;*display: inline;
+}
+
+
+// 有变化面板
+.eui-panel-error{
+	position: relative;
+	border-top: 1px solid #FD9C88;
+}
+
+
+
+// 表格替换为列表
+.order-detail-list{
+	// float: left;*display: inline;*zoom:1;
+	width: 255px;padding: 8px 0;
+	background: #f7f7f7;
+	
+}
+
+.detail-list-item{
+	position: relative;*zoom:1;
+	padding: 5px 10px;padding-left: 90px;min-height: 18px;_height: 18px;
+	label{
+		position: absolute;left: 10px;top: 5px;z-index: 1;*zoom:1;
+		width: 80px;height: 18px;line-height: 18px;
+		color: #999;text-align: right;
+	}
+	span{
+		display: block;*zoom:1;
+		&:extend(.word-break all);
+	}
+}
+
+.detail-list-last{
+	padding-top: 10px;
+	border-top: 1px solid #f0f0f0;
+	label{
+		top: 10px;
+	}
+}
+
+.order-detail-info{
+	// float: left;*display: inline;*zoom:1;
+	width: 460px;padding-left: 100px;padding-top: 30px;
+	.eui-icon{
+		float: left;*display: inline;
+		margin-left: -40px;
+	}
+}
+
+.order-detail-left-icon{
+	float: left;*display: inline;*zoom:1;
+	width: 40px;margin-left: -40px;
+  	height: 40px;
+  	font-size: 40px;color: #188BD0;
+}
+
+.detail-info-line{
+	padding: 5px 0;
+	label{
+		display: inline-block;*display: inline;*zoom:1;
+		width: 115px;
+		text-align: right;color: #999;
+	}
+	.order-modify{
+		color: #666;
+	}
+	.order-modify-success{
+		color: #63A400;
+	}
+	.order-modify-waring{
+		color: #D96D00;
+	}
+}
+
+.detail-info-pl{
+	padding-left: 120px;
+	label{
+		margin-left: -120px;
+	}
+}
+
+// ================= 翻页结构 ================
+
+.eui-pager{
+	font-size: 0;text-align: right;
+}
+
+.eui-pager-item,.eui-pager-prev,.eui-pager-first,.eui-pager-last,.eui-pager-next,.eui-pager-jump,.eui-pager-omit{
+	display: inline-block;*display: inline;*zoom:1;
+	height: 24px;line-height: 24px;
+	vertical-align: middle;
+	font-size: 12px;color: #666;
+}
+
+.eui-pager-item,.eui-pager-first,.eui-pager-prev,.eui-pager-next,.eui-pager-last{
+	height: 26px;line-height: 26px;padding: 0 10px;
+	border: 1px solid #ddd;
+}
+
+.eui-pager-first,.eui-pager-last{
+	margin-right: 5px;
+}
+
+.eui-pager-prev{
+	margin-right: 5px;
+}
+
+.eui-pager-next{
+	margin-left: 5px;margin-right: 5px;
+}
+
+.eui-pager-first,.eui-pager-prev,.eui-pager-next,.eui-pager-last{
+	&:hover{
+		border-color: #0D91E0;
+		color: #0D91E0;
+	}
+}
+
+.eui-pager-omit{
+	padding: 0 4px 0 3px;
+}
+
+.eui-pager-item{
+	position: relative;
+	margin-left: -1px;
+	&:hover{
+		border-color: #0C91E0;z-index: 1;
+		color: #0C91E0;
+	}
+}
+
+.eui-pager-item-current{
+	background: #0C91E0;border-color: #0C91E0;z-index: 1;
+	color: #fff;
+	&:hover{
+		background: #0C91E0;border-color: #0C91E0;z-index: 1;
+		color: #fff;
+	}
+}
+
+.eui-pager-item-last{
+	border-right: 1px solid #ddd;
+
+}
+
+.eui-pager-jump{
+	font-size: 0;
+}
+
+.eui-pager-text,.eui-pager-textbox-wrapper,.eui-pager-text,.eui-pager-button{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	font-size: 12px;
+}
+
+.eui-pager-textbox-wrapper{
+	width: 36px;
+	margin-left: 5px;margin-right: 5px;padding: 3px 5px;
+	vertical-align: middle;
+	font-size: 0;outline: none;
+	background-color: white;
+	border: 1px solid #d4d4d4;
+}
+.eui-pager-textbox{
+	display: block;position: relative;
+	width: 36px;height: 16px;line-height: 16px;padding: 0;
+	border: 0 none;background: #fff;
+	outline: medium none;vertical-align: middle;
+	text-align: center;color: #333333;
+	font-size: 12px;
+}
+
+.eui-pager-button{
+	height: 24px;line-height: 24px;
+	padding: 0 8px;margin-left: 10px;
+}
+
+
+
+// =================== 订单详情 =================
+
+.eui-tab{
+	padding: 30px 40px;
+	background: #fff;
+}
+
+.eui-tab-menu{
+	height: 42px;_margin-bottom:-1px;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+.eui-tab-menu-cell{
+	float: left;
+	line-height: 40px;height: 40px;width: 80px;margin-right: 25px;
+	// .border-top-radius(2px);
+	// .transition(all .4s ease 0s);
+	text-align: center;font-size: 14px;color: #333;
+}
+
+.eui-tab-menu-link{
+	float: left;
+	width: 80px;
+	text-align: center;
+	&,&:hover{
+		color: #777;
+	}
+}
+
+.eui-tab-menu-active{
+	a{
+		background: #fff;color: #1B8CDC;
+		border-bottom:2px solid #1B8CDC;
+		font-weight: bold;
+	}
+}
+
+.eui-tab-cnt{
+	background: #fff;
+}
+
+
+
+// ===================================================
+// =================== 订舱详情 =======================
+// ===================================================
+.eui-detail-content{
+	padding: 36px 20px;
+}
+
+
+// ===================================================
+// =================== 作业信息 =======================
+// ===================================================
+.eui-business-state {
+	padding:50px 35px 30px 45px;
+}
+.eui-business-state-column {
+	*zoom:1;
+	// &:extend(.clearfix all);
+	// _position: relative;_z-index: 11;
+	padding-bottom:30px;
+	border-left:#f1f1f1 2px solid;
+	// padding-left: 22px;
+	// _float: left;_width:794px;_zoom:1;
+	padding-left:22px;
+}
+.eui-business-state-icon {
+	// position:absolute;
+	// top:-2px;left:-11px;_left:-30px;z-index: 111;
+	// _position: relative;z-index: 111;
+	float: left;_position:relative;_left:-33px;z-index: 111;*display: inline;
+  	margin-left: -33px;
+	background: url(../../../release/freight/images/ebooking/ebooking-bg.png) -193px -51px;
+	_background: url(../../../release/freight/images/ebooking/ebooking-bg-ie6.png) -193px -51px;
+	width:20px;height:25px;
+}
+.eui-business-state-column-no-bd {
+	border-left-color:#fafafa;
+}
+.eui-business-state-column-title {
+	*zoom: 1;
+	height: 25px;line-height: 25px;
+	.eui-state-checkbox{
+		float: left;*display: inline;
+		margin-top: 7px;margin-right: 5px;
+	}
+	h3{
+		float: left;*display: inline;
+		color: #666;font-size: 14px;
+	}
+
+}
+
+.btn-up-down{
+	*zoom:1;
+	float: right;*display: inline;
+	// color:#267FB2!important;
+	color:#267FB2;
+	text-decoration:underline;font-size: 12px;
+}
+
+
+
+
+.eui-business-state-column-complete{
+	border-left-color: #CCE0AF;
+	.eui-business-state-column-title {
+		h3{
+			color: #63A400;
+		}
+	}
+	.eui-business-state-icon{
+		background-position:-193px -13px;
+	}
+}
+
+
+
+.eui-order-form{
+	
+}
+
+.eui-order-form-line{
+	padding-top: 10px;
+}
+
+.eui-order-form-info{
+	padding: 10px 15px;
+	background: #f2f2f2;border: 1px solid #ddd;
+	em{
+		margin: 0 12px;
+		color: #ccc;
+	}
+}
+
+
+.eui-order-form-des{
+	color: #999;
+	.eui-order-form-line{
+		padding-top: 5px;
+	}
+}
+
+// 订舱信息表
+
+// .eui-box{
+// 	display: inline-block;
+// }
+
+// .eui-box-line{
+// 	&:extend(.clearfix all);
+// }
+
+// .eui-box-grid{
+// 	float: left;
+// 	height: 40px;padding: 10px 12px;
+// 	background: #f1f1f1;
+// 	text-align: center;
+// 	.title{
+// 		line-height: 40px;
+// 	}
+// }
+
+// .eui-box-info{
+// 	float: left;
+// 	height: 40px;padding: 0 20px;
+// 	border-left: 1px solid #ccc;
+// }
+
+// .eui-box-info-first{
+// 	border-left: none;
+// }
+
+.eui-detail-table{
+	// table-layout: fixed;width: 100%;
+	display: block;
+	border-collapse:inherit;
+	border-spacing: 4px;
+	margin-left: -4px;
+	color: #999;
+	th,td{
+		padding: 12px 13px;
+		background: #f1f1f1;
+		text-align: center;
+	}
+	.td-grid{
+		// padding: 0 15px;
+	}
+
+	.price{
+		color: #0C91DF;font-size: 18px;
+	}
+
+	.number{
+		color: #D73E11;
+		font-size: 18px;
+		span{
+			font-size: 12px;
+		}
+	}
+}
+
+.eui-detail-form{
+	padding-top: 30px;
+	label{
+		display: inline-block;
+		width: 60px;
+		vertical-align: baseline;
+		color: #999;text-align: left;
+	}
+}
+
+
+.eui-booking-area{
+	width: 100%;
+}
+
+.eui-booking-table{
+	table-layout: fixed;
+	width: 100%;
+	background: #fff;border-left: 1px solid #ddd;border-right: 1px solid #ddd;
+	.line-n{
+		background: #f2f2f2;
+		.td-grid{
+			border-left: 1px solid #ddd;
+		}
+		.td-grid-first{
+			border-left: none;
+		}
+	}
+	td{
+		padding: 10px 0;
+		border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;
+	}
+
+	.title{
+		display: block;
+		border-left: 1px solid #ddd;
+	}
+	.td-grid{
+		
+		padding: 0 15px;
+	}
+
+}
+
+// 客户页面更多信息结构
+.eui-more-business{
+	margin-top: 25px;
+}
+
+.eui-more-business-header{
+	height: 24px;line-height: 24px;
+	background: #f0f0f0;
+	i{
+		margin-left: 5px;
+		color: #bbb;
+	}
+	a{
+		display: block;height: 24px;line-height: 24px;
+		color: #666;text-align: center;
+	}
+}
+
+.eui-more-business-content{
+	padding: 20px 30px;
+	background: #f6f6f6;
+	.eui-business-state-column-complete{
+		border-left-color: #f1f1f1;
+		.eui-business-state-column-title {
+			h3{
+				color: #666;
+			}
+		}
+		.eui-business-state-icon{
+			// left: -8px;_left: -27px;
+			width: 16px;height: 20px;
+			background-position: -235px -57px;
+		}
+	}
+}
+
+
+// 详情部分托书展示区
+.detail-upload-list{
+	&:extend(.clearfix all);
+	padding-left: 60px;
+	label{
+		float: left;
+		margin-left: -60px;
+	}
+}
+
+.detail-upload-list-content{
+	float: left;*display: inline;*zoom:1;
+	
+}
+
+.detail-upload-cell{
+	padding-bottom: 10px;
+	.del{
+		margin-left: 10px;
+		color: #999;
+		&:hover{
+			color: #333;
+		}
+	}
+}
+
+
+// 新下单页面新增结构
+.upload-file-list{
+	padding: 10px 0;
+}
+
+.upload-file-item{
+	height: 30px;line-height: 30px;padding: 0 20px;margin-bottom: 5px;
+	background: #f8f8f8;border-radius: 3px;
+	a{
+		margin-left: 15px;
+	}
+}
+
+
+.order-grid{
+		
+}
+
+.unit-price{
+	padding-left: 50px;padding-bottom: 5px;
+}
+
+.order-grid-title{
+	// padding: 0 10px;
+	height: 30px;line-height: 30px;
+	background: #f2f2f2;
+}
+
+.order-grid-content{
+	padding: 30px 15px 50px 15px;
+}
+
+
+.order-grid-title-left{
+	float: left;*display: inline;
+	height: 30px;line-height: 30px;padding-left: 10px;
+	font-size: 14px;color: #333;
+}
+.order-grid-title-line{
+	float: left;*display: inline;
+	height: 14px;line-height: 14px;margin-left: 10px;margin-top: 8px;
+	border-left: 1px solid #888;border-right: 1px solid #888;
+}
+
+.order-surcharge-slidedown{
+	float: right;*display: inline;
+	padding: 0 10px;
+	color: #F28500;
+	i{
+		color: #F28500;
+	}
+}
+
+// 附加费扩充表
+.order-surcharge-area{
+	position: relative;
+	float: right;*display: inline;
+	height: 30px;line-height: 30px;
+}
+
+.eui-surcharge-area{
+	position: absolute;right: 0;top: 30px;z-index: 150;
+	display: none;
+	width: 665px;
+	border: 1px solid #f28500;background: #fff;
+}
+
+.surcharge-show{
+	.eui-surcharge-area{
+		display: block;
+	}
+}
+
+.order-surcharge-slidedown{
+	float: left;*zoom:1;
+	height: 30px;line-height: 30px;
+}
+
+.surcharge-show{
+	.order-surcharge-slidedown{
+		position: relative;z-index: 160;
+		border-top: 1px solid #f28500;border-left: 1px solid #f28500;border-right: 1px solid #f28500;border-bottom: 1px solid #f2f2f2;
+		background: #f2f2f2;
+	}
+}
+
+
+.eui-surcharge-table{
+	table-layout: fixed;
+	width: 100%;
+	border-bottom: 1px solid #c7dce5;
+	th,thead,tr,td{
+		border: none;
+	}
+	th{
+		padding: 3px 10px;
+		background: #f2f2f2;
+	}
+	td{
+		&:extend(.word-break all);
+		padding: 3px 10px;
+	}
+	thead{
+		background: #f1f1ed;
+	}
+}
+
+.eui-surcharge-table-line{
+	td{
+		padding: 0;
+		border-top: 1px dashed #d5e3e7;
+	}
+}
+
+// ================================================
+// ===============组件结构新增 —— 船期选择===========
+// ================================================
+.data-tags-area{
+	&:extend(.clearfix all);
+}
+
+.data-tags-cell{
+	float: left;*display: inline;
+	width: 45px;height: 26px;line-height: 26px;
+	margin-right: 10px;border: 1px solid #ccc;border-radius: 3px;
+	text-align: center;color: #666;
+	&:hover{
+		border-color: #258dcd;
+		color: #258dcd;
+	}
+}
+
+.data-tags-current{
+	border-color: #258dcd;background: #238CCD;
+	color: #fff;
+	&:hover{
+		color: #fff;
+	}
+}
+
+.extend-tips{
+	padding-top: 15px;
+	color: #999;
+}
+
+//算一算插件框
+.order-spinner-grid{
+	float: left;*display: inline;
+	width: 25%;
+	font-size: 0;
+	label,span,.spinner{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		font-size: 12px;
+	}
+	label{
+		margin-right: 10px;
+
+	}
+	span{
+		margin-left: 10px;
+		color: #F1630E;font-weight: bold;
+	}
+
+}
+
+// 上传按钮
+.eui-file-upload{
+	position: relative;
+	display: inline-block;*display: inline;*zoom: 1;
+	width: 115px;height: 38px;
+	vertical-align: middle;
+	overflow: hidden;font-size: 12px;
+	.eui-btn{
+		position: absolute;left: 0;top: 0;z-index: 100;
+		text-align: center;
+	}
+}
+
+.eui-file-upload-mini{
+	width: 84px;height: 26px;line-height: 26px;
+	.eui-file-input{
+		height: 26px;
+	}
+	.eui-btn-upload{
+		width: 54px;height: 26px;line-height: 26px;
+		font-size: 12px;
+	}
+}
+
+.eui-file-input{
+	position: absolute;right: 0;top: 0;z-index: 105;
+	width: 100%;height:38px;background: #ccc;
+	.opacity(0);
+	text-align: left;cursor: pointer;
+	font-size: 100px;
+}
+
+.upload-tips{
+	color: #999;
+	.eui-icon{
+		margin:0 5px;
+	}
+}
+
+.upload-tips-icon{
+	margin:0 5px;
+	color: #188BD0;
+}
+
+.eui-file-upload-disable{
+	&,&:hover{
+		cursor:not-allowed;
+		background: #f5f5f5;
+		.box-shadow(none);
+		border: 1px solid #ddd;color: #aaa
+	}
+	.eui-btn-upload{
+		&,&:hover{
+			cursor:not-allowed;
+			background: #f5f5f5;
+			.box-shadow(none);
+			border: 1px solid #ddd;color: #aaa
+		}
+	}
+	.eui-file-input{
+		&,&:hover{
+			cursor:not-allowed;
+			display: none;
+		}
+	}
+}
+
+
+// 通用行表格结构
+.eui-table{
+	table-layout: fixed;
+	width: 100%;
+	th{
+		padding: 10px 15px;
+		background: #f8f8f8;border-top: 1px solid #e7e7e7;
+	}
+	td{
+		&:extend(.wordbreak all);
+		padding: 20px 15px;
+		vertical-align: top;border-bottom: 1px solid #f2f2f2;
+	}
+	tr{
+		// border-bottom: 1px solid #f2f2f2;
+	}
+	.first{
+		border-right: 1px solid #f2f2f2;
+		color: #333;
+	}
+	.money{
+		color: #F1630E;font-weight: bold;
+	}
+	.num,.name{
+		color: #333;font-weight: bold;
+	}
+	.last-line{
+		border-bottom: 2px solid #ededed;
+	}
+	.nodata{
+		text-align: center;color: #999;
+	}
+}
+
+
+// 紧缩型表格
+.eui-table-condensed{
+	th{
+		padding: 5px 15px;
+		
+	}
+	td{
+		padding: 8px 15px;
+	}
+}
+
+.eui-table-area{
+	.table-title{
+		padding: 15px 0;
+		font-size: 16px;font-weight: bold;
+		color: #333;
+	}
+}
+
+.eui-table-header{
+
+}
+
+.eui-table-header-info{
+	padding: 25px 0;
+	font-size: 18px;
+	label{
+		color: #999;
+	}
+	span{
+
+	}
+}
+
+
+
+.eui-table-footer{
+	padding-top: 25px;
+	text-align: right;
+	font-size: 0;
+}
+
+.eui-surcharge-total{
+	display: inline-block;*display: inline;*zoom:1;
+	padding: 0 25px;
+	vertical-align: top;
+	font-size: 12px;
+	.eui-surcharge-methods{
+		color: #666;font-weight: bold;
+	}
+}
+
+.eui-surcharge-methods,.eui-surcharge-num{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: top;
+}
+
+.eui-surcharge-methods{
+	padding-top: 8px;
+}
+
+.eui-surcharge-num{
+	color: #F0851D;font-size: 22px;
+	label{
+		margin-right: 5px;
+		color: #999;
+	}
+	p{
+		// &:extend(.word-break all);
+		// max-width: 150px;_width:150px;
+	}
+	
+}
+
+.eui-surcharge-footer-btn{
+	padding-top: 25px;padding-right: 20px;
+}
+
+
+//=================================================
+// =================== 下拉结构 ====================
+//=================================================
+.eui-dropdown{
+	position: absolute;left: -1px;top: 24px;z-index: 170;
+	width: 100%;
+	.box-shadow( 1px 1px 2px #ddd);
+	border: 1px solid #ddd;background: #fff;
+}
+
+.eui-dropdown-cell{
+
+}
+
+.eui-dropdown-link{
+	display: block;
+	padding: 3px 5px;_height: 18px;_line-height: 18px;
+	text-align: left;color: #666;
+	&:hover{
+		background: #f6f6f6;
+		color: #333;
+	}
+}
+
+
+
+
+// =======================================
+
+
+// 图标结构
+.eui-icon{
+	display: inline-block;*display: inline;*zoom:1;
+	width: 16px;height: 16px;
+	background: url(../../../release/freight/images/ebooking/ebooking-bg.png) no-repeat;
+	vertical-align: middle;
+}
+
+.eui-icon-txt{
+	background-position: -50px -106px;
+}
+
+.eui-icon-adobe{
+	background-position: -92px -106px;
+}
+
+.eui-icon-word{
+	background-position: -129px -106px;
+}
+
+.eui-icon-exel{
+	background-position: -165px -106px;
+}
+
+
+
+//================ eui-tips ==========================
+.eui-tips{
+	position: absolute;left: 50%;top: -1px;z-index: 270;
+	width: 200px;padding: 7px 0;margin-left: -107px;
+	padding-right: 24px;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;
+}
+
+.eui-tips-inside{
+	left: -1px;top: 0;
+	padding: 5px 0;margin-left: 0;
+	width: 100%;border-radius: 0;
+	.eui-tips-content{
+		padding: 0;
+	}
+}
+
+.eui-tips-error{
+	background: #FEDED8;border: 1px solid #FDA593;
+	color: #DF3D0D;
+	i{
+		color: #DF3D0D;
+	}
+}
+
+.eui-tips-content{
+	padding-left: 15px;
+}
+
+.eui-tips-close{
+	position: absolute;right: 10px;top: 8px;
+	i{
+		font-size: 14px;
+	}
+}
+
+
+// 未找到页面结构新增
+.eui-lost-area{
+	width: 560px;height: 126px;
+	margin: 110px auto 0;
+	background: url(../../../release/freight/images/ebooking/lost.png) no-repeat;
+}
+
+.eui-lost-cnt{
+	padding: 20px 0 0 95px;
+	font-size: 24px;color: #8A7E66;
+}
+
+
+
+// 提示框结构引入原运价控件结构
+// ================================================
+//====================  Tips  ====================
+// ================================================
+
+.fui-tips{ 
+  position:absolute;
+  padding:8px 12px; 
+  border:1px solid #ccc; 
+  .box-shadow( 0 0 5px rgba(0,0,4px,0.4)); 
+  background:#fff;
+  color: #22414A;
+  .border-radius(2px);
+  z-index: 1200;
+  // zoom: 1;
+  .fui-close{ font-size:12px; top:0;right:5px; color:#D0C1B7;
+    &:hover{color:#000}
+  }
+}
+.fui-tips-arrow{ color:#ccc; position:absolute; left:-7px;_left:-8px;top:7px;height: 10px; font:14px  Arial, Helvetica, sans-serif}
+.fui-tips-arrow em{ position:absolute; left:1px; color:#fff}
+.fui-tips s{ vertical-align:top;*vertical-align:middle}
+.fui-tips-arrow-right{
+  em{
+    left: -1px;
+
+  }
+}
+.fui-tips .top{left:8px;top:-9px;*top:-8px}
+.fui-tips .top em{ left:0;top:1px;*top: 2px;}
+.fui-tips .right{left:auto;top:8px;right:-8px}
+.fui-tips .right em{ left:auto;top:0;right:1px}
+.fui-tips .bottom{left:8px;top:auto;bottom:-9px;_bottom:-11px}
+.fui-tips .bottom em{ left:0;top:-1px}
+.fui-tips-red{ border-color:#c30; background-color:#FFEEEC; color: #C00}
+.fui-tips-red .fui-tips-arrow{color:#c30}
+.fui-tips-red .fui-tips-arrow em{color:#FFEEEC}
+.fui-tips-hasclose { padding-right:20px}
+//---------   easy tip   ---------
+.fui-easy-tips{ background:#000; opacity:0.9; color:#fff; position:absolute; padding:3px 8px; border-radius:2px;
+   .fui-tips-arrow{ position:absolute; color:#000; left:15px;top:-8px}
+   .left{ left:-5px;top:3px; bottom:auto}
+   .bottom{ left:15px;top:auto; bottom:-8px}
+   .right{ left:auto;top:3px; bottom:auto; right:-5px}
+}
+
+
+
+
+// =================== end ====================
+
+
+// 2015-ebooking
+// @import "2015-ebooking/ebooking.less";
+// ======================================
+// ==============================================================
+
+// 顶部结构引入
+@import "top-bar-old.less";
+
+// 运价弹出窗引入
+@import "fui-dialog.less";
+
+// 申请页引入
+@import "apply.less";
+
+
+@import "common.less";
+
+

@@ -1,0 +1,189 @@
+@charset "utf-8";
+/*
+@ 名称: 投影 | drop shadow
+@ 用法: 添加 .sl-shadow
+@ 实例:
+<div class="sl-shadow">
+<!-- your context to go -->
+</div><!-- .sl-shadow -->
+
+*/
+
+.sl-shadow{
+
+/* modern web browsers */
+-moz-box-shadow:1px 3px 12px #bbb;
+-webkit-box-shadow:1px 3px 12px #bbb;
+box-shadow:1px 3px 12px #bbb;
+
+/* 一定要设置background, 不然 ie 会显示在字体上 */
+background: #fff;
+
+/* gte=ie8 */
+-ms-filter:"progid:DXImageTransform.Microsoft.Glow(color=#aaaaaa,strength=3) progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=0,strength=6) progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=90,strength=10) progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=180,strength=6) progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=270,strength=6)";
+
+/* lte=ie7 */
+*filter:
+    progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=0,strength=3)
+    progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=90,strength=3)
+    progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=180,strength=3)
+    progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=270,strength=3);
+}
+
+/*
+@ 名称: 强制换行
+@ 用法:
+* 一般块级元素用：.sl-wrap
+* table标签中需添加：.sl-wrap-table
+@ 例子:
+<p class="sl-wrap">…</p>
+<table class="sl-wrap sl-wrap-table"></table>
+*/
+
+/* 一般 block-level 元素 */
+.sl-wrap, .sl-wrap td, .sl-wrap th{
+word-wrap:break-word;word-break:break-all;
+}
+
+/* table */
+.sl-wrap-table{
+table-layout:fixed;
+}
+
+/*
+@ 名称: 禁用中文输入法
+@ 用法:
+在需要禁用的地方添加: .sl-ime-disabled;
+*/
+
+.sl-ime-disabled{
+ime-mode:disabled!important;
+
+}
+
+/*
+@ 名称: position:fixed
+@ 用法：添加class
+@ 注意:
+* 如果需要多个方向的固定位置，比如 top + right，需要加两个 class
+* 如果加了.sl-fixed-top, 那么就别给这个元素加 top 属性的值
+* 为了不出现异常，这个只作为套用。比如要top:30px 的时候，请在 .sl-fixed-top 的子元素内设置
+* 由于我们有打包，所以，改solution是可以的，但这是强烈不推荐的，因为不利于维护
+*/
+
+.sl-fixed{
+    position:fixed;
+}
+
+/* 相当于正常的 position:fixed; top:0; */
+.sl-fixed-top {
+bottom:auto;
+top:0;
+_bottom:auto;
+_top:expression(eval(document.documentElement.scrollTop));
+}
+
+/* 相当于正常的 position:fixed;bottom:0px; */
+.sl-fixed-bottom {
+bottom:0;
+top:auto;
+_bottom:auto;
+_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+}
+
+/* 相当于正常的 position:fixed;left:0px; */
+.sl-fixed-left {
+left:0;
+_position:absolute;
+right:auto;
+_left:expression(eval(document.documentElement.scrollLeft));
+}
+
+/* 相当于正常的 position:fixed;right:0; */
+.sl-fixed-right {
+right:0;
+left:auto;
+_right:auto;
+_left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0));
+}
+
+/* 当不是 https 时，可以把 # 换成 about:blank 以提升效率 */
+html,html body {
+_background-image:url('about:blank');
+_background-attachment:fixed;
+}
+
+/* hack for ie6 */
+.sl-fixed-top,.sl-fixed-right,.sl-fixed-bottom,.sl-fixed-left {
+_position:absolute;
+}
+
+/*
+@ 名称: 解决 <select /> z-index 太高问题
+@ 描述: 浮层被 select 穿透，是最常见的 z-index bug
+@ 例子：
+<div id="dd3" class="sl-selectmask" style="background:#FF3366;">
+内容<br/>
+<!--[if lte IE 6.5]><iframe src="javascript:'';"></iframe><![endif]-->
+</div>
+*/
+
+.sl-selectmask {
+position: absolute;
+left:0;
+top:0;
+z-index: 10;
+overflow: hidden;
+width: 33em;
+}
+.sl-selectmask iframe {
+position: absolute;
+top: 0;
+left: 0;
+z-index: -1;
+border:none;
+filter: mask();
+width: 3000px; /* for any big value */
+height: 3000px /* for any big value */
+}
+
+/*
+名称: 垂直 水平 居中
+用法:
+1. [原理] 设定宽度和高度，父节点为 position:relative; CSS是这样写的:
+position:absolute;left:50%;top:50%;
+margin-left:-元素自身宽度的一半;
+margin-top:-元素自身高度的一半;
+2. [原理] table, 用起来就更简单了, 只要添加:
+text-algin:center;
+vertical-align:middle;
+3. [方法] 提供模板化的CSS class方法, 规则如下:
+<div class="sl-hvalign" style="width:500px"> <!-- 记得加宽度, 不要写行内样式, 这里只是一个提示 -->
+<div class="sl-hvalign-cnt">
+<div class="sl-hvalign-cnt-inner">
+<!-- your code -->
+</div>
+</div>
+</div> <!-- .sl-hvalign -->
+*/
+
+
+.sl-hvalign{
+display:table;
+overflow:hidden;
+margin:0 auto;
+height: 100%;
+*position:relative;
+}
+
+.sl-hvalign-cnt{
+display:table-cell;
+vertical-align: middle;
+*position:absolute;
+top:50%;
+}
+
+.sl-hvalign-cnt-inner{
+*position:relative;
+*top:-50%;
+}

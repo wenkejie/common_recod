@@ -1,0 +1,49 @@
+//
+// 常用面板
+// --------------------------------------------------
+// 常量
+
+
+.cui-subnav{
+  &:extend(.clearfix all);
+  .left;
+}
+
+.cui-subnav-cell{
+	.left;
+	padding: 10px 0;_width:150px;
+	&.active{
+		border-bottom:2px solid @brand-primary;margin-bottom: -2px;
+		.cui-subnav-link{
+			color: @brand-primary;
+		}
+	}
+	
+}
+
+.cui-subnav-link{
+	display: block;*zoom:1;
+	padding: 0 30px;height: 16px;line-height: 16px;
+	border-right: 1px solid #e7e7e7;
+	color: #666;font-weight: bold;font-size: 14px;
+	&.last{
+		border: none;
+	}
+	.num-count{
+		display: inline-block;
+		margin-left: 5px;
+		height: 19px;line-height: 19px;padding: 0 6px;
+		background: #FF8500;border-radius: 2px;
+		text-align: center;color: #fff;font-size: 10px;
+	}
+}
+
+
+.cui-trash{
+	.right;
+	padding: 10px 20px;height: 16px;line-height: 16px;
+	color: #666;
+	&:hover{
+		color: #333;
+	}
+}

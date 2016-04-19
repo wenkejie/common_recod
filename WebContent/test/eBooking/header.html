@@ -1,0 +1,259 @@
+
+	<div id="header">
+	<div class="top-info">
+		<div class="wrap">
+			<a href="/" class="logo">运价通</a>
+			<ul class="nav">
+				<li class="nav-cell">
+					<a class="nav-link nav-link-first fonticon" href="#">&#x3497;</a>
+				</li>
+				<li class="nav-cell">
+					<a class="nav-link fonticon" href="index.shtml">&#x3482;</a>
+				</li>
+				<li class="nav-cell">
+					<a class="nav-link " href="#">运价通</a>
+					<div class="nav-cell-arrow">
+						◆
+						<em>◆</em>
+					</div>
+				</li>
+			</ul>
+			<ul class="top-menu">
+				<li class="top-menu-cell psr">
+					<a class="top-menu-link" href="javascript:">订单管理</a>
+					<div class="nui-tips top-menu-tips w200">
+						<div class="nui-tips-arrow top">
+							◆ <em>◆</em>
+						</div>
+						<div class="nui-tips-cnt">
+							您有一票新的订单，请点击查收！ 
+						</div>
+					</div>
+				</li>
+				<li class="top-menu-cell">
+					<a class="top-menu-link" target="_blank" href="http://b.qq.com/webc.htm?new=0&amp;sid=4008828871&amp;eid=218808P8z8p8x8q8P8z8z&amp;q=7">咨询</a>
+				</li>
+				<li id="help-center" class="top-menu-cell cur-p has-dropdown">
+					帮助中心 <i class="top-menu-icon">㐸</i>
+					<div class="nui-drop-down block" style="*width:115px;">
+						<ul class="nui-select-list">
+							<li class="nui-select-list-li" style="padding-left: 10px;">
+								<a target="_blank" href="/cms/publicHelpHome.ctrl">帮助中心</a>
+							</li>
+							<li class="nui-select-list-li last" style="padding-left: 10px;">
+								<a target="_blank" href="/cms/view/yunjiaUe/help.jsp">新手引导</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="top-menu-cell pr0">你好：</li>
+				<li class="top-menu-cell cur-p has-dropdown">
+					<span id="relateEmployeeName">胡伟</span> <i class="top-menu-icon">㐸</i>
+					<input id="currUserId" type="hidden" value="209080">
+					<input id="currEmployeeName" type="hidden" value="胡伟">
+					<input id="setEmployeeName" type="hidden" value="胡伟">
+					<input id="setEmployeeId" type="hidden" value="44411">
+					<input id="setUserId" type="hidden" value="209080">
+					<div class="nui-drop-down block" style="*width:150px;">
+						<ul class="nui-select-list">
+							<li class="nui-select-list-li">
+								<a id="userInfo" href="javascript:">
+									<i class="mr5 animate">㓬</i>
+									账户信息
+								</a>
+							</li>
+							<!-- modify by 曹金彦,2014-7-23,修改密码从登录信息中获取 -->
+							<li class="nui-select-list-li">
+								<a href="javascript:" id="modifyPassWord" name="modifyPassWord" onclick="openWindow('/cpmembership/memuser.ctrl?$action=modifyUserPassword&amp;actionType=show','修改密码',{width:750,height:450})">
+									<i class="mr5 animate">㔳</i>
+									修改密码
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</li>
+				<li class="top-menu-cell">
+					<em>|</em>
+				</li>
+
+				<!-- modify by 曹金彦,201406A,基础设置页面没有与生意通相关的设置-->
+
+				<li class="top-menu-cell">
+					<a class="top-menu-link" href="javascript:" id="home_baseset" data-module="home_baseset">基础设置</a>
+				</li>
+
+				<li class="top-menu-cell">
+					<a class="top-menu-link" href="/cpmembership/privateLog.ctrl?$action=logoutAction">退出</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 应用内部导航 -->
+
+	<div class="main-nav ">
+		<ul class="wrap">
+			<li class="main-nav-cell">
+				<a href="#" class="main-nav-link">
+					<i>&#x343c;</i>
+					运价首页
+				</a>
+			</li>
+			<li class="main-nav-cell">
+				<a href="#" class="main-nav-link">
+					<i>&#x355d;</i>
+					运价查询
+				</a>
+				<ol class="main-nav-drop-down">
+					<li class="main-sub-nav-arrow-line">◆</li>
+					<li>
+						<a href="javascript:" class="main-nav-drop-down-link">海运整箱查询</a>
+					</li>
+					<li>
+						<a href="javascript:" class="main-nav-drop-down-link">海运出口拼箱查询</a>
+					</li>
+					<li>
+						<a href="javascript:" class="main-nav-drop-down-link">空运查询</a>
+					</li>
+				</ol>
+			</li>
+			<li class="main-nav-cell psr">
+				<a href="#" class="main-nav-link">
+					<i>&#x358d;</i>
+					运价维护
+				</a>
+			</li>
+			<li class="main-nav-cell">
+				<a href="#" class="main-nav-link">
+					<i>&#x34fb;</i>
+					基础资料
+				</a>
+			</li>
+			<li class="main-nav-cell">
+				<a href="list.shtml" class="main-nav-link">
+					<i>&#x351d;</i>
+					客户管理
+				</a>
+				<ol class="main-nav-drop-down">
+					<li class="main-sub-nav-arrow-line">◆</li>
+					<li>
+						<a class="main-nav-drop-down-link" href="list.shtml" >账户管理</a>
+					</li>
+					<li>
+						<a class="main-nav-drop-down-link" href="analytics.shtml">行为分析管理</a>
+					</li>
+					<li>
+						<a class="main-nav-drop-down-link" href="ruleset.shtml">多级运价管理</a>
+					</li>
+					<li>
+						<a class="main-nav-drop-down-link" href="javascript:">邀请体验管理</a>
+					</li>
+				</ol>
+
+			</li>
+			<li class="main-nav-cell">
+				<a href="#" class="main-nav-link">
+					<i>&#x3590;</i>
+					更多功能
+				</a>
+				<div class="main-nav-drop-down">
+					<span class="main-sub-nav-arrow-line">◆</span>
+					<table>
+						<tr>
+							<td class="first">
+								<dl>
+									<dt>分类名称</dt>
+									<dd>
+										<ol>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+											</li>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+											</li>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+											</li>
+										</ol>
+									</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt>分类名称</dt>
+									<dd>
+										<ol>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+											</li>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+											</li>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+											</li>
+										</ol>
+									</dd>
+								</dl>
+							</td>
+							<td>
+								<dl>
+									<dt>分类名称</dt>
+									<dd>
+										<ol>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+											</li>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+											</li>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+											</li>
+										</ol>
+									</dd>
+								</dl>
+							</td>
+							<td class="last">
+								<dl>
+									<dt>分类名称</dt>
+									<dd>
+										<ol>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+											</li>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+											</li>
+											<li>
+												<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+											</li>
+										</ol>
+									</dd>
+								</dl>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- <div class="main-sub-nav">
+	<ul class="wrap">
+		<li>
+			<a class="main-sub-nav-link main-sub-nav-link-active" href="list.shtml" >账户管理</a>
+		</li>
+		<li>
+			<a class="main-sub-nav-link" href="analytics.shtml">行为分析管理</a>
+		</li>
+		<li>
+			<a class="main-sub-nav-link" href="ruleset.shtml">多级运价管理</a>
+		</li>
+		<li>
+			<a class="main-sub-nav-link" href="javascript:">邀请体验管理</a>
+		</li>
+	</ul>
+
+</div>
+-->
+</div>

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<!-- <link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /> -->
+	<!-- 自己的样式要加在引入样式的后面 -->
+	
+	<link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/login.css">
+	<link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/yunjiaue.css">
+	<style type="text/css">
+		html,body{height:100%}
+		.hashow{position:relative;margin-top:20px;}
+
+		.shadow-open-win{
+			margin-top: -100px;
+		}
+	</style>
+</head>
+	<div id="wrapper">
+		<div id="wrap">
+			<div id="company">
+				<img src="http://600jittest.oss.600jit.com/upload_public/cpmembership/sites/5/orgs/10002/users/187/files/image/png/fba1d17d-3966-417f-a1a5-e8ee1fe48194/QQ%E6%88%AA%E5%9B%BE20140318150540.png?Expires=1395368094&OSSAccessKeyId=gj9a1twwga7yi4tpg2glcqwa&Signature=ZZ8GIOEXfpREcSISwWtWQqh1TQM%3D" style="width:127px;height:71px" />
+				<h1>奥林国际物流</h1>
+			</div>
+
+			<div class="loginPanel">
+				<h2>会员登录</h2>
+				<form id="loginForm" method="post">
+
+					<input type="hidden" id="loginError" name="loginError" value="" />
+					<input type="hidden" id="errorURL" name="errorURL"/>
+					<input type="hidden" name="backURL" value="http://sdf.600jit.com/cpmembership/privateLog.ctrl?$action=route"/>
+					<input type="hidden" name="serverName" value="sdf.600jit.com"/>
+					<input type="hidden" name="serverPort" value="80"/>
+					<input type="hidden" id="logoutUrl" name="logoutUrl" value="http://sdf.600jit.com/cpthemes/commonLog.ctrl"/>
+					
+					<div class="erroTxt hide">
+						<s></s>
+						！
+					</div>
+					<div class="formLine">
+						<div class="input username">
+							<label for="username">用户名</label>
+							<input type="text" name="username" id="username" value=""/>
+						</div>
+					</div>
+					<div class="formLine">
+						<div class="input passowrds">
+							<label for="password">密码</label>
+							<input type="password" name="password" id="password"/>
+						</div>
+						<a href="/cpmembership/findPwd.ctrl?$action=returnToOne">忘记密码</a>
+					</div>
+					<div class="formLine hide">
+						<div class="input code">
+							<label for="validContent">验证码</label>
+							<input type="text" id="validContent" name="validContent" />
+						</div>
+						<a href="javascript:" >
+							<img src="/cpmembership/commonLog.ctrl?$action=validContentAction" height="30" width="83" />
+							换一张
+						</a>
+					</div>
+					<div class="formLine">
+						<input type="checkbox" id="remember"/>
+						<label for="remember">记住用户名</label>
+					</div>
+					<a href="javascript:" onclick="submit_f();return false;" class="btn">登录</a>
+					<a href="/cpmembership/regist.ctrl?$action=registOneView" class="btn btnReg">免费注册</a>
+				</form>
+			</div>
+
+		</div>
+		<div id="footer">
+			<a  href="http://www.500jit.com" target="_blank">
+				<img src="http://cpcommon.600jit.com/fcommon/public/images/login_logo.gif"  width="68" height="19" />
+			</a>
+			版权所有 © 2013 奥林科技(宁波)有限公司    Powered by
+			<a href="http://www.500jit.com" target="_blank">OlymTech(NingBo), Ltd.</a>
+			&nbsp;&nbsp; <em style="cursor:pointer;" onclick="alert('系统参数:Orange-PC');">&nbsp;</em>
+		</div>
+	</div>
+	<div class="shadow-mask">
+		
+	</div>
+	<div class="shadow-mask-cnt">
+			<div class="shadow-open-win">
+				<div class="open-win-top">
+					<div class="top-logo"></div>
+					<div class="top-text">
+						<div class="top-text-cnt">
+							<h2>这里是运价通的登入界面，登入后，你可以进入运价查询界面</h2>
+						</div>
+					</div>
+				</div>
+				<div class="open-win-bottom">
+					<a class="mask-btn-2" href="step-six.html"></a><a class="mask-btn" href="step-seven.html"></a>
+				</div>
+			</div>
+	</div>
+
+</body>
+</html>

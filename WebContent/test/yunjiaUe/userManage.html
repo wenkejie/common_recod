@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)http://sdf.600jit.com/cpmembership/userManage.ctrl?$action=QueryUser -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>员工管理</title>
+
+
+<link href="jquery-ui-1.10.2.freight.css" rel="stylesheet" type="text/css">
+<link href="common-v1.2(1).css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.10.2.freight.min(1).js"></script>
+<script type="text/javascript" src="fcommon-2.0.min(1).js"></script>
+<script type="text/javascript" src="headNav(1).js"></script>
+<script type="text/javascript" src="fui-common(2).js"></script>
+<link rel="stylesheet" type="text/css" href="zTreeStyle.css">
+<script src="jquery.ztree.all-3.5.js" type="text/javascript"></script>
+<script type="text/javascript" src="departmentTree.js"></script>
+<script type="text/javascript" src="sysparam-cm.js"></script>
+<script type="text/javascript" src="sysEmployeeSet.js"></script>
+
+
+</head>
+<body>
+<form action="userManage.htm" id="userForm" name="userForm" method="post">		
+<input type="hidden" id="isSelectedAllPage" name="isSelectedAllPage" value="no">
+<input type="hidden" id="mynumber" name="mynumber">
+<input type="hidden" id="isshow" name="isshow" value="1">
+	<div class="wrap tal">
+			<div class="right-side-submenu" style="height: 2170px;">
+				<h2 class="left-side-title"><i>㖒</i> 部门管理</h2>
+				<div class="nui-group-btn ml15 mb15">
+					<a id="addLeaf" class="nui-btn nui-btn-28 pd5-10" title="添加" onclick="return false;"><i class="fs14">㖦</i></a>
+					<a id="edit" class="nui-btn nui-btn-28 pd5-10" title="编辑" onclick="return false;"><i class="fs14">㐴</i></a>
+					<a id="remove" class="nui-btn nui-btn-28 pd5-10" title="删除" onclick="return false;"><i class="fs14">㓤</i></a>
+					<a id="addDept" class="nui-btn nui-btn-28 pd5-10" title="设置主管" onclick="return false;"><i class="fs14">㔝</i></a>
+				</div>
+				<div class="zTreeDemoBackground ml10">
+					<ul id="treeDemo" class="ztree"><li id="treeDemo_1" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="treeDemo_1_switch" title="" class="button level0 switch root_open" treenode_switch=""></span><a id="treeDemo_1_a" class="level0 curSelectedNode" treenode_a="" onclick="" target="_blank" style="font-weight:bold;" title="随机发货的"><span id="treeDemo_1_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="treeDemo_1_span">随机发货的</span><span class="button add " id="addBtn_166" title="添加" onfocus="this.blur();"></span><span class="button edit " id="editBtn_166" title="编辑" onfocus="this.blur();"></span><span class="button remove " id="removeBtn_166" title="删除" onfocus="this.blur();"></span><span class="button star " id="starBtn_166" title="设置主管" onfocus="this.blur();"></span></a><ul id="treeDemo_1_ul" class="level0 " style="display:block"><li id="treeDemo_2" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="treeDemo_2_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="treeDemo_2_a" class="level1" treenode_a="" onclick="" target="_blank" style="" title="技术部"><span id="treeDemo_2_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="treeDemo_2_span">技术部</span></a></li><li id="treeDemo_3" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="treeDemo_3_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="treeDemo_3_a" class="level1" treenode_a="" onclick="" target="_blank" style="" title="卡萨诺的三"><span id="treeDemo_3_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="treeDemo_3_span">卡萨诺的三</span></a></li><li id="treeDemo_4" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="treeDemo_4_switch" title="" class="button level1 switch center_open" treenode_switch=""></span><a id="treeDemo_4_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:bold;" title="开发部1"><span id="treeDemo_4_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="treeDemo_4_span">开发部1</span></a><ul id="treeDemo_4_ul" class="level1 line" style="display:block"><li id="treeDemo_5" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="treeDemo_5_switch" title="" class="button level2 switch center_docu" treenode_switch=""></span><a id="treeDemo_5_a" class="level2" treenode_a="" onclick="" target="_blank" style="" title="可供客户结是"><span id="treeDemo_5_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="treeDemo_5_span">可供客户结是</span></a></li><li id="treeDemo_6" class="level2" tabindex="0" hidefocus="true" treenode=""><span id="treeDemo_6_switch" title="" class="button level2 switch bottom_open" treenode_switch=""></span><a id="treeDemo_6_a" class="level2" treenode_a="" onclick="" target="_blank" style="font-weight:bold;" title="测试一部"><span id="treeDemo_6_ico" title="" treenode_ico="" class="button ico_open" style="width:0px;height:0px;"></span><span id="treeDemo_6_span">测试一部</span></a><ul id="treeDemo_6_ul" class="level2 " style="display:block"><li id="treeDemo_7" class="level3" tabindex="0" hidefocus="true" treenode=""><span id="treeDemo_7_switch" title="" class="button level3 switch bottom_docu" treenode_switch=""></span><a id="treeDemo_7_a" class="level3" treenode_a="" onclick="" target="_blank" style="" title="测试一部（1）"><span id="treeDemo_7_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="treeDemo_7_span">测试一部（1）</span></a></li></ul></li></ul></li><li id="treeDemo_8" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="treeDemo_8_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="treeDemo_8_a" class="level1" treenode_a="" onclick="" target="_blank" style="" title="测试"><span id="treeDemo_8_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="treeDemo_8_span">测试</span></a></li><li id="treeDemo_9" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="treeDemo_9_switch" title="" class="button level1 switch bottom_docu" treenode_switch=""></span><a id="treeDemo_9_a" class="level1" treenode_a="" onclick="" target="_blank" style="" title="运维"><span id="treeDemo_9_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span><span id="treeDemo_9_span">运维</span></a></li></ul></li></ul>
+				</div>
+			</div>
+			<div id="gh">
+				<div class="right-side-cnt psr">
+					<div class="main-title">
+						<h1 class="" id="main_title_user">随机发货的</h1>
+						
+						<div class="title-info"><h2>账号统计信息</h2>
+							<div class="right mt5"><i>㕰</i><a href="javascript:" class="closed-contact" id="LeaveEmployee">已离职职员</a></div>
+						</div>
+						
+						 	<strong>运价通：</strong>已购买 <span class="text-warning fwb">
+							100</span> 个 | 剩余
+							 <span class="text-warning fwb">43 </span> 个 
+					 	
+						 	<strong>生意通：</strong>已购买 <span class="text-warning fwb">
+							100</span> 个 | 剩余
+							 <span class="text-warning fwb">90 </span> 个 
+					 	
+					 </div>
+					<div class="search-area-grid">
+						<div class="grid">
+							<label for="username" class="nui-label w50">姓名：</label>
+							<div class="nui-form-cell w50  mr5">
+								<input type="text" id="name" name="name" class="nui-input" value="">
+							</div>
+							<label for="companyname" class="nui-label w50">手机：</label>
+							<div class="nui-form-cell w80  mr5">
+								<input type="text" id="mobile" name="mobile" class="nui-input" value="">
+							</div>
+							<label for="email" class="nui-label w50">邮箱：</label>
+							<div class="nui-form-cell w100  mr5">
+								<input type="text" id="email" name="email" class="nui-input" value="">
+							</div>
+							<span id="j-toggle">
+								<a href="javascript:" class="nui-btn nui-btn-primary " id="j-query">搜 索</a>
+							</span>
+						</div>
+					</div>
+					<div class="result-area ofa">
+						<div class="result-fn-area">
+							<a href="javascript:" class="nui-btn" id="addEmployee"><i class="fs12">㖦</i> 新增</a>
+							<div class="result-fn-area-port">
+								<a href="javascript:" class="nui-btn nui-btn-disable" id="operate"><em>批量操作</em> <i class="fs14">㐸</i></a>
+								<div class="nui-drop-list none">
+									<ul class="nui-drop-list-choose oneline">
+										<li><a href="javascript:" id="batchSetPurA">设置权限</a></li>
+										<li><a href="javascript:" id="editDept">部门设置</a></li>
+										<li><a href="javascript:" id="userdel">离职</a></li>
+										<li><a href="javascript:" id="PutDisable">禁用</a></li>
+									</ul>
+								</div>
+							</div>
+							<a href="javascript:" class="nui-btn" id="uploadEmployee"><i>㑕</i> 导入员工</a>
+						</div>
+						<div class="result-table-area">
+							<table class="result-table">
+								<thead>
+									<tr>
+										<th class="checkbox"><input id="jselAll" type="checkbox" name="jselAll" title="选中/取消选中" value=""></th>
+										<th class="name">员工姓名 | 职务</th>
+										<th class="mobile">手机 | 邮箱</th>
+										<th class="dept">部门 </th>
+										<th class="status">服务状态</th>
+										<th class="action">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									
+									<tr>
+										<td class="checkbox"><input class="" type="checkbox" value="34" user_id="458" isadminuser="true" id="checkbox" name="checkbox" disabled="disabled"></td>
+										<td><i title="管理员">㔝</i>no_on<p class="sub-info"></p></td>
+										<td>1234567890&nbsp;<p class="sub-info"><a href="mailto:84497503@163.com">84497503@163.com</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											已启用
+											<input type="hidden" id="34_user_status" value="已启用">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="34" isadminuser="true">详情  <i class="fs14">㐸</i></a></li>
+												
+												
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="82" user_id="205" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>测试一<p class="sub-info">才</p></td>
+										<td>1234567890&nbsp;<p class="sub-info"><a href="mailto:ww@ds.com">ww@ds.com</a></p></td>
+										<td class="toe" title="技术部,卡萨诺的三">技术部,卡萨诺的三&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											已启用
+											<input type="hidden" id="82_user_status" value="已启用">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="82" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="205" employee_id="82" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="82">离职</a></li>
+												
+												
+													<li class="slide-down-menu-li"><a class="last" href="javascript:" name="delputdisable" employeeid="82">禁用</a></li>
+												
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="90" user_id="213" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>魏长浩<p class="sub-info"></p></td>
+										<td>11&nbsp;<p class="sub-info"><a href="mailto:rice@olymtech.com">rice@olymtech.com</a></p></td>
+										<td class="toe" title="技术部">技术部&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="90_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="90" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="213" employee_id="90" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="90">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="90">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="92" user_id="215" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>&lt;a&gt;aa&lt;/a&gt;<p class="sub-info">开发</p></td>
+										<td>13567899999&nbsp;<p class="sub-info"><a href="mailto:xiaoba@163.com">xiaoba@163.com</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="92_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="92" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="215" employee_id="92" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="92">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="92">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="95" user_id="217" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>aaassss<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="95_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="95" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="217" employee_id="95" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="95">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="95">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="96" user_id="218" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>qqqqqqqqqq<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="96_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="96" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="218" employee_id="96" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="96">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="96">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="98" user_id="220" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>eeeee<p class="sub-info">FFFFFFFFFFFFFFFF</p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:EE@163.COM">EE@163.COM</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="98_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="98" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="220" employee_id="98" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="98">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="98">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="99" user_id="221" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>ces<p class="sub-info">asd</p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="99_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="99" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="221" employee_id="99" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="99">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="99">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="100" user_id="222" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>shichao<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="100_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="100" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="222" employee_id="100" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="100">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="100">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="101" user_id="187" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>曹金彦<p class="sub-info"></p></td>
+										<td>32223&nbsp;<p class="sub-info"><a href="mailto:1284745300@qq.com">1284745300@qq.com</a></p></td>
+										<td class="toe" title="测试一部">测试一部&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											已启用
+											<input type="hidden" id="101_user_status" value="已启用">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="101" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="187" employee_id="101" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="101">离职</a></li>
+												
+												
+													<li class="slide-down-menu-li"><a class="last" href="javascript:" name="delputdisable" employeeid="101">禁用</a></li>
+												
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="102" user_id="224" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>罗建<p class="sub-info"></p></td>
+										<td>15067453509&nbsp;<p class="sub-info"><a href="mailto:574301779@qq.com">574301779@qq.com</a></p></td>
+										<td class="toe" title="测试一部（1）">测试一部（1）&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											已启用
+											<input type="hidden" id="102_user_status" value="已启用">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="102" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="224" employee_id="102" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="102">离职</a></li>
+												
+												
+													<li class="slide-down-menu-li"><a class="last" href="javascript:" name="delputdisable" employeeid="102">禁用</a></li>
+												
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="103" user_id="225" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>史超<p class="sub-info"></p></td>
+										<td>15858268693&nbsp;<p class="sub-info"><a href="mailto:574301779@qq.com">574301779@qq.com</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="103_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="103" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="225" employee_id="103" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="103">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="103">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="110" user_id="236" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>小资3<p class="sub-info">11</p></td>
+										<td>11111111111&nbsp;<p class="sub-info"><a href="mailto:11@qq.com">11@qq.com</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="110_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="110" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="236" employee_id="110" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="110">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="110">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="112" user_id="238" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>小资3<p class="sub-info">11</p></td>
+										<td>11111111111&nbsp;<p class="sub-info"><a href="mailto:11@qq.com">11@qq.com</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="112_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="112" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="238" employee_id="112" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="112">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="112">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="117" user_id="243" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>小龙3<p class="sub-info">12</p></td>
+										<td>22222222222&nbsp;<p class="sub-info"><a href="mailto:12@qq.com">12@qq.com</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="117_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="117" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="243" employee_id="117" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="117">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="117">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="123" user_id="264" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>测试小贱1号<p class="sub-info">测试小贱1号</p></td>
+										<td>测试小贱1号&nbsp;<p class="sub-info"><a href="mailto:%E6%B5%8B%E8%AF%95%E5%B0%8F%E8%B4%B11%E5%8F%B7">测试小贱1号</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="123_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="123" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="264" employee_id="123" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="123">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="123">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="124" user_id="265" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>fgf<p class="sub-info">d</p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="124_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="124" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="265" employee_id="124" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="124">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="124">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="125" user_id="266" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>stone<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="125_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="125" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="266" employee_id="125" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="125">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="125">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="130" user_id="267" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>萧萧<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="130_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="130" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="267" employee_id="130" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="130">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="130">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="136" user_id="270" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>菲菲<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:fdg@163.com">fdg@163.com</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="136_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="136" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="270" employee_id="136" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="136">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="136">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="138" user_id="272" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>小龙3<p class="sub-info">12</p></td>
+										<td>22222222222&nbsp;<p class="sub-info"><a href="mailto:12@qq.com">12@qq.com</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="138_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="138" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="272" employee_id="138" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="138">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="138">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="139" user_id="262" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>员工1<p class="sub-info"></p></td>
+										<td>15558330085&nbsp;<p class="sub-info"><a href="mailto:1284745300@qq.com">1284745300@qq.com</a></p></td>
+										<td class="toe" title="开发部1,测试一部（1）">开发部1,测试一部（1）&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											已启用
+											<input type="hidden" id="139_user_status" value="已启用">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="139" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="262" employee_id="139" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="139">离职</a></li>
+												
+												
+													<li class="slide-down-menu-li"><a class="last" href="javascript:" name="delputdisable" employeeid="139">禁用</a></li>
+												
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="140" user_id="273" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>小策划<p class="sub-info">销售</p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="140_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="140" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="273" employee_id="140" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="140">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="140">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="141" user_id="274" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>xiaohai<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="141_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="141" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="274" employee_id="141" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="141">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="141">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="143" user_id="276" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>xiaoxiao<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="143_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="143" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="276" employee_id="143" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="143">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="143">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="144" user_id="263" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>员工2<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:1284745300@qq.com">1284745300@qq.com</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											已启用
+											<input type="hidden" id="144_user_status" value="已启用">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="144" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="263" employee_id="144" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="144">离职</a></li>
+												
+												
+													<li class="slide-down-menu-li"><a class="last" href="javascript:" name="delputdisable" employeeid="144">禁用</a></li>
+												
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="145" user_id="277" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>aaa<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="145_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="145" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="277" employee_id="145" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="145">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="145">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="146" user_id="278" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>~11122ss<p class="sub-info">ss</p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:"></a></p></td>
+										<td class="toe" title="技术部">技术部&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="146_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="146" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="278" employee_id="146" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="146">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="146">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="149" user_id="-1" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>王小二<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:123@qq.com">123@qq.com</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											未开通
+											<input type="hidden" id="149_user_status" value="未开通">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="149" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="-1" employee_id="149" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="149">离职</a></li>
+												
+												
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+									<tr>
+										<td class="checkbox"><input class="item" type="checkbox" value="150" user_id="298" isadminuser="false" id="checkbox" name="checkbox"></td>
+										<td>fasdfsadfsdaf<p class="sub-info"></p></td>
+										<td>&nbsp;<p class="sub-info"><a href="mailto:574301779@qq.com">574301779@qq.com</a></p></td>
+										<td class="toe" title="开发部1">开发部1&nbsp;<p class="sub-info"></p></td>
+										<td>
+											
+											待激活
+											<input type="hidden" id="150_user_status" value="待激活">
+										</td>
+										<td>
+											<div class="action-cnt">
+												<ul class="slide-down-menu">
+													<li><a class="first detailEmployee" href="javascript:" employee_id="150" isadminuser="false">详情  <i class="fs14">㐸</i></a></li>
+												
+													<li class="slide-down-menu-li set-power"><a class="set-power" user_id="298" employee_id="150" org_license_rela_id="-1" href="javascript:">设置权限</a></li>
+													<li class="slide-down-menu-li"><a href="javascript:" name="delsingle" employeeid="150">离职</a></li>
+												
+												
+												
+													<li class="slide-down-menu-li"><a href="javascript:" name="doubleinvite" employeeid="150">重新开通</a></li>
+															
+											</ul>
+											</div>
+										</td>
+									</tr>	
+									
+								</tbody>
+							</table>
+				
+						<div class="result-footer">
+							<div class="left-area"></div>
+							<div class="page">
+									<span class="pageinfo">
+									
+												<input type="hidden" id="pageNo" name="pageNo" value="1">
+												<input type="hidden" id="pageCount" name="pageCount" value="6">
+												<input type="hidden" id="count" name="count" value="154">
+												
+												1-30条，共<em class="pageinfo">154</em>条</span>
+												
+														<a href="javascript:" id="next_page">下一页</a>
+														<a href="javascript:" id="last_page">尾页</a>
+														
+								</div>
+							 </div>
+		  				</div>
+		  			</div>
+		  			<a id="divhidde" title="隐藏部门" class="fonticon right-side-submenu-hide" href="javascript:" onclick="hiddeDiv();" style="top: 70px;">㖟</a>
+		 			<a id="divshow" title="显示部门" class="fonticon right-side-submenu-hide right-side-submenu-show none" href="javascript:" onclick="showDiv();" style="top: 70px;">㖞</a>
+				</div>
+			</div>
+	</div>
+</form>
+<div id="div_tips" class="nui-tips oneline none" style="left: 35px; top: 322px;z-index: 999">
+	<label id="tipsText" for="thVal" class="nui-label w-a"></label>
+	<div class="nui-tips-arrow top " style="left: 10px;">◆<em>◆</em></div>
+</div>
+
+</body></html>

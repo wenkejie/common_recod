@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>sortable</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<style type="text/css">
+	
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			var $from = $('#js-thSource'),
+				$at = $('#js-thAt'),
+				$container =$('.connectedSortable'),
+				cw = $container.width(),
+				cwNow = 0,
+				thFrom = [{
+					"val": "起运11港",
+					"seqNo":1,
+					"defaultWidth": 30
+				}, {
+					"val": "起运港",
+					"seqNo":1,
+					"subVal": ["20GP", "40GP", "40HQ"],
+					"defaultWidth": 200
+				}, {
+					"val": "起运2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "起运港",
+					"seqNo":1,
+					"subVal": ["20GP", "40GP", "40HQ"],
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}, {
+					"val": "2港",
+					"seqNo":1,
+					"defaultWidth": 100
+				}];
+
+				thAt = [{
+					"fixed":true,
+					"val": "起运11港",
+					"seqNo": 1,
+					"defaultWidth": 100
+				}, {
+					"fixed":true,
+					"val": "起运港",
+					"seqNo": 1,
+					"subVal": ["20GP", "40GP", "40HQ"],
+					"defaultWidth": 150
+				}, {
+					"val": "起运2港",
+					"seqNo": 1,
+					"defaultWidth": 200
+				}, {
+					"val": "2港",
+					"seqNo": 1,
+					"defaultWidth": 100
+				}];
+
+
+				//创建对象
+				function crateObj(item, where, isDefaultWidth) {
+					var formHtml = ""
+					for (var i = 0; i < item.length; i++) {
+						var td = "",
+							fixed = item[i].fixed ? "fixed =" + true : "",
+							width = isDefaultWidth ? "style ='width:" +item[i].defaultWidth+"px'" : "";
+						if (item[i].subVal) {
+							for (var n = 0; n < item[i].subVal.length; n++) {
+								td += "<td>" + item[i].subVal[n] + "</td>"
+							};
+							formHtml += "<li seqNo='" + item[i].seqNo + "' " + fixed + " "+ width +"><table class=\"fui-li-table-2row\"><tr><td colspan='" + item[i].subVal.length + "''>" + item[i].val + "</td></tr><tr>" + td + "</tr></table><div class=\"fui-resize-x\"></div></li>"
+						} else {
+							formHtml += "<li seqNo='" + item[i].seqNo + "' " + fixed + " "+ width +"><span>" + item[i].val + "</span><div class=\"fui-resize-x\"></div></li>"
+							// console.log(item[i].val)
+						}
+					};
+					where.html(formHtml)
+				}
+
+				crateObj(thFrom, $from) //创建来源池中对象
+				crateObj(thAt, $at.find('ul'), true) //配置池中对象 true 为把json中的defalutwidth应用到style中
+
+				
+				// 初始化每个li的默认值
+				function setPara(item,json) {
+					item.find("li").each(function(i) {
+						$(this).data({
+							"val": json[i].val,
+							"subVal":json[i].subVal || "",
+							"width": $(this).outerWidth,
+							"defaultWidth": json[i].defaultWidth
+						})
+					})
+				}
+				setPara($from,thFrom)
+				setPara($at,thAt)
+
+
+				//把元素放回池中
+				function moveCell($item) {
+					$item.hide("fast", function() {
+						$item.css('width', '')
+							.find("a").remove().end();
+						if ($item.find('td').size()) {
+							$item.find('tr:first td').text($item.data("val")).end()
+								.find("tr:last td").each(function(i) {
+									$(this).text($item.data("subVal")[i])
+								})
+						} else {
+							$item.find('span').text($item.data("val"))
+						}
+
+						$item.appendTo($from).show(function() {
+							setcountW()
+						});
+					})
+				}
+
+				//把元素放回池中
+				function addCell($item) {
+					$item.hide("fast", function() {
+						$item.css('width', $item.data("defaultWidth"))
+							.find("a").remove().end()
+							.appendTo($at.find('ul')).show(function() {
+							setcountW()
+						});
+					})
+				}
+
+
+				//计算当前li的总长并在超过页面的时候赋值给父级
+				function setcountW() {
+					var li = $container.find('li'),
+						w = 0;
+					
+						li.each(function() {
+							// w += parseFloat($(this)[0].style.width) ||( $(this).data("width")) || $(this).outerWidth();
+							// w +=  $(this).data("defaultWidth")
+							w +=   $(this).outerWidth() < $(this).data("defaultWidth") ? $(this).data("defaultWidth") : $(this).outerWidth()
+							// console.log(parseFloat($(this)[0].style.width))
+						});
+					
+					cw < w ? ($container.width(w),$at.height(75)) : ($container.width("auto"),$at.height(60));
+				}
+
+
+				
+
+			$at.find("ul").sortable({
+				opacity: 0.5,
+				cursor: "move",
+				revert: true,//鼠标放开后归位动画
+				containment: $at,//限制移动范围
+				scroll:false,
+				cancel: "a,.fui-resize-x,input",
+				start:function () {
+					$tips.addClass('none');
+				},
+				receive: function(event, ui) {
+					ui.item.addClass('fui-li-table-cell');
+					// ui.item.find('div').size() || ui.item.append('<div class="fui-resize-x"></div>')//如果没有拖动大小层的话，加上这个层
+					// ui.item.width(ui.item.data("width"))
+					ui.item.animate({width:ui.item.data("defaultWidth")},300,function () {
+						setcountW()//为了防止默认宽度小于当前宽度时造成的table 外框太大
+					})
+					ui.item.find('a').remove()
+				},
+				over:function (event, ui) {
+					setcountW()
+				},
+				deactivate:function (event, ui) {
+					setcountW()
+					// ui.item.removeClass('fui-li-table-cell')
+				}
+			}).disableSelection()
+				.delegate('a.fui-close', 'click', function() {
+					var parent = $(this).parent();
+					$(this).remove()
+					moveCell(parent);
+					$tips.addClass('none');
+
+				})
+				.delegate('li', 'mouseenter', function() {
+					!$(this).attr("fixed") && $(this).append("<a href=\"javascript:\" class='fui-close' title=\"删除\">×</a>");
+					$(this).find('div.fui-resize-x').addClass('fui-resize-x-hover')
+				})
+				.delegate('li', 'mouseleave', function() {
+					$(this).find('a').remove()
+					$(this).find('div.fui-resize-x').removeClass('fui-resize-x-hover')
+				})
+				.delegate('.fui-resize-x', 'mousedown', function(e) { //拖拉表格大小
+					var that = $(this).parent(),
+						thisx = e.pageX,
+						w = that.width(),
+						offset = that.position(),
+						scrollLeft = $at.scrollLeft(),
+						$helper = $("<div>"); //创建虚框对象
+
+					$helper.addClass('fui-resizeable-helper').css({
+						width: that.outerWidth(),
+						height: that.outerHeight(),
+						left: scrollLeft + offset.left - 2,
+						top: offset.top - 1
+					}).appendTo($at)
+
+					$("body").addClass('cur-e');
+					$tips.addClass('none');
+					// console.log(offset.left + " | " + scrollLeft)
+					$(document).bind('mousemove', function(e) { //表格大小拖拉
+						var thisw = w + e.pageX - thisx,
+							minW = that.find('td').size() ? 100 : 30;
+						if (thisw > minW) { //限制其小于一定数值后不再缩小
+							$helper.width(thisw)
+							// that.width(thisw)
+						}
+					});
+
+					$(document).one('mouseup', function() {
+						
+						$('body').removeClass('cur-e');
+						$(document).unbind('mousemove');
+						that.width($helper.width());
+						that.data("defaultWidth",$helper.width())
+						setcountW();
+						$helper.remove();
+					});
+				})
+					.delegate('li', 'dblclick', function(event) {
+
+						var isTd = event.target.nodeName == "TD";
+						var $text =isTd ? $(event.target) : $(this).find('span'),
+							_text = $text.text();
+							$('#js-thText').text(_text);
+
+						var	offset = $(this).offset(),
+							$input = $tips.find('input'),
+							tipsW = $tips.outerWidth(),
+							isMaxLeft = documentW - offset.left - tipsW <0,
+							fixLeft = documentW - tipsW -10,//减10是为了留点边距，更美观点
+							fixTop = offset.top + 40 ,
+							arrowLeft = isMaxLeft ? offset.left - fixLeft : 10;
+// console.log(arrowLeft+" "+tipsW)
+							if(isTd){
+								var _left = $(event.target).width() * $(event.target).index() + 10
+								!$(event.target).parent().index() && (fixTop -= 20)
+								arrowLeft = isMaxLeft ? offset.left - fixLeft + _left -10: _left
+								
+							}
+
+							// 判断是否超过左右边距
+							if (isMaxLeft) {
+								fixLeft = fixLeft
+							} else if (offset.left < 0) {
+								fixLeft = 10;
+								arrowLeft = 7
+							} else {
+								fixLeft = offset.left
+							}
+
+
+							function setVal () {
+								$text.text($input.val());
+							}
+							// console.log(event.target.nodeName)
+
+						
+						$tips.removeClass('none');
+						$input.val(_text)
+						.unbind("keyup")
+						.keyup(function(event) {
+							if(event.keyCode  == 13){
+								setVal ()
+								$tips.addClass('none')
+							}else if(event.keyCode == 27 ){
+								$tips.addClass('none')
+							}
+						});
+						$input[0].select()
+
+						$tips.css({
+							left: fixLeft,
+							top: fixTop
+						}).find('div.top').css('left', arrowLeft);
+						// $(document).one('click', function() {
+						// 	$tips.addClass('none')
+						// });
+						//滚动的时候隐藏修改框
+						$at.one('scroll', function() {
+							$tips.addClass('none');
+						});
+
+						// 保存修改的值， unbind 防止重复提交
+						$tips.find('a.fui-btn').unbind("click").one('click',function () {
+							setVal ()
+						})
+
+					})
+
+
+					
+
+				var $tips = $('div.fui-tips'),
+					// tipsW = $tips.outerWidth(),
+					documentW = $(document).width();
+				$tips
+				.delegate('a', 'click', function() {
+					$tips.addClass('none');
+
+				});
+
+				
+			// $("li", $from).draggable({
+			// 	revert: "invalid",
+			// 	// containment: "document",
+			// 	cursor: 'move'
+			// })
+			// $at.droppable({
+			// 	accept: "#js-thSource > li",
+			// 	activeClass: "fui-grid-active",
+			// 	drop: function(event, ui) {
+			// 		addCell(ui.draggable);
+			// 	}
+			// });
+				
+
+			// function addCell($item) {
+			// 	$item.fadeOut(function() {
+			// 		var td = $("<td>");
+			// 		td.html($item.html());
+			// 		console.log(td);
+			// 		td.appendTo($at.find('tr')).fadeIn(); 
+			// 	});
+			// }
+			// $('.nosort');
+		
+			$from.sortable({
+				connectWith: $container,
+				opacity: 0.5,
+				cursor: "move",
+				scroll:false,
+				revert: true,
+				// scroll:true,
+				// receive: function(event, ui) {
+				// 	ui.item.removeClass('fui-li-table-cell')
+				// 	// console.log(ui.draggable)
+				// },
+				start: function(event,ui) {
+					$at.addClass('fui-dragable-box-active')
+					// console.log(1)start:function () {
+					$tips.addClass('none');
+				},
+				stop: function() {
+					$at.removeClass('fui-dragable-box-active')
+				}
+
+			}).disableSelection()
+			.delegate('li', 'mouseenter', function() {
+					!$(this).attr("fixed") && $(this).append("<a href=\"javascript:\" class='fui-close' title=\"添加到列头\">+</a>");
+				})
+				.delegate('li', 'mouseleave', function() {
+					$(this).find('a').remove()
+				})
+				.delegate('a', 'click', function() {
+					addCell($(this).parent())
+				});
+
+		})
+	</script>
+</head>
+<body >
+	<div class="fui-dialog-cnt">
+		<span class="fui-title dpib">请把下面的文字拖到第二个方框中排序</span>
+		<ul class="fui-dragable-box clearfix zindex-up" id="js-thSource">
+		
+		</ul>
+		<span class="fui-title dpib  mt20">表格列头（可左右拖拉位置或大小）</span> 
+		<div class="fui-dragable-box li-table-cnt scroll-x " id="js-thAt">
+			<ul class=" clearfix connectedSortable pd10 fui-li-table">
+				
+			</ul>
+		</div>
+		<div class="fui-tips none oneline">
+			<label for="thVal" class="fui-label w-a">"<span class="text-warning" id="js-thText">起运港</span>"改为：</label><div class="fui-form-cell fui-form-cell-error">
+			<input type="text" value="" id="thVal" class="fui-input" />
+		</div><a href="javascript:" class="fui-btn">确定</a><a href="javascript:" class="ml5 vam">取消</a>
+		<div>只能输入10个字符！</div>
+		
+		<div class="fui-tips-arrow top ">◆<em>◆</em></div>
+		</div>
+	</div>
+	<div class="fui-dialog-btm-bar">
+		<a href="javascript:" class="fui-btn fui-btn-dialog"><span>预览</span></a>
+		<a href="javascript:" class="fui-btn fui-btn-dialog-primary"><span>保存</span></a>
+		<a href="javascript:" class="fui-btn fui-btn-dialog"><span>初始化</span></a>
+		<a href="javascript:" class="fui-btn fui-btn-dialog"><span>取消</span></a>
+	</div>
+</body>
+</html>

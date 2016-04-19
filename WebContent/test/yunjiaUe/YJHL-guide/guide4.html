@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<!-- <link rel="stylesheet" href="../../../src/css/richSelect.css" />richselect样式 -->
+	<link rel="stylesheet" href="guide.css" />
+</head>
+<body class="home-body">
+	<div id="header">
+		<div class="top-info">
+			<div class="wrap" isautowrap="true">
+				<input type="hidden" id="employeeid" value="59894">		
+				<input type="hidden" id="orgId" value="141469">		
+				<input type="hidden" id="orgName" value="大掌柜">		
+				<input type="hidden" id="userId" value="484377">		
+				<input type="hidden" id="isadmin" name="isadmin" value="true">		
+				<input type="hidden" id="isadminLaed" name="isadminLaed" value="false">		
+				<input type="hidden" id="ismmprotocol" name="ismmprotocol" value="false">		
+				<input type="hidden" id="isUpdateNotice" name="isUpdateNotice" value="true">		
+				<input type="hidden" id="gotoZghlSearch" name="gotoZghlSearch" value="0">		
+				<a href="#" class="logo">运价通</a>
+				<ul class="nav">
+					<li class="nav-cell  none">
+						<a id="company_emp" class="nav-link nav-link-first nav-link fonticon" href="#">㒗</a>
+						<span class="newinfo-icon">!</span>
+					</li>
+					<li id="company_emp2" class="nav-cell ">
+						<a class="nav-link nav-link-first fonticon" href="javascript:">㒗</a>
+					</li>
+					<li class="nav-cell">
+						<a id="site-msg-open" class="nav-link fonticon" href="javascript:">㒂</a>
+						<!-- 站内信未读消息提醒 -->		
+						<span id="site-msg-count" class="newinfo-icon" style="">2</span>
+					</li>
+					<li class="nav-cell">
+						<a class="nav-link nav-link-last j-ga-statistics" isadmin="true" islaed="false" href="javascript:" id="home_freight" data-module="home_freight">运价通</a>
+						<a id="freight_index_a" target="mainFrame" href="/priceservice/home.ctrl?$action=indexView"></a>
+						<div class="nav-cell-arrow j-freight-nav-arrow">
+							◆ <em>◆</em>
+						</div>
+					</li>
+				</ul>
+				<ul class="top-menu">
+					<li class="top-menu-cell ui-topbar-new w40" id="announcementLi" style="">
+						<a class="new-bulletin-link bulletin-link-inside" href="javascript:" title="点击查看新功能" style="width: 55px;">
+							<span>新功能</span>
+						</a>
+						<div class="ui-bulletin none">
+							<a class="ui-bulletin-close" href="javascript:">╳</a>
+							<h3 class="ui-bulletin-title">【新年特别版】 产品更新版本不止，优化不息</h3>
+							<p class="ui-bulletin-cnt">2月4日产品功能更新通知</p>
+							<a class="ui-bulletin-link" href="javascript:">查看详情</a>
+						</div>
+					</li>
+
+					<li class="top-menu-cell">
+						<a class="top-menu-link j-ga-statistics" target="_blank" href="http://b.qq.com/webc.htm?new=0&amp;sid=4008828871&amp;eid=218808P8z8p8x8q8P8z8z&amp;q=7">咨询</a>
+					</li>
+					<!--<li class="top-menu-cell">		
+					<a class="top-menu-link" target="_blank" href="/cms/publicHelpHome.ctrl">帮助中心</a>
+				</li>
+				-->
+				<li id="help-center" class="top-menu-cell cur-p has-dropdown">
+					帮助中心 <i class="top-menu-icon">㐸</i>
+					<div class="nui-drop-down block" style="*width:115px;">
+						<ul class="nui-select-list">
+							<li class="nui-select-list-li" style="padding-left: 10px;">
+								<a class="j-ga-statistics" target="_blank" href="/cms/publicHelpHome.ctrl">帮助中心</a>
+							</li>
+							<li class="nui-select-list-li" style="padding-left: 10px;">
+								<a class="j-ga-statistics" target="_blank" href="/cms/view/yunjiaUe/help.jsp">新手引导</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="top-menu-cell pr0">你好：</li>
+				<li class="top-menu-cell cur-p has-dropdown">
+					<span style="width:37px" class="dpib toe" id="relateEmployeeName">大掌柜</span> <i class="top-menu-icon">㐸</i>
+					<input id="currUserId" type="hidden" value="484377">		
+					<input id="currEmployeeName" type="hidden" value="大掌柜">		
+					<input id="setEmployeeName" type="hidden" value="大掌柜">		
+					<input id="setEmployeeId" type="hidden" value="59894">		
+					<input id="setUserId" type="hidden" value="484377">		
+					<div class="nui-drop-down block" style="*width:150px;">
+						<ul class="nui-select-list">
+							<li class="nui-select-list-li">
+								<a class="j-ga-statistics" id="userInfo" href="javascript:">
+									<i class="mr5 animate">㓬</i>
+									账户信息
+								</a>
+							</li>
+							<!-- modify by 曹金彦,2014-7-23,修改密码从登录信息中获取 -->		
+							<li class="nui-select-list-li">
+								<a class="j-ga-statistics" href="javascript:" id="modifyPassWord" name="modifyPassWord" onclick="openWindow('/cpmembership/memuser.ctrl?$action=modifyUserPassword&amp;actionType=show','修改密码',{width:750,height:450})">
+									<i class="mr5 animate">㔳</i>
+									修改密码
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="top-menu-cell"> <em>|</em>
+				</li>
+				<!-- modify by 曹金彦,201406A,基础设置页面没有与生意通相关的设置-->		
+				<li class="top-menu-cell">
+					<a class="top-menu-link j-ga-statistics" href="/cpmembership/privateLog.ctrl?$action=logoutAction">退出</a>
+				</li>
+			</ul>
+		</div>
+		</div>
+		<!-- 应用内部导航 -->	
+		<div class="main-nav">
+			<ul class="wrap">
+				<li class="main-nav-cell">
+					<a href="#" class="main-nav-link">
+						<i>&#x343c;</i>
+						运价首页
+					</a>
+				</li>
+				<li class="main-nav-cell">
+					<a href="list.shtml" class="main-nav-link">
+						<i class="fwb">&#xe61b;</i>
+						运价互联
+					</a>
+					<ol class="main-nav-drop-down">
+						<li class="main-sub-nav-arrow-line">◆</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="list.shtml" >账户管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="analytics.shtml">行为分析管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="ruleset.shtml">多级运价管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="javascript:">邀请体验管理</a>
+						</li>
+					</ol>
+
+				</li>
+				<li class="main-nav-cell">
+					<a href="list.shtml" class="main-nav-link">
+						<i>&#x351d;</i>
+						客户管理
+					</a>
+					<ol class="main-nav-drop-down">
+						<li class="main-sub-nav-arrow-line">◆</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="list.shtml" >账户管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="analytics.shtml">行为分析管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="ruleset.shtml">多级运价管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="javascript:">邀请体验管理</a>
+						</li>
+					</ol>
+
+				</li>
+				<li class="main-nav-cell">
+					<a href="#" class="main-nav-link">
+						<i>&#x3590;</i>
+						更多功能
+					</a>
+					<div class="main-nav-drop-down">
+						<span class="main-sub-nav-arrow-line">◆</span>
+						<table>
+							<tr>
+								<td class="first">
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+								<td>
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+								<td>
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+								<td class="last">
+									<dl>
+										<dt>分类名称</dt>
+										<dd>
+											<ol>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运整箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">海运出口拼箱查询</a>
+												</li>
+												<li>
+													<a class="main-nav-drop-down-link" href="javascript:">空运查询</a>
+												</li>
+											</ol>
+										</dd>
+									</dl>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</li>
+				<li class="main-nav-cell">
+					<a href="list.shtml" class="main-nav-link">
+						<i>&#xe62b;</i>
+						掌柜工具
+					</a>
+					<ol class="main-nav-drop-down">
+						<li class="main-sub-nav-arrow-line">◆</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="list.shtml" >账户管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="analytics.shtml">行为分析管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="ruleset.shtml">多级运价管理</a>
+						</li>
+						<li>
+							<a class="main-nav-drop-down-link" href="javascript:">邀请体验管理</a>
+						</li>
+					</ol>
+
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+	<div class="content wrap" isautowrap="true" style="display: block;"><div class="wrap main-wrap">
+		<div class="unicom-header">
+	<div class="unicom-header-cnt psr" myorgid="${orgId}" myorgname="${orgName}">
+		<img class="unicom-header-bg" src="./img/up-unicom.png" data-pin-nopin="true">
+			<div class="talking-corner talking-corner-header j-talking-hover j_complaint">
+					<a class="talking-corner-btn talking-corner-btn2 j_complaint_a" href="javascript:"></a>
+			</div>
+			
+	</div>
+	<div class="unicom-header-line">
+		<div class="new-tab-menu">
+			<div class="tab-dropdown j-hy-sd">
+				<a class="tab-dropdown-link" href="javascript:">绑定历史<i></i></a>
+				<ul class="history-list none"></ul>
+			</div>
+			<div class="new-tab-menu-cell new-tab-menu-active">
+				<a class="new-tab-menu-link" href="javascript:" id="binded"><span class="dot-point"></span><span class="j-binded">已合作</span></a>
+			</div>
+		 	<span class="new-tab-menu-line"></span>
+			<div class="new-tab-menu-cell">
+				<a class="new-tab-menu-link" href="javascript:" id="org_search"><span class="dot-point"></span><span class="j-binding">查找互联伙伴</span></a>
+			</div> 
+		</div>
+	</div>
+</div>
+<div class="unicom-wrap">
+<input type="hidden" id="hasImportPurview" value="false">
+<div class="wrap-unicom-cnt">
+	<div class="new-tab">
+		<div class="new-tab-cnt mt30">
+					<div class="nui-waterfall-area">
+					
+					</div>
+					</div>
+	</div>
+</div>
+</div>
+<div id="impdata_addBind_dialog" class="none">
+<div class="fui-dialog-cnt">
+	<div class="unicom-apply-area">
+		<div class="form-line">
+			<label class="nui-label fwb w80">互联公司：</label>
+			<span class="j-orgName"></span>
+		</div>
+		<div class="form-line">
+			<input name="impdata_bind_org_id" id="impdata_bind_org_id" type="hidden" value="">
+			<input name="impdata_import_org_id" id="impdata_import_org_id" type="hidden" value="">
+			<input name="impdata_bind_org_name" id="impdata_bind_org_name" type="hidden" value="">
+			<input name="impdata_bind_siteno" id="impdata_bind_siteno" type="hidden" value="">
+			<input name="impdata_bind_domain" id="impdata_bind_domain" type="hidden" value="">
+			<input name="impdata_bind_org_type" id="impdata_bind_org_type" type="hidden" value="">
+			<input name="impdata_modulus" id="impdata_modulus" type="hidden" value="">
+			<input name="impdata_publicExponent" id="impdata_publicExponent" type="hidden" value="">
+			<label for="impdata_username" class="nui-label fwb w80">用户名：</label>
+			<div class="nui-form-cell w160">
+				<input name="impdata_username" class="nui-input" id="impdata_username" type="text" validate="s-30" value="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);"></div>
+		</div>
+		<div class="form-line">
+			<label for="impdata_password" class="nui-label fwb w80">密码：</label>
+			<div class="nui-form-cell w160">
+				<input name="impdata_password" class="nui-input" id="impdata_password" type="password" validate="s-30" value="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);"></div>
+		</div>
+
+		<p class="pl90 mt25">
+			你还不是该公司会员？
+			<a target="_blank" name="go_regist" id="go_regist" href="">去注册</a>
+		</p>
+	</div>
+
+</div>
+<div class="fui-dialog-btm-bar">
+	<a href="javascript:" id="applyBindOrgbutton" name="applyBindOrgbutton" class="fui-btn-dialog-primary">
+		<span>绑定</span>
+	</a>
+	<a href="javascript:" id="close-btn" name="close-btn" class="fui-btn-dialog">
+		<span>取消</span>
+	</a>
+</div>
+</div>
+<div class="nui-tips j-contact none" style="left: 502px; top: 511px;">
+<div class="nui-tips-arrow top top-middle">
+	◆ <em>◆</em>
+</div>
+<table class="tips-table w250 h50">
+	<tbody>
+		<tr class="">
+			<td class="tips-table-left">联系人：</td>
+			<td class="tips-table-right" id="contactName">张某某</td>
+		</tr>
+		<tr class="">
+			<td class="tips-table-left">联系电话：</td>
+			<td class="tips-table-right" id="contactMobile">13000000000</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="nui-tips j-carrier-remark none" style="left: 502px; top: 511px;">
+<span id="carrierRemark"></span>
+</div>
+</div>
+</div>
+	<div class="nui-tips none" style="left: 502px; top: 511px;">
+		<div class="nui-tips-arrow top top-middle">
+			◆ <em>◆</em>
+		</div>
+		<table class="tips-table w250 h50">
+			<tbody>
+				<tr class="">
+					<td class="tips-table-left">联系人：</td>
+					<td class="tips-table-right">张某某</td>
+				</tr>
+				<tr class="">
+					<td class="tips-table-left">联系电话：</td>
+					<td class="tips-table-right">13000000000</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="footer" class="wrap">
+		<p>
+			大掌柜国际物流有限公司 powered by
+			<a href="#">大掌柜</a>
+		</p>
+	</div>
+		<div class="to-place">
+		<div id="j-place-move" class="to-place-head">
+			<div class="to-place-move"></div>
+		</div>
+		<a href="javascript:" title="回到顶部" class="to-top"></a>
+		<a href="javascript:" title="互联引导" class="to-guide"></a>
+	</div>
+	
+	<div class="to-place-old none">
+		<a href="javascript:" title="回到顶部" class="to-top-old fonticon"></a>
+	</div>
+	<div class="guide-wrap">
+		<div class="guide-shadow">
+			
+		</div>
+		<div class="guide-cnt">
+			<div class="img-4"></div>
+			<div class="guide-box guide-box-4">
+				<a class="guide-box-close" href="javascript:"></a>
+				<div class="guide-box-footer">
+					<div class="guide-link">
+						<a class="guide-link-cell " href="guide1.html"></a>
+						<a class="guide-link-cell" href="guide2.html"></a>
+						<a class="guide-link-cell" href="guide3.html"></a>
+						<a class="guide-link-cell current" href="guide4.html"></a>
+						<a class="guide-link-cell" href="guide5.html"></a>
+						<a class="guide-link-cell" href="guide6.html"></a>
+						<a class="guide-link-cell" href="guide7.html"></a>
+					</div>
+					<a class="guide-btn" href="guide5.html"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="requestAnimationFrame.js"></script>
+<script type="text/javascript" src="jquery.fly.min.js"></script>
+<script type="text/javascript" src="flyer-to.js"></script>
+</body>
+</html>

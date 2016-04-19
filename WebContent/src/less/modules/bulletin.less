@@ -1,0 +1,83 @@
+// ===================================================
+// ===================== 更新公告 =====================
+// ===================================================
+// 
+.ui-topbar-new{
+	width: 40px;height: 14px;
+	position: relative;*z-index: 150;
+	// background-color: #EA3424;
+}
+.new-bulletin-link{
+	position: absolute;left: 0;top: -9px;z-index: 500;
+	// float: right;*display: inline;
+	height: 40px;width: 68px;line-height: 40px;
+	padding: 0 2px;
+	background-color: #EA3424;
+	text-align: center;
+	color: #fff;
+	span{
+		display: block;
+		background: url(../../images/modules/bulletin-link-bg.png) repeat-x;
+	}
+	&:hover{
+		color: #fff;
+	}
+}
+
+.bulletin-link-inside{
+	top: -5px;
+	span{
+		background: url(../images/modules/bulletin-link-bg.png) repeat-x;
+	}
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+.ui-bulletin{
+	position: absolute;left: 0;top: 40px;z-index: 105;
+	width: 325px;padding: 15px;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 5px #ddd;
+	background: #fff;
+	font-size: 12px;line-height: 1.5;
+}
+
+.ui-bulletin-close{
+	position: absolute;right: 10px;top: 8px;z-index: 1;
+	font-size: 12px;color: #aaa;
+	font-family: tahoma;
+	&:hover{
+		color: #666;
+		text-decoration: none;
+	}
+}
+
+.ui-bulletin-title{
+	font-size: 12px;
+	color: #000;font-weight: bold;
+}
+
+.ui-bulletin-cnt{
+	padding-top: 8px;
+	text-indent: 2em;
+	color: #666;
+}
+
+.ui-bulletin-link{
+	float: right;*display: inline;
+	padding-top: 8px;
+	color: #0083E5;
+}
+
+
+.ui-bulletin-line{
+	&:extend(.toe all);
+	width: 100%;
+	a{
+		color: #999;
+	}
+}
+
+
+// ====================== end =========================

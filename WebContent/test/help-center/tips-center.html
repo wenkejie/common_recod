@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>常见问题首页</title>
+	<!-- <link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" /> -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<link rel="stylesheet" type="text/css" href="../../release/freight/css/help-center/hcommon.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/help-center/help-center.js"></script>
+	<script>
+		$(function() {
+			var $tabMenu = $('li.help-tab-menu-cell');
+			var $tabCnt = $('div.help-tab-cnt');
+			$tabMenu.click(function() {
+				var index = $(this).index();
+				$tabMenu.removeClass("help-tab-menu-active");
+				$(this).addClass('help-tab-menu-active');
+				$tabCnt.hide().eq(index).show();
+				return false;
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrap-head">
+			<div class="wrap-head-area">
+				
+				<div class="head-left">
+					<div class="logo"></div>
+					<h1 class="title"><span>运价通帮助中心</span></h1>
+				</div>
+			</div>
+			<div class="wrap-head-nav">
+				<ul class="left clearfix">
+					<li class="nav-cell"><a class="nav-cell-a nav-cell-a-active" href="index.html">更新公告</a></li>
+					<li class="nav-cell"><a class="nav-cell-a" href="question-index.html">常见问题</a></li>
+					<li class="nav-cell"><a class="nav-cell-a" href="question-index.html">实时通知</a></li>
+				</ul>
+				<a class="wrap-head-nav-goto" href="javascript:">新手引导教学 >></a>
+			</div>
+		</div>
+		<div class="wrap-content">
+			<div>
+				<div class="content-grid content-grid-nbd mt20">
+					<div class="hui-tab">
+						<div class="hui-tab-menu">
+							<ul>
+								<li class="hui-tab-menu-cell hui-tab-menu-active">
+									<a class="hui-tab-menu-link" href="javascript:">热点问题</a>
+								</li>
+								<li class="hui-tab-menu-cell">
+									<a class="hui-tab-menu-link" href="javascript:">运价管理</a>
+								</li>
+								<li class="hui-tab-menu-cell">
+									<a class="hui-tab-menu-link" href="javascript:">客户管理</a>
+								</li>
+							</ul>
+						</div>
+						<div class="hui-tab-cnt">
+							<div class="result-area">
+								<div class="result-fn-area pd10">
+									<div class="left">
+										<a href="javascritpt:" class="nui-btn nui-btn-primary">新增</a>
+										<div class="nui-form-cell w180 ml5">
+											<div class="nui-form-cell-cnt ">
+												<input class="nui-input" type="text" id="searchSurcharge" name="" placeholder="更新内容">										
+												<a href="javascript:searchPortName()" class="nui-form-cell-icon fs12">㕝</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<table class="result-table">
+									<thead>
+										<tr>
+											<th class="checkbox">
+												<input id="jselAll" type="checkbox" name="" id="" title="选中/取消选中" />							
+											</th>
+											<th class="name">姓名 | 用户名</th>
+											<th>手机 | 邮箱</th>
+											<th class="company">企业名称</th>
+											<th class="action">操作</th>
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr>
+											<td class="checkbox">
+												<input type="checkbox" class="item" value="13" id="checkbox" name="checkbox"></td>
+											<td>
+												alningbo
+												<p class="sub-info">
+													<span class="sub-info-tag">用户名：</span>
+													alningbo
+												</p>
+											</td>
+											<td>
+												111
+												<p class="sub-info">
+													<a href="mailto:464753600@qq.com">464753600@qq.com</a>
+												</p>
+											</td>
+											<td>啊啦宁波测试外部查询公司</td>
+											<td>
+												<a class="" href="javascript:">编辑</a> <em>|</em>
+												<a class="" href="javascript:">删除</a>
+											</td>
+										</tr>
+										<tr>
+											<td class="checkbox">
+												<input type="checkbox" class="item"  value="17" id="checkbox" name="checkbox"></td>
+											<td>
+												charlesZhang
+												<p class="sub-info">
+													<span class="sub-info-tag">用户名：</span>
+													charles
+												</p>
+											</td>
+											<td>
+												13336665553
+												<p class="sub-info">
+													<a href="mailto:charles@li-ling.com">charles@li-ling.com</a>
+												</p>
+											</td>
+											<td>宁波中量立领国际物流有限公司</td>
+											<td>
+												<a class="" href="javascript:">编辑</a> <em>|</em>
+												<a href="javascript:">删除</a>
+											</td>
+										</tr>
+										<tr class="split">
+											<td class="checkbox">
+												<input type="checkbox"  class="item"  value="18" id="checkbox" name="checkbox"></td>
+											<td>
+												李玲玲
+												<p class="sub-info">
+													<span class="sub-info-tag">用户名：</span>
+													553670
+												</p>
+											</td>
+											<td>
+												<p class="sub-info">
+													<a href="mailto:cus@li-ling.com">cus@li-ling.com</a>
+												</p>
+											</td>
+											<td>宁波中量立领国际物流有限公司</td>
+											<td>
+												<a class="" href="javascript:">编辑</a>
+												<em>|</em>
+												<a href="javascript:">删除</a>
+
+											</td>
+										</tr>
+										<tr>
+											<td class="checkbox">
+												<input type="checkbox"  class="item"  value="19" id="checkbox" name="checkbox"></td>
+											<td>
+												陈明
+												<p class="sub-info">
+													<span class="sub-info-tag">用户名：</span>
+													553671
+												</p>
+											</td>
+											<td>
+												<p class="sub-info">
+													<a href="mailto:op@li-ling.com">op@li-ling.com</a>
+												</p>
+											</td>
+											<td>宁波中量立领国际物流有限公司</td>
+											<td>
+												<a class="" href="javascript:">编辑</a>
+												<em>|</em>
+												<a href="javascript:">删除</a>
+
+											</td>
+										</tr>
+										<tr class="split">
+											<td class="checkbox">
+												<input class="item"  type="checkbox" value="20" id="checkbox" name="checkbox"></td>
+											<td>
+												姚健
+												<p class="sub-info">
+													<span class="sub-info-tag">用户名：</span>
+													559459
+												</p>
+											</td>
+											<td>
+												15158322619
+												<p class="sub-info">
+													<a href="mailto:402706147@qq.com">402706147@qq.com</a>
+												</p>
+											</td>
+											<td>宁波中量立领国际物流有限公司</td>
+											<td>
+												<a class="" href="javascript:">编辑</a>
+												<em>|</em>
+												<a href="javascript:">删除</a>
+
+											</td>
+										</tr>
+										<tr>
+											<td class="checkbox">
+												<input type="checkbox" class="item"  value="21" id="checkbox" name="checkbox"></td>
+											<td>
+												叶凌云
+												<p class="sub-info">
+													<span class="sub-info-tag">用户名：</span>
+													553668
+												</p>
+											</td>
+											<td>
+												13884460048
+												<p class="sub-info">
+													<a href="mailto:cus@li-ling.com">cus@li-ling.com</a>
+												</p>
+											</td>
+											<td>宁波中量立领国际物流有限公司</td>
+											<td>
+												<a class="" href="javascript:">编辑</a>
+												<em>|</em>
+												<a href="javascript:">删除</a>
+
+											</td>
+										</tr>
+										<tr class="split">
+											<td class="checkbox">
+												<input type="checkbox" class="item"  value="22" id="checkbox" name="checkbox"></td>
+											<td>
+												蔡双霞
+												<p class="sub-info">
+													<span class="sub-info-tag">用户名：</span>
+													552664
+												</p>
+											</td>
+											<td>
+												15606608516
+												<p class="sub-info">
+													<a href="mailto:237862023@qq.com">237862023@qq.com</a>
+												</p>
+											</td>
+											<td>宁波中量立领国际物流有限公司</td>
+											<td>
+												<a class="" href="javascript:">编辑</a>
+												<em>|</em>
+												<a href="javascript:">删除</a>
+
+											</td>
+										</tr>
+										<tr>
+											<td class="checkbox">
+												<input type="checkbox" class="item"  value="23" id="checkbox" name="checkbox"></td>
+											<td>
+												唐毅丰
+												<p class="sub-info">
+													<span class="sub-info-tag">用户名：</span>
+													552669
+												</p>
+											</td>
+											<td>
+												13989305322
+												<p class="sub-info">
+													<a href="mailto:814348369@qq.com">814348369@qq.com</a>
+												</p>
+											</td>
+											<td>宁波中量立领国际物流有限公司</td>
+											<td>
+												<a class="" href="javascript:">编辑</a>
+												<em>|</em>
+												<a href="javascript:">删除</a>
+
+											</td>
+										</tr>
+									</tbody>
+							</table>
+							<div class="result-footer">
+								<div class="page" style="margin:0;">
+									<input type="hidden" value="1" name="pageNo" id="pageNo">							
+									<span class="pageInfo">1-30条，共1615条</span>
+									<a href="javascript:nextPage();">下一页</a>
+									<a href="javascript:buildData(54);">尾页</a>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="hui-tab-cnt none">
+							<ul class="info-list">
+								<li class="info-list-cell">
+									<a href="javascript:">大威德</a>
+								</li>
+								<li class="info-list-cell">
+									<a href="javascript:">大王大</a>
+								</li>
+								<li class="info-list-cell">
+									<a href="javascript:">问啊市场的</a>
+								</li>
+							</ul>
+							<ul class="info-list">
+								<li class="info-list-cell">
+									<a href="javascript:">大威德</a>
+								</li>
+								<li class="info-list-cell">
+									<a href="javascript:">大王大</a>
+								</li>
+								<li class="info-list-cell">
+									<a href="javascript:">问啊市场的</a>
+								</li>
+							</ul>
+						</div>
+						<div class="hui-tab-cnt none">
+							<ul class="info-list">
+								<li class="info-list-cell">
+									<a href="javascript:">大威德</a>
+								</li>
+								<li class="info-list-cell">
+									<a href="javascript:">大王大</a>
+								</li>
+								<li class="info-list-cell">
+									<a href="javascript:">问啊市场的</a>
+								</li>
+							</ul>
+							<ul class="info-list">
+								<li class="info-list-cell">
+									<a href="javascript:">大威德</a>
+								</li>
+								<li class="info-list-cell">
+									<a href="javascript:">大王大</a>
+								</li>
+								<li class="info-list-cell">
+									<a href="javascript:">问啊市场的</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="wrap-footer">
+			
+			<div class="copyright">
+				 <a href="http://www.500jit.com" target="_blank" class="mr10"><img width="68" height="19" src="http://cpcommon.600jit.com/fcommon/public/images/login_logo.gif"></a>版权所有 &copy; 2013 奥林科技(宁波)有限公司    Powered by <a href="http://www.500jit.com" target="_blank">OlymTech(NingBo), Ltd.</a>  <span style="cursor:pointer;" onclick="alert('系统参数:Orange-PC');">&nbsp;</span>  
+			</div>
+		</div>
+	</div>
+</body>
+</html>

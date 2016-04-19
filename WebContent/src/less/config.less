@@ -1,0 +1,85 @@
+@icon-img:"../images/icon.png?v=1.01";//增加个人体验图标2013.11.4 by fen
+@dialog-img:"../images/dialog.png?v=1.0";
+@btn-bg:"../images/btn-bg.png?v=1.01";
+@form-bg:"../images/form-bg.png?v=1.0";
+@textarea-bg:"../images/textarea-bg.png?v=1.0";//为了解决ie6-ie8中textarea背景随滚动条移动的问题
+@table-img:"../images/table.png?v=1.0";
+@guide-img:"../images/personal/guide.png?v=1.0";
+@loading-img:"../images/loading.gif?v=1.0";
+@notice-img:"../images/notice.png?v=1.0";
+
+
+
+
+.icon-graydot{.iconset(2,4)}
+.icon-user{.iconset(8,3)}
+.icon-manager{.iconset(10,7)}
+.icon-first{.iconset(5,8)}
+.icon-prev{.iconset(6,8)}
+.icon-next,.ui-widget-content .ui-icon-for-daterangerpick{.iconset(7,8)}//兼容日期范围选择控件的样式
+.icon-last{.iconset(8,8)}
+.icon-first-disable{.iconset(5,9)}
+.icon-prev-disable{.iconset(6,9)}
+.icon-next-disable{.iconset(7,9)}
+.icon-last-disable{.iconset(8,9)}
+.icon-add{.iconset(8,4)}
+.icon-r-add{.iconset(9,2)}
+.icon-r-add-gray{.iconset(9,1)}
+.icon-batch-add{.iconset(8,6)}
+.icon-batch-add-gray{.iconset(8,7)}
+.icon-del{.iconset(8,5)}
+.icon-r-del{.iconset(4,8)}
+.icon-r-del:hover{.iconset(4,9)}
+.icon-trash{.iconset(2,8)}
+.icon-trash:hover,.icon-trash-hover{.iconset(2,9)}
+.icon-trash-disable{.iconset(2,10);cursor: default}
+.icon-open{
+  .iconset(2,1);
+  &:hover{.iconset(6,2)}
+}
+.icon-shut{
+  .iconset(2,2);
+  &:hover:extend(.icon-open){
+    
+  }
+}
+.icon-shut-disable:extend(.icon-shut){}
+.icon-locked{
+  .iconset(3,1);
+  &:hover:extend(.icon-lock-open){}
+}
+.icon-lock-open{
+  .iconset(3,2);
+  &:hover:extend(.icon-locked){}
+}
+.icon-sms{.iconset(10,8);
+  &:hover:extend(.icon-sms-disable){}
+}
+.icon-sms-disable{.iconset(10,9);
+  &:hover:extend(.icon-sms){}
+}
+.icon-email{.iconset(11,8);
+  &:hover:extend(.icon-email-disable){}
+}
+.icon-email-disable{
+  .iconset(11,9);
+  &:hover:extend(.icon-email){}
+}
+
+.icon-lock-open-disable:extend(.icon-lock-open){}
+.icon-alert-s{.iconset(5,2)}
+.icon-r-hook{.iconset(4,1)}
+.icon-r-hook-gray{.iconset(4,2);cursor: default}
+.icon-ban{.iconset(5,1)}
+.icon-help{.iconset(9,7);cursor: pointer;}
+.icon-info{.iconset(2,3)}
+.icon-r-info{.iconset(9,6)}
+.icon-info-red{.iconset(1,3)}
+.icon-tiyan{width: 36px;height: 25px;.iconset(11,1)}
+.icon-personal{&:extend(.icon-tiyan);background-position: -198px -43px}
+.icon-personal-tiyan{width: 59px;height: 25px;background-position: -198px -68px}
+.icon-s-arrow-bottom{.iconset(9,8)}
+.icon-s-arrow-top{.iconset(9,9)}
+.icon-sort{.iconset(2,7)}
+.icon-sort-down{.iconset(3,7)}
+.icon-sort-up{.iconset(4,7)}

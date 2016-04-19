@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>客户端下载页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	<div class="wrap main-wrap">
+		<div class="nui-upload-subnav">
+			<label for="" class="upload-subnav-label">网页版维护入口</label>
+			<ul class="upload-subnav">
+				<li class="upload-subnav-cell">
+					<a class="upload-subnav-link" href="javascript:">
+						海运出口整箱维护
+					</a>
+				</li>
+				<li class="upload-subnav-cell">
+					<a class="upload-subnav-link" href="javascript:">
+						海运出口拼箱
+					</a>
+				</li>
+				<li class="upload-subnav-cell">
+					<a class="upload-subnav-link" href="javascript:">
+						空运
+					</a>
+				</li>
+			</ul>
+		</div>
+		<a href="javascript:" class="upload-client-link mt15">
+			<img src="../../release/freight/images/2015-01c/2015-01c.png"/>
+		</a>
+	</div>
+	<!--#include file="footer.html"-->		
+</body>
+</html>

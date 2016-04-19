@@ -1,0 +1,760 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>新增报价</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+
+</head>
+<body>
+
+<div class="fui-dialog"  style="height:640px;width:1340px;">
+	<div class="fui-dialog-title">
+		<h4 class="tal">新增报价</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt">
+		
+		<div class="nui-table-area">
+			<div class="search-area ">
+				<div class="search-area-grid">
+					<div class="search-area-line">
+						<label class="nui-label pr10">口岸选择</label>
+						<div class="nui-form-cell nui-select w100 mr8"> 
+							<div class="nui-form-cell-cnt"> 
+								<input type="text" class="nui-input" value="宁波" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+								<div class="nui-drop-down drop-down-width"> 
+									<ul class="nui-select-list">
+										 <li class="nui-select-list-li">宁波</li> 
+										 <li class="nui-select-list-li">上海</li> 
+										 <li class="nui-select-list-li">XXX</li>   
+									</ul> 
+								</div> 
+							</div> 
+						</div>
+					</div>
+					<div class="search-area-line">
+						<label class="nui-label pr10">装箱门点</label>
+						<div class="nui-form-cell nui-select w100 mr8"> 
+							<div class="nui-form-cell-cnt"> 
+								<input type="text" class="nui-input" value="省" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+								<div class="nui-drop-down drop-down-width"> 
+									<ul class="nui-select-list">
+										 <li class="nui-select-list-li">宁波</li> 
+										 <li class="nui-select-list-li">上海</li> 
+										 <li class="nui-select-list-li">XXX</li>  
+									</ul> 
+								</div> 
+							</div> 
+						</div>
+						<div class="nui-form-cell nui-select w100 mr8"> 
+							<div class="nui-form-cell-cnt"> 
+								<input type="text" class="nui-input" value="市" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+								<div class="nui-drop-down drop-down-width"> 
+									<ul class="nui-select-list">
+										 <li class="nui-select-list-li">已发布</li> 
+										 <li class="nui-select-list-li">未发布</li>  
+									</ul> 
+								</div> 
+							</div> 
+						</div>
+						<div class="nui-form-cell nui-select w100 mr8"> 
+							<div class="nui-form-cell-cnt"> 
+								<input type="text" class="nui-input" value="区" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+								<div class="nui-drop-down drop-down-width"> 
+									<ul class="nui-select-list">
+										 <li class="nui-select-list-li">已发布</li> 
+										 <li class="nui-select-list-li">未发布</li>  
+									</ul> 
+								</div> 
+							</div> 
+						</div>
+						<div class="nui-form-cell nui-select w100 mr8"> 
+							<div class="nui-form-cell-cnt"> 
+								<input type="text" class="nui-input" value="街道" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+								<div class="nui-drop-down drop-down-width"> 
+									<ul class="nui-select-list">
+										 <li class="nui-select-list-li">已发布</li> 
+										 <li class="nui-select-list-li">未发布</li>  
+									</ul> 
+								</div> 
+							</div> 
+						</div>
+					</div>
+						
+				</div>
+			</div>
+			<div class="result-fn-area result-fn-area-esp mt20">
+				<a class="nui-btn" href="javascript:">隐藏无底价</a>
+			</div>
+			<div class="table-area">
+				<table class="nui-table border-table quote-table">
+					<thead>
+						<th rowspan="2" width="60">街道</th>
+						<th rowspan="2" width="68">车队数量</th>
+						<th colspan="2" width="">
+							最低底价
+						</th>
+						<th colspan="2">
+							最高底价
+						</th>
+						<th colspan="2" width="">
+							平均底价
+						</th>
+						<th colspan="2" width="170">
+							报价
+						</th>
+						<th rowspan="2" width="110">报价类型</th>
+						<th rowspan="2" width="110">有效期</th>
+						<th rowspan="2" width="180">备注</th>
+						<tr class="thead-extend">
+							<td>20GP</td>
+							<td>40GP</td>
+							<td>20GP</td>
+							<td>40GP</td>
+							<td>20GP</td>
+							<td>40GP</td>
+							<td>20GP</td>
+							<td>40GP</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												<li class="nui-select-list-li">正常</li> 
+												<li class="nui-select-list-li">旺季</li>  
+												<li class="nui-select-list-li">新春特惠</li>
+												<li class="nui-select-list-li">淡季</li>
+												<li class="nui-select-list-li">老顾客专享</li>
+												<li><a href="javascript:" class="select-list-li-link"><i class="iconfont add-icon">&#x35a6;</i>新增</a></li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+												 <li><a href="javascript:" class="select-list-li-link"><i class="iconfont add-icon">&#x35a6;</i>新增</a></li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+												 <li><a href="javascript:" class="select-list-li-link"><i class="iconfont add-icon">&#x35a6;</i>新增</a></li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+												 <li><a href="javascript:" class="select-list-li-link"><i class="iconfont add-icon">&#x35a6;</i>新增</a></li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+												 <li><a href="javascript:" class="select-list-li-link"><i class="iconfont add-icon">&#x35a6;</i>新增</a></li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>首南</td>
+							<td>2</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w65">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell nui-select w90"> 
+									<div class="nui-form-cell-cnt"> 
+										<input type="text" class="nui-input" value="正常" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+										<div class="nui-drop-down drop-down-width"> 
+											<ul class="nui-select-list">
+												 <li class="nui-select-list-li">正常</li> 
+												 <li class="nui-select-list-li">旺季</li>  
+												 <li class="nui-select-list-li">新春特惠</li>
+												 <li class="nui-select-list-li">淡季</li>
+												 <li class="nui-select-list-li">老顾客专享</li>
+											</ul> 
+										</div> 
+									</div> 
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w160">
+									<input class="nui-input" type="text">
+								</div>
+							</td>
+						</tr>
+					
+			
+				
+			
+			
+					
+					</tbody>
+				</table>
+			</div>
+			<div class="nui-table-footer mt10">
+				<div class="page">
+					<span class="pageinfo">
+						<input type="hidden" id="pageNo" name="pageNo" value="1" autocomplete="off">			
+						<input type="hidden" id="pageCount" name="pageCount" value="5" autocomplete="off">			
+						<input type="hidden" id="count" name="count" value="84" autocomplete="off">			
+						1-20条，共 <em class="pageinfo">84</em>
+						条
+					</span>
+					<a href="javascript:" id="next_page">下一页</a>
+					<a href="javascript:" id="last_page">尾页</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>保存</span></a><a href="javascript:" class="fui-btn-dialog-primary"><span>保存并发布</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../release/freight/js/unicom-freight/rule.js"></script>
+<script type="text/javascript" src="../../release/freight/js/cargo-o2o/rule.js"></script>
+</body>
+</html>

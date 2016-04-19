@@ -1,0 +1,237 @@
+<!--#include file="header.html"-->
+
+<!-- 主内容开始 -->
+<div class="auto-wrap">
+	<div class="grid">
+		<div class="left">
+			<i class="fs14">&#x351a;</i> <strong>客户: </strong>
+			<div class="nui-select-no-box"><div class="nui-select-value">我的客户</div><i>&#x3438;</i>
+			<div class="nui-drop-down w140 h-a">
+				<ul class="nui-select-list nui-select-list-with-title">
+					<li class="nui-select-list-title">我的视图</li>
+					<li class="nui-select-list-li">我的客户</li>
+					<li class="nui-select-list-li">我关注的客户</li>
+					<li class="nui-select-list-li">A（重点客户）</li>
+					<li class="nui-select-list-li">B（普通客户）</li>
+					<li class="nui-select-list-li">C（非优先客户）</li>
+					<li class="nui-select-list-title">其他视图</li>
+					<li class="nui-select-list-li">我的下属客户</li>
+				</ul>
+			</div>
+
+		</div>
+		</div>
+	
+		<div class="right">
+			<button class="nui-btn nui-btn-primary"><i class="fcf">&#x35a6;</i> 新建联系人</button>
+			<button class="nui-btn nui-btn-primary"><i class="fcf">&#x3594;</i> 导入联系人</button>
+		</div>
+	</div>
+
+	<div class="main-right-column">
+		
+	</div>
+	<div class="main-left-column">
+		<div class="talk-box left w100p psr">
+			<ul class="talk-box-nav mt10 mb10 clearfix">
+				<li class="talk-box-nav-li pr5"><a class="fonticon fs14" href="javascript:">&#x343a;活动记录</a></li>
+				<li class="talk-box-nav-li "><a class="fonticon fs14" href="javascript:">&#x352f;发布动态</a></li>
+			</ul>
+			<div class="talk-box-arrow">
+				◆
+				<em>◆</em>
+			</div>
+			<div class="send-box">
+				<textarea class="nui-textarea send-cnt">
+					去CIA拜访，确认业务推进
+				</textarea>
+				<div class="remark-cnt clearfix">
+					<div class="remark-cnt-cell">
+						<label class="remark-cnt-cell-label ml10">活动类型：</label>
+						<div class="remark-cnt-cell-option w150 dpib vam">
+							<div class="option-info-head clearfix">
+								<div class="left">
+									<i class="dpib vam mr5">&#x3456;</i> <span class="dpib vam">电话</span>
+								</div>
+								<i class="right mt5 fs12">&#x35a1;</i>
+							</div>
+							<ul class="option-info-body none">
+								<li class="option-info-body-li"><i class="dpib vam">&#x3456;</i> <span class="dpib vam">电话</span></li>
+								<li class="option-info-body-li"><i class="dpib vam">&#x3456;</i> <span class="dpib vam">电话</span></li>
+								<li class="option-info-body-li"><i class="dpib vam">&#x3456;</i> <span class="dpib vam">电话</span></li>
+								<li class="option-info-body-li"><i class="dpib vam">&#x3456;</i> <span class="dpib vam">电话</span></li>
+								<li class="option-info-body-li"><i class="dpib vam">&#x3456;</i> <span class="dpib vam">电话</span></li>
+							</ul>
+						</div>
+
+					</div>
+					<div class="remark-cnt-cell">
+						<label class="remark-cnt-cell-label ml10">活动时间：</label>
+						<div class="remark-cnt-cell-option dpib vam mr20">
+							<div class="nui-time-box">
+								<i class="dpib vam">&#x3439;</i>
+								<div class="dpib psr">
+									<input class="time-input dpib vam" />
+								</div>
+							</div>
+						</div>
+						<div class="remark-cnt-cell-option dpib vam">
+							<div class="nui-time-box">
+								<i class="dpib vam">&#x3443;</i>
+								<div class="dpib psr">
+									<input class="time-input dpib vam" />
+									<div class="nui-drop-down time-list">
+										<table>
+											<tr>
+												<td>
+													<table class="hour-table mr5">
+														<thead>
+															<tr><th class="slipt-x" colspan="7">小时</th></tr>
+														</thead>
+														<tbody>
+															<tr>
+																<th class="slipt-y" rowspan="2">上午</th>
+																<td><a class="table-cell" href="javascript:">00</a></td>
+																<td><a class="table-cell" href="javascript:">01</a></td>
+																<td><a class="table-cell" href="javascript:">02</a></td>
+																<td><a class="table-cell" href="javascript:">03</a></td>
+																<td><a class="table-cell" href="javascript:">04</a></td>
+																<td><a class="table-cell" href="javascript:">05</a></td>
+
+															</tr>
+															<tr>
+
+																<td><a class="table-cell" href="javascript:">06</a></td>
+																<td><a class="table-cell" href="javascript:">07</a></td>
+																<td><a class="table-cell" href="javascript:">08</a></td>
+																<td><a class="table-cell" href="javascript:">09</a></td>
+																<td><a class="table-cell" href="javascript:">10</a></td>
+																<td><a class="table-cell" href="javascript:">11</a></td>
+
+															</tr>
+															<tr>
+																<th class="slipt-y"  rowspan="2">下午</th>
+																<td><a class="table-cell" href="javascript:">12</a></td>
+																<td><a class="table-cell table-cell-active" href="javascript:">13</a></td>
+																<td><a class="table-cell" href="javascript:">14</a></td>
+																<td><a class="table-cell" href="javascript:">15</a></td>
+																<td><a class="table-cell" href="javascript:">16</a></td>
+																<td><a class="table-cell" href="javascript:">17</a></td>
+
+															</tr>
+															<tr>
+
+																<td><a class="table-cell" href="javascript:">18</a></td>
+																<td><a class="table-cell" href="javascript:">19</a></td>
+																<td><a class="table-cell" href="javascript:">20</a></td>
+																<td><a class="table-cell" href="javascript:">21</a></td>
+																<td><a class="table-cell" href="javascript:">22</a></td>
+																<td><a class="table-cell" href="javascript:">23</a></td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td>
+													<table class="minute-table">
+														<thead>
+															<tr><th colspan="3" class="slipt-x">分</th></tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td><a class="table-cell" href="javascript:">00</a></td>
+																<td><a class="table-cell" href="javascript:">05</a></td>
+																<td><a class="table-cell" href="javascript:">10</a></td>
+															</tr>
+															<tr>
+
+																<td><a class="table-cell" href="javascript:">15</a></td>
+																<td><a class="table-cell" href="javascript:">20</a></td>
+																<td><a class="table-cell" href="javascript:">25</a></td>
+
+															</tr>
+															<tr>
+																<td><a class="table-cell" href="javascript:">30</a></td>
+																<td><a class="table-cell table-cell-active" href="javascript:">35</a></td>
+																<td><a class="table-cell" href="javascript:">40</a></td>
+
+															</tr>
+															<tr>
+
+																<td><a class="table-cell" href="javascript:">45</a></td>
+																<td><a class="table-cell" href="javascript:">50</a></td>
+																<td><a class="table-cell" href="javascript:">55</a></td>
+
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</table>
+
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<ul class="insert-fun">
+					<li class="insert-fun-cell psr">
+						<a href="javascript:"><i class="vam">&#x34c3;</i> 图片</a>
+						<input id="client_logo" class="nui-file-upload-input" type="file" name="client_logo">
+					</li>	
+					<li class="insert-fun-cell"><a href="javascript:"><i class="vam">&#x3442;</i> 表情</a></li>
+					<li class="insert-fun-cell"><a href="javascript:"><i class="vam">&#x3442;</i> 客户</a></li>		
+					<li class="insert-fun-btn"><a class="send-btn" href="javascript:">发布</a></li>
+				</ul>
+			</div>
+			
+		</div>
+		<div class="data-list-cell">
+			<img src="../../src/images/crm/tx1.jpg" class="user-img ">
+			<div class="data-list-cell-cnt">
+				<a href="javascript:">叶少</a>：<span>长荣11月22日大火围困的卡我的卡瓦达我看到到家啦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦<span>
+				
+			</div>
+		</div>
+		<div class="data-list-cell">
+			<div class="grid">
+				
+				<div class="psr pl60">
+					<a class="avatar_picture2 info-picture" href="javascript:"></a>
+					<ul class="info-list">
+						<li class="info-list-cell psr pl70">
+						<div class="info-list-cell-head">
+							<a class="name" href="javascript:">王小贱</a> <i>&#x344c;</i>
+						</div>
+						<span class="dpib">长荣11月22日大火围困的卡我的卡瓦达我看到到家啦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦<span></li>
+						<li class="info-list-cell"><i class="mr10">&#x34d3;</i> 12月4日 10:11 电话</li>
+						
+
+					</ul>
+					<div class="exchange-box cb">
+						<div class="exchange-box-top clearfix">
+							<div class="left"><em>4小时前</em></div>
+							<div class="right">
+								<a class="dpib" href="javascript:">删除</a>
+								<a class="dpib" href="javascript:">评论(0)</a>
+							</div>
+						</div>
+						<div class="exchange-box-input">
+							<div class="nui-form-cell  w200">
+								<input placeholder="我来说几句" class="nui-textarea dpib" />
+							</div>
+						</div>	
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

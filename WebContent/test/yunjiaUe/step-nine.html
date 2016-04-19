@@ -1,0 +1,3226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/yunjiaue.css">
+</head>
+<body class="home-body">
+	<div id="header" style="height: 102px;">
+		<div class="" id="j-fixed">
+			<div class="top-info">
+				<div isautowrap="true" class="wrap">
+					<input type="hidden" value="101" id="employeeid">	
+					<input type="hidden" value="187" id="userId">	
+					<a class="logo" href="#">运价通</a>
+					<ul class="nav">
+						<li class="nav-cell">
+							<a href="javascript:" class="nav-link nav-link-first fonticon">㒗</a>
+						</li>
+						<li class="nav-cell">
+							<a href="javascript:" class="nav-link fonticon">㒂</a>
+						</li>
+						<li class="nav-cell">
+							<a data-module="home_office" id="home_office" href="javascript:" class="nav-link">我的办公桌</a>
+							<div class="nav-cell-arrow none">
+								◆ <em>◆</em>
+							</div>
+						</li>
+						<li class="nav-cell">
+							<a data-module="home_crm" id="home_crm" href="javascript:" class="nav-link">生意通</a>
+							<div class="nav-cell-arrow none">
+								◆ <em>◆</em>
+							</div>
+						</li>
+						<li class="nav-cell">
+							<a data-module="home_freight" id="home_freight" href="javascript:" class="nav-link nav-link-last">运价通</a>
+							<div class="nav-cell-arrow">
+								◆
+								<em>◆</em>
+							</div>
+						</li>
+					</ul>
+					<ul class="top-menu">
+						<li class="top-menu-cell pr0">你好：</li>
+						<li class="top-menu-cell cur-p has-dropdown">
+							曹金彦 <i class="top-menu-icon">㐸</i>
+							<div class="nui-drop-down block">
+								<ul class="nui-select-list">
+									<li class="nui-select-list-li">
+										<a href="javascript:" id="userInfo"> <i class="mr5 animate">㓬</i>
+											账户信息
+										</a>
+									</li>
+									<li class="nui-select-list-li last">
+										<a onclick="openWindow('/cpmembership/memuser.ctrl?$action=modifyUserPassword&amp;actionType=show&amp;org_id=10002&amp;user_id=187','修改密码',{width:350,height:250})" name="modifyPassWord" id="modifyPassWord" href="javascript:">
+											<i class="mr5 animate">㔳</i>
+											修改密码
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="top-menu-line"></li>
+						<li class="top-menu-cell">
+							<a href="/cpmembership/privateLog.ctrl?$action=logoutAction" class="top-menu-link">退出</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-nav" style="display: block;">
+				<div id="menu">
+					<ul class="wrap">
+						<li class="main-nav-cell">
+							<a class="main-nav-link main-nav-link-active" href="/priceservice/home.ctrl?$action=indexView" target="mainFrame" ischangesize="true">
+								<i>㐼</i>
+								运价首页
+							</a>
+						</li>
+
+						<li class="main-nav-cell">
+							<a class="main-nav-link" href="javascript:void(0);">
+								<i>㕝</i>
+								运价查询
+							</a>
+							<ol class="main-nav-drop-down">
+								<li class="main-sub-nav-arrow-line">◆</li>
+
+								<li>
+									<a href="javascript:openWinWithMax('/priceservice/priceMaintain.ctrl?$action=fcl_sale','海运整箱查询',{width:900,height:500});" class="main-nav-drop-down-link">海运整箱查询</a>
+								</li>
+
+								<li>
+									<a href="javascript:openWinWithMax('/priceservice/priceMaintain.ctrl?$action=lcl_sale','海运出口拼箱查询',{width:900,height:500});" class="main-nav-drop-down-link">海运出口拼箱查询</a>
+								</li>
+
+								<li>
+									<a href="javascript:openWinWithMax('/priceservice/seaImportLclMain.ctrl?$action=import_lcl_sale','海运进口拼箱查询',{width:900,height:500});" class="main-nav-drop-down-link">海运进口拼箱查询</a>
+								</li>
+
+								<li>
+									<a href="javascript:openWinWithMax('/priceservice/priceMaintain.ctrl?$action=air_sale','空运查询',{width:900,height:500});" class="main-nav-drop-down-link">空运查询</a>
+								</li>
+
+							</ol>
+						</li>
+
+						<li class="main-nav-cell">
+							<a class="main-nav-link" href="javascript:void(0);">
+								<i>㖍</i>
+								运价维护
+							</a>
+							<ol class="main-nav-drop-down">
+								<li class="main-sub-nav-arrow-line">◆</li>
+
+								<li>
+									<a href="/priceservice/priceMaintain.ctrl?$action=fcl_query" target="mainFrame" class="main-nav-drop-down-link">海运整箱维护</a>
+								</li>
+
+								<li>
+									<a href="/priceservice/priceMaintain.ctrl?$action=lcl_query" target="mainFrame" class="main-nav-drop-down-link">海运出口拼箱维护</a>
+								</li>
+
+								<li>
+									<a href="/priceservice/seaImportLclMain.ctrl?$action=import_lcl_query" target="mainFrame" class="main-nav-drop-down-link">海运进口拼箱维护</a>
+								</li>
+
+								<li>
+									<a href="/priceservice/priceMaintain.ctrl?$action=air_query" target="mainFrame" class="main-nav-drop-down-link">空运维护</a>
+								</li>
+
+							</ol>
+						</li>
+
+						<li class="main-nav-cell">
+							<a class="main-nav-link" href="javascript:void(0);">
+								<i>㓻</i>
+								基础资料
+							</a>
+							<div class="main-nav-drop-down" style="margin-left: -240px; top: 66px; opacity: 0;">
+								<span class="main-sub-nav-arrow-line">◆</span>
+								<table>
+									<tbody>
+										<tr>
+
+											<td>
+												<dl>
+													<dt>海运出口整箱</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSeaportFclExport.ctrl','海运出口整箱港口信息',{width:980,height:550});" class="main-nav-drop-down-link">港口</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSearouteFclExport.ctrl','海运出口整箱航线信息',{width:980,height:550});" class="main-nav-drop-down-link">航线</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>海运出口拼箱</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSeaportLclExport.ctrl','海运出口拼箱港口信息',{width:980,height:550});" class="main-nav-drop-down-link">港口</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSearouteLclExport.ctrl','海运出口拼箱航线信息',{width:980,height:550});" class="main-nav-drop-down-link">航线</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>海运进口拼箱</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSeaportLclImport.ctrl','海运进口拼箱港口信息',{width:980,height:550});" class="main-nav-drop-down-link">港口</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseSearouteLclImport.ctrl','海运进口拼箱航线信息',{width:980,height:550});" class="main-nav-drop-down-link">航线</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>空运出口</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseAirport.ctrl?$baseAirportQuery','空运港口信息',{width:980,height:550});" class="main-nav-drop-down-link">港口</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseAirroute.ctrl','空运航线',{width:980,height:550});" class="main-nav-drop-down-link">航线</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>其他</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseBookingagent.ctrl?$action=baseBookingagentQuery','订舱代理信息',{width:880,height:550});" class="main-nav-drop-down-link">订舱代理信息</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseCarrier.ctrl','船公司信息',{width:880,height:550});" class="main-nav-drop-down-link">船公司信息</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseAirway.ctrl','航空公司信息',{width:880,height:550});" class="main-nav-drop-down-link">航空公司信息</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseFlightinfos.ctrl?$action=baseFlightinfosQuery','航班信息',{width:980,height:550});" class="main-nav-drop-down-link">航班信息</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/baseAirportAreas.ctrl?$action=baseAirportAreasQuery','航空港口分区',{width:880,height:550});" class="main-nav-drop-down-link">航空港口分区</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</li>
+
+						<li class="main-nav-cell">
+							<a class="main-nav-link" href="javascript:void(0);">
+								<i>㔝</i>
+								客户管理
+							</a>
+							
+						</li>
+
+						<li class="main-nav-cell">
+							<a data-module="staff" class="main-nav-link user_management" href="javascript:">
+								<i>㕞</i>
+								员工管理
+							</a>
+						</li>
+
+						<li class="main-nav-cell">
+							<a class="main-nav-link" href="javascript:void(0);" id="li_moreFun">
+								<i>㖐</i>
+								更多功能
+							</a>
+							<div class="main-nav-drop-down">
+								<span class="main-sub-nav-arrow-line">◆</span>
+								<table>
+									<tbody>
+										<tr>
+
+											<td>
+												<dl>
+													<dt>系统设置</dt>
+													<dd>
+														<ol>
+															<li>
+																<a href="/cpmembership/org.ctrl" target="mainFrame" ischangesize="true" class="main-nav-drop-down-link" id="org_sys_params">系统设置</a>
+															</li>
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>发布记录</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/SeaPriceHistoryController.ctrl?$action=FclHistoryQuery&amp;ispublish_valid=true','海运整箱发布记录',{width:900,height:550});" class="main-nav-drop-down-link">海运整箱</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/SeaPriceHistoryController.ctrl?$action=LclHistoryQuery&amp;ispublish_valid=true','海运出口拼箱发布记录',{width:900,height:550});" class="main-nav-drop-down-link">海运出口拼箱</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/seaImportLclMain.ctrl?$action=importLclHistoryQuery&amp;ispublish_valid=true','海运进口拼箱发布记录',{width:900,height:550});" class="main-nav-drop-down-link">海运进口拼箱</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>维护日志</dt>
+													<dd>
+														<ol>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/seaMainPrice.ctrl?$action=logFclSearch','海运整箱维护操作日志',{width:900,height:510});" class="main-nav-drop-down-link">海运整箱</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/seaMainPrice.ctrl?$action=logLclSearch','海运出口拼箱维护操作日志',{width:900,height:510});" class="main-nav-drop-down-link">海运出口拼箱</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWinWithMax('/priceservice/seaImportLclMain.ctrl?$action=importLclLogSearch','海运进口拼箱维护操作日志',{width:900,height:510});" class="main-nav-drop-down-link">海运进口拼箱</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+											<td>
+												<dl>
+													<dt>运价公告</dt>
+													<dd>
+														<ol>
+															<li>
+																<a onclick="openNotice(this,'/priceservice/priceNoticeType1.ctrl?$noticeType1Query&amp;type=1',{width:980,height:520});return false;" href="javascript:void(0);" class="main-nav-drop-down-link">
+																	<em>我的公告</em>
+																</a>
+															</li>
+															<li>
+																<a onclick="openNotice(this,'/priceservice/priceNoticeType1.ctrl?$noticeType1Query&amp;type=2',{width:980,height:520});return false;" href="javascript:void(0);" class="main-nav-drop-down-link">
+																	<em>你的公告</em>
+																</a>
+															</li>
+															<li>
+																<a onclick="openNotice(this,'/priceservice/priceNoticeType1.ctrl?$noticeType1Query&amp;type=3',{width:980,height:520});return false;" href="javascript:void(0);" class="main-nav-drop-down-link">
+																	<em>他的公告</em>
+																</a>
+															</li>
+
+															<li>
+																<a href="javascript:openWin('/priceservice/organizationManage.ctrl?$action=noticeSetView','公告类型名称维护',{width:420,height:162});" class="main-nav-drop-down-link">公告配置</a>
+															</li>
+
+														</ol>
+													</dd>
+												</dl>
+											</td>
+
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="wrap main-wrap">
+		<div id="j-searchArea" class="search-area">
+
+			<div class="title-info"><div class="right mt5"><i>㕰</i> <a href="#">已删除账号</a></div><h2>账号统计信息</h2>
+				<strong>客户账号：</strong>已购买 <span class="text-warning fwb">2510</span> 个 | 剩余 <span class="text-warning fwb">500</span> 个 
+				<!-- <strong >体验账号：</strong>已购买 <span class="text-warning fwb">2510</span> 个 | 剩余 <span  class="text-warning fwb">500</span> 个 --> </div>
+				<div class="search-area-grid">
+					<div class="search-area-line">
+						<label class="nui-label" for="username">姓名：</label>
+						<div class="nui-form-cell w100  mr20">
+							<input type="text" class="nui-input" id="username">
+						</div>
+						<label class="nui-label" for="companyname">公司名称：</label>
+						<div class="nui-form-cell w200  mr20">
+							<input type="text" onclick="changeCompany(this)" class="nui-input" id="companyname">
+						</div>
+						<label class="nui-label" for="mobile">用户名：</label>
+						<div class="nui-form-cell w100  mr10">
+							<input type="text" class="nui-input" id="mobile">
+						</div>
+						<span id="j-toggle">
+							<a onclick="searchData()" class="nui-btn nui-btn-primary ">搜 索</a>
+							<a id="j-advSearchBtn" class="nui-btn">高 级 搜 索</a>
+						</span>
+					</div>
+					<div class="search-area-line search-adv-area">
+						<div class="form-line">
+							<div class="form-line-left w500 dpib">
+								<label class="nui-label" for="typeoftime">日期类型：</label><select class="nui-native-select w100" id="" name=""> 
+								<option value="">注册日期</option>
+								<option value="">审批日期</option>
+							</select>
+							<div class="nui-form-cell">
+								<input type="text" onfocus="$(this).datepicker();" class="nui-input w80" id="typeoftime-fir">
+							</div><!-- 调用了日期控件 -->
+							<span> - </span>
+							<div class="nui-form-cell ml1">
+								<input type="text" onfocus="$(this).datepicker();" class="nui-input w80" id="typeoftime-sec">
+							</div>
+							
+						</div>
+						<div class="form-line-right dpib">
+							<label class="nui-label" for="typeoftime">关键词：</label><select class="nui-native-select w100" id="" name=""> 
+							<option value="">请选择</option>
+							<option value="">用户电话</option>
+							<option value="">用户传真</option>
+							<option value="">用户邮箱</option>
+							<option value="">企业备注名</option>
+							<option value="">省份</option>
+							<option value="">城市</option>
+						</select>
+						<div class="nui-form-cell w185">
+							<input type="text" class="nui-input" id="typeoftime">
+						</div>
+
+					</div>
+
+				</div>
+				<div class="form-line">
+					<div class="form-line-left w500 dpib">
+						<label class="nui-label" for="typeoftime">服务选择：</label>
+						<label class="nui-checkbox" for="fcl"><input type="checkbox" id="fcl" name="">整箱</label>
+						<label class="nui-checkbox" for="lcl"><input type="checkbox" id="lcl" name="">拼箱</label>
+						<label class="nui-checkbox" for="air"><input type="checkbox" id="air" name="">空运</label>
+
+					</div>
+					<div class="form-line-right dpib">
+						<label class="nui-label mr20" for="typeoftime">登录控制：</label>
+						<label class="nui-radio" for=""><input type="radio" checked="checked" name="control">全部</label>
+						<label class="nui-radio" for=""><input type="radio" name="control">启用</label>
+						<label class="nui-radio" for=""><input type="radio" name="control">未启用</label>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="search-area-btn-area">
+					<a id="j-searchBtn" class="nui-btn nui-btn-primary w80">搜 索</a>
+					<a id="j-backBtn" class="nui-btn ">返回普通搜索 <i class="fs14">㐷</i></a>
+				</div>
+
+			</div>
+			<div class="search-area-blank none">
+				<div class="search-area-blank-download">
+					<a class="blank-download-fir" href="javascript:">
+						<s class="icon icon-download"></s><span>下载查询结果：EXCEL</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="result-area">
+			<div class="result-filter">
+				<a class="result-filter-btn active" href="javascript:">按用户显示</a>
+				<a class="result-filter-btn" href="list_company.shtml">按公司显示</a>
+				<a class="result-filter-btn" href="list_group.shtml">按群显示</a>
+
+			</div>
+			<div class="result-fn-area">
+				<div class="left">
+					<div class="result-fn-area-port mr5">
+						<a class="nui-btn pr5"> <em>批量审批</em> <i class="icon-down-arrow">㐸</i>
+						</a>
+						<div class="nui-drop-list none ">
+							<ul class="nui-drop-list-choose oneline">
+								<li>
+									<a href="javascript:">批量审批</a>
+								</li>
+								<li>
+									<a href="javascript:">批量拒绝</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="result-fn-area-port">
+						<a class="nui-btn pr5"> <em>批量操作</em> <i class="icon-down-arrow">㐸</i>
+						</a>
+						<div class="nui-drop-list none">
+							<ul class="nui-drop-list-choose oneline">
+								<li>
+									<a href="javascript:">访问权限设置</a>
+								</li>
+								<li>
+									<a href="javascript:">多级运价设置</a>
+								</li>
+								<li>
+									<a href="javascript:">删除用户账号</a>
+								</li>
+								<li>
+									<a href="javascript:">启用登录控制</a>
+								</li>
+								<li>
+									<a href="javascript:">取消登录控制</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="result-fn-area-port right">
+					<a class="nui-btn mr0 pr5">
+						<em>所有账号</em>
+						<i class="icon-down-arrow">㐸</i>
+					</a>
+					<div class="nui-drop-list nui-drop-list-replace none">
+						<ul class="nui-drop-list-choose oneline">
+							<li>
+								<a onclick="changeStatus(this)" status="" href="javascript:">所有账号</a>
+							</li>
+							<li>
+								<a onclick="changeStatus(this)" status="0" href="javascript:">待审批账号</a>
+							</li>
+							<li>
+								<a onclick="changeStatus(this)" status="1" href="javascript:">正式账号</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="result-fn-area-port right">
+					<label class="result-fn-area-port-label mr10">状态筛选：</label>
+				</div>
+			</div>
+			<div class="result-table-area">
+				<table class="result-table">
+					<thead>
+						<tr>
+							<th class="checkbox">
+								<input type="checkbox" title="选中/取消选中" name="" id="jselAll"></th>
+							<th class="name">姓名 | 用户名</th>
+							<th>手机 | 邮箱</th>
+							<th class="company">
+								企业名称
+								<a class="icon icon-com" id="j-iconChange" href="javascript:"></a>
+								| 群
+								<a class="icon icon-com" href="javascript:"></a>
+							</th>
+							<th>地区 | 推荐人</th>
+							<th>状态 | 上次登录时间</th>
+							<th class="action">操作</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="0" value="1" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								charlesZhang
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									charles
+								</p>
+							</td>
+							<td>
+								13336665553
+								<p class="sub-info">
+									<a href="mailto:charles@li-ling.com">charles@li-ling.com</a>
+								</p>
+							</td>
+							<td>
+								宁波中量立领国际物流有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-warning">待审批</p>
+								<p class="sub-info">2012-09-27</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="active accepted" href="javascript:">
+												通过审批
+												<i class="icon-down-arrow fcf">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="refusal" href="javascript:">拒绝申请</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="user-detail" href="javascript:">详情</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="0" value="2" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								chris
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									chris
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:chrisquek@kaiyuancn.com">chrisquek@kaiyuancn.com</a>
+								</p>
+							</td>
+							<td>
+								宁波大掌柜-全球运价系统
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-warning">待审批</p>
+								<p class="sub-info">2012-03-02</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="active accepted" href="javascript:">
+												通过审批
+												<i class="icon-down-arrow fcf">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="refusal" href="javascript:">拒绝申请</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="user-detail" href="javascript:">详情</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="0" value="3" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								kiki
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									kiki@moro.hk
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:kiki@moro.hk">kiki@moro.hk</a>
+								</p>
+							</td>
+							<td>
+								宁波瑞速国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-warning">待审批</p>
+								<p class="sub-info">2012-12-17</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="active accepted" href="javascript:">
+												通过审批
+												<i class="icon-down-arrow fcf">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="refusal" href="javascript:">拒绝申请</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="user-detail" href="javascript:">详情</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="4" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								SHAWN
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									553350
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:shawn@kaiyuancn.com">shawn@kaiyuancn.com</a>
+								</p>
+							</td>
+							<td>
+								宁波大掌柜-全球运价系统
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2012-03-02</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i> <strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i> <strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="5" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								songsong
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									qd-taifei@live.cn
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:fay@taifei56.com">fay@taifei56.com</a>
+								</p>
+							</td>
+							<td>
+								青岛泰飞国际物流有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2011-05-06</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="6" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								XiaCS-Q
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									kelly
+								</p>
+							</td>
+							<td>
+								13661896576
+								<p class="sub-info">
+									<a href="mailto:kelly-sh@kaiyuancn.com">kelly-sh@kaiyuancn.com</a>
+								</p>
+							</td>
+							<td>
+								宁波大掌柜-全球运价系统
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2012-07-05</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="7" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								蔡良秀
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									cailx@nbdashing.com
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:jason@nbdashing.cn">jason@nbdashing.cn</a>
+								</p>
+							</td>
+							<td>
+								宁波达迅国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2009-06-23</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="8" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								蔡祎祎
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									cyy
+								</p>
+							</td>
+							<td>
+								18658253181
+								<p class="sub-info">
+									<a href="mailto:eleven@3e-log.com">eleven@3e-log.com</a>
+								</p>
+							</td>
+							<td>
+								宁波雅戈尔国际贸易运输有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2012-06-27</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="9" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								蔡义孟
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									ymcai@3e-log.com
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:ymcai@3e-log.com">ymcai@3e-log.com</a>
+								</p>
+							</td>
+							<td>
+								宁波雅戈尔国际贸易运输有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2011-10-27</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="10" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								柴丹益
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									553871
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:op@li-ling.com">op@li-ling.com</a>
+								</p>
+							</td>
+							<td>
+								宁波中量立领国际物流有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2012-04-28</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="11" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈阿丽
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									chenal
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:zhangcg@nbdashing.com">zhangcg@nbdashing.com</a>
+								</p>
+							</td>
+							<td>
+								宁波达迅国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2012-07-11</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="12" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈芬
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									552660
+								</p>
+							</td>
+							<td>
+								13586547347
+								<p class="sub-info">
+									<a href="mailto:690950226@QQ.COM">690950226@QQ.COM</a>
+								</p>
+							</td>
+							<td>
+								宁波中量立领国际物流有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2011-12-22</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="13" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈佳
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									552651
+								</p>
+							</td>
+							<td>
+								13082981276
+								<p class="sub-info">
+									<a href="mailto:QQ525953110">QQ525953110</a>
+								</p>
+							</td>
+							<td>
+								宁波中量立领国际物流有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2011-12-22</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="14" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈剑峰
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									billy@3e-log.com
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:billy@3e-log.com">billy@3e-log.com</a>
+								</p>
+							</td>
+							<td>
+								宁波雅戈尔国际贸易运输有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2011-10-27</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="15" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈江
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									chenjiang@nbdashing.cn
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:chenjiang@nbdashing.cn">chenjiang@nbdashing.cn</a>
+								</p>
+							</td>
+							<td>
+								宁波达迅国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2009-03-18</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="16" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈柯君
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									552649
+								</p>
+							</td>
+							<td>
+								13685868554
+								<p class="sub-info">
+									<a href="mailto:ken@li-ling.com">ken@li-ling.com</a>
+								</p>
+							</td>
+							<td>
+								宁波中量立领国际物流有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2011-12-22</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="17" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈磊
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									chenlei@moro.hk
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:chenlei@moro.hk">chenlei@moro.hk</a>
+								</p>
+							</td>
+							<td>
+								宁波瑞速国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2012-12-07</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="18" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈良静
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									chenlj@nbdashing.com
+								</p>
+							</td>
+							<td>
+								15968938115
+								<p class="sub-info">
+									<a href="mailto:chenlj@nbdashing.cn">chenlj@nbdashing.cn</a>
+								</p>
+							</td>
+							<td>
+								宁波达迅国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2009-06-23</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="19" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈露
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									552668
+								</p>
+							</td>
+							<td>
+								15988659258
+								<p class="sub-info">
+									<a href="mailto:1158351530@qq.com">1158351530@qq.com</a>
+								</p>
+							</td>
+							<td>
+								宁波中量立领国际物流有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2011-12-22</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="20" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈璐
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									chenlu
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:chenlu@nbdashing.com">chenlu@nbdashing.com</a>
+								</p>
+							</td>
+							<td>
+								宁波达迅国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2013-03-01</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="21" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈平波
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									552657
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:jock1201@qq.com">jock1201@qq.com</a>
+								</p>
+							</td>
+							<td>
+								宁波中量立领国际物流有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2011-12-22</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="22" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈薇
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									chenwei@nbdashing.com
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:maggie@nbdashing.cn">maggie@nbdashing.cn</a>
+								</p>
+							</td>
+							<td>
+								宁波达迅国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2009-06-23</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="23" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈雪红
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									chenxh@nbdashing.com
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:chenxh@nbdashing.com">chenxh@nbdashing.com</a>
+								</p>
+							</td>
+							<td>
+								宁波达迅国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2010-05-05</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="24" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈意
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									dashing.gj9@gmail.com
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:dashing.gj9@gmail.com">dashing.gj9@gmail.com</a>
+								</p>
+							</td>
+							<td>
+								宁波达迅国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2010-08-03</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="25" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								陈云威优浦
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									chenyw
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:283149786@qq.com">283149786@qq.com</a>
+								</p>
+							</td>
+							<td>
+								宁波达迅国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2012-08-08</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="26" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								程红
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									552324
+								</p>
+							</td>
+							<td>
+								15265235165
+								<p class="sub-info">
+									<a href="mailto:chenghong2632@126.com">chenghong2632@126.com</a>
+								</p>
+							</td>
+							<td>
+								青岛泰飞国际物流有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2011-11-23</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="27" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								褚弯弯
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									553669
+								</p>
+							</td>
+							<td>
+								13484223433
+								<p class="sub-info">
+									<a href="mailto:op@li-ling.com">op@li-ling.com</a>
+								</p>
+							</td>
+							<td>
+								宁波中量立领国际物流有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2012-04-01</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="28" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								崔兆成
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									megawin@3e-log.com
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:megawin@3e-log.com">megawin@3e-log.com</a>
+								</p>
+							</td>
+							<td>
+								宁波雅戈尔国际贸易运输有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2011-10-27</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="29" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								邓威
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									dengwei
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:zhangcg@nbdashing.com">zhangcg@nbdashing.com</a>
+								</p>
+							</td>
+							<td>
+								宁波达迅国际货运代理有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2012-11-30</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr class="split">
+							<td class="checkbox">
+								<input type="checkbox" user_status_id="1" value="30" class="item" id="checkbox" name="checkbox"></td>
+							<td>
+								丁琳
+								<p class="sub-info">
+									<span class="sub-info-tag">用户名：</span>
+									553667
+								</p>
+							</td>
+							<td>
+								<p class="sub-info">
+									<a href="mailto:op@li-ling.com">op@li-ling.com</a>
+								</p>
+							</td>
+							<td>
+								宁波中量立领国际物流有限公司
+								<a class="fonticon icon-dowm-tips " href="javascript:">㐲</a>
+								<p class="sub-info">销售1部群</p>
+							</td>
+							<td>
+								浙江-宁波
+								<p class="sub-info">
+									<span class="sub-info-tag">推荐人：</span>
+									李光耀
+								</p>
+							</td>
+							<td>
+								<p class="text-success">审批通过</p>
+								<p class="sub-info">2012-04-01</p>
+							</td>
+							<td>
+								<div class="action-cnt">
+									<ul class="slide-down-menu">
+										<li>
+											<a class="first user-detail" href="javascript:">
+												详情
+												<i class="icon-down-arrow">㐸</i>
+											</a>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="set-power" href="javascript:">权限设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用权限组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价维护</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">运价设置</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="set-power" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li slide-down-menu-li-ol psr">
+											<a class="multilevel" href="javascript:">运价设置</a>
+											<div class="sub-menu dpib none">
+												<ol class="slide-down-menu slide-down-menu-hover">
+													<li>
+														<i class="icon-title">㑖</i>
+														<strong class="mr20">常用运价组</strong>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">VIP级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="" href="javascript:">同行级</a>
+													</li>
+													<li class="slide-down-menu-li block">
+														<a class="multilevel" href="javascript:">更多..</a>
+													</li>
+												</ol>
+											</div>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="attention" href="javascript:">港口关注</a>
+										</li>
+										<li class="slide-down-menu-li">
+											<a class="delete" href="javascript:">删除</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+
+				</table>
+			</div>
+			<div class="result-footer">
+				<div class="left-area">
+					<span class="fwb">图释：</span>
+					<i class="fonticon icon-dowm-tips">㐲</i>
+					公司详情
+				</div>
+				<div class="page">
+					<input type="hidden" value="1" name="pageNo" id="pageNo">		
+					<span class="pageInfo">1-30条，共278条</span>
+					<a href="javascript:nextPage();">下一页</a>
+					<a href="javascript:buildData(10);">尾页</a>
+				</div>
+			</div>
+		</div>
+		<div id="footer" class="wrap" style="height: 60px;margin-top: 10px;" isautowrap="true">
+			<a href="http://www.500jit.com" target="_blank" class="mr10">
+				<img width="68" height="19" src="http://cpcommon.600jit.com/fcommon/public/images/login_logo.gif"></a>
+			版权所有 &copy; 2013 奥林科技(宁波)有限公司    Powered by
+			<a href="http://www.500jit.com" target="_blank">OlymTech(NingBo), Ltd.</a>
+			<span style="cursor:pointer;" onclick="alert('系统参数:Orange-PC');">&nbsp;</span>
+		</div>
+		<div class="shadow-mask"></div>
+		<div class="shadow-mask-cnt">
+			<div class="shadow-open-win" style="">
+				<div class="open-win-top clearfix">
+					<div class="top-logo"></div>
+					<div class="top-text">
+						<div class="top-text-cnt">
+							<p>
+								进入”<span>客户管理</span>“，本页选择”<span>帐号管理</span>“菜单，我们可以对使用系统的客户帐号进行管理，也可对新申请的客户帐号进行审批操作。点击下一步，我们来了解内部员工的管理吧。
+							</p>
+							
+						</div>
+					</div>
+				</div>
+				<div class="open-win-bottom">
+					<a class="mask-btn-2" href="step-eight.html"></a><a class="mask-btn" href="step-ten.html"></a>
+				</div>
+			</div>
+			<ol class="main-nav-drop-down" style="z-index:980;top: 100px;left: 304px;display:block;box-shadow:none;opacity:1;filter:alpha(opacity=100);">
+				<li class="main-sub-nav-arrow-line">◆</li>
+
+				<li>
+					<a data-module="contact" href="javascript:void(0);" class="main-nav-drop-down-link contactManagerment main-nav-drop-down-link-active ">账号管理</a>
+				</li>
+
+				<li>
+					<a class="main-nav-drop-down-link">行为分析管理</a>
+				</li>
+
+				<li>
+					<a data-module="rulePrice" href="javascript:void(0);" class="main-nav-drop-down-link">多级运价管理</a>
+				</li>
+
+				<li>
+					<a data-module="invite" href="javascript:void(0);" class="main-nav-drop-down-link  inviteManagerment">邀请体验管理</a>
+				</li>
+
+			</ol>
+		</div>
+	
+</div>	
+			
+</body>
+</html>

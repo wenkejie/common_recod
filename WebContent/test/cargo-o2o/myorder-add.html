@@ -1,0 +1,896 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>我收到的订单</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+
+	<link rel="stylesheet" type="text/css" href="./webuploader/webuploader.css">
+	<link rel="stylesheet" href="../../release/jqueryplugin/spinner/jquery.spinner.css" /><!-- 加减控件样式 -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+		
+	
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="top-bar">
+		<div class="tb-cnt">
+			<ul class="tb-menu">
+				<li class="tb-menu-cell first">风清扬，<a href="javascript:">退出</a></li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell j-tbnav-sld">
+					<a class="tb-menu-link" href="javascript:"><span>账户管理</span><i class="ml5">&#xe643;</i></a>
+					<div class="tb-menu-sld">
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+					</div>
+				</li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell"><a class="tb-menu-link" href="javascript:"><i class="mr5">&#xf018f;</i><span>咨询</span></a></li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell">
+					<a class="tb-menu-link" href="javascript:"><i class="mr5">&#xf0190;</i><span>消息</span></a>
+					<span id="site-msg-count" class="newinfo-icon">12</span>
+				</li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell j-tbnav-sld">
+					<a class="tb-menu-link" href="javascript:"><span>帮助中心</span><i class="ml5">&#xe643;</i></a>
+					<div class="tb-menu-sld">
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="header">
+		<div class="hd-cnt">
+			<h1 class="hd-logo">
+				<a class="hd-logo-img" href="javascript:"></a>
+				<div class="hd-logo-extend"></div>
+			</h1>
+			<ul class="mnav">
+				<li class="mnav-cell current">
+					<a class="mnav-link" href="javascript:">首页</a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+				</li>
+				<li class="mnav-cell ">
+					<a class="mnav-link" href="javascript:">掌柜互联<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-mid">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item last">
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">运价通<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-mid">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">生意通<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-mid">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">营销通<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-o">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">平台设置<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-o">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="main-cnt main-cnt-old">
+		<div class="rside-cnt">
+			<div class="plate">
+				<div class="plate-hd bdn">
+					我收到的订单
+				</div>
+				<div class="plate-cnt plate-location-cnt">
+					<div class="order-column">
+						<div class="order-column-title">选择服务</div>
+						<div class="order-grid-line">
+							<div class="grid-line-cell">
+								<label><input type="checkbox" class="mr5">海运整箱</label>
+							</div>
+							<div class="grid-line-cell">
+								<label><input type="checkbox" class="mr5">海运拼箱</label>
+							</div>
+							<div class="grid-line-cell">
+								<label><input type="checkbox" class="mr5">拖车服务</label>
+							</div>
+							<div class="grid-line-cell">
+								<label><input type="checkbox" class="mr5">内装服务</label>
+							</div>
+							<div class="grid-line-cell">
+								<label><input type="checkbox" class="mr5">报关服务</label>
+							</div>
+						</div>
+					</div>
+					<div class="order-column mt20">
+						<div class="order-column-line order-column-line-esp">
+							<div class="address-list">
+								<div class="order-column-title order-column-title-esp">
+									发货人信息<span class="title-info">（请输入英文）</span>
+									<div class="title-link-wrap">		
+						        		<a href="javascript:" class="title-link">常用收货人</a>
+						        	</div>
+								</div>
+						        <div class="nui-form-cell w430 psr">
+									<textarea placeholder="请输入公司名称、地址、联系人、电话等信息" class="nui-textarea h120"></textarea>
+									<button class="nui-btn address-list-btn">保存</button>
+								</div>	
+						        <div class="order-column-title order-column-title-esp">
+						        	收货人信息<span class="title-info">（请输入英文）</span>
+						        	<div class="title-link-wrap">
+						        		<a href="javascript:" class="title-link">常用收货人</a>
+						        	</div>
+						        </div>
+						        <div class="nui-form-cell w430 psr">
+									<textarea class="nui-textarea h120" placeholder="请输入公司名称、地址、联系人、电话等信息">
+										NANYANG INTERNATIONAL SHIPPING LIMITED
+										香港上環皇后大道中340號華泰國際大廈15樓1502－03 室          
+										RM 1502-03,15/F ,HUAN QIN INTERNATIONAL BLOG340 ,
+										QUEEN’S ROAD CENTRAL HONG KONG             
+										電話 TEL: 2850 7872  傳真 FAX （852）2851 0663
+									</textarea>
+									<button class="nui-btn address-list-btn">已保存</button>
+								</div>
+						        <div class="order-column-title order-column-title-esp">
+						        	通知人信息<span class="title-info">（请输入英文）</span>
+						        	<div class="title-link-wrap">
+						        		<label><input type="checkbox" class="mr5" />THE SAME AS CONSIGNEE</label>
+						        		<a href="javascript:" class="title-link">常用收货人</a>
+						        	</div>
+						        </div>
+						        <div class="nui-form-cell w430 psr">
+									<textarea class="nui-textarea h120" placeholder="请输入公司名称、地址、联系人、电话等信息">
+										
+									</textarea>
+									<button class="nui-btn address-list-btn">保存</button>
+								</div>	
+							</div>
+			
+							<div class="space-info">
+						        <div class="order-column-title">订舱信息</div>
+						        <div class="form-line">
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">委托单位</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input" disabled value="宁波天时利货运代理有限公司"/> 
+										</div>
+									</div>
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">联系人</label>
+										<div class="nui-form-cell w60">
+											<input class="nui-input" disabled value="李春"/> 
+										</div>
+									</div>
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">联系电话</label>
+										<div class="nui-form-cell w95">
+											<input class="nui-input" disabled value="13225659874"/> 
+										</div>
+									</div>
+						        </div>
+						        <div class="form-line">
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">供应商</label>
+										<div class="nui-form-cell nui-form-cell-disable w185">
+											<input class="nui-input" disabled value="宁波天时利货运代理有限公司"/> 
+										</div>
+									</div>
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">联系人</label>
+										<div class="nui-form-cell nui-form-cell-disable w60">
+											<input class="nui-input" disabled value="李春"/> 
+										</div>
+									</div>
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">联系电话</label>
+										<div class="nui-form-cell nui-form-cell-disable w95">
+											<input class="nui-input" disabled value="13225659874"/> 
+										</div>
+									</div>
+						        </div>
+						        <div class="form-line">
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">REF.NO</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input"/> 
+										</div>
+									</div>
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">船公司</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input"/>  
+										</div>
+									</div>
+								</div>	
+								<div class="form-line">
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">船名</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input"/> 
+										</div>
+									</div>
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">航次</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input"/>  
+										</div>
+									</div>
+								</div>
+								<div class="form-line">
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">开航日期</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input"/> 
+										</div>
+									</div>
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">截关日期</label>
+										<div class="nui-form-cell nui-form-cell-disable w185">
+											<input class="nui-input" disabled/>  
+										</div>
+									</div>
+								</div>	
+								<div class="form-line">
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">货物类型</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input" value="普通货物"/> 
+										</div>
+									</div>
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">运输条款</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input"/>  
+										</div>
+									</div>
+								</div>	
+								<div class="form-line">
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">运费条款</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input" value="PP预付"/> 
+										</div>
+									</div>
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">第三支付地</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input" value="PP预付"/> 
+										</div>
+									</div>
+								</div>
+								<div class="form-line">
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">提单类型</label>
+										<div class="nui-form-cell nui-select w185"> 
+											<div class="nui-form-cell-cnt"> 
+												<input type="text" class="nui-input" value="请选择" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+												<div class="nui-drop-down drop-down-width"> 
+													<ul class="nui-select-list">
+														 <li class="nui-select-list-li">宁波</li> 
+														 <li class="nui-select-list-li">上海</li> 
+														 <li class="nui-select-list-li">XXX</li>   
+													</ul> 
+												</div> 
+											</div> 
+										</div>
+									</div>
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">提单号</label>
+										<div class="nui-form-cell nui-select w185"> 
+											<div class="nui-form-cell-cnt"> 
+												<input type="text" class="nui-input" value="请选择" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+												<div class="nui-drop-down drop-down-width"> 
+													<ul class="nui-select-list">
+														 <li class="nui-select-list-li">宁波</li> 
+														 <li class="nui-select-list-li">上海</li> 
+														 <li class="nui-select-list-li">XXX</li>   
+													</ul> 
+												</div> 
+											</div> 
+										</div>
+									</div>
+								</div>
+								<div class="form-line">
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">放单方式</label>
+										<div class="nui-form-cell nui-select w185"> 
+											<div class="nui-form-cell-cnt"> 
+												<input type="text" class="nui-input" value="请选择" disabled="disabled"><i class="nui-form-cell-icon fs12">&#xe61d;</i> 
+												<div class="nui-drop-down drop-down-width"> 
+													<ul class="nui-select-list">
+														 <li class="nui-select-list-li">宁波</li> 
+														 <li class="nui-select-list-li">上海</li> 
+														 <li class="nui-select-list-li">XXX</li>   
+													</ul> 
+												</div> 
+											</div> 
+										</div>
+									</div>
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">约号</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input" value="PP预付"/> 
+										</div>
+									</div>
+								</div>	
+								<div class="form-line">
+									<div class="order-form-group order-form-group-esp">
+										<label class="nui-label label-above">公司</label>
+										<div class="nui-form-cell w185">
+											<input class="nui-input" value="PP预付"/> 
+										</div>
+									</div>
+								</div>
+					        </div>
+				        	<div style=" clear:both; "></div>
+						</div>
+					</div>
+					<div class="order-column mt20">
+						<div class="order-column-title">港口信息</div>
+						<div class="order-column-line order-column-line-esp">
+							<div class="order-form-group">
+								<label class="nui-label w50">收货地</label>
+								<div class="nui-form-cell w140">
+									<input class="nui-input" type="text">
+								</div>
+							</div>
+							<div class="order-form-group">
+								<label class="nui-label w50"><span class="text-red">*</span>起运港</label>
+								<div class="nui-form-cell w140">
+									<input class="nui-input" type="text">
+								</div>
+							</div>
+							<div class="order-form-group">
+								<label class="nui-label w50"><span class="text-red">*</span>目的港</label>
+								<div class="nui-form-cell w140">
+									<input class="nui-input" type="text">
+								</div>
+							</div>
+							<div class="order-form-group">
+								<label class="nui-label">最终目的地</label>
+								<div class="nui-form-cell w140">
+									<input class="nui-input" type="text">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="order-column mt20">
+						<div class="order-column-title">货物信息
+							<div class="title-link-wrap">
+				        		<a href="javascript:" class="title-link"><i class="iconfont">&#x35a6;</i><span>新增货物信息</span></a>
+				        	</div>
+						</div>
+						<div class="order-column-line">
+							<div class="goods-wrap">
+								<div class="order-form-group">
+									<label class="nui-label w50 vat">唛头</label>
+									<div class="nui-form-cell w140">
+										<textarea class="nui-textarea h50"></textarea>
+									</div>
+								</div>
+								<div class="order-form-group">
+									<label class="nui-label w50 vat">品名</label>
+									<div class="nui-form-cell w140">
+										<textarea class="nui-textarea h50"></textarea>
+									</div>
+								</div>
+							</div>	
+							<div class="goods-wrap">
+								<div class="order-form-group">
+									<label class="nui-label w50">件数</label>
+									<div class="nui-form-cell w140">
+										<input class="nui-input" type="text">
+									</div>
+								</div>
+								<div class="order-form-group">
+									<label class="nui-label w50">包装</label>
+									<div class="nui-form-cell w140">
+										<input class="nui-input" type="text">
+									</div>	
+								</div>
+								<div class="order-form-group">
+									<label class="nui-label w50">毛重</label>
+									<div class="nui-form-cell order-unit-right w140">
+										<div class="nui-form-cell-cnt">
+											<span class="nui-form-addon">KGS</span>
+											<input class="nui-input" type="text">
+										</div>
+									</div>
+								</div>
+								<div class="order-form-group">
+									<label class="nui-label w50">体积</label>
+									<div class="nui-form-cell order-unit-right w140">
+										<div class="nui-form-cell-cnt">
+											<span class="nui-form-addon">CMB</span>
+											<input class="nui-input" type="text">
+										</div>
+									</div>
+								</div>
+							</div>
+							<a class="nui-btn del-btn" href="javascript:">删除</a>
+							<div style=" clear:both; "></div>
+						</div>	
+						<div class="order-column-line order-column-line-esp">
+							<div class="goods-wrap">
+								<div class="order-form-group">
+									<label class="nui-label w50 vat">唛头</label>
+									<div class="nui-form-cell w140">
+										<textarea class="nui-textarea h50"></textarea>
+									</div>
+								</div>
+								<div class="order-form-group">
+									<label class="nui-label w50 vat">品名</label>
+									<div class="nui-form-cell w140">
+										<textarea class="nui-textarea h50"></textarea>
+									</div>
+								</div>
+							</div>	
+							<div class="goods-wrap">
+								<div class="order-form-group">
+									<label class="nui-label w50">件数</label>
+									<div class="nui-form-cell w140">
+										<input class="nui-input" type="text">
+									</div>
+								</div>
+								<div class="order-form-group">
+									<label class="nui-label w50">包装</label>
+									<div class="nui-form-cell w140">
+										<input class="nui-input" type="text">
+									</div>	
+								</div>
+								<div class="order-form-group">
+									<label class="nui-label w50">毛重</label>
+									<div class="nui-form-cell order-unit-right w140">
+										<div class="nui-form-cell-cnt">
+											<span class="nui-form-addon">KGS</span>
+											<input class="nui-input" type="text">
+										</div>
+									</div>
+								</div>
+								<div class="order-form-group">
+									<label class="nui-label w50">体积</label>
+									<div class="nui-form-cell order-unit-right w140">
+										<div class="nui-form-cell-cnt">
+											<span class="nui-form-addon">CMB</span>
+											<input class="nui-input" type="text">
+										</div>
+									</div>
+								</div>
+							</div>
+							<a class="nui-btn del-btn" href="javascript:">删除</a>
+							<div style=" clear:both; "></div>
+						</div>
+					</div>
+					<div class="order-column mt20">
+						<div class="order-column-title">箱型箱量</div>
+						<div class="order-column-line order-column-line-esp">
+							<div class="order-form-group"><span class="insure-icon"></span>仓位保证<span class="split-icon"></span></div>
+							<div class="order-form-group">
+								<label for="" class="nui-label w50">20GP</label>
+								<div class="spinner-form-cell">
+									<input type="text" class="spinner"/>
+								</div>
+							</div>
+							<div class="order-form-group">
+								<label for="" class="nui-label w50">40GP</label>
+								<div class="spinner-form-cell">
+									<input type="text" class="spinner"/>
+								</div>
+							</div>
+							<div class="order-form-group">
+								<label for="" class="nui-label w50">40HQ</label>
+								<div class="spinner-form-cell">
+									<input type="text" class="spinner"/>
+								</div>
+							</div>
+							<div class="order-form-group">
+								<label for="" class="nui-label w50">45HQ</label>
+								<div class="spinner-form-cell">
+									<input type="text" class="spinner"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="order-column mt20">
+						<div class="order-column-title">拖车门点装箱</div>
+						<dl class="truck-adr">
+							<dt class="truck-adr-tt">
+								<h5>地址1</h5>
+								<a href="javascript:;">+添加</a>
+								<!-- <a href="javascript:;">-删除</a> -->
+							</dt>
+							<dd class="truck-adr-item">
+								
+							 	<div class="order-form-group">
+					                <label class="nui-label">省市区</label>
+					                <div class="nui-form-cell w140">
+					                    <input class="nui-input"/> 
+					                </div>
+					             </div>
+					             <div class="order-form-group">
+					             	<label class="nui-label">详细地址</label>
+					                <div class="nui-form-cell w360">
+					                    <input class="nui-input"/> 
+					                </div>
+					            </div>
+					            <div class="order-form-group">
+					             	<label class="nui-label">联系人</label>
+					                <div class="nui-form-cell w140">
+					                    <input class="nui-input"/> 
+					                </div>
+					            </div>
+					            <div class="order-form-group">
+					             	<label class="nui-label">联系电话</label>
+					                <div class="nui-form-cell w140">
+					                    <input class="nui-input"/> 
+					                </div>
+					            </div>
+					            <div class="order-form-group">
+					             	<label class="nui-label w50">联系时间</label>
+					                <div class="nui-form-cell w140">
+					                    <input class="nui-input"/> 
+					                </div>
+					            </div>
+							
+							</dd>
+						</dl>
+						<div class="truck-adr-foot">
+							<div class="order-form-group">
+				             	<label class="nui-label">拖车要求</label>
+				                <div class="nui-form-cell w600">
+				                    <input class="nui-input"/> 
+				                </div>
+				            </div>
+						</div>
+					</div>
+					<div class="order-column mt20">
+						<div class="order-column-title">仓库内装箱</div>
+						<div class="order-column-line order-column-line-esp ">
+							<div class="order-form-group">
+								<label class="nui-label">装箱要求</label>
+								<div class="nui-form-cell w600">
+									<input class="nui-input" type="text">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="order-column mt20">
+						<div class="order-column-title">出口报关</div>
+						<div class="order-column-line order-column-line-esp">
+							<div class="order-form-group">
+								<label class="nui-label">申报日期</label>
+								<div class="nui-form-cell w100">
+									<input class="nui-input" type="text">
+								</div>
+							</div>
+							<div class="order-form-group">
+								<label class="nui-label">报关票数</label>
+								<div class="nui-form-cell w60">
+									<input class="nui-input" type="text">
+								</div>
+							</div>
+							<div class="order-form-group">
+								<label class="nui-label">报关要求</label>
+								<div class="nui-form-cell w450">
+									<input class="nui-input" type="text">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="order-column mt20">
+						<div class="order-column-title">委托要求</div>
+						<div class="order-column-line order-column-line-esp">
+							<div class="order-form-group">
+								<label class="nui-label">委托要求</label>
+								<div class="nui-form-cell w600">
+									<input class="nui-input" type="text">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="order-column mt20">
+						<div class="order-column-title">上传相关文件</div>
+						<div class="upload-info">
+							<div class="item-btn">
+								<div id="picker" href="javascript:">上传文件</div>
+								<p class="item-tip">温馨提示： 文件大小不超过5MB，支持多种文档类型word、excel、jpg、png、pdf等</p>
+								<div class="msg-tip">
+									<p class="tip-success"><i class="iconfont">&#x3587;</i><span>恭喜！上传成功</span></p>
+									<p class="tip-error"><i class="iconfont">&#x3586;</i><span>上传失败，格式不正确</span></p>
+								</div>
+							</div>
+							<ul class="upload-info-list order-grid-line pd0">
+								<!-- 已上传 -->
+								<li class="grid-line-cell grid-line-cell-file">
+									<span class="file-icon"></span><p>我的托书附件20160545.jpg</p><div class="file-link"><i class="iconfont">&#x34e4;</i></div>
+								</li>
+								<li class="grid-line-cell grid-line-cell-file">
+									<span class="file-icon"></span><p>我的托书附件我的托书附件我的托书附件20160545.jpg</p><div class="file-link"><a href="javascript:">下载</a></div>
+								</li>
+								<li class="grid-line-cell grid-line-cell-file">
+									<span class="file-icon"></span><p>我的托书附件我的托书附件我的托书附件20160545.jpg</p><div class="file-link">
+										<a href="javascript:">下载</a><i class="iconfont">&#x34e4;</i>
+									</div>
+								</li>
+								<!-- 上传中 -->
+								<li class="grid-line-cell grid-line-cell-file file-uploading">
+									<span class="file-icon"></span><p>我的托书附件20160545.jpg</p><div class="file-link"></div>
+									<div class="process-bar"><span></span></div>
+								</li>
+								<li class="grid-line-cell grid-line-cell-file file-uploading">
+									<span class="file-icon"></span><p>我的托书附件20160545.jpg</p><div class="file-link"></div>
+									<div class="process-bar"><span></span></div>
+								</li>
+								<li class="grid-line-cell grid-line-cell-file file-uploading">
+									<span class="file-icon"></span><p>我的托书附件20160545.jpg</p><div class="file-link"></div>
+									<div class="process-bar"><span></span></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="bottom-operation-box mt20">
+						<a class="nui-btn nui-btn-primary nui-btn-large mr8" href="javascript:">我要投标</a>
+						<a class="nui-btn nui-btn-large" href="javascript:">返回</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="ft-cnt">
+			<ul class="fdlk">
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">奥林科技</a>
+				</li>
+				<li class="fdlk-line"></li>
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">大掌柜</a>
+				</li>
+				<li class="fdlk-line"></li>
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">咖狗网</a>
+				</li>
+				<li class="fdlk-line"></li>
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">云融通</a>
+				</li>
+			</ul>
+			<div class="cprt">
+				版权所有 © 2014 奥林科技(宁波)有限公司
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../release/freight/js/cargo-o2o/index.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/cargo-o2o/manage.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/cargo-o2o/myorder.js"></script>
+
+	<script type="text/javascript" src="../../release/jqueryplugin/spinner/jquery.spinner.js"></script><!-- 控件 -->
+	<script type="text/javascript" src="./webuploader/webuploader.nolog.js"></script><!-- 控件 -->
+	<script type="text/javascript" src="./upload.js"></script>	
+
+	<script type="text/javascript">
+		$('.spinner').spinner({value:0,max : 5});
+	</script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>运价维护</title>
+	<link rel="stylesheet" href="../../release/freight/css/common.css" /><
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function () {
+
+		$('div.rule-config-box').hover(function() {
+			$(this).addClass('active');
+		}, function() {
+			$(this).removeClass('active');
+		});
+		$('div.rule-config-box').click(function() {
+			$('input.item').prop("checked",false);
+			$(this).find('input.item').prop("checked",true);
+		});
+
+		$('div.rule-config-box-last').click(function() {
+			$(this).addClass('rule-config-box-stack').prev().addClass('rule-config-box-stack');
+			$(this).children('div.rule-config-cnt').removeClass('none')
+			$(this).find('div.power-set-fn').removeClass('none');
+			
+		});
+
+		// $('a.j-open').delegate('div.rule-config-box-last', 'click', function() {
+		// 	console.log(111);
+		// 	$('div.rule-config-box').removeClass('rule-config-box-stack');
+		// 	$('div.rule-config-cnt').addClass('none');
+		// });
+		$('a.j-open').click(function() {
+			$('div.rule-config-box').removeClass('rule-config-box-stack');
+			$('div.rule-config-cnt').addClass('none');
+			$(this).parent().addClass('none');
+			return false;
+		});
+	})
+	// 以上js仅作效果的参考，by:Evan.
+	</script>
+</head>
+<body>
+
+<div class="fui-dialog">
+	<div class="fui-dialog-title">
+		<h4 class="tal">运价维护</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:400px;width:650px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt" style="height:400px;width:650px;">
+			<div class="fui-tab fui-tab-has-submenu">
+				<ul class="fui-tab-list">
+
+					<li><a class="fui-tab-list-cell  active" href="javascript:">查询规则<em class="fui-tab-list-arrow">◆</em></a></li>
+
+					<li><a class="fui-tab-list-cell" href="javascript:">维护规则<em class="fui-tab-list-arrow">◆</em></a></li>
+				</ul>
+				<!-- 海运出口整箱查询Start -->
+				
+				<div class="rule-config-area">
+					<div class="rule-config-box">
+						<div class="rule-config-title">
+							<div class="rule-config-left">
+								<label for="" class="nui-radio mr10">
+								<input class="item" type="radio" name="control">公司级</label>
+								<span class="info">通过角色调整方式来快速分配权限</span>
+							</div>
+						</div>
+					</div>
+					<div class="rule-config-box">
+						<div class="rule-config-title">
+							<div class="rule-config-left">
+								<label for="" class="nui-radio mr10"><input class="item" type="radio" name="control">个人级</label>
+								<span class="info">通过角色调整方式来快速分配权限</span>
+							</div>
+						</div>
+					</div>
+					<div class="rule-config-box rule-config-box-last">
+						<div class="rule-config-title">
+							<div class="rule-config-left">
+								<label for="" class="nui-radio mr10"><input class="item" type="radio" name="control" >自定义</label><span class="info">通过角色调整方式来快速分配权限</span>
+							</div>
+							<div class="power-set-right">
+								<div class="power-set-fn none">
+									<a class="j-open" href="javascript:">展开</a>
+								</div>
+							</div>
+							
+						</div>
+						<div class="rule-config-cnt none">
+							<ul class="fui-tab-submenu">
+								<li class="">
+
+									<a class="active" href="javascript:">海运出口整箱</a>
+
+									<a class="" href="javascript:">海运出口拼箱</a>
+
+									<a class="" href="javascript:">海运进口拼箱</a>
+
+								</li>
+								<li class="none">
+
+									<a class="" href="javascript:">海运出口整箱</a>
+
+									<a class="" href="javascript:">海运出口拼箱</a>
+
+									<a class="" href="javascript:">海运进口拼箱</a>
+
+								</li>
+
+							</ul>
+							<div class="fui-tab-cnt">
+								<div class="fui-adv-tab">
+									<input type="hidden" value="1">
+									<ul class="fui-adv-tab-list">
+										<li><a href="javascript:" class="fui-adv-tab-list-cell active">航线<div class="fui-tips-arrow fui-tips-arrow-right">◆<em>◆</em></div></a></li>
+										<li><a href="javascript:" class="fui-adv-tab-list-cell ">起运港<div class="fui-tips-arrow fui-tips-arrow-right">◆<em>◆</em></div></a></li>
+										<li><a href="javascript:" class="fui-adv-tab-list-cell ">订舱代理<div class="fui-tips-arrow fui-tips-arrow-right">◆<em>◆</em></div></a></li>
+									</ul>
+
+									<div class="fui-adv-tab-cnt fui-grid-disable">
+										<div style="border-bottom:1px solid #ccc;padding-bottom:8px;margin-bottom:8px;margin-top:-5px" class="w100p">
+											<span class="fui-label w-a">航线控制</span>
+
+											<a class="fui-btn-switch  fui-btn-switch-disable " href="javascript:"></a>
+											<span id="j-info" class="ml15 vam  none "><s class="icon-r-info"></s>启用后，请选择可以查询的项，否则将无法查看到任何数据。</span>
+										</div>
+										<input type="hidden" value="false" class="switch_status" name="efcl_searoute_query" disabled="disabled">
+										<input type="hidden" value="7,8,9,10,34,31,26" class="ids" name="efcl_searoute_query_ids" id="efcl_searoute_query_ids">
+
+										<label><input type="checkbox" checked="checked" value="7" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">整箱航线222</label>
+
+										<label><input type="checkbox" checked="checked" value="8" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">整箱航线2</label>
+
+										<label><input type="checkbox" checked="checked" value="9" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">整箱航线3</label>
+
+										<label><input type="checkbox" checked="checked" value="10" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">~:"';&amp;$@%!</label>
+
+										<label><input type="checkbox" checked="checked" value="26" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">整宁波</label>
+
+										<label><input type="checkbox" checked="checked" value="31" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">ZHENGNB-01</label>
+
+										<label><input type="checkbox" value="141" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">日韩航线</label>
+
+										<label><input type="checkbox" value="147" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">欧洲航线</label>
+
+										<label><input type="checkbox" value="150" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">中东航线</label>
+
+										<label><input type="checkbox" value="677" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">中美</label>
+
+										<label><input type="checkbox" value="678" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">地中海</label>
+
+										<label><input type="checkbox" value="679" name="eFclRouteQuery" id="eFclRouteQuery" class="checkbox ml10" onclick="changeFiledValue(this);" disabled="disabled">欧美</label>
+
+									</div>
+									<div class="fui-adv-tab-cnt none three-cell-for-line fui-grid-disable">
+										<div style="border-bottom:1px solid #ccc;padding-bottom:8px;margin-bottom:8px;margin-top:-5px" class="w100p">
+											<span class="fui-label w-a">起运港控制</span>
+
+											<a class="fui-btn-switch  fui-btn-switch-disable " href="javascript:"></a>
+											<span id="j-info" class="ml15 vam  none "><s class="icon-r-info"></s>启用后，请选择可以查询的项，否则将无法查看到任何数据。</span>
+										</div>
+										<input type="hidden" value="false" class="switch_status" name="efcl_loadport_query" disabled="disabled">
+										<input type="hidden" value="4416,4417,4419" class="ids" name="efcl_loadport_query_ids" id="efcl_loadport_query_ids">
+
+										<label title="SDF[sdf]">
+											<input type="checkbox" checked="checked" class="checkbox ml10" id="eFclLoadportQuery" name="eFclLoadportQuery" value="4416" onclick="changeFiledValue(this);" disabled="disabled">SDF[sdf]
+										</label>
+
+										<label title="AD[ad]">
+											<input type="checkbox" checked="checked" class="checkbox ml10" id="eFclLoadportQuery" name="eFclLoadportQuery" value="4417" onclick="changeFiledValue(this);" disabled="disabled">AD[ad]
+										</label>
+
+										<label title="JJJJJJJ[jj]">
+											<input type="checkbox" checked="checked" class="checkbox ml10" id="eFclLoadportQuery" name="eFclLoadportQuery" value="4419" onclick="changeFiledValue(this);" disabled="disabled">JJJJJJJ[jj]
+										</label>
+
+										<label title="MAINZZZ[美因茨]">
+											<input type="checkbox" class="checkbox ml10" id="eFclLoadportQuery" name="eFclLoadportQuery" value="11955" onclick="changeFiledValue(this);" disabled="disabled">MAINZZZ[美因茨]
+										</label>
+
+										<label title="ABBOT BAY[阿伯特]">
+											<input type="checkbox" class="checkbox ml10" id="eFclLoadportQuery" name="eFclLoadportQuery" value="138421" onclick="changeFiledValue(this);" disabled="disabled">ABBOT BAY[阿伯特]
+										</label>
+
+									</div>
+									<div class="fui-adv-tab-cnt none fui-grid-disable">
+										<div style="border-bottom:1px solid #ccc;padding-bottom:8px;margin-bottom:8px;margin-top:-5px" class="w100p">
+											<span class="fui-label w-a">订舱代理控制</span>
+
+											<a class="fui-btn-switch  fui-btn-switch-disable " href="javascript:"></a>
+											<span id="j-info" class="ml15 vam  none "><s class="icon-r-info"></s>启用后，请选择可以查询的项，否则将无法查看到任何数据。</span>
+										</div>
+										<input type="hidden" value="false" class="switch_status" name="efcl_booking_query" disabled="disabled">
+										<input type="hidden" value="301,306,13,116,120,303,307,304,305,115,195,192,188,32,181,174,177,170,166,168,172,308,309,25,16,117,118,119,123,122,121" class="ids" name="efcl_booking_query_ids" id="efcl_booking_query_ids">
+
+										<label><input type="checkbox" checked="checked" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="301" onclick="changeFiledValue(this);" disabled="disabled">ywia11</label>
+
+										<label><input type="checkbox" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="548" onclick="changeFiledValue(this);" disabled="disabled">11111</label>
+
+										<label><input type="checkbox" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="554" onclick="changeFiledValue(this);" disabled="disabled">大规模</label>
+
+										<label><input type="checkbox" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="532" onclick="changeFiledValue(this);" disabled="disabled">13</label>
+
+										<label><input type="checkbox" checked="checked" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="303" onclick="changeFiledValue(this);" disabled="disabled">yihia30</label>
+
+										<label><input type="checkbox" checked="checked" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="306" onclick="changeFiledValue(this);" disabled="disabled">yihia33</label>
+
+										<label><input type="checkbox" checked="checked" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="308" onclick="changeFiledValue(this);" disabled="disabled">yihia35</label>
+
+										<label><input type="checkbox" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="536" onclick="changeFiledValue(this);" disabled="disabled">14</label>
+
+										<label><input type="checkbox" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="527" onclick="changeFiledValue(this);" disabled="disabled">杯具熊</label>
+
+										<label><input type="checkbox" checked="checked" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="13" onclick="changeFiledValue(this);" disabled="disabled">JC</label>
+
+										<label><input type="checkbox" checked="checked" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="25" onclick="changeFiledValue(this);" disabled="disabled">jc10</label>
+
+										<label><input type="checkbox" checked="checked" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="115" onclick="changeFiledValue(this);" disabled="disabled">jc100</label>
+
+										<label><input type="checkbox" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="126" onclick="changeFiledValue(this);" disabled="disabled">jc111</label>
+
+										<label><input type="checkbox" class="checkbox ml10" id="eFclBookingQuery" name="eFclBookingQuery" value="14" onclick="changeFiledValue(this);" disabled="disabled">dahang</label>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 海运出口整箱查询End -->
+				<!-- 海运出口拼箱查询Start -->
+				
+				<div class="fui-tab-cnt none">
+				</div>
+				
+				<!-- 海运出口拼箱查询End -->
+				<!-- 海运进口拼箱查询 Start-->
+				
+				<div class="fui-tab-cnt none">
+				</div>
+				
+				<!-- 海运进口拼箱查询End -->
+				<!-- 海运出口整箱维护Start -->
+				
+				<div class="fui-tab-cnt none">
+				</div>
+				
+				<!-- 海运出口整箱维护End -->
+				<!-- 海运出口拼箱维护Start -->
+				
+				<div class="fui-tab-cnt none">
+				</div>
+				
+				<!-- 海运出口拼箱维护End -->
+				<!-- 海运进口拼箱维护Start -->
+				
+				<div class="fui-tab-cnt none">
+				</div>
+	
+			<!-- 海运进口拼箱维护End -->
+		   </div>
+	</div>
+	<div class="fui-dialog-btm-bar"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>确定</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+</body>
+</html>

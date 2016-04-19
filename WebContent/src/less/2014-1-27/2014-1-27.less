@@ -1,0 +1,162 @@
+// ====================运价导入新增结构，27，by:Evan=================
+
+.nui-verify-table{
+	table-layout: fixed;
+	width: 100%;//出现问题后新增，2015-615
+	border:1px solid #dedede;
+	*overflow-x: hidden;
+	tr{
+		border-top:1px solid #dedede;
+		
+	}
+	th{
+		padding: 8px 10px;
+		background: #f5f5f5;
+	}
+	td{
+		padding: 8px 10px;
+		.nui-form-cell{
+			display: block;
+			width: auto;
+		}
+		.nui-form-cell-info{
+			position: relative;
+			padding-right: 20px;
+		}
+		.info-icon{
+			position: absolute;right: 3px;top: 50%;
+			width: 16px;height: 16px;margin-top: -8px;
+			cursor: pointer;color: #06c;
+		}
+	}
+
+	.td-content{
+		padding: 0;
+		&:hover,&.active{
+			.verify-inside-table{
+				th{
+					background: #f2f7f9;
+					cursor: default;
+				}
+				tr{
+					border: none;_background: #fff;
+					cursor: pointer;_color: #666;
+					&.tr-block{
+						background: #f2f7f9;
+					}
+					&:hover,&.hover{
+						background: #dfe9ee;
+						color: #446888;
+					}
+				}
+			}
+		}
+	}
+
+	// .inside-list-td{
+	// 	padding: 0;
+	// }
+
+	.loading-more-td{
+		background: #eee;
+		text-align: center;
+	}
+	
+	.code{
+		width: 80px;
+	}
+
+	.english-name{
+		width: 110px;
+	}
+	.chinese-name{
+		width:110px;
+	}
+	.national-chinese{
+		width: 140px;
+	}
+	.national-english{
+		width: 140px;
+	}
+	.shipping-line{
+		width: 140px;
+	}
+	
+}
+
+.check-num-tips{
+	display: inline-block;*display: inline;
+	width: 132px;margin-right: -132px;
+	vertical-align: middle;
+}
+
+
+
+.check-list{
+
+}
+
+// .check-list-cell{
+// 	&:extend(.clearfix all);
+// 	display: block;
+// 	height: 16px;line-height: 16px;padding: 8px 0;
+// 	color: #666;
+// 	span{
+// 		.toe;
+// 		float: left;*display: inline;
+// 		padding: 0 12px;
+// 		cursor: pointer;
+// 	}
+// 	&:nth-child(2n){
+// 		background: #f2f7f9;
+// 	}
+// 	&:hover{
+// 		background: #dfe9ee;
+// 		color: #446888;
+// 	}
+// }
+
+.check-list-more{
+	display: block;
+	padding: 5px 0;
+	background: #f6f6f6;border-top: 1px solid #eee;border-bottom: 1px solid #eee;
+	text-align: center;
+	i{
+		font-size: 12px;color: #666;
+	}
+	&:hover{
+		background: #dfe9ee;
+		color: #446888;text-decoration: none;
+		i{
+			color: #446888;
+		}
+	}
+}
+
+
+
+.verify-inside-table{
+	table-layout: fixed;width: 100%;//出现样式问题后整改,615,by:evan
+	th{
+		background: #fff;
+	}
+	tr{
+		border: none;
+		cursor: pointer;
+		&:nth-child(2n){
+			background: #fafafa;
+		}
+		// &:hover{
+		// 	background: #dfe9ee;
+		// 	color: #446888;
+		// }
+	}
+	
+	td{
+		.wordbreak;
+	}
+
+	.td-footer{
+		padding: 0;
+	}
+}

@@ -1,0 +1,647 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>基础资料校验</title>
+	<!-- 样式引入 -->
+	<link rel="stylesheet" href="../../release/jqueryplugin/spinner/jquery.spinner.css" /><!-- 加减控件样式 -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+</head>
+<body>
+	<div id="header">
+	<div class="top-info">
+		<div class="wrap">
+			<a href="/" class="logo">运价通</a>
+			<ul class="top-menu">
+				<li class="top-menu-cell pr0">你好：</li>
+				<li class="top-menu-cell cur-p has-dropdown">
+					<span id="relateEmployeeName">胡伟</span> <i class="top-menu-icon">㐸</i>
+					<input id="currUserId" type="hidden" value="209080">
+					<input id="currEmployeeName" type="hidden" value="胡伟">
+					<input id="setEmployeeName" type="hidden" value="胡伟">
+					<input id="setEmployeeId" type="hidden" value="44411">
+					<input id="setUserId" type="hidden" value="209080">
+					<div class="nui-drop-down block" style="*width:150px;">
+						<ul class="nui-select-list">
+							<li class="nui-select-list-li">
+								<a id="userInfo" href="javascript:">
+									<i class="mr5 animate">㓬</i>
+									账户信息
+								</a>
+							</li>
+							<!-- modify by 曹金彦,2014-7-23,修改密码从登录信息中获取 -->
+							<li class="nui-select-list-li">
+								<a href="javascript:" id="modifyPassWord" name="modifyPassWord" onclick="openWindow('/cpmembership/memuser.ctrl?$action=modifyUserPassword&amp;actionType=show','修改密码',{width:750,height:450})">
+									<i class="mr5 animate">㔳</i>
+									修改密码
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</li>
+				<li class="top-menu-cell">
+					<em>|</em>
+				</li>
+
+				<!-- modify by 曹金彦,201406A,基础设置页面没有与生意通相关的设置-->
+				<li class="top-menu-cell">
+					<a class="top-menu-link" href="/cpmembership/privateLog.ctrl?$action=logoutAction">退出</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<div class="wrap">
+		<div class="title-info title-info-inventory">
+			<h2>生成报价单</h2>
+		</div>
+		<div class="inventory-panel mt20">
+			<div>
+				<div class="inventory-panel-tight-info">
+					<span>张一，总经理，135000213212312，11113213@qq.com</span>
+				</div>
+				<label class="nui-label fs14">客户名称：</label>
+				<div class="nui-form-cell w180">
+					<div class="nui-form-cell-cnt ">
+						<input class="nui-input" type="text" placeholder="奥林科技">				
+						<a href="javascript:" class="nui-form-cell-icon">&#xe609;</a>
+					</div>
+				</div>
+				<a class="ml5" href="javascript:">+添加新客户</a>
+				
+			</div>
+			<div class="inventory-grid inventory-grid-tbinside mt10">
+				<table class="nui-table nui-table-form">
+					<tbody>
+						<tr>
+							<td width="180">
+								<span class="port-name"><strong>BUENOSAIRES</strong></span>
+								<i>&#xe610;</i>
+							</td>
+							<td>
+								<label>目的港国家：</label>
+								<span>阿根廷</span>
+							</td>
+							<td>
+								<label>中转港：</label>
+								<span>THURSDAY IS</span>
+							</td>
+							<td>
+								<label>船公司：</label>
+								<span>CoSCO</span>
+							</td>
+							<td>
+								<label>航程：</label>
+								<span>40</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="port-name"><strong>BUENOSAIRES ADADWDA</strong></span>
+							</td>
+							<td>
+								<label>港区码头：</label>
+								<span>大榭码头六期</span>
+							</td>
+							<td>
+								<label>航线：</label>
+								<span>THURSDAY IS</span>
+							</td>
+							<td>
+								<label>航线代码：</label>
+								<span>M0001</span>
+							</td>
+							<td>
+								<label>航程：</label>
+								<span>周一</span>截关<span>周三</span>截关
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="inventory-grid mt10">
+				<div class="inventory-form">
+					<div class="inventory-form-line">
+						<label class="inventory-form-label">
+							<b>货物信息</b>
+						</label>
+						<div class="inventory-form-cnt">
+							<label>品名：</label>
+							<div class="nui-form-cell w80">
+								<input type="text" class="nui-input">
+							</div>
+							<label class="ml20">件数：</label>
+							<div class="nui-form-cell w80">
+								<input type="text" class="nui-input">
+							</div>
+							<span>件</span>
+							<label class="ml20">毛重：</label>
+							<div class="nui-form-cell w80">
+								<input type="text" class="nui-input">
+							</div>
+							<span>kg</span>
+							<label class="ml20">体积：</label>
+							<div class="nui-form-cell w80">
+								<input type="text" class="nui-input">
+							</div>
+							<span>m³</span>
+							<label class="ml20">出货时间：</label>
+							<div class="nui-form-cell w80">
+								<input type="text" class="nui-input">
+							</div>
+						</div>
+					</div>
+					<div class="inventory-form-line inventory-form-last">
+						<label class="inventory-form-label">
+							<b>箱量</b>
+						</label>
+						<div class="inventory-form-cnt">
+							<label>20'GP：</label>
+							<input type="text" class="spinner"/>
+							<label class="ml15">40'GP：</label>
+							<input type="text" class="spinner"/>
+							<label class="ml15">40'HQ：</label>
+							<input type="text" class="spinner"/>
+							<label class="ml15">20'FR：</label>
+							<input type="text" class="spinner"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="inventory-grid mt10">
+				<div class="inventory-form">
+					<div class="inventory-form-line inventory-form-last">
+						<label class="inventory-form-label">
+							<b>服务内容</b>
+						</label>
+						<div class="inventory-form-cnt pl15">
+							<div class="pb10">
+								<label for="tk" class="nui-checkbox"><input type="checkbox" name="" id="tk">托卡服务</label>
+								<label for="bg" class="nui-checkbox"><input type="checkbox" name="" id="bg">报关服务</label>
+								<label for="bj" class="nui-checkbox"><input type="checkbox" name="" id="bj">报检服务</label>
+								<label for="cc" class="nui-checkbox"><input type="checkbox" name="" id="cc">仓储服务</label>
+								<label for="sj" class="nui-checkbox"><input type="checkbox" name="" id="sj">商检换单</label>
+								<label for="fk" class="nui-checkbox"><input type="checkbox" name="" id="fk">反恐仓单</label>
+								<label for="kd" class="nui-checkbox"><input type="checkbox" name="" id="kd">快递服务</label>
+								<label for="bx" class="nui-checkbox"><input type="checkbox" name="" id="bx">保险服务</label>
+							</div>
+							<div class="form-cell-wrap">
+								<div class="nui-form-cell form-cell-before form-cell-before-esp form-cell-before-right">
+									<div class="nui-form-cell-cnt">
+										<span class="nui-form-addon">保险税</span>
+										<input class="nui-input" type="text"></div>	
+								</div>	
+								<div class="nui-form-cell form-cell-before form-cell-before-esp">
+									<div class="nui-form-cell-cnt">
+										<span class="nui-form-addon">托运地址</span>
+										<input class="nui-input" type="text"></div>
+								
+								</div>
+							</div>
+							
+								
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="inventory-grid mt10">
+				<table class="nui-table nui-table-bill inventory-grid-esp">
+						<tr>
+							<td class="y-th tar" width="84"> <b>费用合计</b>
+							</td>
+							<td colspan="3" class="bd-r vat">
+								<div class="bill-total">
+									<label class="total-name">起运港：</label>
+									<div class="total-info">
+										<p>
+											<label class="total-label w25">USD</label>
+											<span class="num">14000</span>
+										</p>
+										<p>
+											<label class="total-label w25">USD</label>
+											<span class="num">14000</span>
+										</p>
+									</div>
+								</div>
+							</td>
+							<td colspan="3" class="bd-r vat">
+								<div class="bill-total">
+									<label class="total-name">起运港：</label>
+									<div class="total-info">
+										<p>
+											<label class="total-label w25">USD</label>
+											<span class="num">14000</span>
+										</p>
+										<p>
+											<label class="total-label w25">USD</label>
+											<span class="num">14000</span>
+										</p>
+										<p>
+											<label class="total-label w25">USD</label>
+											<span class="num">14000</span>
+										</p>
+									</div>
+								</div>
+							</td>
+							<td colspan="3" class="vat">
+								<div class="bill-total">
+									<label class="total-name total-name-esp">总计：</label>
+									<div class="total-info">
+										<p class="total-info-line">
+											<label class="total-label w40 text-orange">USD</label>
+											<span class="num">14000</span>
+										</p>
+										<p class="exchange-rate-info">( 汇率：1USD=6.3RNB )</p>
+									</div>
+								</div>
+							</td>
+						</tr>
+				</table>
+				<table class="nui-table nui-table-bill">
+					<thead>
+						<th width="84" class="tar"><b>费用</b></th>
+						<th>20'GP</th>
+						<th>40'GP</th>
+						<th>40'HP</th>
+						<th>20'FR</th>
+						<th width="65">计费单位</th>
+						<th width="65">付费方式</th>
+						<th width="65">币别</th>
+						<th width="60" class="tar">合计</th>
+						<th width="50">操作</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="y-th tar text-blod">
+								海运费
+							</td>
+							<td>
+								<div class="nui-form-cell w50">
+									<input type="text" class="nui-input j-pop" value="1200">
+									<div class="nui-subtable-wrap none">
+										<table class="nui-table nui-table-bill">
+											<thead>
+												<tr>
+													<th width="50" class="tar"><b>费用</b></th>
+													<th><b>20'GP</b></th>
+													<th><b>40'GP</b></th>
+													<th><b>40'HQ</b></th>
+													<th><b>20'FR</b></th>
+												</tr>
+											</thead>	
+											<tbody>
+												<tr>
+													<td class="y-th tar">底价</td>
+													<td>140000</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>	
+												<tr>
+													<td class="y-th tar">成本价</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>
+												<tr>
+													<td class="y-th tar">标准报价</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>
+											</tbody>
+											
+										</table>
+									</div>
+								</div>
+								*
+								<span>10</span>
+							</td>
+							<td>
+								<div class="nui-form-cell w50">
+									<input type="text" class="nui-input j-pop" value="1200">
+									<div class="nui-subtable-wrap none">
+										<table class="nui-table nui-table-bill">
+											<thead>
+												<tr>
+													<th width="50" class="tar"><b>费用</b></th>
+													<th><b>20'GP</b></th>
+													<th><b>40'GP</b></th>
+													<th><b>40'HQ</b></th>
+													<th><b>20'FR</b></th>
+												</tr>
+											</thead>	
+											<tbody>
+												<tr>
+													<td class="y-th tar">底价</td>
+													<td>140000</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>	
+												<tr>
+													<td class="y-th tar">成本价</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>
+												<tr>
+													<td class="y-th tar">标准报价</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>
+											</tbody>
+											
+										</table>
+									</div>
+								</div>
+								*
+								<span>10</span>
+							</td>
+							<td>
+								<div class="nui-form-cell w50">
+									<input type="text" class="nui-input j-pop" value="1200">
+									<div class="nui-subtable-wrap none">
+										<table class="nui-table nui-table-bill">
+											<thead>
+												<tr>
+													<th width="50" class="tar"><b>费用</b></th>
+													<th><b>20'GP</b></th>
+													<th><b>40'GP</b></th>
+													<th><b>40'HQ</b></th>
+													<th><b>20'FR</b></th>
+												</tr>
+											</thead>	
+											<tbody>
+												<tr>
+													<td class="y-th tar">底价</td>
+													<td>140000</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>	
+												<tr>
+													<td class="y-th tar">成本价</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>
+												<tr>
+													<td class="y-th tar">标准报价</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>
+											</tbody>
+											
+										</table>
+									</div>
+								</div>
+								*
+								<span>10</span>
+							</td>
+							<td>
+								<div class="nui-form-cell w50">
+									<input type="text" class="nui-input j-pop" value="1200">
+									<div class="nui-subtable-wrap none">
+										<table class="nui-table nui-table-bill">
+											<thead>
+												<tr>
+													<th width="50" class="tar"><b>费用</b></th>
+													<th><b>20'GP</b></th>
+													<th><b>40'GP</b></th>
+													<th><b>40'HQ</b></th>
+													<th><b>20'FR</b></th>
+												</tr>
+											</thead>	
+											<tbody>
+												<tr>
+													<td class="y-th tar">底价</td>
+													<td>140000</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>	
+												<tr>
+													<td class="y-th tar">成本价</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>
+												<tr>
+													<td class="y-th tar">标准报价</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+													<td>140</td>
+												</tr>
+											</tbody>
+											
+										</table>
+									</div>
+								</div>
+								*
+								<span>10</span>
+							</td>
+							<td>
+								<div class="nui-form-cell w50 nui-select">
+									<div class="nui-form-cell-cnt">
+										<div class="nui-input">P</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+										<div class="nui-drop-down">
+											<ul class="nui-select-list">
+												<li class="nui-select-list-li active">箱型</li>
+												<li class="nui-select-list-li">票</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w50 nui-select">
+									<div class="nui-form-cell-cnt">
+										<div class="nui-input">预付</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+										<div class="nui-drop-down">
+											<ul class="nui-select-list">
+												<li class="nui-select-list-li active">预付</li>
+												<li class="nui-select-list-li">到付</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w50 nui-select">
+									<div class="nui-form-cell-cnt">
+										<div class="nui-input">USD</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+										<div class="nui-drop-down">
+											<ul class="nui-select-list">
+												<li class="nui-select-list-li active">RMB</li>
+												<li class="nui-select-list-li">USD</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td class="tar">
+								<span class="text-orange fwb">12000</span>
+							</td>
+							<td><a class="del" href="javascript:">删除</a></td>
+						</tr>
+						<tr>
+							<td class="y-th tar">
+								<div class="nui-form-cell w50">
+									<input type="text" class="nui-input" value="单证费">
+								</div>
+							</td>
+							<td colspan="4">
+								<div class="nui-form-cell w110">
+									<input type="text" class="nui-input" value="1200">
+								</div>
+								*
+								<span>10</span>
+							</td>
+							<td>
+								<div class="nui-form-cell w50 nui-select">
+									<div class="nui-form-cell-cnt">
+										<div class="nui-input">P</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+										<div class="nui-drop-down">
+											<ul class="nui-select-list">
+												<li class="nui-select-list-li active">箱型</li>
+												<li class="nui-select-list-li">票</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w50 nui-select">
+									<div class="nui-form-cell-cnt">
+										<div class="nui-input">预付</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+										<div class="nui-drop-down">
+											<ul class="nui-select-list">
+												<li class="nui-select-list-li active">预付</li>
+												<li class="nui-select-list-li">到付</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="nui-form-cell w50 nui-select">
+									<div class="nui-form-cell-cnt">
+										<div class="nui-input">USD</div> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+										<div class="nui-drop-down">
+											<ul class="nui-select-list">
+												<li class="nui-select-list-li active">RMB</li>
+												<li class="nui-select-list-li">USD</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td class="tar">
+								12000
+							</td>
+							<td><a class="del" href="javascript:">删除</a></td>
+						</tr>
+						<tr>
+							<td class="y-th">
+								
+							</td>
+							<td class="tac" colspan="9"><a class="bill-add" href="javascript:">+新增费用</a></td>
+						</tr>
+
+					
+
+					</tbody>
+				</table>
+			</div>
+				
+
+			<div class="inventory-grid-group mt10">
+				<div class="inventory-grid">
+					<div class="inventory-form">
+						<div class="inventory-form-line inventory-form-last">
+							<label class="inventory-form-label">
+								<b>备注</b>
+							</label>
+							<div class="inventory-form-cnt pd10">
+								<div class="nui-form-cell w-a">
+									<textarea class="nui-textarea w500 h50">&nbsp;&nbsp;&nbsp;&nbsp;以订舱通、招财通和运价通为核心，助力国际物流企业打造自己的电子商务平台。</textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="inventory-grid inventory-grid-right">
+					<div class="inventory-form">
+						<div class="inventory-form-line">
+							<label class="inventory-form-label w100">
+								<b>报价单有效期</b>
+							</label>
+							<div class="inventory-form-cnt">
+								<div class="nui-form-cell w160 ml10">
+										<input class="nui-input" type="text">
+								</div>
+							</div>
+						</div>
+						<div class="inventory-form-line inventory-form-last">
+							<label class="inventory-form-label w100">
+								<b>客户计算器</b>
+							</label>
+							<div class="inventory-form-cnt">
+								<label for="c-yes" class="nui-radio ml10"><input id="c-yes" type="radio" name="control">启用</label>
+								<label for="c-no" class="nui-radio"><input id="c-no" type="radio" name="control">不启用</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="inventory-panel-footer">
+				<div class="inventory-btn-group none">
+					<a class="nui-btn nui-btn-large nui-btn-primary" href="javascript:">生成报价单</a>
+					<a class="nui-btn nui-btn-large" href="javascript:">预览</a>
+				</div>
+				<a class="nui-btn nui-btn-large nui-btn-primary j-save" href="javascript:">保存</a>
+			</div>
+		</div>
+	</div>
+	<!-- Jquery引入 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryplugin/spinner/jquery.spinner.js"></script><!-- 控件 -->
+	<!-- js end -->
+	<script type="text/javascript">
+		$('.spinner').spinner({value:0,max : 5});
+
+		$('body').click(function(){
+			$('.nui-subtable-wrap').addClass('none');
+		})
+
+		$('.nui-form-cell').delegate('.j-pop', 'click', function() {
+			var wrap = $(this).siblings('div.nui-subtable-wrap');
+			var wrap_sib = $(this).parent().parent().siblings('td').children().children('div.nui-subtable-wrap');
+			if(wrap.hasClass('none')){
+				wrap.removeClass('none');
+				wrap_sib.addClass('none');
+			}else{
+				wrap.addClass('none');
+			}
+			return false;
+		});
+		
+		$('.j-save').click(function(){
+			$(this).removeClass('nui-btn-primary');
+			$(this).siblings('div.inventory-btn-group').removeClass('none');
+		})
+	</script>
+</body>
+</html>

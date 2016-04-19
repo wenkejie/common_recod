@@ -1,0 +1,48 @@
+@charset "utf-8";
+body{ margin:0; padding:0; font:12px/1.4 tahoma,arial,\5b8b\4f53; color:#333}
+a{ text-decoration:none}
+#wrapper{height:385px;width:100%; position:absolute;top:50%; margin-top:-197px; text-align:center; background:#C4E8E6 url(../../images/yunjiaUe/login_img.jpg) no-repeat center}
+#wrap{width:800px; margin:0 auto; text-align:left}
+#company{ margin-top:-80px; position:relative}
+#company img{vertical-align: bottom}
+#company h1{ font-size:25px; font-weight:500; font-family:\5FAE\8F6F\96C5\9ED1,\9ED1\4F53; vertical-align:bottom; display:inline; margin:0; padding:0}
+.loginPanel{width:301px;height:335px; background:url(../../images/yunjiaUe/login_panel.png); float:right; margin-top:30px; position:relative; z-index:4}
+.loginPanel h2{ font-size:14px; margin:0 35px; padding:0;height:48px; line-height:48px}
+.loginPanel form{ margin:0; padding:40px 0 0 35px; position:relative;zoom:1;background:#fff; margin:0 5px; overflow:hidden}
+.formLine{ margin-bottom:17px; overflow:hidden;zoom:1; clear:both}
+.formLine img{ float:left; margin-right:5px; display:inline; vertical-align:middle; border:0}
+.formLine a{ line-height:30px; color:#06C}
+.formLine a:hover{ text-decoration:underline}
+.input{ border:1px solid #ADB7C6;width:178px; height:28px; float:left; margin-right:5px; position:relative;z-index:2;background:url(../../images/yunjiaUe/login_panel.png) no-repeat -42px -73px}
+.username{}
+.passowrds{ background-position:-42px -120px}
+.erro{ border-color:red}
+.focus{ border-color:#f90}
+.input input{ background:transparent; border:1px solid #ccc; height:18px; border:0;width:130px; margin:0 0 0 40px; display:block; color:#438789; outline:none; position:relative; z-index:3; zoom:1;top:4px}
+.input label{ position:absolute;left:45px;top:5px; color:#bbb; z-index:1; cursor:text}
+.code label{left:10px}
+.code{ width:90px; background-position:-42px -167px}
+.code input{ margin-left:10px;width:70px}
+#remember{vertical-align:middle; margin:0 5px 0 0; padding:0; width:13px;height:13px;}
+label{ color:#06C}
+.btn{float:left;width:92px;height:36px; margin-right:10px; font-weight:700; color:#069; font-size:14px; text-align:center; line-height:36px; margin-top:4px;_margin-top:6px; background:url(../../images/yunjiaUe/login_panel.png) no-repeat -41px -213px}
+.btn:hover{ color:#0095DD}
+.btnReg{ color:#666; background-position:-143px -213px; width:93px}
+.btnReg:hover{color:#333}
+#footer{ width:100%;background:#f5f5f5; position:absolute;bottom:-40px;left:0;color:#999; padding:10px 0}
+#footer img{ vertical-align:middle; padding-right:10px; border-right:1px solid #ddd; margin-right:10px}
+#footer a{color:#999}
+#footer a:hover{color:#06c}
+#js-box{ border:2px solid #FFDBA4; width:180px;height:30px; position:absolute;left:33px;top:22px;z-index:0}
+.hide{ display:none}
+.erroTxt{ background:#FFF0EC; border:1px solid #CB3030; color:#C00; padding:3px 10px; position:absolute; top:8px; line-height:15px;width:158px}
+.erroTxt s{ display:inline-block;width:14px;height:14px; background:url(../../images/yunjiaUe/login_panel.png) no-repeat -41px -53px; vertical-align: middle; margin-right:5px}
+.checkLine{ margin:-8px 0 10px 0}
+/*已经登录状态*/
+.loginedPanel form{ padding-top:110px; padding-left:30px; height:120px;}
+.loginedPanel .erroTxt{top:50px;width:200px; padding:8px 15px;left:30px}
+.loginedPanel .btn{ float:none; display: block; margin:10px 0 0; line-height:36px;color:#069;}
+.loginedPanel .btnReg{ color: #4975A0}
+.loginedPanel .btnReg:hover{ color:#666}
+.loginedPanel .btn:hover{ text-decoration:none;color:#0095DD}
+.loginedPanel .formLine{ float:left; clear:none; border:1px solid #eee; background:#fafafa; padding:8px; margin-right:10px; white-space: nowrap; width:92px}

@@ -1,0 +1,23 @@
+//
+// 全局浮动结构
+// --------------------------------------------------
+// 常量
+
+.cui-fixed-box{
+	position: absolute;left: 0;top: 0;z-index: 1000;
+	padding: 7px 10px;
+	background: #fff;border: 1px solid @brand-primary;border-radius: 2px;
+	box-shadow: 0 0 4px #b6d9ef;
+	&.error{
+		border-color: #d0021b;box-shadow: 0 0 4px #efcac9;
+		.cui-btn{
+			padding: 0 10px;
+			background: #f3504f;color: #fff;
+		}
+
+	}
+	span{
+		.inline-block;
+		vertical-align: middle;
+	}
+}

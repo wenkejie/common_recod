@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+  <link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/base.css">
+  <link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/solution.css">
+  <link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/layout.css">
+  <link media="all" rel="stylesheet" type="text/css" href="../../release/freight/css/yunjiaUe/yunjiaue.css">
+
+  <title></title>
+
+</head>
+
+  <!-- 高级查询条件初始化 -->
+  <div id="topInfo">
+    <div class="container clearfix">
+      <div class="companyName">
+        <a href="http://www.kaiyuancn.com/" target="_blank">大掌柜&mdash;&mdash;全球运价系统</a>
+      </div>
+
+      <div class="topNav" id="js-topNav">
+        <ul>
+
+          <li class="" id="myConcern">
+            <s class="iconFavorite" id="js-fav"></s>
+            <a href="javascript:fu_moreConcern();">我的关注</a>
+            <a href="#" class="collect-mun" title="涨价航线">3</a>
+            <ol class="subMenu fui-list">
+              <li>
+                <a href="#" onclick="goToSearchUnreadCon('no','AARHUS','lcl');return false;">
+                  <span>[LCL]</span>
+                  AARHUS [奥尔胡斯]
+                </a>
+              </li>
+              <li>
+                <a href="#" onclick="goToSearchUnreadCon('no','BANGKOK','lcl');return false;">
+                  <span>[LCL]</span>
+                  BANGKOK [曼谷]
+                </a>
+              </li>
+              <li>
+                <a href="#" onclick="goToSearchUnreadCon('no','BELAWAN','lcl');return false;">
+                  <span>[LCL]</span>
+                  BELAWAN [勿拉湾]
+                </a>
+              </li>
+              <li class="last show-all" id="js-showAll"> <strong style="display: inline;">显示全部</strong>
+                <a style="left: 65px; display: none;" class="last-cell-one" href="javascript:void(0);" onclick="goToSearchUnreadCon('yes','','lcl');return false;">出口拼箱</a>
+              </li>
+            </ol>
+          </li>
+
+          <li>
+            <a href="/serviceportal/applogin">运价查询首页</a>
+          </li>
+          <li>
+            <a href="#">账号设置</a>
+            <s class="iconArrowBottom"></s>
+            <ol class="subMenu">
+
+              <li>
+                <a href="javascript:void(0);" onclick="openWindow('/serviceportal/userManage.ctrl?$action=userMsgParam','关注设置',{width:380,height:200})">
+                  <s class="iconDot"></s>
+                  关注设置
+                </a>
+              </li>
+
+              <li>
+                <a href="javascript:void(0);" onclick="openWindow('/serviceportal/userManage.ctrl?$action=userInfo&amp;isself=yes&amp;op_type=modify&amp;user_id=1879','个人信息',{width:480,height:440})">
+                  <s class="iconDot"></s>
+                  个人信息
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" onclick="openWindow('/serviceportal/userManage.ctrl?$action=modifyUserPassword&amp;actionType=show&amp;user_id=1879','修改密码',{width:350,height:250})">
+                  <s class="iconDot"></s>
+                  修改密码
+                </a>
+              </li>
+              <li>
+                <a href="http://yunjia.kaiyuancn.com/serviceportal/logout">
+                  <s class="iconExit"></s>
+                  退出登录
+                </a>
+              </li>
+            </ol>
+          </li>
+
+          <li>
+            <a href="http://private-600jit.oss.600jit.com/upload_public/asp_priceservice/sites/7/orgs/10000/users/4615/files/application/vnd.ms-excel/781783a0-b16c-4c56-95f9-70fa895e7129/%E7%BE%8E%E7%BA%BF%E5%86%85%E9%99%86%E8%BF%90%E4%BB%B7%E6%9F%A5%E8%AF%A2%28%E5%85%A8%E5%9B%BD%E5%8F%A3%E5%B2%B8%29%E6%9C%89%E6%95%88%E6%97%A5%28%E5%BC%80%E8%88%AA%E6%97%A5%2920140318-----20140324.xls?Expires=1395296299&amp;response-content-disposition=attachment%3Bfilename%3D%E7%BE%8E%E7%BA%BF%E5%86%85%E9%99%86%E8%BF%90%E4%BB%B7%E6%9F%A5%E8%AF%A2%28%E5%85%A8%E5%9B%BD%E5%8F%A3%E5%B2%B8%29%E6%9C%89%E6%95%88%E6%97%A5%28%E5%BC%80%E8%88%AA%E6%97%A5%2920140318-----20140324.xls&amp;OSSAccessKeyId=97za1g0p6078qo0p7a6xb67h&amp;Signature=v8C7HR7nwcYwBDNyn6wJ8KS7WsQ%3D" class="highlight">美线内陆运价</a>
+          </li>
+
+          <li>
+            <a href="#" onclick="showNewbieContent()" class="highlight">使用帮助</a>
+          </li>
+          <li>
+            <a href="#" onclick="showLinkInfoContent()">联系我们</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="autoWrapper">
+  <div class="" style="position: relative;padding:10px;">
+    <div id="header" class="clearfix">
+      <div class="logo"><a href="" target="_blank"></a></div>
+      <a class="powered" href="http://www.500jit.com/" target="_blank"></a>
+      <div class="searchContainer">
+        <div class="searchType clearfix">
+          <ul>
+
+            <li class="active" searchtype="lcl" onclick="changeTab(this)">海运出口拼箱</li>
+
+            <li searchtype="import_lcl" onclick="changeTab(this)">海运进口拼箱</li>
+
+          </ul>
+        </div>
+        <!-- 搜索框 -->
+        <form id="searchBox" action="" onsubmit="return false;">
+          <input id="page_type" name="page_type" value="price_search" type="hidden">
+          <input id="search_item_value" name="search_item_value" value="dischargeport" type="hidden">
+          <input id="search_type" name="search_type" value="lcl" type="hidden">
+          <input id="fclexport_loadPort" name="fclexport_loadPort" value="" type="hidden">
+          <input id="air_loadPort" name="air_loadPort" value="" type="hidden">
+          <input id="lclexport_loadPort" name="lclexport_loadPort" value="" type="hidden">
+          <input id="lclimport_dischargeport" name="lclimport_dischargeport" value="" type="hidden">
+          <div id="defalut_port_input" class="input">
+            <label for="qiyungang">起运港:</label>
+            <input value="" id="default_port" name="default_port" onfocus="showSelectDefaultPort(this)" onclick="$(this).dblclick()" autocomplete="off" type="text">
+            <div class="gridLeft"></div>
+            <div class="gridRight"></div>
+          </div>
+          <div id="seachChange">
+            <div id="js-searchCon">
+              <div id="normalSearch">
+                <label for="searchvalue">输入条件</label>
+                <div class="input">
+                  <input id="search_value" name="search_value" value="" size="63" autocomplete="off" type="text">
+                  <!-- 下拉 -->
+                  <div class="selectInputDown">
+                    <div class="paddingCon"></div>
+                  </div>
+                  <!-- 下拉结束 -->
+                  <div class="gridLeft"></div>
+                  <div class="gridRight"></div>
+                </div>
+                <button onclick="advSearchValue = [];goSearch()" title="点击搜索按钮将清空所有已查询的条件">搜索</button>
+              </div>
+              <div id="advSearch">
+                <!-- 高级搜素 -->
+                <div class="addSearch" id="js-addSearch">
+                  <div class="searchOption" id="js-searchOption">
+                    <span class="arrow"></span>
+                    <div id="js-option">选择搜索条件</div>
+
+                    <ul class="option" p_type="fcl">
+                      <li fielditem="loadport">起运港</li>
+                      <li fielditem="dischargeport">目的港</li>
+                      <li fielditem="carrier">船公司</li>
+                      <li fielditem="searoute">航线</li>
+                      <li fielditem="transferport">中转港</li>
+                      <li fielditem="begindate">
+                        <span>有效日期</span>
+                      </li>
+                      <li fielditem="cycle">船期</li>
+                      <li fielditem="volumerange">限重</li>
+                      <li fielditem="massaddress">进港港区</li>
+                      <li fielditem="iscommend">推荐</li>
+                      <li fielditem="concerned">关注</li>
+                    </ul>
+                    <ul class="option" p_type="lcl">
+                      <li fielditem="loadport">起运港</li>
+                      <li fielditem="dischargeport">目的港</li>
+                      <li fielditem="country">国家</li>
+                      <li fielditem="searoute">航线</li>
+                      <li fielditem="transferport">中转港</li>
+                      <li fielditem="cycle">船期</li>
+                      <li fielditem="volumerange">体积范围</li>
+                      <li fielditem="iscommend">推荐</li>
+                      <li fielditem="concerned">关注</li>
+                    </ul>
+                    <ul class="option" p_type="import_lcl">
+                      <li fielditem="dischargeport">目的港</li>
+                      <li fielditem="loadport">起运港</li>
+                      <li fielditem="country">国家</li>
+                      <li fielditem="searoute">航线</li>
+                      <li fielditem="transferport">中转港</li>
+                      <li fielditem="cycle">船期</li>
+                      <li fielditem="iscommend">推荐</li>
+                      <li fielditem="concerned">关注</li>
+                    </ul>
+                    <ul class="option" p_type="air">
+                      <li fielditem="loadport">起运港</li>
+                      <li fielditem="dischargeport">目的港</li>
+                      <li fielditem="carrier">航空公司</li>
+                      <li fielditem="searoute">航线</li>
+                      <li fielditem="transferport">中转港</li>
+                      <li fielditem="begindate">
+                        <span>有效日期</span>
+                      </li>
+                      <li fielditem="cycle">航期</li>
+                      <li fielditem="iscommend">推荐</li>
+                      <li fielditem="concerned">关注</li>
+                    </ul>
+                  </div>
+                  <!--  onfocus="showRichSelect(this)" -->
+                  <div class="relative fn-left">
+                    <input id="addSearchValue" name="addSearchValue" value="" autocomplete="off" type="text"></div>
+                  <button class="addSearchBtn" id="addSearchBtn" name="addSearchBtn" onclick="addSearchBtnFun()"></button>
+                </div>
+                <!-- 高级搜素结束 --> </div>
+
+            </div>
+          </div>
+          <a class="advSearch" href="#" id="js-advSearchBtn">高级搜索</a>
+          <a class="history" href="#" onclick="searchHistoryButtonFun()">历史运价</a>
+          <div class="gridLeft"></div>
+          <div class="gridRight"></div>
+        </form>
+        <!-- 搜索框结束 -->
+        <div class="routeShow">
+          <div class="routeCon routeNoMore" id="js-routeShow">
+            <span class="title">航线：</span>
+            <a href="#" class="btn">更多</a>
+            <div class="routeCover" id="routeCover">
+              <ul class="clearfix fn-nowrap">
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;中国&quot;);">
+                    <s class="iconDot"></s>
+                    中国
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;北美&quot;);">
+                    <s class="iconDot"></s>
+                    北美
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;中美&quot;);">
+                    <s class="iconDot"></s>
+                    中美
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;南美&quot;);">
+                    <s class="iconDot"></s>
+                    南美
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;东南亚&quot;);">
+                    <s class="iconDot"></s>
+                    东南亚
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;港澳台&quot;);">
+                    <s class="iconDot"></s>
+                    港澳台
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;日韩&quot;);">
+                    <s class="iconDot"></s>
+                    日韩
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;中东&quot;);">
+                    <s class="iconDot"></s>
+                    中东
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;印巴&quot;);">
+                    <s class="iconDot"></s>
+                    印巴
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;澳新&quot;);">
+                    <s class="iconDot"></s>
+                    澳新
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;欧基&quot;);">
+                    <s class="iconDot"></s>
+                    欧基
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;地中海东&quot;);">
+                    <s class="iconDot"></s>
+                    地中海东
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;地中海西&quot;);">
+                    <s class="iconDot"></s>
+                    地中海西
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;东欧&quot;);">
+                    <s class="iconDot"></s>
+                    东欧
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;北欧&quot;);">
+                    <s class="iconDot"></s>
+                    北欧
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:quickSearchGoPage(&quot;searoute&quot;,&quot;非洲&quot;);">
+                    <s class="iconDot"></s>
+                    非洲
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+    <!-- 内容部分 -->
+    <div id="wrap" class="clearfix">
+      <iframe src="priceTwo.html" id="search_result_frame" name="search_result_frame" allowtransparency="true" marginheight="0" marginwidth="0" frameborder="0" height="579" scrolling="no" width="100%"></iframe>
+    </div>
+    <div id="footer" class="wrap" style="height: 60px;margin-top: 10px;" isautowrap="true">
+      <a href="http://www.500jit.com" target="_blank" class="mr10">
+        <img width="68" height="19" src="http://cpcommon.600jit.com/fcommon/public/images/login_logo.gif"></a>
+      版权所有 &copy; 2013 奥林科技(宁波)有限公司    Powered by
+      <a href="http://www.500jit.com" target="_blank">OlymTech(NingBo), Ltd.</a>
+      <span style="cursor:pointer;" onclick="alert('系统参数:Orange-PC');">&nbsp;</span>
+    </div>
+  </div>
+    <div class="shadow-mask"></div>
+    <div class="shadow-mask-cnt">
+      <div class="shadow-open-win">
+        <div class="open-win-top clearfix">
+          <div class="top-logo"></div>
+          <div class="top-text">
+            <div class="top-text-cnt">
+              <p>
+                你现在看到的就是客户查询结果。双击某条运价可以查询更多运价内容。是不是比传统表格清楚很多了呢，了解了客户所看到的界面，点击一下，我们看如何来管理我们的客户
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="open-win-bottom">
+          <a class="mask-btn-2" href="step-seven.html"></a><a class="mask-btn" href="step-nine.html"></a>
+        </div>
+      </div>
+    </div>

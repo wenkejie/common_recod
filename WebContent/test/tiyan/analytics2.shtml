@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryplugin/highcharts.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+
+		$(function () { 
+	$('#j-chart').highcharts({
+		title: {
+			text: false
+		},
+		subtitle: {
+			text: false
+		},
+		xAxis: {
+			categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+		},
+		yAxis: {
+			title: false
+		},
+		tooltip: {
+			headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+			pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+			footerFormat: '</table>',
+			shared: true,
+			useHTML: true
+		},
+		plotOptions: {
+			column: {
+				pointPadding: 0.2,
+				borderColor: "White"
+			}
+		},
+		series: [{
+			name: 'New York',
+			data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+		}, {
+			name: 'London',
+			data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+		}, {
+			name: 'Berlin',
+			data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+		}]
+	});
+	$('#j-chart1').highcharts({chart: {type: "pie", style: {fontFamily:'"微软雅黑","宋体"'}, height: 250 }, title: {text: '据上次登录', align:"left", style: {fontFamily:'"微软雅黑","宋体"', fontWeight:700 } }, subtitle: {text: false }, tooltip: {headerFormat: '<span style="font-size:10px">{point.key}</span><table>', pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>', footerFormat: '</table>', shared: true, useHTML: true }, plotOptions: {pie: {allowPointSelect: true, cursor: 'pointer', dataLabels: {enabled: true }, showInLegend: true } }, legend: {layout: 'vertical', backgroundColor: 'white', borderColor:"White", align: 'right', verticalAlign: 'top', y: 10, x: 10, borderWidth: 1, borderRadius: 0, floating: true, draggable: true, zIndex: 20 }, series: [{name:"dsfsdf", data: [["20%",20],["15%",15],["30%",30],["5%",5],["6%",6],["11%",11],["2%",2],["3%",3],["20%",2],["10%",10]] } ] });
+
+	$('#j-chart2').highcharts({chart: {type: "pie", style: {fontFamily:'"微软雅黑","宋体"'}, height: 250 }, title: {text: '登录次数分布', align:"left", style: {fontFamily:'"微软雅黑","宋体"', fontWeight:700 } }, subtitle: {text: false }, tooltip: {headerFormat: '<span style="font-size:10px">{point.key}</span><table>', pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>', footerFormat: '</table>', shared: true, useHTML: true }, plotOptions: {pie: {allowPointSelect: true, cursor: 'pointer', dataLabels: {enabled: true }, showInLegend: true } }, legend: {layout: 'vertical', backgroundColor: 'white', borderColor:"White", align: 'right', verticalAlign: 'top', y: 10, x: 10, borderWidth: 1, borderRadius: 0, floating: true, draggable: true, zIndex: 20 }, series: [{name:"dsfsdf", data: [["20%",20],["15%",15],["30%",30],["5%",5],["6%",6],["11%",11],["2%",2],["3%",3],["20%",2],["10%",10]] } ] });
+});
+
+
+	</script>
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap-nobd">
+		<div class="left-side"><div class="left-slide-top-line"></div>
+		<!--#include file="leftside.html"-->
+		<div class="left-slide-bottom-line"></div>
+	</div>
+	<div class="right-side pt0">
+		<div class="main-title">
+			<h1>新增用户分析 <i class="fs14 cur-d">&#x3574;</i></h1>
+		</div>
+
+		
+		<div class="analytics-grid mt15">
+			<div class="analytics-title"><h2>新增用户趋势</h2>
+				<div class="analytics-title-fn">
+					<a class="nui-select-tag nui-select-tag-active" onclick="fu_trends_change(this,'today')" href="javascript:">过去7天</a>
+					<a class="nui-select-tag" onclick="fu_trends_change(this,'yestoday')" href="javascript:">过去30天</a>
+					<a class="nui-select-tag" onclick="fu_trends_change(this,'last7')" href="javascript:">过去3月</a>
+					<a class="nui-select-tag" onclick="fu_trends_change(this,'last30')" href="javascript:">过去6月</a>
+					<a href="javascript:" class="nui-btn pr5">2014-05-06 ~ 2014-06-08 <i class="fs14">&#x3438;</i></a>
+				</div>
+			</div>
+			<div class="analytics-cnt">
+				<div id="j-chart" class="big-chart"></div>
+				<div class="hr"></div>
+		<div class="clearfix mt15">
+			<div class="w50p left">
+				<div class="pd10">
+					<div id="j-chart1" ></div>
+				</div>
+			</div> 
+			<div class="w50p left">
+				<div class="pd10">
+					<div id="j-chart2" ></div>
+				</div>
+			</div> 
+		</div>
+			</div>
+		</div>
+
+
+
+<div class="adv-table mt20">
+			<ul class="adv-table-tab">
+				<li> 查看：</li>
+				<li><a class="adv-table-tab-link adv-table-tab-link-active" href="javascript:">新增用户明细</a></li>
+			</ul>
+	<div class="adv-table-fn-area">
+		<a class="nui-btn right"><i class="fs12">&#x3455;</i> 导出</a>
+	</div>
+				<table class="analytics-table">
+				<thead>
+					<tr>
+						<th>日期</th>
+						<th>新增用户</th>
+						<th>所属企业</th>
+						<th>来源</th>
+					</tr>
+				</thead>
+					<tbody>
+				
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				
+				
+				
+				<div class="adv-table-footer">
+					<label for="">每页显示：</label><select id="" name="">
+						<option value="">20</option>
+						<option value="">50</option>
+						<option value="">100</option>
+					</select>
+
+					<div class="page">
+						<span>上一页</span>
+						<a class="active" href="javascript:">1</a>
+						<a href="javascript:">2</a>
+						<a href="javascript:">3</a>
+						<a href="javascript:">4</a>
+						<a href="javascript:">5</a>
+						<span>…</span>
+						<a href="javascript:">25</a>
+						<a href="javascript:">下一页</a>
+						
+
+						到第 <input type="text" class="w30 h20"> 页 <button class="nui-btn nui-btn-20">确定</button>
+					</div>
+				</div>
+			</div>
+
+
+</div>
+
+
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

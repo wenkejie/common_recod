@@ -1,0 +1,631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	
+	<!-- <link rel="stylesheet" href="../../release/freight/css/common.css"/> -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<!-- <link rel="stylesheet" href="../../src/css/richSelect.css" />richselect样式 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+			$(function () {
+				$('a.j-setup').click(function() {
+					$(this).parent().children('div.nui-tips-setup').removeClass('none');
+					$(this).parent().addClass('zindex-up')//为解决ie67下拉穿透问题
+					return false;
+				});
+				$('a.j-numinfo').click(function() {
+					$(this).parent().parent().children('div.nui-tips-freight-num').removeClass('none');
+					$(this).parent().parent().addClass('zindex-up')//为解决ie67下拉穿透问题
+					return false;
+				});
+				
+				$('li.select-list-li').hover(function() {
+					$(this).addClass('select-list-li-hover');
+				}, function() {
+					$(this).removeClass('select-list-li-hover');
+				});
+			})
+			
+	</script>
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	<div class="wrap main-wrap">
+
+		<div class="">
+			<div class="title-info"><h2>运价导入信息</h2>
+				 <strong ><span class="text-warning">2014-10-12</span> 共发布：</strong><span class="text-success fwb">2510</span> 条 | <i class="text-error fs12">&#x34e8;</i> 导入失败 <span  class="text-error fwb">500</span> 条 <a href="javascript:">点击处理</a>
+				<div class="hr"></div>
+			</div>
+			<div class="nui-waterfall-area new-freight-import">
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn j-setup"><i>&#x356f;</i> 设置</a>
+							<div class="nui-tips nui-tips-setup none">
+								<div class="nui-tips-arrow top top-middle">
+									◆ 
+									<em>◆</em>
+								</div>
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">账户设置</li>
+										<li class="nui-select-list-li">基础资料设置</li>
+										<li class="nui-select-list-li">运价导入规则设置</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips">
+								<span><i>&#x34e3;</i> 导入成功</span>
+								<!-- <a href="javascript:" class="">去处理</a> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num j-numinfo">100</a> 条</span>
+							<div class="nui-tips nui-tips-freight-num none">
+								<div class="nui-tips-arrow top top-middle">
+									◆ 
+									<em>◆</em>
+								</div>
+								<div class="nui-tips-cnt">
+									<ul class="nui-select-list">
+										<li class="nui-select-list-li">海运出口整箱 <span>100</span> 条</li>
+										<li class="nui-select-list-li">海运出口拼箱 <span>100</span> 条</li>
+										<li class="nui-select-list-li">空运 <span>100</span> 条</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips">
+								<span class="text-warning">导入中...</span>
+								<!-- <a href="javascript:" class="">去处理</a> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips">
+								<span><i>&#x34e3;</i> 导入成功</span>
+								<!-- <a href="javascript:" class="">去处理</a> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item">
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<div class="import-info-logo">
+								<img src="" alt="" />
+							</div>
+							<h3 class="import-company-name">
+								赵大爷的皮包公司
+							</h3>
+						</div>
+						<div class="import-info-right">
+							<a href="javascript:" class="import-info-right-fn"><i>&#x356f;</i> 设置</a>
+						</div>
+					</div>
+					<div class="import-info-line mt20">
+						<div class="import-info-left">
+							<span class="import-times">2014-10-19</span>
+						</div>
+						<div class="import-info-right">
+							<span>共 <a href="javascript:" class="import-freight-num">100</a> 条</span>
+						</div>
+					</div>
+					<div class="import-info-line">
+						<div class="import-info-left">
+							<label for="" class="import-state-label">导入状态：</label>
+						</div>
+						<div class="import-info-right">
+							<div class="import-state-tips import-tips-error">
+								<span><i>&#x34e8;</i> 资料匹配有误</span>
+								<a href="javascript:" class="">去处理</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nui-waterfall-item freight-add">
+					<div class="freight-add-txt">
+						<i>&#x35a6;</i>
+						添加帐号
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	
+		
+
+				
+				
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>运价通 帮助环境</title>
+	
+	
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" type="text/css" href="../../release/freight/css/common-v1.2.css"/>
+	
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	
+	<script type="text/javascript">
+		// 有url接口可以直接引入页面
+		$(function() {
+			$('.j-opewin').click(function() {
+				var that = $(this);
+				var htmlWin;
+				htmlWin = fwindow.create({
+					title: "新增报价",
+					content: "<div class=\"fui-dialog-cnt\"><div class=\"form-line form-line-edit\"> <label class=\"nui-label edit-label\">报价类型</label> <div class=\"nui-form-cell nui-select w90 mr8 ml8\"> <div class=\"nui-form-cell-cnt\"> <input type=\"text\" class=\"nui-input\" value=\"带货价\" disabled=\"disabled\"><i class=\"nui-form-cell-icon fs12\">&#xe61d;</i> <div class=\"nui-drop-down drop-down-width\"> <ul class=\"nui-select-list\"> <li class=\"nui-select-list-li\">带货价</li> <li class=\"nui-select-list-li\">带货价</li> <li class=\"nui-select-list-li\">XXX</li> </ul> </div> </div> </div> </div> <div class=\"form-line form-line-edit\"> <label class=\"nui-label edit-label\">口岸</label> <div class=\"nui-form-cell nui-select w90 mr8 ml8\"> <div class=\"nui-form-cell-cnt\"> <input type=\"text\" class=\"nui-input\" value=\"请选择\" disabled=\"disabled\"><i class=\"nui-form-cell-icon fs12\">&#xe61d;</i> <div class=\"nui-drop-down drop-down-width\"> <ul class=\"nui-select-list\"> <li class=\"nui-select-list-li\">宁波</li> <li class=\"nui-select-list-li\">上海</li> <li class=\"nui-select-list-li\">XXX</li> </ul> </div> </div> </div> </div> <div class=\"form-line form-line-edit\"> <label class=\"nui-label edit-label\">装箱门点</label> <div class=\"nui-form-cell nui-select w90 mr8 ml8\"> <div class=\"nui-form-cell-cnt\"> <input type=\"text\" class=\"nui-input\" value=\"省\" disabled=\"disabled\"><i class=\"nui-form-cell-icon fs12\">&#xe61d;</i> <div class=\"nui-drop-down drop-down-width\"> <ul class=\"nui-select-list\"> <li class=\"nui-select-list-li\">浙江省</li> <li class=\"nui-select-list-li\">上海市</li> <li class=\"nui-select-list-li\">江苏省</li> </ul> </div> </div> </div> <div class=\"nui-form-cell nui-select w90 mr8\"> <div class=\"nui-form-cell-cnt\"> <input type=\"text\" class=\"nui-input\" value=\"市\" disabled=\"disabled\"><i class=\"nui-form-cell-icon fs12\">&#xe61d;</i> <div class=\"nui-drop-down drop-down-width\"> <ul class=\"nui-select-list\"> <li class=\"nui-select-list-li\">杭州市</li> <li class=\"nui-select-list-li\">宁波市</li> <li class=\"nui-select-list-li\">温州市</li> </ul> </div> </div> </div> <div class=\"nui-form-cell nui-select w90 mr8\"> <div class=\"nui-form-cell-cnt\"> <input type=\"text\" class=\"nui-input\" value=\"区\" disabled=\"disabled\"><i class=\"nui-form-cell-icon fs12\">&#xe61d;</i> <div class=\"nui-drop-down drop-down-width\"> <ul class=\"nui-select-list\"> <li class=\"nui-select-list-li\">江东区</li> <li class=\"nui-select-list-li\">海曙区</li> <li class=\"nui-select-list-li\">鄞州区</li> </ul> </div> </div> </div> <div class=\"nui-form-cell nui-select w90\"> <div class=\"nui-form-cell-cnt\"> <input type=\"text\" class=\"nui-input\" value=\"街道\" disabled=\"disabled\"><i class=\"nui-form-cell-icon fs12\">&#xe61d;</i> <div class=\"nui-drop-down drop-down-width\"> <ul class=\"nui-select-list\"> <li class=\"nui-select-list-li\">XX街道</li> <li class=\"nui-select-list-li\">XX街道</li> <li class=\"nui-select-list-li\">XX街道</li> </ul> </div> </div> </div> </div> <div class=\"form-line form-line-edit\"> <label class=\"nui-label edit-label\">有效期</label> <div class=\"nui-form-cell w200 ml8\"> <input class=\"nui-input\" type=\"text\"> </div> </div> <div class=\"form-line form-line-edit\"> <label class=\"nui-label edit-label\">20GP</label> <div class=\"nui-form-cell w90 mr8 ml8\"> <input class=\"nui-input\" type=\"text\"> </div> <span>元</span> </div> <div class=\"form-line form-line-edit\"> <label class=\"nui-label edit-label\">40GP</label> <div class=\"nui-form-cell w90 mr8 ml8\"> <input class=\"nui-input\" type=\"text\"> </div> <span>元</span> </div> <div class=\"form-line form-line-edit\"> <label class=\"nui-label edit-label\">备注</label> <div class=\"nui-form-cell w400 ml8\"> <textarea class=\"nui-textarea h120\" placeholder=\"超重小柜18-21T+100元\"></textarea> </div> </div></div><div class=\"fui-dialog-btm-bar\"> <a href=\"javascript:\" class=\"fui-btn-dialog-primary\"><span>保存</span></a> <a  href=\"javascript:\" class=\"fui-btn-dialog\"><span>取消</span></a> </div> ", 
+					width: 610,
+					height: 480
+				});
+			});
+			
+		})
+	</script>
+	
+	<!-- 
+		实际使用过程中，请先判断当前浏览器是否为ie6，然后再引入该脚本  
+	-->
+<!-- 	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/freight/js/fiefix-1.0.min.js"></script> -->
+</head>
+<body class='pt20 tal'>
+	<a href="javascript:" class="nui-btn j-opewin">
+		生成新增报价单弹窗
+	</a>
+</body>
+</html>

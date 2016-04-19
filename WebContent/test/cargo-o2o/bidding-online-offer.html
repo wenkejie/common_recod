@@ -1,0 +1,636 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>在线投标报价</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+	<link rel="stylesheet" type="text/css" href="./webuploader/webuploader.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="top-bar">
+		<div class="tb-cnt">
+			<ul class="tb-menu">
+				<li class="tb-menu-cell first">风清扬，<a href="javascript:">退出</a></li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell j-tbnav-sld">
+					<a class="tb-menu-link" href="javascript:"><span>账户管理</span><i class="ml5">&#xe643;</i></a>
+					<div class="tb-menu-sld">
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+					</div>
+				</li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell"><a class="tb-menu-link" href="javascript:"><i class="mr5">&#xf018f;</i><span>咨询</span></a></li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell">
+					<a class="tb-menu-link" href="javascript:"><i class="mr5">&#xf0190;</i><span>消息</span></a>
+					<span id="site-msg-count" class="newinfo-icon">12</span>
+				</li>
+				<li class="tb-menu-pipe">|</li>
+				<li class="tb-menu-cell j-tbnav-sld">
+					<a class="tb-menu-link" href="javascript:"><span>帮助中心</span><i class="ml5">&#xe643;</i></a>
+					<div class="tb-menu-sld">
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+						<a href="javascript:">打我的脸哇</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="header">
+		<div class="hd-cnt">
+			<h1 class="hd-logo">
+				<a class="hd-logo-img" href="javascript:"></a>
+				<div class="hd-logo-extend"></div>
+			</h1>
+			<ul class="mnav">
+				<li class="mnav-cell current">
+					<a class="mnav-link" href="javascript:">首页</a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+				</li>
+				<li class="mnav-cell ">
+					<a class="mnav-link" href="javascript:">掌柜互联<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-mid">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item last">
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+								<a class="sld-item-link" href="javascript:">我的掌门人</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">运价通<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-mid">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">生意通<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-mid">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">营销通<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-o">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item last">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mnav-cell">
+					<a class="mnav-link" href="javascript:">平台设置<i>&#xe643;</i></a>
+					<div class="pointer-arrow mnav-cell-pointer"></div>
+					<div class="mnav-sld mnav-sld-o">
+						<div class="pointer-arrow mnav-sld-pointer"></div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+						<div class="sld-item">
+							<h3 class="sld-item-tt">运价查询</h3>
+							<div class="sld-item-cnt">
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+								<a class="sld-item-link" href="javascript:">运价查询</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="main-cnt main-cnt-old">
+		<div class="rside-cnt">
+			<div class="plate">
+				<div class="plate-hd bdn">
+					宁波雅戈尔国际贸易有限公司<span class="text-orange pl5">【招标中】</span>
+				</div>
+				<div class="plate-cnt">
+					<div class="process-container process-container-five">
+						<div class="process-cell process-cell-first process-cell-active"><p>1.我要投标</p><div class="process-icon process-icon-active"></div></div>
+						<div class="process-cell process-cell-current"><p>2.在线报价</p><div class="process-icon"></div></div>
+						<div class="process-cell"><p>3.提交报价</p><div class="process-icon"></div></div>
+						<div class="process-cell"><p>4.货主评标</p><div class="process-icon"></div></div>
+						<div class="process-cell process-cell-last"><p>5.中标公示</p></div>
+					</div>
+					<div class="order-detail-container mt20">
+						<div class="order-detail-wrap bidding-prompt-wrap">
+							<div class="bidding-prompt-cell bidding-prompt-cell-left">
+								<p><em>5</em>家供应商投标</p>
+								<span class="bidding-prompt-icon"></span>
+							</div><div class="bidding-prompt-cell">
+								<p><i class="iconfont vam mr5">&#x3443;</i>倒计时 10天 12小时 30分</p>
+							</div>
+						</div>
+						<div class="order-detail-wrap">
+							<label class="detail-grid-label">项目概况</label>
+							<div class="order-grid-trisection order-grid-trisection-5em">
+								<div class="order-detail-line">
+									<label>项目编号：</label>201601180008
+								</div>
+								<div class="order-detail-line">
+									<label>投标截止：</label>2016-01-16
+								</div>	
+								<div class="order-detail-line">
+									<label>预付项目：</label>起运港+海运费+目的费用
+								</div>
+							</div>
+							<div class="order-grid-trisection order-grid-trisection-5em">
+								<div class="order-detail-line">
+									<label>项目名称：</label>宁波雅戈尔东南亚航运
+								</div>
+								<div class="order-detail-line">
+									<label>出货时间：</label>2016-01-16至201-06-20
+								</div>	
+								<div class="order-detail-line">
+									<label>船公司：</label>韩进HANJIN
+								</div>
+							</div>
+							<div class="order-grid-trisection order-grid-trisection-5em">
+								<div class="order-detail-line">
+									<label></label>
+								</div>
+								<div class="order-detail-line">
+									<label>联系人：</label>叶良辰
+								</div>
+								<div class="order-detail-line">
+									<label>提单类型：</label>MBL
+								</div>	
+							</div>
+						</div>
+						<div class="order-detail-wrap order-detail-wrap-esp pb0">
+							<label class="detail-grid-label">发货人信息</label>
+							<div class="order-grid-line">
+								<p>NANYANG</p>
+							</div>
+							<div class="order-grid-line">
+								<p>NO.269 SISHAN RD.,CIXI,NINGBO,P.R.CHINA</p>
+							</div>
+						</div>
+						<div class="order-detail-wrap order-detail-wrap-esp pb0">
+							<label class="detail-grid-label">收货人信息</label>
+							<div class="order-grid-line">
+								<p>NANYANG</p>
+							</div>
+							<div class="order-grid-line">
+								<p>香港上环</p>
+							</div>
+							<div class="order-grid-line">
+								<p>RM</p>
+							</div>
+							<div class="order-grid-line">
+								<p>电话TEL:88888888 传真FAX:88888888</p>
+							</div>
+						</div>
+						<div class="order-detail-wrap">
+							<label class="detail-grid-label">货物品名</label>
+							<div class="order-grid-line">
+								<p>CHINA NINGBO CIXI IMP.&EXP.CORP.</p>
+							</div>
+						</div>
+						<div class="order-detail-wrap order-detail-wrap-esp">
+							<label class="detail-grid-label">增值服务</label>
+							<div class="order-grid-line">
+								<div class="grid-line-cell">
+									<label><input type="checkbox" class="mr5">海运整箱</label>
+								</div>
+								<div class="grid-line-cell">
+									<label><input type="checkbox" class="mr5">海运拼箱</label>
+								</div>
+								<div class="grid-line-cell">
+									<label><input type="checkbox" class="mr5">拖车服务</label>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>	
+				<div class="plate-hd bdn">
+						航线及货量
+				</div>
+				<div class="plate-cnt plate-location-cnt">
+					<div class="bindding-box">
+						<div class="bindding-box-column">
+							<div class="clearfix">
+								<div class="order-grid-trisection order-grid-trisection-4em w180">
+									<div class="order-detail-line">
+										<label>起运港：</label>NINGBO
+									</div>
+								</div>
+								<div class="order-grid-trisection order-grid-trisection-4em w450">
+									<div class="order-detail-line">
+										<label>发货地：</label>浙江省宁波市鄞州区日丽中路555号
+									</div>
+								</div>
+								<div class="order-grid-trisection order-grid-trisection-5em w250">
+									<div class="order-detail-line">
+										<label>运输条款：</label>CY/DR
+									</div>
+								</div>
+							</div>
+							<div class="clearfix">
+								<div class="order-grid-trisection order-grid-trisection-4em w180">
+									<div class="order-detail-line">
+										<label>目的港：</label>NINGBO
+									</div>
+								</div>
+								<div class="order-grid-trisection order-grid-trisection-4em w450">
+									<div class="order-detail-line">
+										<label>交货地：</label>VALENCIA
+									</div>
+								</div>
+							</div>
+							<div class="bindding-box-bg">1</div>
+						</div>
+						<div class="bidding-table-area">
+							<div class="bidding-table-left">
+								<table class="nui-table bidding-table">
+									<thead>
+										<tr>
+											<th>箱型</th>
+											<th>箱量</th>
+											<th width="60">重量(T)</th>
+											<th width="80">期望价格($)</th>
+											<th width="90">当前最低价($)</th>
+											<th width="80" class="care-th">我的报价($)</th>
+											<!-- <th width="330" class="care-th">附加费</th> -->
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="bidding-table-line">
+											<td>20GP</td>
+											<td>50</td>
+											<td>50</td>
+											<td><p class="text-orange">1500</p></td>
+											<td>1300</td>
+											<td>
+												<div class="nui-form-cell w65">
+													<input class="nui-input" type="text" placeholder="">
+												</div>
+											</td>
+											
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="bidding-table-right">
+								<table class="nui-table bidding-table">
+									<thead>
+										<tr>
+											<th class="care-th">附加费</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="bidding-table-line">
+											<td class="surcharge-cell">
+												<a class="nui-btn w60" href="javascript:"><i class="iconfont">&#x35a6;</i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>			
+					</div>
+					
+					<div class="bindding-box mt20">
+						<div class="bindding-box-column">
+							<div class="clearfix">
+								<div class="order-grid-trisection order-grid-trisection-4em w180">
+									<div class="order-detail-line">
+										<label>起运港：</label>NINGBO
+									</div>
+								</div>
+								<div class="order-grid-trisection order-grid-trisection-4em w450">
+									<div class="order-detail-line">
+										<label>发货地：</label>浙江省宁波市鄞州区日丽中路555号
+									</div>
+								</div>
+								<div class="order-grid-trisection order-grid-trisection-5em w250">
+									<div class="order-detail-line">
+										<label>运输条款：</label>CY/DR
+									</div>
+								</div>
+							</div>
+							<div class="clearfix">
+								<div class="order-grid-trisection order-grid-trisection-4em w180">
+									<div class="order-detail-line">
+										<label>目的港：</label>NINGBO
+									</div>
+								</div>
+								<div class="order-grid-trisection order-grid-trisection-4em w450">
+									<div class="order-detail-line">
+										<label>交货地：</label>VALENCIA
+									</div>
+								</div>
+							</div>
+							<div class="bindding-box-bg">2</div>
+						</div>
+						<div class="bidding-table-area">
+							<div class="bidding-table-left">
+								<table class="nui-table bidding-table">
+									<thead>
+										<tr>
+											<th>箱型</th>
+											<th>箱量</th>
+											<th width="60">重量(T)</th>
+											<th width="80">期望价格($)</th>
+											<th width="90">当前最低价($)</th>
+											<th width="80" class="care-th">我的报价($)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>20GP</td>
+											<td>50</td>
+											<td>50</td>
+											<td><p class="text-orange">1500</p></td>
+											<td>1300</td>
+											<td>
+												<div class="nui-form-cell w65">
+													<input class="nui-input" type="text" placeholder="">
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>20GP</td>
+											<td>50</td>
+											<td>50</td>
+											<td><p class="text-orange">1500</p></td>
+											<td>1300</td>
+											<td>
+												<div class="nui-form-cell w65">
+													<input class="nui-input" type="text" placeholder="">
+												</div>
+											</td>
+										</tr>
+										<tr class="bidding-table-line">
+											<td>20GP</td>
+											<td>50</td>
+											<td>50</td>
+											<td><p class="text-orange">1500</p></td>
+											<td>1300</td>
+											<td>
+												<div class="nui-form-cell w65">
+													<input class="nui-input" type="text" placeholder="">
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="bidding-table-right">	
+								<table class="nui-table bidding-table">
+									<thead>
+										<tr>
+											<th class="care-th">附加费</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="bidding-table-line">
+											<td class="surcharge-cell">
+												<p class="surcharge-text">沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上沙发沙发上</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>	
+						</div>	
+					</div>
+					<div class="order-detail-container mt20">
+						<div class="order-detail-wrap order-detail-wrap-esp">
+							<label class="detail-grid-label">其他要求</label>
+							<div class="order-grid-line">
+								<p>需要14天免用箱，需提供目的港清关服务。</p>
+							</div>	
+						</div>
+					</div>
+					<div class="bottom-operation-box mt20">
+						<a class="nui-btn nui-btn-primary nui-btn-large mr8" href="javascript:">确定投标</a>
+						<a class="nui-btn nui-btn-large" href="javascript:">保存</a>
+						<a class="nui-btn nui-btn-large" href="javascript:">返回</a>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="ft-cnt">
+			<ul class="fdlk">
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">奥林科技</a>
+				</li>
+				<li class="fdlk-line"></li>
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">大掌柜</a>
+				</li>
+				<li class="fdlk-line"></li>
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">咖狗网</a>
+				</li>
+				<li class="fdlk-line"></li>
+				<li class="fdlk-cell">
+					<a class="fdlk-link" href="javascript:">云融通</a>
+				</li>
+			</ul>
+			<div class="cprt">
+				版权所有 © 2014 奥林科技(宁波)有限公司
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../release/freight/js/cargo-o2o/index.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/cargo-o2o/manage.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/cargo-o2o/myorder.js"></script>
+	<script type="text/javascript" src="./webuploader/webuploader.nolog.js"></script>
+	<script type="text/javascript" src="./upload.js"></script>	
+</body>
+</html>

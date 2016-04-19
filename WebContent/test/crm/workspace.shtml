@@ -1,0 +1,306 @@
+<!--#include file="header.html"-->
+<div class="auto-wrap">
+<div class="left-column">
+	<div class="self-info clearfix">
+		<img src="../../src/images/crm/noImg.jpg" alt="" class="user-img">
+		李光耀<br/>
+		<a href="persona-site.shtml">个人设置</a>
+	</div>
+	<ul class="left-menu">
+		<li><a href="javascript:" class="left-menu-link left-menu-link-active"><i>&#x343c;</i> 我的首页</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3497;</i> 我的私信</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3442;</i> 提到我的</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3515;</i> 同事动态</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3569;</i> 通知公告</a></li>
+		<li><a href="javascript:" class="left-menu-link"><i>&#x3575;</i> 我的收藏</a></li>
+	</ul>
+	<div class="widget ml10">
+		<div class="widget-title-cnt">
+			<h2 class="widget-title">热门话题</h2>
+		</div>
+		<div class="widget-cnt">
+			<ul class="widget-list">
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">如何给客户报价</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">出售技巧</a></li>
+				<li class="widget-list-cell"><i>&#x343b;</i> <a href="javascript:" class="widget-list-link">出口拼箱小立方特惠</a></li>
+				
+				<li class="widget-list-cell"><i>&#x355d;</i> <a href="javascript:" class="widget-list-link widget-list-link-strong">查看全部热门话题</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="right-column clearfix">
+	<div class="left">
+				<!--#include file="mainNavIn.html"-->
+			
+				<div class="main-content">
+				<!-- 右侧主要内容开始 -->
+				<div class="main-right-column ">
+						<div class="widget">
+							<div class="widget-title-cnt">
+								<h2 class="widget-title">我相关的任务</h2><i class="fs14">&#x3438;</i><a href="javascript:" class="right none">全部</a>
+							</div>
+							<div class="widget-cnt">
+								<ul class="widget-list">
+									<li class="widget-list-cell">
+										<div class="nui-checkbox-sim fs12 dpib fonticon " >
+											<input id="fcl" type="checkbox" name="" >
+											&#x3448;
+										</div>
+										<a href="javascript:" class="widget-list-link text-error dpib">如何给客户报价</a>
+									</li>
+									<!-- <li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li>
+									<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">出售技巧</a></li>
+									<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">出口拼箱小立方特惠</a></li>
+									
+									<li class="widget-list-cell"><i>&#x355d;</i> <a href="javascript:" class="widget-list-link widget-list-link-strong">查看全部热门话题</a></li> -->
+								</ul>
+		
+								<button class="nui-btn mt10 mb20 pl10"><i class="fs14">&#x3545;</i> 给自己安排任务</button>
+								<button class="nui-btn mt10 mb20 pl10"><i class="fs14">&#x3545;</i> 给他人分配任务</button>
+							</div>
+						</div>
+						<div class="widget">
+							<div class="widget-title-cnt">
+								<h2 class="widget-title">我的销售机会</h2><a href="javascript:" class="right none">全部</a>
+							</div>
+							<div class="widget-cnt">
+								<ul class="widget-list">
+									<li class="widget-list-cell">
+										<div class="nui-checkbox-sim fs12 dpib fonticon " >
+											<input id="fcl" type="checkbox" name="" >
+											&#x3448;
+										</div>
+										<a href="javascript:" class="widget-list-link text-error dpib">如何给客户报价</a>
+									</li>
+									<!-- <li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">如何给客户报价</a></li>
+									<li class="widget-list-cell"><i>&#x351d;</i> <a href="javascript:" class="widget-list-link">南美线大量收货</a></li> -->
+									
+								</ul>
+								<button class="nui-btn mt10 mb20 pl10"><i class="fs14">&#x3545;</i> 给自己安排任务</button>
+								<button class="nui-btn mt10 mb20 pl10"><i class="fs14">&#x3545;</i> 给他人分配任务</button>
+							</div>
+						</div>
+						<div class="widget mt20">
+							<div class="widget-title-cnt">
+								<h2 class="widget-title">我的关注</h2>
+							</div>
+							<div class="widget-cnt">
+								<div class="img-box  clearfix">
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									
+									
+								</div>
+							</div>
+							<ul class="widget-list">
+								<li class="widget-list-cell">
+									<i>&#x3449;</i>
+									<a class="widget-list-link" href="javascript:">如何给客户报价</a>
+								</li>
+								<li class="widget-list-cell">
+									<i>&#x3449;</i>
+									<a class="widget-list-link" href="javascript:">如何给客户报价</a>
+								</li>
+								<li class="widget-list-cell">
+									<i>&#x3449;</i>
+									<a class="widget-list-link" href="javascript:">如何给客户报价</a>
+								</li>
+								<li class="widget-list-cell">
+									<i>&#x3449;</i>
+									<a class="widget-list-link" href="javascript:">如何给客户报价</a>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="widget mt20">
+							<div class="widget-title-cnt">
+								<h2 class="widget-title">关注我的人</h2>
+							</div>
+							<div class="widget-cnt">
+								<div class="img-box  clearfix">
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx2.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx1.jpg" alt=""></a>
+									<a href="javascript:" class="img-box-link"><img src="../../src/images/crm/tx3.jpg" alt=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!-- 左侧主要内容开始 右侧主要内容结束 -->
+					<div class="main-left-column mnw600">
+						<div class="main-cnt w50p left">
+							<div class="pr10">
+								<div class="main-cnt-top">
+									<i class="fonticon">&#x351a;</i> 时间 <a class="" href="javascript:">本月度 <i class="fonticon">&#x3438;</i></a>
+								</div>
+								<div class="main-cnt-cell mt10">
+									<div class="main-cnt-cell-top">
+										<div class="left">本月客户开发完成情况</div>
+										<a class="main-cnt-cell-top-option right" href="javascript:">
+
+											<i class="fonticon fs14">&#x356f;</i> 我设定的业务目标 
+										</a>
+
+									</div>
+									
+									<div class="main-cnt-cell-mid">
+										<div class="chart-one"></div>
+									</div>
+									
+									<div class="main-cnt-cell-bottom">
+										<div class="">客户跟踪情况分析</div>
+
+									</div>
+								</div>
+								<div class="main-cnt-cell mt20">
+									<div class="main-cnt-cell-top">
+										<div class="left">本月客户开发完成情况</div>
+										<div class="right">dawdwad</div>
+
+									</div>
+
+									<div class="main-cnt-cell-mid">
+										<div class="chart-two"></div>
+									</div>
+
+									<div class="main-cnt-cell-bottom">
+										<div class="">客户跟踪情况分析</div>
+
+									</div>
+								</div>
+							</div>
+							
+						
+						</div>
+						<div class="main-cnt w50p right">
+							<div class="pl10">
+								<div class="main-cnt-top tar">
+									<a href="javascript:"><i class="fonticon">&#x356f;</i> 添加定制</a>
+								</div>
+								<div class="main-cnt-cell mt10">
+									<div class="main-cnt-cell-top">
+										<div class="left">本月客户开发完成情况</div>
+										<div class="right">dawdwad</div>
+
+									</div>
+									
+										<table class="main-cnt-cell-table">
+
+											<tbody>
+												<tr class="tr-head">
+													<td class="tal">客户</td>
+													<td class="tar">未联系天数</td>
+												</tr>
+												<tr>
+													<td class="tal">嘉宝协议</td>
+													<td class="tar">32</td>
+												</tr>
+												<tr>
+													<td class="tal">嘉宝协议</td>
+													<td class="tar">32</td>
+												</tr>
+												<tr>
+													<td class="tal">嘉宝协议</td>
+													<td class="tar">32</td>
+												</tr>
+											</tbody>
+										</table>
+									
+									<div class="main-cnt-cell-bottom">
+										<div class="">客户跟踪情况分析</div>
+
+									</div>
+								</div>
+								<div class="main-cnt-cell mt20">
+									<div class="main-cnt-cell-top">
+										<div class="left">本月客户开发完成情况</div>
+										<div class="right">dawdwad</div>
+
+									</div>
+
+									<table class="main-cnt-cell-table">
+
+										<tbody>
+											<tr class="tr-head">
+												<td class="tal">客户</td>
+												<td class="tar">未联系天数</td>
+											</tr>
+											<tr>
+												<td class="tal">嘉宝协议</td>
+												<td class="tar">32</td>
+											</tr>
+											<tr>
+												<td class="tal">嘉宝协议</td>
+												<td class="tar">32</td>
+											</tr>
+											<tr>
+												<td class="tal">嘉宝协议</td>
+												<td class="tar">32</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<div class="main-cnt-cell-bottom">
+										<div class="">客户跟踪情况分析</div>
+
+									</div>
+								</div>
+								<div class="main-cnt-cell mt10">
+									<div class="main-cnt-cell-top">
+										<div class="left">本月客户开发完成情况</div>
+										<div class="right">dawdwad</div>
+
+									</div>
+
+									<table class="main-cnt-cell-table">
+
+										<tbody>
+											<tr class="tr-head">
+												<td class="tal">客户</td>
+												<td class="tar">未联系天数</td>
+											</tr>
+											<tr>
+												<td class="tal">嘉宝协议</td>
+												<td class="tar">32</td>
+											</tr>
+											<tr>
+												<td class="tal">嘉宝协议</td>
+												<td class="tar">32</td>
+											</tr>
+											<tr>
+												<td class="tal">嘉宝协议</td>
+												<td class="tar">32</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<div class="main-cnt-cell-bottom">
+										<div class="">客户跟踪情况分析</div>
+
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+					<!-- 左侧主要内容结束 --></div>
+
+	</div>
+</div>
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

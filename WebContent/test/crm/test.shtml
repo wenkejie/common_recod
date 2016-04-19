@@ -1,0 +1,125 @@
+<!--#include file="header.html"-->
+<div class="auto-wrap">
+<div class="left-column">
+<div class="self-info clearfix">
+	<img src="../../src/images/crm/noImg.jpg" alt="" class="user-img">
+	鲁运波<br/>
+<a href="javascript:">个人设置</a>
+</div>
+</div>
+<div class="right-column clearfix">
+	<!-- <div class="nui-checkbox psr">
+		<input class="" id="" type="checkbox" name="">
+		<a id="jCheck" class="nui-checkbox-sim-a" href="javascript:"></a>
+	</div> -->
+
+	<div class="nui-checkbox-sim fonticon " >
+		<input id="fcl" type="checkbox" name="" >
+		&#x3448;
+	</div>
+	
+
+	<div class="nui-time-box dpib psr w90">
+		<div class="time-input dpib vam"><input/></div>
+		<div class="nui-drop-down time-list">
+			<table>
+				<tr>
+					<td>
+						<table class="hour-table mr5">
+							<thead>
+								<tr><th class="slipt-x" colspan="7">小时</th></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th class="slipt-y" rowspan="2">上午</th>
+									<td><a class="table-cell" href="javascript:">00</a></td>
+									<td><a class="table-cell" href="javascript:">01</a></td>
+									<td><a class="table-cell" href="javascript:">02</a></td>
+									<td><a class="table-cell" href="javascript:">03</a></td>
+									<td><a class="table-cell" href="javascript:">04</a></td>
+									<td><a class="table-cell" href="javascript:">05</a></td>
+
+								</tr>
+								<tr>
+
+									<td><a class="table-cell" href="javascript:">06</a></td>
+									<td><a class="table-cell" href="javascript:">07</a></td>
+									<td><a class="table-cell" href="javascript:">08</a></td>
+									<td><a class="table-cell" href="javascript:">09</a></td>
+									<td><a class="table-cell" href="javascript:">10</a></td>
+									<td><a class="table-cell" href="javascript:">11</a></td>
+
+								</tr>
+								<tr>
+									<th class="slipt-y"  rowspan="2">下午</th>
+									<td><a class="table-cell" href="javascript:">12</a></td>
+									<td><a class="table-cell table-cell-active" href="javascript:">13</a></td>
+									<td><a class="table-cell" href="javascript:">14</a></td>
+									<td><a class="table-cell" href="javascript:">15</a></td>
+									<td><a class="table-cell" href="javascript:">16</a></td>
+									<td><a class="table-cell" href="javascript:">17</a></td>
+
+								</tr>
+								<tr>
+
+									<td><a class="table-cell" href="javascript:">18</a></td>
+									<td><a class="table-cell" href="javascript:">19</a></td>
+									<td><a class="table-cell" href="javascript:">20</a></td>
+									<td><a class="table-cell" href="javascript:">21</a></td>
+									<td><a class="table-cell" href="javascript:">22</a></td>
+									<td><a class="table-cell" href="javascript:">23</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td>
+						<table class="minute-table">
+							<thead>
+								<tr><th colspan="3" class="slipt-x">分</th></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a class="table-cell" href="javascript:">00</a></td>
+									<td><a class="table-cell" href="javascript:">05</a></td>
+									<td><a class="table-cell" href="javascript:">10</a></td>
+								</tr>
+								<tr>
+
+									<td><a class="table-cell" href="javascript:">15</a></td>
+									<td><a class="table-cell" href="javascript:">20</a></td>
+									<td><a class="table-cell" href="javascript:">25</a></td>
+
+								</tr>
+								<tr>
+									<td><a class="table-cell" href="javascript:">30</a></td>
+									<td><a class="table-cell table-cell-active" href="javascript:">35</a></td>
+									<td><a class="table-cell" href="javascript:">40</a></td>
+
+								</tr>
+								<tr>
+
+									<td><a class="table-cell" href="javascript:">45</a></td>
+									<td><a class="table-cell" href="javascript:">50</a></td>
+									<td><a class="table-cell" href="javascript:">55</a></td>
+
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</table>
+			
+			
+		</div>
+		
+	</div>
+	
+	<!-- <label class="nui-checkbox-sim fonticon " for="fcr">
+		<input id="fcr" type="radio" name="">
+		&#x3448;
+	</label> -->
+</div>
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

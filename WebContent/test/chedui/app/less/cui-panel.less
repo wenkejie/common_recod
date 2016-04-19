@@ -1,0 +1,148 @@
+//
+// 常用面板
+// --------------------------------------------------
+// 常量
+
+
+.cui-panel{
+	margin-top: 20px;
+	.box-shadow(0 1px 1px #ccc);
+	border: 1px solid #ccc;background: #fcfcfc;
+}
+
+.cui-panel-header{
+	height: 40px;line-height: 40px;padding-left: 20px;
+	border-bottom: 1px solid #dfdfdf;
+	font-weight: bold;
+}
+
+.cui-panel-content{
+	padding: 15px;
+}
+
+.cui-panel-footer{
+	height: 114px;line-height: 114px;
+	border-top: 1px dashed #dfdfdf;
+	text-align: center;
+}
+
+
+
+
+// 无边框的表格
+.cui-panel-noborder{
+	box-shadow: none;
+	border:none;
+}
+
+// 封装表格用的面板
+.cui-panel-tabel{
+	box-shadow: none;
+	border:none;background: #F0F2F3;
+}
+
+
+
+// 搜索筛选面板
+.cui-panel-search{
+	margin-top: 0;
+	background: #fff;
+	.cui-search-line{
+		padding: 10px 0;
+	}
+}
+
+.cui-search-header{
+	&:extend(.clearfix all);
+	padding: 10px 20px;
+	border-bottom: 1px dashed #dfdfdf;
+}
+
+.cui-search-content{
+	padding: 10px 20px;
+}
+
+
+// 控制表单的面板
+.cui-panel-form{
+	.cui-panel-header{
+		position: relative;
+		background: #f5f5f5;
+		
+	}
+	.cui-panel-footer{
+		height: 78px;line-height: 78px;padding: 10px 0;
+		border-top: none;
+		.hr-bg{
+			margin: 0 0 10px 0;
+		}
+		.cui-btn-dashed{
+			display: block;
+			width: 800px;margin: 0 auto;
+		}
+	}
+
+	.cui-panel-form-del{
+		position: absolute;right: 15px;top:0;display: block;
+		height: 40px;_width:30px;
+	}
+}
+
+
+// 面板中新增结构
+.cui-panel-add{
+	position: relative;
+	padding: 10px 20px;
+	border-top: 1px solid #ccc;
+	.arrow{
+		position: absolute;left: 10px;top: -9px;z-index: 90;
+		color: #ccc;
+		font: 14px Arial,Helvetica,sans-serif;
+		em{
+			position: absolute;z-index: 100;
+			left: 0;top: 1px;
+			color: #fff;
+		}
+	}
+}
+
+
+
+// 服务设置界面的面板
+.cui-panel-service{
+	margin-top: 0;
+	.cui-panel-header{
+		background: #f5f5f5;
+	}
+	.cui-panel-content{
+		padding: 15px;
+	}
+}
+
+
+// 带tab结构的面板
+.cui-panel-tab{
+	.cui-panel-header{
+		padding: 0;padding-top: 10px;height: 36px;
+		border-bottom: 0;background: #f5f5f5;
+	}
+
+	.cui-tab-menu{
+		padding-left: 10px;padding-right: 10px;
+	}
+
+	.cui-panel-content{
+		padding: 10px;
+	}
+}
+
+
+
+.cui-panel-feedback{
+	.cui-panel-header{
+		background: #f5f5f5;
+	}
+	.cui-panel-content{
+		padding: 30px;
+	}
+}

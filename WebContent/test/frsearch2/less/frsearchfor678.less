@@ -1,0 +1,205 @@
+@import "base.less";
+@import "common.less";
+.reset;
+///////////
+// 配置区域  //
+///////////
+
+*{box-sizing:content-box;}
+// 布局
+body{width: 100%;height:100%;overflow: auto;}
+
+// =====================~_~==========================
+
+
+.frs-header{
+  width: 925px;
+}
+
+
+.frs-body{
+  width: 925px;
+}
+
+
+//顶部内容
+.frs-logo{
+  float: left;*position: relative;
+  width: 129px;height: 48px;
+  img{
+    width: 100%;height: 100%;
+  }
+}
+
+.frs-header-menu{
+  float: right;
+  color: #666;font-size: 16px;
+}
+
+.header-menu-item,.header-menu-last{
+  float: left;*display: inline;*position: relative;
+}
+
+.header-menu-last{
+  border-width: 0;
+}
+
+.menu-drop{
+  display: inline-block;position: relative;*display: inline;
+  vertical-align: middle;
+}
+
+.menu-drop-btn{
+  display: block;_float: left;*zoom:1;
+}
+
+.menu-drop-fixed{
+  
+}
+
+.menu-drop-cnt{
+  width: 161px;
+}
+
+.menu-drop-link{
+  *zoom:1;
+  .frsicon{
+    margin-right: 5px;
+    vertical-align: bottom;
+  }
+}
+
+
+.frs-search-grid{
+  width: 100%;margin: 0 auto;padding: 30px 0;
+}
+
+.frs-search-nav{
+  &:extend(.clearfix all);
+  padding-bottom: 20px;
+}
+
+ .search-nav-cell{
+    float: left;
+    padding-right: 20px;
+    
+  }
+
+.search-nav-link,.search-nav-last{
+  display: block;position: relative;*zoom:1;*float: left;
+  padding:5px 30px;
+  color: #fff;font-size: 16px;
+  &:hover{
+    background: #0069AF;border-radius: 3px;color: #fff;
+  }
+  .active-icon{
+      display: block;position: absolute;left: 50%;bottom: -9px;z-index: 1;
+      margin-left: -8px;width: 16px;height: 18px;
+      overflow: hidden;text-align: center;color: #ff9326;font-family: "宋体";font-size: 12px;
+    }
+}
+
+.search-nav-link-active{
+  background: #0069AF;border-radius: 3px;
+  .active-icon{
+    color: #0069AF;
+  }
+}
+
+
+// =====================
+
+.frs-input-grid{
+  padding-right: 10px;height: 38px;width: 400px;
+}
+
+.frs-btn-group{
+  float: left;height: 38px;
+}
+
+.frs-input{
+  padding:8px 40px;height: 22px;
+  input{
+    width:100%;height: 22px;line-height: 22px;
+  }
+}
+
+// 搜索输入框
+.input-dropdown{
+  width: 400px;
+}
+
+.dropdown-slect-link{
+  display: block;*zoom:1;
+}
+
+
+
+// 搜索按钮
+
+
+.search-btn{
+  width: 95px;
+}
+
+
+// 图标
+
+// ================图标========================
+.frsicon{
+  background: url(../images/icon2.gif);
+}
+
+.icon-userinfo{
+  background-position: -1px -21px;
+}
+
+.icon-password{
+  background-position: -81px -21px;
+}
+
+.icon-out{
+  background-position: -41px -21px;
+}
+
+.icon-input1{
+  background: url(../images/icon2.gif) -1px -41px;
+}
+
+.icon-input2{
+  background: url(../images/icon2.gif) -14px -41px;
+}
+
+
+.icon-dropdown{
+  overflow: hidden;
+  background-position: -1px -69px;vertical-align: middle;
+}
+
+.icon-input1{
+  background: url(../images/icon2.gif) -1px -41px;
+}
+
+.icon-input2{
+  background: url(../images/icon2.gif) -14px -41px;
+}
+
+
+.icon-right{
+  background-position: -121px -21px;
+}
+
+
+/*语言切换结构添加*/
+
+
+
+.slide-down-link{
+  *zoom:1;
+}
+
+.icon-arrow{ 
+  em{ 
+    top:2px;
+  }
+}

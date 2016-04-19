@@ -1,0 +1,61 @@
+
+//==============   兼容 inline block 属性  ===============
+//==============   @author fen             ===============
+.inline-block(){
+  display: inline-block;
+  *display: inline;
+  *zoom:1;
+}
+
+// Opacity
+
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+//**
+// * 渐变色
+// * @params  statColor | endColor | direction
+// * @author fen 
+
+
+.linear(@starColor,@endColor){
+  background: @endColor; /* Old browsers */
+  background: -moz-linear-gradient(top,  @starColor 0%, @endColor 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@starColor), color-stop(100%,@endColor)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  @starColor 0%,@endColor 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  @starColor 0%,@endColor 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  @starColor 0%,@endColor 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  @starColor 0%,@endColor 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@starColor, endColorstr=@endColor,GradientType=0 ); /* IE6-9 */
+}
+
+
+//
+/* 隐藏, 通常用来与 JS 配合 */
+.none {display:none}
+.block{display: block}
+.hide{visibility: hidden;}
+.visible{visibility: visible;}
+.opacity0{.opacity(0)}
+
+//=================
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+

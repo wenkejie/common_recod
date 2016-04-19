@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>员工管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common.css"/>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+
+</head>
+<body class="home-body">
+	
+	<div class="wrap">
+
+				<div class="search-area-grid mt30">
+				<div class="grid">
+					<label for="" class="nui-label">搜索条件</label>
+					<div class="nui-form-cell w200">
+						<input type="text" class="nui-input" id="" />
+					</div>
+					<button class="nui-btn " onclick="searchData()">搜 索</button>
+				</div>
+		
+
+			</div>
+
+
+			<div class="result-area">
+	
+			
+			<table class="result-table">
+				<thead>
+					<tr>
+						<th class="checkbox"><input id="jselAll" type="checkbox" name="" id="" title="选中/取消选中" /></th>
+						<th class="name">姓名 | 用户名</th>
+						<th>手机 | 邮箱</th>
+						<th class="company">企业名称</th>
+						<th class="action">操作</th>
+					</tr>
+				</thead>
+			
+				<tbody>
+				<tr><td class="checkbox"><input type="checkbox" class="item" value="13" id="checkbox" name="checkbox"></td><td>alningbo<p class="sub-info"><span class="sub-info-tag">用户名：</span>alningbo</p></td><td>111<p class="sub-info"><a href="mailto:464753600@qq.com">464753600@qq.com</a></p></td>
+					<td>啊啦宁波测试外部查询公司</td><td><a class="" href="javascript:">编辑 </a><em>|<a class="" href="javascript:"> 删除</a></div></td>
+					</tr>
+					<tr><td class="checkbox"><input type="checkbox" class="item"  value="17" id="checkbox" name="checkbox"></td><td>charlesZhang<p class="sub-info"><span class="sub-info-tag">用户名：</span>charles</p></td><td>13336665553<p class="sub-info"><a href="mailto:charles@li-ling.com">charles@li-ling.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><a class="" href="javascript:">编辑 </a><em>|</em><a href="javascript:"> 删除</a></div></td></tr><tr class="split"><td class="checkbox"><input type="checkbox"  class="item"  value="18" id="checkbox" name="checkbox"></td><td>李玲玲<p class="sub-info"><span class="sub-info-tag">用户名：</span>553670</p></td><td><p class="sub-info"><a href="mailto:cus@li-ling.com">cus@li-ling.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><a class="" href="javascript:">编辑 </a><em>|</em><a href="javascript:"> 删除</a></div></td></tr><tr><td class="checkbox"><input type="checkbox"  class="item"  value="19" id="checkbox" name="checkbox"></td><td>陈明<p class="sub-info"><span class="sub-info-tag">用户名：</span>553671</p></td><td><p class="sub-info"><a href="mailto:op@li-ling.com">op@li-ling.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><a class="" href="javascript:">编辑 </a><em>|</em><a href="javascript:"> 删除</a></div></td></tr><tr class="split"><td class="checkbox"><input class="item"  type="checkbox" value="20" id="checkbox" name="checkbox"></td><td>姚健<p class="sub-info"><span class="sub-info-tag">用户名：</span>559459</p></td><td>15158322619<p class="sub-info"><a href="mailto:402706147@qq.com">402706147@qq.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><a class="" href="javascript:">编辑 </a><em>|</em><a href="javascript:"> 删除</a></div></td></tr><tr><td class="checkbox"><input type="checkbox" class="item"  value="21" id="checkbox" name="checkbox"></td><td>叶凌云<p class="sub-info"><span class="sub-info-tag">用户名：</span>553668</p></td><td>13884460048<p class="sub-info"><a href="mailto:cus@li-ling.com">cus@li-ling.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><a class="" href="javascript:">编辑 </a><em>|</em><a href="javascript:"> 删除</a></div></td></tr><tr class="split"><td class="checkbox"><input type="checkbox" class="item"  value="22" id="checkbox" name="checkbox"></td><td>蔡双霞<p class="sub-info"><span class="sub-info-tag">用户名：</span>552664</p></td><td>15606608516<p class="sub-info"><a href="mailto:237862023@qq.com">237862023@qq.com</a></p></td>
+					<td>宁波中量立领国际物流有限公司</td><td><a class="" href="javascript:">编辑 </a><em>|</em><a href="javascript:"> 删除</a></div></td></tr><tr><td class="checkbox"><input type="checkbox" class="item"  value="23" id="checkbox" name="checkbox"></td><td>唐毅丰<p class="sub-info"><span class="sub-info-tag">用户名：</span>552669</p></td><td>13989305322<p class="sub-info"><a href="mailto:814348369@qq.com">814348369@qq.com</a></p></td><td>宁波中量立领国际物流有限公司</td><td><a class="" href="javascript:">编辑 </a><em>|</em><a href="javascript:"> 删除</a></div></td></tr></tbody>
+			</table>
+			<div class="result-footer">
+				<div class="page"><input type="hidden" value="1" name="pageNo" id="pageNo"><span class="pageInfo">1-30条，共1615条</span> <a href="javascript:nextPage();">下一页</a> <a href="javascript:buildData(54);">尾页</a></div>
+		  </div>
+		</div>	
+
+
+	</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="data/company.js"></script>
+	<script type="text/javascript" src="data/user.js"></script>
+	<script type="text/javascript" src="data/group.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+
+
+		$(function() {
+
+			$('#j-nav').scrollfix();
+
+
+			$('input.nui-input')
+				.focus(function() {
+					$(this).addClass('nui-input-focus')
+				})
+				.blur(function() {
+					$(this).removeClass('nui-input-focus')
+				});
+
+			
+
+			
+
+					//////////////
+					//高级搜索 //
+					//////////////
+					function advSearchSlide() {
+						var offset = null;
+						var that = $('#j-searchArea');
+						$('#j-advSearchBtn').click(function() {
+							var thisline = $(this).parent().parent();
+
+							that.addClass('search-area-slidedown');
+							offset = offset || $('#j-searchBtn').offset();
+
+							$('#j-toggle').addClass('none').clone().removeClass('none').appendTo($(this).parent().parent()).addClass('psa').animate({
+								opacity: 0,
+								left: offset.left,
+								top: offset.top
+							}, 500, function() {
+								$(this).remove();
+							})
+						});
+
+						$('#j-backBtn').click(function() {
+							that.removeClass('search-area-slidedown');
+							$('#j-toggle').removeClass('none')
+						});
+
+						$('div.search-area-line').delegate('a.form-line-right-tag', 'click', function(
+							) {
+							$(this).parent().find('a.form-line-right-tag').removeClass('form-line-right-tag-click');
+
+							$(this).addClass('form-line-right-tag-click');
+						})
+						$('div.search-area-line').myhover(
+							'a.form-line-right-tag',
+							 function() {
+							
+							$(this).parent().find('a.form-line-right-tag').removeClass('form-line-right-tag-hover');
+
+							$(this).addClass('form-line-right-tag-hover');
+							
+						},function () {
+
+							$(this).removeClass('form-line-right-tag-hover');
+						});
+						
+
+					}
+
+					advSearchSlide()
+
+
+				// 列表操作部分下拉按钮
+			$('table.result-table').delayhover(
+				"ul.slide-down-menu",
+				function() {
+					$(this).addClass('slide-down-menu-hover').find('li').addClass('block').end().find('s').addClass('hide');
+				}, function() {
+					$(this).removeClass('slide-down-menu-hover').find('li').removeClass('block').end().find('s').removeClass('hide');
+
+				}
+			)
+				// 列表头部过滤按钮
+			$('div.result-filter').delegate('a', 'click', function() {
+				$(this).addClass('active').siblings().removeClass('active')
+			});
+
+
+
+
+
+			// 表头按钮的下拉操作
+			$('div.result-fn-area-port').delegate('button.nui-btn', 'click', function(){
+				// console.log($(this).is('a.nui-btn-disable'));
+				$('div.nui-drop-list').addClass('none');
+				if (!$(this).is('button.nui-btn-disable')) {
+					$(this).parent().children('div.nui-drop-list').removeClass('none');
+					return false;
+				}
+
+				// $(this).parent().children('div.nui-drop-list').removeClass('none');
+				// return false;
+
+			});
+
+			// 表头按钮的下拉操作的选项选择
+				// $("div.nui-drop-list").delegate("li", "click", function(){
+
+				// 	$(this).parent().parent().prev().children('em').text($(this).children('a').text());
+				// 	$(this).parent().parent().prev().children('s.icon-fir').addClass('icon-sec');
+
+				// 	return false;//阻止冒泡
+				// })//下拉选项点击
+
+				$("div.nui-drop-list").delegate("#j-thisPage", "click", function(){
+					// $(this).parent().parent().parent().prev().children('em').text($(this).text());
+					$(this).parent().parent().parent().prev().children('s.icon-fir').removeClass('icon-thr').addClass('icon-sec');
+				})
+
+				$("div.nui-drop-list").delegate("#j-All", "click", function(){
+					// $(this).parent().parent().parent().prev().children('em').text($(this).text());
+					$(this).parent().parent().parent().prev().children('s.icon-fir').removeClass('icon-sec').addClass('icon-thr');
+				})
+
+
+				$("div.nui-drop-list-replace").delegate("li", "click", function(){
+					console.log("ccc");
+					$(this).parent().parent().prev().children('em').text($(this).text());
+
+				})
+
+
+				//列表排序箭头
+			$('th.company').delegate('a.icon', 'click', function(){
+
+				$(this).removeClass('icon-com');
+				$(this).addClass('icon-top');
+				return false;
+			});
+			$('th.company').delegate('a.icon-top', 'click', function(){
+
+				$(this).removeClass('icon-top');
+				$(this).addClass('icon-down');
+				return false;
+			});
+			$('th.company').delegate('a.icon-down', 'click', function(){
+
+				$(this).removeClass('icon-down');
+				$(this).addClass('icon-top');
+
+				return false;
+			});
+
+
+			$('table.result-table').delegate('a.icon-dowm-tips', 'click', function() {
+
+				var offset = $(this).offset();
+				// console.log(offset);
+				$('div.fui-tips').css({
+					'left': offset.left-129,
+					'top': offset.top+21
+				});
+				$('div.fui-tips').removeClass('none');
+				return false;
+			});
+
+			$(document).click(function() {
+				// console.log("ccc");
+				$('div.fui-tips').addClass('none');
+				$('div.nui-drop-list').addClass('none');
+				// $('div.form-list-thr').find('ul.input-form-list').hide();	
+			});//点其他位置时让tips消失
+
+			$(window).scroll( function() { 
+				// console.log($(window).scrollTop());
+				if ($(window).scrollTop()==0) {
+					$('a.to-top').addClass('none');	
+				}else{
+					$('a.to-top').removeClass('none');	
+				};
+				// $('a.to-top').removeClass('none');
+			});
+
+			$('a.to-top').click(function() {
+
+				$(window).scrollTop(0);
+				// $(window).animate($(window).scrollTop(0), "slow");
+				// if (document.documentElement.scrollTop = 0) {
+					// $('a.to-top').removeClass('to-top-black');
+				// };
+				
+			});
+
+			//在本地session中缓存数据 （localStorage）
+			localStorage.clear();
+			sessionStorage.clear();
+			localStorage.userList = JSON.stringify(userList);
+			searchData();
+			
+		});
+		
+		//查询数据
+		function searchData(){
+			var users = $.parseJSON(localStorage.userList);
+			var user_name = $.trim($("#username").val());
+			var company_name = $.trim($("#companyname").val());
+			var email = $.trim($("#email").val());
+			var _users = new Array();
+			//$.each(users,function(i,user){
+			// console.time("a");
+			//for(var i=0,user;(user=users[i])!=null;i++){
+			for(var i=0;i<users.length;i++){
+				user = users[i];
+				//console.log(user);
+				if(user_name.length>0){//姓名存在
+					if(user.user_name.indexOf(user_name)>-1 || user.person_name.indexOf(user_name)>-1){
+						if(company_name.length>0){
+							var org_name_str = "";
+							$.each(companyList, function(n,c) {
+								if (c.org_id == user.org_id){
+									org_name_str = c.org_name;
+									return false;
+								}
+							});
+							if(org_name_str.indexOf(company_name)>-1){
+								if(email.length>0){
+									if(user.email.indexOf(email)>-1){
+										_users.push(user);
+										continue; 
+									}
+								}else{
+									_users.push(user);
+									continue; 
+								}
+							}
+						}else{
+							if(email.length>0){
+								if(user.email !=null && user.email.indexOf(email) > -1){
+									_users.push(user);
+									continue; 
+								}
+							}else{
+								_users.push(user);
+								continue; 
+							}
+						}
+					}
+				}else{
+					if(company_name.length>0){
+						var org_name_str = "";
+						$.each(companyList, function(i,c) {
+							//console.log(companyList);
+							if (c.org_id == user.org_id)
+								org_name_str = c.org_name;
+						});
+						console.log(org_name_str);
+						if(org_name_str.indexOf(company_name)>-1){
+							if(email.length>0){
+								if(user.email.indexOf(email)>-1){
+									_users.push(user);
+									continue; 
+								}
+							}else{
+								_users.push(user);
+								continue; 
+							}
+						}
+					}else{
+						if(email.length>0){
+							if(user.email !=null && user.email.indexOf(email) > -1){
+								_users.push(user);
+								continue; 
+							}
+						}else{
+							_users.push(user);
+							continue; 
+						}
+					}
+				}
+				/*if(company_name.length>0){
+					var org_name_str = "";
+					$.each(companyList, function(c) {
+						if (c.org_id == user.org_id)
+							org_name_str = c.org_name;
+					});
+					if(org_name_str.indexOf(company_name)>-1){
+						_users.push(user);
+						continue; 
+					}
+				}
+				if(email.length>0){
+					if(user.email.indexOf(email)>-1){
+						_users.push(user);
+						continue; 
+					}
+				}*/
+			}
+			// console.timeEnd("a");
+			localStorage.searchUserList = JSON.stringify(_users);
+			buildData(1);
+		}
+
+		function buildData(pageNo){
+			var users = $.parseJSON(localStorage.searchUserList);
+			var groups = groupList;
+			//console.log(users);
+			var groupListLength = groups.length;
+			var pageSize = 30;
+			var seqStart = (pageNo - 1) * pageSize;
+			var seqEnd = seqStart+pageSize;
+			if(seqEnd>groupListLength) 
+				seqEnd = groupListLength;
+			//翻页数据
+			var page = $("div.page");
+			page.empty();
+			page.append("<input type=\"hidden\" id=\"pageNo\" name=\"pageNo\" value=\""+pageNo+"\" />");
+			var pageInfo = $("<span class=\"pageInfo\"></span>");
+			pageInfo.text((seqStart+1)+"-"+seqEnd+"条，共"+groupListLength+"条");
+			page.append(pageInfo);
+			if(pageNo != 1){
+				page.append("<a href=\"javascript:buildData(1);\">首页</a>");
+				page.append("<a href=\"javascript:prePage();\">上一页</a>");
+			}
+			var totalPageCount = 0;
+			var a = groupListLength % pageSize ;
+			if (a > 0) {
+				totalPageCount = (groupListLength / pageSize | 0) + 1;
+			} else {
+				totalPageCount = groupListLength / pageSize | 0;
+			}
+			if(pageNo != totalPageCount){
+				page.append("<a href=\"javascript:nextPage();\">下一页</a>")
+					.append("<a href=\"javascript:buildData("+totalPageCount+");\">尾页</a>");
+			}
+			var body = $("table.result-table tbody");
+			body.empty();
+			//$.each(userList,function(i,u){
+			for ( var i = seqStart; (pageSize > 0 && i < groupListLength); i++) {
+				pageSize--;
+				var g = groups[i];
+				var tr = $("<tr></tr>");
+				if (i % 2 == 1)
+					tr.addClass("split");
+				//var checkbox = $("<td class=\"checkbox\"><input type=\"checkbox\" name=\"checkbox\" id=\"checkbox\" value=\""+g.id+"\" /></td>");
+				//tr.append(checkbox);
+
+				var group_name = $("<td></td>").append(g.group_name);
+				tr.append(group_name);
+
+				var person_name_str = "";
+
+				$.each(userList, function(i, u) {
+					if (u.id == g.user_id)
+						person_name_str = u.person_name;
+				});
+
+				var person_name = $("<td></td>")
+						.append(person_name_str);
+				tr.append(person_name);
+
+				var userCount = $("<td></td>").append(Math.floor(Math.random()*24));
+				tr.append(userCount);
+				
+				var op = $("<td></td>");
+				var cnt = $("<div class=\"action-cnt\"></div>");
+				var ul = $("<ul class=\"slide-down-menu\"></ul>");
+				ul.append("<li><a href=\"javascript:\" class=\"first\">转移群主 <i class=\"icon-down-arrow\">&#x3438;</i></a></li>");
+				ul.append("<li class=\"slide-down-menu-li\"><a href=\"javascript:\" class=\"last\">解散群</a></li>");
+
+				cnt.append(ul);
+				op.append(cnt);
+				tr.append(op);
+
+				body.append(tr);
+
+			}//);
+		}
+		//下一页
+		function nextPage(){
+			var pageNo = $("#pageNo");
+			var nextPageNo = parseInt(pageNo.val())+1;
+			pageNo.val(nextPageNo);
+			buildData(nextPageNo);
+		}
+		//上一页
+		function prePage(){
+			var pageNo = $("#pageNo");
+			var prePageNo = parseInt(pageNo.val())-1;
+			pageNo.val(prePageNo);
+			buildData(prePageNo);
+		}
+		//全选
+		function checkboxSelectAll(){
+			
+		}
+		
+		
+		// 弹出窗口
+		function openWin() {
+
+			fwindow.create({
+
+				title : "普通窗口",
+
+				url : "openWin2.html",
+				width : "700",
+				height : "300"
+			// resizeable : true,
+			// maxable : true 
+
+			});
+
+		}
+	</script>
+</head>
+<body class="home-body">
+	
+<!--#include file="header.html"-->
+	<div class="wrap main-wrap">
+		<div class="search-area" id="j-searchArea">
+
+			<div class="title-info"><h2>账号统计信息</h2>
+				<strong >客户账号：</strong>已购买 <span class="text-warning fwb">2510</span> 个 | 剩余 <span  class="text-warning fwb">500</span> 个 
+				<!-- <strong >体验账号：</strong>已购买 <span class="text-warning fwb">2510</span> 个 | 剩余 <span  class="text-warning fwb">500</span> 个 <div class="right mt5"><i>&#13680</i> <a href="#">已删除账号</a></div> -->
+			</div>
+			<div class="search-area-grid">
+				<div class="search-area-line">
+					<label for="username"  class="nui-label">姓名：</label>
+					<div class="nui-form-cell w100  mr20">
+						<input type="text" id="username" class="nui-input" />
+					</div>
+					<label for="companyname"  class="nui-label">公司名称：</label>
+					<div class="nui-form-cell w200  mr20">
+					<input type="text" id="companyname"  class="nui-input"/>
+					</div>
+					<label for="mobile" class="nui-label">用户名：</label>
+					<div class="nui-form-cell w100  mr10">
+					<input type="text" id="mobile"  class="nui-input"/>
+					</div>
+					<span id="j-toggle">
+						<button class="nui-btn nui-btn-primary " onclick="searchData()">搜 索</button>
+						<button class="nui-btn" id="j-advSearchBtn">高 级 搜 索</button>
+					</span>
+				</div>
+				<div class="search-area-line search-adv-area" >
+					<div class="form-line">
+						<div class="form-line-left w500 dpib">
+							<label for="typeoftime" class="nui-label">时间类型：</label><select name="" id="" class="nui-native-select w100"> 
+									<option value="">注册时间</option>
+									<option value="">审核时间</option>
+								</select>
+							<div class="nui-form-cell">
+								<input type="text" id="typeoftime-fir" class="nui-input w80" onfocus="$(this).datepicker();" />
+							</div><!-- 调用了日期空间 -->
+							<span> - </span>
+							<div class="nui-form-cell ml1">
+								<input type="text" id="typeoftime-sec" class="nui-input w80" onfocus="$(this).datepicker();"/>
+							</div>
+							
+						</div>
+						<div class="form-line-right dpib">
+							<label for="typeoftime" class="nui-label">关键词：</label><select name="" id="" class="nui-native-select w100"> 
+								<option value="">请选择</option>
+								<option value="">用户电话</option>
+								<option value="">用户传真</option>
+								<option value="">用户邮箱</option>
+								<option value="">企业备注名</option>
+								<option value="">省份</option>
+								<option value="">城市</option>
+							</select>
+							<div class="nui-form-cell w185">
+								<input type="text" id="typeoftime" class="nui-input"/>
+							</div>
+							
+						</div>
+						
+					</div>
+					<div class="form-line">
+						<div class="form-line-left w500 dpib">
+							<label for="typeoftime" class="nui-label">服务选择：</label><label for="fcl" class="nui-checkbox"><input type="checkbox" name="" id="fcl" />整箱</label><label for="lcl"  class="nui-checkbox"><input type="checkbox" name="" id="lcl" />拼箱</label><label for="air"  class="nui-checkbox"><input type="checkbox" name="" id="air" />空运</label>
+							
+						</div>
+						<div class="form-line-right dpib">
+							<label for="typeoftime" class="nui-label mr20">登录控制：</label>
+							<label for="" class="nui-radio"><input type="radio" name="control" checked="checked"/>全部</label>
+							<label for="" class="nui-radio"><input type="radio" name="control"/>启用</label>
+							<label for="" class="nui-radio"><input type="radio" name="control"/>未启用</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="search-area-btn-area">
+				<button class="nui-btn nui-btn-primary w80" id="j-searchBtn">搜 索</button>
+				<button class="nui-btn " id="j-backBtn">返回普通搜索 <i class="fs14">&#x3437;</i></button>
+				</div>
+
+			</div>
+			<div class="search-area-blank none">
+				<div class="search-area-blank-download">
+					<a href="javascript:" class="blank-download-fir">
+						<s class="icon icon-download"></s><span>下载查询结果：EXCEL</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="result-area">
+			<div class="result-filter">
+				<a href="list.shtml" class="result-filter-btn">按用户显示</a>
+				<a href="list_company.shtml" class="result-filter-btn">按公司显示</a>
+				<a href="javascript:" class="result-filter-btn active">按群显示</a>
+
+			</div>
+			
+			<table class="result-table">
+				<thead>
+					<tr>
+						<th>群名称</th>
+						<th width="150">群主</th>
+						<th width="120">群成员数</th>
+						<th width="120">操作</th>
+					</tr>
+				</thead>
+			
+			<tbody>
+					
+				
+		
+			</tbody>
+			</table>
+			<div class="result-footer">
+				<div class="page"><input type="hidden" id="pageNo" name="pageNo" value="1" /><span class="pageinfo">1-20条，共64条 </span><a href="javascript:nextPage();">下一页</a><a href="javascript:">尾页</a></div>
+		  </div>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="wrap"><p>宁波开源国际物流有限公司</p><p>powered by <a href="#">大掌柜</a></p></div>
+	</div>
+	<div class="fui-tips none w250 h150 ">
+		<div class="fui-tips-arrow top top-middle">
+			◆ 
+			<em>◆</em>
+		</div>
+		<table class="tips-table w250 h150">
+
+			<tr class="tips-table-single">
+				<td class="tips-table-single-one">备注名：</td>
+				<td class="tips-table-single-two">无</td>
+
+			</tr>
+			<tr class="tips-table-double">
+				<td class="tips-table-double-one">省  份：</td>
+				<td class="tips-table-double-two">浙江省</td>
+
+			</tr>
+			<tr class="tips-table-single">
+				<td class="tips-table-single-one">地  区：</td>
+				<td class="tips-table-single-two">浙江省倒萨发送到</td>
+
+			</tr>
+			<tr class="tips-table-double">
+				<td class="tips-table-double-one">备  注：</td>
+				<td class="tips-table-double-two">暂无</td>
+
+			</tr>
+			<tr class="tips-table-single">
+				<td class="tips-table-single-one">公司描述：</td>
+				<td class="tips-table-single-two">500</td>
+
+			</tr>
+			<tr class="tips-table-double">
+				<td class="tips-table-double-one">400</td>
+				<td class="tips-table-double-two">500</td>
+
+			</tr>
+		</table>
+
+	</div>
+	<div class="to-place">
+		<a href="javascript:" class="to-top none"></a>
+		<!-- <div class="to-bottom"></div> -->
+	</div>
+</body>
+</html>

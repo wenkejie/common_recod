@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>一号通</title>
+	<style type="text/css">
+		@charset "utf-8";
+		/* CSS Document */
+		body,div,p,ul,dl,dt,dd,ol,li,h1,a,img,span,small,strong,em,i,a,form,button,input,h3,label,textarea{margin:0; padding:0;}
+		table{ border-collapse:collapse;border-spacing:0; }
+		body{font: 14px/1.5 tahoma,arial,"Hiragino Sans GB","Microsoft Yahei",宋体;color: #808080;background: #F4F5F7}
+		a{text-decoration:none;color: #0088CC}
+		li{list-style:none;}
+		input{border:none;background: #fff;color: #999;vertical-align: middle;outline: none;}
+		button{border: none;}
+		textarea{border: 0 none;overflow:auto}
+		i{font-style: normal;}
+		.checkbox{width: 14px;height: 14px;vertical-align: middle;margin-right: 10px;}
+		s{text-decoration: none;}
+		.clearfix{*zoom:1}
+		.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}
+		.clearfix:after{clear:both}
+		
+		body{
+			background-color: #fff;
+		}
+		
+
+		/*头部的内容*/
+		.header{
+			width: 100%;background-color: #5082C5;
+		}
+		.header-cnt{
+			width: 800px;margin: 0 auto;
+		}
+
+		.logo{
+			float: left;
+			width: 35px;height: 46px;background: url(../../release/freight/images/integration/logo-icon.png) no-repeat;
+		}
+		.title{
+			float: left;
+			color: #fff;font-size: 18px;padding:15px 0 6px 12px;
+		}
+		/*===============================*/
+		/*提示框*/
+		.tips-error{
+			clear: both;padding:10px 0 0 90px;
+			color: #999999;
+		}
+		.tips-error i{
+			float: left;width: 18px;height: 18px;margin-right: 10px;
+			background: url(../../release/freight/images/complex/error-icon.png) no-repeat;
+		}
+		.tips-error span{
+			float: left;
+			line-height: 18px;color: #D90000;
+		}
+
+		/*.tips-error-arrow{
+			position:absolute; left:7px;_left:8px;bottom: -9px;
+			
+			font:12px  Arial, Helvetica, sans-serif;color:#EDBC87; 
+
+		}
+		.tips-error-arrow em{ 
+				position:absolute; left:0;top: -1px;
+				color:#FFF9E1;font:12px  Arial, Helvetica, sans-serif;
+		}*/
+		/*================================*/
+		/*中间内容*/
+		.content{
+			width: 800px;margin: 0 auto;
+		}
+		.content-left{
+			float: left;
+			border-right: 1px solid #E7E7E7;padding: 0 50px;
+		}
+
+		.content-left-form{
+			padding: 10px 5px;
+		}
+		.form-label{
+			float: left;
+			padding-right: 20px;
+			text-align: right;line-height: 34px;font-size: 14px;
+		}
+
+		.form-input{
+			float: left;
+			border: 1px solid #E7E7E7;border-radius: 2px;padding: 3px 5px;
+
+		}
+		.form-input input{
+			border:none;background: #fff;width: 100%;height: 26px;
+			color: #999;font-size: 16px;line-height: 26px;
+		}
+		
+		
+		.form-input-disable{
+			background-color: #f7f7f7;
+			border-color: #CCCCCC;
+			box-shadow: none;
+		}
+		
+		.form-input-disable input{
+			background-color: #f7f7f7;
+		}
+
+		
+
+		.form-btn{
+			padding: 7px 10px;background-color: #5FAE2F;border-radius: 2px;
+			color: #fff;
+			cursor: pointer;
+		}
+		.form-btn:hover{
+			background: #3FAE2F;
+		}
+
+		.form-option{
+			float: right;
+		}
+		.form-option-li{
+			float: left;border-right: 1px solid #E7E7E7;padding: 2px 15px;
+			line-height: 14px;
+		}
+		.form-option-li a{
+			color: #666666;
+		}
+		/*===============================*/
+		.content-right{
+			float: left;
+			padding: 0 50px;
+		}	
+
+		.content-right-title{
+			width: 280px;padding-bottom: 10px;border-bottom: 1px solid #E7E7E7;
+			text-indent: 2em;
+		}
+
+		.content-right-body-top{
+			padding: 30px 0 10px 0;border-bottom: 1px solid #E7E7E7;
+		}
+		.content-right-body-cell{
+			padding: 12px 0;border-top: 1px dashed #E7E7E7;
+		}
+		.cell-checkbox-disable{
+			 cursor: not-allowed;
+		}
+		.cell-checkbox-disable input{
+			border-color: #ccc;cursor: not-allowed;
+		}	
+		/*===============================*/
+
+
+		/*底部*/
+
+		.footer{
+			background-color: #f9f9f9;padding: 40px 0;border-top: 1px solid #E7E7E7;
+			text-align: center;
+			background: -moz-linear-gradient(top,  #f9f9f9 0%, #fff 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#fff)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  #f9f9f9 0%,#fff 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  #f9f9f9 0%,#fff 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  #f9f9f9 0%,#fff 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  #f9f9f9 0%,#fff 100%); /* W3C */
+		}
+		/*===============================*/
+		
+		/*弹窗样式*/
+
+		.open-shadow{
+			position: fixed;
+			left:0;top:0;bottom: 0;
+			background: #000;width: 100%;opacity: 0.7;
+			;z-index: 999;
+		}
+
+		.open-win{
+			position: absolute;left: 50%;top: 50%;z-index: 1000;
+			width: 598px;height: 458px;margin-left: -299px;margin-top: -200px;background: #fff;border: 1px solid #ccc;box-shadow: 0 0 4px #cccccc;
+			overflow: hidden;
+		}
+
+
+		.open-win-title{
+			height: 50px;border-bottom: 1px solid #DCDFE7;padding-left: 25px;
+			font-size: 20px;line-height: 50px;color: #333;
+		}
+		.open-win-title h1{
+			font-size: 18px;
+			height: 50px;line-height: 50px;
+			color: #aaa;
+		}
+
+		.open-win-content{
+			width: 563;height: 303px;margin: 20px 15px 0 15px;border: 1px solid #ccc;padding: 0 10px;
+			overflow-y:auto; color: #333;
+		}
+
+		.open-win-content p{
+			margin: 5px 0;
+			text-indent: 25px;
+		}
+
+		.open-win-btn{
+			margin: 15px 0 0 230px;
+		}
+
+		.open-win-close{
+			display: block;width: 17px;height: 16px;margin-top: 17px;
+			background: url(../../release/freight/images/complex/close.png) no-repeat;
+		}
+
+		.open-win-content-tilte{
+			text-align: center;font-size: 20px;
+		}
+		.open-win-form-btn{
+			float: left;
+			width: 148px;height: 38px;border: 1px solid #006DD9;background: #4DA6FF;border-radius: 3px;
+			text-align: center;line-height: 38px;color: #fff;font-weight: bold
+		}
+		.open-win-btn{
+			margin: 15px 0 0 230px;
+		}
+		.open-win-form-btn:hover{
+			background: #32A1FF;color: #fff;
+		}
+		/*===============================================*/
+
+		/*=================微调设置部分==================*/
+		/*.m0-a{margin: 0 auto;}*/
+		.right{float: right;*display: inline;}
+		.left{float: left;*display: inline;}
+		.pr0{padding-right: 0}
+		.mt45{margin-top: 45px}	
+		.mt5{margin-top: 5px;}
+		.mt20{margin-top: 20px;}
+		.mt125{margin-top: 125px}
+		.mb35{margin-bottom: 35px;}
+		.ml90{margin-left: 90px;}
+		.mr10{margin-right: 10px}
+		.mr20{margin-right: 20px}
+		.cur-na{cursor: not-allowed;}
+		.bd0{
+			border: 0px;
+		}
+
+		.w70{width: 70px;}
+
+		.none{display: none;}
+		.psr{position: relative;}
+		.toe{white-space:nowrap;text-overflow:ellipsis; -o-text-overflow:ellipsis;}
+		/*===============================================*/
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		;
+		$(function () {
+			
+			$('#jCloseWin').click(function() {
+				$('div.open-shadow').addClass('none');
+				$('div.open-win').addClass('none');
+			});
+
+			$('#jOpenwin').click(function() {
+
+				var top = 250;  
+				
+				var scrollTop = $(document).scrollTop();   
+				
+
+				if (/MSIE 6./i.test(navigator.userAgent)) {
+					$('div.open-win').css( {
+						'top' : top+scrollTop, 
+
+					});
+					
+				}else{
+					$('div.open-win').css( {
+						'top' : top, 
+
+					});
+				};
+				$('div.open-shadow').removeClass('none');
+				$('div.open-win').removeClass('none');
+			});
+			$("a.open-win-btn").click(function() {
+				$("div.open-win").addClass('none');
+				$("div.open-shadow").addClass('none');
+			});
+
+		})
+
+		 	
+	</script>
+</head>
+<body>
+	 <div class="header">
+	 	<div class="header-cnt clearfix">
+	 		<div class="logo"></div>
+	 		<h1 class="title">一号通登录</h1>
+
+	 	</div>
+	 </div>
+	 <div class="content clearfix">
+	 	<div class="content-left mt5">
+	 		<div class="content-left-form mt45 clearfix">
+	 			<label class="form-label w70">用户名</label>
+	 			<div class="form-input form-input-disable">
+	 				<input class="" value="139 5820 1888" />
+	 			</div>
+	 			
+	 		</div>
+	 		<div class="content-left-form clearfix">
+	 			<label class="form-label w70">密码</label>
+	 			<div class="form-input">
+	 				<input class="" />
+	 			</div>
+	 			<div class="tips-error clearfix">
+	 				<i></i>
+	 				<span>你输入的信息有误！</span>
+	 				
+	 			</div>
+	 		</div>
+	 		<div class="content-left-form mt20">
+	 			<a href="javascript:" class="form-btn ml90">升级并登录</a>
+	 		</div>
+	 		<div class="content-left-form mt125 mb35 clearfix">
+	 			<ul class="form-option">
+	 				<li class="form-option-li"><a href="javascript:">忘记密码</a></li>
+	 				<li class="form-option-li bd0 pr0"><a href="javascript;">注册</a></li>
+	 			</ul>
+	 		</div>
+	 		
+	 	</div>
+	 	<div class="content-right mt5">
+	 		<div class="content-right-title mt45">您的账号将升级成为一号通账号，登录并完成后续的注册工作，您可以使用此帐号进行相关操作</div>
+	 		<dl class="content-right-body">
+	 			<dt class="content-right-body-top">大掌柜国际物流将获得您的以下信息：</dt>
+	 			<dd class="content-right-body-cell bd0">
+	 				<label class="cell-checkbox" for="1">
+	 					<input class="mr10" id="1" checked="true" type="checkbox" name="">
+	 					全选
+	 				</label>
+	 			</dd>
+	 			<dd class="content-right-body-cell">
+					<label class="cell-checkbox cell-checkbox-disable" for="2">
+	 					<input class="mr10" id="2"  checked="true" type="checkbox" name="" disabled="true">
+	 					获取您的用户名
+	 				</label>
+	 			</dd>
+	 			<dd class="content-right-body-cell">
+	 				<label class="cell-checkbox " for="3">
+	 					<input class="mr10" id="3"  checked="true" type="checkbox" name="">
+	 					获取您注册时填写的公司相关信息
+	 				</label>
+
+	 			</dd>
+	 			<dd class="content-right-body-cell mt45 bd0">
+	 				授权后表明你已同意 <a id="jOpenwin" href="javascript:">大掌柜会员服务协议</a>
+	 			</dd>
+	 		</dl>
+	 	</div>
+	 </div>
+	 <div class="footer mt5">大掌柜国际物流有限公司 powered by 大掌柜</div>
+	 
+	 <div class="open-shadow none"></div>
+	 <div class="open-win none">
+	 	<div class="open-win-title clearfix"><h1 class="left">用户注册协议</h1><a id="jCloseWin" href="#" class="open-win-close right mr20"></a></div>
+	 	<div class="open-win-content">
+	 		<br />
+
+	 		<p align="center"><strong> 用户服务协议 </strong></p><br />
+	 		<p align="left" >
+	 			本协议是您与奥林网络科技（宁波）有限公司（简称&#8220;奥林科技&#8221;）之间就在线服务等相 关事宜所订立的契约，请您仔细阅读本服务协议，您点击&#8220;同意以下协议，提交注册&#8221;按钮后，本协议即构成对双方有约束力的生效法律文件。</p>
+	 			<p align="left" ><strong>第1条&nbsp;本站服务条款的确认和接纳 </strong></p>
+	 			<p >1.1本站的各项电子服务的所有权和运作权归奥林科技所有。用户同意所有服务协议条款并完成注册程序，才能成为奥林科技的正式用户。用户确认：本协议条款是处理双方权利义务的契约，始终有效，法律另有强制性规定或双方另有特别约定的，依其规定。&nbsp; </p>
+	 			<p >1.2用户点击同意本协议的，即视为用户确认自己具有享受本站服务、下单购物、查询相关信息等相应的权利能力和行为能力，能够独立承担法律责任。 </p>
+	 			<p >1.3奥林科技保留在中华人民共和国大陆地区法施行之法律允许的范围内独自决定拒绝服务、关闭用户账户、清除或编辑内容或取消订单的权利。 </p>
+	 			<p ><strong>第2条&nbsp;本站服务 </strong></p>
+	 			<p >2.1奥林科技通过互联网依法为用户提供在线软件及信息服务，用户在完全同意本协议及相关规定的情况下，方有权使用奥林科技提供的相关服务。 </p>
+	 			<p >2.2用户必须自行准备如下设备和承担如下开支：（1）上网设备，包括并不限于电脑或者其他上网终端、调制解调器及其他必备的上网装置；（2）上网开支，包括并不限于网络接入费、上网设备租用费、手机流量费等。&nbsp; </p>
+	 			<p ><strong>第3条&nbsp;用户信息 </strong></p>
+	 			<p >3.1用户应自行诚信提供注册资料，用户同意其提供的注册资料真实、准确、完整、合法有效，用户注册资料如有变动的，应及时更新其注册资料。如果用户提供的注册资料不合法、不真实、不准确、不详尽的，用户需承担因此引起的相应责任及后果，并且奥林科技保留终止用户使用各项服务的权利。&nbsp; </p>
+	 			<p >3.2用户在进行信息浏览、购买等活动时，涉及用户真实姓名/名称、通信地址、联系电话、电子邮箱等隐私信息的，奥林科技将予以严格保密，除非得到用户的授权或法律另有规定，决不会向外界披露用户隐私信息。&nbsp; </p>
+	 			<p >3.3用户注册成功后，将产生用户名和密码等账户信息，您有责任及时修改密码，确保安全。用户应谨慎合理的保存、使用其用户名和密码。用户若发现任何非法使用用户账号或存在安全漏洞的情况，请立即通知我公司并向公安机关报案。&nbsp; </p>
+	 			<p >3.4用户同意，奥林科技拥有通过邮件、短信、电话、软件客户端等形式，向奥林注册、购买服务的用户发送服务状态信息、订单信息、促销活动等告知信息的权利。 </p>
+	 			<p >3.5用户不得将在奥林科技注册获得的账户借给他人使用，否则用户应承担由此产生的全部责任，并与实际使用人承担连带责任。 </p>
+	 			<p >3.6用户同意，奥林科技有权使用用户的注册信息、用户名、密码等信息，登录进入用户的注册账户，进行证据保全，包括但不限于公证、见证等。 </p>
+	 			<p >3.7用户同意，使用奥林科技注册的账号、密码登录第三方平台或服务时，除遵守奥林科技用户协议外，还需受第三方平台或服务相关协议、规则、制度的约束，并严格遵守；奥林科技只是为用户提供登录便利，不妨碍用户与第三方平台和服务提供主体之间责、权、利等关系的建立。 </p>
+	 			<p ><strong>第4条&nbsp;用户依法言行义务 </strong></p>
+	 			<p >本协议依据国家相关法律法规规章制定，用户同意严格遵守以下义务： </p>
+	 			<p ><strong>（1）</strong>不得传输或发表：煽动抗拒、破坏宪法和法律、行政法规实施的言论，煽动颠覆国家政权，推翻社会主义制度的言论，煽动分裂国家、破坏国家统一的言论，煽动民族仇恨、民族歧视、破坏民族团结的言论；&nbsp; </p>
+	 			<p ><strong>（2）</strong>不得利用本站从事洗钱、窃取商业秘密、窃取个人信息等违法犯罪活动；&nbsp; </p>
+	 			<p ><strong>（3）</strong>不得干扰奥林科技在线服务的正常运转，不得侵入奥林科技及国家计算机信息系统； </p>
+	 			<p ><strong>（4）</strong>不得传输或发表任何违法犯罪的、骚扰性的、中伤他人的、辱骂性的、恐吓性的、伤害性的、庸俗的，淫秽的、不文明的等信息资料； </p>
+	 			<p ><strong>（5）</strong>不得传输或发表损害国家社会公共利益和涉及国家安全的信息资料或言论； </p>
+	 			<p ><strong>（6）</strong>不得教唆他人从事本条所禁止的行为； </p>
+	 			<p ><strong>（7）</strong>不得利用在奥林科技注册的账户进行我公司禁止的牟利性经营活动。 </p>
+	 			<p >用户应不时关注并遵守奥林科技不时公布或修改的各类合法规则和规定。 </p>
+	 			<p >奥林科技保有删除各类不符合法律政策或不真实的信息内容而无须通知用户的权利。 </p>
+	 			<p >若用户未遵守以上规定的，奥林科技有权作出独立判断并采取暂停或关闭用户帐号等措施。用户须对自己在网上的言论和行为承担法律责任。 </p>
+	 			<p ><strong>第5条&nbsp;在线服务信息 </strong></p>
+	 			<p >奥林科技提供的在线服务价格、数量等在线服务信息以及各项免费服务随时都有可能发生变动，奥林科技不另作特别通知。由于众所周知的互联网技术因素等客观原因存在，奥林科技相关服务网站的网页显示信息可能会有一定的滞后性或差错，对此情形您知悉并理解；为表述便利，商品和服务简称为&#8220;服务&#8221;。 </p>
+	 			<p ><strong>第6条&nbsp;业务受理单 </strong></p>
+	 			<p >6.1在您购买服务向奥林科技递交业务受理单时，请您仔细确认所购服务的名称、价格、数量、服务起止时间、联系人、联系电话、联系邮箱等重要信息是否准确。一旦提交后，<u>奥林科技视为用户的真实意思表示，用户需为此承担相应的合同责任及其他法律责任。</u>&nbsp; </p>
+	 			<p ><strong>6.2除法律另有强制性规定外，双方约定如下：本站上销售方展示的服务和价格等信息仅仅是要约邀请，您下单时须填写您希望购买的服务数量、价款及支付方式、联系方式、联系地址（合同履行地点）等内容；系统生成的订单信息是计算机信息系统根据您填写的内容自动生成的数据，仅是您向奥林科技发出的合同要约；奥林科技收到您的订单信息后，只有在奥林科技将您在订单中订购的服务开通时（&nbsp;以您收到服务开通通知时）方视为您与奥林科技之间就实际直接向您发出的商品建立了合同关系；如果您在一份订单里订购了多种服务并且奥林科技只给您开通部分服务时，您与奥林科技之间仅就实际直接向您开通的服务建立了合同关系；只有在奥林科技实际直接向您开通了订单中订购的其他服务时，您和奥林科技之间就订单中该其他已实际直接向您开通的服务才成立合同关系。您可以随时登录您在奥林科技注册的账户，查询您的订单状态。您将根据成立且生效的订单享有相应服务及履行相应义务。</strong>&nbsp; </p>
+	 			<p ><strong>第7条&nbsp;所有权及知识产权条款 </strong></p>
+	 			<p >奥林科技完全拥有所有在线管理软件系统的全部知识产权，用户签署本协议后并不享有 </p>
+	 			<p >产品的所有权，只在本协议规定的范围内有使用权。奥林科技的名字、标志、LOGO、产品名字都已经属于<strong>奥林网络科技（宁波）有限公司</strong>的商标，未经授权不能使用。 </p>
+	 			<p >用户完全拥有在使用在线服务时录入数据和资料（包括但不限于：客户资料、联系人等信息）的所有权，奥林科技不得无正当理由使用用户的数据。 &nbsp;&nbsp;&nbsp;&nbsp;</p>
+	 			<p><strong>第8条&nbsp;责任限制及不承诺担保</p>
+	 			<p >除非另有明确的书面说明，奥林科技服务网站及其所包含的或以其它方式通过奥林科技服务网站提供给您的全部信息、内容、产品和服务，均是在&#8220;按现状&#8221;和&#8220;按现有&#8221;的基础上提供的。 </p>
+	 			<p >除非另有明确的书面说明，奥林科技不对网站的运营及其包含在其网站上的信息、内容、产品、服务作任何形式的、明示或默示的声明或担保（根据中华人民共和国法律另有规定的以外）。&nbsp; </p>
+	 			<p >如因不可抗力或其它无法控制的原因使奥林科技在线服务系统崩溃或无法正常使用的，奥林科技将免除法律责任，但奥林科技会合理地尽力协助处理善后事宜。 </strong></p>
+	 			<p ><strong>第9条&nbsp;协议更新及用户关注义务 </strong></p>
+	 			<p >根据国家法律法规变化及网站运营需要，奥林科技有权对本协议条款不时地进行修改，修改后的协议一旦被张贴在本站上即生效，并代替原来的协议。用户可随时登录查阅最新协议；<em><strong>用户有义务不时关注并阅读最新版的协议及服务公告。如用户不同意更新后的协议，可以且应立即停止接受奥林科技网站依据本协议提供的服务；如用户继续使用奥林科技提供的服务的，即视为同意更新后的协议。奥林科技建议您在注册之前阅读本协议及相关的公告。</strong></em>&nbsp;如果本协议中任何一条被视为废止、无效或因任何理由不可执行，该条应视为可分的且并不影响任何其余条款的有效性和可执行性。&nbsp; </p>
+	 			<p ><strong>第10条&nbsp;法律管辖和适用 </strong></p>
+	 			<p >本协议的订立、执行和解释及争议的解决均应适用在中华人民共和国大陆地区适用之有效法律（但不包括其冲突法规则）。&nbsp;如发生本协议与适用之法律相抵触时，则这些条款将完全按法律规定重新解释，而其它有效条款继续有效。&nbsp;如缔约方就本协议内容或其执行发生任何争议，双方应尽力友好协商解决；协商不成时，均应依照中华人民共和国法律予以处理，并以浙江省宁波市鄞州区人民法院为一审管辖法院；如级别管辖超出鄞州区人民法院管辖范围的，则以宁波市中级人民法院为一审管辖法院。 </p>
+	 			<p ><strong>第11条&nbsp;其他&nbsp; </strong></p>
+	 			<p >12.1<u>本协议内容中以黑体、加粗、下划线、斜体等方式显著标识的条款，视为奥林科技已做重点提示，请用户着重阅读，不得再行提出无效等异议。 </u></p>
+	 			<p >12.2<u>您点击本协议上方的&#8220;同意以下协议，提交注册&#8221;按钮即视为您完全接受本协议，在点击之前请您再次确认已知悉并完全理解本协议的全部内容。 </u></p>
+	 			<p > </p>
+	 			<p > </p>
+
+
+	 		</div>
+	 		<a class="open-win-form-btn open-win-btn" href="javascript:">已阅读并同意此协议</a>
+	 	</div>
+</body>
+</html>

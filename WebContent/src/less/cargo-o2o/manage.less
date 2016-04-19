@@ -1,0 +1,410 @@
+// ===================================
+// ============= 企业管理 =============
+// ===================================
+.table-area-manager{
+	// min-height: 500px;
+}
+
+.table-manager-cnt{
+	min-height: 500px;
+}
+
+
+.nui-table-manage{
+	table-layout: fixed;
+	th{
+		background-color: #eee;
+		border-top: 1px solid #dfdfdf;
+	}
+	th,td{
+		padding: 10px;
+	}
+	.more-info{
+		&:extend(.toe all);
+		width: 100%;
+	}
+}
+
+.details-box-auto{
+	background-color: #fff;
+	.details-box-left{
+		float: left;
+		width: 619px;
+		margin-right: -19px;
+	}
+	.details-box-right{
+		float: right;
+		position: relative;z-index: auto;
+		width: 220px;
+	}
+	.user-form-line{
+		padding-bottom: 12px;
+	}
+	.user-form-line-last{
+		padding-bottom: 30px;
+		border-bottom: 1px dashed #ccc;
+	}
+	.team-group-add{
+		float: left;
+		clear: inherit;
+		padding-top: 0;
+	}
+}
+
+.details-box-sld{
+	.details-box-left{
+		width: 100%;
+		margin-right: 0;
+	}
+	.details-box-right{
+		margin-right: -220px;
+	}
+}
+
+
+// 服务人员结构的调整
+.team-group-line{
+	margin-top: 0;padding: 3px 0;
+	.team-group-header,.team-group-cnt{
+		display: inline-block;*display: inline;*zoom:1;
+	}
+	.team-group-header{
+		padding-bottom: 0;padding-top: 5px;
+		vertical-align: top;
+		color: #666;font-size: 12px;
+		h3{
+			padding: 0;
+			font-size: 12px;font-weight: normal;
+		}
+	}
+	.team-group-cnt{
+		width: 135px;
+
+	}
+	.team-manage-content{
+		position: static;
+		display: none;
+		width: 135px;
+	}
+	.team-group-cell{
+		margin: 0 0 3px 3px;
+	}
+	.team-manage-cell{
+		padding: 5px;padding-right: 32px;
+	}
+}
+
+.team-group-mage{
+	.team-manage-content{
+		display: inline-block;*display: inline;*zoom:1;
+	}
+	.team-group-cnt{
+		display: none;
+	}
+}
+
+.team-group-mage{
+	float: right;*display: inline;
+	font-weight: normal;font-size: 12px;
+}
+
+.grid-sld-btn{
+	color: #666;
+	i{
+		color: #666;
+	}
+	&:hover{
+		text-decoration: none;
+		color: darken(#666, 60%);
+		i{
+			color: darken(#666, 60%);
+		}
+	}
+}
+
+.grid-edit{
+	float: right;*display: inline;
+	padding-right: 20px;
+}
+
+.grid-link{
+	float: none;
+	display: block;
+}
+
+.edit-upload{
+	// display: none;
+	.nui-btn{
+		margin-bottom: 2px;
+	}
+}
+// 表格底部翻页框
+// 
+// 
+.user-upload{
+	float: left;*display: inline;
+	width: 50%;
+}
+
+
+
+// 资料认证组件样式============================
+.oly-upload{
+	float: left;
+	margin-right:40px;
+	display: inline;
+	.filePicker{
+		position: absolute;
+		top:0;
+		left:0;
+		z-index: 3;
+	}
+	.filePicker{
+		 .webuploader-pick{
+			width:112px;
+			height:20px;
+			text-align: center;
+			display: block;
+			cursor: pointer;
+			font-size:12px;
+			padding-top:66px;
+			border:1px dashed #BFBFBF;
+		}
+	}
+	.tip-error{
+		clear:both;
+	}
+	.reFilePicker{
+		.webuploader-pick{
+			color:#fff;
+		}
+	}
+	.webuploader-pick{
+		padding:0;
+		background:none;
+	}
+}
+.oly-upload-tt{
+	font-size:12px;
+	font-weight:normal;
+	margin:6px 0 6px 0;
+	// padding-left: 15px;
+}
+.oly-upload-cnt{
+	float:left;
+	width:114px;height:88px;margin-left: 10px;
+	overflow:hidden;
+	position: relative;
+	.webuploader-pick{
+		display: block;
+		width: 112px;height: 86px;padding-top: 66px;
+	    text-align: center;cursor: pointer;
+	    font-size: 12px;
+	    border: 1px dashed #BFBFBF;
+	    opacity: 0.5;
+	}
+}
+
+.oly-upload-tt{
+	.webuploader-pick{
+		display: inline-block;
+		
+	    text-align: center;cursor: pointer;
+	    font-size: 12px;
+	    padding: 0;
+	    // border: 1px dashed #BFBFBF;
+	    border: none;
+	    opacity: 1;
+	    color: @aColor;
+
+	}
+	.webuploader-pick-hover{
+		background-color: #fff;
+	}
+	.webuploader-container{
+		display: inline-block;
+		margin-left: 5px;margin-bottom: 2px;
+		border: none;
+		vertical-align: middle;
+	}
+}
+
+.oly-upload-bg{
+	position: absolute;
+	height:86px;
+	overflow:hidden;
+	top:0;
+	left:0;
+	z-index:0;
+	
+}
+.oly-upload-bg img{
+	position: absolute;left: 0;top: 0;z-index: -1;
+	width:112px;
+	height:86px;
+	
+}
+.oly-upload-loading{
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:2;
+	background:#f5f5f5;
+	width:110px;
+	height:84px;
+	padding:30px 0 0 10px;
+}
+.oly-upload-img{
+	position:absolute;
+	top:0;left:0;
+	z-index:1;
+	text-align: center;
+	.file-item{
+		width: 112px;height: 88px;
+		img{
+			width: 100%;height: 100%;
+		}
+	}
+}
+
+.oly-upload-tmp{
+	float:right;
+	cursor: pointer;
+	
+	margin:0 0 0 10px !important;
+}
+
+
+// .suppiler-box{
+// 	width:760px;
+// 	margin:40px auto;
+// }
+// .suppiler-box{
+// 	.control-label{
+// 		width:120px;
+// 		margin-right:10px;
+// 	}
+// }
+// .supplier-tips-tt{
+// 	margin-top:10px;
+// }
+// .supplier-tips{
+// 	line-height:250%;
+// }
+
+
+.pic-review{
+	float: left;*display: inline;
+	width:114px;height:88px;margin-top:10px;
+	overflow: hidden;position: relative;
+	background:#fff;text-align: center;border:1px solid #dfdfdf;
+	img{
+		max-width: 100%;max-height: 100%;
+	}
+}
+.view-box{
+	position: absolute;bottom: 0;right:0;z-index: 2;
+	width:114px;height:88px;
+	color:#fff;
+	cursor:pointer;
+}
+.view-box-word{
+	position: relative;top:3px;left:3px;z-index: 2;
+	margin-top:20px;
+	display: block;color:#fff;
+	i{
+		color: #fff;
+	}
+}
+.view-load{
+	position: absolute;z-index:3;
+	padding:34px 0 0 0;
+	width:114px;height:56px;
+	background:#fff;
+}
+.view-box-bg{
+	position: absolute;left: 0;top:0;z-index: 1;
+	width:114px;height:88px;
+	background: #000;
+	filter:alpha(opacity=23);opacity: 0.23;
+}
+
+
+
+// 预览窗口
+.dialog-mask{
+  background:#333;
+  filter:alpha(opacity=25);opacity: 0.25;
+  *position:absolute;z-index:300;top:0;left:0;bottom:0;right:0;
+}
+.dialog-box{
+  position:absolute;
+  z-index: 301;left:0;top:0;
+  padding:5px;
+  background: #fff;
+}
+
+.dialog-box-close{
+  float:right;
+  width:26px;
+  cursor:pointer;
+}
+.dialog-box-close i{
+	font-size:20px;
+}
+.dialog-box-cnt{
+	clear:both;
+	padding:10px 10px;
+}
+
+
+
+// 员工账号表格
+.nui-table-staff{
+	th{
+		background-color: #f7f7f7;
+		border-top: 1px solid #ddd;
+	}
+	td{
+		height: 40px;
+	}
+	.admin-mark{
+		display: none;
+		height: 24px;line-height: 24px;width: 92px;
+		border-radius: 3px;
+		background-color: #ff6900;
+		color: #fff;text-align: center;
+	}
+	
+}
+
+.nui-btn-asite{
+	display: none;
+	height: 24px;line-height: 22px;
+	background-color: #ffe1cc;border: 1px solid #ff6900;
+	color: #ff6900;
+	&:hover{
+		background-color: #ffe1cc;border: 1px solid #ff6900;
+		box-shadow: none;
+		color: #ff6900;
+	}
+}
+
+.tr-control{
+	&:hover{
+		.nui-btn-asite{
+			display: block;
+		}
+	}
+}
+
+.tr-control-current{
+	.admin-mark{
+		display: block;
+	}
+	&:hover{
+		.nui-btn-asite{
+			display: none;
+		}
+	}
+}

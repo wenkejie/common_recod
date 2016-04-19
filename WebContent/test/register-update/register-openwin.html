@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>各种弹窗</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common.css" />
+	
+	<link href="../../release/freight/css/register-update/register-update.css" type="text/css" rel="stylesheet" />
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script>
+<script type="text/javascript">
+	$(function (){
+		$('#win1').click(function() {
+			var that = $(this);
+			var htmlWin;
+			htmlWin = fwindow.create({
+				title: "操作提示",
+				width:500,
+				content: "<div class=\"fui-dialog-cnt\"> <div class=\"openwin-wrap clearfix\"> <s class=\"note-icon-win\"></s> <div class=\"openwin-content\"> <div class=\"clearfix\"> <h3 class=\"openwin-content-title\">温馨提示</h3> <div class=\"openwin-content-info\"> <p>您的体验账号（<span class=\"orange\">2016546</span>）将与2014-07-18日到期，到期</p> <p>后将无法继续查询运价，为了不影响你的正常使用，请</p> <p><a href=\"javascript:\">立即升级成为正式会员。</a></p> </div> </div> <div class=\"openwin-content-bottom clearfix\"> <a class=\"openwin-btn openwin-btn-primary\" href=\"javascript:\">立即升级成正式会员</a> <a class=\"openwin-btn\" href=\"javascript:\">我知道了</a> </div> </div> </div> </div>"
+			})
+		})
+
+		$('#win2').click(function() {
+			var that = $(this);
+			var htmlWin;
+			htmlWin = fwindow.create({
+				title: "操作提示",
+				width:500,
+				content: "<div class=\"openwin-wrap clearfix\"> <label class=\"form-label form-label-min\">姓名</label> <div class=\"apply-openwin-content\"> <div class=\"clearfix\"> <div class=\"form-input j-focusin\"> <input class=\"inputer\" /> </div> </div> <div class=\"openwin-content-bottom\"> <a class=\"openwin-btn openwin-btn-primary\" href=\"javascript:\">下一步</a> </div> </div> </div>"
+			})
+		})
+
+		$('#win3').click(function() {
+			var that = $(this);
+			var htmlWin;
+			htmlWin = fwindow.create({
+				title: "转正申请",
+				width:550,
+				content: "<div class=\"openwin-wrap clearfix\"> <div class=\"form-grid\"> <div class=\"form-grid-tips\"> <p class=\"title-tips\"> <s class=\"icon-war\"></s> <span class=\"tips-cnt\">该手机号码已经是运价通用户，请直接输入密码登录。</span> </p> </div> <div class=\"form-line clearfix\"> <label class=\"form-label form-label-openwin\">用户名</label> <div class=\"from-line-cell\"> <div class=\"clearfix\"> <div class=\"form-input form-input-readonly\"> <input class=\"inputer\" value=\"15868854324\" disabled=\"true\"> </div> </div> </div> </div> <div class=\"form-line clearfix\"> <label class=\"form-label form-label-openwin\">密码</label> <div class=\"form-input form-input-focusin\"> <input class=\"inputer\" /> </div> <div class=\"tips-position\"> <div class=\"info-tips info-tips-error\"> <div class=\"direction\"> ◆ <em> ◆ </em> </div> <div class=\"tips-content\"> <s class=\"tips-icon\"></s> <span class=\"tips-cnt\"> 请输入正确的密码 </span> </div> </div> </div> </div> <div class=\"form-line\"> <a class=\"forget-password-link forget-password-link-min\" href=\"javascript:\">忘记密码</a> </div> <div class=\"form-line clearfix\"> <label class=\"form-label form-label-openwin\"></label> <a class=\"openwin-btn openwin-btn-primary\" href=\"register-three.html\">完成转正</a> </div> </div> </div>"
+			})
+		})
+
+		$('#win4').click(function() {
+			var that = $(this);
+			var htmlWin;
+			htmlWin = fwindow.create({
+				title: "转正申请",
+				width:680,
+				content: "<div class=\"openwin-wrap clearfix\"> <div class=\"form-grid\"> <div class=\"form-grid-title\"> <h3>你的用户名</h3><span class=\"phone-number\">139 4503 9453</span> </div> <div class=\"clearfix\"> <a class=\"form-btn form-btn-message\" id=\"jPhoneV\" href=\"javascript:\" tabindex=\"3\">获取短信验证码</a> <div class=\"count-down-box none\"> <div class=\"count-down-cnt\"> <em>50</em>秒后可重新获取验证码 </div> <span class=\"count-down-tips\">短信验证码已发送</span> </div> </div> <div class=\"form-line clearfix\"> <label class=\"form-label form-label-small\">短信验证码</label> <div class=\"form-input form-input-message j-focusin\"> <input class=\"inputer\" placeholder=\"输入校验码\" autocomplete=\"off\" name=\"checkcode\" id=\"checkcode\" tabindex=\"4\"> <i class=\"input-icon input-icon-error\"></i> </div> <div class=\"tips-position\"> <div class=\"info-tips\"> <div class=\"direction\"> ◆ <em> ◆ </em> </div> <div class=\"tips-content\"> <s class=\"tips-icon\"></s> <span class=\"tips-cnt\"> 手机号码将做为用户名 </span> </div> </div> <div class=\"right-icon\"></div> </div> </div> </div> <div class=\"form-line-hr\"></div> <div class=\"form-grid\"> <div class=\"form-grid-title\"> <h3>设置登录密码</h3><span class=\"title-cnt\">登入时需要验证，保护账户信息</span> </div> <div class=\"form-line clearfix\"> <label class=\"form-label form-label-small\">密码</label> <div class=\"from-line-cell\"> <div class=\"clearfix\"> <div class=\"form-input-group j-focusin\"> <input class=\"inputer password-inputer\"> <a class=\"show-password\" href=\"javascript:\">显示密码</a> </div> </div> <ul class=\"password-power\" id=\"j-password-power\"> <li class=\"level-a red\" id=\"j-power-l\">弱</li> <li class=\"level-b\" id=\"j-power-m\">中</li> <li class=\"level-c\" id=\"j-power-h\">强</li> </ul> </div> <div class=\"tips-position\"> <div class=\"info-tips none\"> <div class=\"direction\"> ◆ <em> ◆ </em> </div> <div class=\"tips-content tips-content-fixed\"> <s class=\"tips-icon\"></s> <span class=\"tips-cnt\"> 6-20位字符，只能包含字母，数字以及标点符号(除空格)，字母，数字和标点符号至少包含两种。 </span> </div> </div> <div class=\"info-tips info-tips-error\"> <div class=\"direction\"> ◆ <em> ◆ </em> </div> <div class=\"tips-content tips-content-fixed\"> <s class=\"tips-icon\"></s> <span class=\"tips-cnt\"> 6-20位字符，只能包含字母，数字以及标点符号(除空格)，字母，数字和标点符号至少包含两种。 </span> </div> </div> <div class=\"right-icon none\"></div> </div> </div> <div class=\"form-line clearfix\"> <label class=\"form-label form-label-small\">再输入一次</label> <div class=\"form-input j-focusin\"> <input class=\"inputer\" /> </div> </div> <div class=\"form-line form-line-bottom clearfix\"> <label class=\"form-label form-label-small\"></label> <a class=\"openwin-btn openwin-btn-primary\" href=\"register-three.html\">申请转正</a> </div> </div> </div>"
+			})
+		})
+	})
+			
+</script>
+</head>
+<body>
+	
+		<div class="header">
+			<div class="header-cnt clearfix">	
+				<div class="header-info clearfix">
+					<div class="logo"></div>
+					<span class="header-info-span">用户注册</span>
+				</div>
+				<ul class="header-subnav clearfix">
+					<li class="header-subnav-cell"><a class="header-subnav-link" href="#">登入</a> - <a class="header-subnav-link" href="#">注册</a></li>
+					<li class="header-subnav-last"><a class="header-subnav-link" href="#">返回首页</a></li>
+				</ul>
+			</div>	
+				<div class="header-line"></div>	
+		</div>
+		
+		<div class="wrap clearfix">
+
+			<div class="wrap-note clearfix">
+				<a class="register-btn" id="win1" href="javascript:">到期提示</a><br/><br/>
+				<a class="register-btn" id="win2" href="javascript:">转正申请1</a><br/><br/>
+				<a class="register-btn" id="win3" href="javascript:">转正申请2-1</a><br/><br/>
+				<a class="register-btn" id="win4" href="javascript:">转正申请2-2</a>
+			</div>
+		</div>
+	
+		
+		<div class="footer">
+			<div class="footer-sign">
+			<a target="_blank" href="http://www.800jit.com"><img width="68" height="19" src="http://cpcommon.600jit.com/fcommon/public/images/login_logo.gif"></a>版权所有 &copy; 2014 奥林科技(宁波)有限公司     &nbsp;&nbsp; <em onclick="alert('系统参数:Orange-PC');" style="cursor:pointer;">&nbsp;</em>
+			</div>
+		</div>
+
+
+
+</body>

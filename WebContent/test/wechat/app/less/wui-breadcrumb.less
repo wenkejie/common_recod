@@ -1,0 +1,25 @@
+//
+// 按钮
+// --------------------------------------------------
+// 常量
+
+
+
+.wui-breadcrumb{
+  
+  >li{
+    display: inline-block;
+    >span,a{
+      display: inline-block;
+      font-size: 1rem;
+    }
+    >a{
+      color: #1d8acb;
+    }
+    &:nth-child(n+2):before{
+      content: "/";
+      display: inline-block;
+      margin: 0 0.063rem;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>openwin</title>
+	<link rel="stylesheet" href="http://fcommon.600jit.com/fcommon/release/freight/css/common-v1.2.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script>
+
+	<!-- 截图插件 -->
+	<script type="text/javascript" src="jquery.imgareaselect.pack.js"></script>
+	<!-- ===== -->
+	<script type="text/javascript">
+		$(function (){
+			$('#j-business-site').click(function() {
+				var that = $(this);
+				var htmlWin;
+				htmlWin = fwindow.create({
+					title: "新增",
+					width:420,
+					content: "<div class=\"fui-dialog-cnt ofh\"> <div class=\"business-site-box\"> <h3 class=\"business-site-title\">请左右拖动调整显示顺序</h3><div id=\"sortable\" class=\"business-site-cnt clearfix\"> <a href=\"javascript:\" class=\"business-site-cell\">海运出口拼箱</a> <a href=\"javascript:\" class=\"business-site-cell\">海运出口整箱</a> <a href=\"javascript:\" class=\"business-site-cell\">空运</a> </div></div> </div> <div class=\"fui-dialog-btm-bar pss\"> <a class=\"fui-btn-dialog-primary\"><span>确定</span></a> <a class=\"fui-btn-dialog\"><span>取消</span></a> </div>"
+
+
+				})
+
+					$( "#sortable" ).sortable();
+					$( "#sortable" ).disableSelection();
+			})
+
+			$('#j-logo-editor').click(function() {
+				var that = $(this);
+				var htmlWin;
+				htmlWin = fwindow.create({
+					title: "新增",
+					width:500,
+					content: "<div class=\"fui-dialog-cnt\"> <div class=\"picture-editor-box\"> <h3 class=\"editor-box-title\">您可以对图片进行裁切，并预览最终生成的LOGO效果</h3> <div class=\"editor-box-cnt\"> <div class=\"picture-content clearfix\"> <div class=\"left\" id=\"photo\" style=\"border:1px solid #DEDEDE;\"> <img style=\"width:320px;height:220px;\" src=\"logo-max.jpg\" alt=\"\" /> </div> <div class=\"picture-content-btn\"> <a class=\"nui-file-upload nui-btn nui-btn-primary\" href=\"javascript:\"> <i>&#x34ee;</i> 请选择图片 <input type=\"file\" name=\"\" id=\"\" class=\"nui-file-upload-input\"> </a> </div> </div> </div> </div> </div> <div class=\"fui-dialog-btm-bar pss\"> <a class=\"fui-btn-dialog-primary\"><span>确定</span></a> <a class=\"fui-btn-dialog\"><span>取消</span></a> </div>"
+
+				})
+
+			})
+
+
+		})	
+	</script>
+</head>
+<body>
+	
+	<a id="j-business-site" class="nui-btn" href="javascript:">业务优先级设置</a>
+
+	<a id="j-logo-editor" class="nui-btn" href="javascript:">logo图像编辑</a>
+
+</body>
+</html>

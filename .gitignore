@@ -1,0 +1,13 @@
+.DS_Store
+.idea/
+*.iml
+*.class
+.classpath
+.project
+.settings
+.metadata
+/bin/
+/node_modules
+/.common-v1.2.css
+
+/JavaSource/

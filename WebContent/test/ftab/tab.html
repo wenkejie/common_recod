@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>susd 3.0</title>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/release/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://cpcommon.600jit.com/fcommon/test/js/test.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var $tabcon = $('div.fui-tab-cnt'),
+				$submenu = $("ul.fui-tab-submenu");
+
+			$('ul.fui-tab-list').delegate("a.fui-tab-list-cell:not('.disable')", 'click', function() {
+				var index = $(this).parent().index(),
+					$tab = $(this).parents("div.fui-tab")
+
+					$(this).addClass('active').parent().siblings().children().removeClass('active');
+
+				if ($tab.find('ul.fui-tab-submenu').length) {
+					var $a = $submenu.find('li:eq(' + index + ')').find('a:first');
+					var subindex = $submenu.find('a').index($a);
+					$submenu.find('a').removeClass('active');
+					$a.addClass('active');
+					$tab.find($tabcon).addClass('none').eq(subindex).removeClass('none');
+					$submenu.find('li').addClass('none').eq(index).removeClass('none');
+
+				} else {
+					$tab.find($tabcon).addClass('none').eq(index).removeClass('none');
+				}
+
+			})
+			$submenu.delegate('a', 'click', function() {
+				var index = $submenu.find('a').index($(this)),
+					$tab = $(this).parents("div.fui-tab");
+					$submenu.find('a').removeClass('active').eq(index).addClass('active')
+				$tab.find($tabcon).addClass('none').eq(index).removeClass('none');
+			});
+			$('a.fui-btn-switch').click(function() {
+				// console.log()
+				if($(this)[0].className == "fui-btn-switch" ){
+					$(this).addClass('fui-btn-switch-disable').next().hide();
+				}else{
+					$(this).removeClass('fui-btn-switch-disable').next().show('fast');
+				}
+			});
+		})
+	</script>
+</head>
+<body class="pd30">
+<div class="fui-tab">
+	<ul class="fui-tab-list">
+		<li><a href="javascript:" class="fui-tab-list-cell disable">公司用户列表</a></li>
+		<li><a href="javascript:" class="fui-tab-list-cell">查询规则</a></li>
+		<li><a href="javascript:" class="fui-tab-list-cell active">公司详情</a></li>
+		<li><a href="javascript:" class="fui-tab-list-cell ">公司详情1111</a></li>
+		<li class="text-area"><a href="javascript:">2222</a><a href="javascript:" >2222</a></li>
+	</ul>
+	<div class="fui-tab-cnt none">
+		con1
+	</div>
+	<div class="fui-tab-cnt none">
+		con2
+	</div>
+	<div class="fui-tab-cnt">
+		con3
+	</div>
+</div>
+
+
+<div class="fui-tab fui-tab-has-submenu">
+	<ul class="fui-tab-list">
+		
+		<li><a href="javascript:" class="fui-tab-list-cell active">查询规则<em class="fui-tab-list-arrow">◆</em></a></li>
+		<li><a href="javascript:" class="fui-tab-list-cell ">维护规则<em class="fui-tab-list-arrow">◆</em></a></li>
+	</ul>
+	<ul class="fui-tab-submenu">
+		<li>
+			<a href="javascript:" class="active">海运整箱出口</a><a href="javascript:">海运拼箱出口</a><a href="javascript:">海运拼箱进口</a>
+		</li>
+		<li class="none">
+			<a href="javascript:">航111线</a><a href="javascript:">起dgsdfg运港</a><a href="javascript:">订舱代sdg理</a>
+		</li>
+		
+	</ul>
+	<div class="fui-tab-cnt ">
+		<div class="fui-adv-tab">
+				<!-- <div class="fui-adv-tab-head clearfix">
+					
+					<h2>查询以下选中航线的目的港 </h2>
+				</div> -->
+				<ul class="fui-adv-tab-list">
+					
+					<li><a class="fui-adv-tab-list-cell active" href="javascript:">航线<div class="fui-tips-arrow fui-tips-arrow-right">◆<em>◆</em></div></a></li>
+					
+					<li><a class="fui-adv-tab-list-cell " href="javascript:">起运港<div class="fui-tips-arrow fui-tips-arrow-right">◆<em>◆</em></div></a></li>
+					<li><a class="fui-adv-tab-list-cell " href="javascript:">订舱代理<div class="fui-tips-arrow fui-tips-arrow-right">◆<em>◆</em></div></a></li>
+					
+			<!-- 	<li><a href="javascript:" class="fui-adv-tab-list-cell ">海运拼箱进口航线<div class="fui-tips-arrow fui-tips-arrow-right">◆<em>◆</em></div></a></li> -->
+					
+				</ul>
+				
+				<div class="fui-adv-tab-cnt">
+						<div class="w100p" style="border-bottom:1px solid #ccc;padding-bottom:8px;margin-bottom:8px;margin-top:-5px">
+							<span class="fui-label w-a">航线控制</span><a href="javascript:" class="fui-btn-switch fui-btn-switch-disable"></a><span class="ml15 vam none"><s class="icon-r-info"></s>启用后，请选择可以查询的项，否者将无法查看到任何数据。</span>
+						</div>
+				
+						<label><input type="checkbox" value="56" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">澳大利亚线</label>
+						
+						<label><input type="checkbox" value="57" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">北非线</label>
+						
+						<label><input type="checkbox" value="58" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">北美</label>
+						
+						<label><input type="checkbox" value="59" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">地东线</label>
+						
+						<label><input type="checkbox" value="60" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">地西线</label>
+						
+						<label><input type="checkbox" value="61" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">东非线</label>
+						
+						<label><input type="checkbox" value="62" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">东南亚线</label>
+						
+						<label><input type="checkbox" value="63" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">俄罗斯远东线</label>
+						
+						<label><input type="checkbox" value="64" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">港澳台线</label>
+						
+						<label><input type="checkbox" value="65" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">韩国线</label>
+						
+						<label><input type="checkbox" value="66" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">黑海线</label>
+						
+						<label><input type="checkbox" value="67" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">红海线</label>
+						
+						<label><input type="checkbox" value="68" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">加勒比线</label>
+						
+						<label><input type="checkbox" value="69" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">中国整箱港口</label>
+						
+						<label><input type="checkbox" value="70" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">SS</label>
+						
+						<label><input type="checkbox" value="71" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">章鱼整箱航线</label>
+						
+						<label><input type="checkbox" value="72" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">澳大利亚</label>
+						
+						<label><input type="checkbox" value="73" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">中美洲</label>
+						
+						<label><input type="checkbox" value="74" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">欧洲</label>
+						
+						<label><input type="checkbox" value="75" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">东非</label>
+						
+						<label><input type="checkbox" value="76" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">加勒比海</label>
+						
+						<label><input type="checkbox" value="77" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">中东</label>
+						
+						<label><input type="checkbox" value="78" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">南美西</label>
+						
+						<label><input type="checkbox" value="79" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">南美东</label>
+						
+						<label><input type="checkbox" value="80" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">地中海西</label>
+						
+						<label><input type="checkbox" value="81" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">地中海东</label>
+						
+						<label><input type="checkbox" value="82" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">其它</label>
+						
+						<label><input type="checkbox" value="83" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">东南亚</label>
+						
+						<label><input type="checkbox" value="84" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">欧基</label>
+						
+						<label><input type="checkbox" value="85" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">地中海</label>
+						
+						<label><input type="checkbox" value="86" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">非洲</label>
+						
+						<label><input type="checkbox" value="87" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">港澳台</label>
+						
+						<label><input type="checkbox" value="88" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">日韩</label>
+						
+						<label><input type="checkbox" value="89" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">印巴</label>
+						
+						<label><input type="checkbox" value="96" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">出口整箱航线</label>
+						
+						<label><input type="checkbox" value="97" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">~!@#$%^&amp;*()_+=-[]\|}{;'":/.,&lt;&gt;?</label>
+						
+				</div>
+				
+				
+				<div class="fui-adv-tab-cnt none">
+				
+						<label><input type="checkbox" value="57" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">北美</label>
+						
+						<label><input type="checkbox" value="58" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地东线</label>
+						
+						<label><input type="checkbox" value="59" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地西线</label>
+						
+						<label><input type="checkbox" value="60" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">东非线</label>
+						
+						<label><input type="checkbox" value="61" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中国拼箱港口</label>
+						
+						<label><input type="checkbox" value="62" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">章鱼拼箱航线</label>
+						
+						<label><input type="checkbox" value="63" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">北美</label>
+						
+						<label><input type="checkbox" value="64" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中美洲</label>
+						
+						<label><input type="checkbox" value="65" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">欧洲</label>
+						
+						<label><input type="checkbox" value="66" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">东非</label>
+						
+						<label><input type="checkbox" value="67" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">印巴</label>
+						
+						<label><input type="checkbox" value="68" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中东</label>
+						
+						<label><input type="checkbox" value="69" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">南美西</label>
+						
+						<label><input type="checkbox" value="70" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">南美东</label>
+						
+						<label><input type="checkbox" value="71" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地中海西</label>
+						
+						<label><input type="checkbox" value="72" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地中海东</label>
+						
+						<label><input type="checkbox" value="73" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">其它</label>
+						
+						<label><input type="checkbox" value="74" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中国-A</label>
+						
+						<label><input type="checkbox" value="75" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">澳新</label>
+						
+						<label><input type="checkbox" value="76" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">北欧</label>
+						
+						<label><input type="checkbox" value="77" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地中海东</label>
+						
+						<label><input type="checkbox" value="78" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地中海西</label>
+						
+						<label><input type="checkbox" value="79" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">东南亚</label>
+						
+						<label><input type="checkbox" value="80" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">东欧</label>
+						
+						<label><input type="checkbox" value="81" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">港澳台</label>
+						
+						<label><input type="checkbox" value="82" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">非洲</label>
+						
+						<label><input type="checkbox" value="83" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">南美</label>
+						
+						<label><input type="checkbox" value="84" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">欧基</label>
+						
+						<label><input type="checkbox" value="85" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">日韩</label>
+						
+						<label><input type="checkbox" value="86" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">印巴</label>
+						
+						<label><input type="checkbox" value="87" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中美</label>
+						
+						<label><input type="checkbox" value="88" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中东</label>
+						
+						<label><input type="checkbox" value="90" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">北美</label>
+						
+						<label><input type="checkbox" value="91" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">加勒比海</label>
+						
+						<label><input type="checkbox" value="92" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中南美</label>
+						
+						<label><input type="checkbox" value="93" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">出口拼箱航线</label>
+						
+						<label><input type="checkbox" value="96" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">~!@#$%^&amp;*()_+=-[]\|}{;'":/.,&lt;&gt;?</label>
+						
+				</div>
+				
+				
+			</div>
+	</div>
+	<div class="fui-tab-cnt none">
+		<div class="fui-adv-tab">
+				<!-- <div class="fui-adv-tab-head clearfix">
+					
+					<h2>查询以下选中航线的目的港 </h2>
+				</div> -->
+				<ul class="fui-adv-tab-list">
+					
+					<li><a class="fui-adv-tab-list-cell active" href="javascript:">航线<div class="fui-tips-arrow fui-tips-arrow-right">◆<em>◆</em></div></a></li>
+					
+					<li><a class="fui-adv-tab-list-cell " href="javascript:">起运港<div class="fui-tips-arrow fui-tips-arrow-right">◆<em>◆</em></div></a></li>
+					<li><a class="fui-adv-tab-list-cell " href="javascript:">订舱代理<div class="fui-tips-arrow fui-tips-arrow-right">◆<em>◆</em></div></a></li>
+					
+			<!-- 	<li><a href="javascript:" class="fui-adv-tab-list-cell ">海运拼箱进口航线<div class="fui-tips-arrow fui-tips-arrow-right">◆<em>◆</em></div></a></li> -->
+					
+				</ul>
+				
+				<div class="fui-adv-tab-cnt">
+						<div class="w100p" style="border-bottom:1px solid #ccc;padding-bottom:8px;margin-bottom:8px;margin-top:-5px">
+							<span class="fui-label w-a">航线控制</span><a href="javascript:" class="fui-btn-switch fui-btn-switch-disable"></a><span class="ml15 vam none"><s class="icon-r-info"></s>启用后，请选择可以查询的项，否者将无法查看到任何数据。</span>
+						</div>
+			
+						
+						<label><input type="checkbox" value="77" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">中东</label>
+						
+						<label><input type="checkbox" value="78" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">南美西</label>
+						
+						<label><input type="checkbox" value="79" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">南美东</label>
+						
+						<label><input type="checkbox" value="80" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">地中海西</label>
+						
+						<label><input type="checkbox" value="81" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">地中海东</label>
+						
+						<label><input type="checkbox" value="82" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">其它</label>
+						
+						<label><input type="checkbox" value="83" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">东南亚</label>
+						
+						<label><input type="checkbox" value="84" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">欧基</label>
+						
+						<label><input type="checkbox" value="85" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">地中海</label>
+						
+						<label><input type="checkbox" value="86" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">非洲</label>
+						
+						<label><input type="checkbox" value="87" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">港澳台</label>
+						
+						<label><input type="checkbox" value="88" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">日韩</label>
+						
+						<label><input type="checkbox" value="89" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">印巴</label>
+						
+						<label><input type="checkbox" value="96" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">出口整箱航线</label>
+						
+						<label><input type="checkbox" value="97" name="fclExportRoute" id="fclExportRoute" class="checkbox ml10">~!@#$%^&amp;*()_+=-[]\|}{;'":/.,&lt;&gt;?</label>
+						
+				</div>
+				
+				
+				<div class="fui-adv-tab-cnt none">
+				
+						<label><input type="checkbox" value="57" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">北美</label>
+						
+						<label><input type="checkbox" value="58" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地东线</label>
+						
+						<label><input type="checkbox" value="59" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地西线</label>
+						
+						<label><input type="checkbox" value="60" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">东非线</label>
+						
+						<label><input type="checkbox" value="61" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中国拼箱港口</label>
+						
+						<label><input type="checkbox" value="62" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">章鱼拼箱航线</label>
+						
+						<label><input type="checkbox" value="63" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">北美</label>
+						
+						<label><input type="checkbox" value="64" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中美洲</label>
+						
+						<label><input type="checkbox" value="65" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">欧洲</label>
+						
+						<label><input type="checkbox" value="66" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">东非</label>
+						
+						<label><input type="checkbox" value="67" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">印巴</label>
+						
+						<label><input type="checkbox" value="68" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中东</label>
+						
+						<label><input type="checkbox" value="69" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">南美西</label>
+						
+						<label><input type="checkbox" value="70" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">南美东</label>
+						
+						<label><input type="checkbox" value="71" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地中海西</label>
+						
+						<label><input type="checkbox" value="72" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地中海东</label>
+						
+						<label><input type="checkbox" value="73" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">其它</label>
+						
+						<label><input type="checkbox" value="74" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中国-A</label>
+						
+						<label><input type="checkbox" value="75" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">澳新</label>
+						
+						<label><input type="checkbox" value="76" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">北欧</label>
+						
+						<label><input type="checkbox" value="77" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地中海东</label>
+						
+						<label><input type="checkbox" value="78" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">地中海西</label>
+						
+						<label><input type="checkbox" value="79" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">东南亚</label>
+						
+						<label><input type="checkbox" value="80" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">东欧</label>
+						
+						<label><input type="checkbox" value="81" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">港澳台</label>
+						
+						<label><input type="checkbox" value="82" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">非洲</label>
+						
+						<label><input type="checkbox" value="83" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">南美</label>
+						
+						<label><input type="checkbox" value="84" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">欧基</label>
+						
+						<label><input type="checkbox" value="85" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">日韩</label>
+						
+						<label><input type="checkbox" value="86" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">印巴</label>
+						
+						<label><input type="checkbox" value="87" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中美</label>
+						
+						<label><input type="checkbox" value="88" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中东</label>
+						
+						<label><input type="checkbox" value="90" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">北美</label>
+						
+						<label><input type="checkbox" value="91" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">加勒比海</label>
+						
+						<label><input type="checkbox" value="92" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">中南美</label>
+						
+						<label><input type="checkbox" value="93" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">出口拼箱航线</label>
+						
+						<label><input type="checkbox" value="96" name="lclExportRoute" id="lclExportRoute" class="checkbox ml10">~!@#$%^&amp;*()_+=-[]\|}{;'":/.,&lt;&gt;?</label>
+						
+				</div>
+				
+				
+			</div>
+	</div>
+	<div class="fui-tab-cnt none">
+		con3
+	</div>
+	<div class="fui-tab-cnt none">
+		con4
+	</div>
+	<div class="fui-tab-cnt none">
+		con5
+	</div>
+	<div class="fui-tab-cnt none">
+		con6
+	</div>
+</div>
+</body>
+</html>

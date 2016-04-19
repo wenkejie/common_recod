@@ -1,0 +1,63 @@
+//========================================
+.hr{
+  // .clearfix;
+  height: 0px;
+  overflow: hidden;
+  margin: 5px 0;
+  border-top:1px solid #eee;
+  clear: both
+}
+
+// .hr-y{
+//   // .clearfix;
+//   display: inline-block;vertical-align: middle;
+//   width: 0;height: 24px;margin: 0 10px;
+//   border-left: 1px solid #eee;border-right: 1px solid #dfdfdf;overflow: hidden;
+//   clear: both
+// }
+
+
+.txt-orange{
+  color: orange;
+}
+
+// 文字省略
+.toe{white-space:nowrap;overflow:hidden;text-overflow:ellipsis; -o-text-overflow:ellipsis;}
+//强制换行
+.word-break{word-wrap: break-word; word-break: normal;}
+
+
+// 渐变背景色
+
+
+.linear(@starColor,@endColor){
+  background: @endColor; /* Old browsers */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@starColor), color-stop(100%,@endColor)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  @starColor 0%,@endColor 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to bottom,  @starColor 0%,@endColor 100%); /* W3C */
+}
+// ===============
+
+//
+/* 隐藏, 通常用来与 JS 配合 */
+.none {display:none}
+.block{display: block}
+.hide{visibility: hidden;}
+// .visible{visibility: visible;}
+// .opacity0{.opacity(0)}
+
+//=================
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+

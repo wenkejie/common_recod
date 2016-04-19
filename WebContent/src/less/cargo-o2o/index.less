@@ -1,0 +1,399 @@
+// ========================================
+// cargo-o2o化首页改造======================
+// ========================================
+
+
+.tb-cnt,.hd-cnt,.main-cnt,.ft-cnt{
+	width: 1190px;
+	margin: 0 auto;
+}
+
+.main-cnt{
+	&:extend(.clearfix all);
+	padding: 12px 0;
+}
+
+.rside-cnt{
+	float: left;*display: inline;
+	width: 990px;margin-left: 8px;
+	text-align: left;
+}
+
+// 为适应老的引入调整的高度
+.main-cnt-old{
+	width: auto;
+	margin: inherit;
+	.rside-cnt{
+		float: none;
+		// width: 1190px;
+		width: 980px;
+		margin: 0 auto;
+	}
+}
+
+.main-cnt-all{
+	.rside-cnt{
+		width: 100%;
+	}
+}
+
+
+// 右侧面板部分结构 =========================
+
+.panel{
+	&:extend(.clearfix all);
+	position: relative;
+	margin-bottom: 10px;
+	// height: 140px;
+	padding: 20px 25px;
+	border: 1px solid #ddd;
+}
+
+.panel-mn{
+	float: left;*display: inline;
+}
+
+.panel-sd{
+	float: right;*display: inline;
+	border-left: 1px solid #eee;
+}
+
+.panel-tt{
+	padding-bottom: 5px;
+	font-weight: bold;color: #333;font-size: 16px;
+}
+
+.panel-imp{
+	border: 1px solid #ddd;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+
+.panel-close{
+	position: absolute;right: 16px;top: 14px;z-index: 1;
+	font-size: 24px;color: #ddd;
+	&:hover{
+		text-decoration: none;
+		color: #aaa;
+	}
+}
+
+
+// 新人引导 ================================
+
+.guide-box{
+	&:extend(.clearfix all);
+}
+
+.guide-cell{
+	float: left;*display: inline;
+	width: 190px;
+	margin-right: 30px;padding-left: 30px;
+	font-size: 0;
+	&.double{
+		width: 370px;
+	}
+	&.last{
+		margin-right: 0;
+	}
+}
+
+.guide-line{
+	width: 21px;height: 69px;
+	margin-left: 15px;
+	background: url('../../../release/freight/images/cargo-o2o/index-imgcell.png');
+	background-position: -13px -56px;
+}
+
+
+.guide-icon,.guide-info,.guide-line{
+	display: inline-block;*display: inline;*zoom: 1;
+	vertical-align: top;
+	font-size: 14px;
+}
+
+.guide-icon{
+	width: 30px;height: 30px;
+	margin-top: 10px;margin-left: -30px;
+	background: url('../../../release/freight/images/cargo-o2o/index-imgcell.png');	
+	&.one{
+		background-position: -7px -12px;
+	}
+	&.two{
+		background-position: -53px -12px;
+	}
+	&.three{
+		background-position: -96px -12px;
+	} 
+}
+
+.guide-info{
+	padding-top: 10px;padding-left: 10px;
+	p{
+		color: #666;
+	}
+	a{
+		color: #0089E9;
+	}
+}
+
+.guide-tt{
+	color: #333;font-weight: bold;
+}
+
+
+
+// 费用结构 ================================
+
+.fee-box{
+	&:extend(.clearfix all);
+	padding-left: 48px;
+	width: 265px;
+}
+
+.fee-box-tt{
+	padding-bottom: 10px;
+	h3{
+		display: inline-block;*display: inline;*zoom:1;
+		vertical-align: middle;
+		color: #333;font-weight: bold;font-size: 16px;	
+	}
+}
+
+.fee-feadback{
+	display: inline-block;*display: inline;*zoom:1;
+	padding: 0 4px;margin-left: 10px;
+	height: 22px;line-height: 22px;
+	background-color: #feefea;border: 1px solid #D04465;
+	vertical-align: middle;
+	color: #B74141;font-size: 12px;
+}
+
+.fee-box-cnt{
+	&:extend(.clearfix all);
+}
+
+.fee-box-cell{
+	float: left;*display: inline;
+	width: 50%;
+}
+
+.fee-info{
+	span{
+		font-size: 24px;color: #FA5800;
+	}
+	em{
+		font-size: 12px;
+	}
+}
+
+.fee-name{
+	display: block;
+	padding-bottom: 5px;
+	font-size: 14px;color: #777;
+}
+
+
+// 公司信息 ===================================
+
+.logo-upload{
+	float: left;*display: inline;
+	width: 130px;height: 57px;
+	background: url('../../../release/freight/images/cargo-o2o/index-imgcell.png');
+	background-position: -57px -56px;
+	position: relative;
+	overflow: hidden;
+	font-size: inherit;
+	cursor: pointer;
+}
+
+.logo-upload-input{
+	position: absolute;left: 0;top: 0;
+	width: 100%;height:57px;.opacity(0);*width: 280px;
+	z-index: 10;cursor: pointer;
+	*font-size: 100px;
+}
+
+.platform-box{
+	float: left;*display: inline;
+	padding-left: 25px;
+}
+
+.platform-tt{
+	padding-bottom: 8px;
+	font-size: 18px;color: #333;
+	h3{
+		&:extend(.toe all);
+		display: inline-block;*display: inline;*zoom:1;
+		max-width: 126px;	
+		vertical-align: middle;
+	}
+}
+
+.platform-tags{
+	display: inline-block;*display: inline;*zoom:1;
+	margin-left: 3px;
+	vertical-align: middle;
+	i{
+		color: #62ba44;
+	}
+}
+
+.platform-cnt{
+	a{
+		color: #666;
+	}
+	span{
+		margin: 0 8px;
+		color: #E5E5E5;
+	}
+}
+
+// 瀑布流框体 ==========================================
+.waterfall{
+
+}
+
+.wft-cell-hd{
+	height: 36px;line-height: 36px;
+	padding: 0 15px;
+	background-color: #f1f2f3;border-bottom: 1px solid #ddd;
+	font-size: 16px;font-weight: bold;color: #333;
+}
+
+.wft-rol{
+	float: left;*display: inline;
+	width: 50%;
+}
+
+.wft-rol-right{
+	.wft-cell{
+		float: right;
+	}
+}
+
+.wft-cell{
+	width: 488px;
+	min-height: 600px;
+	margin-bottom: 15px;
+	border: 1px solid #ddd;
+	&:hover{
+		box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+	}
+}
+
+// 数据框 ==============================================
+
+.data-box{
+	padding: 10px 15px;
+	border-bottom: 1px solid #ddd;
+	&:last-child{
+		border-bottom: none;
+	}
+}
+
+.data-tt{
+	padding-bottom: 5px;
+	color: #333;font-weight: bold;font-size: 14px;
+}
+
+.data-cnt,.data-extend{
+	&:extend(.clearfix all);
+}
+
+.data-cell{
+	float: left;*display: inline;
+	width: 33.3%;*margin-left: -1px;
+	&.two{
+		width: 66.6%;
+	}
+}
+
+.data-label,.data-num{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+}
+
+.data-extend{
+	padding-top: 10px;margin-top: 8px;
+	border-top: 1px dashed #EBEDEE;
+}
+
+.data-label{
+	font-size: 14px;
+}
+
+
+.data-num{
+	color: #999;font-size: 16px;
+	&.red{
+		color: #FF0220;
+	}
+	&.org{
+		color: #FA5800;
+	}
+	&.blc{
+		color: #333;
+	}
+}
+
+// 提示信息 =================================
+
+.data-tips{
+	position: relative;
+	padding: 10px;padding-right: 10px;margin-top: 8px;
+	background-color: #FBECDD;
+	border: 1px solid #DAA38B;
+}
+
+.data-tips-txt{
+	&:extend(.toe all);
+	display: block;
+	width: 350px;
+	color: #A9491B;
+}
+
+
+
+.data-tips-op{
+	position: absolute;
+	right: 10px;top: 9px;z-index: 1;
+}
+
+
+.data-tips-close{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	margin-bottom: 3px;
+	color: #aaa;font-size: 14px;
+	&:hover{
+		text-decoration: none;
+		color: #666;
+	}
+}
+
+.data-tips-link{
+	display: inline-block;*display: inline;*zoom:1;
+	vertical-align: middle;
+	margin-right: 10px;
+	font-size: 14px;color: #2D7AE8;
+}
+
+
+
+@media screen and (max-width: 1050px) { 
+	.tb-cnt,.hd-cnt,.main-cnt,.ft-cnt{
+		width: 990px;
+	}
+	.sidebar{
+		display: none;
+	}
+	.rside-cnt{
+		margin-left: 0;
+	}
+	.mnav-sld-o{
+		right: -120px;left: inherit;
+		.mnav-sld-pointer{
+			left: inherit;right: 165px;
+		}
+	}
+} 

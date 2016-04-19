@@ -1,0 +1,112 @@
+// ====================07C项目新增结构，by:Evan=================
+
+//=========logo图片编辑弹窗==============
+.editor-box-title{
+	padding: 15px 0;
+	color: #9A9A9A;font-size: 14px;
+}
+
+.picture-content{
+	position: relative;
+	width: 500px;margin-bottom: 30px;
+}
+
+
+.photo-box{
+	float: left;*display: inline;
+	// width: 320px;height: 220px;
+	border:1px solid #DEDEDE;width:325px;height:182px;
+	overflow:hidden;text-align: center;
+}
+
+.photo-box-span{
+	.dpib;
+	height:100%;width:0px;
+	background:#000;overflow:hidden;vertical-align: middle;
+}
+
+
+//========截图展示结构=========
+.preview{
+	position: absolute;right: 30px;top: 0;
+	width: 125px;height: 70px;margin-left: 20px;
+	overflow: hidden;border:1px solid #DEDEDE;
+}
+
+
+.picture-content-btn{
+	float: left;
+	margin-top: 95px;margin-left: 20px;
+}
+
+.picture-content-tips{
+	width: 150px;padding-top: 10px;
+}
+
+
+
+// 临时方案的logo窗居中显示
+.show-logo-box{
+	float: left;
+	height: 70px;width: 125px;
+	text-align: center;overflow: hidden;
+	background: #ccc;
+}
+.img-middle-span{
+	display: inline-block;
+	height: 100%;width: 0;
+	vertical-align: middle;overflow: hidden;
+}
+// =============业务顺序调整弹窗================
+.business-site-box{
+	padding-bottom: 20px;padding-left: 10px;
+}
+
+.business-site-title{
+	padding: 15px 0;
+}
+
+
+.business-site-cnt{
+	padding: 0 30px;
+}
+
+
+
+.business-site-cell{
+	.box-shadow(3px 3px 3px #F3F3F3);
+	float: left;
+	padding:10px 20px;border: 1px solid #D7D7D7;border-radius: 2px;margin-right: 15px;
+	background: #FAFAFA;font-size: 14px;color: #666;cursor: move;
+	user-select: none;
+	&:hover{
+		.box-shadow(3px 3px 3px #F4F4F4);
+		background: #EAF3F7;border: 1px solid #BACEDD;
+		color: #255267;text-decoration: none;
+	}
+}
+
+
+.business-site-cell-active{
+	.box-shadow(3px 3px 3px #F4F4F4);
+	background: #EAF3F7;border: 1px solid #BACEDD;
+	color: #255267;text-decoration: none;
+}
+
+
+
+// 已添加报价公司展示列表,07c体验改造
+
+.show-company-list{
+	padding: 0 15px;height: 290px;
+	overflow: auto;
+}
+
+
+
+//新增了一个加载动画，用于荣邦导入那边的公司信息加载
+.loading-circle{
+	.inline-block;
+	width: 15px;height: 16px;
+	background: url(../images/loading-circle.gif) no-repeat;vertical-align: middle;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	
+	<!-- <link rel="stylesheet" href="../../release/freight/css/common.css"/> -->
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<!-- <link rel="stylesheet" href="../../src/css/richSelect.css" />richselect样式 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script src="fui-common.js" type="text/javascript"></script><!-- 用于详情弹窗调用那个添加员工的控件，by：Evan -->
+	<script type="text/javascript" src="data/company.js"></script>
+	<script type="text/javascript" src="data/user.js"></script>
+	<script type="text/javascript" src="data/group.js"></script>
+	<script type="text/javascript" src="../../src/js/nrichselect.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+<div class="result-area w980 mg0-a">
+	<div class="result-filter">
+		<a href="javascript:" class="result-filter-btn active">按用户显示</a>
+		<a href="list_company.shtml" class="result-filter-btn">按公司显示</a>
+		<a href="list_group.shtml" class="result-filter-btn">按群显示</a>
+
+	</div>
+	<div class="result-fn-area">
+				<div class="result-fn-area-port">
+					<button class="nui-btn pr5"><em>批量审批</em> <i class="icon-down-arrow">&#x3438;</i></button>	
+					<div class="nui-drop-list none ">
+						<ul class="nui-drop-list-choose oneline">
+							<li><a href="javascript:">批量审批</a></li>
+							<li><a href="javascript:">批量拒绝</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="result-fn-area-port">
+					<button class="nui-btn pr5"><em>批量操作</em> <i class="icon-down-arrow">&#x3438;</i></button>
+					<div class="nui-drop-list none">
+						<ul class="nui-drop-list-choose oneline">
+							<li><a href="javascript:">访问权限设置</a></li>
+							<li><a href="javascript:">多级运价设置</a></li>
+							<li><a href="javascript:">删除用户账号</a></li>
+							<li><a href="javascript:">启用登录控制</a></li>
+							<li><a href="javascript:">取消登录控制</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="result-fn-area-port right">
+					<button class="nui-btn mr0 pr5"><em>所有账号</em> <i class="icon-down-arrow">&#x3438;</i></button>
+					<div class="nui-drop-list nui-drop-list-replace none">
+						<ul class="nui-drop-list-choose oneline">
+							<li><a href="javascript:" status="" onclick="changeStatus(this)">所有账号</a></li>
+							<li><a href="javascript:" status="0" onclick="changeStatus(this)">待审批账号</a></li>
+							<li><a href="javascript:" status="1" onclick="changeStatus(this)">正式账号</a></li>
+						</ul>
+					</div>		
+
+					
+				</div>
+				<div class="result-fn-area-port right">	<label class="result-fn-area-port-label mr10">状态筛选：</label></div>
+
+			</div>
+			<div class="result-table-area">
+				<table class="result-table">
+					<thead>
+						<tr>
+							<th class="checkbox"><input id="jselAll" type="checkbox" name="" id="" title="选中/取消选中" /></th>
+							<th class="name">姓名 | 用户名</th>
+							<th>手机 | 邮箱</th>
+							<th class="company">企业名称 <a href="javascript:" id="j-iconChange" class="icon icon-com"></a>| 群 <a href="javascript:" class="icon icon-com"></a></th>
+							<th>地区 | 推荐人</th>
+							<th>状态 | 上次登录时间</th>
+							<th class="action">操作</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td colspan="7px;" class="result-table-nodata"></td>
+							
+						</tr>
+
+					</tbody>
+
+				</table>
+				<div class="result-table-area-info">
+					<span>已勾选本页 25 个选项</span>，<a id="jWhole" href="javascript:">勾选表格中全部955个选项</a>
+				</div>
+			</div>
+			<div class="result-footer">
+				<div class="left-area"><span class="fwb">图释：</span><i class="fonticon icon-dowm-tips">&#13362 </i>公司详情</div>
+				<div class="page"><input type="hidden" id="pageNo" name="pageNo" value="1" /><span class="pageinfo">1-20条，共64条 </span><a href="javascript:nextPage();">下一页</a>
+					<a href="javascript:">尾页</a></div>
+				</div>
+			</div>
+		</div>	
+</body>
+</html>

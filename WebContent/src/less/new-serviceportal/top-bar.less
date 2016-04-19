@@ -1,0 +1,136 @@
+// ===================================================
+// ======================= 顶部 ======================
+// ===================================================
+.ui-top{
+  background: #f6f6f6;
+  border-bottom: 1px solid #ddd;
+}
+
+.ui-top-content{
+  &:extend(.clearfix all);
+  width: 990px;margin: 0 auto;
+  height: 30px;
+  // padding: 7px 0;
+}
+
+.ui-top-user{
+  position: relative;
+  float: left;*display: inline;
+  height: 30px;line-height: 30px;
+  _width:200px;
+}
+
+.top-user-active{
+  .ui-top-username{
+    position: relative;z-index: 1;
+    background-color: #fff;
+    border-left: 1px solid #ddd;border-right: 1px solid #ddd;border-bottom: 1px solid #fff;
+  }
+  .ui-top-slidedown{
+    display: block;
+  }
+}
+
+.ui-topbar{
+  float: right;*display: inline;
+  padding-top: 7px;
+  // padding: 7px 0;
+}
+
+.ui-topbar-cell{
+  float: left;*display: inline;
+  padding: 0 15px;border-right: 1px solid #ddd;
+}
+
+.ui-topbar-cell-last{
+  border-right: none;
+}
+
+.ui-topbar-link{
+  display: block;*zoom: 1;_float: left;
+  height: 14px;line-height: 14px;
+  color: @default-fs-color;font-size: 12px;
+  &:hover{
+    color: #158dcd;
+  }
+}
+
+.ui-topbar-quit{
+  // margin-left: 10px;
+  color: #999;font-weight: normal;
+  &:hover{
+    color: #333;
+  }
+}
+
+
+.ui-top-username{
+  // display: block;*zoom:1;
+  display: inline-block;*display: inline;*zoom:1;
+  padding:0 15px;
+  height: 30px;line-height: 30px;
+  color: #238ccd;
+  // &:hover{
+  //   // font-weight: bold;
+  //   // color: #006DD9;\
+  //   position: relative;bottom: -1px;z-index: 1;
+  //   background-color: #fff;
+  //   border-left: 1px solid #ddd;border-right: 1px solid #ddd;
+  // }
+}
+
+
+.ui-top-slidedown{
+  position: absolute;left: 0;top: 31px;z-index: 600;
+  display: none;
+  width: 200px;
+  border: 1px solid #ddd;border-top: none;
+  background-color: #fff;
+}
+
+.top-slidedown-link{
+  display: inline-block;*display: inline;*zoom:1;
+  width: 60px;
+  vertical-align: middle;text-align: center;
+  color: @default-fs-color;
+  i{
+    font-size: 24px;
+    color: @default-fs-color;
+  }
+  span{
+    display: block;
+    line-height: 1;
+  }
+  &:hover{
+    color: @normal-color;
+    i{
+      color: @normal-color;
+    }
+  }
+}
+
+.top-slidedown-cnt{
+  padding: 10px 0;
+  text-align: center;
+}
+
+.top-slidedown-bar{
+  padding-right: 15px;
+  text-align: right;
+  a,span{
+    display: inline-block;*display: inline;*zoom:1;
+    vertical-align: middle;
+    color: @caption-fs-color;
+  }
+  span{
+    margin: 0 5px;
+  }
+  a{
+    &:hover{
+      color: #333;  
+    }
+    
+  }
+}
+
+// ====================== end =========================

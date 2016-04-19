@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/freight/js/fcommon-1.0.min.js"></script><!-- 插件调用 -->
+	<script type="text/javascript" src="headNav.js"></script>
+
+	<script>
+
+		$(function() {
+
+
+
+			// $table = $('table.params-list');
+
+			$('div.rule-select').delegate('a.rule-select-cell-mchoice', 'click', function() {
+
+				var i = $(this).index();
+
+				if (!$(this).is('a.rule-select-cell-disable')) {
+					// $('div.step-num-sec').addClass('step-num-on');
+					if (!$(this).is('a.rule-select-selected')) {
+						$(this).addClass('rule-select-selected');
+						$('table.params-list:eq('+i+')').removeClass('none');
+					}else{
+						$(this).removeClass('rule-select-selected');
+						$('table.params-list:eq('+i+')').addClass('none');
+					};
+					$('div.step-num:eq(1)').addClass('step-num-on');
+
+					$('div.step-con-thr').removeClass('step-con-hide');
+			
+
+				};
+				// console.log($(this).index());
+
+				
+
+
+			});
+
+			$('div.rule-select').delegate('a.rule-select-cell-single', 'click', function() {
+				
+				// $('div.step-num-fir').addClass('step-num-on');
+				$('div.step-num:eq(0)').addClass('step-num-on');
+				$('a.rule-select-cell-single').removeClass('rule-select-selected');
+				$(this).addClass('rule-select-selected');
+
+				$('div.step-con-two').removeClass('step-con-hide');
+
+
+
+			});
+
+
+			$('li.left-side-menu-tag').delegate('a', 'click', function() {
+				$('a.left-side-menu-tag-a').removeClass('tag-active');
+				$(this).addClass('tag-active');
+			});
+
+    
+			$('table.params-list').delegate('a.selectall', 'click', function() {
+				$('#jBtnActive').removeClass('nui-btn-disable');
+				$('div.step-con-fou').removeClass('step-con-hide');
+
+				// $('div.step-num-thr').addClass('step-num-on');
+				$('div.step-num:eq(2)').addClass('step-num-on');
+
+				$(this).parents("table.params-list").find("input[name='items']").each(function(){
+
+			        this.checked = true;
+			    });
+			});//全选
+
+			$("input[name='items']").click(function() {
+				$('div.step-con-fou').removeClass('step-con-hide');
+				// $('div.step-num-thr').addClass('step-num-on');
+				$('div.step-num:eq(2)').addClass('step-num-on');
+				$('#jBtnActive').removeClass('nui-btn-disable');
+			})//为了实现步骤计数，by：Evan
+
+			$('td.action').delegate('button', 'click', function() {
+				// $('div.step-num-fou').addClass('step-num-on');
+				$('div.step-num:eq(3)').addClass('step-num-on');
+			});
+
+			 
+			 
+
+			$('table.params-list').delegate('a.reverse', 'click', function() {
+				$('div.step-con-fou').removeClass('step-con-hide');
+				$('#jBtnActive').removeClass('nui-btn-disable');
+				$(this).parents("table.params-list").find("input[name='items']").each(function(){
+
+			           if (this.checked) {
+			               this.checked = false;
+			           }
+			           else {
+			               this.checked = true;
+			           }
+			  		})
+			})//全选
+
+			     
+
+		})
+
+
+		
+
+
+
+
+
+	</script>
+</head>
+<body class="home-body">
+<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap leftRightw250">
+
+		
+			<div class="left-side">
+				<ul class="left-side-menu">
+				<li class="left-side-menu-tag"><a class="left-side-menu-tag-a tag-active" href="javascript:">按公司</a><a class="left-side-menu-tag-a" href="javascript:">按群</a></li>
+				<li class="left-side-menu-com">
+					<div class="nui-form-cell nui-select w200">
+						<div class="nui-form-cell-cnt">
+							<input type="text" class="nui-input" placeholder="搜索成员、部门、分公司"  /> <i class="nui-form-cell-icon fs12">&#13661</i>
+						</div>
+					</div>
+				</li>
+					<li><a href="javascript:" class="left-side-menu-a">网站概况<i class="right ">&#13726</i></a></li>
+					<li><a href="javascript:" class="left-side-menu-a active">统计维度<i class="right ">&#13726</i></a></li>
+					<li><a href="javascript:" class="left-side-menu-a">网站概况<i class="right ">&#13726</i></a></li>
+					
+					
+				</ul>
+			</div>
+			<div class="right-side ">
+				<div class="main-title">
+					<div class="main-title-head"><h1>新用户开户赋权</h1> 
+						<div class="main-title-des"><i>&#13683;</i> 用于新开户用户赋权</div>
+					</div>
+				</div>
+
+			
+				<div class="pl10 mb40"> 
+					<i class="icon-title">&#13398</i> <strong class="mr20">常用权限组</strong>
+					<a href="javascript:" class="mr10 nui-btn">查询全部运价</a>
+					<a href="javascript:" class="mr10 nui-btn">查询全部运价</a>
+					<a href="javascript:" class="mr10 nui-btn">查询全部运价</a>
+				</div>
+					<!-- <div class="rule-select">
+						<a href="javascript:" class="rule-select-cell">查询全部运价</a>
+						<a href="javascript:" class="rule-select-cell" title="Ningboffffffffffffffff">海运整箱查询</a>
+						<a href="javascript:" class="rule-select-cell rule-select-cell-dashed"> + 增加</a>
+					</div>
+			 -->
+				
+
+				<div class="step-grid">
+					<div class="title">
+						<h2>选择分类</h2>
+						<span>说明文本之类的描述</span>
+					</div>
+
+
+					<div class="step-con">
+						<div class="rule-select">
+							<a href="javascript:" class="rule-select-cell-single">用户类型</a>
+							<a href="javascript:" class="rule-select-cell-single" title="Ningboffffffffffffffff">账号类型</a>
+						</div>
+					</div>
+					<div class="step-num">1</div>
+				</div>
+				<div class="step-grid">
+					<div class="title">
+						<h2>选择服务</h2>
+						<span>说明文本之类的描述</span>
+					</div>
+
+					<div class="step-con step-con-two  step-con-hide">
+						<div class="rule-select">
+							<a href="javascript:" class="rule-select-cell rule-select-cell-mchoice">海运整箱</a>
+							<a href="javascript:" class="rule-select-cell rule-select-cell-mchoice" title="Ningboffffffffffffffff">海运拼箱</a>
+							<a href="javascript:" class="rule-select-cell rule-select-cell-mchoice">运价关注</a>
+							<a href="javascript:" class="rule-select-cell rule-select-cell-mchoice rule-select-cell-disable">手机短信提醒</a>
+						</div>
+					</div>
+					<div class="step-num">2</div>
+				</div>
+				<div class="step-grid">
+					<div class="title">
+						<h2>维护应用模块业务权限</h2>
+						<span>说明文本之类的描述</span>
+					</div>
+					<div class="step-con step-con-thr step-con-hide">
+						<table class="params-list table-fir none">
+							<thead>
+								<tr>
+									<th colspan="4"><span class="title">海运整箱-运价查询</span> <a id="" class="selectall" href="javascript:">全选</a> / <a id="" class="reverse" href="javascript:">反选</a></th>
+									
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td width="15"><input type="checkbox" name="items" id="" /></td>
+									<td class="params-list-title">航线控制</td>
+									<td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td>
+									<td class="action"></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="items" id="" /></td>
+									<td class="params-list-title">运价等级控制</td>
+									<td class="params-list-des">设置后，客户根据所指定的运价等级显示相应价格</td>
+									<td class="action"></td>
+								</tr>
+								
+							</tbody>
+						</table>
+						<table class="params-list table-sec none">
+						<thead>
+							<tr>
+								<th colspan="4"><span class="title">海运整箱-运价查询</span> <a id="" class="selectall" href="javascript:">全选</a> / <a id="" class="reverse" href="javascript:">反选</a></th>
+								
+							</tr>
+						</thead>
+							<tbody>
+								<tr>
+									<td width="15"><input type="checkbox" name="items" id="" /></td>
+									<td class="params-list-title">航线控制</td>
+									<td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td>
+									<td class="action"></td>
+								</tr>
+								
+							</tbody>
+						</table>
+						<table class="params-list table-thr none">
+						<thead>
+							<tr>
+								<th colspan="4"><span class="title">海运整箱-运价查询</span> <a id="" class="selectall" href="javascript:">全选</a> / <a id="" class="reverse" href="javascript:">反选</a></th>
+								
+							</tr>
+						</thead>
+							<tbody>
+								<tr>
+									<td width="15"><input type="checkbox" name="items" id="" /></td>
+									<td class="params-list-title">航线控制</td>
+									<td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td>
+									<td class="action"></td>
+								</tr>
+								
+							</tbody>
+						</table>
+						<table class="params-list table-fou none">
+						<thead>
+							<tr>
+								<th colspan="4"><span class="title">海运整箱-运价查询</span> <a id="" class="selectall" href="javascript:">全选</a> / <a id="" class="reverse" href="javascript:">反选</a></th>
+								
+							</tr>
+						</thead>
+							<tbody>
+								<tr>
+									<td width="15"><input type="checkbox" name="items" id="" /></td>
+									<td class="params-list-title">航线控制</td>
+									<td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td>
+									<td class="action"></td>
+								</tr>
+								
+							</tbody>
+						</table>
+
+					</div>
+					<div class="step-num">3</div>
+				</div>
+				<div class="step-grid">
+					<div class="title">
+						<h2>设定查询规则</h2>
+						<span>说明文本之类的描述</span>
+					</div>
+					<div class="step-con step-con-fou step-con-hide">
+						<table class="params-list">
+						
+							<tbody>
+								<tr>
+									<td class="params-list-title">航线控制</td>
+									<td >未启用</td>
+									<td class="params-list-des">设置后，客户只能查询到指定航线内的运价</td>
+									<td class="action"><button class="nui-btn nui-btn-20 nui-btn-primary">设置</button></td>
+								</tr>
+								<tr>
+									<td class="params-list-title">运价等级控制</td>
+									<td>未启用</td>
+									<td class="params-list-des">设置后，客户根据所指定的运价等级显示相应价格</td>
+									<td class="action"><button class="nui-btn nui-btn-20 nui-btn-primary">设置</button></td>
+								</tr>
+								<tr>
+									<td class="params-list-title">运价等级控制</td>
+									<td><span class="text-success">已设置</span></td>
+									<td class="params-list-des">VIP一级运价查询（运价规则名称）</td>
+									<td class="action"><button class="nui-btn nui-btn-20 nui-btn-primary">修改</button></td>
+								</tr>
+				
+							</tbody>
+						</table>
+					</div>
+					<div class="step-num">4</div>
+				</div>
+				<div class="step-grid step-grid-last">
+					
+					<div class="step-con pd0">
+						
+							<button id="jBtnActive" class="nui-btn nui-btn-primary nui-btn-36 nui-btn-disable">保存设置</button>
+							<button class="nui-btn nui-btn-36 ">取消设置</button>
+						
+					</div>
+					<div class="step-num step-num-last"><i class="">&#x34e3;</i></div>
+				</div>
+			</div>
+	
+		
+	</div>
+	</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

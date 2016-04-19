@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://fcommon.600jit.com/fcommon/release/freight/css/common-v1.2.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="fui-dialog mg10" style="width:600px">
+		<div class="fui-dialog-title">
+			<h4 class="tal">给自己安排任务</h4>
+			<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+		</div>
+		<div class="fui-dialog-cnt">
+			<div class="grid tal">
+				<div class="form-line">
+					<label class="nui-label w80">任务名称：</label>
+
+					<div class="nui-form-cell w400">
+						<div class="nui-form-cell-cnt">
+							<input type="text" class="nui-input" placeholder="请简单描述一下任务内容" id="datepicker_input"></div>
+					</div> <i class="text-red">*</i>
+
+				</div>
+				<div class="form-line">
+					<label class="nui-label vat w80">任务详情：</label>
+					<div class="nui-form-cell w400">
+						<textarea class="nui-textarea h100"></textarea>
+					</div>
+					 <i class="text-red">*</i>
+
+				</div>
+				<div class="form-line">
+					<label class="nui-label w80">负责人：</label>
+					<span class="task-leader">鲁运波</span>
+				</div>
+				<div class="form-line">
+					<label class="nui-label w80">起始时间：</label>
+
+					<div class="nui-form-cell w150">
+						<div class="nui-form-cell-cnt">
+							<input type="text" class="nui-input no-chinese"> <i class="nui-form-cell-icon">㐺</i>
+						</div>
+					</div>
+					<label class="nui-label w75">截止时间：</label>
+					<div class="nui-form-cell w150">
+						<div class="nui-form-cell-cnt">
+							<input type="text" class="nui-input no-chinese">			
+							<i class="nui-form-cell-icon">㑃</i>
+						</div>
+					</div>
+					<i class="text-red">*</i>
+
+				</div>
+				<div class="hr mt10"></div>
+				<div class="form-line">
+					<label class="nui-label w75">高级选项</label>
+					<a href="javascript:" class="fonticon more-option">&#x3451;</a>
+				</div>
+				<div class="grid">
+					<div class="form-line">
+						<label for="" class="nui-label w80">业务关联：</label> 
+						<div class="nui-form-cell nui-select"> 
+							<div class="nui-form-cell-cnt"> 
+							<input type="text" value="选择的值" class="nui-input"> 
+							<i class="nui-form-cell-icon">&#x3438;</i> 
+							<div class="nui-drop-down"> 
+								<ul class="nui-select-list"> 
+									<li class="nui-select-list-li">选择值1</li> 
+									<li class="nui-select-list-li">选择值2</li> 
+									<li class="nui-select-list-li">选择值2</li> 
+								</ul> 
+							</div> 
+							</div> 
+						</div>
+						<div class="nui-form-cell w150 ml15">
+							<input type="text" class="nui-input" id="" />
+						</div>
+					
+					</div>
+					<div class="form-line">
+						<label for="" class="nui-label w80">提醒类型：</label> 
+						<div class="nui-form-cell nui-select"> 
+							<div class="nui-form-cell-cnt"> 
+							<input type="text" value="选择的值" class="nui-input"> 
+							<i class="nui-form-cell-icon">&#x3438;</i> 
+							<div class="nui-drop-down"> 
+								<ul class="nui-select-list"> 
+									<li class="nui-select-list-li">选择值1</li> 
+									<li class="nui-select-list-li">选择值2</li> 
+									<li class="nui-select-list-li">选择值2</li> 
+								</ul> 
+							</div> 
+							</div> 
+						</div>
+						<div class="nui-form-cell w150 ml15">
+							<input type="text" class="nui-input" id="" />
+						</div>
+					
+					</div>
+					
+					<div class="form-line mt20">
+						<label class="nui-label w80">附件：</label>
+						<a href="javascript:" class="nui-btn">
+							<i>&#x358c;</i>
+							上传附件
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="fui-dialog-btm-bar pss"> 
+			<a href="javascript:" class="fui-btn-dialog-primary"><span>确认</span></a>
+			<a href="javascript:" class="fui-btn-dialog"><span>取消</span></a>
+		</div> 
+	</div>
+</body>
+</html>

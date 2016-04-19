@@ -1,0 +1,541 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { margin:0; padding:0;  }
+//要注意表单元素并不继承父级 font 的问题 
+body,button,input,select,textarea{ font:12px/1.5 tahoma,arial,"Hiragino Sans GB","Microsoft Yahei",'宋体'}
+input,select,textarea{ font-size:100%; vertical-align:middle; }
+input,button,select,textarea{outline:none}
+// 去掉各Table cell 的边距并让其边重合 
+table{ border-collapse:collapse;border-spacing:0; }
+//IE bug fixed: th 不继承 text-align
+th{ text-align:inherit; }
+// ie6 7 8(q) bug 显示为行内表现 
+iframe{ display:block; }
+//去掉 firefox 下此元素的边框 
+abbr,acronym{ border:0;font-variant:normal; }
+// 一致的 del 样式 
+del { text-decoration:line-through; }
+address,caption,cite,code,dfn,em,th,var { font-style:normal; font-weight:500; }
+//去掉列表前的标识, li 会继承 
+ol,ul { list-style:none; }
+//对齐是排版最重要的因素, 别让什么都居中 
+caption,th { text-align:left; }
+//来自yahoo, 让标题都自定义, 适应多个系统应用 
+h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:500; }
+q:before,q:after { content:''; }
+//默认不显示下划线，保持页面简洁 
+ins,a {text-decoration:none}
+// Display in IE6-9 and FF3
+// -------------------------
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display: block;}
+
+  // Display block in IE6-9 and FF3
+  // -------------------------
+
+  audio, canvas, video {display: inline-block; *display: inline; *zoom: 1; }
+  // Prevents modern browsers from displaying 'audio' without controls
+  // -------------------------
+
+  audio:not([controls]) {display: none; }
+  // Base settings
+  // -------------------------
+
+  html {font-size: 100%; text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; -o-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } // Hover & Active
+  a:hover, a:active {outline: 0; } 
+  a:hover{_zoom: 1; }
+  // Prevents sub and sup affecting line-height in all browsers
+  // -------------------------
+
+  sub, sup {position: relative; font-size: 75%; line-height: 0; vertical-align: baseline; } 
+  sup {top: -0.5em; }
+  sub {bottom: -0.25em; }
+
+  // Img border in a's and image quality
+  // -------------------------
+ img {height: auto; border: 0; -ms-interpolation-mode: bicubic; image-rendering: optimizeQuality; /* Firefox 3.6+ */ vertical-align: middle; }
+
+  // Forms
+  // -------------------------
+
+  // Font size in all browsers, margin changes, misc consistency
+  button, input, select, textarea,label {margin: 0; font-size: 100%; vertical-align: middle; }
+  button,
+  input {
+    // *overflow: visible; // Inner spacing ie IE6/7
+    line-height: normal; // FF3/4 have !important on line-height in UA stylesheet
+  }
+  button::-moz-focus-inner,
+  input::-moz-focus-inner { // Inner padding and border oddities in FF3/4
+    padding: 0;
+    border: 0;
+  }
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    cursor: pointer; // Cursors on all buttons applied consistently
+    -webkit-appearance: button; // Style clickable inputs in iOS
+  }
+  input[type="search"] { // Appearance in Safari/Chrome
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none; // Inner-padding issues in Chrome OSX, Safari 5
+  }
+  textarea {
+    overflow: auto; // Remove vertical scrollbar in IE6-9
+    vertical-align: top; // Readability and alignment cross-browser
+  }
+  
+
+  .clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+  // ==========框架============
+html,body{overflow: hidden;}
+body{background: #F4F7F9;color: #5A707E}
+a{color: #3D97F0}
+a:hover{color:#0059B2 }
+
+.wrapper{padding: 17px 0 17px 17px;height: 325px;}
+// .home-wrapper{height: 325px;}
+
+.current-page{
+  height: 24px;padding: 5px 10px;
+  border-bottom: 1px solid #C5D0D5;
+  background: url(../../images/epassport/main_bg.png) no-repeat 0 -159px;
+}
+.current-title{
+  float: left;
+  font-size: 13px;
+  font-weight: 700;color: #2D4A59;line-height: 24px;
+}
+
+.page-back{
+  float: right;width: 54px;height: 24px;
+  background: url(../../images/epassport/main_bg.png) no-repeat -378px -95px;
+
+  &:hover{
+  background-position: -378px -123px;
+  }
+}
+// 登录页面
+.login-body{
+  background:#F9FBFC ;
+}
+.login-panel{
+  width: 178px;margin: 0 auto;
+}
+
+.login-input{
+  position: relative;
+  width: 178px;height: 34px;margin: 5px 0;
+  background: url(../../images/epassport/main_bg.png) no-repeat -5px -237px;
+  
+  input{
+    float: left;width: 130px;
+    border: none;height:16px;line-height: 16px;padding: 6px 5px 5px 0;margin-top: 4px;
+    background:transparent;color: #ccc;
+  }
+
+  .hasvalue{
+    color: #333
+  }
+
+  label{
+    float: left;
+    margin: 8px 10px;
+  }
+
+  .arrow-btn{
+    position: absolute;
+    right: 4px;top:5px;width: 25px;height: 25px;
+    background: url(../../images/epassport/main_bg.png) no-repeat -14px -393px;
+  }
+
+  .drop-down{
+    left: 4px;top:22px;width: 169px
+  }
+
+  .drop-down-cnt{
+    height: 120px;
+  }
+}
+
+
+
+.login-input-focus{
+  background-position: -5px -276px;
+
+  input{
+    color: #333;
+  }
+  .icon-login-key{
+    background-position: -121px -371px;
+  }
+  .icon-login-user{
+    background-position: -89px -371px;
+  }
+
+    .arrow-btn{
+    background-position: -85px -393px;
+  }
+
+}
+
+.login-input-error{
+  background-position: -5px -314px;
+
+  .icon-login-key{
+    background-position: -193px -371px;
+  }
+  .icon-login-user{
+    background-position: -158px -371px;
+  }
+   .arrow-btn{
+    background-position: -155px -393px;
+  }
+}
+
+.account-delete{
+  position: absolute;right: 5px;top: 2px;
+  display: block;width: 16px;height: 16px;
+  font-size: 14px;color: #999;
+
+  &:hover{
+    color: #c30
+  }
+}
+
+.btn-login-submit{
+  display: block;width: 176px;height: 36px;margin-top: 15px;
+  background: url(../../images/epassport/main_bg.png) no-repeat  -210px -240px;
+  overflow: hidden;line-height: 100px;
+
+  &:hover{
+    background-position: -210px -279px
+  }
+}
+
+.btn-login-submiting{
+  &,&:hover{background-position: -210px -318px;}
+}
+
+  // ==========首页============
+
+.menu-cnt{
+  padding-right: 18px;
+ 
+}
+.menu-con{
+  border-bottom: 1px solid #D3E0E4;
+}
+.menu{
+  padding-bottom: 13px;margin-top: -5px;
+  border-bottom: 1px solid #fff;
+}
+.menu-icon{
+  display: inline-block;
+  width: 45px;height: 45px;margin:10px 5px 5px;
+  background: url(../../images/epassport/main_bg.png) no-repeat  -4px -4px;
+}
+.menu-icon-news{
+  background-position: -68px -4px
+}
+.menu-icon-fav{
+  background-position: -135px -4px
+}
+.menu-icon-other{
+  background-position: -201px -4px
+}
+.menu-item,.menu-link{
+  float: left;
+}
+.menu-item{position: relative;text-align: center;margin-left: -5px;}
+.menu-link{
+  width: 65px;height: 84px;
+  color: #263940;cursor: pointer;
+
+  &:hover{
+    background: url(../../images/epassport/main_bg.png) no-repeat  -364px -4px;
+    color: #06c
+  }
+}
+
+.column-title{
+    float: left;
+  color:#27547D;font-weight: 700;     
+}
+
+.account-list-cnt{
+  padding: 10px 0;
+}
+.account-list{
+margin-top: 10px;
+}
+.account-list-title{
+  margin-bottom: 5px;
+
+  a{
+    color: #5A707E;font-weight: 700;*zoom:1;
+
+    &:hover{
+      color: #3F6C9A
+    }
+  }
+}
+
+
+.account-list-hided{
+  s{
+    background-position: -19px -101px
+  }
+
+  dd{
+    display: none
+  }
+}
+.account-list-item{
+  zoom: 1;
+}
+.column-title-link{
+  float: right;
+}
+
+.account-list-link{
+  display: list-item;
+  list-style: inside disc;
+  padding: 1px 5px;margin-left:15px;
+  color: #5A707E;border: 1px solid #F4F7F9;
+
+  &:hover{
+    
+    background: #ECF1F4;border: 1px solid #D9E3EA;color: #0059B2
+  }
+}
+// 运价查询
+// 搜索栏
+.search-area{padding-right: 17px;}
+.search-container{
+  position: relative;
+  border: 2px solid #DAECFE;z-index: 99;
+
+  .drop-down{
+    width: 235px;
+  }
+}
+
+.search-cnt{
+  height: 28px;
+  border: 1px solid #729CBA;
+   background: url(../../images/epassport/main_bg.png) no-repeat  0 -200px;
+}
+.search-input{
+  float: left;
+  width: 132px;padding: 6px 10px;
+  border:  none;background: transparent;line-height: 16px;color: #ccc
+}
+
+.search-arrow-btn,.search-btn-submit{
+  float: left;
+  .icon;
+  width:30px;height: 28px;
+  background-position: -304px -200px;
+
+  &:hover{
+    background-position: -346px -200px;
+  }
+}
+
+.search-btn-submit{
+  width: 53px;height: 28px;
+  background-position: -98px -67px;
+  overflow: hidden;line-height: 100px;
+
+  &:hover{
+    background-position: -98px -107px;
+  }
+}
+
+.search-checkbox-cnt{
+  padding: 8px 0;
+  color: #6C6C6C;
+}
+.drop-down{
+  display: none;
+  position: absolute;left: 0;top: 30px;
+  background: #fff;
+  border: 1px solid #ccc;z-index: 100;box-shadow: 2px 2px 3px rgba(0,0,0,.05)
+}
+.drop-down-cnt{
+  position: relative;
+overflow: hidden;
+overflow-y: scroll;
+height: 200px;
+}
+.list-link{
+  display: block;
+  padding: 5px 15px;
+color: #5A707E;border-bottom: 1px solid #f5f5f5;
+
+&:hover{
+ 
+  background: #eee;color: #0059B2
+}
+}
+.list-item{
+  vertical-align: bottom;position: relative;*zoom:1;
+}//做了兼容改动，by:Evan;
+//运价查询结果
+.search-reslut{
+  // padding: 5px 10px;
+}
+
+.search-reslut-item{
+  position: relative;*zoom:1;
+  padding:10px 10px 10px 40px;
+
+}
+
+.company-name{
+  display: inline-block;*display: inline;*zoom:1;
+   .toe;width: 200px;
+  font-weight: 700;color: #28557D;vertical-align: middle;
+}
+.search-reslut-info{
+  display: inline-block;*zoom:1;
+  .toe;width: 158px;vertical-align: middle;
+}
+
+.data-list-item{
+  border-top: 1px solid #D3E0E4;border-bottom: 1px solid #fff;
+  a{
+    zoom:1;
+  }
+}
+.data-list-first{
+  border-top: none;
+}
+.data-list-last{
+  border-bottom: none;
+}
+
+.type-icon{
+  .icon;
+  position: absolute;left: 0;top:-2px;
+  width: 25px;height: 36px;
+  background-position: -260px -4px;
+}
+.type-icon-lcl{
+  background-position: -298px -4px;
+}
+.type-icon-air{
+  background-position: -334px -4px;
+}
+//我的关注
+//
+.fav-list{
+  margin-top: -10px;
+
+  .data-list-item{
+    padding: 15px 5px;
+  }
+}
+
+.fav-list-cnt{
+  padding: 5px 0
+}
+.fav-list-item{
+  width: 50%;float: left;zoom: 1;
+
+}
+.fav-list-link{
+  display: list-item;
+  float: left;.toe;
+  width: 105px;color: #5A707E;  list-style: inside disc;
+
+  &:hover{
+    color: #0059B2
+  }
+}
+
+// 新闻关注
+// 
+.news-list{
+  &:extend(.fav-list all);
+}
+.news-list-cnt{
+  padding-top:10px;
+}
+
+.news-list-item{
+  .toe;
+  padding: 2px 0;zoom: 1;
+}
+
+.news-list-link{
+  color: #5A707E;zoom:1;
+
+  &:hover{
+    color: #0059B2
+  }
+}
+//////////////
+.more-data{
+  display: block;width: 235px;
+  height: 30px;line-height: 30px;margin: 10px 0;
+  text-align: center;
+  background: #DCE3ED;font-weight: bold;color: #1D2E38;border-radius: 2px;
+  
+  &:hover{
+    background: #C8D6E8;color: #154866;
+  }
+}
+// 图标
+.icon,s{
+ display: inline-block;*zoom:1;
+ width: 16px;height: 16px;
+ background: url(../../images/epassport/main_bg.png) no-repeat  -3px -101px;vertical-align: middle;
+}
+
+.icon-company{width: 15px;height: 15px;background-position: -205px -74px;margin-right: 5px;}
+.icon-num-1,.icon-num-2,.icon-num-3{
+  width: 14px;height: 14px;margin-right: 5px;
+  background-position: -260px -70px
+}
+
+.icon-login-user,.icon-login-key{
+  width: 18px;height: 18px;
+  background-position: -18px -371px;
+}
+
+.icon-login-key{
+  background-position: -50px -371px
+}
+
+.icon-num-2{background-position: -260px -92px}
+.icon-num-3{background-position: -260px -116px}
+
+.hr{border: none;border-bottom: 1px solid #D3E0E4;border-top: 1px solid #fff; height: 0;overflow: hidden;}
+
+// 文字省略
+.toe{white-space:nowrap;overflow:hidden;text-overflow:ellipsis; -o-text-overflow:ellipsis;}
+
+//通用类
+.psr{position: relative;}
+.pss{position: static;}
+.none{display: none;}

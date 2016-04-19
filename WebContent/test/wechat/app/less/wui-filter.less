@@ -1,0 +1,27 @@
+//
+// 过滤结构
+// --------------------------------------------------
+
+// 常量
+
+.wui-filter{
+  &:extend(.clearfix all);
+  >.filter-cell{
+    float: left;
+    height: @header-height;line-height: @header-height - 0.063rem;padding: 0 1.25rem;
+    border-right: 1px solid #eee;
+    font-weight: bold;color: #666;font-size: .8rem;
+    > i{
+    	font-size: .8rem;color: #aaa;
+        vertical-align: top;
+    }
+    &:first-child{
+    	color: #ff8900;
+    	i{
+    		color: #ff8900;
+            font-size: 10px;
+    	}
+    }
+  }
+}
+

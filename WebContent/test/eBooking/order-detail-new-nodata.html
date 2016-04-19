@@ -1,0 +1,642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>订单列表</title>
+	<link rel="stylesheet" href="../../release/freight/css/ebooking.css" />
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		$(function() {
+			var $tabMenu = $('li.eui-tab-menu-cell');
+			var $tabCnt = $('div.eui-tab-cnt');
+			$tabMenu.click(function() {
+				var index = $(this).index();
+				$tabMenu.removeClass("eui-tab-menu-active");
+				$(this).addClass('eui-tab-menu-active');
+				$tabCnt.hide().eq(index).show();
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="eui-header">
+		<div class="eui-header-content">
+			<h1 class="eui-logo mt5">
+			    <a href="javascript:"></a>
+			    咖狗网-中国领先的国际物流电子商务平台
+			</h1>
+			<div class="eui-header-info">
+				订单详情
+			</div>
+			<ul class="eui-process">
+				<li class="eui-process-cell eui-process-current">
+					订舱
+				</li>
+				<li class="eui-process-cell">
+					舱位确定
+				</li>
+				<li class="eui-process-cell">
+					上船离港
+				</li>
+				<li class="eui-process-cell eui-process-cell-last">
+					到港
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="eui-body">
+	<div class="eui-blank-line"></div>
+		<div class="eui-body-content">
+			<div class="eui-panel eui-panel-detail mt20">
+				<div class="eui-panel-hd">
+					<div class="eui-panel-left">
+						<span class="port-name">NINGBO</span>
+						<i class="arrow-right">&#x3545;</i>
+						<span class="port-name">WASHINTON</span>
+						<div class="eui-order-mark ml10">整箱</div>
+					</div>
+					<div class="eui-panel-right">
+						<label class="time-label">订单时间：</label>
+						<span class="tiem-info">2015-01-12 20:12:30</span>
+					</div>
+				</div>
+
+				<div class="eui-panel-bd">
+					<div class="eui-panel-left">
+						<ul class="order-detail-list">
+							<li class="detail-list-item">
+								<label>订单号：</label>
+								<span>120120120120120</span>
+							</li>
+							<li class="detail-list-item">
+								<label>提单号：</label>
+								<span>120120120120120</span>
+							</li>
+							<li class="detail-list-item">
+								<label>船期：</label>
+								<span>2/3 , 4/7</span>
+							</li>
+							<li class="detail-list-item">
+								<label>航程：</label>
+								<span>20天</span>
+							</li>
+							<li class="detail-list-item">
+								<label>船公司：</label>
+								<span>ATL</span>
+							</li>
+							<li class="detail-list-item">
+								<label>中转港：</label>
+								<span>ATL</span>
+							</li>
+							<li class="detail-list-item">
+								<label>港区(码头)：</label>
+								<span>四期</span>
+							</li>
+							<li class="detail-list-item detail-list-last">
+								<label>接单人：</label>
+								<span>120120120120120</span>
+							</li>
+						</ul>
+					</div>
+					<div class="eui-panel-right">
+						<div class="order-detail-info">
+							<i class="eui-icon eui-icon-biginfo"></i>
+							<div class="detail-info-content">
+								<div class="detail-info-line">
+									<label>订单状态：</label>
+									<span class="order-modify-waring">费用已修改</span>
+								</div>
+								<div class="detail-info-line">
+									<label>最新作业信息：</label>
+									<span class="order-modify-success">已提单</span>
+								</div>
+								<div class="detail-info-line mt20">
+									<label>您可以：</label>
+									<a class="eui-btn eui-btn-primary" href="javascript:">接单</a>
+									<a class="eui-btn" href="javascript:">调整作业信息</a>
+									<a class="eui-btn" href="javascript:">更新作业信息</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="eui-tab mt20">
+				<div class="eui-tab-menu ">
+					<ul>
+						<li class="eui-tab-menu-cell eui-tab-menu-active">
+							<a class="eui-tab-menu-link" href="javascript:">订单详情</a>
+						</li>
+						<li class="eui-tab-menu-cell">
+							<a class="eui-tab-menu-link" href="javascript:">作业信息</a>
+						</li>
+						<li class="eui-tab-menu-cell">
+							<a class="eui-tab-menu-link" href="javascript:">费用信息</a>
+						</li>
+					</ul>
+				</div>
+				<div class="eui-tab-cnt clearfix none">
+					<div class="eui-detail-content">
+						<table class="eui-detail-table" cellspacing="4">
+							<tbody>
+								<tr>
+									<th>运价</th>
+									<td>
+										<div class="td-grid">
+											<p>轻货</p>
+											<p class="price">(210)</p>
+										</div>
+									</td>
+									<td>
+										<div class="td-grid">
+											<p>重货</p>
+											<p class="price">(210)</p>
+										</div>
+									</td>
+									<td>
+										<div class="td-grid">
+											<p>轻货</p>
+											<p class="price">(210)</p>
+										</div>
+									</td>
+									<td>
+										<div class="td-grid">
+											<p>重货</p>
+											<p class="price">(210)</p>
+										</div>
+									</td>
+									<td>
+										<div class="td-grid">
+											<p>轻货</p>
+											<p class="price">(210)</p>
+										</div>
+									</td>
+									<td>
+										<div class="td-grid">
+											<p>重货</p>
+											<p class="price">(210)</p>
+										</div>
+									</td>
+									<td>
+										<div class="td-grid">
+											<p>轻货</p>
+											<p class="price">(210)</p>
+										</div>
+									</td>
+									<td>
+										<div class="td-grid">
+											<p>重货</p>
+											<p class="price">(210)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>体积</th>
+									<td colspan="2">
+										<div class="td-grid">
+											<p class="number">80<span>CBM</span></p>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="eui-detail-form">
+							<p>
+								<label>附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件：</label>
+								<a href="javascript:">运价导入空运数据.xsl</a>
+							</p>
+							<p class="mt5">
+								<label>客户信息：</label>
+								<span>傻逼脑残有限公司</span>
+							</p>
+							<p class="mt5">
+								<label>订舱备注：</label>
+								<span>分开装箱</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="eui-tab-cnt clearfix none">
+					<div class="eui-business-state">
+						<div class="eui-business-state-column eui-business-state-column-complete">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<a href="#" class="btn-up-down">保存</a>
+								<h3>海关预配舱单发送状态</h3>
+							</div>
+							<div class="eui-order-form">
+								<div class="eui-order-form-line">
+									<div class="eui-input w200">
+										<div class="eui-input-content">
+											<input class="eui-input-text" type="text" placeholder="状态确认时间"></div>
+									</div>
+								</div>
+								<div class="eui-order-form-line">
+									<div class="eui-input w100p">
+										<div class="eui-input-content">
+											<input class="eui-input-text" type="text" placeholder="海关无纸化报文已发送状态信息"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column eui-business-state-column-complete">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>订舱确认</h3>
+								<a href="#" class="btn-up-down">保存</a>
+							</div>
+							<div class="eui-booking-area mt10">
+								<table class="eui-booking-table">
+									<tbody>
+										<tr class="line-n">
+											<td width="95"><div class="td-grid td-grid-first">船名</div></td>
+											<td width="95"><div class="td-grid">航次</div></td>
+											<td width="110"><div class="td-grid">提单号</div></td>
+											<td width="95"><div class="td-grid">预计开航日</div></td>
+											<td width="95"><div class="td-grid">预计截关日</div></td>
+											<td width="95"><div class="td-grid">预计到港日</div></td>
+										</tr>
+										<tr>
+											<td>
+												<div class="td-grid">
+													<div class="eui-input w100p">
+														<div class="eui-input-content">
+															<input class="eui-input-text" type="text"></div>
+														<div class="fui-tips fui-tips-red">
+															<div class="fui-tips-arrow top">
+																◆
+																<em>◆</em>
+															</div>
+															<div class="fui-tips-content">输入信息有误</div>
+														</div>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="td-grid">
+													<div class="eui-input w100p">
+														<div class="eui-input-content">
+															<input class="eui-input-text" type="text"></div>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="td-grid">
+													<div class="eui-input w100p">
+														<div class="eui-input-content">
+															<input class="eui-input-text" type="text"></div>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="td-grid">
+													<div class="eui-input w100p">
+														<div class="eui-input-content">
+															<input class="eui-input-text" type="text"></div>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="td-grid">
+													<div class="eui-input w100p">
+														<div class="eui-input-content">
+															<input class="eui-input-text" type="text"></div>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="td-grid">
+													<div class="eui-input w100p">
+														<div class="eui-input-content">
+															<input class="eui-input-text" type="text"></div>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr class="line-n">
+											<td><div class="td-grid td-grid-first">报关行代码</div></td>
+											<td><div class="td-grid">报关行名称</div></td>
+											<td colspan="4"></td>
+										</tr>
+										<tr>
+											<td>
+												<div class="td-grid">
+													<div class="eui-input w100p">
+														<div class="eui-input-content">
+															<input class="eui-input-text" type="text"></div>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="td-grid">
+													<div class="eui-input w100p">
+														<div class="eui-input-content">
+															<input class="eui-input-text" type="text"></div>
+													</div>
+												</div>
+											</td>
+											<td colspan="4"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<input type="checkbox" class="eui-state-checkbox" />
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info">海关无纸化报文已发送状态信息</p>
+								</div>
+							</div>
+						</div>
+						<div class="eui-business-state-column eui-business-state-column-no-bd">
+							<span class="eui-business-state-icon"></span>
+							<div class="eui-business-state-column-title">
+								<h3>海关预配舱单发送状态</h3>
+								<a href="#" class="btn-up-down">编辑</a>
+							</div>
+							<div class="eui-order-form eui-order-form-des">
+								<div class="eui-order-form-line">
+									<p>状态确认时间</p>
+								</div>
+								<div class="eui-order-form-line">
+									<p class="eui-order-form-info"><span>船名</span><em>|</em><span>航次</span><em>|</em><span>提单号</span><em>|</em><span>预计开航日</span><em>|</em><span>预计截关日</span><em>|</em><span>预计到港日</span><em>|</em><span>报关行代码</span><em>|</em><span>报关行名称</span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="eui-tab-cnt clearfix ">
+					<div>
+						<div class="eui-table-area mt10">
+							<div class="eui-table-header">
+								<p class="eui-table-header-info"><label>货量：</label><span>20GP×5 + 40GP×2</span></p> 
+							</div>
+							<table class="eui-table eui-table-condensed">
+								<thead>
+									<th width="120">费用名称</th>
+									<th width="90">币别</th>
+									<th>金额计算</th>
+									<th width="90">金额</th>
+									<th width="100">付费方式</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>海运费</td>
+										<td>USD</td>
+										<td>825 × <span class="num">5</span>  +  1230 × <span class="num">2</span>=</td>
+										<td><span class="money">110022</span></td>
+										<td>预算</td>
+									</tr>
+									<tr>
+										<td>THC(附加费)</td>
+										<td>USD</td>
+										<td>825 × <span class="num">5</span>  +  1230 × <span class="num">2</span>=</td>
+										<td><span class="money">110022</span></td>
+										<td>预算</td>
+									</tr>
+									<tr>
+										<td>DCC22</td>
+										<td>USD</td>
+										<td>1002 × <span class="num">1</span>=</td>
+										<td><span class="money">110022</span></td>
+										<td>预算</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="eui-table-area mt10">
+							<h3 class="table-title">优惠费用</h3>
+							<table class="eui-table eui-table-condensed">
+								<thead>
+									<th width="120">费用名称</th>
+									<th width="70">币别</th>
+									<th width="70">优惠金额</th>
+									<th width="90">计费单位</th>
+									<th>优惠理由</th>
+									<th width="130">操作</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td colspan="6" class="nodata">
+											暂无优惠费用
+										</td>
+									</tr>
+									<tr class="last-line">
+										<td colspan="6"><a class="eui-btn eui-btn-primary" href="javascript:">新增优惠费</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="eui-table-footer">
+								<div>
+									<div class="eui-surcharge-total">
+										<label class="eui-surcharge-methods">预付合计：</label>
+										<div class="eui-surcharge-num">
+											<p>
+												<label>CNY</label>
+												6020.00
+											</p>
+											<p>
+												<label>USD</label>
+												6020.00
+											</p>
+										</div>
+									</div>
+									<div class="eui-surcharge-total">
+										<label class="eui-surcharge-methods">到付合计：</label>
+										<div class="eui-surcharge-num">
+											<p>
+												<label>CNY</label>
+												6020.00
+											</p>
+											<p>
+												<label>USD</label>
+												6020.00
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

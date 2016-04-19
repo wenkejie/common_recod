@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>航线选择</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+
+</head>
+<body>
+
+<div class="fui-dialog">
+	<div class="fui-dialog-title">
+		<h4 class="tal">航线选择</h4>
+		<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+	</div>
+
+	<!--弹窗的内容，生成的弹窗高宽：height:300px;width:350px;使用时把fui-dialog-cnt的style去掉 -->
+	<div class="fui-dialog-cnt" style="width:570px;height:230px;">
+		<div class="form-grid pd20">
+			<div class="form-line">
+				<label class="nui-label">所属区域：</label>
+				<div class="nui-form-cell w160">
+					<div class="nui-form-cell-cnt">
+						<input type="text" class="nui-input"  placeholder="选择" /> <i class="nui-form-cell-icon fs12">&#x35d7;</i>
+						<div class="nui-drop-down">
+							<ul class="nui-select-list">
+								<li class="nui-select-list-li active">宁波</li>
+								<li class="nui-select-list-li">上海</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-line mt10">
+				<label class="nui-label vat">优势航线：</label>
+				<div class="dpib vam w450">
+					<ul class="nui-tags"><li class="nui-tags-cell" id="+1" type="undefined">南美线</li><li class="nui-tags-del"> <a class="close" href="javascript:">×</a> </li> </ul>
+					<div class="nui-adv-search-con">
+						<div class="nui-condition-input clearfix dpib">
+							<input id="salesInput" class="adv-search-input" type="text">
+							<a class="adv-search-add adv-search-add-disable" title="增加" href="javascript:"></a>
+							<div class="nui-drop-down-con w110">
+								<ul class="nui-select-list">
+									<li type="0"></li>
+									<li type="2"></li>
+									<li type="3"></li>
+									<li type="4"></li>
+									<li type="1"></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="fui-dialog-btm-bar pss"> 
+		<a href="javascript:" class="fui-btn-dialog-primary"><span>下一步</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>取消</span></a> 
+	</div> 
+</div>
+</body>
+</html>

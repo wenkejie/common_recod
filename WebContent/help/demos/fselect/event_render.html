@@ -1,0 +1,29 @@
+<script>
+(function($){
+	var imgs = ["icon-graydot","icon-user","icon-first","icon-prev","icon-next","icon-last","icon-first-disable","icon-prev-disable","icon-next-disable","icon-last-disable"
+	        	,"icon-add","icon-r-add","icon-batch-add","icon-del","icon-open","icon-shut","icon-locked","icon-lock-open","icon-alert-s","icon-r-hook","icon-r-hook-gray","icon-ban","icon-help","icon-info","icon-r-info","icon-info-red"];
+	
+	var arr = [];
+	for(var i=0;i<imgs.length;i++){
+		arr[i] = {text:"显示   " + i,value:i,img:imgs[i]};
+	}
+
+	
+ 	$("#fSelectTest").fselect({
+ 		items : arr  ,
+ 		size : 12,
+ 		render : function(event,ui){
+ 			ui.wrap.html("<s class='"+ui.item.img+"'></s>" + ui.item.text);
+ 		}
+ 	 }) ;
+
+	  
+ 	 
+})(jQuery);
+
+</script>
+ <input id='fSelectTest'/>
+
+
+
+ 

@@ -1,0 +1,50 @@
+//
+// 标签类导航结构
+// --------------------------------------------------
+// 常量
+
+
+.cui-tab-menu{
+	&:extend(.clearfix all);
+	border-bottom: 1px solid #ddd;
+}
+
+.cui-tab-menu-cell{
+	float: left;
+	height:34px;border: 1px solid #ddd;border-bottom: none;padding: 0 10px;margin-right: 5px;
+	line-height: 34px;background-color: #f9f9f9;border-top-left-radius: 3px;border-top-right-radius: 3px;
+	color: #777;
+	&:hover{
+		margin-bottom: -1px;height: 35px;
+		background: #f2f2f2;
+	}
+}
+
+.cui-tab-menu-link{
+	float: left;
+	&,&:hover{
+		color: #777;
+	}
+}
+
+.cui-tab-menu-fn{
+	float: right;line-height: 30px;
+}
+
+.cui-tab-menu-active{
+	margin-bottom: -1px;height: 35px;
+	background: #fff;
+	text-decoration: none;
+	&:hover{
+		background: #fff;
+	}
+}
+
+.cui-tab-menu-active{	
+	&,.cui-tab-menu-link{
+		color: #444;
+	}
+}
+.cui-tab-cnt{
+	padding-top:10px;padding-bottom: 10px;
+}

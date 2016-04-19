@@ -1,0 +1,145 @@
+//
+// 表格
+// --------------------------------------------------
+// 常量
+
+.cui-table-area{
+	
+}
+
+
+.cui-table{
+	width: 100%;
+	table-layout: fixed;
+	text-align: left;background: #fff;
+	thead{
+		background: #F9F9F9;
+	}
+	th{
+		height: 44px;line-height: 44px;padding:0 10px;
+	}
+	td{
+		.word-break;
+		border-top: 1px solid #d5d5d5;padding: 8px 10px;
+		vertical-align: top;
+		color: #666;
+	}
+	.inside-form{
+		padding: 10px;
+	}
+}
+
+// 用td设置的留白
+.cui-table-blank{
+	background: #F0F2F3;
+}
+
+.cui-table-noborder{
+	border: none;
+}
+
+
+// 业务详情列表的表格
+.cui-table-list{
+	tr{
+		border: 1px solid #D6D8DE;
+	}
+	.hidden-title{
+		visibility: hidden;
+		th{
+			height: 0;line-height: 0;border: none;
+		}
+	}
+	.info-item{
+		.inline-block;
+		padding: 0 7px;
+		vertical-align: middle;
+	}
+	.table-title{
+		&:extend(.clearfix all);
+		height: 44px;line-height: 44px;padding: 0 10px;
+		border-top: 1px solid #D6D8DE;border-bottom: 1px solid  #C9CED8;
+		background: #f1f1f1;
+	}
+	.title-left{
+		.left;
+	}
+	.title-right{
+		.right;
+	}
+	.cui-table-blank{
+		border-color: #F0F2F3;
+	}
+}
+
+// 表单内部的表格
+.cui-table-area-inside{
+	width: 900px;margin: 0 auto;
+	font-size: 12px;
+	.cui-table{
+		border-bottom: 1px solid #d5d5d5;border-top: 1px solid #d5d5d5;
+	}
+	th{
+		height: 28px;line-height: 28px;
+		background: #f5f5f5;
+	}
+	tr:nth-child(even){
+		background: #f7f7f7;
+	}
+
+	tr:nth-child(odd){
+		background: #fcfcfc;
+	}
+	.cui-table-footer{
+		height: 45px;line-height: 45px;padding-left: 15px;
+	}
+}
+
+
+
+// 个人设置的表格
+.cui-table-area-person{
+	.cui-table-header{
+		padding-bottom: 20px;
+	}
+	.cui-table{
+		border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;
+		thead{
+			background: #eee;
+		}
+		tbody{			
+			tr:nth-child(even){
+				background: #f7f7f7;
+			}
+
+			tr:nth-child(odd){
+				background: #fcfcfc;
+			}
+			td{
+				height: 50px;line-height: 50px;
+			}
+		}
+		
+	}
+	.cui-table-footer{
+		padding: 20px;
+		text-align: right;
+	}
+	
+}
+
+
+// 表格类容器
+.cui-table-content{
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: separate;
+	border-spacing: 5px;
+	td{
+		border:1px solid #d9d9d9;
+		padding: 10px;
+	}
+	.info-line{
+		.word-break;
+	}
+}

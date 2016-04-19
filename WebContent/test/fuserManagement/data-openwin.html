@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://fcommon.600jit.com/fcommon/release/freight/css/common-v1.2.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		$(function() {
+			var $tabMenu = $('li.nui-tab-menu-cell');
+			var $tabCnt = $('div.nui-tab-cnt');
+			$tabMenu.click(function() {
+				var index = $(this).index();
+				$tabMenu.removeClass("nui-tab-menu-active");
+				$(this).addClass('nui-tab-menu-active');
+				$tabCnt.hide().eq(index).show();
+			})
+		})
+	</script>
+</head>
+<body>
+<!-- 这个弹窗的宽度给个630px,高度700px -->
+	<div class="fui-dialog" style="width:630px;">
+		<div class="fui-dialog-title">
+			<h4 class="tal">数据权限设置</h4>
+			<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+		</div>
+		<div class="fui-dialog-cnt">
+			<div class="nui-tab"> 
+				<div class="nui-tab-menu"> 
+					<ul> 
+						<li class="nui-tab-menu-cell nui-tab-menu-active"><a class="nui-tab-menu-link" href="javascript:">数据权限说明</a></li> 
+						<li class="nui-tab-menu-cell"><a class="nui-tab-menu-link" href="javascript:">全数据权限用户设置</a></li> 
+						<li class="nui-tab-menu-cell"><a class="nui-tab-menu-link" href="javascript:">经理助理设置</a></li> 
+					</ul> 
+				</div> 
+
+
+				<div class="nui-tab-cnt ">
+					<fieldset class="">
+						<legend>个人权限</legend>
+						<span class="nui-form-des">个人只能查看自己的客户，一级客户下面的业务信息</span>
+					</fieldset>
+					<fieldset class="mt10">
+						<legend>上下级权限</legend>
+						<span class="nui-form-des">经理能够查看其下属的客户及业务信息（包括下属的下属）</span>
+					</fieldset>
+					<fieldset class="mt10">
+						<legend>经理主力权限</legend>
+						<a href="javascript:" class="nui-btn nui-btn-primary right nui-btn-small">设置</a><span class="nui-form-des">经理助理具有同经理一样的数据查看权限</span>
+					</fieldset>
+					<fieldset class="mt10">
+						<legend>全数据权限</legend>
+						<a href="javascript:" class="nui-btn nui-btn-primary right nui-btn-small">设置</a><span class="nui-form-des">全数据用户权限能偶查案公司所有的客户信息以及业务数据</span>
+					</fieldset>
+
+				</div> 
+
+				<div class="nui-tab-cnt none">
+						全数据用户权限能查看公司所有的客户信息以及业务数据
+						<ul class="user-list-box">
+							<li class="user-list-box-cell">
+								<div class="w150 left">
+									<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+									<p><span class="fwb fs14">奥巴马</span>
+										<br />经理</p>
+								</div>
+								<a href="javascript:" class="left mt2">删除</a>
+							</li>
+							<li class="user-list-box-cell">
+								<div class="w150 left">
+									<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+									<p><span class="fwb fs14">奥巴马</span>
+										<br />经理</p>
+									</div>
+									<a href="javascript:" class="left mt2">删除</a>
+							</li>
+							<li class="user-list-box-cell brn">
+								<div class="w150 left">
+									<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+									<p><span class="fwb fs14">奥巴马</span>
+										<br />经理</p>
+									</div>
+									<a href="javascript:" class="left mt2">删除</a>
+							</li>
+							<li class="user-list-box-cell">
+								<div class="w150 left">
+									<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+									<p><span class="fwb fs14">奥巴马</span>
+										<br />经理</p>
+									</div>
+									<a href="javascript:" class="left mt2">删除</a>
+							</li>
+							<li class="user-list-box-cell">
+								<div class="w150 left">
+									<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+									<p><span class="fwb fs14">奥巴马</span>
+										<br />经理</p>
+									</div>
+									<a href="javascript:" class="left mt2">删除</a>
+							</li>
+							<li class="user-list-box-cell brn">
+								<div class="w150 left">
+									<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+									<p><span class="fwb fs14">奥巴马</span>
+										<br />经理</p>
+									</div>
+									<a href="javascript:" class="left mt2">删除</a>
+							</li>
+							<li class="user-list-box-cell">
+								<div class="w150 left">
+									<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+									<p><span class="fwb fs14">奥巴马</span>
+										<br />经理</p>
+									</div>
+									<a href="javascript:" class="left mt2">删除</a>
+							</li>
+							<li class="user-list-box-cell">
+								<div class="w150 left">
+									<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+									<p><span class="fwb fs14">奥巴马</span>
+										<br />经理</p>
+									</div>
+									<a href="javascript:" class="left mt2">删除</a>
+							</li>
+							<li class="user-list-box-cell brn">
+								<div class="w150 left">
+									<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+									<p><span class="fwb fs14">奥巴马</span>
+										<br />经理</p>
+									</div>
+									<a href="javascript:" class="left mt2">删除</a>
+							</li>
+						</ul>
+						<div class="form-line">
+								<div class="nui-form-cell">
+									<input type="text" class="nui-input" id="" placeholder="输入姓名"/>
+								</div>
+								<a href="javascript:" class="nui-btn nui-btn-primary">添加为全数据权限</a>
+						</div>
+					</div>
+
+					</div>
+					<div class="nui-tab-cnt none ">
+					全数据用户权限能查看公司所有的客户信息以及业务数据
+						<ul class="manage-help-list mt8">
+							<li class="manage-help-list-cell">
+								<div class="help-list-cell-left w150">
+									<div class="w150 left">
+										<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+										<p class="ml60"><span class="fwb fs14">奥巴马</span>
+											<br />经理</p>
+									</div>
+								</div>
+								<div class="help-list-cell-right">
+									<ol class="help-staff-box">
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+
+										<li class="help-staff-box-last tac">
+											<a class="staff-add-btn fonticon" href="javascript:">
+												&#x35a6;
+											</a>
+											<p class="mt20">添加</p>
+										</li>
+									</ol>
+								</div>
+							</li>
+							<li class="manage-help-list-cell">
+								<div class="help-list-cell-left w150">
+									<div class="w150 left">
+										<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+										<p class="ml60"><span class="fwb fs14">奥巴马</span>
+											<br />经理</p>
+									</div>
+								</div>
+								<div class="help-list-cell-right">
+									<ol class="help-staff-box">
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+									
+										<li class="help-staff-box-last tac">
+											<a class="staff-add-btn fonticon" href="javascript:">
+												&#x35a6;
+											</a>
+											<p class="mt20">添加</p>
+										</li>
+									</ol>
+								</div>
+							</li>
+							<li class="manage-help-list-cell">
+								<div class="help-list-cell-left w150">
+									<div class="w150 left">
+										<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+										<p class="ml60"><span class="fwb fs14">奥巴马</span>
+											<br />经理</p>
+									</div>
+								</div>
+								<div class="help-list-cell-right">
+									<ol class="help-staff-box">
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+										<li class="help-staff-box-cell">
+											<img class="user-img" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+											<p><span class="fwb fs14">奥巴马</span>
+											<br /><a class="" href="javascript:">删除</a></p>
+										</li>
+									
+										<li class="help-staff-box-last tac">
+											<a class="staff-add-btn fonticon" href="javascript:">
+												&#x35a6;
+											</a>
+											<p class="mt20">添加</p>
+										</li>
+									</ol>
+								</div>
+							</li>
+							<li class="manage-help-list-cell">
+								<div class="help-list-cell-left w150">
+									<div class="w150 left">
+										<img class="user-img left" alt="" src="http://himg.bdimg.com/sys/portrait/item/de3c66656e7468d200.jpg">
+										<p class="ml60"><span class="fwb fs14">奥巴马</span>
+											<br />经理</p>
+									</div>
+								</div>
+								<div class="help-list-cell-right">
+									<ol class="help-staff-box">		
+										<li class="help-staff-box-last psr tac">
+											<a class="staff-add-btn staff-add-btn-active fonticon" href="javascript:">
+												&#x35a6;
+											</a>
+											<p class="mt20">添加</p>
+											<!-- 这里dorp-down的定位要用js算一下 -->
+											<div class="nui-drop-down maxh-a ofh">
+												<div class="drop-down-header psr">
+													<a href="javascript:" class="drop-down-close">×</a>
+													<div class="nui-form-cell nui-form-cell-circle w120">
+														<div class="nui-form-cell-cnt">
+															<input class="nui-input" type="text" value="选择的值">
+															<a href="javascript:" class="nui-form-cell-icon fonticon">&#x355d;</a>
+														</div>
+													</div>
+												</div>
+												<ul class="nui-select-list h120 ofa"> 
+													<li class="nui-select-list-li nui-select-list-li-active">选择值1</li> 
+													<li class="nui-select-list-li">选择值2</li> 
+													<li class="nui-select-list-li">选择值2</li> 
+												</ul>
+												<div class="drop-down-footer tac">
+													<a class="nui-btn pl20 pr20" href="javascript:">确认</a><!-- 当选中值的时候加上 nui-btn-primary的class -->
+												</div> 
+											</div>
+										
+
+												
+										</li>
+									</ol>
+								</div>
+							</li>
+							<div class="form-line mt10">
+								<div class="nui-form-cell">
+									<input type="text" class="nui-input" id="" placeholder="输入姓名"/>
+								</div>
+								<a href="javascript:" class="nui-btn nui-btn-primary">添加为全数据权限</a>
+							</div>
+						</ul>
+
+				</div>
+			</div> 
+		</div>
+	</body>
+	</html>

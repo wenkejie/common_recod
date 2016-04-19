@@ -1,0 +1,24 @@
+<script>
+(function($){
+	$("#fsearch").fsearch({
+		items : [
+			{text:'姓名',name:'userName'},
+			{text:'生日',name:'birthday',binding : function(input){
+				input.fselect({
+					width: input.width(),
+					items:[{text:"-请选择-",value:''},{text:"女",value:0},{text:"男",value:1}]});
+				}},
+			{text:'性别',name:'sex'}
+		]
+	});
+	$("#fsearch").fsearch("select",0,"birthday",1);
+})(jQuery);
+
+</script>
+
+ 
+<div id='fsearch'></div>
+
+ 
+
+ 

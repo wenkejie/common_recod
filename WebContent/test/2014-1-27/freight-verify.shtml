@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>运价维护</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			isIE6= /MSIE 6./i.test(navigator.userAgent);//判断ie6下做的兼容效果
+			if (isIE6) {
+				$('.nui-verify-table').delegate('.td-content', 'mouseenter', function() {
+					$(this).addClass('active');
+				}).delegate('.td-content', 'mouseleave', function() {
+					$(this).removeClass('active');
+				});
+
+				$('.verify-inside-table').delegate('tr', 'mouseenter', function() {
+					$(this).addClass('hover');
+				}).delegate('tr', 'mouseleave', function() {
+					$(this).removeClass('hover');
+				});
+			}	
+		})
+	</script>
+</head>
+<body>
+<!-- 去掉style中的样式 -->
+
+	<div class="fui-dialog"  style="width:860px;">
+		<div class="fui-dialog-title">
+			<h4 class="tal">账户设置引导</h4>
+			<a title="最大化" class="fui-dialog-top-btn maximize" href="javascript:" style="display: none;"></a><a title="关闭" class="fui-dialog-top-btn close" href="javascript:"></a> 
+		</div>
+
+		<div class="fui-dialog-cnt"  style="height:600px;">
+			<div>
+				<p class="mb10 text-orange">
+					以下港口，无法帮您完成资料校验，请手动补全信息
+				</p>
+				<div class="nui-verify-area">
+					<table class="nui-verify-table">
+						<thead>
+							<th class="code">代码</th>
+							<th class="english-name">英文名称</th>
+							<th class="chinese-name">中文名称</th>
+							<th class="national-chinese">国家英文</th>
+							<th class="national-english">国家中文</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="5" class="td-content">
+									<table class="verify-inside-table">
+										<thead>
+											<th class="code">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="english-name">
+												<div class="nui-form-cell nui-form-cell-info">
+													<input class="nui-input" type="text" />
+													<i class="info-icon">&#x3574;</i>
+												</div>
+											</th>
+											<th class="chinese-name">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-chinese">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-english">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr class="tr-block">
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td colspan="5" class="td-footer">
+													<a href="javascript:" class="check-list-more">
+														<i>&#x3451;</i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="td-content">
+									<table class="verify-inside-table">
+										<thead>
+											<th class="code">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="english-name">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="chinese-name">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-chinese">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-english">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr class="tr-block">
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td colspan="5" class="td-footer">
+													<a href="javascript:" class="check-list-more">
+														<i>&#x3451;</i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="td-content">
+									<table class="verify-inside-table">
+										<thead>
+											<th class="code">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="english-name">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="chinese-name">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-chinese">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-english">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr class="tr-block">
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td colspan="5" class="td-footer">
+													<a href="javascript:" class="check-list-more">
+														<i>&#x3451;</i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="td-content">
+									<table class="verify-inside-table">
+										<thead>
+											<th class="code">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="english-name">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="chinese-name">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-chinese">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-english">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr class="tr-block">
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td colspan="5" class="td-footer">
+													<a href="javascript:" class="check-list-more">
+														<i>&#x3451;</i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="td-content">
+									<table class="verify-inside-table">
+										<thead>
+											<th class="code">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="english-name">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="chinese-name">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-chinese">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-english">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr class="tr-block">
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td colspan="5" class="td-footer">
+													<a href="javascript:" class="check-list-more">
+														<i>&#x3451;</i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="td-content">
+									<table class="verify-inside-table">
+										<thead>
+											<th class="code">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="english-name">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="chinese-name">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-chinese">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+											<th class="national-english">
+												<div class="nui-form-cell">
+													<input class="nui-input" type="text" />
+												</div>
+											</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr class="tr-block">
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td>TOKIA</td>
+												<td>Amsterdam</td>
+												<td>阿姆斯特丹</td>
+												<td>荷兰</td>
+												<td>Netherlands</td>
+											</tr>
+											<tr>
+												<td colspan="5" class="td-footer">
+													<a href="javascript:" class="check-list-more">
+														<i>&#x3451;</i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="loading-more-td">
+									<a class="nui-btn" href="javascript:">加载更多</a>
+									<span class="check-num-tips">当前显示30条，共150条</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="nui-verify-footer"></div>
+				</div>
+				<div class="hr"></div>
+				<div class="">
+					帮助：<br/>
+					怎么才能提高系统基础资料的补全率<br/>
+					其实我也不知道<br/>
+					<p class="mt20">
+						<a class="mt10" href="javascript:">更多帮助</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="fui-dialog-btm-bar pss">
+			<span class="fui-dialog-btm-tips">注：你可以先导入运价，事后在基础资料中再补齐</span>
+			<a href="javascript:" class="fui-btn-dialog-primary"><span>导入运价</span></a> <a  href="javascript:" class="fui-btn-dialog"><span>重新上传</span></a> 
+		</div> 
+	</div>
+</body>
+</html>

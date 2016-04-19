@@ -1,0 +1,133 @@
+<!--#include file="header.html"-->
+
+<!-- 主内容开始 -->
+<div class="auto-wrap">
+	<div class="grid">
+		<div class="left">
+			<i class="fs14">&#x351a;</i> <strong>客户: </strong>
+			<div class="nui-select-no-box"><div class="nui-select-value">我的客户</div><i>&#x3438;</i>
+			<div class="nui-drop-down w140 h-a">
+				<ul class="nui-select-list nui-select-list-with-title">
+					<li class="nui-select-list-title">我的视图</li>
+					<li class="nui-select-list-li">我的客户</li>
+					<li class="nui-select-list-li">我关注的客户</li>
+					<li class="nui-select-list-li">A（重点客户）</li>
+					<li class="nui-select-list-li">B（普通客户）</li>
+					<li class="nui-select-list-li">C（非优先客户）</li>
+					<li class="nui-select-list-title">其他视图</li>
+					<li class="nui-select-list-li">我的下属客户</li>
+				</ul>
+			</div>
+
+		</div>
+		</div>
+	
+		<div class="right">
+			<button class="nui-btn nui-btn-primary"><i class="fcf">&#x35a6;</i> 新建联系人</button>
+			<button class="nui-btn nui-btn-primary"><i class="fcf">&#x3594;</i> 导入联系人</button>
+		</div>
+	</div>
+
+	<div class="main-right-column">
+		
+	</div>
+	<div class="main-left-column">
+		<div class="mytalk-box">
+			<ul class="mytalk-list">
+				<li class="mytalk-list-cell">
+					<div class="mytalk-list-cell-cnt">
+						<p>我说：看来这个网站对我还挺管用</p>
+						<em>2014-10-11 18:00</em>
+					</div>
+					<a class="mytalk-list-cell-del" href="javascript:">删除</a>
+				</li>
+				<li class="mytalk-list-cell">
+					<div class="mytalk-list-cell-cnt">
+						<p>我说：看来这个网站对我还挺管用</p>
+						<em>2014-10-11 18:00</em>
+					</div>
+					<a class="mytalk-list-cell-del" href="javascript:">删除</a>
+				</li>
+				<li class="mytalk-list-cell-last">
+					<div class="mytalk-list-cell-cnt">
+						<p>我说：看来这个网站对我还挺管用</p>
+						<em>2014-10-11 18:00</em>
+					</div>
+					<a class="mytalk-list-cell-del" href="javascript:">删除</a>
+				</li>
+			</ul>
+			
+			<div class="mytalk-box-inside">
+				<div class="grid">
+						
+						<div class="psr pl60">
+							<a class="avatar_picture2 info-picture" href="javascript:"></a>
+							<ul class="info-list">
+								<li class="info-list-cell psr pl70">
+								<div class="info-list-cell-head">
+									<a class="name" href="javascript:">王小贱</a> <i>&#x344c;</i>
+								</div>
+								<span class="dpib">长荣11月22日大火围困的卡我的卡瓦达我看到到家啦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦<span></li>
+								
+								
+				
+							</ul>
+							<div class="exchange-box cb">
+								<div class="exchange-box-top clearfix">
+									<div class="left"><i>&#x3443;</i> <em>4小时前</em></div>
+									<div class="right">
+										<a class="dpib" href="javascript:">评论</a>
+									</div>
+								</div>
+									
+				
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="mytalk-box">
+			<ul class="mytalk-list">
+				<li class="mytalk-list-cell clearfix">
+					<div class="mytalk-list-cell-cnt">
+						<p>我说：看来这个网站对我还挺管用</p>
+						<em>2014-10-11 18:00</em>
+					</div>
+					<a class="mytalk-list-cell-del" href="javascript:">删除</a>
+				</li>
+			</ul>
+			
+			<div class="mytalk-box-inside">
+				<div class="grid">
+						
+						<div class="psr pl60">
+							<a class="avatar_picture2 info-picture" href="javascript:"></a>
+							<ul class="info-list">
+								<li class="info-list-cell psr pl70">
+								<div class="info-list-cell-head">
+									<a class="name" href="javascript:">王小贱</a> <i>&#x344c;</i>
+								</div>
+								<span class="dpib">长荣11月22日大火围困的卡我的卡瓦达我看到到家啦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦我觉得垃圾未来得及阿拉维大家啦空间的卡瓦<span></li>
+								
+				
+							</ul>
+							<div class="exchange-box cb">
+								<div class="exchange-box-top clearfix">
+									<div class="left"><i>&#x3443;</i> <em>4小时前</em></div>
+									<div class="right">
+									
+										<a class="dpib" href="javascript:">评论</a>
+									</div>
+								</div>
+									
+				
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

@@ -1,0 +1,106 @@
+@import "base.less";
+// html{-webkit-text-size-adjust:none;}
+body,dl,dt,dd,h1,h2,h3,h4,p{
+  margin: 0;padding: 0;font:1em/1.5em microsoft yahei,tahoma;
+}
+// @media screen and (min-width: 320px )  and (max-width: 800px){
+//   body{font-size:1.2em};
+// }
+@media screen and (min-width: 700px) {
+  body{font-size:1.2em};
+}
+@media screen and (max-width: 320px) {
+  body{font-size: .6em};
+}
+dl{
+  border-bottom: 1px solid #CCDAE6;
+  .linear(#fff,#eee);
+}
+h3{
+  color: #003366;
+  font-size: 1.5em;
+}
+dt{
+  position: relative;
+  padding: 1em;
+}
+dd{
+  overflow: hidden;
+  height: 0;
+  line-height: 1.8em;
+  padding: 1em;
+  background: #DED8CF ;
+  .transition(all  .2s ease 0s);
+}
+.main-info{
+  width: 100%;
+  color: #445871;
+}
+.more-info{
+  width: 100%;
+  margin: 0;
+  border:1px dashed #A59E98;
+}
+
+// .arrow-bottom{
+//   position: absolute;
+//   left: 10%;
+//   bottom: -1em;
+//   .arrow-bottom(.5em,#eee);
+//   display: none;
+//   .box-shadow(0 .5em .5em rgba(0,0,0,.2))
+// }
+.arrow-bottom{
+  display: none;
+  position: absolute;
+  left: 10%;
+  bottom:-.5em;
+  width: 1em;
+  height:1em;
+  background: #F8F8F8;
+  .rotate(45deg);
+  .box-shadow(.3em .3em .4em rgba(0,0,0,.2))
+}
+.active{
+  // dd{padding: 1em}
+  // dt{.box-shadow(0 .3em 1em rgba(0,0,0,.1))}
+  .arrow-bottom{display: block}
+}
+.img{width: 1em;margin-right: .5em}
+
+.type-name{.dpib;width:3em;padding-right: .5em;text-align: justify;}
+// common 区域
+.dpib{display: inline-block;*display: inline;*zoom: 1;}
+.tal{text-align: left;}
+.tar{text-align: right;}
+.tac{text-align: center;}
+.vam{vertical-align: middle;}
+.vat{vertical-align: top;}
+.none{display: none}
+.text-warning{color: #D93600}
+.text-light{color: #7F97B2}
+.ls1{letter-spacing:1em}
+.ml1{margin-left: 1em}
+.ml2{margin-left: 2em}
+.btn-more{
+  display: block;
+  padding: 1em 0;
+  font-size: 1.2em;
+  text-align: center;
+  .linear(#C4BBAA,#A5977E);
+  .box-shadow(inset 0 .2em 3px rgba(0,0,0,.2));
+  text-decoration: none;
+  color: #5A513F
+}
+// @media only screen and (-moz-min-device-pixel-ratio: 2), 
+//   only screen and (-o-min-device-pixel-ratio: 2/1), 
+//   only screen and (-webkit-min-device-pixel-ratio: 2), 
+//   only screen and (min-device-pixel-ratio: 2){
+//   body{font-size: 1.5em}
+// }
+// @media only screen and (-moz-min-device-pixel-ratio: 1.5), 
+//   only screen and (-o-min-device-pixel-ratio: 1.5/1), 
+//   only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+//   only screen and (min-device-pixel-ratio: 1.5){
+//   body{font-size: 1.5em}
+// }

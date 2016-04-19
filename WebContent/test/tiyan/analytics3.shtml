@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/jqueryui/jquery-ui-1.10.2.freight.css" />
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" /><!-- 自己的样式要加在引入样式的后面 -->
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryui/jquery-ui-1.10.2.freight.min.js"></script>
+	<script type="text/javascript" src="../../release/jqueryplugin/highcharts.js"></script>
+	<script type="text/javascript" src="headNav.js"></script>
+	<script>
+
+		$(function () { 
+	$('#j-chart').highcharts({
+		title: {
+			text: false
+		},
+		subtitle: {
+			text: false
+		},
+		xAxis: {
+			categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+		},
+		yAxis: {
+			title:false
+		},
+		tooltip: {
+			headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+			pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+			footerFormat: '</table>',
+			shared: true,
+			useHTML: true
+		},
+		plotOptions: {
+			column: {
+				pointPadding: 0.2,
+				borderWidth: 0
+			}
+		},
+		series: [{
+			name: 'New York',
+			data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+		}, {
+			name: 'London',
+			data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+		}, {
+			name: 'Berlin',
+			data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+		}]
+	});
+
+	$('#j-chart1').highcharts({
+		chart: {
+			plotBackgroundColor: null,
+			plotBorderWidth: null,
+			plotShadow: false
+		},
+		title: {
+			text: '来源分析',
+			style: {fontFamily:'"微软雅黑","宋体"', fontWeight:700}
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: true,
+					color: '#000000',
+					connectorColor: '#000000',
+					format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+				}
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: 'Browser share',
+			data: [
+				['体验升级	', 85.0],
+				['自主注册', 15.0],
+			]
+		}]
+	});
+
+
+
+	var colors = Highcharts.getOptions().colors,
+		categories = ['MSIE', 'Firefox', 'Chrome', 'Safari', 'Opera'],
+		name = 'Browser brands',
+		data = [{
+			y: 55.11,
+			color: colors[0],
+			drilldown: {
+				name: 'MSIE versions',
+				categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+				data: [10.85, 7.35, 33.06, 2.81],
+				color: colors[0]
+			}
+		}, {
+			y: 21.63,
+			color: colors[1],
+			drilldown: {
+				name: 'Firefox versions',
+				categories: ['Firefox 2.0', 'Firefox 3.0', 'Firefox 3.5', 'Firefox 3.6', 'Firefox 4.0'],
+				data: [0.20, 0.83, 1.58, 13.12, 5.43],
+				color: colors[1]
+			}
+		}, {
+			y: 11.94,
+			color: colors[2],
+			drilldown: {
+				name: 'Chrome versions',
+				categories: ['Chrome 5.0', 'Chrome 6.0', 'Chrome 7.0', 'Chrome 8.0', 'Chrome 9.0', 'Chrome 10.0', 'Chrome 11.0', 'Chrome 12.0'],
+				data: [0.12, 0.19, 0.12, 0.36, 0.32, 9.91, 0.50, 0.22],
+				color: colors[2]
+			}
+		}, {
+			y: 7.15,
+			color: colors[3],
+			drilldown: {
+				name: 'Safari versions',
+				categories: ['Safari 5.0', 'Safari 4.0', 'Safari Win 5.0', 'Safari 4.1', 'Safari/Maxthon', 'Safari 3.1', 'Safari 4.1'],
+				data: [4.55, 1.42, 0.23, 0.21, 0.20, 0.19, 0.14],
+				color: colors[3]
+			}
+		}, {
+			y: 2.14,
+			color: colors[4],
+			drilldown: {
+				name: 'Opera versions',
+				categories: ['Opera 9.x', 'Opera 10.x', 'Opera 11.x'],
+				data: [0.12, 0.37, 1.65],
+				color: colors[4]
+			}
+		}];
+
+	function setChart(name, categories, data, color) {
+		chart.xAxis[0].setCategories(categories, false);
+		chart.series[0].remove(false);
+		chart.addSeries({
+			name: name,
+			data: data,
+			color: color || 'white'
+		}, false);
+		chart.redraw();
+	}
+	var chart = $('#j-chart2').highcharts({
+			chart: {
+				type: 'column'
+			},
+			title: {
+				text: '地区分布',
+				style: {fontFamily:'"微软雅黑","宋体"', fontWeight:700}
+
+			},
+			subtitle: {
+				text:false
+			},
+			xAxis: {
+				categories: categories
+			},
+			yAxis: {
+				title: {
+					text: false
+				}
+			},
+
+			plotOptions: {
+				column: {
+					cursor: 'pointer',
+					dataLabels: {
+				enabled: true,
+				color: colors[0],
+				style: {
+					fontWeight: 'bold'
+				},
+				formatter: function() {
+					return this.y + '%';
+				}
+			},
+			showInLegend: false
+		}
+	}, 
+
+	tooltip: {
+		formatter: function() {
+			var point = this.point,
+				s = this.x + ':<b>' + this.y + '% market share</b><br/>';
+			if (point.drilldown) {
+				s += 'Click to view ' + point.category + ' versions';
+			} else {
+				s += 'Click to return to browser brands';
+			}
+			return s;
+		}
+	},
+	series: [{
+		name: name,
+		data: data,
+		color: 'white'
+	}],
+	exporting: {
+		enabled: false
+	}
+}).highcharts();
+});
+
+
+	</script>
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	
+	<div class="wrap two-column-wrap-nobd">
+		<div class="left-side"><div class="left-slide-top-line"></div>
+		<!--#include file="leftside.html"-->
+		<div class="left-slide-bottom-line"></div>
+	</div>
+	<div class="right-side pt0">
+		<div class="main-title">
+			<h1>活跃用户分析 <i class="fs14 cur-d">&#x3574;</i></h1>
+		</div>
+
+
+
+<ul class="analytics-overview-panel analytics-overview-panel-4">
+			<li>
+				<p>今日在线数
+					<span>150.000 <em class="trend-up"><i class="fs12">&#x3544;</i> 20%</em></span>
+					
+				</p>
+			</li>
+			<li>
+				<p>昨日在线数
+					<span>24.000</span>
+				</p>
+			</li>
+			<li>
+				<p>今日活跃数
+					<span>10.000 <em class="trend-down"><i class="fs12">&#x3542;</i> 20%</em></span>
+					
+				</p>
+			</li>
+			<li class="last">
+				<p>昨日活跃数
+					<span>5.000</span>
+				</p>
+			</li>			
+		</ul>
+
+
+
+
+		
+		<div class="analytics-grid mt15">
+			<div class="analytics-title"><h2>活跃用户趋势</h2>
+				<div class="analytics-title-fn pt7">
+					<a class="nui-select-tag nui-select-tag-active" onclick="fu_trends_change(this,'today')" href="javascript:">今日</a>
+					<a class="nui-select-tag " onclick="fu_trends_change(this,'today')" href="javascript:">昨日</a>
+					<a class="nui-select-tag " onclick="fu_trends_change(this,'today')" href="javascript:">过去7天</a>
+					<a class="nui-select-tag" onclick="fu_trends_change(this,'yestoday')" href="javascript:">过去30天</a>
+					<a class="nui-select-tag" onclick="fu_trends_change(this,'last7')" href="javascript:">过去3月</a>
+					<a class="nui-select-tag" onclick="fu_trends_change(this,'last30')" href="javascript:">过去6月</a>
+				</div>
+			</div>
+			<div class="analytics-cnt">
+				<div id="j-chart" class="big-chart"></div>
+			</div>
+		</div>
+
+
+
+<div class="analytics-grid mt15">
+			<div class="analytics-title"><h2>活跃用户分布</h2><span class="des">（截至2014-04-29）</span>
+		
+			</div>
+			<div class="analytics-cnt clearfix">
+				<div class="w50p left">
+				<div class="pd10">
+					<div id="j-chart1" style="height:200px"></div>
+				</div>
+			</div> 
+			<div class="w50p left">
+				<div class="pd10">
+					<div id="j-chart2" style="height:200px"></div>
+				</div>
+			</div> 
+			</div>
+		</div>
+
+
+
+
+<div class="adv-table mt20">
+			<ul class="adv-table-tab">
+				<li> 查看：</li>
+				<li><a class="adv-table-tab-link adv-table-tab-link-active" href="javascript:">活跃排行榜</a></li>
+			</ul>
+	<div class="adv-table-fn-area">
+	<div class="left">
+		<span class="nui-radio"><input type="radio" checked="checked" id="1" name="111"><label for="1">按用户</label></span>
+		<span class="nui-radio"><input type="radio" checked="checked" id="2" name="111"><label for="2">按企业</label></span>
+	</div>
+	<div class="right">
+					<span class="dpib pt1 ">
+						<a href="javascript:" onclick="fu_trends_change(this,'today')" class="nui-select-tag nui-select-tag-active">过去7天</a>
+						<a href="javascript:" onclick="fu_trends_change(this,'yestoday')" class="nui-select-tag">过去30天</a>
+						<a href="javascript:" onclick="fu_trends_change(this,'last7')" class="nui-select-tag">过去3月</a>
+						<a href="javascript:" onclick="fu_trends_change(this,'last30')" class="nui-select-tag">过去6月</a>
+					<a href="javascript:" class="nui-btn pr5">2014-05-06 ~ 2014-06-08 <i class="fs14">&#x3438;</i></a>
+					</span>
+		<a class="nui-btn "><i class="fs12">&#x3455;</i> 导出</a>
+	</div>
+	</div>
+				<table class="analytics-table">
+				<thead>
+					<tr>
+						<th>日期</th>
+						<th><a href="javascript:" class="table-sort-link">新增用户<i class="fs12">&#x3544;</i></a></th>
+						<th><a href="javascript:" class="table-sort-link">所属企业<i class="fs12">&#x3542;</i></a></th>
+						<th>来源</th>
+					</tr>
+				</thead>
+					<tbody>
+				
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						<tr>
+							<td>4-28</td>
+							<td>13958201888</td>
+							<td>奥林科技</td>
+							<td>自主注册</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				
+				
+				
+				<div class="adv-table-footer">
+					<label for="">每页显示：</label><select id="" name="">
+						<option value="">20</option>
+						<option value="">50</option>
+						<option value="">100</option>
+					</select>
+
+					<div class="page">
+						<span>上一页</span>
+						<a class="active" href="javascript:">1</a>
+						<a href="javascript:">2</a>
+						<a href="javascript:">3</a>
+						<a href="javascript:">4</a>
+						<a href="javascript:">5</a>
+						<span>…</span>
+						<a href="javascript:">25</a>
+						<a href="javascript:">下一页</a>
+						
+
+						到第 <input type="text" class="w30 h20"> 页 <button class="nui-btn nui-btn-20">确定</button>
+					</div>
+				</div>
+			</div>
+
+
+</div>
+
+
+</div>
+<!--#include file="footer.html"-->
+</body>
+</html>

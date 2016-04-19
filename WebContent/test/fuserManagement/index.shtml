@@ -1,0 +1,120 @@
+y<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>会员管理首页</title>
+	<link rel="stylesheet" href="../../release/freight/css/common-v1.2.css" />
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+			$('td').hover(function() {
+				$(this).addClass('td-hover')
+			}, function() {
+				$(this).removeClass('td-hover')
+			});
+			
+		})
+	</script>
+</head>
+<body class="home-body">
+	<!--#include file="header.html"-->
+	<div class="home-wrap">
+	<div class="wrap">
+		<table class="data-table">
+			<tr>
+				<td rowspan="2" class="user-account-grid">
+				<div class="user-account-container">
+					<p class="user-info">
+					<i>&#13662</i> 上午好：李光耀
+						<span class="login-time">上次登录时间：2013.10.31</span>
+					</p>
+					<div class="account-number">
+						<div class="account-number-title"><s class="icon-key"></s> 账号数<a href="javascript:" class="a-recharge">充值</a></div>
+						<ul class="account-number-list">
+							<li>客户账号：<a href="javascript:" class="a-number">25</a>个</li>
+							<li>体验账号：<a href="javascript:" class="a-number">25</a>个</li>
+							<li>海外账号：<a href="javascript:" class="a-number">25</a>个</li>
+						</ul>
+					</div>
+				</div>
+
+				</td>
+				<td class="about-account-grid">
+					<dl class="data-panel">
+						<dt>
+							<h2>待审批客户账号</h2>
+							网站注册客户
+							<a href="javascript:" class="a-management">管理</a>
+						</dt>
+						<dd>
+							<p class="pending-number"><s class="icon-warning"></s> 共<a href="#" class="a-number">5</a>个</p>
+							<ul class="pending-list">
+								<li><a href="#" class="pending-list-cell">李光耀</a></li>
+								<li><a href="#" class="pending-list-cell">光耀</a></li>
+								<li><a href="#" class="pending-list-cell">李光耀</a></li>
+								<li class="pending-list-last">...</li>
+							</ul>
+						</dd>
+					</dl>
+				</td>
+				<td class="td-about-company">
+					<dl class="data-panel">
+						<dt>
+							<h2>待审批通过的企业</h2>
+							客户企业信息管理
+							<a href="javascript:" class="a-management">管理</a>
+						</dt>
+						<dd>
+							<p class="pending-number"><s class="icon-warning"></s> 共<a href="#" class="a-number">53</a>个</p>
+							<ul class="pending-list">
+								<li><a href="#" class="pending-list-cell">大掌柜国际物流有限公司</a></li>
+								<li><a href="#" class="pending-list-cell">深圳纵横</a></li>
+								<li><a href="#" class="pending-list-cell">大掌柜国际物流有限公司</a></li>
+								<li class="pending-list-last">...</li>
+							</ul>
+						</dd>
+					</dl>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<dl class="data-panel">
+						<dt>
+							<h2>待转正客户账号</h2>
+							邀请体验客户
+							<a href="javascript:" class="a-management">管理</a>
+						</dt>
+						<dd>
+							<p class="pending-number">共<a href="#" class="a-number">0</a>个</p>
+							<ul class="pending-list">
+								<li class="pending-list-no-data">暂无数据</li>
+							</ul>
+						</dd>
+					</dl>
+				</td>
+				<td>
+					<dl class="data-panel">
+						<dt>
+							<h2>待审批通过的群</h2>
+							圈子、部门、公司、集团等人员的分类管理
+							<a href="javascript:" class="a-management">管理</a>
+						</dt>
+						<dd>
+							<p class="pending-number"><i>&#13365</i> 共<a href="#" class="a-number">5</a>个</p>
+							<ul class="pending-list group-pending-list">
+								<li><a href="#" class="pending-list-cell">雅戈尔运价开发2部</a>创建人：李大双</li>
+								<li><a href="#" class="pending-list-cell">深圳纵横</a>创建人：李大双</li>
+								<li class="pending-list-last">...</li>
+							</ul>
+						</dd>
+					</dl>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</div>
+	<div id="footer">
+		<p>大掌柜国际物流有限公司</p><p>powered by <a href="#">大掌柜</a></p>
+	</div>
+</body>
+</html>
